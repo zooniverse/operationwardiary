@@ -1,0 +1,16 @@
+#app
+  margin-top: 50px
+
+.stack
+  position: relative
+  
+  > div
+    @extends #site-container
+    display: none
+    min-height: 200px
+    
+  > div.active
+    display: block
+
+.zooniverse-footer
+  @extends #site-container
