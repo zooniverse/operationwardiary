@@ -1,20 +1,39 @@
+$ = require 'jqueryify'
 Spine = require 'spine'
 
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 
+MarkingSurface = require 'marking-surface'
+AxesTool = require 'marking-surface/lib/tools/axes'
+{ToolControls} = MarkingSurface
+
+
 class Classifier extends Spine.Controller
+  
   template: require '../views/classifier'
 
   events:
     'click .task': 'onDoTask'
     'click .finish': 'onFinishTask'
 
+  elements:
+    '.subject-container': 'subjectContainer'
+
   constructor: ->
     super
-
+    
     @render()
+	
+    @surface ?= new MarkingSurface
+      tool: AxesTool
+      container: @subjectContainer
+      width: 1024
+      height: 560
+      
+    @surface.image.attr src: 'img/0199.jpg'
+    @surface.zoomBy = 2
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -26,7 +45,7 @@ class Classifier extends Spine.Controller
     # user, User.current
 
     if user
-      alert 'hello user!'
+      #alert 'hello user!'
     else
       alert 'you arent a user!'
 
