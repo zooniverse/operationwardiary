@@ -8,6 +8,7 @@ User = require 'zooniverse/models/user'
 MarkingSurface = require 'marking-surface'
 AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = MarkingSurface
+{Tool} = MarkingSurface
 
 
 class Classifier extends Spine.Controller
@@ -33,7 +34,7 @@ class Classifier extends Spine.Controller
       height: 560
       
     @surface.image.attr src: 'img/0199.jpg'
-    @surface.zoomBy = 2
+    @surface.zoom 1.5
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
