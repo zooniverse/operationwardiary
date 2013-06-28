@@ -18,6 +18,8 @@ class Classifier extends Spine.Controller
   events:
     'click .task': 'onDoTask'
     'click .finish': 'onFinishTask'
+    'click .zoom-in': 'onZoomIn'
+    'click .zoom-out': 'onZoomOut'
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -66,5 +68,11 @@ class Classifier extends Spine.Controller
     @classification.send()
 
     Subject.next()
+
+  onZoomIn: =>
+    @surface.zoom @surface.zoomBy + .2
+    
+  onZoomOut: =>
+    @surface.zoom @surface.zoomBy - .2
 
 module.exports = Classifier

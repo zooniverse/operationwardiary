@@ -14,11 +14,9 @@ class TextControls extends ToolControls
     @toggleButton = @el.find 'button[name="toggle"]'
     @categoryButtons = @el.find 'button[name="category"]'
     @categories = @el.find '.category'
-    @speciesButtons = @el.find 'button[name="species"]'
 
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     @el.on 'click', 'button[name="category"]', @onClickCategory
-    @el.on 'click', 'button[name="species"]', @onClickSpecies
 
     @toggleButton.click()
 
@@ -38,24 +36,10 @@ class TextControls extends ToolControls
     @categoryButtons.filter("[value='#{category}']").addClass 'active'
     @categories.filter(".#{category}").addClass 'active'
 
-    @speciesButtons.removeClass 'active'
-
-    @tool.mark.set species: null
-
-  onClickSpecies: ({currentTarget}) =>
-    target = $(currentTarget)
-
     @toggleButton.html target.html()
     @toggleButton.attr title: target.attr 'title'
 
     setTimeout (=> @el.addClass 'closed'), 250
-
-    return if target.hasClass 'active'
-
-    @speciesButtons.removeClass 'active'
-    target.addClass 'active'
-
-    @tool.mark.set species: target.val()
 
 class TextTool extends Tool
   @Controls: TextControls
@@ -85,6 +69,6 @@ class TextTool extends Tool
     for point, i in ['p0']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    @controls.moveTo @mark[point][0] + 20, @mark[point][1] + 20
+    @controls.moveTo @mark[point][0] + 50, @mark[point][1] + 50
     
 module.exports = TextTool

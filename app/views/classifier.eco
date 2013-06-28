@@ -1,4 +1,6 @@
 <p>stay classy</p>
+<button class="zoom-in">+</button>
+<button class="zoom-out">-</button>
 <div class="subject-container"></div>
 <button class="task">Mark Time</button>
 <button class="finish">Next!</button>
