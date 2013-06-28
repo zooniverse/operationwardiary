@@ -6,7 +6,7 @@ Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 
 MarkingSurface = require 'marking-surface'
-AxesTool = require 'marking-surface/lib/tools/axes'
+TextTool = require './text-tool'
 {ToolControls} = MarkingSurface
 {Tool} = MarkingSurface
 
@@ -28,13 +28,13 @@ class Classifier extends Spine.Controller
     @render()
 	
     @surface ?= new MarkingSurface
-      tool: AxesTool
+      tool: TextTool
       container: @subjectContainer
       width: 1024
       height: 560
       
     @surface.image.attr src: 'img/0199.jpg'
-    @surface.zoom 1.5
+    @surface.zoom 1
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
