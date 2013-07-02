@@ -56,7 +56,7 @@ class TextTool extends Tool
   initialize: ->
 
     dotShapes = for i in [0]
-      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: 'red', 'stroke-width': 3
+      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: 'purple', 'stroke-width': 3
 
     @dots = @surface.paper.set dotShapes
 
