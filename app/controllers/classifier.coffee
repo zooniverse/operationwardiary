@@ -26,16 +26,19 @@ class Classifier extends Spine.Controller
     '.subject-container': 'subjectContainer'
     
   helper:
-    selectedCategory: (note) ->
+    selectedCategory: (note) =>
       if note is 'date'
         'checked'
 
   constructor: ->
     super
     
-    @render()
+    @defaults = 
+      category: 'date'
     
-    @category = $('.categories :checked').val()
+    @render()
+
+    @category = @defaults.category
 	
     @surface ?= new MarkingSurface
       tool: TextTool
@@ -45,11 +48,10 @@ class Classifier extends Spine.Controller
       
     @surface.image.attr src: 'img/0199.jpg'
     @surface.zoom 1
+    @surface.category = @defaults.category
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
-    
-    console.log( @category )
 
   render: =>
 
@@ -88,7 +90,7 @@ class Classifier extends Spine.Controller
     
   onCategoryChange: (e) =>
     @category = $(e.target).val()
-    alert @category
+    @surface.category = @category
 
 
 module.exports = Classifier

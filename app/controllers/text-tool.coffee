@@ -1,3 +1,5 @@
+translate = require 't7e'
+
 MarkingSurface = require 'marking-surface'
 {Tool} = MarkingSurface
 AxesTool = require 'marking-surface/lib/tools/axes'
@@ -12,11 +14,9 @@ class TextControls extends ToolControls
 
     @el.append controlsTemplate
     @toggleButton = @el.find 'button[name="toggle"]'
-    @categoryButtons = @el.find 'button[name="category"]'
-    @categories = @el.find '.category'
+    @toggleButton.html translate 'span', "noteTypes.#{@tool.surface.category}"
 
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
-    @el.on 'click', 'button[name="category"]', @onClickCategory
 
     @toggleButton.click()
 
@@ -26,22 +26,13 @@ class TextControls extends ToolControls
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
 
-    category = if target.hasClass 'active'
-      'NO_CATEGORY'
-    else
-      target.val()
-
-    @categories.add(@categoryButtons).removeClass 'active'
-
-    @categoryButtons.filter("[value='#{category}']").addClass 'active'
-    @categories.filter(".#{category}").addClass 'active'
-
     @toggleButton.html target.html()
     @toggleButton.attr title: target.attr 'title'
 
     setTimeout (=> @el.addClass 'closed'), 250
 
 class TextTool extends Tool
+  
   @Controls: TextControls
   
   markDefaults:
@@ -69,6 +60,9 @@ class TextTool extends Tool
     for point, i in ['p0']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    @controls.moveTo @mark[point][0] + 50, @mark[point][1] + 50
+    @controls.moveTo @mark[point][0], @mark[point][1]
+
+  setCategory: (category) ->
+    @category = category
     
 module.exports = TextTool

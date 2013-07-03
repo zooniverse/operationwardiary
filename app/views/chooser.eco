@@ -2,12 +2,3 @@
 <% notes = require '../lib/notes' %>
 
 <button name="toggle"></button>
-
-<div class="categories">
-  <% for note in notes: %>
-    <button name="category" value="<%= note %>">
-      <i class="icon-<%= note %>"></i>
-      <span class="label"><%- translate 'span', "noteTypes.#{note}" %></span>
-    </button>
-  <% end %>
-</div>
