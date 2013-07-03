@@ -20,14 +20,22 @@ class Classifier extends Spine.Controller
     'click .finish': 'onFinishTask'
     'click .zoom-in': 'onZoomIn'
     'click .zoom-out': 'onZoomOut'
+    'change .categories': 'onCategoryChange'
 
   elements:
     '.subject-container': 'subjectContainer'
+    
+  helper:
+    selectedCategory: (note) ->
+      if note is 'date'
+        'checked'
 
   constructor: ->
     super
     
     @render()
+    
+    @category = $('.categories :checked').val()
 	
     @surface ?= new MarkingSurface
       tool: TextTool
@@ -40,9 +48,12 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    
+    console.log( @category )
 
   render: =>
-    @html @template()
+
+    @html @template(@)
 
   onUserChange: (e, user) =>
     # user, User.current
@@ -74,5 +85,10 @@ class Classifier extends Spine.Controller
     
   onZoomOut: =>
     @surface.zoom @surface.zoomBy - .2
+    
+  onCategoryChange: (e) =>
+    @category = $(e.target).val()
+    alert @category
+
 
 module.exports = Classifier
