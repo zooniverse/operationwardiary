@@ -29,12 +29,14 @@ class Classifier extends Spine.Controller
     selectedCategory: (note) =>
       if note is 'date'
         'checked'
+        
+  defaults = 
+    category: 'date'
 
   constructor: ->
     super
     
-    @defaults = 
-      category: 'date'
+    @defaults = defaults
     
     @render()
 
@@ -46,6 +48,7 @@ class Classifier extends Spine.Controller
       width: 1024
       height: 560
       
+    @subjectContainer.css 'position', 'relative'
     @surface.image.attr src: 'img/0199.jpg'
     @surface.zoom 1
     @surface.category = @defaults.category
