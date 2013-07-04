@@ -35,7 +35,7 @@ class TextControls extends ToolControls
     
   onTextChange: ({currentTarget}) =>
     
-    @tool.mark.note = $(currentTarget).val()
+    @tool.updateNote $(currentTarget).val()
 
 class TextTool extends Tool
   
@@ -77,5 +77,8 @@ class TextTool extends Tool
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
     @controls.moveTo @mark[point][0], @mark[point][1]
+    
+  updateNote: ( note ) ->
+    @mark.note = note
     
 module.exports = TextTool
