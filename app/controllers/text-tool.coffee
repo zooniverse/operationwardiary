@@ -15,8 +15,6 @@ class TextControls extends ToolControls
     @el.append controlsTemplate
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text]'
-    @toggleButton.html translate 'span', "noteTypes.#{@tool.surface.category}"
-    @tool.mark.type = @tool.surface.category
 
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
@@ -45,6 +43,7 @@ class TextTool extends Tool
   
   markDefaults:
     p0: [-20, -20]
+    type: 'date'
 
   cursors:
     'dots': 'move'
@@ -60,9 +59,11 @@ class TextTool extends Tool
 
   initialize: ->
 
-    console.log @colours
+    category = $( '.categories :checked' ).val()
+    @mark.type = category
+    @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
     dotShapes = for i in [0]
-      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@surface.category], 'stroke-width': 3
+      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@mark.type], 'stroke-width': 3
 
     @dots = @surface.paper.set dotShapes
 
@@ -76,8 +77,5 @@ class TextTool extends Tool
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
     @controls.moveTo @mark[point][0], @mark[point][1]
-
-  setCategory: (category) ->
-    @category = category
     
 module.exports = TextTool

@@ -20,7 +20,6 @@ class Classifier extends Spine.Controller
     'click .finish': 'onFinishTask'
     'click .zoom-in': 'onZoomIn'
     'click .zoom-out': 'onZoomOut'
-    'change .categories': 'onCategoryChange'
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -51,7 +50,6 @@ class Classifier extends Spine.Controller
     @subjectContainer.css 'position', 'relative'
     @surface.image.attr src: 'img/0199.jpg'
     @surface.zoom 1
-    @surface.category = @defaults.category
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -91,10 +89,6 @@ class Classifier extends Spine.Controller
     
   onZoomOut: =>
     @surface.zoom @surface.zoomBy - .2
-    
-  onCategoryChange: (e) =>
-    @category = $(e.target).val()
-    @surface.category = @category
 
 
 module.exports = Classifier
