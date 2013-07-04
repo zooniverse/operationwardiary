@@ -14,9 +14,13 @@ class TextControls extends ToolControls
 
     @el.append controlsTemplate
     @toggleButton = @el.find 'button[name="toggle"]'
+    @textInput = @el.find 'input[type=text]'
     @toggleButton.html translate 'span', "noteTypes.#{@tool.surface.category}"
+    @tool.mark.type = @tool.surface.category
 
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
+    
+    @el.on 'change', 'input[type=text]', @onTextChange
 
     @toggleButton.click()
 
@@ -30,6 +34,10 @@ class TextControls extends ToolControls
     @toggleButton.attr title: target.attr 'title'
 
     setTimeout (=> @el.addClass 'closed'), 250
+    
+  onTextChange: ({currentTarget}) =>
+    
+    @tool.mark.note = $(currentTarget).val()
 
 class TextTool extends Tool
   
@@ -40,14 +48,21 @@ class TextTool extends Tool
 
   cursors:
     'dots': 'move'
+  
+  colours:
+    'date': 'purple'
+    'person': 'red'
+    'place': 'green'
+    'activity': 'blue'
 
   constructor: ->
     super
 
   initialize: ->
 
+    console.log @colours
     dotShapes = for i in [0]
-      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: 'purple', 'stroke-width': 3
+      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@surface.category], 'stroke-width': 3
 
     @dots = @surface.paper.set dotShapes
 

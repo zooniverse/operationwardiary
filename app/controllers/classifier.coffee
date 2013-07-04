@@ -78,7 +78,8 @@ class Classifier extends Spine.Controller
 
   onDoTask: =>
     @classification.annotate Date.now()
-    console.log @classification
+    @classification.annotate mark for mark in @surface.marks
+    console?.log 'Classifying', JSON.stringify @classification
 
   onFinishTask: =>
     @classification.send()
