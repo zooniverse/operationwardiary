@@ -1,22 +1,26 @@
 <% translate = require 't7e' %>
 <% notes = require '../lib/notes' %>
 
-<div class="subject-container"></div>
-<button class="zoom-in">+</button>
-<button class="zoom-out">-</button>
-<ul class="categories">
-  <% for note in notes: %>
-    <li>
-      <input 
-        type="radio" 
-        name="category" 
-        id="category-<%= note %>" 
-        value="<%= note %>"
-        <%= @helper.selectedCategory(note) %>
-      >
-      <label for="category-<%= note %>"><i class="icon-<%= note %>"></i><%- translate 'span', "noteTypes.#{note}" %></label>
-    </li>
-  <% end %>
-</ul>
+<div class="subject-container">
+  <span class="zoom-controls">
+  <button class="zoom-in">+</button>
+  <button class="zoom-out">-</button>
+  </span>
+  
+  <ul class="categories">
+    <% for note in notes: %>
+      <li class="<%= note %>">
+        <input 
+          type="radio" 
+          name="category" 
+          id="category-<%= note %>" 
+          value="<%= note %>"
+          <%= @helper.selectedCategory(note) %>
+        >
+        <label for="category-<%= note %>"><i class="icon-<%= note %>"></i><%- translate 'span', "noteTypes.#{note}" %></label>
+      </li>
+    <% end %>
+  </ul>
+</div>
 <button class="task">Mark Time</button>
 <button class="finish">Next!</button>

@@ -1,3 +1,41 @@
+.zoom-controls
+  position:absolute
+  top: 5px;
+  left: 5px
+
+ul.categories
+  position: absolute
+  top: 5px
+  right: 5px
+  list-style-type: none
+  
+  li
+    display: inline-block
+    
+    label
+      font-family: 'Helvetica Neu', 'Helvetica', 'Arial', serif
+      background-color: #333
+      color: #fff
+      padding: 3px;
+      opacity: .7
+    
+    &.date label
+      background-color: purple
+    &.place label
+      background-color: green
+    &.person label
+      background-color: red
+    &.activity label
+      background-color: blue
+      
+    
+    input[type=radio]
+      display: none
+      
+      &:checked + label
+        font-weight: bold
+        opacity: 1
+        
 .marking-tool-controls
   button
     background-color: #333
