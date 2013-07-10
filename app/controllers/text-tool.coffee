@@ -19,11 +19,12 @@ class TextControls extends ToolControls
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
     @el.on 'change', 'input[type=text]', @onTextChange
+    
+    @el.on 'blur', 'input[type=text]', @onTextBlur
 
-    @toggleButton.click()
 
   onClickToggle: =>
-    @el.removeClass 'closed'
+    @el.toggleClass 'closed'
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
@@ -36,6 +37,10 @@ class TextControls extends ToolControls
   onTextChange: ({currentTarget}) =>
     
     @tool.updateNote $(currentTarget).val()
+    
+  onTextBlur: ({currentTarget}) =>
+    
+    setTimeout (=> @el.addClass 'closed'), 250
 
 class TextTool extends Tool
   
@@ -62,6 +67,7 @@ class TextTool extends Tool
     category = $( '.categories :checked' ).val()
     @mark.type = category
     @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
+    @controls.el.addClass @mark.type
     dotShapes = for i in [0]
       @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@mark.type], 'stroke-width': 3
 

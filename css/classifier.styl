@@ -1,0 +1,19 @@
+.marking-tool-controls
+  button
+    background-color: #333
+    color: #fff
+    border: 1px solid #000
+    
+  &.date button
+    background-color: purple
+  &.place button
+    background-color: green
+  &.person button
+    background-color: red
+  &.activity button
+    background-color: blue
+    
+.marking-tool-controls.closed
+  input
+  button[name=delete-mark]
+    display:none
