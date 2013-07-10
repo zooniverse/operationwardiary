@@ -22,6 +22,8 @@ class TextControls extends ToolControls
     
     @el.on 'blur', 'input[type=text]', @onTextBlur
 
+    console.log @textInput
+    setTimeout (=> @textInput.focus()), 250
 
   onClickToggle: =>
     @el.toggleClass 'closed'
