@@ -78,6 +78,19 @@ class TextTool extends Tool
     {x, y} = @mouseOffset e
     points = ['p0']
     @mark.set point, [x, y] for point in points
+    
+  onFirstDrag: (e) ->
+    {x, y} = @mouseOffset e
+    points = ['p0']
+    @mark.set point, [x, y] for point in points
+    
+  isComplete: ->
+    @clicks is 1
+
+  'on drag dots': (e, shape) ->
+    index = $.inArray shape, @dots
+    {x, y} = @mouseOffset e
+    @mark.set "p#{index}", [x, y]
 
   render: ->
     for point, i in ['p0']
