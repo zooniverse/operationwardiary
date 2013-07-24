@@ -42,6 +42,7 @@ class Classifier extends Spine.Controller
     @render()
 
     @category = @defaults.category
+    @subject_id = 194
 	
     @surface ?= new MarkingSurface
       tool: TextTool
@@ -50,7 +51,7 @@ class Classifier extends Spine.Controller
       height: 560
       
     @subjectContainer.css 'position', 'relative'
-    @surface.image.attr src: 'img/0199.jpg'
+    @surface.image.attr src: "img/0#{@subject_id}.jpg"
     @surface.zoom 1
 
     User.on 'change', @onUserChange
@@ -85,7 +86,10 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     @classification.send()
 
-    Subject.next()
+    @subject_id++
+    @surface.image.attr src: "img/0#{@subject_id}.jpg"
+    @surface.zoom 1
+    # Subject.next()
 
   onZoomIn: =>
     @surface.zoom @surface.zoomBy + .2
