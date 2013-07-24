@@ -15,6 +15,10 @@ api = new Api project: 'worms'
 app = {}
 app.container = '#app'
 
+Navigation = require './controllers/navigation'
+navigation = new Navigation
+navigation.el.prependTo 'body'
+
 app.topBar = new TopBar
 app.topBar.el.prependTo 'body'
 

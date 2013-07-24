@@ -1,0 +1,12 @@
+<% translate = require 't7e' %>
+
+<div class="links">
+  <h1><a href="#/"><%- translate 'span', 'navigation.projectName' %></a></h1>
+  <a href="#/"><%- translate 'span', 'navigation.home' %></a>
+  <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
+  <a href="#/profile"><%- translate 'span', 'navigation.profile' %></a>
+  <a href="#/education"><%- translate 'span', 'navigation.education' %></a>
+  <a href="#/team"><%- translate 'span', 'navigation.team' %></a>
+  <a href="#"><%- translate 'span', 'navigation.talk' %></a>
+  <a href="#"><%- translate 'span', 'navigation.blog' %></a>
+</div>

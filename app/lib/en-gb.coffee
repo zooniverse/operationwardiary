@@ -10,7 +10,6 @@ module.exports =
   navigation:
     projectName: PROJECT_NAME
     home: 'Home'
-    science: 'Science'
     classify: 'Classify'
     profile: 'Profile'
     education: 'Education'
