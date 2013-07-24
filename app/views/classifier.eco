@@ -1,5 +1,21 @@
 <% translate = require 't7e' %>
-<% notes = require '../lib/notes' %>
+<% labels = require '../lib/notes' %>
+<% console.log labels %>
+
+<ul class="documents">
+  <% for document in labels.documents: %>
+    <li class="<%= document %>">
+      <input 
+        type="radio" 
+        name="type" 
+        id="document-<%= document %>" 
+        value="<%= document %>"
+        <%= @helper.selectedDocument(document) %>
+      >
+      <label for="document-<%= document %>"><i class="icon-<%= document %>"></i><%- translate 'span', "documents.#{document}" %></label>
+    </li>
+  <% end %>
+</ul>
 
 <div class="subject-container">
   <span class="zoom-controls">
@@ -8,7 +24,7 @@
   </span>
   
   <ul class="categories">
-    <% for note in notes: %>
+    <% for note in labels.notes: %>
       <li class="<%= note %>">
         <input 
           type="radio" 

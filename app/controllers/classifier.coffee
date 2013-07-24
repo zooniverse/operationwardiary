@@ -28,6 +28,8 @@ class Classifier extends Spine.Controller
     selectedCategory: (note) =>
       if note is 'date'
         'checked'
+    selectedDocument: (document) =>
+      return
         
   defaults = 
     category: 'date'

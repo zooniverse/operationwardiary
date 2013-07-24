@@ -1,8 +1,18 @@
-notes = [
-  'date'
-  'place'
-  'person'
-  'activity'
-]
+labels = 
+  notes: [
+    'date'
+    'place'
+    'person'
+    'activity'
+  ]
 
-module.exports = notes
+  documents: [
+    'blank'
+    'cover'
+    'diary'
+    'map'
+    'report'
+    'other'
+  ]
+
+module.exports = labels
