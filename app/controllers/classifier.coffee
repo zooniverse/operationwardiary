@@ -77,7 +77,8 @@ class Classifier extends Spine.Controller
     console.log @classification
 
   onDoTask: =>
-    @classification.annotate Date.now()
+    document = $( '.documents :checked' ).val()
+    @classification.annotate document
     @classification.annotate mark for mark in @surface.marks
     console?.log 'Classifying', JSON.stringify @classification
 
