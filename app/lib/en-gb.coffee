@@ -1,6 +1,15 @@
 PROJECT_NAME = 'Team War Diaries'
 
 module.exports =
+
+  documents:
+    cover: 'Cover page'
+    blank: 'Blank page'
+    diary: 'Diary page'
+    map: 'Map'
+    report: 'Written report'
+    other: 'Other'
+
   noteTypes:
     date: 'Date'
     person: 'Person'
