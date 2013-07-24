@@ -2,20 +2,28 @@
 <% labels = require '../lib/notes' %>
 <% console.log labels %>
 
-<ul class="documents">
-  <% for document in labels.documents: %>
-    <li class="<%= document %>">
-      <input 
-        type="radio" 
-        name="type" 
-        id="document-<%= document %>" 
-        value="<%= document %>"
-        <%= @helper.selectedDocument(document) %>
-      >
-      <label for="document-<%= document %>"><i class="icon-<%= document %>"></i><%- translate 'span', "documents.#{document}" %></label>
-    </li>
-  <% end %>
-</ul>
+<div style="position: relative; width: 100%;">
+  <ul class="documents">
+    <% for document in labels.documents: %>
+      <li class="<%= document %>">
+        <input 
+          type="radio" 
+          name="type" 
+          id="document-<%= document %>" 
+          value="<%= document %>"
+          <%= @helper.selectedDocument(document) %>
+        >
+        <label for="document-<%= document %>"><i class="icon-<%= document %>"></i><%- translate 'span', "documents.#{document}" %></label>
+      </li>
+    <% end %>
+  </ul>
+
+  <span style="position: absolute; right: 5px; top: 5px;">
+    <button class="task">Classify</button>
+    <button class="finish">Next!</button>
+  </span>
+</div>
+
 
 <div class="subject-container">
   <span class="zoom-controls">
@@ -38,5 +46,3 @@
     <% end %>
   </ul>
 </div>
-<button class="task">Mark Time</button>
-<button class="finish">Next!</button>
