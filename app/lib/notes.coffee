@@ -14,5 +14,17 @@ labels =
     'report'
     'other'
   ]
+  
+  activities: [
+    'trench'
+    'repair'
+    'transport'
+    'march'
+    'training'
+    'fire'
+    'advance'
+    'raid'
+  ]
+    
 
 module.exports = labels

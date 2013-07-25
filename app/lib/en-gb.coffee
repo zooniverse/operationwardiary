@@ -15,6 +15,16 @@ module.exports =
     person: 'Person'
     place: 'Place'
     activity: 'Activity'
+    
+  activities:
+    trench: 'Entrenching'
+    repair: 'Repairing trenches'
+    transport: 'Being transported'
+    march: 'Marching'
+    training: 'Training'
+    fire: 'Under fire '
+    advance: 'Attempting an advance'
+    raid: 'Raiding'
 
   navigation:
     projectName: PROJECT_NAME

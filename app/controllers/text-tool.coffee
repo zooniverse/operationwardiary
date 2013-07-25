@@ -26,6 +26,8 @@ class TextControls extends ToolControls
     
     @el.on 'change', 'input[type=text]', @onTextChange
     
+    @el.on 'change', 'select', @onTextChange
+    
     @el.on 'blur', 'input[type=text]', @onTextBlur
 
     setTimeout (=> @textInput.focus()), 250

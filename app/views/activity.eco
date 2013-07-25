@@ -1,5 +1,9 @@
 <% translate = require 't7e' %>
+<% labels = require '../lib/notes' %>
 
 <button name="toggle"></button>
-<input type="text"/>
-activity widget
+<select>
+  <% for activity in labels.activities: %>
+    <option value="<%= activity %>"><%- translate 'span', "activities.#{activity}" %></option>
+  <% end %>
+</select>
