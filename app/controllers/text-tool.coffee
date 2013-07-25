@@ -20,7 +20,7 @@ class TextControls extends ToolControls
     category = $( '.categories :checked' ).val()
     @el.append controlsTemplates[category]
     @toggleButton = @el.find 'button[name="toggle"]'
-    @textInput = @el.find 'input[type=text]'
+    @textInput = @el.find 'input[type=text], select'
 
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
