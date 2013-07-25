@@ -1,5 +1,7 @@
 <% translate = require 't7e' %>
 
 <button name="toggle"></button>
-<input type="text"/>
-date widget
+<div class="annotation">
+  <input type="text"/>
+  date widget
+</div>
