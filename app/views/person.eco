@@ -1,0 +1,5 @@
+<% translate = require 't7e' %>
+
+<button name="toggle"></button>
+<input type="text"/>
+person widget

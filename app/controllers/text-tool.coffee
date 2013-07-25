@@ -4,7 +4,12 @@ MarkingSurface = require 'marking-surface'
 {Tool} = MarkingSurface
 AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = MarkingSurface
-controlsTemplate = require '../views/chooser'
+
+controlsTemplates = 
+  date: require '../views/date'
+  person: require '../views/person'
+  place: require '../views/place'
+  activity: require '../views/activity'
 
 dotRadius = if 'Touch' of window then 10 else 5
 
@@ -12,7 +17,8 @@ class TextControls extends ToolControls
   constructor: ->
     super
 
-    @el.append controlsTemplate
+    category = $( '.categories :checked' ).val()
+    @el.append controlsTemplates[category]
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text]'
 
@@ -91,7 +97,7 @@ class TextTool extends Tool
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x, y]
-
+    
   render: ->
     for point, i in ['p0']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
