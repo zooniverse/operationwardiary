@@ -4,6 +4,7 @@ labels =
     'place'
     'person'
     'activity'
+    'quarters'
   ]
 
   documents: [
@@ -24,6 +25,14 @@ labels =
     'fire'
     'advance'
     'raid'
+  ]
+  
+  quarters: [
+    'billets'
+    'bivouac'
+    'trenches'
+    'firing'
+    'communication'
   ]
     
 

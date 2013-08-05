@@ -10,6 +10,7 @@ controlsTemplates =
   person: require '../views/tools/person'
   place: require '../views/tools/place'
   activity: require '../views/tools/activity'
+  quarters: require '../views/tools/quarters'
 
 dotRadius = if 'Touch' of window then 10 else 5
 
