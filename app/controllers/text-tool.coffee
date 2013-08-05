@@ -6,10 +6,10 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = MarkingSurface
 
 controlsTemplates = 
-  date: require '../views/date'
-  person: require '../views/person'
-  place: require '../views/place'
-  activity: require '../views/activity'
+  date: require '../views/tools/date'
+  person: require '../views/tools/person'
+  place: require '../views/tools/place'
+  activity: require '../views/tools/activity'
 
 dotRadius = if 'Touch' of window then 10 else 5
 
