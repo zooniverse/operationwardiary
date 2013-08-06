@@ -22,7 +22,6 @@ class Classifier extends Spine.Controller
     'click .zoom-out': 'onZoomOut'
     'click .categories': ->
       @surface.markingMode = true
-      console.log @surface.markingMode
 
   elements:
     '.subject-container': 'subjectContainer'
