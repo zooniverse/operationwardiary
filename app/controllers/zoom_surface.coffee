@@ -56,6 +56,8 @@ class ZoomableSurface extends MarkingSurface
   
   onRelease: (e) ->
     e.preventDefault()
+    @oldX = null
+    @oldY = null
     @selection?.onInitialRelease e
     
   createTool: ->
