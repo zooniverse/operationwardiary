@@ -32,10 +32,12 @@ class ZoomableSurface extends MarkingSurface
 
     onDrag = => @onDrag arguments...
     
-    @container.on 'mousemove touchmove', onDrag
-    @container.one 'mouseup touchend', =>
+    doc = $(document)
+    
+    doc.on 'mousemove touchmove', onDrag
+    doc.one 'mouseup touchend', =>
       @onRelease arguments...
-      @container.off 'mousemove touchmove', onDrag
+      doc.off 'mousemove touchmove', onDrag
   
   onMouseMove: ->
     return
