@@ -86,7 +86,7 @@ class TextTool extends Tool
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
     points = ['p0']
-    @mark.set point, [x, y] for point in points
+    @mark.set point, [x/@surface.zoomBy, y/@surface.zoomBy] for point in points
     
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
