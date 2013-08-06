@@ -96,6 +96,7 @@ class Classifier extends Spine.Controller
 
   onZoomIn: =>
     @surface.markingMode = false
+    @surface.selection = null
     $('.categories :checked')
       .removeAttr('checked')
       .prop('checked', false)
@@ -103,6 +104,7 @@ class Classifier extends Spine.Controller
     
   onZoomOut: =>
     @surface.markingMode = false
+    @surface.selection = null
     $('.categories :checked')
       .removeAttr('checked')
       .prop('checked', false)
