@@ -86,12 +86,14 @@ class TextTool extends Tool
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
     points = ['p0']
-    @mark.set point, [x/@surface.zoomBy, y/@surface.zoomBy] for point in points
+    @mark.set point, [x,y] for point in points
+    @render()
     
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
     points = ['p0']
-    @mark.set point, [x/@surface.zoomBy, y/@surface.zoomBy] for point in points
+    @mark.set point, [x,y]for point in points
+    @render()
     
   isComplete: ->
     @clicks is 1
@@ -99,7 +101,7 @@ class TextTool extends Tool
   'on drag dots': (e, shape) ->
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
-    @mark.set "p#{index}", [x/@surface.zoomBy, y/@surface.zoomBy]
+    @mark.set "p#{index}", [x,y]
     @render()
     
   'on click': ->
@@ -113,5 +115,9 @@ class TextTool extends Tool
     
   updateNote: ( note ) ->
     @mark.note = note
+    
+  mouseOffset: (e) ->
+    {x,y} = super
+    x: (x / @surface.zoomBy) + @surface.panX, y: (y / @surface.zoomBy) + @surface.panY
     
 module.exports = TextTool
