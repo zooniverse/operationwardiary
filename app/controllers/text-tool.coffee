@@ -100,7 +100,7 @@ class TextTool extends Tool
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x/@surface.zoomBy, y/@surface.zoomBy]
-    @controls.moveTo x, y
+    @controls.moveTo (x  - @surface.panX), (y  - @surface.panY)
     
   'on click': ->
     console.log 'woo'
