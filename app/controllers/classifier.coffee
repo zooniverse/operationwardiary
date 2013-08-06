@@ -28,8 +28,7 @@ class Classifier extends Spine.Controller
     
   helper:
     selectedCategory: (note) =>
-      if note is 'date'
-        'checked'
+      return
     selectedDocument: (document) =>
       return
         
@@ -97,10 +96,16 @@ class Classifier extends Spine.Controller
 
   onZoomIn: =>
     @surface.markingMode = false
+    $('.categories :checked')
+      .removeAttr('checked')
+      .prop('checked', false)
     @surface.zoom @surface.zoomBy + .2
     
   onZoomOut: =>
     @surface.markingMode = false
+    $('.categories :checked')
+      .removeAttr('checked')
+      .prop('checked', false)
     @surface.zoom @surface.zoomBy - .2
 
 
