@@ -43,7 +43,7 @@ class ZoomableSurface extends MarkingSurface
     return
     
   onDrag: (e) ->
-    return if @zoomBy is 1
+    return if @markingMode or @zoomBy is 1
     {x, y} = @mouseOffset e
     
     if @oldX
