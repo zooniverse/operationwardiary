@@ -1,9 +1,9 @@
 translate = require 't7e'
 
-MarkingSurface = require 'marking-surface'
-{Tool} = MarkingSurface
+ZoomableSurface = require './zoom_surface'
+{Tool} = ZoomableSurface
 AxesTool = require 'marking-surface/lib/tools/axes'
-{ToolControls} = MarkingSurface
+{ToolControls} = ZoomableSurface
 
 controlsTemplates = 
   date: require '../views/tools/date'
@@ -15,9 +15,9 @@ controlsTemplates =
 dotRadius = if 'Touch' of window then 10 else 5
 
 class TextControls extends ToolControls
-  constructor: ->
+  constructor: (params = {})->
     super
-
+    
     category = $( '.categories :checked' ).val()
     @el.append controlsTemplates[category]
     @toggleButton = @el.find 'button[name="toggle"]'
@@ -69,11 +69,11 @@ class TextTool extends Tool
     'place': 'green'
     'activity': 'blue'
 
-  constructor: ->
+  constructor: (params = {}) ->
     super
 
   initialize: ->
-
+    
     category = $( '.categories :checked' ).val()
     @mark.type = category
     @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
@@ -100,6 +100,9 @@ class TextTool extends Tool
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x, y]
+    
+  'on click': ->
+    console.log 'woo'
     
   render: ->
     for point, i in ['p0']

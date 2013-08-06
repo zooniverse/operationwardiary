@@ -5,10 +5,10 @@ Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 
-MarkingSurface = require 'marking-surface'
+ZoomableSurface = require './zoom_surface'
 TextTool = require './text-tool'
-{ToolControls} = MarkingSurface
-{Tool} = MarkingSurface
+{ToolControls} = ZoomableSurface
+{Tool} = ZoomableSurface
 
 
 class Classifier extends Spine.Controller
@@ -20,6 +20,9 @@ class Classifier extends Spine.Controller
     'click .finish': 'onFinishTask'
     'click .zoom-in': 'onZoomIn'
     'click .zoom-out': 'onZoomOut'
+    'click .categories': ->
+      @surface.markingMode = true
+      console.log @surface.markingMode
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -44,7 +47,7 @@ class Classifier extends Spine.Controller
     @category = @defaults.category
     @subject_id = 194
 	
-    @surface ?= new MarkingSurface
+    @surface ?= new ZoomableSurface
       tool: TextTool
       container: @subjectContainer
       width: 1024
@@ -94,9 +97,11 @@ class Classifier extends Spine.Controller
     # Subject.next()
 
   onZoomIn: =>
+    @surface.markingMode = false
     @surface.zoom @surface.zoomBy + .2
     
   onZoomOut: =>
+    @surface.markingMode = false
     @surface.zoom @surface.zoomBy - .2
 
 
