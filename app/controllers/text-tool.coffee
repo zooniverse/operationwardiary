@@ -109,7 +109,7 @@ class TextTool extends Tool
     for point, i in ['p0']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    @controls.moveTo @mark[point][0] * @surface.zoomBy, @mark[point][1] * @surface.zoomBy
+    @controls.moveTo (@mark[point][0]  - @surface.panX) * @surface.zoomBy, (@mark[point][1]  - @surface.panY) * @surface.zoomBy
     
   updateNote: ( note ) ->
     @mark.note = note
