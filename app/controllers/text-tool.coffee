@@ -91,7 +91,7 @@ class TextTool extends Tool
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
     points = ['p0']
-    @mark.set point, [x, y] for point in points
+    @mark.set point, [x/@surface.zoomBy, y/@surface.zoomBy] for point in points
     
   isComplete: ->
     @clicks is 1
@@ -99,7 +99,7 @@ class TextTool extends Tool
   'on drag dots': (e, shape) ->
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
-    @mark.set "p#{index}", [x, y]
+    @mark.set "p#{index}", [x/@surface.zoomBy, y/@surface.zoomBy]
     
   'on click': ->
     console.log 'woo'
