@@ -7,6 +7,14 @@ class ZoomableSurface extends MarkingSurface
     
     @markingMode = false
     
+  pan: (@panX = @panX, @panY = @panY) ->
+    @panX = Math.min @panX, @width, @width - (@width / @zoomBy)
+    @panY = Math.min @panY, @height, @height - (@height / @zoomBy)
+
+    @paper.setViewBox @panX, @panY, @width / @zoomBy, @height / @zoomBy
+
+    tool.render() for tool in @tools
+    
   onMouseDown: (e) ->
     return if @disabled
     return unless e.target in [@container.get(0), @paper.canvas, @image.node]
@@ -35,9 +43,14 @@ class ZoomableSurface extends MarkingSurface
   onDrag: (e) ->
     return if @zoomBy is 1
     {x, y} = @mouseOffset e
-    @panX = (@width - (@width / @zoomBy)) * (x / @width)
-    @panY = (@height - (@height / @zoomBy)) * (y / @height)
-    @pan()
+    
+    if @oldX
+      @panX = @panX + @oldX - x
+      @panY = @panY + @oldY - y
+      @pan()
+    
+    @oldX = x
+    @oldY = y
   
   onRelease: (e) ->
     e.preventDefault()
