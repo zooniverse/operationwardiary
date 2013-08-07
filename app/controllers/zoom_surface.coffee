@@ -7,9 +7,15 @@ class ZoomableSurface extends MarkingSurface
     
     @markingMode = false
     
+  zoom: (@zoomBy = 1) ->
+    @zoomBy = Math.max @zoomBy, 1
+    @pan()
+    
   pan: (@panX = @panX, @panY = @panY) ->
     @panX = Math.min @panX, @width, @width - (@width / @zoomBy)
     @panY = Math.min @panY, @height, @height - (@height / @zoomBy)
+    @panX = Math.max @panX, 0
+    @panY = Math.max @panY, 0
 
     @paper.setViewBox @panX, @panY, @width / @zoomBy, @height / @zoomBy
 
