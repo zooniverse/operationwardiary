@@ -24,6 +24,9 @@ class ZoomableSurface extends MarkingSurface
     top = Math.min top, @height, @height - (@height / @zoomBy)
     left = Math.max left, 0
     top = Math.max top, 0
+    
+    @panX = left + @width / (2 * @zoomBy)
+    @panY = top + @height / (2 * @zoomBy)
 
     @paper.setViewBox left, top, @width / @zoomBy, @height / @zoomBy
 
