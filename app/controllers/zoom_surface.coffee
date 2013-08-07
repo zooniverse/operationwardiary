@@ -4,20 +4,28 @@ class ZoomableSurface extends MarkingSurface
   
   constructor: (params = {}) ->
     super
+    @panX = @width / 2
+    @panY = @height / 2
     
     @markingMode = false
     
   zoom: (@zoomBy = 1) ->
     @zoomBy = Math.max @zoomBy, 1
+    
+    
     @pan()
     
   pan: (@panX = @panX, @panY = @panY) ->
-    @panX = Math.min @panX, @width, @width - (@width / @zoomBy)
-    @panY = Math.min @panY, @height, @height - (@height / @zoomBy)
-    @panX = Math.max @panX, 0
-    @panY = Math.max @panY, 0
+    
+    left = @panX - @width / (2 * @zoomBy)
+    top = @panY - @height / (2 * @zoomBy)
+    
+    left = Math.min left, @width, @width - (@width / @zoomBy)
+    top = Math.min top, @height, @height - (@height / @zoomBy)
+    left = Math.max left, 0
+    top = Math.max top, 0
 
-    @paper.setViewBox @panX, @panY, @width / @zoomBy, @height / @zoomBy
+    @paper.setViewBox left, top, @width / @zoomBy, @height / @zoomBy
 
     tool.render() for tool in @tools
     
