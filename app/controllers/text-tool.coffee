@@ -111,13 +111,15 @@ class TextTool extends Tool
     for point, i in ['p0']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    @controls.moveTo (@mark[point][0]  - @surface.panX) * @surface.zoomBy, (@mark[point][1]  - @surface.panY) * @surface.zoomBy
+    {left, top} = @surface.getOffset()
+    @controls.moveTo (@mark[point][0]  - left) * @surface.zoomBy, (@mark[point][1]  - top) * @surface.zoomBy
     
   updateNote: ( note ) ->
     @mark.note = note
     
   mouseOffset: (e) ->
     {x,y} = super
-    x: (x / @surface.zoomBy) + @surface.panX, y: (y / @surface.zoomBy) + @surface.panY
+    {left, top} = @surface.getOffset()
+    x: (x / @surface.zoomBy) + left, y: (y / @surface.zoomBy) + top
     
 module.exports = TextTool

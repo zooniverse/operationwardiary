@@ -17,8 +17,7 @@ class ZoomableSurface extends MarkingSurface
     
   pan: (@panX = @panX, @panY = @panY) ->
     
-    left = @panX - @width / (2 * @zoomBy)
-    top = @panY - @height / (2 * @zoomBy)
+    {left, top} = @getOffset()
     
     left = Math.min left, @width, @width - (@width / @zoomBy)
     top = Math.min top, @height, @height - (@height / @zoomBy)
@@ -115,5 +114,10 @@ class ZoomableSurface extends MarkingSurface
       tool = @selection
       
     return tool
+    
+  getOffset: ->
+    left = @panX - @width / (2 * @zoomBy)
+    top = @panY - @height / (2 * @zoomBy)
+    left: left, top: top
     
 module.exports = ZoomableSurface
