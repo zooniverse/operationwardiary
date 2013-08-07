@@ -19,6 +19,7 @@
   </ul>
 
   <span style="position: absolute; right: 5px; top: 5px;">
+    <button class="back">Back</button>
     <button class="task">Classify</button>
     <button class="finish">Next!</button>
   </span>

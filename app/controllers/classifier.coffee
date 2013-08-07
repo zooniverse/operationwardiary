@@ -18,6 +18,7 @@ class Classifier extends Spine.Controller
   events:
     'click .task': 'onDoTask'
     'click .finish': 'onFinishTask'
+    'click .back': 'onGoBack'
     'click .zoom-in': 'onZoomIn'
     'click .zoom-out': 'onZoomOut'
     'click .categories': ->
@@ -109,6 +110,11 @@ class Classifier extends Spine.Controller
       .removeAttr('checked')
       .prop('checked', false)
     @surface.zoom @surface.zoomBy - .2
+    
+  onGoBack: ->
+    @subject_id--
+    @surface.image.attr src: "img/0#{@subject_id}.jpg"
+    @surface.zoom 1
 
 
 module.exports = Classifier
