@@ -119,8 +119,7 @@ class Classifier extends Spine.Controller
     
   onGoBack: ->
     @subject_id--
-    @surface.image.attr src: "img/0#{@subject_id}.jpg"
-    @surface.zoom 1
+    @loadImage "img/0#{@subject_id}.jpg"
 
 
 module.exports = Classifier
