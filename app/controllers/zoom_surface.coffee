@@ -4,8 +4,8 @@ class ZoomableSurface extends MarkingSurface
   
   constructor: (params = {}) ->
     super
-    @panX = @width / 2
-    @panY = @height / 2
+    @panX = @width / (2 * @zoomBy)
+    @panY = @height / (2 * @zoomBy)
     
     @markingMode = false
     
