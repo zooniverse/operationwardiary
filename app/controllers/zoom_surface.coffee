@@ -31,6 +31,13 @@ class ZoomableSurface extends MarkingSurface
 
     tool.render() for tool in @tools
     
+  loadImage: (src) ->
+    new_image = new Image()
+    new_image.src = src
+    new_image.onload = =>
+      @image.attr src: src
+      @zoom 1
+    
   onMouseDown: (e) ->
     return if @disabled
     return unless e.target in [@container.get(0), @paper.canvas, @image.node]
