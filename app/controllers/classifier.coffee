@@ -53,13 +53,20 @@ class Classifier extends Spine.Controller
       height: 560
       
     @subjectContainer.css 'position', 'relative'
-    @surface.image.attr src: "img/0#{@subject_id}.jpg"
+    @loadImage "img/0#{@subject_id}.jpg"
     # HACK: turn off image scaling/resizing in SVG.
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
-    @surface.zoom 1
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    
+  loadImage: (src) ->
+    new_image = new Image()
+    new_image.src = src
+    new_image.onload = =>
+      @surface.image.attr src: src
+      @surface.zoom 1
+    
 
   render: =>
 
@@ -91,8 +98,7 @@ class Classifier extends Spine.Controller
     @classification.send()
 
     @subject_id++
-    @surface.image.attr src: "img/0#{@subject_id}.jpg"
-    @surface.zoom 1
+    @loadImage "img/0#{@subject_id}.jpg"
     # Subject.next()
 
   onZoomIn: =>
