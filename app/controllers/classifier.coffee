@@ -82,11 +82,10 @@ class Classifier extends Spine.Controller
     $( "#document-#{surface.document}")
       .attr('checked', 'checked')
       .prop('checked', true)
-      
-    @surface.tools = surface.tools
-    @surface.marks = surface.marks
     
-    for tool in @surface.tools
+    for tool in surface.tools
+      @surface.tools.push tool
+      @surface.marks.push tool.mark
       tool.draw()
       tool.controls.el.appendTo tool.surface.container
       tool.controls.bind_events()
@@ -119,8 +118,6 @@ class Classifier extends Spine.Controller
     # @classification.send()
       
     @update_history()
-    
-    console.log @surface_history[ @subject_id ].tools
 
     @subject_id++
     @surface.loadImage "img/0#{@subject_id}.jpg"
@@ -163,6 +160,8 @@ class Classifier extends Spine.Controller
       document: $( '.documents :checked' ).val()
       tools: tools
       marks: marks
+      
+    console.log tools
     
 
 
