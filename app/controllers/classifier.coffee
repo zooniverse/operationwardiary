@@ -40,6 +40,7 @@ class Classifier extends Spine.Controller
     super
     
     @defaults = defaults
+    @surface_history = {}
     
     @render()
 
@@ -64,6 +65,28 @@ class Classifier extends Spine.Controller
   render: =>
 
     @html @template(@)
+  
+  render_annotation: ( surface ) ->
+    for tool in @surface.tools
+      tool.controls.destroy()
+      tool.mark.destroy()
+      tool.shapeSet.remove()
+      
+    return unless surface
+    console.log surface
+    
+    $( "#document-#{surface.document}")
+      .attr('checked', 'checked')
+      .prop('checked', true)
+      
+    @surface.tools = surface.tools
+    @surface.marks = surface.marks
+    
+    for tool in @surface.tools
+      tool.draw()
+      tool.controls.el.appendTo tool.surface.container
+      tool.controls.bind_events()
+      tool.render()
 
   onUserChange: (e, user) =>
     # user, User.current
@@ -80,19 +103,29 @@ class Classifier extends Spine.Controller
 
     @classification = new Classification { subject }
     console.log @classification
-
+    console.log @surface_history
+    
   onDoTask: =>
     document = $( '.documents :checked' ).val()
-    @classification.annotate document
-    @classification.annotate mark for mark in @surface.marks
+    annotation = 
+      document: document
+      marks: @surface.marks.slice(0)
+    @classification.annotate annotation
     console?.log 'Classifying', JSON.stringify @classification
 
   onFinishTask: =>
-    @classification.send()
+    # @classification.send()
+      
+    @surface_history[ @subject_id ] =
+      document: $( '.documents :checked' ).val()
+      tools: @surface.tools.slice(0)
+      marks: @surface.marks.slice(0)
+    
 
     @subject_id++
     @surface.loadImage "img/0#{@subject_id}.jpg"
-    # Subject.next()
+    @classification.subject.trigger 'select'
+    @render_annotation @surface_history[ @subject_id ]
 
   onZoomIn: =>
     @surface.markingMode = false
@@ -111,8 +144,16 @@ class Classifier extends Spine.Controller
     @surface.zoom @surface.zoomBy - .2
     
   onGoBack: ->
+    @surface_history[ @subject_id ] =
+      document: $( '.documents :checked' ).val()
+      tools: @surface.tools.slice(0)
+      marks: @surface.marks.slice(0)
     @subject_id--
     @surface.loadImage "img/0#{@subject_id}.jpg"
+    
+    console?.log 'Classifying', JSON.stringify @classification
+    @render_annotation @surface_history[ @subject_id ]
+    
 
 
 module.exports = Classifier

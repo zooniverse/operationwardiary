@@ -23,6 +23,11 @@ class TextControls extends ToolControls
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
 
+    @bind_events()
+
+    setTimeout (=> @textInput.focus()), 250
+
+  bind_events: ->
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
     @el.on 'change', 'input[type=text]', @onTextChange
@@ -30,9 +35,7 @@ class TextControls extends ToolControls
     @el.on 'change', 'select', @onTextChange
     
     @el.on 'blur', 'input[type=text], select', @onTextBlur
-
-    setTimeout (=> @textInput.focus()), 250
-
+    
   onClickToggle: =>
     @el.toggleClass 'closed'
 
@@ -78,9 +81,10 @@ class TextTool extends Tool
     @mark.type = category
     @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
     @controls.el.addClass @mark.type
-    dotShapes = for i in [0]
-      @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@mark.type], 'stroke-width': 3
-
+    @draw()
+    
+  draw: ->
+    dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@mark.type], 'stroke-width': 3
     @dots = @surface.paper.set dotShapes
 
   onFirstClick: (e) ->
