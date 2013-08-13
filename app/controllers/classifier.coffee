@@ -67,13 +67,20 @@ class Classifier extends Spine.Controller
     @html @template(@)
   
   render_annotation: ( surface ) ->
+    
+    $('.categories :checked, .documents :checked')
+      .removeAttr('checked')
+      .prop('checked', false)
+    
     for tool in @surface.tools
-      tool.controls.destroy()
-      tool.mark.destroy()
+      tool.controls.el.remove()
       tool.shapeSet.remove()
+    
+    @surface.tools  = []
+    @surface.marks = []
       
     return unless surface
-    console.log surface
+    console.log surface.tools
     
     $( "#document-#{surface.document}")
       .attr('checked', 'checked')
@@ -102,8 +109,6 @@ class Classifier extends Spine.Controller
     # Subject.current
 
     @classification = new Classification { subject }
-    console.log @classification
-    console.log @surface_history
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
@@ -151,7 +156,6 @@ class Classifier extends Spine.Controller
     @subject_id--
     @surface.loadImage "img/0#{@subject_id}.jpg"
     
-    console?.log 'Classifying', JSON.stringify @classification
     @render_annotation @surface_history[ @subject_id ]
     
 
