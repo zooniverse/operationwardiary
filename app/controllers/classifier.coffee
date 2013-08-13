@@ -118,10 +118,7 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     # @classification.send()
       
-    @surface_history[ @subject_id ] =
-      document: $( '.documents :checked' ).val()
-      tools: @surface.tools.slice(0)
-      marks: @surface.marks.slice(0)
+    @update_history()
     
     console.log @surface_history[ @subject_id ].tools
 
@@ -147,15 +144,25 @@ class Classifier extends Spine.Controller
     @surface.zoom @surface.zoomBy - .2
     
   onGoBack: ->
-    @surface_history[ @subject_id ] =
-      document: $( '.documents :checked' ).val()
-      tools: @surface.tools.slice(0)
-      marks: @surface.marks.slice(0)
+    @update_history()
     @subject_id--
     @surface.loadImage "img/0#{@subject_id}.jpg"
     @classification.subject.trigger 'select'
     
     @render_annotation @surface_history[ @subject_id ]
+  
+  update_history: ->
+    tools = []
+    marks = []
+    
+    for tool in @surface.tools
+      tools.push tool
+      marks.push tool.mark
+    
+    @surface_history[ @subject_id ] =
+      document: $( '.documents :checked' ).val()
+      tools: tools
+      marks: marks
     
 
 
