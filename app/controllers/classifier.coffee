@@ -74,9 +74,7 @@ class Classifier extends Spine.Controller
     
     tool.controls.el.remove() for tool in @surface.tools
   
-    @surface.tools  = []
-    @surface.marks = []
-    @surface.selection = null
+    @surface.resetTools()
       
     return unless surface
     

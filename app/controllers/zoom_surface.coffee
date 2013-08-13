@@ -37,6 +37,11 @@ class ZoomableSurface extends MarkingSurface
     new_image.onload = =>
       @image.attr src: src
       @zoom 1
+  
+  resetTools: ->
+    @tools  = []
+    @marks = []
+    @selection = null
     
   onMouseDown: (e) ->
     return if @disabled
