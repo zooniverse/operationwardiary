@@ -76,6 +76,7 @@ class Classifier extends Spine.Controller
   
     @surface.tools  = []
     @surface.marks = []
+    @surface.selection = null
       
     return unless surface
     
@@ -123,6 +124,7 @@ class Classifier extends Spine.Controller
     @surface.loadImage "img/0#{@subject_id}.jpg"
     @classification.subject.trigger 'select'
     @render_annotation @surface_history[ @subject_id ]
+    console.log @surface.tools
 
   onZoomIn: =>
     @surface.markingMode = false
