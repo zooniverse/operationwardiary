@@ -72,15 +72,12 @@ class Classifier extends Spine.Controller
       .removeAttr('checked')
       .prop('checked', false)
     
-    for tool in @surface.tools
-      tool.controls.el.remove()
-      tool.shapeSet.remove()
-    
+    tool.controls.el.remove() for tool in @surface.tools
+  
     @surface.tools  = []
     @surface.marks = []
       
     return unless surface
-    console.log surface.tools
     
     $( "#document-#{surface.document}")
       .attr('checked', 'checked')
@@ -126,6 +123,7 @@ class Classifier extends Spine.Controller
       tools: @surface.tools.slice(0)
       marks: @surface.marks.slice(0)
     
+    console.log @surface_history[ @subject_id ].tools
 
     @subject_id++
     @surface.loadImage "img/0#{@subject_id}.jpg"
@@ -155,6 +153,7 @@ class Classifier extends Spine.Controller
       marks: @surface.marks.slice(0)
     @subject_id--
     @surface.loadImage "img/0#{@subject_id}.jpg"
+    @classification.subject.trigger 'select'
     
     @render_annotation @surface_history[ @subject_id ]
     
