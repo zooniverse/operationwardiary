@@ -42,6 +42,7 @@ class ZoomableSurface extends MarkingSurface
     @tools  = []
     @marks = []
     @selection = null
+    @markingMode = false
     
   onMouseDown: (e) ->
     return if @disabled
