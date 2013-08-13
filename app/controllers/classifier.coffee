@@ -72,7 +72,9 @@ class Classifier extends Spine.Controller
       .removeAttr('checked')
       .prop('checked', false)
     
-    tool.controls.el.remove() for tool in @surface.tools
+    for tool in @surface.tools
+      tool.controls.el.remove() 
+      tool.shapeSet.remove()
   
     @surface.resetTools()
       
