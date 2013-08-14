@@ -80,17 +80,7 @@ class Classifier extends Spine.Controller
       
     return unless surface
     
-    $( "#document-#{surface.document}")
-      .attr('checked', 'checked')
-      .prop('checked', true)
-    
-    for tool in surface.tools
-      @surface.tools.push tool
-      @surface.marks.push tool.mark
-      tool.draw()
-      tool.controls.el.appendTo tool.surface.container
-      tool.controls.bind_events()
-      tool.render()
+    surface.render()
 
   onUserChange: (e, user) =>
     # user, User.current
@@ -151,20 +141,42 @@ class Classifier extends Spine.Controller
     @render_annotation @surface_history[ @subject_id ]
   
   update_history: ->
-    tools = []
-    marks = []
+    
+    snapshot = new MarkingHistory
+      surface: @surface
+    
+    @surface_history[ @subject_id ] = snapshot
+      
+    console.log @surface_history
+    
+class MarkingHistory
+  
+  surface: null
+  
+  constructor: ( params = {}) ->
+    
+    @surface = params.surface
+    @document = $( '.documents :checked' ).val()
+    @tools = []
+    @marks = []
     
     for tool in @surface.tools
-      tools.push tool
-      marks.push tool.mark
+      @tools.push tool
+      @marks.push tool.mark
+  
+  render: ->
     
-    @surface_history[ @subject_id ] =
-      document: $( '.documents :checked' ).val()
-      tools: tools
-      marks: marks
-      
-    console.log tools
+    $( "#document-#{@document}")
+      .attr('checked', 'checked')
+      .prop('checked', true)
     
+    for tool in @tools
+      @surface.tools.push tool
+      @surface.marks.push tool.mark
+      tool.draw()
+      tool.controls.el.appendTo tool.surface.container
+      tool.controls.bind_events()
+      tool.render()
 
 
 module.exports = Classifier
