@@ -8,6 +8,7 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 controlsTemplates = 
   date: require '../views/tools/date'
   person: require '../views/tools/person'
+  unit: require '../views/tools/unit'
   place: require '../views/tools/place'
   activity: require '../views/tools/activity'
   quarters: require '../views/tools/quarters'

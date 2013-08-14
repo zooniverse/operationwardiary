@@ -3,6 +3,7 @@ labels =
     'date'
     'place'
     'person'
+    'unit'
     'activity'
     'quarters'
   ]

@@ -13,6 +13,7 @@ module.exports =
   noteTypes:
     date: 'Date'
     person: 'Person'
+    unit: 'Unit'
     place: 'Place'
     activity: 'Activity'
     quarters: 'Quarters'
