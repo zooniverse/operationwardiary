@@ -66,7 +66,7 @@ class Classifier extends Spine.Controller
 
     @html @template(@)
   
-  render_annotation: ( surface ) ->
+  render_annotation: ( history ) ->
     
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
@@ -80,7 +80,7 @@ class Classifier extends Spine.Controller
       
     return unless surface
     
-    surface.render()
+    history.render()
 
   onUserChange: (e, user) =>
     # user, User.current
