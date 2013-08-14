@@ -77,10 +77,8 @@ class Classifier extends Spine.Controller
       tool.shapeSet.remove()
   
     @surface.resetTools()
-      
-    return unless surface
     
-    history.render()
+    history?.render()
 
   onUserChange: (e, user) =>
     # user, User.current
