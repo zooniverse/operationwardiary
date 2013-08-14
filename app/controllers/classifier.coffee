@@ -142,20 +142,16 @@ class Classifier extends Spine.Controller
   
   update_history: ->
     
-    snapshot = new MarkingHistory
-      surface: @surface
+    snapshot = new MarkingHistory @surface
     
     @surface_history[ @subject_id ] = snapshot
-      
-    console.log @surface_history
     
 class MarkingHistory
   
   surface: null
   
-  constructor: ( params = {}) ->
+  constructor: ( @surface ) ->
     
-    @surface = params.surface
     @document = $( '.documents :checked' ).val()
     @tools = []
     @marks = []
