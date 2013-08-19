@@ -6831,7 +6831,6 @@ window.Raphael && window.Raphael.svg && function (R) {
         return this;
     };
     R._engine.create = function () {
-			console.log( R._getContainer.apply(0, arguments) );
         var con = R._getContainer.apply(0, arguments),
             container = con && con.container,
             x = con.x,
