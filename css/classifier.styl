@@ -35,6 +35,9 @@ ul.categories, ul.documents
       color: #fff
       padding: 3px;
       opacity: .4
+      
+      &:hover
+        opacity: .6
     
     &.date label
       background-color: date
@@ -53,6 +56,9 @@ ul.categories, ul.documents
       &:checked + label
         font-weight: bold
         opacity: 1
+      
+      &:focus + label
+        opacity: .8
         
 ul.documents
   position: relative
