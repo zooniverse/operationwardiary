@@ -1,6 +1,8 @@
 $ = require 'jqueryify'
 Spine = require 'spine'
 
+require '../lib/jquery-ui-1.10.3.custom.min.js'
+
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'

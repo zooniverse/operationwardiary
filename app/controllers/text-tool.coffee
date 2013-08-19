@@ -23,6 +23,8 @@ class TextControls extends ToolControls
     @el.append controlsTemplates[category]
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
+    
+    $('.date', @el).datepicker()
 
     @bind_events()
 
