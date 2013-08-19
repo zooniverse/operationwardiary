@@ -26,6 +26,8 @@ class TextControls extends ToolControls
     
     $('.date', @el).datepicker
       dateFormat: 'd MM yy'
+      changeMonth: true
+      changeYear: true
 
     @bind_events()
 
