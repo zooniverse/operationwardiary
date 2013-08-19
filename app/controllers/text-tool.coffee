@@ -24,7 +24,8 @@ class TextControls extends ToolControls
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
     
-    $('.date', @el).datepicker()
+    $('.date', @el).datepicker
+      dateFormat: 'd MM yy'
 
     @bind_events()
 
@@ -41,6 +42,7 @@ class TextControls extends ToolControls
     
   onClickToggle: =>
     @el.toggleClass 'closed'
+    @textInput.focus() if @el.is ':visible'
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)

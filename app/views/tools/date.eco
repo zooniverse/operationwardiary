@@ -2,6 +2,6 @@
 
 <button name="toggle"></button>
 <div class="annotation">
-  <input type="text" class="date" value="05/01/1915" />
+  <input type="text" class="date" value="1 May 1915" />
   date widget
 </div>
