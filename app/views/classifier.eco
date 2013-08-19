@@ -1,6 +1,5 @@
 <% translate = require 't7e' %>
 <% labels = require '../lib/notes' %>
-<% console.log labels %>
 
 <div style="position: relative; width: 100%;">
   <ul class="documents">
