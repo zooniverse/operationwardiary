@@ -58,7 +58,7 @@ class TextControls extends ToolControls
     
   onTextBlur: ({currentTarget}) =>
     
-    setTimeout (=> @el.addClass 'closed'), 250
+    setTimeout (=> @el.addClass 'closed'), 500
 
 class TextTool extends Tool
   
