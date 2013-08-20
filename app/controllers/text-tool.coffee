@@ -5,29 +5,21 @@ ZoomableSurface = require './zoom_surface'
 AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = ZoomableSurface
 
-controlsTemplates = 
-  date: require '../views/tools/date'
-  person: require '../views/tools/person'
-  unit: require '../views/tools/unit'
-  place: require '../views/tools/place'
-  activity: require '../views/tools/activity'
-  quarters: require '../views/tools/quarters'
 
+  
 dotRadius = if 'Touch' of window then 10 else 5
 
 class TextControls extends ToolControls
+  
   constructor: (params = {})->
     super
     
     category = $( '.categories :checked' ).val()
-    @el.append controlsTemplates[category]
+    template = new controlsTemplates[ category ]
+    @el.append template.widget
+    template.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
-    
-    $('.date', @el).datepicker
-      dateFormat: 'd MM yy'
-      changeMonth: true
-      changeYear: true
 
     @bind_events()
 
@@ -86,6 +78,7 @@ class TextTool extends Tool
     
     category = $( '.categories :checked' ).val()
     @mark.type = category
+    
     @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
     @controls.el.addClass @mark.type
     @draw()
@@ -132,5 +125,52 @@ class TextTool extends Tool
     {x,y} = super
     {left, top} = @surface.getOffset()
     x: (x / @surface.zoomBy) + left, y: (y / @surface.zoomBy) + top
+
+class TextWidget
+  widget: require '../views/tools/person'
+  
+  render: ->
+
+class PlaceWidget
+  widget: require '../views/tools/place'
+  
+  render: ->
     
+class PersonWidget
+  widget: require '../views/tools/person'
+  
+  render: ->
+
+class UnitWidget
+  widget: require '../views/tools/unit'
+  
+  render: ->
+
+class ActvityWidget
+  widget: require '../views/tools/activity'
+  
+  render: ->
+
+class QuartersWidget
+  widget: require '../views/tools/quarters'
+  
+  render: ->
+    
+class DateWidget
+  widget: require '../views/tools/date'
+  
+  render: (el)->
+    $('.date', el).datepicker
+      dateFormat: 'd MM yy'
+      changeMonth: true
+      changeYear: true
+
+controlsTemplates = 
+  date: DateWidget
+  person: PersonWidget
+  unit: UnitWidget
+  place: PlaceWidget
+  activity: ActvityWidget
+  quarters: QuartersWidget
+
 module.exports = TextTool
