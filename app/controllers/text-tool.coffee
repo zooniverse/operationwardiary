@@ -17,7 +17,7 @@ class TextControls extends ToolControls
     
     category = $( '.categories :checked' ).val()
     @widget = new widgets[ category ]
-    @el.append @widget.widget
+    @el.append @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
