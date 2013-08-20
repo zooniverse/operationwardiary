@@ -131,32 +131,22 @@ class TextWidget
   
   render: ->
 
-class PlaceWidget
+class PlaceWidget extends TextWidget
   widget: require '../views/tools/place'
-  
-  render: ->
     
-class PersonWidget
+class PersonWidget extends TextWidget
   widget: require '../views/tools/person'
-  
-  render: ->
 
-class UnitWidget
+class UnitWidget extends TextWidget
   widget: require '../views/tools/unit'
-  
-  render: ->
 
-class ActvityWidget
+class ActvityWidget extends TextWidget
   widget: require '../views/tools/activity'
-  
-  render: ->
 
-class QuartersWidget
+class QuartersWidget extends TextWidget
   widget: require '../views/tools/quarters'
-  
-  render: ->
     
-class DateWidget
+class DateWidget extends TextWidget
   widget: require '../views/tools/date'
   
   render: (el)->
