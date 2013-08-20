@@ -1,5 +1,4 @@
 translate = require 't7e'
-labels = require '../lib/notes'
 widgets = require './text-widgets'
 
 ZoomableSurface = require './zoom_surface'
