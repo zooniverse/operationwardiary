@@ -3,13 +3,19 @@ labels = require '../lib/notes'
 class TextWidget
   widget: require '../views/tools/person'
   
+  colour: 'grey'
+  
   render: ->
 
 class PlaceWidget extends TextWidget
   widget: require '../views/tools/place'
+  
+  colour: 'green'
     
 class PersonWidget extends TextWidget
   widget: require '../views/tools/person'
+  
+  colour: 'red'
 
 class UnitWidget extends TextWidget
   widget: require '../views/tools/unit'
@@ -17,6 +23,8 @@ class UnitWidget extends TextWidget
 class ActvityWidget extends TextWidget
   
   widget: require('../views/tools/activity')( choices: labels.activities )
+  
+  colour: 'blue'
 
 class QuartersWidget extends TextWidget
   
@@ -24,6 +32,8 @@ class QuartersWidget extends TextWidget
     
 class DateWidget extends TextWidget
   widget: require '../views/tools/date'
+  
+  colour: 'purple'
   
   render: (el)->
     $('.date', el).datepicker

@@ -16,9 +16,9 @@ class TextControls extends ToolControls
     super
     
     category = $( '.categories :checked' ).val()
-    template = new widgets[ category ]
-    @el.append template.widget
-    template.render @el
+    @widget = new widgets[ category ]
+    @el.append @widget.widget
+    @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find 'input[type=text], select'
 
@@ -65,12 +65,6 @@ class TextTool extends Tool
 
   cursors:
     'dots': 'move'
-  
-  colours:
-    'date': 'purple'
-    'person': 'red'
-    'place': 'green'
-    'activity': 'blue'
 
   constructor: (params = {}) ->
     super
@@ -85,7 +79,7 @@ class TextTool extends Tool
     @draw()
     
   draw: ->
-    dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colours[@mark.type], 'stroke-width': 3
+    dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
     @dots = @surface.paper.set dotShapes
 
   onFirstClick: (e) ->
