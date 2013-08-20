@@ -1,10 +1,9 @@
 <% translate = require 't7e' %>
-<% labels = require '../../lib/notes' %>
 
 <button name="toggle"></button>
 <div class="annotation">
   <select>
-    <% for quarter in labels.quarters: %>
+    <% for quarter in @choices: %>
       <option value="<%= quarter %>"><%- translate 'span', "quarters.#{quarter}" %></option>
     <% end %>
   </select>

@@ -1,4 +1,5 @@
 translate = require 't7e'
+labels = require '../lib/notes'
 
 ZoomableSurface = require './zoom_surface'
 {Tool} = ZoomableSurface
@@ -141,10 +142,12 @@ class UnitWidget extends TextWidget
   widget: require '../views/tools/unit'
 
 class ActvityWidget extends TextWidget
-  widget: require '../views/tools/activity'
+  
+  widget: require('../views/tools/activity')( choices: labels.activities )
 
 class QuartersWidget extends TextWidget
-  widget: require '../views/tools/quarters'
+  
+  widget: require('../views/tools/quarters')( choices: labels.quarters )
     
 class DateWidget extends TextWidget
   widget: require '../views/tools/date'
