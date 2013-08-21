@@ -83,10 +83,10 @@ class TextTool extends Tool
     if @mark.type is 'date'
       dotShapes = [
         @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
-        @addShape 'path', "M0,0H1026", fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
+        @addShape 'path', "M0,0H1026", fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 1
       ]
     else
-      dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 1
+      dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
       
     @dots = @surface.paper.set dotShapes
 
