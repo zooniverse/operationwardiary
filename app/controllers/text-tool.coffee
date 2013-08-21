@@ -85,10 +85,11 @@ class TextTool extends Tool
     
   draw: ->
     
-    @label = @addShape 'text', 0, 0, @widget.getLabel() ? '', fill: 'black', stroke: @widget.colour, 'stroke-width': 1, dy: -50
+    @label = @addShape 'text', 0, 0, @widget.getLabel @controls.textInput  ? '', fill: 'black', stroke: @widget.colour, 'stroke-width': 1, dy: -50
     dotShapes = @widget.mark @
       
     @dots = @surface.paper.set dotShapes
+    console.log @widget.getLabel()
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
