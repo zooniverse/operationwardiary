@@ -46,11 +46,14 @@ class DateWidget extends TextWidget
   
   colour: 'purple'
   
+  @date: '1 May 1915'
+  
   render: (el)->
     $('.date', el).datepicker
       dateFormat: 'd MM yy'
       changeMonth: true
       changeYear: true
+      defaultDate: DateWidget.date
   
   mark: (tool)->
     [
@@ -63,6 +66,9 @@ class DateWidget extends TextWidget
     
     _newPath = Raphael.transformPath "M0,0H1026", "T0,#{y}"
     shapes.animate { path: _newPath }, 0
+    
+  updateNote: (target) ->
+    DateWidget.date = super
 
 widgets = 
   date: DateWidget
