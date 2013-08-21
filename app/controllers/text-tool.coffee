@@ -121,7 +121,7 @@ class TextTool extends Tool
       
     if @mark.type is 'date'
       _newPath = Raphael.transformPath "M0,0H1026", "T0,#{@mark.p0[1]}"
-      @dots[1].animate { path: _newPath }, 100
+      @dots.animate { path: _newPath }, 30
       
     {left, top} = @surface.getOffset()
     @controls.moveTo (@mark[point][0]  - left) * @surface.zoomBy, (@mark[point][1]  - top) * @surface.zoomBy
