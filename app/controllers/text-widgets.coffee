@@ -56,7 +56,7 @@ class QuartersWidget extends TextWidget
   template: require('../views/tools/quarters')( choices: labels.quarters )
   
   getLabel: (target) ->
-    activity = super ? 'billet'
+    activity = super ? 'billets'
     el = translate 'span', "quarters.#{activity}"
     $(el).text()
   
