@@ -10,6 +10,10 @@ class TextWidget
     
   mark: (tool) ->
     tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+    
+  move: (shapes, x, y)->
+    shapes.attr cx: x, cy: y
+    
 
 class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
@@ -50,6 +54,12 @@ class DateWidget extends TextWidget
       tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
       tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1
     ]
+    
+  move: (shapes, x, y) ->
+    super
+    
+    _newPath = Raphael.transformPath "M0,0H1026", "T0,#{y}"
+    shapes.animate { path: _newPath }, 0
 
 widgets = 
   date: DateWidget

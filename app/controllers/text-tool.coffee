@@ -105,16 +105,11 @@ class TextTool extends Tool
     console.log 'woo'
     
   render: ->
-    console.log @dots
-    for point, i in ['p0']
-      @dots.attr cx: @mark[point][0], cy: @mark[point][1]
+    @controls.widget.move @dots, @mark.p0[0], @mark.p0[1]
       
-    if @mark.type is 'date'
-      _newPath = Raphael.transformPath "M0,0H1026", "T0,#{@mark.p0[1]}"
-      @dots.animate { path: _newPath }, 30
       
     {left, top} = @surface.getOffset()
-    @controls.moveTo (@mark[point][0]  - left) * @surface.zoomBy, (@mark[point][1]  - top) * @surface.zoomBy
+    @controls.moveTo (@mark.p0[0]  - left) * @surface.zoomBy, (@mark.p0[1]  - top) * @surface.zoomBy
     
   updateNote: ( note ) ->
     @mark.note = note
