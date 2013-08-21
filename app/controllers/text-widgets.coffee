@@ -49,11 +49,13 @@ class DateWidget extends TextWidget
   @date: '1 May 1915'
   
   render: (el)->
-    $('.date', el).datepicker
-      dateFormat: 'd MM yy'
-      changeMonth: true
-      changeYear: true
-      defaultDate: DateWidget.date
+    $('.date', el)
+      .datepicker
+        dateFormat: 'd MM yy'
+        changeMonth: true
+        changeYear: true
+        defaultDate: DateWidget.date
+      .val DateWidget.date
   
   mark: (tool)->
     [
