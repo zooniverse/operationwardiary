@@ -84,8 +84,9 @@ class TextTool extends Tool
     @draw()
     
   draw: ->
+    label = @widget.getLabel @controls.textInput  ? ''
     
-    @label = @addShape 'text', 0, 0, @widget.getLabel @controls.textInput  ? '', fill: @widget.colour, dy: -50
+    @label = @addShape 'text', 0, 0, label, dy: -50, font: '12px "Arial"', fill: @widget.colour 
     dotShapes = @widget.mark @
       
     @dots = @surface.paper.set dotShapes
