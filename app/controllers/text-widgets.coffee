@@ -24,7 +24,7 @@ class TextWidget
     $(target).val()
     
   getLabel: (target) ->
-    @updateNote target
+    $(target).val() ? ''
     
 
 class PlaceWidget extends TextWidget
