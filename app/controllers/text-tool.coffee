@@ -50,7 +50,7 @@ class TextControls extends ToolControls
   onTextChange: ({currentTarget}) =>
     
     @tool.mark.note = @widget.updateNote currentTarget
-    @tool.label.attr 'text', @tool.mark.note
+    @tool.label.attr 'text', @widget.getLabel currentTarget
     
   onTextBlur: ({currentTarget}) =>
     

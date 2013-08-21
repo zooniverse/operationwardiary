@@ -1,3 +1,4 @@
+translate = require 't7e'
 labels = require '../lib/notes'
 dotRadius = if 'Touch' of window then 10 else 5
 
@@ -22,6 +23,9 @@ class TextWidget
   updateNote: (target)->
     $(target).val()
     
+  getLabel: (target) ->
+    @updateNote target
+    
 
 class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
@@ -41,10 +45,21 @@ class ActvityWidget extends TextWidget
   template: require('../views/tools/activity')( choices: labels.activities )
   
   colour: 'blue'
+  
+  getLabel: (target) ->
+    activity = $(target).val() ? 'trench'
+    el = translate 'span', "activities.#{activity}"
+    $(el).text()
 
 class QuartersWidget extends TextWidget
   
   template: require('../views/tools/quarters')( choices: labels.quarters )
+  
+  getLabel: (target) ->
+    activity = $(target).val() ? 'billet'
+    el = translate 'span', "quarters.#{activity}"
+    $(el).text()
+  
     
 class DateWidget extends TextWidget
   template: require '../views/tools/date'
