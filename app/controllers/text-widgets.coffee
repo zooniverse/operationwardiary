@@ -47,7 +47,7 @@ class ActvityWidget extends TextWidget
   colour: 'blue'
   
   getLabel: (target) ->
-    activity = $(target).val() ? 'trench'
+    activity = super ? 'trench'
     el = translate 'span', "activities.#{activity}"
     $(el).text()
 
@@ -56,7 +56,7 @@ class QuartersWidget extends TextWidget
   template: require('../views/tools/quarters')( choices: labels.quarters )
   
   getLabel: (target) ->
-    activity = $(target).val() ? 'billet'
+    activity = super ? 'billet'
     el = translate 'span', "quarters.#{activity}"
     $(el).text()
   
