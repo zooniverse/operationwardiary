@@ -14,6 +14,9 @@ class TextWidget
   move: (shapes, x, y)->
     shapes.attr cx: x, cy: y
     
+  updateNote: (target)->
+    $(target).val()
+    
 
 class PlaceWidget extends TextWidget
   template: require '../views/tools/place'

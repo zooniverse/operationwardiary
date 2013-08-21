@@ -45,7 +45,7 @@ class TextControls extends ToolControls
     
   onTextChange: ({currentTarget}) =>
     
-    @tool.updateNote $(currentTarget).val()
+    @tool.mark.note = @widget.updateNote currentTarget
     
   onTextBlur: ({currentTarget}) =>
     
