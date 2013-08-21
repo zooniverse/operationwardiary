@@ -1,4 +1,5 @@
 labels = require '../lib/notes'
+dotRadius = if 'Touch' of window then 10 else 5
 
 class TextWidget
   template: require '../views/tools/person'
@@ -6,6 +7,9 @@ class TextWidget
   colour: 'grey'
   
   render: ->
+    
+  mark: (tool) ->
+    tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
 
 class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
@@ -40,6 +44,12 @@ class DateWidget extends TextWidget
       dateFormat: 'd MM yy'
       changeMonth: true
       changeYear: true
+  
+  mark: (tool)->
+    [
+      tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1
+    ]
 
 widgets = 
   date: DateWidget

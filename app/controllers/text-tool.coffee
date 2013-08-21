@@ -6,10 +6,6 @@ ZoomableSurface = require './zoom_surface'
 AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = ZoomableSurface
 
-
-  
-dotRadius = if 'Touch' of window then 10 else 5
-
 class TextControls extends ToolControls
   
   constructor: (params = {})->
@@ -80,13 +76,7 @@ class TextTool extends Tool
     
   draw: ->
     
-    if @mark.type is 'date'
-      dotShapes = [
-        @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
-        @addShape 'path', "M0,0H1026", fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 1
-      ]
-    else
-      dotShapes = @addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @controls.widget.colour, 'stroke-width': 3
+    dotShapes = @controls.widget.mark @
       
     @dots = @surface.paper.set dotShapes
 
