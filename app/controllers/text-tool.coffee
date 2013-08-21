@@ -50,6 +50,7 @@ class TextControls extends ToolControls
   onTextChange: ({currentTarget}) =>
     
     @tool.mark.note = @widget.updateNote currentTarget
+    @tool.label.attr 'text', @tool.mark.note
     
   onTextBlur: ({currentTarget}) =>
     
@@ -82,6 +83,7 @@ class TextTool extends Tool
     
   draw: ->
     
+    @label = @addShape 'text', 0, 0, @mark.note, fill: 'black', stroke: @widget.colour, 'stroke-width': 1, dy: -50
     dotShapes = @widget.mark @
       
     @dots = @surface.paper.set dotShapes
@@ -116,9 +118,6 @@ class TextTool extends Tool
       
     {left, top} = @surface.getOffset()
     @controls.moveTo (@mark.p0[0]  - left) * @surface.zoomBy, (@mark.p0[1]  - top) * @surface.zoomBy
-    
-  updateNote: ( note ) ->
-    @mark.note = note
     
   mouseOffset: (e) ->
     {x,y} = super

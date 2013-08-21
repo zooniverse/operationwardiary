@@ -9,10 +9,15 @@ class TextWidget
   render: ->
     
   mark: (tool) ->
-    tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+    [
+      tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.label
+    ]
     
   move: (shapes, x, y)->
-    shapes.attr cx: x, cy: y
+    shapes[0].attr cx: x, cy: y
+    shapes[1].attr x: x, y: y - 15
+    
     
   updateNote: (target)->
     $(target).val()
@@ -58,8 +63,10 @@ class DateWidget extends TextWidget
       .val DateWidget.date
   
   mark: (tool)->
+    
     [
       tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.label
       tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1
     ]
     
