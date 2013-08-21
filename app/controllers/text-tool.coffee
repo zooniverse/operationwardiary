@@ -70,13 +70,15 @@ class TextTool extends Tool
     category = $( '.categories :checked' ).val()
     @mark.type = category
     
+    @widget = @controls.widget
+    
     @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
     @controls.el.addClass @mark.type
     @draw()
     
   draw: ->
     
-    dotShapes = @controls.widget.mark @
+    dotShapes = @widget.mark @
       
     @dots = @surface.paper.set dotShapes
 
@@ -105,7 +107,7 @@ class TextTool extends Tool
     console.log 'woo'
     
   render: ->
-    @controls.widget.move @dots, @mark.p0[0], @mark.p0[1]
+    @widget.move @dots, @mark.p0[0], @mark.p0[1]
       
       
     {left, top} = @surface.getOffset()
