@@ -20,7 +20,11 @@ class TextControls extends ToolControls
 
     @bind_events()
 
-    setTimeout (=> @textInput.focus()), 250
+    setTimeout (=> 
+      @textInput.focus()
+      @onTextChange
+        currentTarget: @textInput
+    ), 250
 
   bind_events: ->
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
