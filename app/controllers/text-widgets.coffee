@@ -14,7 +14,7 @@ ranks = [
 class TextWidget
   template: require '../views/tools/person'
   
-  colour: 'grey'
+  colour: 'black'
   
   render: ->
     
