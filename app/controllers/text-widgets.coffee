@@ -97,8 +97,6 @@ class DateWidget extends TextWidget
 class TimeWidget extends DateWidget
   template: require '../views/tools/time'
   
-  colour: 'orange'
-  
   updateNote: (target)->
     note = ''
     $( target )
