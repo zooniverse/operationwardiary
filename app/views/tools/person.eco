@@ -1,7 +1,17 @@
 <% translate = require 't7e' %>
 
+
 <button name="toggle"></button>
 <div class="annotation">
-  <input type="text"/>
-  person widget
+  <select name="hour">
+    <% for rank in @ranks: %>
+      <option><%= rank %></option>
+    <% end %>    
+  </select>
+  <label>First name
+    <input name="first" type="text"/>
+  </label>
+  <label>Surname
+    <input name="surname" type="text">
+  </label>
 </div>

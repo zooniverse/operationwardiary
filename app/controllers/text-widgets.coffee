@@ -1,6 +1,15 @@
 translate = require 't7e'
 labels = require '../lib/notes'
 dotRadius = if 'Touch' of window then 10 else 5
+ranks = [
+  'Lieut'
+  '2 Lieut'
+  'Major'
+  'Capt'
+  'Sgt'
+  'Cpl'
+  'Pvt'
+]
 
 class TextWidget
   template: require '../views/tools/person'
@@ -33,9 +42,22 @@ class PlaceWidget extends TextWidget
   colour: 'green'
     
 class PersonWidget extends TextWidget
-  template: require '../views/tools/person'
+  template: require('../views/tools/person')( ranks: ranks )
   
   colour: 'red'
+  
+  updateNote: (target)->
+    notes = []
+    $( target )
+      .parents( '.annotation')
+      .find( ':input')
+      .each ->
+        notes.push $(@).val()
+    
+    notes.join ' '
+    
+  getLabel: (target) ->
+    @updateNote(target)
 
 class UnitWidget extends TextWidget
   template: require '../views/tools/unit'
