@@ -25,13 +25,8 @@ class Classifier extends Spine.Controller
     'click .zoom-out': 'onZoomOut'
     'click .documents': ->
       @surface.enable()
+      @toggleCategories()
       
-      if $('.documents :checked').val() is 'diary'
-        $('.categories').css
-          'visibility': 'visible'
-      else
-        $('.categories').css
-          'visibility': 'hidden'
     'click .categories': ->
       @surface.markingMode = true
 
@@ -90,6 +85,7 @@ class Classifier extends Spine.Controller
     @surface.resetTools()
     
     history?.render()
+    @toggleCategories()
 
   onUserChange: (e, user) =>
     # user, User.current
@@ -153,6 +149,14 @@ class Classifier extends Spine.Controller
     snapshot = new MarkingHistory @surface
     
     @surface_history[ @subject_id ] = snapshot
+    
+  toggleCategories: ->
+    if $('.documents :checked').val() is 'diary'
+      $('.categories').css
+        'visibility': 'visible'
+    else
+      $('.categories').css
+        'visibility': 'hidden'
     
 class MarkingHistory
   
