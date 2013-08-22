@@ -3,5 +3,4 @@
 <button name="toggle"></button>
 <div class="annotation">
   <input type="text"/>
-  unit widget
 </div>

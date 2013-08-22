@@ -3,14 +3,18 @@
 
 <button name="toggle"></button>
 <div class="annotation">
-  <select name="hour">
-    <% for rank in @ranks: %>
-      <option><%= rank %></option>
-    <% end %>    
-  </select>
+  <label>Rank<br>
+    <select name="hour">
+      <% for rank in @ranks: %>
+        <option><%= rank %></option>
+      <% end %>    
+    </select>
+  </label>
+  <br>
   <label>First name
     <input name="first" type="text"/>
   </label>
+  <br>
   <label>Surname
     <input name="surname" type="text">
   </label>
