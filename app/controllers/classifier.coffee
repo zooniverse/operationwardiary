@@ -25,6 +25,13 @@ class Classifier extends Spine.Controller
     'click .zoom-out': 'onZoomOut'
     'click .documents': ->
       @surface.enable()
+      
+      if $('.documents :checked').val() is 'diary'
+        $('.categories').css
+          'visibility': 'visible'
+      else
+        $('.categories').css
+          'visibility': 'hidden'
     'click .categories': ->
       @surface.markingMode = true
 
