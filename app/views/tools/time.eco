@@ -4,12 +4,12 @@
 <div class="annotation">
   <select name="hour">
     <% for i in [1..12]: %>
-      <option><%= ( '0' + i ).slice(-2) %></option>
+      <option><%= "0#{i}"[-2..-1] %></option>
     <% end %>    
   </select>
   <select name="minute">
     <% for i in [0..59] by 15: %>
-      <option><%= ( '0' + i ).slice(-2) %></option>
+      <option><%= "0#{i}"[-2..-1] %></option>
     <% end %>    
   </select>
   <select name="am">
