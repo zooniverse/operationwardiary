@@ -79,6 +79,8 @@ class TextTool extends Tool
 
   initialize: ->
     
+    tool.controls.el.addClass 'closed' for tool in @surface.tools
+    
     category = $( '.categories :checked' ).val()
     @mark.type = category
     
