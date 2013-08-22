@@ -27,6 +27,11 @@ class TextControls extends ToolControls
     ), 250
 
   bind_events: ->
+    @el.on 'click', 'button[name="delete-mark"]', (e) =>
+      return if @tool.surface.disabled
+      e.preventDefault()
+      @onClickDelete arguments...
+      
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
     @el.on 'change', 'input[type=text]', @onTextChange
