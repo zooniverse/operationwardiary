@@ -1,15 +1,6 @@
 translate = require 't7e'
 labels = require '../lib/notes'
 dotRadius = if 'Touch' of window then 10 else 5
-ranks = [
-  'Lieut'
-  '2 Lieut'
-  'Major'
-  'Capt'
-  'Sgt'
-  'Cpl'
-  'Pvt'
-]
 
 class TextWidget
   template: require '../views/tools/person'
@@ -42,7 +33,17 @@ class PlaceWidget extends TextWidget
   colour: 'green'
     
 class PersonWidget extends TextWidget
-  template: require('../views/tools/person')( ranks: ranks )
+  @ranks = [
+    'Lieut'
+    '2 Lieut'
+    'Major'
+    'Capt'
+    'Sgt'
+    'Cpl'
+    'Pvt'
+  ]
+  
+  template: require('../views/tools/person')( ranks: PersonWidget.ranks )
   
   colour: 'red'
   

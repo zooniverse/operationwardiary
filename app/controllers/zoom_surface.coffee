@@ -32,6 +32,7 @@ class ZoomableSurface extends MarkingSurface
     tool.render() for tool in @tools
     
   loadImage: (src) ->
+    @disable()
     new_image = new Image()
     new_image.src = src
     new_image.onload = =>

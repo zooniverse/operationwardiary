@@ -23,6 +23,8 @@ class Classifier extends Spine.Controller
     'click .back': 'onGoBack'
     'click .zoom-in': 'onZoomIn'
     'click .zoom-out': 'onZoomOut'
+    'click .documents': ->
+      @surface.enable()
     'click .categories': ->
       @surface.markingMode = true
 
@@ -172,6 +174,8 @@ class MarkingHistory
       tool.controls.el.appendTo tool.surface.container
       tool.controls.bind_events()
       tool.render()
+      
+    @surface.enable()
 
 
 module.exports = Classifier
