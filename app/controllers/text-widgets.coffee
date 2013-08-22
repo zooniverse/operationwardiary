@@ -94,8 +94,27 @@ class DateWidget extends TextWidget
   updateNote: (target) ->
     DateWidget.date = super
 
+class TimeWidget extends DateWidget
+  template: require '../views/tools/time'
+  
+  colour: 'orange'
+  
+  updateNote: (target)->
+    note = ''
+    $( target )
+      .parents( '.annotation')
+      .find( 'select')
+      .each ->
+        note += $(@).val()
+    
+    note
+    
+  getLabel: (target) ->
+    @updateNote(target)
+  
 widgets = 
   date: DateWidget
+  time: TimeWidget
   person: PersonWidget
   unit: UnitWidget
   place: PlaceWidget

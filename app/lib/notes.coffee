@@ -1,6 +1,7 @@
 labels = 
   notes: [
     'date'
+    'time'
     'place'
     'person'
     'unit'

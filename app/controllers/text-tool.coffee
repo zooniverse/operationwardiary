@@ -38,7 +38,7 @@ class TextControls extends ToolControls
     
     @el.on 'change', 'select', @onTextChange
     
-    @el.on 'blur', 'input[type=text], select', @onTextBlur
+    # @el.on 'blur', 'input[type=text], select', @onTextBlur
     
   onClickToggle: =>
     @el.toggleClass 'closed'

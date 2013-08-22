@@ -1,0 +1,19 @@
+<% translate = require 't7e' %>
+
+<button name="toggle"></button>
+<div class="annotation">
+  <select name="hour">
+    <% for i in [1...12]: %>
+      <option><%= ( '0' + i ).slice(-2) %></option>
+    <% end %>    
+  </select>
+  <select name="minute">
+    <% for i in [0...60] by 15: %>
+      <option><%= ( '0' + i ).slice(-2) %></option>
+    <% end %>    
+  </select>
+  <select name="am">
+    <option>AM</option>
+    <option>PM</option>  
+  </select>
+</div>
