@@ -9,6 +9,9 @@ class ZoomableSurface extends MarkingSurface
     
     @markingMode = false
     
+    @container.on 'keydown', (e)=>
+      @selection.controls.onClickToggle e if e.which == 13
+    
   zoom: (@zoomBy = 1) ->
     @zoomBy = Math.max @zoomBy, 1
     
