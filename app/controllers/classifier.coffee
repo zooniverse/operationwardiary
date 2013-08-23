@@ -28,6 +28,7 @@ class Classifier extends Spine.Controller
       
     'click .categories': ->
       @surface.markingMode = true
+      tool.controls.el.addClass 'closed' for tool in @surface.tools
 
   elements:
     '.subject-container': 'subjectContainer'
