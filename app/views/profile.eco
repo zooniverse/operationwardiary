@@ -1,20 +1,13 @@
 
-<div class="left">
-  <img class="img worm" src="images/scene/worm.png">
-</div>
 
-<div class="right">
+<% if @user: %>
+  <h1><%- @user.name %></h1>
 
-  <% if @user: %>
-    <h1><%- @user.name %></h1>
-
-    <% if @user.project?: %>
-      <h3>Worms Observed: <%- @user.project.classification_count %></h3>
-      <h3>Score: <%- if @user.project.score is 0 then "0 :(" else @user.project.score %></h3>
-    <% end %>
-    
-  <% else: %>
-    <p>Login to view profile</p>
+  <% if @user.project?: %>
+    <h3>Worms Observed: <%- @user.project.classification_count %></h3>
+    <h3>Score: <%- if @user.project.score is 0 then "0 :(" else @user.project.score %></h3>
   <% end %>
-
-</div>
+  
+<% else: %>
+  <p>Login to view profile</p>
+<% end %>

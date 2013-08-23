@@ -1,3 +1,4 @@
+Spine = require 'spine'
 User = require 'zooniverse/models/user'
 
 class Profile extends Spine.Controller
