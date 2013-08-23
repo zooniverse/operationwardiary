@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 
-<button name="toggle"></button>
+<button name="toggle">+</button>
 <div class="annotation">
   <select name="hour">
     <% for i in [1..12]: %>

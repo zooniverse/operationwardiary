@@ -1,7 +1,7 @@
 <% translate = require 't7e' %>
 
 
-<button name="toggle"></button>
+<button name="toggle">+</button>
 <div class="annotation">
   <label>Rank<br>
     <select name="hour">

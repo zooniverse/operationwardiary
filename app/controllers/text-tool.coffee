@@ -47,8 +47,7 @@ class TextControls extends ToolControls
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
 
-    @toggleButton.html target.html()
-    @toggleButton.attr title: target.attr 'title'
+    @toggleButton.attr title: target.html()
 
     setTimeout (=> @el.addClass 'closed'), 250
     
@@ -86,7 +85,8 @@ class TextTool extends Tool
     
     @widget = @controls.widget
     
-    @controls.toggleButton.html translate 'span', "noteTypes.#{@mark.type}"
+    tmp = translate 'span', "noteTypes.#{@mark.type}"
+    @controls.toggleButton.attr title: $(tmp).text()
     @controls.el.addClass @mark.type
     @draw()
     
