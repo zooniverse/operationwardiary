@@ -12,7 +12,7 @@ class TextControls extends ToolControls
     super
     
     category = $( '.categories :checked' ).val()
-    @widget = new widgets[ category ]
+    @widget = new widgets[ category ] @tool.surface.dotRadius
     @el.append @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
@@ -61,6 +61,15 @@ class TextControls extends ToolControls
   onTextBlur: ({currentTarget}) =>
     
     setTimeout (=> @el.addClass 'closed'), 500
+    
+  moveTo: (x, y) ->
+    super
+
+    @el.css
+      left: x
+      position: 'absolute'
+      right: ''
+      top: y
 
 class TextTool extends Tool
   

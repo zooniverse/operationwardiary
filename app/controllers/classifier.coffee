@@ -12,7 +12,6 @@ TextTool = require './text-tool'
 {ToolControls} = ZoomableSurface
 {Tool} = ZoomableSurface
 
-
 class Classifier extends Spine.Controller
   
   template: require '../views/classifier'
@@ -58,6 +57,8 @@ class Classifier extends Spine.Controller
       container: @subjectContainer
       width: 1024
       height: 560
+      
+    @surface.dotRadius = 5
       
     @subjectContainer.css 'position', 'relative'
     @surface.loadImage "img/0#{@subject_id}.jpg"

@@ -1,17 +1,18 @@
 translate = require 't7e'
 labels = require '../lib/notes'
-dotRadius = if 'Touch' of window then 10 else 5
 
 class TextWidget
   template: require '../views/tools/person'
   
   colour: 'black'
   
+  constructor: (@dotRadius) ->
+  
   render: ->
     
   mark: (tool) ->
     [
-      tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.addShape 'circle', 0, 0, @dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
       tool.label
     ]
     
@@ -103,7 +104,7 @@ class DateWidget extends TextWidget
   mark: (tool)->
     
     [
-      tool.addShape 'circle', 0, 0, dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.addShape 'circle', 0, 0, @dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
       tool.label
       tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1
     ]
