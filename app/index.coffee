@@ -30,11 +30,13 @@ app.stack = new Spine.Stack
     'home': require './controllers/home'
     'classifier': require './controllers/classifier'
     'about': require './controllers/about'
+    'guide': require './controllers/guide'
 
   routes:
     '/': 'home'
     '/classify': 'classifier'
     '/about': 'about'
+    '/guide': 'guide'
 
   default: 'home'
 

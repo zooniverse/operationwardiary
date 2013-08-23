@@ -1,0 +1,15 @@
+<% translate = require 't7e' %>
+<% labels = require '../lib/notes' %>
+
+<%- translate 'h1', "guide.title" %>
+<%- translate 'div', "guide.content" %>
+
+
+<% for document in labels.documents: %>
+  <hr />
+  <%- translate 'h2', "guide.diaries.#{document}.title" %>
+  <%- translate 'div', "guide.diaries.#{document}.content" %>
+
+  
+  
+<% end %>
