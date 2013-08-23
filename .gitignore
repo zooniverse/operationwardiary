@@ -3,3 +3,4 @@ node_modules
 build
 public/img
 test-data
+deploy.sh
