@@ -31,12 +31,14 @@ app.stack = new Spine.Stack
     'classifier': require './controllers/classifier'
     'about': require './controllers/about'
     'guide': require './controllers/guide'
+    'profile': require './controllers/profile'
 
   routes:
     '/': 'home'
     '/classify': 'classifier'
     '/about': 'about'
     '/guide': 'guide'
+    '/profile': 'profile'
 
   default: 'home'
 
