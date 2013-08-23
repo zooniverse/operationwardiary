@@ -123,13 +123,14 @@ class TextTool extends Tool
     @clicks is 1
 
   'on drag dots': (e, shape) ->
+    @controls.el.addClass 'closed'
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x,y]
     @render()
     
-  'on click': ->
-    console.log 'woo'
+  'on mousedown dots': (e, shape)->
+    @controls.onClickToggle e
     
   render: ->
     @widget.move @dots, @mark.p0[0], @mark.p0[1]
@@ -143,6 +144,7 @@ class TextTool extends Tool
     {left, top} = @surface.getOffset()
     x: (x / @surface.zoomBy) + left, y: (y / @surface.zoomBy) + top
 
+  
 
 
 module.exports = TextTool
