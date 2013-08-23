@@ -48,7 +48,7 @@ module.exports =
 
   home:
     projectDescription: '''
-      <p>Help us transcribe the British Arm diaries, from the Western Front, by recording times, people, places and events.</p>
+      <p>Help us transcribe the British Army diaries, from the Western Front, by recording times, people, places and events.</p>
     '''
     title: 'Map the First World War'
     start: 'Start searching'
