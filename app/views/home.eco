@@ -1,2 +1,3 @@
-<h1>WW1 Diaries</h1>
-<p>welcome to the project</p>
+<% translate = require 't7e' %>
+<%- translate 'h1', 'home.title' %>
+<%- translate 'div', 'home.projectDescription' %>
