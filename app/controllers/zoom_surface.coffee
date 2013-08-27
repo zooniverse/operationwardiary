@@ -13,6 +13,7 @@ class ZoomableSurface extends MarkingSurface
       @selection.controls.onClickToggle e if e.which == 13
     
   zoom: (@zoomBy = 1) ->
+    return if @disabled
     @zoomBy = Math.max @zoomBy, 1
     
     
@@ -141,5 +142,20 @@ class ZoomableSurface extends MarkingSurface
     left = @panX - @width / (2 * @zoomBy)
     top = @panY - @height / (2 * @zoomBy)
     left: left, top: top
+  
+  disable: ->
+    super
+    
+    @container
+      .find( '.zoom-controls button')
+      .attr( 'disabled', 'disabled' )
+      
+  enable: ->
+    super
+    
+    @container
+      .find( '.zoom-controls button')
+      .removeAttr( 'disabled' )
+    
     
 module.exports = ZoomableSurface
