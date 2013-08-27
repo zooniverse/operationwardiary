@@ -43,7 +43,8 @@ class ZoomableSurface extends MarkingSurface
     new_image.src = src
     new_image.onload = =>
       @image.attr src: src
-      @zoom 1
+      @zoomBy = 1
+      @pan()
       promise.resolve()
     
     return promise
