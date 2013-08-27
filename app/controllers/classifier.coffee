@@ -118,9 +118,14 @@ class Classifier extends Spine.Controller
     @update_history()
 
     @subject_id++
-    @surface.loadImage "img/0#{@subject_id}.jpg"
-    @classification.subject.trigger 'select'
-    @render_annotation @surface_history[ @subject_id ]
+    console.log 'loading'
+    @surface
+      .loadImage("img/0#{@subject_id}.jpg")
+      .done( =>
+        console.log 'done'
+        @classification.subject.trigger 'select'
+        @render_annotation @surface_history[ @subject_id ]
+      )
 
   onZoomIn: =>
     @surface.markingMode = false
@@ -141,10 +146,14 @@ class Classifier extends Spine.Controller
   onGoBack: ->
     @update_history()
     @subject_id--
-    @surface.loadImage "img/0#{@subject_id}.jpg"
-    @classification.subject.trigger 'select'
+    @surface
+      .loadImage("img/0#{@subject_id}.jpg")
+      .done( =>
+        console.log 'done'
+        @classification.subject.trigger 'select'
+        @render_annotation @surface_history[ @subject_id ]
+      )
     
-    @render_annotation @surface_history[ @subject_id ]
   
   update_history: ->
     

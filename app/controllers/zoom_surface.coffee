@@ -36,11 +36,16 @@ class ZoomableSurface extends MarkingSurface
     
   loadImage: (src) ->
     @disable()
+    
+    promise = new $.Deferred()
     new_image = new Image()
     new_image.src = src
     new_image.onload = =>
       @image.attr src: src
       @zoom 1
+      promise.resolve()
+    
+    return promise
   
   resetTools: ->
     @tools  = []
