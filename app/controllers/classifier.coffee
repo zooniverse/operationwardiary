@@ -62,9 +62,10 @@ class Classifier extends Spine.Controller
     @surface.dotRadius = 5
       
     @subjectContainer.css 'position', 'relative'
+    @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     @surface.loadImage "img/0#{@subject_id}.jpg"
     # HACK: turn off image scaling/resizing in SVG.
-    @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
+    
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -118,11 +119,9 @@ class Classifier extends Spine.Controller
     @update_history()
 
     @subject_id++
-    console.log 'loading'
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
-        console.log 'done'
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
       )
@@ -149,7 +148,6 @@ class Classifier extends Spine.Controller
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
-        console.log 'done'
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
       )
