@@ -8,6 +8,7 @@ module.exports =
     diary: 'Diary page'
     map: 'Map'
     report: 'Written report'
+    orders: 'Orders'
     other: 'Other'
 
   noteTypes:

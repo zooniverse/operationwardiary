@@ -15,6 +15,7 @@ labels =
     'diary'
     'map'
     'report'
+    'orders'
     'other'
   ]
   
