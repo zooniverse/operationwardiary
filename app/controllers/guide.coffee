@@ -1,6 +1,6 @@
 Spine = require 'spine'
 
-class About extends Spine.Controller
+class Guide extends Spine.Controller
   template: require '../views/guide'
 
   constructor: ->
@@ -10,4 +10,4 @@ class About extends Spine.Controller
   render: =>
     @html @template()
 
-module.exports = About
+module.exports = Guide
