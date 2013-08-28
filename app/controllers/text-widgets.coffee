@@ -62,7 +62,35 @@ class PersonWidget extends TextWidget
     @updateNote(target)
 
 class UnitWidget extends TextWidget
-  template: require '../views/tools/unit'
+  @units = [
+    'Corps'
+    'Brigade'
+    'Battalion'
+    'Company'
+  ]
+  
+  template: require('../views/tools/unit')( units: UnitWidget.units )
+  
+  updateNote: (target) ->
+    
+    note = 
+      type: ''
+      name: ''
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        name = @name
+        note[name] = @value
+    
+    note
+  
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
+    
+    "#{note.type}: #{note.name}"
   
 class CasualtiesWidget extends TextWidget
   template: require '../views/tools/casualties'

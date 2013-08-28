@@ -2,5 +2,15 @@
 
 
 <div class="annotation">
-  <input type="text"/>
+  <label>Type<br>
+    <select name="type">
+      <% for unit in @units: %>
+        <option><%= unit %></option>
+      <% end %>    
+    </select>
+  </label>
+  <br>
+  <label>Name 
+    <input name="name" type="text"/>
+  </label>
 </div>
