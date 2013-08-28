@@ -16,12 +16,12 @@ class TextControls extends ToolControls
     @el.append @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
-    @textInput = @el.find ':input'
+    @textInput = @el.find '.annotation :input'
 
     @bind_events()
 
     setTimeout (=> 
-      @textInput.focus()
+      @textInput[0].focus()
       @onTextChange
         currentTarget: @textInput
     ), 250
@@ -98,7 +98,7 @@ class TextTool extends Tool
     @draw()
     
   draw: ->
-    label = @widget.getLabel @controls.textInput  ? ''
+    label = @widget.getLabel @controls.textInput[0]  ? ''
     
     @label = @addShape 'text', 0, 0, label, dy: -50, font: '12px "Arial"', fill: @widget.colour 
     dotShapes = @widget.mark @
