@@ -1,0 +1,8 @@
+<% translate = require 't7e' %>
+
+
+<div class="annotation">
+  <label>Killed <input name="killed" type="number" min="0" size="3" type="text"/></label>
+  <label>Died of wounds <input name="dow" type="number" min="0" size="3" type="text"/></label>
+  <label>Wounded <input name="wounded" type="number" min="0" size="3" type="text"/></label>
+</div>

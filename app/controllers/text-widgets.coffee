@@ -63,6 +63,9 @@ class PersonWidget extends TextWidget
 
 class UnitWidget extends TextWidget
   template: require '../views/tools/unit'
+  
+class CasualtiesWidget extends TextWidget
+  template: require '../views/tools/casualties'
 
 class ActvityWidget extends TextWidget
   
@@ -142,5 +145,6 @@ widgets =
   place: PlaceWidget
   activity: ActvityWidget
   quarters: QuartersWidget
+  casualties: CasualtiesWidget
 
 module.exports = widgets

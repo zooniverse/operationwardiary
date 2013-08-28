@@ -19,6 +19,7 @@ module.exports =
     place: 'Place'
     activity: 'Activity'
     quarters: 'Quarters'
+    casualties: 'Casualties'
     
   activities:
     trench: 'Entrenching'

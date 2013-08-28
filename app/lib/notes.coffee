@@ -7,6 +7,7 @@ labels =
     'unit'
     'activity'
     'quarters'
+    'casualties'
   ]
 
   documents: [
