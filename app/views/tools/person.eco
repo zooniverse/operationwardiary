@@ -4,7 +4,7 @@
 
 <div class="annotation">
   <label>Rank<br>
-    <select name="hour">
+    <select name="rank">
       <% for rank in @ranks: %>
         <option><%= rank %></option>
       <% end %>    
