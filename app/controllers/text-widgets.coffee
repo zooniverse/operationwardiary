@@ -49,17 +49,22 @@ class PersonWidget extends TextWidget
   colour: 'red'
   
   updateNote: (target)->
-    notes = []
+    note =
+      rank: ''
+      first: ''
+      surname: ''
+    
     $( target )
       .parents( '.annotation')
       .find( ':input')
       .each ->
-        notes.push $(@).val()
+        note[@name] = @value
     
-    notes.join ' '
+    note
     
   getLabel: (target) ->
-    @updateNote(target)
+    note = @updateNote(target)
+    "#{note.rank} #{note.first} #{note.surname}"
 
 class UnitWidget extends TextWidget
   @units = [
@@ -81,8 +86,7 @@ class UnitWidget extends TextWidget
       .parents( '.annotation' )
       .find( ':input' )
       .each ->
-        name = @name
-        note[name] = @value
+        note[@name] = @value
     
     note
   
@@ -106,8 +110,7 @@ class CasualtiesWidget extends TextWidget
       .parents( '.annotation' )
       .find( ':input' )
       .each ->
-        name = @name
-        note[name] = parseInt @value
+        note[@name] = parseInt @value
     
     note
   
