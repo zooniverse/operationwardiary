@@ -35,10 +35,12 @@ class PlaceWidget extends TextWidget
     
 class PersonWidget extends TextWidget
   @ranks = [
-    'Lieut'
-    '2 Lieut'
+    'Colonel'
+    'Lieut-Colonel'
     'Major'
     'Capt'
+    'Lieut'
+    '2 Lieut'
     'Sgt'
     'Cpl'
     'Pvt'
