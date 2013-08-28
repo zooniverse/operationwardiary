@@ -81,7 +81,6 @@ class CasualtiesWidget extends TextWidget
         name = @name
         note[name] = parseInt @value
     
-    console.log note
     note
   
   getLabel: (target) ->
