@@ -66,6 +66,29 @@ class UnitWidget extends TextWidget
   
 class CasualtiesWidget extends TextWidget
   template: require '../views/tools/casualties'
+  
+  updateNote: (target) ->
+    
+    note = 
+      killed: 0
+      dow: 0
+      wounded: 0
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        name = @name
+        note[name] = parseInt @value
+    
+    console.log note
+    note
+  
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
+    
+    "Killed: #{note.killed}\n Died of wounds: #{note.dow}\n Wounded: #{note.wounded}"
 
 class ActvityWidget extends TextWidget
   

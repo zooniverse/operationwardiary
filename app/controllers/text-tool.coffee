@@ -16,7 +16,7 @@ class TextControls extends ToolControls
     @el.append @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
-    @textInput = @el.find 'input[type=text], select'
+    @textInput = @el.find ':input'
 
     @bind_events()
 
@@ -34,15 +34,13 @@ class TextControls extends ToolControls
       
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
-    @el.on 'change', 'input[type=text]', @onTextChange
-    
-    @el.on 'change', 'select', @onTextChange
+    @el.on 'change', ':input', @onTextChange
     
     # @el.on 'blur', 'input[type=text], select', @onTextBlur
     
   onClickToggle: =>
     @el.toggleClass 'closed'
-    @textInput.focus() if @el.is ':visible'
+    @textInput[0].focus() if @el.is ':visible'
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
