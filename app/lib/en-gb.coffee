@@ -9,6 +9,7 @@ module.exports =
     map: 'Map'
     report: 'Written report'
     orders: 'Orders'
+    signals: 'Signals pad'
     other: 'Other'
 
   noteTypes:

@@ -17,6 +17,7 @@ labels =
     'map'
     'report'
     'orders'
+    'signals'
     'other'
   ]
   
