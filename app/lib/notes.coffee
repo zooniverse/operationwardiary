@@ -22,6 +22,7 @@ labels =
   ]
   
   activities: [
+    'rest'
     'trench'
     'repair'
     'transport'

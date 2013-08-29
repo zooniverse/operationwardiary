@@ -23,6 +23,7 @@ module.exports =
     casualties: 'Casualties'
     
   activities:
+    rest: 'Resting'
     trench: 'Entrenching'
     repair: 'Repairing trenches'
     transport: 'Being transported'
