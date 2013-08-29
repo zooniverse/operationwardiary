@@ -70,6 +70,7 @@ class ZoomableSurface extends MarkingSurface
     setTimeout (=>
       if @markingMode
         tool = @createTool()
+        @selection?.deselect()
         tool.select()
         tool.onInitialClick e
     ), @clickDelay
