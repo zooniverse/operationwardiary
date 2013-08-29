@@ -2,6 +2,8 @@ MarkingSurface = require 'marking-surface'
 
 class ZoomableSurface extends MarkingSurface
   
+  clickDelay: 500
+  
   constructor: (params = {}) ->
     super
     @panX = @width / (2 * @zoomBy)
@@ -52,7 +54,7 @@ class ZoomableSurface extends MarkingSurface
   resetTools: ->
     @tools  = []
     @marks = []
-    @selection = null
+    @selection?.deselect()
     @markingMode = false
     
   onMouseDown: (e) ->
@@ -70,7 +72,7 @@ class ZoomableSurface extends MarkingSurface
         tool = @createTool()
         tool.select()
         tool.onInitialClick e
-    ), 300
+    ), @clickDelay
 
     
 
@@ -89,7 +91,7 @@ class ZoomableSurface extends MarkingSurface
   onDrag: (e) ->
     return if @zoomBy is 1
     @markingMode = false
-    @selection = null
+    @selection?.deselect()
     {x, y} = @mouseOffset e
     
     if @oldX
