@@ -117,6 +117,9 @@ class TextTool extends Tool
     @mark.set point, [x,y]for point in points
     @render()
     
+  onFirstRelease: (e) ->
+    @deselect()
+    
   isComplete: ->
     @clicks is 1
 
