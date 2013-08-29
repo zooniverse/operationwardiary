@@ -88,10 +88,12 @@ class ZoomableSurface extends MarkingSurface
   onMouseMove: ->
     return
     
-  onDrag: (e) ->
+  onDrag: (e) =>
     return if @zoomBy is 1
     @markingMode = false
     @selection?.deselect()
+    tool.controls.el.addClass 'closed' for tool in @tools
+    
     {x, y} = @mouseOffset e
     
     if @oldX
