@@ -64,11 +64,15 @@ class ZoomableSurface extends MarkingSurface
 
     $(document.activeElement).blur()
     @container.focus()
+    
+    setTimeout (=>
+      if @markingMode
+        tool = @createTool()
+        tool.select()
+        tool.onInitialClick e
+    ), 300
 
-    if @markingMode
-      tool = @createTool()
-      tool.select()
-      tool.onInitialClick e
+    
 
     onDrag = => @onDrag arguments...
     
@@ -83,7 +87,9 @@ class ZoomableSurface extends MarkingSurface
     return
     
   onDrag: (e) ->
-    return if @markingMode or @zoomBy is 1
+    return if @zoomBy is 1
+    @markingMode = false
+    @selection = null
     {x, y} = @mouseOffset e
     
     if @oldX
@@ -99,6 +105,7 @@ class ZoomableSurface extends MarkingSurface
     @oldX = null
     @oldY = null
     @selection?.onInitialRelease e
+    @markingMode = true
     
   createTool: ->
     if not @selection? or @selection.isComplete()
