@@ -2,5 +2,7 @@
 
 
 <div class="annotation">
-  <input type="text"/>
+  <input name="place" type="text" value="" />
+  <input name="lat" type="hidden" value="" />
+  <input name="long" type="hidden" value="" />
 </div>

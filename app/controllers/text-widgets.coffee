@@ -32,6 +32,26 @@ class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
   
   colour: 'green'
+  
+  updateNote: (target)->
+    note =
+      place: ''
+      lat: ''
+      long: ''
+    
+    $( target )
+      .parents( '.annotation')
+      .find( ':input')
+      .each ->
+        note[@name] = @value
+    
+    note
+    
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
+    
+    note.place
     
 class PersonWidget extends TextWidget
   @ranks = [
