@@ -20,8 +20,8 @@ class Classifier extends Spine.Controller
     'click .task': 'onDoTask'
     'click .finish': 'onFinishTask'
     'click .back': 'onGoBack'
-    'click .zoom-in': 'onZoomIn'
-    'click .zoom-out': 'onZoomOut'
+    'mousedown .zoom-in': 'onZoomIn'
+    'mousedown .zoom-out': 'onZoomOut'
     'click .documents': ->
       @surface.enable()
       @toggleCategories()
@@ -127,13 +127,32 @@ class Classifier extends Spine.Controller
         @render_annotation @surface_history[ @subject_id ]
       )
 
-  onZoomIn: =>
-    @surface.selection = null
-    @surface.zoom @surface.zoomBy + .2
+  onZoomIn: ({currentTarget})=>
+    @surface.selection?.deselect()
+    timeout = null
+
+    zoom_in = =>
+      @surface.zoom @surface.zoomBy + .2
+      clearTimeout timeout if timeout
+      timeout = setTimeout zoom_in, 200
+      
+    zoom_in()
     
-  onZoomOut: =>
-    @surface.selection = null
-    @surface.zoom @surface.zoomBy - .2
+    $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
+    
+  onZoomOut: ({currentTarget})=>
+    @surface.selection?.deselect()
+    timeout = null
+
+    zoom_out = =>
+      @surface.zoom @surface.zoomBy - .2
+      clearTimeout timeout if timeout
+      timeout = setTimeout zoom_out, 200
+      
+    zoom_out()
+    
+    $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
+    
     
   onGoBack: ->
     @update_history()
