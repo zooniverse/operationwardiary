@@ -40,12 +40,14 @@ class ZoomableSurface extends MarkingSurface
   loadImage: (src) ->
     @disable()
     
+    {left, top} = @getOffset()
+    
     promise = new $.Deferred()
     new_image = new Image()
     new_image.src = src
     
     @image.attr src: ""
-    message = @paper.text 500, 250, 'Loading', font: '12px "Arial"', fill: 'black'
+    message = @paper.text left + @width / (2 * @zoomBy), top + @height / (2 * @zoomBy), 'Loading', font: '12px "Arial"', fill: 'black'
     new_image.onload = =>
       message.remove()
       @image.attr src: src
