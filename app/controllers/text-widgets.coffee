@@ -34,17 +34,38 @@ class PlaceWidget extends TextWidget
   colour: 'green'
   
   updateNote: (target)->
+    
+    $target = $( target )
+    
     note =
-      place: ''
+      place: $target.val()
       lat: ''
       long: ''
     
-    $( target )
-      .parents( '.annotation')
-      .find( ':input')
-      .each ->
-        note[@name] = @value
+    gr = 
+      address: note.place
+      region: 'BE'
     
+    @gmap.gmap 'search', gr, (response) =>
+      console.log response[0]
+      @marker?= @gmap.gmap 'addMarker', {position: response[0]?.geometry.location, bounds: true }
+      console.log @marker
+      @marker[0].setPosition response[0]?.geometry.location
+      @gmap.gmap( 'get', 'map').panTo response[0]?.geometry.location
+      lat = response[0]?.geometry.location.lat()
+      long = response[0]?.geometry.location.lng()
+      $target
+        .parents( '.annotation' )
+        .find( 'input[name=lat]' )
+        .val( lat )
+        .end()
+        .find( 'input[name=long]' )
+        .val( long )
+        .end()
+        .find( ':input')
+        .each ->
+          note[@name] = @value
+         
     note
     
   getLabel: (target) ->
@@ -52,6 +73,13 @@ class PlaceWidget extends TextWidget
     note = @updateNote( target )
     
     note.place
+  
+  render: (el)->
+    @gmap = $('.map', el)
+      .gmap
+        height: 200
+        width: 200
+      
     
 class PersonWidget extends TextWidget
   @ranks = [
