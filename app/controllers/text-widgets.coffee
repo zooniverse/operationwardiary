@@ -68,7 +68,9 @@ class PlaceWidget extends TextWidget
   geocode: (placename) =>
     
     promise = new $.Deferred
-    pf_url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{placename}%22%20limit%201&format=json&callback=?"
+    
+    query="select * from geo.placefinder where text='#{placename}' limit 1"
+    pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
     $.getJSON( pf_url ).done (response)->
