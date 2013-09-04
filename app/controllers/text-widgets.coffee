@@ -66,10 +66,9 @@ class PlaceWidget extends TextWidget
         
   
   geocode: (placename) =>
-    
-    return unless placename
-    
     promise = new $.Deferred
+    
+    return promise unless placename
     
     geoplanet_query="select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
     geonames_query = "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
