@@ -67,6 +67,8 @@ class PlaceWidget extends TextWidget
   
   geocode: (placename) =>
     
+    return unless placename
+    
     promise = new $.Deferred
     
     query="select * from geo.placefinder where text='#{placename}' limit 1"
