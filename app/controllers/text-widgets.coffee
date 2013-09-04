@@ -48,7 +48,7 @@ class PlaceWidget extends TextWidget
         lat = parseFloat response.query.results.Result?.latitude
         long = parseFloat response.query.results.Result?.longitude
         latlng = new google.maps.LatLng lat,long
-        @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: true }
+        @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
         @marker[0].setPosition latlng
         @gmap.gmap( 'get', 'map').panTo latlng
         
@@ -77,8 +77,7 @@ class PlaceWidget extends TextWidget
   render: (el)->
     @gmap = $('.map', el)
       .gmap
-        height: 200
-        width: 200
+        zoom: 9
       
     
 class PersonWidget extends TextWidget
