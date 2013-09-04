@@ -42,42 +42,51 @@ class PlaceWidget extends TextWidget
       lat: ''
       long: ''
     
-    pf_url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{note.place}%22%20limit%201&format=json&callback=?"
-    
-    show_place = (response)=> 
-        lat = parseFloat response.query.results.Result?.latitude
-        long = parseFloat response.query.results.Result?.longitude
-        latlng = new google.maps.LatLng lat,long
-        @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
-        @marker[0].setPosition latlng
-        @gmap.gmap( 'get', 'map').panTo latlng
-        
-        $target
-          .parents( '.annotation' )
-          .find( 'input[name=lat]' )
-          .val( lat )
-          .end()
-          .find( 'input[name=long]' )
-          .val( long )
-          .end()
-          .find( ':input')
-          .each ->
-            note[@name] = @value
-    
-    $.getJSON( pf_url ).done show_place
+    @geocode( note.place ).done (lat,long)=>
+      @show_place lat, long
+      
+      $target
+        .parents( '.annotation' )
+        .find( 'input[name=lat]' )
+        .val( lat )
+        .end()
+        .find( 'input[name=long]' )
+        .val( long )
+        .end()
+        .find( ':input')
+        .each ->
+          note[@name] = @value
         
     note
-    
-  getLabel: (target) ->
-    
-    note = @updateNote( target )
-    
-    note.place
   
   render: (el)->
     @gmap = $('.map', el)
       .gmap
         zoom: 9
+        
+  
+  geocode: (placename) =>
+    
+    promise = new $.Deferred
+    pf_url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{placename}%22%20limit%201&format=json&callback=?"
+    # TODO: OAuth this call to avoid rate-limiting. Cache results too.
+    
+    $.getJSON( pf_url ).done (response)->
+      return unless response.query.results
+      lat = parseFloat response.query.results.Result?.latitude
+      long = parseFloat response.query.results.Result?.longitude
+      promise.resolve lat,long
+      
+    promise
+    
+  
+  show_place: (lat, long) => 
+      latlng = new google.maps.LatLng lat,long
+      @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
+      @marker[0].setPosition latlng
+      @gmap.gmap( 'get', 'map').panTo latlng
+
+    
       
     
 class PersonWidget extends TextWidget
