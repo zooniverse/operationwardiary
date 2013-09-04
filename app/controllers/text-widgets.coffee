@@ -73,14 +73,19 @@ class PlaceWidget extends TextWidget
     geoplanet_query="select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
     geonames_query = "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
     
-    query = geoplanet_query
+    query = geonames_query
     pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
     $.getJSON( pf_url ).done (response)->
+      # uncomment following for geoplanet data
+      # return unless response.query.results
+      # lat = parseFloat response.query.results.Result?.latitude
+      # long = parseFloat response.query.results.Result?.longitude
+      
       return unless response.query.results
-      lat = parseFloat response.query.results.Result?.latitude
-      long = parseFloat response.query.results.Result?.longitude
+      lat = parseFloat response.query.results.geonames?.geoname.lat
+      long = parseFloat response.query.results.geonames?.geoname.lng
       promise.resolve lat,long
       
     promise
