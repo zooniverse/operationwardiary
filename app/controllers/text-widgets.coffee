@@ -42,30 +42,32 @@ class PlaceWidget extends TextWidget
       lat: ''
       long: ''
     
-    gr = 
-      address: note.place
-      region: 'BE'
+    pf_url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{note.place}%22&format=json&callback=?"
     
-    @gmap.gmap 'search', gr, (response) =>
-      console.log response[0]
-      @marker?= @gmap.gmap 'addMarker', {position: response[0]?.geometry.location, bounds: true }
-      console.log @marker
-      @marker[0].setPosition response[0]?.geometry.location
-      @gmap.gmap( 'get', 'map').panTo response[0]?.geometry.location
-      lat = response[0]?.geometry.location.lat()
-      long = response[0]?.geometry.location.lng()
-      $target
-        .parents( '.annotation' )
-        .find( 'input[name=lat]' )
-        .val( lat )
-        .end()
-        .find( 'input[name=long]' )
-        .val( long )
-        .end()
-        .find( ':input')
-        .each ->
-          note[@name] = @value
-         
+    show_place = (response)=> 
+        console.log response.query
+        lat = parseFloat response.query.results.Result?.latitude
+        long = parseFloat response.query.results.Result?.longitude
+        latlng = new google.maps.LatLng lat,long
+        @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: true }
+        console.log @marker
+        @marker[0].setPosition latlng
+        @gmap.gmap( 'get', 'map').panTo latlng
+        
+        $target
+          .parents( '.annotation' )
+          .find( 'input[name=lat]' )
+          .val( lat )
+          .end()
+          .find( 'input[name=long]' )
+          .val( long )
+          .end()
+          .find( ':input')
+          .each ->
+            note[@name] = @value
+    
+    $.getJSON( pf_url ).done show_place
+        
     note
     
   getLabel: (target) ->
