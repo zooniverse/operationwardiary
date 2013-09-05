@@ -48,9 +48,9 @@ labels =
     'casualty-4'
     'award-1'
     'award-2'
-    promotion
-    combat
-    discipline
+    'promotion'
+    'combat'
+    'discipline'
   ]
     
   quarters: [  
