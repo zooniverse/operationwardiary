@@ -33,13 +33,37 @@ labels =
     'raid'
   ]
   
-  quarters: [
+  person: [
+    'author'
+    'sick'
+    'departed-1' 
+    'departed-2'
+    'departed-3'
+    'departed-1' 
+    'returned-2' 
+    'returned-3' 
+    'casualty-1'
+    'casualty-2'
+    'casualty-3'
+    'casualty-4'
+    'award-1'
+    'award-2'
+  ]
+    
+  quarters: [  
     'billets'
     'bivouac'
     'trenches'
     'firing'
     'communication'
   ]
-    
+  
+  weather: [
+    'fine'
+    'storm'
+    'hot'
+    'rain'
+    'fog'
+  ]  
 
 module.exports = labels
