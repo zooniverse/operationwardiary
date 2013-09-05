@@ -62,6 +62,12 @@ labels =
     'communication'
   ]
   
+  unit: [
+    'relieved'
+    'relieved-by'
+    'billeted'
+  ]
+  
   weather: [
     'fine'
     'storm'
