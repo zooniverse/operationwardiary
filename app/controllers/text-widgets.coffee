@@ -61,7 +61,7 @@ class PlaceWidget extends TextWidget
     
     update_notes()
     
-    @geocode( note.place ).done (lat,long, name)=>
+    @geocode( note.place, 'geoplanet' ).done (lat,long, name)=>
       @show_place lat, long
       
       $target
@@ -90,6 +90,11 @@ class PlaceWidget extends TextWidget
     @gmap = $('.map', el)
       .gmap
         zoom: 9
+    
+    lat = el.find( 'input[name=lat]' ).val()
+    long = el.find( 'input[name=long]' ).val()
+    
+    @show_place( lat, long )
         
   
   geocode: (placename, service='geonames') =>
