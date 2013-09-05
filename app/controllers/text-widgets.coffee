@@ -165,7 +165,7 @@ class UnitWidget extends TextWidget
     
     note = @updateNote( target )
     
-    "#{note.type}: #{note.name}"
+    "#{note.context}\n#{note.name}"
   
 class CasualtiesWidget extends TextWidget
   template: require '../views/tools/casualties'
@@ -189,7 +189,7 @@ class CasualtiesWidget extends TextWidget
     
     note = @updateNote( target )
     
-    "Killed: #{note.killed}\n Died of wounds: #{note.dow}\n Wounded: #{note.wounded}"
+    "Killed: #{note.killed}\nDied of wounds: #{note.dow}\nWounded: #{note.wounded}"
 
 class ActvityWidget extends TextWidget
   
