@@ -61,7 +61,7 @@ class PlaceWidget extends TextWidget
     
     update_notes()
     
-    @geocode( note.place, 'geoplanet' ).done (lat,long, name)=>
+    @geocode( note.place, 'geonames' ).done (lat,long, name)=>
       @show_place lat, long
       
       $target
