@@ -32,6 +32,25 @@ module.exports =
     fire: 'Under fire '
     advance: 'Attempting an advance'
     raid: 'Raiding'
+  
+  person:
+    'author': 'Author of diary'
+    'sick': 'Departed:sick'
+    'departed-1': 'Deaprted: on leave'
+    'departed-2': 'Departed: posted to another unit'
+    'departed-3': 'Departed: training'
+    'departed-1': 'Returned: from hospital'
+    'returned-2': 'Returned: from leave'
+    'returned-3': 'Returned: from training'
+    'casualty-1': 'Casualty: Died of Wounds'
+    'casualty-2': 'Casualty: Wounded'
+    'casualty-3': 'Casualty: Killed in Action '
+    'casualty-4': 'Casualty: Prisoner of War'
+    'award-1': 'Award: DSO'
+    'award-2': 'Award: VC'
+    'promotion': 'Promotion'
+    'combat': 'Combat'
+    'discipline': 'Discipline'
     
   quarters:
     billets: 'In billets'
@@ -39,6 +58,13 @@ module.exports =
     trenches: 'In trenches'
     firing: 'In firing line'
     communication: 'In communication trenches'
+    
+  weather:
+    fine: 'Fine'
+    storm: 'Stormy'
+    hot: 'Very hot'
+    rain: 'Heavy rain'
+    fog: 'Fog'
 
   navigation:
     projectName: PROJECT_NAME
