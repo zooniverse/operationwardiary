@@ -277,5 +277,6 @@ widgets =
   activity: ActvityWidget
   quarters: QuartersWidget
   casualties: CasualtiesWidget
+  weather: WeatherWidget
 
 module.exports = widgets
