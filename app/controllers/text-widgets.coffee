@@ -34,7 +34,7 @@ class PlaceWidget extends TextWidget
   
   colour: 'green'
   
-  gc: new Geocoder
+  @gc: new Geocoder
   
   updateNote: (target)->
     
@@ -64,7 +64,7 @@ class PlaceWidget extends TextWidget
     
     update_notes()
     
-    @gc.geocode( note.place ).done (lat,long, name)=>
+    PlaceWidget.gc.geocode( note.place ).done (lat,long, name)=>
       @show_place lat, long
       
       $target

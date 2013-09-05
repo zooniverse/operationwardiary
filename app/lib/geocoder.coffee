@@ -1,10 +1,6 @@
-$ = require 'jquerify'
-
 class Geocoder
   
-  service: 'geonames'
-  
-  constructor: (@service) =>
+  constructor: (@service = 'geonames') ->
 
   geocode: (placename) =>
     promise = new $.Deferred
@@ -16,16 +12,15 @@ class Geocoder
       geonames: "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
     
     query = queries[@service]
-    console.log query
-    console.log @service
     pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
-    $.getJSON( pf_url ).done (response)->
+    console.log pf_url
+    $.getJSON( pf_url ).done (response)=>
       
       results = response.query.results
       
-      return unless results
+      return promise unless results
       
       switch @service
         when 'geonames'
