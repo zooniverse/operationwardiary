@@ -71,10 +71,11 @@ class PlaceWidget extends TextWidget
     return promise unless placename
     
     queries = 
-      geonames: "select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
-      geoplanet: "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
+      geoplanet: "select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
+      geonames: "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
     
     query = queries[service]
+    console.log query
     pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
