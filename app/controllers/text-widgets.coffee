@@ -73,8 +73,6 @@ class PlaceWidget extends TextWidget
         .end()
         
       update_notes()
-          
-      console.log note.location
       
         
     note
