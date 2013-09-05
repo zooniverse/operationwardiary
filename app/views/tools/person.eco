@@ -25,4 +25,5 @@
         <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
       <% end %>    
     </select>
+  </label>
 </div>
