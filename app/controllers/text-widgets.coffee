@@ -80,17 +80,17 @@ class PlaceWidget extends TextWidget
     
     $.getJSON( pf_url ).done (response)->
       
-      return unless response.query.results
+      results = response.query.results
       
-      results = repsonse.query.results
+      return unless results
       
       switch service
         when 'geonames'
-          lat = parseFloat response.query.results.geonames?.geoname.lat
-          long = parseFloat response.query.results.geonames?.geoname.lng
+          lat = parseFloat results.geonames?.geoname.lat
+          long = parseFloat results.geonames?.geoname.lng
         when 'geoplanet'
-          lat = parseFloat response.query.results.Result?.latitude
-          long = parseFloat response.query.results.Result?.longitude
+          lat = parseFloat results.Result?.latitude
+          long = parseFloat results.Result?.longitude
       
       promise.resolve lat,long
       
