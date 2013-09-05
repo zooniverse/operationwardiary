@@ -47,6 +47,7 @@ class PlaceWidget extends TextWidget
       lat: ''
       long: ''
       location: false
+      name: ''
       
     update_notes = =>
       $inputs
@@ -60,7 +61,7 @@ class PlaceWidget extends TextWidget
     
     update_notes()
     
-    @geocode( note.place ).done (lat,long)=>
+    @geocode( note.place ).done (lat,long, name)=>
       @show_place lat, long
       
       $target
@@ -71,6 +72,8 @@ class PlaceWidget extends TextWidget
         .find( 'input[name=long]' )
         .val( long )
         .end()
+        .find( 'input[name=name]')
+        .val( name )
         
       update_notes()
       
@@ -114,11 +117,13 @@ class PlaceWidget extends TextWidget
         when 'geonames'
           lat = parseFloat results.geonames?.geoname.lat
           long = parseFloat results.geonames?.geoname.lng
+          name = results.geonames?.geoname.toponymName
         when 'geoplanet'
           lat = parseFloat results.Result?.latitude
           long = parseFloat results.Result?.longitude
+          name = if results.Result?.neighborhood? then results.Result.neighborhood else results.Result.city
       
-      promise.resolve lat,long
+      promise.resolve lat,long,name
       
     promise
     
