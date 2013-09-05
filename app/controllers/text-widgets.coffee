@@ -113,7 +113,7 @@ class PersonWidget extends TextWidget
     'Pvt'
   ]
   
-  template: require('../views/tools/person')( ranks: PersonWidget.ranks )
+  template: require('../views/tools/person')( ranks: PersonWidget.ranks, context: labels.person )
   
   colour: 'red'
   

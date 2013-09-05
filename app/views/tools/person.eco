@@ -18,4 +18,11 @@
   <label>Surname
     <input name="surname" type="text">
   </label>
+  
+  <label>Context<br>
+    <select name="context">
+      <% for reason in @context: %>
+        <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
+      <% end %>    
+    </select>
 </div>
