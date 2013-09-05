@@ -36,11 +36,11 @@ module.exports =
   
   person:
     'author': 'Author of diary'
-    'sick': 'Departed:sick'
     'departed-1': 'Deaprted: on leave'
     'departed-2': 'Departed: posted to another unit'
     'departed-3': 'Departed: training'
-    'departed-1': 'Returned: from hospital'
+    'departed-4': 'Departed: sick'
+    'returned-1': 'Returned: from hospital'
     'returned-2': 'Returned: from leave'
     'returned-3': 'Returned: from training'
     'casualty-1': 'Casualty: Died of Wounds'
