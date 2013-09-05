@@ -1,0 +1,10 @@
+<% translate = require 't7e' %>
+
+
+<div class="annotation">
+  <select>
+    <% for weather in @choices: %>
+      <option value="<%= weather %>"><%- translate 'span', "weather.#{weather}" %></option>
+    <% end %>
+  </select>
+</div>

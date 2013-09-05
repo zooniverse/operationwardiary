@@ -208,6 +208,15 @@ class QuartersWidget extends TextWidget
     activity = $(target).val() ? 'billets'
     el = translate 'span', "quarters.#{activity}"
     $(el).text()
+
+class WeatherWidget extends TextWidget
+  
+  template: require('../views/tools/weather')( choices: labels.weather )
+  
+  getLabel: (target) ->
+    weather = $(target).val() ? 'fine'
+    el = translate 'span', "weather.#{weather}"
+    $(el).text()
   
     
 class DateWidget extends TextWidget
