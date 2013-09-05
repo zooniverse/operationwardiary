@@ -130,6 +130,7 @@ class PersonWidget extends TextWidget
       rank: ''
       first: ''
       surname: ''
+      context: ''
     
     $( target )
       .parents( '.annotation')
@@ -150,7 +151,7 @@ class UnitWidget extends TextWidget
   updateNote: (target) ->
     
     note = 
-      type: ''
+      context: ''
       name: ''
     
     $(target)
@@ -165,7 +166,9 @@ class UnitWidget extends TextWidget
     
     note = @updateNote( target )
     
-    "#{note.context}\n#{note.name}"
+    el = translate 'span', "unit.#{note.context}"
+    
+    "#{$(el).text()}\n#{note.name}"
   
 class CasualtiesWidget extends TextWidget
   template: require '../views/tools/casualties'
