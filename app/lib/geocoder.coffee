@@ -1,3 +1,5 @@
+$ = require 'jqueryify'
+
 class Geocoder
   
   constructor: (@service = 'geonames') ->
