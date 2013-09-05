@@ -76,6 +76,7 @@ class PlaceWidget extends TextWidget
     
     query = queries[service]
     console.log query
+    console.log service
     pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
@@ -143,14 +144,8 @@ class PersonWidget extends TextWidget
     "#{note.rank} #{note.first} #{note.surname}"
 
 class UnitWidget extends TextWidget
-  @units = [
-    'Corps'
-    'Brigade'
-    'Battalion'
-    'Company'
-  ]
   
-  template: require('../views/tools/unit')( units: UnitWidget.units )
+  template: require('../views/tools/unit')( context: labels.unit )
   
   updateNote: (target) ->
     

@@ -60,6 +60,13 @@ module.exports =
     firing: 'In firing line'
     communication: 'In communication trenches'
     
+  unit:
+    'relieved': 'Relieved'
+    'billeted': 'Billeted with'
+    'relieved-by': 'Relieved by'
+    
+    
+    
   weather:
     fine: 'Fine'
     storm: 'Stormy'

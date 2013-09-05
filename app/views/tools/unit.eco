@@ -2,15 +2,15 @@
 
 
 <div class="annotation">
-  <label>Type<br>
-    <select name="type">
-      <% for unit in @units: %>
-        <option><%= unit %></option>
-      <% end %>    
-    </select>
-  </label>
-  <br>
   <label>Name 
     <input name="name" type="text"/>
+  </label>
+  
+  <label>Context<br>
+    <select name="context">
+      <% for reason in @context: %>
+        <option value="<%= reason %>"><%- translate 'span', "unit.#{reason}" %></option>
+      <% end %>    
+    </select>
   </label>
 </div>
