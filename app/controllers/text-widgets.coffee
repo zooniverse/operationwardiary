@@ -37,10 +37,28 @@ class PlaceWidget extends TextWidget
     
     $target = $( target )
     
+    $inputs = 
+      $target
+      .parents( '.annotation' )
+      .find( ':input')
+    
     note =
-      place: $target.val()
+      place: ''
       lat: ''
       long: ''
+      location: false
+      
+    update_notes = =>
+      $inputs
+        .each ->
+          note[@name] = @value
+        
+      note.location = 
+        $inputs
+          .filter('input[name=location]')
+          .is(':checked')
+    
+    update_notes()
     
     @geocode( note.place ).done (lat,long)=>
       @show_place lat, long
@@ -53,11 +71,19 @@ class PlaceWidget extends TextWidget
         .find( 'input[name=long]' )
         .val( long )
         .end()
-        .find( ':input')
-        .each ->
-          note[@name] = @value
+        
+      update_notes()
+          
+      console.log note.location
+      
         
     note
+    
+  getLabel: (target) ->
+    $(target)
+      .parents('.annotation')
+      .find('input[name=place]')
+      .val()
   
   render: (el)->
     @gmap = $('.map', el)
