@@ -8,6 +8,7 @@ labels =
     'activity'
     'quarters'
     'casualties'
+    'weather'
   ]
 
   documents: [
