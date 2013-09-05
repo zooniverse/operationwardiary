@@ -6,7 +6,7 @@ class Geocoder
   
   constructor: (@service) =>
 
-  geocode: (placename, service='geonames') =>
+  geocode: (placename) =>
     promise = new $.Deferred
     
     return promise unless placename

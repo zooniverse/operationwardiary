@@ -1,6 +1,6 @@
 translate = require 't7e'
 labels = require '../lib/notes'
-require '../lib/geocoder'
+Geocoder = require '../lib/geocoder'
 
 class TextWidget
   template: require '../views/tools/person'
