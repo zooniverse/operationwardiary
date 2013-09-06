@@ -6,7 +6,7 @@
 
 <div style="position: relative; width: 100%;">
   <ul class="documents">
-    <% for document in labels.documents: %>
+    <% for document in labels.toolbars.documents: %>
       <li class="<%= document %>">
         <input 
           type="radio" 
@@ -35,16 +35,16 @@
   </span>
   
   <ul class="categories">
-    <% for note in labels.notes: %>
-      <li class="<%= note %>">
+    <% for tag in labels.toolbars.tags: %>
+      <li class="<%= tag %>">
         <input 
           type="radio" 
           name="category" 
-          id="category-<%= note %>" 
-          value="<%= note %>"
-          <%= @helper.selectedCategory(note) %>
+          id="category-<%= tag %>" 
+          value="<%= tag %>"
+          <%= @helper.selectedCategory(tag) %>
         >
-        <label for="category-<%= note %>"><i class="icon-<%= note %>"></i><%- translate 'span', "noteTypes.#{note}" %></label>
+        <label for="category-<%= tag %>"><i class="icon-<%= tag %>"></i><%- translate 'span', "noteTypes.#{tag}" %></label>
       </li>
     <% end %>
   </ul>

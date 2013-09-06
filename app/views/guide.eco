@@ -5,7 +5,7 @@
 <%- translate 'div', "guide.content" %>
 
 
-<% for document in labels.documents: %>
+<% for document in labels.toolbars.documents: %>
   <hr />
   <%- translate 'h2', "guide.diaries.#{document}.title" %>
   <%- translate 'div', "guide.diaries.#{document}.content" %>

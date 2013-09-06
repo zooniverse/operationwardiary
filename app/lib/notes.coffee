@@ -1,24 +1,25 @@
-labels = 
-  notes: [
-    'date'
-    'time'
-    'place'
-    'person'
-    'unit'
-    'activity'
-    'quarters'
-    'casualties'
-    'weather'
-  ]
+labels =
+  toolbars: 
+    tags: [
+      'date'
+      'time'
+      'place'
+      'person'
+      'unit'
+      'activity'
+      'quarters'
+      'casualties'
+      'weather'
+    ]
 
-  documents: [
-    'blank'
-    'cover'
-    'diary'
-    'orders'
-    'signals'
-    'other'
-  ]
+    documents: [
+      'blank'
+      'cover'
+      'diary'
+      'orders'
+      'signals'
+      'other'
+    ]
   
   activities: [
     'rest'
