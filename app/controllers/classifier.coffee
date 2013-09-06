@@ -10,8 +10,8 @@ Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 
-ZoomableSurface = require './zoom_surface'
-TextTool = require './text-tool'
+ZoomableSurface = require '../lib/zoom_surface'
+TextTool = require '../lib/text-tool'
 {ToolControls} = ZoomableSurface
 {Tool} = ZoomableSurface
 
