@@ -26,12 +26,18 @@ labels =
     'rest'
     'trench'
     'repair'
-    'transport'
-    'march'
+    'movement-1'
+    'movement-2'
+    'movement-3'
+    'movement-4'
     'training'
     'fire'
-    'advance'
+    'attack'
     'raid'
+    'withdraw'
+    'line'
+    'routine'
+    'domestic'
   ]
   
   person: [
