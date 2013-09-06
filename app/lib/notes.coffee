@@ -15,8 +15,6 @@ labels =
     'blank'
     'cover'
     'diary'
-    'map'
-    'report'
     'orders'
     'signals'
     'other'
