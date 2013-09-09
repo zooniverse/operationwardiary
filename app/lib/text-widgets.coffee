@@ -109,7 +109,9 @@ class PlaceWidget extends TextWidget
       latlng = new google.maps.LatLng lat,long
       @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
       @marker[0].setPosition latlng
-      @gmap.gmap( 'get', 'map').setCenter latlng
+      map = @gmap.gmap( 'get', 'map')
+      map.setCenter latlng
+      google.maps.event.trigger(map, 'resize');
 
     
       
