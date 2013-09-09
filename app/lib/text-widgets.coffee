@@ -93,6 +93,8 @@ class PlaceWidget extends TextWidget
     @gmap = $('.map', el)
       .gmap
         zoom: 9
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeControl: false
     
     lat = el.find( 'input[name=lat]' ).val()
     long = el.find( 'input[name=long]' ).val()
@@ -107,7 +109,7 @@ class PlaceWidget extends TextWidget
       latlng = new google.maps.LatLng lat,long
       @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
       @marker[0].setPosition latlng
-      @gmap.gmap( 'get', 'map').panTo latlng
+      @gmap.gmap( 'get', 'map').setCenter latlng
 
     
       
