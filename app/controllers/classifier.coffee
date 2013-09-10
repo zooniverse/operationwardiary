@@ -68,10 +68,11 @@ class Classifier extends Spine.Controller
     @surface.dotRadius = 5
       
     @subjectContainer.css 'position', 'relative'
+    # HACK: turn off image scaling/resizing in SVG.
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     @surface.loadImage "img/0#{@subject_id}.jpg"
     @pageNumber.text( @subject_id )
-    # HACK: turn off image scaling/resizing in SVG.
+    
     
 
     User.on 'change', @onUserChange
