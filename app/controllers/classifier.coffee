@@ -199,6 +199,7 @@ class Classifier extends Spine.Controller
     if $('.documents :checked').val() is 'orders'
       orders = new widgets.orders
       @metadata.html orders.template
+      orders.render @metadata
 
 class MarkingHistory
   
