@@ -179,14 +179,15 @@ class UnitWidget extends TextWidget
     "#{$(el).text()}\n#{note.name}"
   
 class CasualtiesWidget extends TextWidget
-  template: require '../views/tools/casualties'
+  template: require('../views/tools/casualties')( choices: labels.casualties )
   
   updateNote: (target) ->
     
     note = 
       killed: 0
-      dow: 0
+      died: 0
       wounded: 0
+      prisoner: 0
     
     $(target)
       .parents( '.annotation' )
@@ -200,7 +201,13 @@ class CasualtiesWidget extends TextWidget
     
     note = @updateNote( target )
     
-    "Killed: #{note.killed}\nDied of wounds: #{note.dow}\nWounded: #{note.wounded}"
+    output = []
+    
+    for choice in labels.casualties
+      el = translate 'span', "casualties.#{choice}"
+      output.push $(el).text() + ': ' + note[choice]
+      
+    output.join '\n'
 
 class ActvityWidget extends TextWidget
   

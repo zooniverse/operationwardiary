@@ -38,6 +38,12 @@ module.exports =
     line: 'In the line'
     routine: 'Army Routine'
     domestic: 'Domestic'
+    
+  casualties:
+    killed: 'Killed in action'
+    died: 'Died of wounds'
+    wounded: 'Wounded'
+    prisoner: 'Prisoner of war'
   
   person:
     'author': 'Author of diary'

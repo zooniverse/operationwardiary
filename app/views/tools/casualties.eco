@@ -2,7 +2,8 @@
 
 
 <div class="annotation">
-  <label>Killed <input name="killed" type="number" min="0" size="3" value="0"/></label>
-  <label>Died of wounds <input name="dow" type="number" min="0" size="3" value="0"/></label>
-  <label>Wounded <input name="wounded" type="number" min="0" size="3" value="0"/></label>
+  <% for choice in @choices: %>
+    <label><%- translate 'span', "casualties.#{choice}" %>&nbsp;<input name="<%= choice %>" type="number" min="0" size="3" value="0"/></label>
+    <option value=""></option>
+  <% end %>
 </div>

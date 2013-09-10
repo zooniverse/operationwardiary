@@ -39,6 +39,13 @@ labels =
     'domestic'
   ]
   
+  casualties: [
+    'killed'
+    'died'
+    'wounded'
+    'prisoner'
+  ]
+  
   person: [
     'author'
     'departed-1' 
