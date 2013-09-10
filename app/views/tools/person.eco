@@ -18,6 +18,9 @@
   <label>Surname
     <input name="surname" type="text">
   </label>
+  <label>Number
+    <input name="number" type="text">
+  </label>
   
   <label>Context<br>
     <select name="context">
@@ -25,5 +28,9 @@
         <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
       <% end %>    
     </select>
+  </label>
+  
+  <label>Sub-unit
+    <input name="unit" type="text">
   </label>
 </div>

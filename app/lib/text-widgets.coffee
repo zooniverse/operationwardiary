@@ -138,7 +138,9 @@ class PersonWidget extends TextWidget
       rank: ''
       first: ''
       surname: ''
+      number: ''
       context: ''
+      unit: ''
     
     $( target )
       .parents( '.annotation')
