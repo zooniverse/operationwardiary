@@ -1,6 +1,9 @@
 $ = require 'jqueryify'
 Spine = require 'spine'
 
+require '../lib/jstorage.js'
+store = $.jStorage
+
 require '../lib/jquery-ui-1.10.3.custom.min.js'
 
 require '../lib/google.maps.js'
@@ -54,7 +57,8 @@ class Classifier extends Spine.Controller
     @render()
 
     @category = @defaults.category
-    @subject_id = 194
+    @subject_id = store.get 'subject_id' 
+    @subject_id?= 194
 	
     @surface ?= new ZoomableSurface
       tool: TextTool
@@ -123,6 +127,7 @@ class Classifier extends Spine.Controller
     @update_history()
 
     @subject_id++
+    store.set 'subject_id', @subject_id
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
@@ -160,6 +165,7 @@ class Classifier extends Spine.Controller
   onGoBack: ->
     @update_history()
     @subject_id--
+    store.set 'subject_id', @subject_id
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
