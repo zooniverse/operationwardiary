@@ -1,6 +1,8 @@
 $ = require 'jqueryify'
 Spine = require 'spine'
 
+widgets = require '../lib/text-widgets'
+
 require '../lib/jstorage.js'
 store = $.jStorage
 
@@ -28,16 +30,17 @@ class Classifier extends Spine.Controller
     'click .back': 'onGoBack'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
-    'click .documents': ->
+    'change .documents': ->
       @surface.enable()
       @toggleCategories()
       
-    'click .categories': ->
+    'change .categories': ->
       @surface.markingMode = true
       tool.controls.el.addClass 'closed' for tool in @surface.tools
 
   elements:
     '.subject-container': 'subjectContainer'
+    '#document-metadata': 'metadata'
     '#subject': 'pageNumber'
     
   helper:
@@ -191,6 +194,11 @@ class Classifier extends Spine.Controller
       $('.categories').css
         'visibility': 'hidden'
     
+    if $('.documents :checked').val() is 'orders'
+      console.log( 'woo' )
+      orders = new widgets.orders
+      @metadata.html orders.template
+
 class MarkingHistory
   
   surface: null

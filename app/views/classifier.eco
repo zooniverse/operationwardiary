@@ -50,4 +50,5 @@
       </li>
     <% end %>
   </ul>
+  <div id="document-metadata" class="marking-tool-controls"></div>
 </div>
