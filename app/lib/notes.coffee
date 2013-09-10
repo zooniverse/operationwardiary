@@ -86,6 +86,9 @@ labels =
     'relieved'
     'relieved-by'
     'billeted'
+    'right'
+    'left'
+    'joined'
   ]
   
   weather: [

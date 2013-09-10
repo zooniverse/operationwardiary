@@ -82,7 +82,9 @@ module.exports =
     'relieved': 'Relieved'
     'billeted': 'Billeted with'
     'relieved-by': 'Relieved by'
-    
+    right: 'On right'
+    left: 'On left'
+    joined: 'Joined with'
     
     
   weather:
