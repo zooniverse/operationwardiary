@@ -38,6 +38,7 @@ class Classifier extends Spine.Controller
 
   elements:
     '.subject-container': 'subjectContainer'
+    '#subject': 'pageNumber'
     
   helper:
     selectedCategory: (note) =>
@@ -53,12 +54,11 @@ class Classifier extends Spine.Controller
     
     @defaults = defaults
     @surface_history = {}
-    
-    @render()
-
     @category = @defaults.category
     @subject_id = store.get 'subject_id' 
     @subject_id?= 194
+    
+    @render()
 	
     @surface ?= new ZoomableSurface
       tool: TextTool
@@ -72,6 +72,7 @@ class Classifier extends Spine.Controller
     @subjectContainer.css 'position', 'relative'
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     @surface.loadImage "img/0#{@subject_id}.jpg"
+    @pageNumber.text( @subject_id )
     # HACK: turn off image scaling/resizing in SVG.
     
 
@@ -128,6 +129,7 @@ class Classifier extends Spine.Controller
 
     @subject_id++
     store.set 'subject_id', @subject_id
+    @pageNumber.text( @subject_id )
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
@@ -166,6 +168,7 @@ class Classifier extends Spine.Controller
     @update_history()
     @subject_id--
     store.set 'subject_id', @subject_id
+    @pageNumber.text( @subject_id )
     @surface
       .loadImage("img/0#{@subject_id}.jpg")
       .done( =>
