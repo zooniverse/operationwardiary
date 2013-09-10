@@ -44,6 +44,13 @@ module.exports =
     died: 'Died of wounds'
     wounded: 'Wounded'
     prisoner: 'Prisoner of war'
+    
+  orders:
+    move: 'Movement'
+    attack: 'Attack'
+    withdraw: 'Withdrawal'
+    entrench: 'Entrenching'
+    training: 'Training'
   
   person:
     'author': 'Author of diary'

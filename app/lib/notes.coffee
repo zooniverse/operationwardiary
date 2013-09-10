@@ -46,6 +46,14 @@ labels =
     'prisoner'
   ]
   
+  orders: [
+    'move'
+    'attack'
+    'withdraw'
+    'entrench'
+    'training'
+  ]
+  
   person: [
     'author'
     'departed-1' 
