@@ -1,3 +1,4 @@
+$ = require 'jqueryify'
 require './jquery-ui-1.10.3.custom.min.js'
 
 require './google.maps.js'
@@ -105,11 +106,7 @@ class PlaceWidget extends TextWidget
     long = el.find( 'input[name=long]' ).val()
     
     @show_place( lat, long )
-        
-  
-  
-    
-  
+
   show_place: (lat, long) => 
       latlng = new google.maps.LatLng lat,long
       @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
@@ -298,8 +295,7 @@ class TimeWidget extends DateWidget
 class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
   
-  render: (el)->
-    console.log $('.date', el)
+  render: (el)=>
     $('.date', el)
       .datepicker
         dateFormat: 'd MM yy'
