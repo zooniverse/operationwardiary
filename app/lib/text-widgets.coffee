@@ -290,6 +290,18 @@ class TimeWidget extends DateWidget
   getLabel: (target) ->
     @updateNote(target)
   
+class OrdersWidget extends TextWidget
+  template: require( '../views/tools/orders' )( types: labels.orders )
+  
+  render: (el)->
+    $('.date', el)
+      .datepicker
+        dateFormat: 'd MM yy'
+        changeMonth: true
+        changeYear: true
+        defaultDate: DateWidget.date
+      .val DateWidget.date
+      
 widgets = 
   date: DateWidget
   time: TimeWidget
@@ -300,5 +312,6 @@ widgets =
   quarters: QuartersWidget
   casualties: CasualtiesWidget
   weather: WeatherWidget
+  orders: OrdersWidget
 
 module.exports = widgets
