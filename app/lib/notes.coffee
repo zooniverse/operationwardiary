@@ -28,7 +28,6 @@ labels =
     'movement-1'
     'movement-2'
     'movement-3'
-    'movement-4'
     'training'
     'fire'
     'attack'
@@ -72,6 +71,7 @@ labels =
     'promotion'
     'combat'
     'discipline'
+    'joined'
   ]
     
   quarters: [  

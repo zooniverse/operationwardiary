@@ -67,9 +67,10 @@ module.exports =
     'casualty-4': 'Casualty: Prisoner of War'
     'award-1': 'Award: DSO'
     'award-2': 'Award: VC'
-    'promotion': 'Promotion'
+    'promotion': 'Promoted'
     'combat': 'Combat'
     'discipline': 'Discipline'
+    'joined': 'Joined'
     
   quarters:
     billets: 'In billets'
