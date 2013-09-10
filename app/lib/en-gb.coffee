@@ -7,7 +7,7 @@ module.exports =
     blank: 'Blank page'
     diary: 'Diary page'
     map: 'Map'
-    report: 'Written report'
+    report: 'Report'
     orders: 'Orders'
     signals: 'Signals pad'
     other: 'Other'

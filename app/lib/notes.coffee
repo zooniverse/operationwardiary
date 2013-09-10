@@ -18,6 +18,7 @@ labels =
       'diary'
       'orders'
       'signals'
+      'report'
       'other'
     ]
   
