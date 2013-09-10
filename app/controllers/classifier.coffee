@@ -189,7 +189,7 @@ class Classifier extends Spine.Controller
   toggleCategories: ->
     @metadata.html ''
     
-    if $('.documents :checked').val() is 'diary'
+    if $('.documents :checked').val() in ['diary', 'signals']
       $('.categories').css
         'visibility': 'visible'
     else
