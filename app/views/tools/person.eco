@@ -10,11 +10,9 @@
       <% end %>    
     </select>
   </label>
-  <br>
   <label>First name
     <input name="first" type="text"/>
   </label>
-  <br>
   <label>Surname
     <input name="surname" type="text">
   </label>
