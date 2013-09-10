@@ -187,6 +187,8 @@ class Classifier extends Spine.Controller
     @surface_history[ @subject_id ] = snapshot
     
   toggleCategories: ->
+    @metadata.html ''
+    
     if $('.documents :checked').val() is 'diary'
       $('.categories').css
         'visibility': 'visible'
@@ -195,7 +197,6 @@ class Classifier extends Spine.Controller
         'visibility': 'hidden'
     
     if $('.documents :checked').val() is 'orders'
-      console.log( 'woo' )
       orders = new widgets.orders
       @metadata.html orders.template
 
