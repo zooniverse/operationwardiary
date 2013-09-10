@@ -1,15 +1,10 @@
 $ = require 'jqueryify'
 Spine = require 'spine'
 
-widgets = require '../lib/text-widgets'
-
 require '../lib/jstorage.js'
 store = $.jStorage
 
-require '../lib/jquery-ui-1.10.3.custom.min.js'
-
-require '../lib/google.maps.js'
-require '../lib/jquery.ui.map.full.min.js'
+widgets = require '../lib/text-widgets'
 
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'

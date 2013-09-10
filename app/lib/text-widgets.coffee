@@ -1,3 +1,8 @@
+require './jquery-ui-1.10.3.custom.min.js'
+
+require './google.maps.js'
+require './jquery.ui.map.full.min.js'
+
 translate = require 't7e'
 labels = require './notes'
 Geocoder = require './geocoder'
@@ -294,6 +299,7 @@ class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
   
   render: (el)->
+    console.log $('.date', el)
     $('.date', el)
       .datepicker
         dateFormat: 'd MM yy'
