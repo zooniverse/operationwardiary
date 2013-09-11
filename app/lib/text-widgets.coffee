@@ -221,8 +221,7 @@ class ActvityWidget extends TextWidget
   
   getLabel: (target) ->
     activity = $(target).val() ? 'trench'
-    el = translate 'span', "activities.#{activity}"
-    $(el).text()
+    $(target).find(':selected').text()
 
 class QuartersWidget extends TextWidget
   
@@ -230,8 +229,7 @@ class QuartersWidget extends TextWidget
   
   getLabel: (target) ->
     activity = $(target).val() ? 'billets'
-    el = translate 'span', "quarters.#{activity}"
-    $(el).text()
+    $(target).find(':selected').text()
 
 class WeatherWidget extends TextWidget
   
@@ -239,8 +237,7 @@ class WeatherWidget extends TextWidget
   
   getLabel: (target) ->
     weather = $(target).val() ? 'fine'
-    el = translate 'span', "weather.#{weather}"
-    $(el).text()
+    $(target).find(':selected').text()
   
     
 class DateWidget extends TextWidget
