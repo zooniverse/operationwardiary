@@ -108,7 +108,12 @@ class TextTool extends Tool
   select: =>
     super
     
-    @dots[2]?.attr 'opacity', .5
+    @dots[2]?.attr opacity: .5
+    
+  deselect: =>
+    super
+    
+    @dots[2]?.attr opacity: .3
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e

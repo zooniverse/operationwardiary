@@ -264,7 +264,7 @@ class DateWidget extends TextWidget
     [
       tool.addShape 'circle', 0, 0, @dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
       tool.label
-      tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .5
+      tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
     ]
     
   move: (shapes, x, y) ->
