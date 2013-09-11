@@ -178,11 +178,12 @@ class UnitWidget extends TextWidget
     
     note = @updateNote( target )
     
-    el = $(target)
+    context = $(target)
       .parents( '.annotation' )
       .find( 'select[name=context] :selected' )
+      .text()
     
-    "#{el.text()}\n#{note.name}"
+    "#{context} #{note.name}"
   
 class CasualtiesWidget extends TextWidget
   template: require('../views/tools/casualties')( choices: labels.casualties )
