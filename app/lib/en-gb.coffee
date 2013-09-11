@@ -102,6 +102,8 @@ module.exports =
     hot: 'Very hot'
     rain: 'Heavy rain'
     fog: 'Fog'
+    overcast: 'Overcast'
+    rain: 'Rain'
 
   navigation:
     projectName: PROJECT_NAME

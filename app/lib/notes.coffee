@@ -103,6 +103,8 @@ labels =
     'hot'
     'rain'
     'fog'
+    'overcast'
+    'rain'
   ]  
 
 module.exports = labels
