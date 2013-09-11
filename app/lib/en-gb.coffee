@@ -41,6 +41,11 @@ module.exports =
     line: 'In the line'
     routine: 'Army Routine'
     domestic: 'Domestic'
+    quiet: 'All quiet'
+    artillery: 'Artillery '
+    'enemy-movement': 'Enemy activity: movement'
+    reconnoitered: 'Reconnoitered'
+    strength: 'Unit strength'
     
   casualties:
     killed: 'Killed in action'

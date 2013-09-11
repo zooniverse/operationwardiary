@@ -37,6 +37,11 @@ labels =
     'line'
     'routine'
     'domestic'
+    'quiet'
+    'artillery'
+    'enemy-movement'
+    'reconnoitered'
+    'strength'
   ]
   
   casualties: [
