@@ -104,6 +104,11 @@ class TextTool extends Tool
     dotShapes = @widget.mark @
       
     @dots = @surface.paper.set dotShapes
+    
+  select: =>
+    super
+    
+    @dots[2]?.attr 'opacity', .5
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
