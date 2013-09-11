@@ -7,7 +7,8 @@
     <select name="type">
       <% for type in @types: %>
         <option value="<%= type %>"><%- translate 'span', "orders.#{type}" %></option>
-      <% end %>    
+      <% end %>
+      <option value="other"><%- translate 'span', "common.other" %></option>
     </select>
   </label>
   

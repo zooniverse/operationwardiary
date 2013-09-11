@@ -10,7 +10,8 @@
     <select name="context">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "unit.#{reason}" %></option>
-      <% end %>    
+      <% end %>
+      <option value="other"><%- translate 'span', "common.other" %></option>
     </select>
   </label>
 </div>

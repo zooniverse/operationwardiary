@@ -1,6 +1,9 @@
 PROJECT_NAME = 'Team War Diaries'
 
 module.exports =
+  
+  common:
+    other: 'Other'
 
   documents:
     cover: 'Cover page'

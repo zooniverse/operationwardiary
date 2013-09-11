@@ -7,4 +7,5 @@
       <option value="<%= quarter %>"><%- translate 'span', "quarters.#{quarter}" %></option>
     <% end %>
   </select>
+  <option value="other"><%- translate 'span', "common.other" %></option>
 </div>

@@ -6,5 +6,6 @@
     <% for weather in @choices: %>
       <option value="<%= weather %>"><%- translate 'span', "weather.#{weather}" %></option>
     <% end %>
+    <option value="other"><%- translate 'span', "common.other" %></option>
   </select>
 </div>
