@@ -1,0 +1,15 @@
+<% translate = require 't7e' %>
+
+<ul class="categories">
+  <% for tag in @tags: %>
+    <li class="<%= tag %>">
+      <input 
+        type="radio" 
+        name="category" 
+        id="category-<%= tag %>" 
+        value="<%= tag %>"
+      >
+      <label for="category-<%= tag %>"><i class="icon-<%= tag %>"></i><%- translate 'span', "noteTypes.#{tag}" %></label>
+    </li>
+  <% end %>
+</ul>

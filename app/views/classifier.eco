@@ -36,19 +36,6 @@
   <button class="zoom-out">-</button>
   </span>
   
-  <ul class="categories">
-    <% for tag in labels.toolbars.tags: %>
-      <li class="<%= tag %>">
-        <input 
-          type="radio" 
-          name="category" 
-          id="category-<%= tag %>" 
-          value="<%= tag %>"
-          <%= @helper.selectedCategory(tag) %>
-        >
-        <label for="category-<%= tag %>"><i class="icon-<%= tag %>"></i><%- translate 'span', "noteTypes.#{tag}" %></label>
-      </li>
-    <% end %>
-  </ul>
+  <div class="toolbar"></div>
   <div id="document-metadata" class="marking-tool-controls"></div>
 </div>

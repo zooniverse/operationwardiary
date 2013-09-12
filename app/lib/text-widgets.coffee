@@ -8,6 +8,10 @@ translate = require 't7e'
 labels = require './notes'
 Geocoder = require './geocoder'
 
+class Toolbar
+  tags: labels.toolbars.tags
+  template: require('../views/toolbars/diary')( tags: labels.toolbars.tags )
+
 class TextWidget
   template: require '../views/tools/person'
   
@@ -316,4 +320,6 @@ widgets =
   weather: WeatherWidget
   orders: OrdersWidget
 
-module.exports = widgets
+module.exports = 
+  widgets: widgets
+  Toolbar: Toolbar

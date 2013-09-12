@@ -4,7 +4,8 @@ Spine = require 'spine'
 require '../lib/jstorage.js'
 store = $.jStorage
 
-widgets = require '../lib/text-widgets'
+{widgets} = require '../lib/text-widgets'
+{Toolbar} = require '../lib/text-widgets'
 
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
@@ -186,6 +187,8 @@ class Classifier extends Spine.Controller
     @metadata.html ''
     
     if $('.documents :checked').val() in ['diary', 'signals']
+      toolbar = new Toolbar
+      $('.toolbar').html( toolbar.template )
       $('.categories').css
         'visibility': 'visible'
     else

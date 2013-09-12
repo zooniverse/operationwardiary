@@ -1,5 +1,5 @@
 translate = require 't7e'
-widgets = require './text-widgets'
+{widgets} = require './text-widgets'
 
 ZoomableSurface = require './zoom_surface'
 {Tool} = ZoomableSurface
