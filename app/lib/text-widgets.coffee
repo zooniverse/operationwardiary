@@ -324,7 +324,9 @@ widgets =
   casualties: CasualtiesWidget
   weather: WeatherWidget
   orders: OrdersWidget
-
-module.exports = 
+  
+Editor =
   widgets: widgets
   Toolbar: DiaryToolbar
+
+module.exports = Editor
