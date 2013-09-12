@@ -4,9 +4,6 @@ Spine = require 'spine'
 require '../lib/jstorage.js'
 store = $.jStorage
 
-{widgets} = require '../lib/text-widgets'
-{Toolbar} = require '../lib/text-widgets'
-
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
