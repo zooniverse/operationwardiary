@@ -11,6 +11,11 @@ labels =
       'casualties'
       'weather'
     ]
+    
+    dates: [
+      'date'
+      'time'
+    ]
 
     documents: [
       'blank'

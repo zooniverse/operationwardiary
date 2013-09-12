@@ -16,6 +16,10 @@ class Toolbar
 class DiaryToolbar extends Toolbar
   
   tags: labels.toolbars.tags
+  
+class DateToolbar extends Toolbar
+  
+  tags: labels.toolbars.dates
 
 class TextWidget
   template: require '../views/tools/person'
@@ -303,15 +307,6 @@ class TimeWidget extends DateWidget
   
 class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
-  
-  render: (el)=>
-    $('.date', el)
-      .datepicker
-        dateFormat: 'd MM yy'
-        changeMonth: true
-        changeYear: true
-        defaultDate: DateWidget.date
-      .val DateWidget.date
       
 widgets = 
   date: DateWidget
@@ -327,6 +322,7 @@ widgets =
   
 Editor =
   widgets: widgets
-  Toolbar: DiaryToolbar
+  DiaryToolbar: DiaryToolbar
+  DateToolbar: DateToolbar
 
 module.exports = Editor

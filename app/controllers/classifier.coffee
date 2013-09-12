@@ -15,7 +15,8 @@ TextTool = require '../lib/text-tool'
 
 Editor = require '../lib/text-widgets'
 {widgets} = Editor
-{Toolbar} = Editor
+{DiaryToolbar} = Editor
+{DateToolbar} = Editor
 
 class Classifier extends Spine.Controller
   
@@ -188,20 +189,22 @@ class Classifier extends Spine.Controller
     @metadata.html ''
     
     if $('.documents :checked').val() in ['diary', 'signals']
-      toolbar = new Toolbar
-      $('.toolbar').html( toolbar.template )
+      toolbar = new DiaryToolbar
+      $('.toolbar').html toolbar.template 
       $('.categories').css
         'visibility': 'visible'
     else
       $('.categories').css
         'visibility': 'hidden'
+        
     
     if $('.documents :checked').val() is 'orders'
       orders = new widgets.orders
+      toolbar = new DateToolbar
       @metadata.html orders.template
-      setTimeout ->
-        orders.render @metadata
-      , 500
+      $('.toolbar').html toolbar.template 
+      $('.categories').css
+        'visibility': 'visible'
 
 class MarkingHistory
   
