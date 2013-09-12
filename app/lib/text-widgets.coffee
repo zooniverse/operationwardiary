@@ -272,13 +272,7 @@ class DateWidget extends TextWidget
         defaultDate: DateWidget.date
       .val DateWidget.date
   
-  mark: (tool)->
-    
-    [
-      tool.addShape 'circle', 0, 0, @dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
-      tool.label
-      tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
-    ]
+  
     
   move: (shapes, x, y) ->
     super
@@ -289,6 +283,13 @@ class DateWidget extends TextWidget
   updateNote: (target) ->
     DateWidget.date = super
 
+class DiaryDateWidget extends DateWidget
+  mark: (tool)->
+    shapes = super
+    line = tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
+    shapes.push line
+    
+    shapes
 class TimeWidget extends DateWidget
   template: require '../views/tools/time'
   
@@ -305,12 +306,24 @@ class TimeWidget extends DateWidget
   getLabel: (target) ->
     @updateNote(target)
   
+
+class DiaryTimeWidget extends TimeWidget
+  mark: (tool)->
+    shapes = super
+    line = tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
+    shapes.push line
+    
+    shapes
+  
+  
 class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
       
 widgets = 
   date: DateWidget
   time: TimeWidget
+  diaryDate: DiaryDateWidget
+  diaryTime: DiaryTimeWidget
   person: PersonWidget
   unit: UnitWidget
   place: PlaceWidget

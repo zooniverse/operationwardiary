@@ -1,8 +1,8 @@
 labels =
   toolbars: 
     tags: [
-      'date'
-      'time'
+      'diaryDate'
+      'diaryTime'
       'place'
       'person'
       'unit'

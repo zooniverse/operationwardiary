@@ -17,7 +17,9 @@ module.exports =
 
   noteTypes:
     date: 'Date'
+    diaryDate: 'Date'
     time: 'Time'
+    diaryTime: 'Time'
     person: 'Person'
     unit: 'Unit'
     place: 'Place'
