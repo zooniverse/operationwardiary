@@ -9,8 +9,10 @@ labels = require './notes'
 Geocoder = require './geocoder'
 
 class Toolbar
-  tags: labels.toolbars.tags
-  template: require('../views/toolbars/diary')( tags: labels.toolbars.tags )
+  
+  constructor: ->
+    @tags = labels.toolbars.tags
+    @template = require('../views/toolbars/diary')( @ )
 
 class TextWidget
   template: require '../views/tools/person'
