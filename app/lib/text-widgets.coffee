@@ -11,8 +11,11 @@ Geocoder = require './geocoder'
 class Toolbar
   
   constructor: ->
-    @tags = labels.toolbars.tags
     @template = require('../views/toolbars/diary')( @ )
+    
+class DiaryToolbar extends Toolbar
+  
+  tags: labels.toolbars.tags
 
 class TextWidget
   template: require '../views/tools/person'
@@ -324,4 +327,4 @@ widgets =
 
 module.exports = 
   widgets: widgets
-  Toolbar: Toolbar
+  Toolbar: DiaryToolbar
