@@ -16,6 +16,10 @@ TextTool = require '../lib/text-tool'
 {ToolControls} = ZoomableSurface
 {Tool} = ZoomableSurface
 
+Editor = require '../lib/text-widgets'
+{widgets} = Editor
+{Toolbar} = Editor
+
 class Classifier extends Spine.Controller
   
   template: require '../views/classifier'
