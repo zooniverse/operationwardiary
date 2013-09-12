@@ -20,6 +20,10 @@ class DiaryToolbar extends Toolbar
 class DateToolbar extends Toolbar
   
   tags: labels.toolbars.dates
+  
+class SignalsToolbar extends Toolbar
+  
+  tags: labels.toolbars.signals
 
 class TextWidget
   template: require '../views/tools/person'
@@ -337,5 +341,6 @@ Editor =
   widgets: widgets
   DiaryToolbar: DiaryToolbar
   DateToolbar: DateToolbar
+  SignalsToolbar: SignalsToolbar
 
 module.exports = Editor

@@ -17,6 +17,7 @@ Editor = require '../lib/text-widgets'
 {widgets} = Editor
 {DiaryToolbar} = Editor
 {DateToolbar} = Editor
+{SignalsToolbar} = Editor
 
 class Classifier extends Spine.Controller
   
@@ -188,23 +189,22 @@ class Classifier extends Spine.Controller
   toggleCategories: ->
     @metadata.html ''
     
-    if $('.documents :checked').val() in ['diary', 'signals']
-      toolbar = new DiaryToolbar
-      $('.toolbar').html toolbar.template 
-      $('.categories').css
-        'visibility': 'visible'
-    else
-      $('.categories').css
-        'visibility': 'hidden'
-        
-    
-    if $('.documents :checked').val() is 'orders'
-      orders = new widgets.orders
-      toolbar = new DateToolbar
-      @metadata.html orders.template
-      $('.toolbar').html toolbar.template 
-      $('.categories').css
-        'visibility': 'visible'
+    toolbar =
+      template: ''
+      
+    switch $('.documents :checked').val()
+      when 'diary'
+        toolbar = new DiaryToolbar
+      when 'signals'
+        toolbar = new SignalsToolbar
+      when 'orders'
+        toolbar = new DateToolbar
+        orders = new widgets.orders
+        @metadata.html orders.template
+      
+    $('.toolbar').html toolbar.template
+    $('.categories').css
+      'visibility': 'visible'
 
 class MarkingHistory
   

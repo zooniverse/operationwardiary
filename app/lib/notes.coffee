@@ -16,6 +16,17 @@ labels =
       'date'
       'time'
     ]
+    
+    signals: [
+      'date'
+      'time'
+      'place'
+      'person'
+      'unit'
+      'activity'
+      'quarters'
+      'casualties'
+    ]
 
     documents: [
       'blank'
