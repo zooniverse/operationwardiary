@@ -27,6 +27,13 @@ class SignalsToolbar extends Toolbar
   tags: labels.toolbars.signals
 
 
+class WidgetFactory
+  
+  @registry = {}
+  
+  @makeWidget: (type, dotRadius = 5) =>
+    new WidgetFactory.registry[type] dotRadius
+
 class TextWidget
   template: require '../views/tools/person'
   
@@ -55,7 +62,7 @@ class TextWidget
     
 
 
-class PlaceWidget extends TextWidget
+WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
   
   colour: 'green'
@@ -142,8 +149,7 @@ class PlaceWidget extends TextWidget
     
 
 
-
-class PersonWidget extends TextWidget
+WidgetFactory.registry.person = class PersonWidget extends TextWidget
   @ranks = [
     'Colonel'
     'Lieut-Colonel'
@@ -185,8 +191,7 @@ class PersonWidget extends TextWidget
 
 
 
-
-class UnitWidget extends TextWidget
+WidgetFactory.registry.unit = class UnitWidget extends TextWidget
   
   template: require('../views/tools/unit')( context: labels.unit )
   
@@ -219,8 +224,7 @@ class UnitWidget extends TextWidget
   
 
 
-
-class CasualtiesWidget extends TextWidget
+WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
   template: require('../views/tools/casualties')( choices: labels.casualties )
   
   type: 'casualties'
@@ -255,7 +259,8 @@ class CasualtiesWidget extends TextWidget
 
 
 
-class ActvityWidget extends TextWidget
+
+WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   
   template: require('../views/tools/activity')( choices: labels.activities )
   
@@ -269,8 +274,7 @@ class ActvityWidget extends TextWidget
 
 
 
-
-class QuartersWidget extends TextWidget
+WidgetFactory.registry.quarters = class QuartersWidget extends TextWidget
   
   template: require('../views/tools/quarters')( choices: labels.quarters )
   
@@ -282,8 +286,7 @@ class QuartersWidget extends TextWidget
 
 
 
-
-class WeatherWidget extends TextWidget
+WidgetFactory.registry.weather = class WeatherWidget extends TextWidget
   
   template: require('../views/tools/weather')( choices: labels.weather )
   
@@ -296,8 +299,7 @@ class WeatherWidget extends TextWidget
     
 
 
-
-class DateWidget extends TextWidget
+WidgetFactory.registry.date = class DateWidget extends TextWidget
   template: require '../views/tools/date'
   
   colour: 'purple'
@@ -328,8 +330,7 @@ class DateWidget extends TextWidget
 
 
 
-
-class DiaryDateWidget extends DateWidget
+WidgetFactory.registry.diaryDate = class DiaryDateWidget extends DateWidget
   
   type: 'diaryDate'
   
@@ -341,8 +342,7 @@ class DiaryDateWidget extends DateWidget
     shapes
 
 
-
-class TimeWidget extends DateWidget
+WidgetFactory.registry.time = class TimeWidget extends DateWidget
   template: require '../views/tools/time'
   
   type: 'time'
@@ -362,8 +362,7 @@ class TimeWidget extends DateWidget
   
 
 
-
-class DiaryTimeWidget extends TimeWidget
+WidgetFactory.registry.diaryTime = class DiaryTimeWidget extends TimeWidget
   
   type: 'diaryTime'
   
@@ -375,16 +374,13 @@ class DiaryTimeWidget extends TimeWidget
     shapes
   
 
-  
-class OrdersWidget extends TextWidget
+WidgetFactory.registry.orders = class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
   
   type: 'orders'
 
 
-
-
-class ReferenceWidget extends TextWidget
+WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget
   template: require '../views/tools/reference'
   
   type: 'reference'
@@ -403,8 +399,7 @@ class ReferenceWidget extends TextWidget
     note
  
 
-  
-class MapRefWidget extends TextWidget
+WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
   
   type: 'mapRef'
@@ -440,8 +435,7 @@ class MapRefWidget extends TextWidget
     "Sheet #{note.sheet}, #{note.scale}, #{note.date}"
 
 
-
-class GridRefWidget extends TextWidget
+WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   template: require '../views/tools/gridref'
   
   type: 'gridRef'
@@ -460,29 +454,6 @@ class GridRefWidget extends TextWidget
     note
 
 
-
-class WidgetFactory
-  
-  @registry = 
-    date: DateWidget
-    time: TimeWidget
-    diaryDate: DiaryDateWidget
-    diaryTime: DiaryTimeWidget
-    person: PersonWidget
-    unit: UnitWidget
-    place: PlaceWidget
-    activity: ActvityWidget
-    quarters: QuartersWidget
-    casualties: CasualtiesWidget
-    weather: WeatherWidget
-    orders: OrdersWidget
-    reference: ReferenceWidget
-    mapRef: MapRefWidget
-    gridRef: GridRefWidget
-  
-  @makeWidget: (type, dotRadius = 5) =>
-    new WidgetFactory.registry[type] dotRadius
-  
 Editor =
   WidgetFactory: WidgetFactory
   DiaryToolbar: DiaryToolbar
