@@ -26,12 +26,13 @@ class SignalsToolbar extends Toolbar
   
   tags: labels.toolbars.signals
 
+
 class TextWidget
   template: require '../views/tools/person'
   
   colour: 'black'
   
-  constructor: (@dotRadius = 5) ->
+  constructor: (@dotRadius) ->
   
   render: ->
     
@@ -52,6 +53,7 @@ class TextWidget
   getLabel: (target) ->
     $(target).val() ? ''
     
+
 
 class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
@@ -478,8 +480,8 @@ class WidgetFactory
     mapRef: MapRefWidget
     gridRef: GridRefWidget
   
-  @makeWidget: (type) =>
-    new WidgetFactory.registry[type]
+  @makeWidget: (type, dotRadius = 5) =>
+    new WidgetFactory.registry[type] dotRadius
   
 Editor =
   WidgetFactory: WidgetFactory
