@@ -16,7 +16,7 @@ TextTool = require '../lib/text-tool'
 Editor = require '../lib/text-widgets'
 {widgets} = Editor
 {DiaryToolbar} = Editor
-{DateToolbar} = Editor
+{OrdersToolbar} = Editor
 {SignalsToolbar} = Editor
 
 class Classifier extends Spine.Controller
@@ -198,7 +198,7 @@ class Classifier extends Spine.Controller
       when 'signals'
         toolbar = new SignalsToolbar
       when 'orders'
-        toolbar = new DateToolbar
+        toolbar = new OrdersToolbar
         orders = new widgets.orders
         @metadata.html orders.template
       

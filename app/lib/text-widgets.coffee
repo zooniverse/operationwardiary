@@ -17,9 +17,9 @@ class DiaryToolbar extends Toolbar
   
   tags: labels.toolbars.tags
   
-class DateToolbar extends Toolbar
+class OrdersToolbar extends Toolbar
   
-  tags: labels.toolbars.dates
+  tags: labels.toolbars.orders
   
 class SignalsToolbar extends Toolbar
   
@@ -322,7 +322,23 @@ class DiaryTimeWidget extends TimeWidget
   
 class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
-      
+
+class ReferenceWidget extends TextWidget
+  template: require '../views/tools/reference'
+  
+  updateNote: (target) ->
+    
+    note = 
+      reference: ''
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        note[@name] = @value
+    
+    note
+
 widgets = 
   date: DateWidget
   time: TimeWidget
@@ -336,11 +352,12 @@ widgets =
   casualties: CasualtiesWidget
   weather: WeatherWidget
   orders: OrdersWidget
+  reference: ReferenceWidget
   
 Editor =
   widgets: widgets
   DiaryToolbar: DiaryToolbar
-  DateToolbar: DateToolbar
+  OrdersToolbar: OrdersToolbar
   SignalsToolbar: SignalsToolbar
 
 module.exports = Editor

@@ -11,8 +11,4 @@
       <option value="other"><%- translate 'span', "common.other" %></option>
     </select>
   </label>
-  
-  <label>Reference 
-    <input name="reference" type="text"/>
-  </label>
 </div>

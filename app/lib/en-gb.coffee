@@ -27,6 +27,7 @@ module.exports =
     quarters: 'Quarters'
     casualties: 'Casualties'
     weather: 'Weather'
+    reference: 'Reference'
     
   activities:
     rest: 'Resting'
