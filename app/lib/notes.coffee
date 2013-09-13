@@ -10,12 +10,12 @@ labels =
       'quarters'
       'casualties'
       'weather'
+      'reference'
     ]
     
     orders: [
       'reference'
       'date'
-      'time'
     ]
     
     signals: [
