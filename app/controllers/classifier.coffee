@@ -15,9 +15,7 @@ TextTool = require '../lib/text-tool'
 
 Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
-{DiaryToolbar} = Editor
-{OrdersToolbar} = Editor
-{SignalsToolbar} = Editor
+{toolbars} = Editor
 
 class Classifier extends Spine.Controller
   
@@ -187,18 +185,13 @@ class Classifier extends Spine.Controller
     @surface_history[ @subject_id ] = snapshot
     
   toggleCategories: ->
+    category = $('.documents :checked').val()
     @metadata.html ''
     
-    toolbar =
-      template: ''
+    toolbar = toolbars[ category ] ? { template: '' }
       
-    switch $('.documents :checked').val()
-      when 'diary'
-        toolbar = new DiaryToolbar
-      when 'signals'
-        toolbar = new SignalsToolbar
+    switch category
       when 'orders'
-        toolbar = new OrdersToolbar
         orders = WidgetFactory.makeWidget 'orders'
         @metadata.html orders.template
       

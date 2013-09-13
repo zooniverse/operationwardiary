@@ -8,7 +8,6 @@ translate = require 't7e'
 labels = require './notes'
 Geocoder = require './geocoder'
 
-
 class Toolbar
   
   constructor: ->
@@ -456,8 +455,9 @@ WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
 
 Editor =
   WidgetFactory: WidgetFactory
-  DiaryToolbar: DiaryToolbar
-  OrdersToolbar: OrdersToolbar
-  SignalsToolbar: SignalsToolbar
+  toolbars:
+    diary: new DiaryToolbar
+    orders: new OrdersToolbar
+    signals: new SignalsToolbar
 
 module.exports = Editor
