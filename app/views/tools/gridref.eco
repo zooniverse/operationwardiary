@@ -1,0 +1,8 @@
+<% translate = require 't7e' %>
+
+
+<div class="annotation">
+  <label>Grid Reference 
+    <input name="gridref" type="text"/>
+  </label>
+</div>

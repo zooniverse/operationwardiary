@@ -12,6 +12,7 @@ labels =
       'weather'
       'reference'
       'mapref'
+      'gridref'
     ]
     
     orders: [

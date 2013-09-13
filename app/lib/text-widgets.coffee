@@ -342,10 +342,43 @@ class ReferenceWidget extends TextWidget
 class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
   
+  render: (el)->
+    $('.date', el)
+      .datepicker
+        dateFormat: 'd MM yy'
+        changeMonth: true
+        changeYear: true
+        defaultDate: DateWidget.date
+      .val DateWidget.date
+  
   updateNote: (target) ->
     
     note = 
-      mapref: ''
+      sheet: ''
+      scale: ''
+      date: ''
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        note[@name] = @value
+    
+    note
+    
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
+    
+    "Sheet #{note.sheet}, #{note.scale}, #{note.date}"
+
+class GridRefWidget extends TextWidget
+  template: require '../views/tools/gridref'
+  
+  updateNote: (target) ->
+    
+    note = 
+      gridref: ''
     
     $(target)
       .parents( '.annotation' )
@@ -370,6 +403,7 @@ widgets =
   orders: OrdersWidget
   reference: ReferenceWidget
   mapref: MapRefWidget
+  gridref: GridRefWidget
   
 Editor =
   widgets: widgets

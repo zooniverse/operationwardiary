@@ -2,7 +2,15 @@
 
 
 <div class="annotation">
-  <label>Map Reference 
-    <input name="mapref" type="text"/>
+  <label>Sheet
+    <input name="sheet" type="text"/>
+  </label>
+  
+  <label>Scale
+    <input name="scale" type="text"/>
+  </label>
+  
+  <label>Date
+    <input class="date" name="date" type="text"/>
   </label>
 </div>
