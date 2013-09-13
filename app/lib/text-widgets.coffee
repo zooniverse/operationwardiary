@@ -338,6 +338,22 @@ class ReferenceWidget extends TextWidget
         note[@name] = @value
     
     note
+  
+class MapRefWidget extends TextWidget
+  template: require '../views/tools/mapref'
+  
+  updateNote: (target) ->
+    
+    note = 
+      mapref: ''
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        note[@name] = @value
+    
+    note
 
 widgets = 
   date: DateWidget
@@ -353,6 +369,7 @@ widgets =
   weather: WeatherWidget
   orders: OrdersWidget
   reference: ReferenceWidget
+  mapref: MapRefWidget
   
 Editor =
   widgets: widgets
