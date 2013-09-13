@@ -14,7 +14,7 @@ TextTool = require '../lib/text-tool'
 {Tool} = ZoomableSurface
 
 Editor = require '../lib/text-widgets'
-{widgets} = Editor
+{WidgetFactory} = Editor
 {DiaryToolbar} = Editor
 {OrdersToolbar} = Editor
 {SignalsToolbar} = Editor
@@ -199,7 +199,7 @@ class Classifier extends Spine.Controller
         toolbar = new SignalsToolbar
       when 'orders'
         toolbar = new OrdersToolbar
-        orders = new widgets.orders
+        orders = WidgetFactory.makeWidget 'orders'
         @metadata.html orders.template
       
     $('.toolbar').html toolbar.template

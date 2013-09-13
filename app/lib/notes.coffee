@@ -11,8 +11,8 @@ labels =
       'casualties'
       'weather'
       'reference'
-      'mapref'
-      'gridref'
+      'mapRef'
+      'gridRef'
     ]
     
     orders: [

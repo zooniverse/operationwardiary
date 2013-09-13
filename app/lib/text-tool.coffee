@@ -1,5 +1,5 @@
 translate = require 't7e'
-{widgets} = require './text-widgets'
+{WidgetFactory} = require './text-widgets'
 
 ZoomableSurface = require './zoom_surface'
 {Tool} = ZoomableSurface
@@ -12,7 +12,7 @@ class TextControls extends ToolControls
     super
     
     category = $( '.categories :checked' ).val()
-    @widget = new widgets[ category ] @tool.surface.dotRadius
+    @widget = WidgetFactory.makeWidget category
     @el.append @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'

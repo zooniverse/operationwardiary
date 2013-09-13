@@ -8,6 +8,7 @@ translate = require 't7e'
 labels = require './notes'
 Geocoder = require './geocoder'
 
+
 class Toolbar
   
   constructor: ->
@@ -30,7 +31,7 @@ class TextWidget
   
   colour: 'black'
   
-  constructor: (@dotRadius) ->
+  constructor: (@dotRadius = 5) ->
   
   render: ->
     
@@ -56,6 +57,8 @@ class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
   
   colour: 'green'
+  
+  type: 'place'
   
   @gc: new Geocoder
   
@@ -135,6 +138,9 @@ class PlaceWidget extends TextWidget
     
       
     
+
+
+
 class PersonWidget extends TextWidget
   @ranks = [
     'Colonel'
@@ -151,6 +157,8 @@ class PersonWidget extends TextWidget
   template: require('../views/tools/person')( ranks: PersonWidget.ranks, context: labels.person )
   
   colour: 'red'
+  
+  type: 'person'
   
   updateNote: (target)->
     note =
@@ -173,9 +181,14 @@ class PersonWidget extends TextWidget
     note = @updateNote(target)
     "#{note.rank} #{note.first} #{note.surname}"
 
+
+
+
 class UnitWidget extends TextWidget
   
   template: require('../views/tools/unit')( context: labels.unit )
+  
+  type: 'unit'
   
   updateNote: (target) ->
     
@@ -202,8 +215,13 @@ class UnitWidget extends TextWidget
     
     "#{context} #{note.name}"
   
+
+
+
 class CasualtiesWidget extends TextWidget
   template: require('../views/tools/casualties')( choices: labels.casualties )
+  
+  type: 'casualties'
   
   updateNote: (target) ->
     
@@ -233,37 +251,56 @@ class CasualtiesWidget extends TextWidget
       
     output.join '\n'
 
+
+
 class ActvityWidget extends TextWidget
   
   template: require('../views/tools/activity')( choices: labels.activities )
   
   colour: 'blue'
   
+  type: 'activity'
+  
   getLabel: (target) ->
     activity = $(target).val() ? 'trench'
     $(target).find(':selected').text()
+
+
+
 
 class QuartersWidget extends TextWidget
   
   template: require('../views/tools/quarters')( choices: labels.quarters )
   
+  type: 'quarters'
+  
   getLabel: (target) ->
     activity = $(target).val() ? 'billets'
     $(target).find(':selected').text()
 
+
+
+
 class WeatherWidget extends TextWidget
   
   template: require('../views/tools/weather')( choices: labels.weather )
+  
+  type: 'weather'
   
   getLabel: (target) ->
     weather = $(target).val() ? 'fine'
     $(target).find(':selected').text()
   
     
+
+
+
 class DateWidget extends TextWidget
   template: require '../views/tools/date'
   
   colour: 'purple'
+  
+  type: 'date'
   
   @date: '1 May 1915'
   
@@ -287,15 +324,26 @@ class DateWidget extends TextWidget
   updateNote: (target) ->
     DateWidget.date = super
 
+
+
+
 class DiaryDateWidget extends DateWidget
+  
+  type: 'diaryDate'
+  
   mark: (tool)->
     shapes = super
     line = tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
     shapes.push line
     
     shapes
+
+
+
 class TimeWidget extends DateWidget
   template: require '../views/tools/time'
+  
+  type: 'time'
   
   updateNote: (target)->
     note = ''
@@ -311,7 +359,12 @@ class TimeWidget extends DateWidget
     @updateNote(target)
   
 
+
+
 class DiaryTimeWidget extends TimeWidget
+  
+  type: 'diaryTime'
+  
   mark: (tool)->
     shapes = super
     line = tool.addShape 'path', "M0,0H1026", fill: 'black', stroke: @colour, 'stroke-width': 1, opacity: .3
@@ -319,12 +372,20 @@ class DiaryTimeWidget extends TimeWidget
     
     shapes
   
+
   
 class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
+  
+  type: 'orders'
+
+
+
 
 class ReferenceWidget extends TextWidget
   template: require '../views/tools/reference'
+  
+  type: 'reference'
   
   updateNote: (target) ->
     
@@ -338,9 +399,13 @@ class ReferenceWidget extends TextWidget
         note[@name] = @value
     
     note
+ 
+
   
 class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
+  
+  type: 'mapRef'
   
   render: (el)->
     $('.date', el)
@@ -372,8 +437,12 @@ class MapRefWidget extends TextWidget
     
     "Sheet #{note.sheet}, #{note.scale}, #{note.date}"
 
+
+
 class GridRefWidget extends TextWidget
   template: require '../views/tools/gridref'
+  
+  type: 'gridRef'
   
   updateNote: (target) ->
     
@@ -388,25 +457,32 @@ class GridRefWidget extends TextWidget
     
     note
 
-widgets = 
-  date: DateWidget
-  time: TimeWidget
-  diaryDate: DiaryDateWidget
-  diaryTime: DiaryTimeWidget
-  person: PersonWidget
-  unit: UnitWidget
-  place: PlaceWidget
-  activity: ActvityWidget
-  quarters: QuartersWidget
-  casualties: CasualtiesWidget
-  weather: WeatherWidget
-  orders: OrdersWidget
-  reference: ReferenceWidget
-  mapref: MapRefWidget
-  gridref: GridRefWidget
+
+
+class WidgetFactory
+  
+  @registry = 
+    date: DateWidget
+    time: TimeWidget
+    diaryDate: DiaryDateWidget
+    diaryTime: DiaryTimeWidget
+    person: PersonWidget
+    unit: UnitWidget
+    place: PlaceWidget
+    activity: ActvityWidget
+    quarters: QuartersWidget
+    casualties: CasualtiesWidget
+    weather: WeatherWidget
+    orders: OrdersWidget
+    reference: ReferenceWidget
+    mapRef: MapRefWidget
+    gridRef: GridRefWidget
+  
+  @makeWidget: (type) =>
+    new WidgetFactory.registry[type]
   
 Editor =
-  widgets: widgets
+  WidgetFactory: WidgetFactory
   DiaryToolbar: DiaryToolbar
   OrdersToolbar: OrdersToolbar
   SignalsToolbar: SignalsToolbar

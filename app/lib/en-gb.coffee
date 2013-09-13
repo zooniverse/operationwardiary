@@ -28,8 +28,8 @@ module.exports =
     casualties: 'Casualties'
     weather: 'Weather'
     reference: 'Reference'
-    mapref: 'Map ref'
-    gridref: 'Grid ref'
+    mapRef: 'Map ref'
+    gridRef: 'Grid ref'
     
   activities:
     rest: 'Resting'
