@@ -13,6 +13,12 @@ activity = blue
   left: 5px
   z-index: 10
 
+.toolbar
+  position: absolute
+  top: 5px
+  right: 5px
+  z-index: 10
+
 .subject-container
   width: 1024px
   height: 560px
@@ -38,11 +44,8 @@ activity = blue
       color: place
     &.activity
       color: activity
-  
+
 ul.categories, ul.documents
-  position: absolute
-  top: 5px
-  right: 5px
   list-style-type: none
   
   li
@@ -86,7 +89,6 @@ ul.documents
 
 ul.categories
   visibility: hidden
-  z-index: 10
   
 .marking-tool-controls
   position: absolute
@@ -130,5 +132,4 @@ ul.categories
     background-color: activity
     
 .marking-tool-controls.closed
-  display: none;
   z-index: -1
