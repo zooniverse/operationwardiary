@@ -11,6 +11,7 @@ activity = blue
   position:absolute
   top: 5px;
   left: 5px
+  z-index: 10
 
 .subject-container
   width: 1024px
@@ -20,6 +21,9 @@ activity = blue
   img
     max-width: 1024px
     max-height: 560px
+    
+  svg
+    z-index: 1
     
   text, tspan
     font-size: 14px
@@ -82,6 +86,7 @@ ul.documents
 
 ul.categories
   visibility: hidden
+  z-index: 10
   
 .marking-tool-controls
   position: absolute
@@ -123,7 +128,4 @@ ul.categories
     
 .marking-tool-controls.closed
   display: none;
-  z-index: 1
-  .annotation
-  button[name=delete-mark]
-    display:none
+  z-index: -1
