@@ -22,7 +22,19 @@
     <% end %>
   </ul>
 
-  <span style="position: absolute; right: 5px; top: 5px;">
+  <span style="position: absolute; right: 5px; top: -5px;">
+    <label>
+      Change diary
+      <select id="diary_picker">
+        <option>1874/0</option>
+        <option>1899/0</option>
+        <option>1900/1</option>
+        <option>1900/2</option>
+        <option>1900/3</option>
+        <option>1900/4</option>
+      </select>
+    </label>
+    <br>
     <button class="back">Back</button>
     <button class="task">Classify</button>
     <button class="finish">Next!</button>

@@ -30,12 +30,22 @@ diaries =
     enddate: "31 May 1919"
   '1900/1':
     title: "14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders"
-    begins: 1
+    begins: 2
     startdate: '1 April 1918'
     enddate: '30 June 1919'
   '1900/2':
     title: "14 Division: 42 Infantry Brigade: 9 Battalion King's Royal Rifle Corps"
     begins: 194
+    startdate: '1 May 1915'
+    enddate: '30 June 1918'
+  '1900/3':
+    title: "14 Division: 42 Infantry Brigade: 16 Battalion Manchester Regiment"
+    begins: 785
+    startdate: '1 July 1918'
+    enddate: '30 June 1919'
+  '1900/4':
+    title: "14 Division: 42 Infantry Brigade: 5 Battalion Oxfordshire and Buckinghamshire Light Infantry"
+    begins: 820
     startdate: '1 May 1915'
     enddate: '30 June 1918'
 
@@ -52,6 +62,14 @@ class Classifier extends Spine.Controller
     'change .documents': ->
       @surface.enable()
       @toggleCategories()
+    'change #diary_picker': ->
+      @path = $('#diary_picker').val()
+      @diary = diaries[@path]
+      @subject_id = @diary.begins
+      filename = "000#{@subject_id}"[-4..-1]
+      @surface.loadImage "img/#{@path}/#{filename}.jpg"
+      @pageNumber.text( filename )
+      store.delete 'subject_id'
       
     'change .categories': ->
       @surface.markingMode = true
@@ -74,7 +92,7 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @path = '1900/1'
+    @path = '1900/3'
     @diary = diaries[@path]
     
     @defaults = defaults
