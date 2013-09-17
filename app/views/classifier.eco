@@ -4,7 +4,7 @@
 
 <h1><%= @diary.title %></h1>
 <p>WO 95/<span id="diary_id"><%= @path %></span> page <span id="subject"><%= "000#{@subject_id}"[-4..-1] %></span></p>
-<p><%= @diary.startdate %> - <%= @diary.enddate %></p>
+<p class="diary_dates"><%= @diary.startdate %> - <%= @diary.enddate %></p>
 
 <div style="position: relative; width: 100%;">
   <ul class="documents">

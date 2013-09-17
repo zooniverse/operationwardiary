@@ -71,6 +71,8 @@ class Classifier extends Spine.Controller
       @surface.loadImage "img/#{@path}/#{filename}.jpg"
       @pageNumber.text filename
       @diaryDisplay.text @path
+      $('h1').text @diary.title
+      @diaryDates.text "#{@diary.startdate} - #{@diary.enddate}"
       store.deleteKey 'subject_id'
       
     'change .categories': ->
@@ -82,6 +84,7 @@ class Classifier extends Spine.Controller
     '#document-metadata': 'metadata'
     '#subject': 'pageNumber'
     '#diary_id': 'diaryDisplay'
+    '.diary_dates': 'diaryDates'
     
   helper:
     selectedCategory: (note) =>
