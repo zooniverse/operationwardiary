@@ -69,7 +69,8 @@ class Classifier extends Spine.Controller
       @subject_id = @diary.begins
       filename = "000#{@subject_id}"[-4..-1]
       @surface.loadImage "img/#{@path}/#{filename}.jpg"
-      @pageNumber.text( filename )
+      @pageNumber.text filename
+      @diaryDisplay.text @path
       store.deleteKey 'subject_id'
       
     'change .categories': ->
@@ -80,6 +81,7 @@ class Classifier extends Spine.Controller
     '.subject-container': 'subjectContainer'
     '#document-metadata': 'metadata'
     '#subject': 'pageNumber'
+    '#diary_id': 'diaryDisplay'
     
   helper:
     selectedCategory: (note) =>
@@ -96,8 +98,6 @@ class Classifier extends Spine.Controller
     @path = store.get 'diary_id'
     @path?= '1900/2'
     @diary = diaries[@path]
-    
-    $('#diary_picker').val @path
     
     @defaults = defaults
     @surface_history = {}
@@ -122,8 +122,9 @@ class Classifier extends Spine.Controller
     
     filename = "000#{@subject_id}"[-4..-1]
     @surface.loadImage "img/#{@path}/#{filename}.jpg"
-    @pageNumber.text( filename )
-    
+    @pageNumber.text filename
+    @diaryDisplay.text @path
+    $('#diary_picker').val @path
     
 
     User.on 'change', @onUserChange
