@@ -100,7 +100,10 @@ ul.categories
   border: 1px solid #aaa
   z-index: 10
   display: block
-  
+
+  &.closed
+    z-index: -1
+    
   &.selected
     z-index: 20
   
@@ -131,5 +134,3 @@ ul.categories
   &.activity button
     background-color: activity
     
-.marking-tool-controls.closed
-  z-index: -1
