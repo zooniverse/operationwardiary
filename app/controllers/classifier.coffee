@@ -23,6 +23,16 @@ diaries =
     begins: 1
     startdate: "1 January 1918"
     enddate: "31 March 1918"
+  '1899/0':
+    title: "14 Division: 42 Infantry Brigade: Headquarters"
+    begins: 1
+    startdate: "1 November 1917"
+    enddate: "31 May 1919"
+  '1900/1':
+    title: "14 Division: 14 Battalion Argyll and Sutherland Highlanders"
+    begins: 1
+    startdate: '1 April 1918'
+    enddate: '30 June 1919'
   '1900/2':
     title: "14 Division: 9 Battalion King's Royal Rifle Corps"
     begins: 194
