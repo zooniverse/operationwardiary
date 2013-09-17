@@ -64,7 +64,7 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @path = '1900/2'
+    @path = '1874/0'
     diary = diaries[@path]
     
     @defaults = defaults
