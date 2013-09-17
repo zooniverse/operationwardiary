@@ -69,7 +69,7 @@ class Classifier extends Spine.Controller
       filename = "000#{@subject_id}"[-4..-1]
       @surface.loadImage "img/#{@path}/#{filename}.jpg"
       @pageNumber.text( filename )
-      store.delete 'subject_id'
+      store.deleteKey 'subject_id'
       
     'change .categories': ->
       @surface.markingMode = true
