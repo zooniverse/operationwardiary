@@ -1,9 +1,9 @@
 <% translate = require 't7e' %>
 <% labels = require '../lib/notes' %>
-<% console.log 'PAGE ' + @subject_id %>
+<% console.log @ %>
 
-<h1>9 Battalion King's Royal Rifle Corps</h1>
-<p>WO 95/1900/2 page <span id="subject"><?= @subject_id ?></span></p>
+<h1><%= @diary.title %></h1>
+<p>WO 95/<%= @path %> page <span id="subject"><%= "000#{@subject_id}"[-4..-1] %></span></p>
 <p>1915 May - 1918 June</p>
 
 <div style="position: relative; width: 100%;">

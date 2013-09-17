@@ -74,14 +74,14 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @path = '1874/0'
-    diary = diaries[@path]
+    @path = '1900/1'
+    @diary = diaries[@path]
     
     @defaults = defaults
     @surface_history = {}
     @category = @defaults.category
     @subject_id = store.get 'subject_id' 
-    @subject_id?= diary.begins
+    @subject_id?= @diary.begins
     
     @render()
 	
