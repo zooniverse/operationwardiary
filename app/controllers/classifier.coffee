@@ -75,6 +75,9 @@ class Classifier extends Spine.Controller
       @diaryDates.text "#{@diary.startdate} - #{@diary.enddate}"
       store.deleteKey 'subject_id'
       
+      DateWidget = WidgetFactory.registry.date
+      DateWidget.date = @diary.startdate
+      
     'change .categories': ->
       @surface.markingMode = true
       tool.controls.el.addClass 'closed' for tool in @surface.tools
@@ -128,6 +131,9 @@ class Classifier extends Spine.Controller
     @pageNumber.text filename
     @diaryDisplay.text @path
     $('#diary_picker').val @path
+    
+    DateWidget = WidgetFactory.registry.date
+    DateWidget.date = @diary.startdate
     
 
     User.on 'change', @onUserChange
