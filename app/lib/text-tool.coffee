@@ -41,13 +41,6 @@ class TextControls extends ToolControls
   onClickToggle: =>
     @el.toggleClass 'closed'
     @textInput[0].focus() if @el.is ':visible'
-
-  onClickCategory: ({currentTarget}) =>
-    target = $(currentTarget)
-
-    @toggleButton.attr title: target.html()
-
-    setTimeout (=> @el.addClass 'closed'), 250
     
   onTextChange: ({currentTarget}) =>
     
@@ -134,7 +127,7 @@ class TextTool extends Tool
     @clicks is 1
 
   'on drag dots': (e, shape) ->
-    @controls.el.addClass 'closed'
+    # @controls.el.addClass 'closed'
     index = $.inArray shape, @dots
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x,y]
