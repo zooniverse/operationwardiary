@@ -64,6 +64,7 @@ class Classifier extends Spine.Controller
       @toggleCategories()
     'change #diary_picker': ->
       @path = $('#diary_picker').val()
+      store.set 'diary_id', @path
       @diary = diaries[@path]
       @subject_id = @diary.begins
       filename = "000#{@subject_id}"[-4..-1]
@@ -92,8 +93,11 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @path = '1900/3'
+    @path = store.get 'diary_id'
+    @path?= '1900/2'
     @diary = diaries[@path]
+    
+    $('#diary_picker').val @path
     
     @defaults = defaults
     @surface_history = {}
