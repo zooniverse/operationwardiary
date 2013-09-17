@@ -72,7 +72,9 @@ class Classifier extends Spine.Controller
     @subjectContainer.css 'position', 'relative'
     # HACK: turn off image scaling/resizing in SVG.
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
-    @surface.loadImage "img/0#{@subject_id}.jpg"
+    
+    filename = "000#{@subject_id}"[-4..-1]
+    @surface.loadImage "img/1874/0/#{filename}.jpg"
     @pageNumber.text( @subject_id )
     
     
@@ -131,8 +133,9 @@ class Classifier extends Spine.Controller
     @subject_id++
     store.set 'subject_id', @subject_id
     @pageNumber.text( @subject_id )
+    filename = "000#{@subject_id}"[-4..-1]
     @surface
-      .loadImage("img/0#{@subject_id}.jpg")
+      .loadImage("img/1874/0/#{filename}.jpg")
       .done( =>
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
@@ -170,8 +173,10 @@ class Classifier extends Spine.Controller
     @subject_id--
     store.set 'subject_id', @subject_id
     @pageNumber.text( @subject_id )
+    
+    filename = "000#{@subject_id}"[-4..-1]
     @surface
-      .loadImage("img/0#{@subject_id}.jpg")
+      .loadImage("img/1874/0/#{filename}.jpg")
       .done( =>
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
