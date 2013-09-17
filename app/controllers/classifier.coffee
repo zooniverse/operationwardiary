@@ -17,6 +17,18 @@ Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
 {toolbars} = Editor
 
+diaries =
+  '1874/0':
+    title: "14 Division: Headquarters: General Staff"
+    begins: 1
+    startdate: "1 January 1918"
+    enddate: "31 March 1918"
+  '1900/2':
+    title: "14 Division: 9 Battalion King's Royal Rifle Corps"
+    begins: 194
+    startdate: '1 May 1915'
+    enddate: '30 June 1918'
+
 class Classifier extends Spine.Controller
   
   template: require '../views/classifier'
@@ -52,11 +64,14 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
+    @path = '1900/2'
+    diary = diaries[@path]
+    
     @defaults = defaults
     @surface_history = {}
     @category = @defaults.category
     @subject_id = store.get 'subject_id' 
-    @subject_id?= 194
+    @subject_id?= diary.begins
     
     @render()
 	
@@ -74,7 +89,7 @@ class Classifier extends Spine.Controller
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     
     filename = "000#{@subject_id}"[-4..-1]
-    @surface.loadImage "img/1874/0/#{filename}.jpg"
+    @surface.loadImage "img/#{@path}/#{filename}.jpg"
     @pageNumber.text( @subject_id )
     
     
@@ -135,7 +150,7 @@ class Classifier extends Spine.Controller
     @pageNumber.text( @subject_id )
     filename = "000#{@subject_id}"[-4..-1]
     @surface
-      .loadImage("img/1874/0/#{filename}.jpg")
+      .loadImage("img/#{@path}/#{filename}.jpg")
       .done( =>
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
@@ -176,7 +191,7 @@ class Classifier extends Spine.Controller
     
     filename = "000#{@subject_id}"[-4..-1]
     @surface
-      .loadImage("img/1874/0/#{filename}.jpg")
+      .loadImage("img/#{@path}/#{filename}.jpg")
       .done( =>
         @classification.subject.trigger 'select'
         @render_annotation @surface_history[ @subject_id ]
