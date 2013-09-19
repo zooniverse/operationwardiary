@@ -12,16 +12,59 @@ activity = blue
   top: 5px;
   left: 5px
   z-index: 10
-
-.toolbar
-  position: absolute
-  top: 5px
-  right: 5px
-  z-index: 10
-
+  
+.tools
+  width: 200px
+  float: left
+  
+  ul
+    text-indent: 0
+    padding: 0
+    margin: 0 0 1em
+    list-style-type: none
+    
+    li
+    
+      label
+        display: block
+        font-family: 'Helvetica Neu', 'Helvetica', 'Arial', serif
+        background-color: #333
+        color: #fff
+        padding: 3px;
+        opacity: .4
+      
+        &:hover
+          opacity: .6
+    
+      &.date label, &.diaryDate label
+        background-color: date
+      &.time label, &.diaryTime label
+        background-color: time
+      &.place label
+        background-color: place
+      &.person label
+        background-color: person
+      &.activity label
+        background-color: activity
+      
+    
+      input[type=radio]
+        position: absolute
+        left: -9999px
+      
+        &:checked + label
+          font-weight: bold
+          opacity: 1
+      
+        &:focus + label
+          opacity: .8
+  
 .subject-container
-  width: 1024px
-  height: 560px
+  float:right
+  min-width: 800px
+  max-width: 1024px
+  min-height: 450px
+  max-height: 560px
   border: 1px solid #333
   
   img
@@ -44,45 +87,6 @@ activity = blue
       color: place
     &.activity
       color: activity
-
-ul.categories, ul.documents
-  list-style-type: none
-  
-  li
-    display: inline-block
-    
-    label
-      font-family: 'Helvetica Neu', 'Helvetica', 'Arial', serif
-      background-color: #333
-      color: #fff
-      padding: 3px;
-      opacity: .4
-      
-      &:hover
-        opacity: .6
-    
-    &.date label, &.diaryDate label
-      background-color: date
-    &.time label, &.diaryTime label
-      background-color: time
-    &.place label
-      background-color: place
-    &.person label
-      background-color: person
-    &.activity label
-      background-color: activity
-      
-    
-    input[type=radio]
-      position: absolute
-      left: -9999px
-      
-      &:checked + label
-        font-weight: bold
-        opacity: 1
-      
-      &:focus + label
-        opacity: .8
         
 ul.documents
   position: relative
