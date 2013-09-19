@@ -254,7 +254,7 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
       el = translate 'span', "casualties.#{choice}"
       output.push $(el).text() + ': ' + note[choice]
       
-    output.join '\n'
+    output.join ', '
 
 
 
