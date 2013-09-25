@@ -199,31 +199,25 @@ class Classifier extends Spine.Controller
       )
 
   onZoomIn: ({currentTarget})=>
-    @surface.selection?.deselect()
-    timeout = null
-
-    zoom_in = =>
-      @surface.zoom @surface.zoomBy + .1
-      clearTimeout timeout if timeout
-      timeout = setTimeout zoom_in, 200
-      
-    zoom_in()
     
-    $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
+    timeout = @onZoom currentTarget, .2
     
   onZoomOut: ({currentTarget})=>
+    
+    timeout = @onZoom currentTarget, -.2
+    
+  onZoom: (currentTarget, delta)=>
     @surface.selection?.deselect()
     timeout = null
 
-    zoom_out = =>
-      @surface.zoom @surface.zoomBy - .1
+    zoom = =>
+      @surface.zoom @surface.zoomBy + delta
       clearTimeout timeout if timeout
-      timeout = setTimeout zoom_out, 200
+      timeout = setTimeout zoom, 200
       
-    zoom_out()
+    zoom()
     
     $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
-    
     
   onGoBack: ->
     @update_history()
