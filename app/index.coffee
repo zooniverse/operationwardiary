@@ -9,7 +9,7 @@ User = require 'zooniverse/models/user'
 Footer = require 'zooniverse/controllers/footer'
 TopBar = require 'zooniverse/controllers/top-bar'
 
-api = new Api project: 'worms'
+api = new Api project: 'war_diary'
 
 # Build app
 app = {}
