@@ -15,26 +15,16 @@ class ZoomableSurface extends MarkingSurface
       @selection.controls.onClickToggle e if e.which == 13
     
     @container.on 'mousewheel', (e)=>
-      return unless @hasFocus()
-      e.stopPropagation()
+      
       mouse_delta = e.originalEvent.wheelDelta
       
-      delta = if mouse_delta > 0 then .2 else -.2
-      
-      @zoom( @zoomBy + delta )
-      
-      false
+      @onScroll mouse_delta
     
     @container.on 'wheel', (e)=>
-      return unless @hasFocus()
-      e.stopPropagation()
+      
       mouse_delta = e.originalEvent.deltaY
       
-      delta = if mouse_delta > 0 then .2 else -.2
-      
-      @zoom( @zoomBy + delta )
-      
-      false
+      @onScroll mouse_delta
     
   zoom: (@zoomBy = 1) ->
     return if @disabled
@@ -139,6 +129,16 @@ class ZoomableSurface extends MarkingSurface
     @oldY = null
     @selection?.onInitialRelease e
     @markingMode = true
+    
+  onScroll: (mouse_delta) =>
+    
+    return unless @hasFocus()
+    
+    delta = if mouse_delta > 0 then .2 else -.2
+    
+    @zoom( @zoomBy + delta )
+    
+    false
     
   createTool: ->
     if not @selection? or @selection.isComplete()
