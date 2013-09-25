@@ -171,6 +171,8 @@ class Classifier extends Spine.Controller
 
   onSubjectSelect: (e, subject) =>
     # Subject.current
+    console.log subject
+    
     @classification = new Classification { subject }
     
   onDoTask: =>
