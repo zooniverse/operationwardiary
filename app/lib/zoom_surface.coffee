@@ -14,6 +14,28 @@ class ZoomableSurface extends MarkingSurface
     @container.on 'keydown', (e)=>
       @selection.controls.onClickToggle e if e.which == 13
     
+    @container.on 'mousewheel', (e)=>
+      return unless @hasFocus()
+      e.stopPropagation()
+      mouse_delta = e.originalEvent.wheelDelta
+      
+      delta = if mouse_delta > 0 then .2 else -.2
+      
+      @zoom( @zoomBy + delta )
+      
+      false
+    
+    @container.on 'wheel', (e)=>
+      return unless @hasFocus()
+      e.stopPropagation()
+      mouse_delta = e.originalEvent.deltaY
+      
+      delta = if mouse_delta > 0 then .2 else -.2
+      
+      @zoom( @zoomBy + delta )
+      
+      false
+    
   zoom: (@zoomBy = 1) ->
     return if @disabled
     @zoomBy = Math.max @zoomBy, 1
@@ -176,5 +198,8 @@ class ZoomableSurface extends MarkingSurface
       .find( '.zoom-controls button')
       .removeAttr( 'disabled' )
     
+  hasFocus: =>
+    
+    return @container[0] == document.activeElement || $.contains @container[0], document.activeElement
     
 module.exports = ZoomableSurface
