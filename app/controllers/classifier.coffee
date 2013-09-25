@@ -203,7 +203,7 @@ class Classifier extends Spine.Controller
     timeout = null
 
     zoom_in = =>
-      @surface.zoom @surface.zoomBy + .2
+      @surface.zoom @surface.zoomBy + .1
       clearTimeout timeout if timeout
       timeout = setTimeout zoom_in, 200
       
@@ -216,7 +216,7 @@ class Classifier extends Spine.Controller
     timeout = null
 
     zoom_out = =>
-      @surface.zoom @surface.zoomBy - .2
+      @surface.zoom @surface.zoomBy - .1
       clearTimeout timeout if timeout
       timeout = setTimeout zoom_out, 200
       
