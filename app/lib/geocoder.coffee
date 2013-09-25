@@ -7,6 +7,7 @@ class Geocoder
   constructor: (@service = 'geonames') ->
 
   geocode: (placename) =>
+    
     promise = new $.Deferred
     
     return promise unless placename
@@ -25,18 +26,18 @@ class Geocoder
     
   call_webservice: (placename) =>
     
-    promise = new $.Deferred
-    
-    queries = 
+    queries =
       geoplanet: "select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
       geonames: "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
-  
+    
     query = queries[@service]
-    pf_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
+    
+    promise = new $.Deferred
+
+    yql = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
-    console.log pf_url
-    $.getJSON( pf_url ).done (response)=>
+    $.getJSON( yql ).done (response)=>
     
       results = response.query.results
     
