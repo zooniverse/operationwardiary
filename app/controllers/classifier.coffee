@@ -22,8 +22,6 @@ groups = require '../lib/localdata'
 
 group = groups['1900/2']
 
-Subject.group = group.id
-
 class Classifier extends Spine.Controller
   
   template: require '../views/classifier'
@@ -40,6 +38,8 @@ class Classifier extends Spine.Controller
     'change #diary_picker': ->
       group = groups[$('#diary_picker').val()]
       Subject.group = group.id
+      Subject.instances = []
+      Subject.fetch limit: 5
       
       @render_group group
       
@@ -70,6 +70,7 @@ class Classifier extends Spine.Controller
     @defaults = defaults
     @surface_history = {}
     @category = @defaults.category
+    Subject.group = group.id
     
     @render()
 	
@@ -91,6 +92,7 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    Subject.on 'fetch', @onSubjectFetch
     Group.on 'fetch', @onGroupFetch
     
 
@@ -135,6 +137,15 @@ class Classifier extends Spine.Controller
 
     Subject.next()
 
+  onSubjectFetch: (e, subjects) =>
+    console.log 'FETCHED ' + subjects.length
+    
+    Subject.instances.sort (a,b) ->
+      return if a.metadata.page_number > b.metadata.page_number then 1 else -1
+      
+    console.log Subject.current
+    Subject.instances[0].trigger 'select'
+    
   onSubjectSelect: (e, subject) =>
     # Subject.current
     console.log subject
