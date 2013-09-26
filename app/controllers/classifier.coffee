@@ -133,7 +133,11 @@ class Classifier extends Spine.Controller
     
     @classification = new Classification { subject }
       
-    @surface.loadImage subject.location.standard
+    @surface
+      .loadImage(subject.location.standard)
+      .done( =>
+        @render_annotation @surface_history[ subject.id ]
+      )
     @diaryDisplay.text subject.metadata.file_name
     
   onGroupFetch: (e, group) =>
@@ -148,9 +152,10 @@ class Classifier extends Spine.Controller
     console?.log 'Classifying', JSON.stringify @classification
 
   onFinishTask: =>
+    @onDoTask()
     @classification.send()
       
-    # @update_history()
+    @update_history()
     
     Subject.next()
 
@@ -176,25 +181,14 @@ class Classifier extends Spine.Controller
     $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
     
   onGoBack: ->
-    @update_history()
-    @subject_id--
-    store.set 'subject_id', @subject_id
     
-    filename = "000#{@subject_id}"[-4..-1]
-    @pageNumber.text( filename )
-    @surface
-      .loadImage("img/#{@path}/#{filename}.jpg")
-      .done( =>
-        @classification.subject.trigger 'select'
-        @render_annotation @surface_history[ @subject_id ]
-      )
     
   
   update_history: ->
     
     snapshot = new MarkingHistory @surface
     
-    @surface_history[ @subject_id ] = snapshot
+    @surface_history[ Subject.current.id ] = snapshot
     
   toggleCategories: ->
     category = $('.documents :checked').val()

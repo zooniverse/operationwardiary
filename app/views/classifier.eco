@@ -3,7 +3,7 @@
 <% console.log @ %>
 
 <h1 class="diary_title">title</h1>
-<p>WO 95/<span id="diary_id"><%= @path %></span></p>
+<p>WO 95/<span id="diary_id"></span></p>
 <p class="diary_dates">dates</p>
 
 <div class="tools">
@@ -39,9 +39,7 @@
       </select>
     </label>
     <br>
-    <button class="back">Back</button>
-    <button class="task">Classify</button>
-    <button class="finish">Next!</button>
+    <button class="finish">Finish</button>
   </span>
 </div>
 
