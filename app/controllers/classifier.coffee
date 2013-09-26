@@ -7,6 +7,7 @@ store = $.jStorage
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
+Group = require 'zooniverse/models/project-group'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
@@ -17,37 +18,11 @@ Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
 {toolbars} = Editor
 
-diaries =
-  '1874/0':
-    title: "14 Division: Headquarters: General Staff"
-    begins: 1
-    startdate: "1 January 1918"
-    enddate: "31 March 1918"
-  '1899/0':
-    title: "14 Division: 42 Infantry Brigade: Headquarters"
-    begins: 1
-    startdate: "1 November 1917"
-    enddate: "31 May 1919"
-  '1900/1':
-    title: "14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders"
-    begins: 2
-    startdate: '1 April 1918'
-    enddate: '30 June 1919'
-  '1900/2':
-    title: "14 Division: 42 Infantry Brigade: 9 Battalion King's Royal Rifle Corps"
-    begins: 194
-    startdate: '1 May 1915'
-    enddate: '30 June 1918'
-  '1900/3':
-    title: "14 Division: 42 Infantry Brigade: 16 Battalion Manchester Regiment"
-    begins: 785
-    startdate: '1 July 1918'
-    enddate: '30 June 1919'
-  '1900/4':
-    title: "14 Division: 42 Infantry Brigade: 5 Battalion Oxfordshire and Buckinghamshire Light Infantry"
-    begins: 820
-    startdate: '1 May 1915'
-    enddate: '30 June 1918'
+diaries = require '../lib/localdata'
+
+group = {"id":"5241bcf43ae74068250005c7","categories":[],"created_at":"2013-09-24T21:03:32Z","metadata":{"year":1900,"diary_number":1,"page_offset":2,"start_date":"1918-04-01T00:00:00Z","end_date":"1919-06-30T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.8868732809455531,"state":"active","stats":{"active":191,"complete":0,"inactive":0,"paused":0,"total":191},"subjects":[{"zooniverse_id":"AWD000014z","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c8.jpg"}},{"zooniverse_id":"AWD0000150","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c9.jpg"}},{"zooniverse_id":"AWD0000151","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005ca.jpg"}},{"zooniverse_id":"AWD0000152","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cb.jpg"}},{"zooniverse_id":"AWD0000153","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cc.jpg"}}],"updated_at":"2013-09-24T21:03:32Z","zooniverse_id":"GWD0000003"}
+
+Subject.group = group.id
 
 class Classifier extends Spine.Controller
   
@@ -63,20 +38,6 @@ class Classifier extends Spine.Controller
       @surface.enable()
       @toggleCategories()
     'change #diary_picker': ->
-      @path = $('#diary_picker').val()
-      store.set 'diary_id', @path
-      @diary = diaries[@path]
-      @subject_id = @diary.begins
-      filename = "000#{@subject_id}"[-4..-1]
-      @surface.loadImage "img/#{@path}/#{filename}.jpg"
-      @pageNumber.text filename
-      @diaryDisplay.text @path
-      $('h1').text @diary.title
-      @diaryDates.text "#{@diary.startdate} - #{@diary.enddate}"
-      store.deleteKey 'subject_id'
-      
-      DateWidget = WidgetFactory.registry.date
-      DateWidget.date = @diary.startdate
       
     'change .categories': ->
       @surface.markingMode = true
@@ -88,6 +49,7 @@ class Classifier extends Spine.Controller
     '#subject': 'pageNumber'
     '#diary_id': 'diaryDisplay'
     '.diary_dates': 'diaryDates'
+    '.diary_title': 'diaryTitle'
     
   helper:
     selectedCategory: (note) =>
@@ -101,15 +63,9 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @path = store.get 'diary_id'
-    @path?= '1900/2'
-    @diary = diaries[@path]
-    
     @defaults = defaults
     @surface_history = {}
     @category = @defaults.category
-    @subject_id = store.get 'subject_id' 
-    @subject_id?= @diary.begins
     
     @render()
 	
@@ -126,18 +82,20 @@ class Classifier extends Spine.Controller
     # HACK: turn off image scaling/resizing in SVG.
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     
-    filename = "000#{@subject_id}"[-4..-1]
-    @surface.loadImage "img/#{@path}/#{filename}.jpg"
-    @pageNumber.text filename
-    @diaryDisplay.text @path
-    $('#diary_picker').val @path
+    console.log group
+    @diaryTitle.text group.name
+    
+    startdate = new Date group.metadata.start_date
+    enddate = new Date group.metadata.end_date
     
     DateWidget = WidgetFactory.registry.date
-    DateWidget.date = @diary.startdate
+    DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
+    @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
     
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    Group.on 'fetch', @onGroupFetch
     
 
   render: =>
@@ -174,6 +132,12 @@ class Classifier extends Spine.Controller
     console.log subject
     
     @classification = new Classification { subject }
+      
+    @surface.loadImage subject.location.standard
+    @diaryDisplay.text subject.metadata.file_name
+    
+  onGroupFetch: (e, group) =>
+    console.log group
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
@@ -184,20 +148,11 @@ class Classifier extends Spine.Controller
     console?.log 'Classifying', JSON.stringify @classification
 
   onFinishTask: =>
-    # @classification.send()
+    @classification.send()
       
-    @update_history()
-
-    @subject_id++
-    store.set 'subject_id', @subject_id
-    filename = "000#{@subject_id}"[-4..-1]
-    @pageNumber.text( filename )
-    @surface
-      .loadImage("img/#{@path}/#{filename}.jpg")
-      .done( =>
-        @classification.subject.trigger 'select'
-        @render_annotation @surface_history[ @subject_id ]
-      )
+    # @update_history()
+    
+    Subject.next()
 
   onZoomIn: ({currentTarget})=>
     

@@ -307,6 +307,9 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
   
   @date: '1 May 1915'
   
+  @formatDate: (format, date) =>
+    $.datepicker.formatDate format, date
+  
   render: (el)->
     $('.date', el)
       .datepicker
