@@ -1,34 +1,39 @@
 diaries =
-  '1874/0':
-    title: "14 Division: Headquarters: General Staff"
-    begins: 1
-    startdate: "1 January 1918"
-    enddate: "31 March 1918"
-  '1899/0':
-    title: "14 Division: 42 Infantry Brigade: Headquarters"
-    begins: 1
-    startdate: "1 November 1917"
-    enddate: "31 May 1919"
+  '1874/0': {"id":"5241bcf43ae7406825000003","categories":[],"created_at":"2013-09-24T21:03:31Z","metadata":{"year":1874,"diary_number":0,"page_offset":1,"start_date":"1918-01-01T00:00:00Z","end_date":"1918-03-31T00:00:00Z"},"name":"14 Division: Headquarters: General Staff","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.595094930224609,"state":"active","stats":{"active":958,"complete":0,"inactive":0,"paused":0,"total":958},"subjects":[{"zooniverse_id":"AWD0000001","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000004.jpg"}},{"zooniverse_id":"AWD0000002","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000005.jpg"}},{"zooniverse_id":"AWD0000003","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000006.jpg"}},{"zooniverse_id":"AWD0000004","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000007.jpg"}},{"zooniverse_id":"AWD0000005","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000008.jpg"}}],"updated_at":"2013-09-24T21:03:31Z","zooniverse_id":"GWD0000001"}
+  '1899/0': {"id":"5241bcf43ae74068250003c2","categories":[],"created_at":"2013-09-24T21:03:31Z","metadata":{"year":1899,"diary_number":0,"page_offset":1,"start_date":"1917-11-01T00:00:00Z","end_date":"1919-05-31T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: Headquarters","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.8024889996600002,"state":"active","stats":{"active":516,"complete":0,"inactive":-1,"paused":0,"total":516},"subjects":[{"zooniverse_id":"AWD00000qn","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250003c3.jpg"}},{"zooniverse_id":"AWD00000qo","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250003c4.jpg"}},{"zooniverse_id":"AWD00000qp","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250003c5.jpg"}},{"zooniverse_id":"AWD00000qq","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250003c6.jpg"}},{"zooniverse_id":"AWD00000qr","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250003c7.jpg"}}],"updated_at":"2013-09-24T21:03:32Z","zooniverse_id":"GWD0000002"}
   '1900/1':
-    title: "14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders"
-    begins: 2
-    startdate: '1 April 1918'
-    enddate: '30 June 1919'
-  '1900/2':
-    title: "14 Division: 42 Infantry Brigade: 9 Battalion King's Royal Rifle Corps"
-    begins: 194
-    startdate: '1 May 1915'
-    enddate: '30 June 1918'
-  '1900/3':
-    title: "14 Division: 42 Infantry Brigade: 16 Battalion Manchester Regiment"
-    begins: 785
-    startdate: '1 July 1918'
-    enddate: '30 June 1919'
-  '1900/4':
-    title: "14 Division: 42 Infantry Brigade: 5 Battalion Oxfordshire and Buckinghamshire Light Infantry"
-    begins: 820
-    startdate: '1 May 1915'
-    enddate: '30 June 1918'
+    id: "5241bcf43ae74068250005c7"
+    categories: []
+    created_at: "2013-09-24T21:03:32Z"
+    metadata:
+      year: 1900
+      diary_number:1
+      page_offset: 2
+      start_date: "1918-04-01T00:00:00Z"
+      end_date:"1919-06-30T00:00:00Z"
+    name: "14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders"
+    project_id: "5241bcf43ae7406825000001"
+    project_name:"war_diary"
+    random:0.8868732809455531
+    state: "active"
+    stats: 
+      active: 191
+      complete: 0
+      inactive:0
+      paused:0
+      total:191
+    subjects: [
+      {"zooniverse_id":"AWD000014z","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c8.jpg"}}
+      {"zooniverse_id":"AWD0000150","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c9.jpg"}}
+      {"zooniverse_id":"AWD0000151","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005ca.jpg"}}
+      {"zooniverse_id":"AWD0000152","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cb.jpg"}}
+      {"zooniverse_id":"AWD0000153","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cc.jpg"}}
+    ]
+    updated_at:"2013-09-24T21:03:32Z"
+    zooniverse_id:"GWD0000003"
+  '1900/2': {"id":"5241bcf43ae7406825000687","categories":[],"created_at":"2013-09-24T21:03:32Z","metadata":{"year":1900,"diary_number":2,"page_offset":194,"start_date":"1915-05-01T00:00:00Z","end_date":"1918-06-30T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: 9 Battalion King's Royal Rifle Corps","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.6068089128366917,"state":"active","stats":{"active":590,"complete":0,"inactive":0,"paused":0,"total":590},"subjects":[{"zooniverse_id":"AWD00001aa","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000688.jpg"}},{"zooniverse_id":"AWD00001ab","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae7406825000689.jpg"}},{"zooniverse_id":"AWD00001ac","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae740682500068a.jpg"}},{"zooniverse_id":"AWD00001ad","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae740682500068b.jpg"}},{"zooniverse_id":"AWD00001ae","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae740682500068c.jpg"}}],"updated_at":"2013-09-24T21:03:32Z","zooniverse_id":"GWD0000004"}
+  '1900/3': {"id":"5241bcf53ae74068250008d6","categories":[],"created_at":"2013-09-24T21:03:33Z","metadata":{"year":1900,"diary_number":3,"page_offset":785,"start_date":"1918-07-01T00:00:00Z","end_date":"1919-06-30T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: 16 Battalion Manchester Regiment","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.13313674140393572,"state":"active","stats":{"active":34,"complete":0,"inactive":0,"paused":0,"total":34},"subjects":[{"zooniverse_id":"AWD00001qo","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008d7.jpg"}},{"zooniverse_id":"AWD00001qp","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008d8.jpg"}},{"zooniverse_id":"AWD00001qq","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008d9.jpg"}},{"zooniverse_id":"AWD00001qr","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008da.jpg"}},{"zooniverse_id":"AWD00001qs","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008db.jpg"}}],"updated_at":"2013-09-24T21:03:33Z","zooniverse_id":"GWD0000005"}
+  '1900/4': {"id":"5241bcf53ae74068250008f9","categories":[],"created_at":"2013-09-24T21:03:33Z","metadata":{"year":1900,"diary_number":4,"page_offset":820,"start_date":"1915-05-01T00:00:00Z","end_date":"1918-06-30T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: 5 Battalion Oxfordshire and Buckinghamshire Light Infantry","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.5933415444196228,"state":"active","stats":{"active":277,"complete":0,"inactive":0,"paused":0,"total":277},"subjects":[{"zooniverse_id":"AWD00001rm","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008fa.jpg"}},{"zooniverse_id":"AWD00001rn","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008fb.jpg"}},{"zooniverse_id":"AWD00001ro","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008fc.jpg"}},{"zooniverse_id":"AWD00001rp","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008fd.jpg"}},{"zooniverse_id":"AWD00001rq","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf53ae74068250008fe.jpg"}}],"updated_at":"2013-09-24T21:03:33Z","zooniverse_id":"GWD0000006"}
     
 
 module.exports = diaries

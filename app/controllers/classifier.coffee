@@ -18,9 +18,9 @@ Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
 {toolbars} = Editor
 
-diaries = require '../lib/localdata'
+groups = require '../lib/localdata'
 
-group = {"id":"5241bcf43ae74068250005c7","categories":[],"created_at":"2013-09-24T21:03:32Z","metadata":{"year":1900,"diary_number":1,"page_offset":2,"start_date":"1918-04-01T00:00:00Z","end_date":"1919-06-30T00:00:00Z"},"name":"14 Division: 42 Infantry Brigade: 14 Battalion Argyll and Sutherland Highlanders","project_id":"5241bcf43ae7406825000001","project_name":"war_diary","random":0.8868732809455531,"state":"active","stats":{"active":191,"complete":0,"inactive":0,"paused":0,"total":191},"subjects":[{"zooniverse_id":"AWD000014z","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c8.jpg"}},{"zooniverse_id":"AWD0000150","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005c9.jpg"}},{"zooniverse_id":"AWD0000151","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005ca.jpg"}},{"zooniverse_id":"AWD0000152","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cb.jpg"}},{"zooniverse_id":"AWD0000153","location":{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae74068250005cc.jpg"}}],"updated_at":"2013-09-24T21:03:32Z","zooniverse_id":"GWD0000003"}
+group = groups['1900/2']
 
 Subject.group = group.id
 
@@ -38,6 +38,10 @@ class Classifier extends Spine.Controller
       @surface.enable()
       @toggleCategories()
     'change #diary_picker': ->
+      group = groups[$('#diary_picker').val()]
+      Subject.group = group.id
+      
+      @render_group group
       
     'change .categories': ->
       @surface.markingMode = true
@@ -82,15 +86,7 @@ class Classifier extends Spine.Controller
     # HACK: turn off image scaling/resizing in SVG.
     @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     
-    console.log group
-    @diaryTitle.text group.name
-    
-    startdate = new Date group.metadata.start_date
-    enddate = new Date group.metadata.end_date
-    
-    DateWidget = WidgetFactory.registry.date
-    DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
-    @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
+    @render_group group
     
 
     User.on 'change', @onUserChange
@@ -101,7 +97,19 @@ class Classifier extends Spine.Controller
   render: =>
 
     @html @template(@)
-  
+    
+  render_group: (group) =>
+    
+    console.log group
+    @diaryTitle.text group.name
+    
+    startdate = new Date group.metadata.start_date
+    enddate = new Date group.metadata.end_date
+    
+    DateWidget = WidgetFactory.registry.date
+    DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
+    @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
+    
   render_annotation: ( history ) ->
     
     $('.categories :checked, .documents :checked')
