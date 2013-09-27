@@ -103,7 +103,7 @@ class Classifier extends Spine.Controller
     
     Subject.group = group.id
     Subject.queueLength = 1
-    Subject.instances = []
+    Subject.destroyAll()
     Subject.next()
     
   render_annotation: ( history ) ->
@@ -125,11 +125,11 @@ class Classifier extends Spine.Controller
     # user, User.current
 
     if user
-      #alert 'hello user!'
+      @render_group group
     else
       alert 'you arent a user!'
 
-    @render_group group
+    
 
   onSubjectFetch: (e, subjects) =>
     console.log 'FETCHED ' + subjects.length
