@@ -102,6 +102,7 @@ class Classifier extends Spine.Controller
     @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
     
     Subject.group = group.id
+    Subject.queueLength = 1
     Subject.instances = []
     Subject.next()
     
