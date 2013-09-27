@@ -18,7 +18,9 @@ Editor = require '../lib/text-widgets'
 
 groups = require '../lib/localdata'
 
-group = groups['1900/2']
+group_id = store.get 'group_id', '1900/2'
+
+group = groups[group_id]
 
 class Classifier extends Spine.Controller
   
@@ -34,7 +36,9 @@ class Classifier extends Spine.Controller
       @surface.enable()
       @toggleCategories()
     'change #diary_picker': ->
-      group = groups[$('#diary_picker').val()]
+      group_id = $('#diary_picker').val()
+      store.set 'group_id', group_id
+      group = groups[group_id]
       
       
       @render_group group
