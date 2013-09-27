@@ -35,9 +35,7 @@ class Classifier extends Spine.Controller
       @toggleCategories()
     'change #diary_picker': ->
       group = groups[$('#diary_picker').val()]
-      Subject.group = group.id
-      Subject.instances = []
-      Subject.next()
+      
       
       @render_group group
       
@@ -68,7 +66,6 @@ class Classifier extends Spine.Controller
     @defaults = defaults
     @surface_history = {}
     @category = @defaults.category
-    Subject.group = group.id
     
     @render()
 	
@@ -80,8 +77,6 @@ class Classifier extends Spine.Controller
       clickDelay: 300
       
     @surface.dotRadius = 5
-    
-    @render_group group
     
 
     User.on 'change', @onUserChange
@@ -106,6 +101,10 @@ class Classifier extends Spine.Controller
     DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
     @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
     
+    Subject.group = group.id
+    Subject.instances = []
+    Subject.next()
+    
   render_annotation: ( history ) ->
     
     $('.categories :checked, .documents :checked')
@@ -129,7 +128,7 @@ class Classifier extends Spine.Controller
     else
       alert 'you arent a user!'
 
-    Subject.next()
+    @render_group group
 
   onSubjectFetch: (e, subjects) =>
     console.log 'FETCHED ' + subjects.length
