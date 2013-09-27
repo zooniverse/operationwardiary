@@ -80,10 +80,6 @@ class Classifier extends Spine.Controller
       clickDelay: 300
       
     @surface.dotRadius = 5
-      
-    @subjectContainer.css 'position', 'relative'
-    # HACK: turn off image scaling/resizing in SVG.
-    @surface.image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     
     @render_group group
     

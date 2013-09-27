@@ -11,6 +11,9 @@ class ZoomableSurface extends MarkingSurface
     
     @markingMode = false
     
+    # HACK: turn off image scaling/resizing in SVG.
+    @image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
+    
     @container.on 'keydown', (e)=>
       @selection.controls.onClickToggle e if e.which == 13
     
