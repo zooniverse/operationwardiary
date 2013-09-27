@@ -11,8 +11,6 @@ Group = require 'zooniverse/models/project-group'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
-{ToolControls} = ZoomableSurface
-{Tool} = ZoomableSurface
 
 Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
@@ -142,6 +140,9 @@ class Classifier extends Spine.Controller
     
     Subject.instances.sort (a,b) ->
       return if a.metadata.page_number > b.metadata.page_number then 1 else -1
+      
+    pages = (subject.metadata.page_number for subject in Subject.instances)
+    console.log pages
     
   onSubjectSelect: (e, subject) =>
     # Subject.current
