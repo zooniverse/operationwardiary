@@ -39,7 +39,7 @@ class Classifier extends Spine.Controller
       group = groups[$('#diary_picker').val()]
       Subject.group = group.id
       Subject.instances = []
-      Subject.fetch limit: 5
+      Subject.next()
       
       @render_group group
       
@@ -142,12 +142,10 @@ class Classifier extends Spine.Controller
     
     Subject.instances.sort (a,b) ->
       return if a.metadata.page_number > b.metadata.page_number then 1 else -1
-      
-    console.log Subject.current
-    Subject.instances[0].trigger 'select'
     
   onSubjectSelect: (e, subject) =>
     # Subject.current
+    console.log 'SUBJECT SELECT ' + subject.id
     console.log subject
     
     @classification = new Classification { subject }
