@@ -1,5 +1,6 @@
 $ = require 'jqueryify'
 Spine = require 'spine'
+{Route} = Spine
 
 require '../lib/jstorage.js'
 store = $.jStorage
@@ -131,7 +132,7 @@ class Classifier extends Spine.Controller
     if user
       @render_group group
     else
-      alert 'you arent a user!'
+      Route.navigate '/'
 
     
 
