@@ -107,7 +107,7 @@ class Classifier extends Spine.Controller
     @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
     
     Subject.group = group.id
-    Subject.queueLength = 1
+    # Subject.queueLength = 1
     Subject.destroyAll()
     Subject.next()
     
@@ -176,7 +176,10 @@ class Classifier extends Spine.Controller
       
     @update_history()
     
-    Subject.next()
+    Subject.current.destroy()
+    subject = Subject.first()
+    
+    if subject? then subject.select() else Subject.next()
 
   onZoomIn: ({currentTarget})=>
     
