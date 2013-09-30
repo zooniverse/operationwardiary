@@ -39,10 +39,10 @@ class Classifier extends Spine.Controller
     'change #diary_picker': ->
       group_id = $('#diary_picker').val()
       store.set 'group_id', group_id
-      group = groups[group_id]
+      group = (group for group in @groups when group.id == group_id)
       
       
-      @render_group group
+      @render_group group[0]
       
     'change .categories': ->
       @surface.markingMode = true
@@ -94,7 +94,7 @@ class Classifier extends Spine.Controller
     
   render_group: (group) =>
     
-    console.log 'RENDERING GROUP DETAILS'
+    console?.log 'RENDERING GROUP DETAILS'
     @diaryTitle.text group.name
     
     startdate = new Date group.metadata.start_date
@@ -135,18 +135,17 @@ class Classifier extends Spine.Controller
     
 
   onSubjectFetch: (e, subjects) =>
-    console.log 'FETCHED ' + subjects.length
+    console?.log 'FETCHED ' + subjects.length
     
     Subject.instances.sort (a,b) ->
       return if a.metadata.page_number > b.metadata.page_number then 1 else -1
       
     pages = (subject.metadata.page_number for subject in Subject.instances)
-    console.log pages
+    console?.log pages
     
   onSubjectSelect: (e, subject) =>
     # Subject.current
-    console.log 'SUBJECT SELECT ' + subject.id
-    console.log subject
+    console?.log 'SUBJECT SELECT ' + subject.id
     
     @classification = new Classification { subject }
       
@@ -158,10 +157,11 @@ class Classifier extends Spine.Controller
     @diaryDisplay.text subject.metadata.file_name
     
   onGroupFetch: (e, @groups) =>
-    console.log 'GROUPS FETCHED ' + groups.length
-    console.log @groups[0]
+    console?.log 'GROUPS FETCHED ' + groups.length
+    group_id = store.get 'group_id', '5241bcf43ae7406825000003'
+    group = (group for group in @groups when group.id == group_id)
     @render()
-    @render_group @groups[0]
+    @render_group group[0]
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()

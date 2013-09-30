@@ -30,12 +30,9 @@
     <label>
       Change diary
       <select id="diary_picker">
-        <option>1874/0</option>
-        <option>1899/0</option>
-        <option>1900/1</option>
-        <option>1900/2</option>
-        <option>1900/3</option>
-        <option>1900/4</option>
+        <% for group in @groups: %>
+          <option value="<%= group.id %>"><%= group.name %></option>
+        <% end %>
       </select>
     </label>
     <br>
