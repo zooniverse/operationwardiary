@@ -7,7 +7,7 @@
     <% if @user.project.groups?: %>
       <ul>
         <% for group in @groups: %>
-        <li><%= group.name %>: <%= group.classification_count %></li>
+        <li><%= group.name %>: <%= group.classifications %></li>
         <% end %>
       </ul>
     <% end %>
