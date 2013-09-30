@@ -6,6 +6,7 @@ require 'spine/lib/route'
 
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
+Group = require 'zooniverse/models/project-group'
 Footer = require 'zooniverse/controllers/footer'
 TopBar = require 'zooniverse/controllers/top-bar'
 
@@ -45,4 +46,5 @@ app.stack = new Spine.Stack
 app.stack.el.appendTo app.container
 
 User.fetch()
+Group.fetch()
 Spine.Route.setup()

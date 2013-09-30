@@ -17,11 +17,11 @@ Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
 {toolbars} = Editor
 
-groups = require '../lib/localdata'
+# groups = require '../lib/localdata'
 
 group_id = store.get 'group_id', '1900/2'
 
-group = groups[group_id]
+# group = groups[group_id]
 
 class Classifier extends Spine.Controller
   
@@ -72,8 +72,17 @@ class Classifier extends Spine.Controller
     @surface_history = {}
     @category = @defaults.category
     
-    @render()
-	
+
+    User.on 'change', @onUserChange
+    Subject.on 'select', @onSubjectSelect
+    Subject.on 'fetch', @onSubjectFetch
+    Group.on 'fetch', @onGroupFetch
+    
+
+  render: =>
+    
+    @html @template(@)
+    
     @surface ?= new ZoomableSurface
       tool: TextTool
       container: @subjectContainer
@@ -83,20 +92,9 @@ class Classifier extends Spine.Controller
       
     @surface.dotRadius = 5
     
-
-    User.on 'change', @onUserChange
-    Subject.on 'select', @onSubjectSelect
-    Subject.on 'fetch', @onSubjectFetch
-    Group.on 'fetch', @onGroupFetch
-    
-
-  render: =>
-
-    @html @template(@)
-    
   render_group: (group) =>
     
-    console.log group
+    console.log 'RENDERING GROUP DETAILS'
     @diaryTitle.text group.name
     
     startdate = new Date group.metadata.start_date
@@ -130,7 +128,7 @@ class Classifier extends Spine.Controller
     # user, User.current
 
     if user
-      @render_group group
+      # @render_group group
     else
       Route.navigate '/'
 
@@ -159,8 +157,11 @@ class Classifier extends Spine.Controller
       )
     @diaryDisplay.text subject.metadata.file_name
     
-  onGroupFetch: (e, group) =>
-    console.log group
+  onGroupFetch: (e, @groups) =>
+    console.log 'GROUPS FETCHED ' + groups.length
+    console.log @groups[0]
+    @render()
+    @render_group @groups[0]
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
