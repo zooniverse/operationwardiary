@@ -8,15 +8,18 @@ class Profile extends Spine.Controller
   constructor: ->
     super
 
-    @render()
-
     User.on 'change', @render
     Group.on 'fetch', @onGroupFetch
 
   render: =>
+    console.log User.current
+    user_groups = User.current?.project.groups
+    group_classifications = @groups?.map (group) ->
+      name: group.name, classifications: user_groups[group.id].classification_count
+      
     @html @template
       user: User.current
-      groups: @groups
+      groups: group_classifications
       
   
   onGroupFetch: (e, @groups)=>
