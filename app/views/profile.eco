@@ -4,11 +4,13 @@
 
   <% if @user.project?: %>
     <h3>Pages transcribed: <%- @user.project.classification_count %></h3>
-    <ul>
-      <% for group in @groups: %>
-      <li><%= group.name %>: <%= @user.project.groups[group.id].classification_count %></li>
-      <% end %>
-    </ul>
+    <% if @user.project.groups?: %>
+      <ul>
+        <% for group in @groups: %>
+        <li><%= group.name %>: <%= @user.project.groups[group.id].classification_count %></li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
   
 <% else: %>
