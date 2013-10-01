@@ -1,5 +1,0 @@
-<% translate = require 't7e' %>
-<% notes = require '../lib/notes' %>
-
-<button name="toggle"></button>
-<input type="text"/>
