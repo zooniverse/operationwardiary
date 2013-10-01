@@ -18,7 +18,6 @@ class Profile extends Spine.Controller
     User.on 'change', @onUserChange
 
   render: =>
-    console.log 'RENDERING PROFILE'
       
     @html @template
       user: User.current
@@ -27,7 +26,6 @@ class Profile extends Spine.Controller
     @recents.el.appendTo @el
       
   onUserChange: (e, user)=>
-    console.log 'USER CHANGED'
     @render()
 
   active: =>

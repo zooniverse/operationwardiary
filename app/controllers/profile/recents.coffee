@@ -12,18 +12,15 @@ class Recents extends Spine.Controller
     Recent.on 'fetch', @onRecentFetch
 
   render: =>
-    console.log 'RENDERING RECENTS'
       
     @html @template
       recents: @recents
   
   onRecentFetch: (e, recents)=>
-    console.log 'RECENTS FETCHED'
     @recents = (recent.subjects[0] for recent in recents)
     @render()
   
   onUserChange: =>
-    console.log 'FETCHING RECENTS'
     Recent.fetch()
 
 module.exports = Recents

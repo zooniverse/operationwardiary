@@ -13,7 +13,6 @@ class Groups extends Spine.Controller
 
   render: =>
     return unless User.current? && @groups?
-    console.log 'RENDERING GROUPS'
     user_groups = User.current?.project.groups
     group_classifications = @groups?.map (group) ->
       name: group.name, classifications: user_groups[group.id].classification_count
@@ -22,7 +21,6 @@ class Groups extends Spine.Controller
       groups: group_classifications
   
   onGroupFetch: (e, @groups)=>
-    console.log 'GROUPS FETCHED'
     @render()
   
   onUserChange: =>
