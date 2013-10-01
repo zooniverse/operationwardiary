@@ -25,6 +25,6 @@ class Groups extends Spine.Controller
     @render()
   
   onUserChange: =>
-    Group.fetch()
+    @render()
 
 module.exports = Groups

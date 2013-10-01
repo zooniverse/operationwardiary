@@ -80,6 +80,7 @@ class Classifier extends Spine.Controller
     
 
   render: =>
+    console.log 'RENDERING CLASSIFIER'
     
     @html @template(@)
     
@@ -140,6 +141,7 @@ class Classifier extends Spine.Controller
       return if a.metadata.page_number > b.metadata.page_number then 1 else -1
       
     pages = (subject.metadata.page_number for subject in Subject.instances)
+    console?.log pages
     
   onSubjectSelect: (e, subject) =>
     

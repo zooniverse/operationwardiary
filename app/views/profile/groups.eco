@@ -1,5 +1,7 @@
-<ul>
-  <% for group in @groups: %>
-  <li><%= group.name %>: <%= group.classifications %></li>
-  <% end %>
-</ul>
+<% if @groups?: %>
+  <ul>
+    <% for group in @groups: %>
+    <li><%= group.name %>: <%= group.classifications %></li>
+    <% end %>
+  </ul>
+<% end %>
