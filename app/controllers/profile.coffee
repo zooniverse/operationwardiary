@@ -19,7 +19,9 @@ class Profile extends Spine.Controller
       
     @html @template
       user: User.current
-      
+    
+    return unless User.current?
+    
     @groups.el.appendTo @el
     @recents.el.appendTo @el
       
