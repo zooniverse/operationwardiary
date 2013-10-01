@@ -12,6 +12,7 @@ class Groups extends Spine.Controller
     Group.on 'fetch', @onGroupFetch
 
   render: =>
+    return unless User.current? && @groups?
     console.log 'RENDERING GROUPS'
     user_groups = User.current?.project.groups
     group_classifications = @groups?.map (group) ->

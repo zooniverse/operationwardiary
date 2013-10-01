@@ -72,6 +72,8 @@ class Classifier extends Spine.Controller
     @surface_history = {}
     @category = @defaults.category
     
+    @render()
+    
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -80,6 +82,7 @@ class Classifier extends Spine.Controller
     
 
   render: =>
+    return unless @groups?
     console.log 'RENDERING CLASSIFIER'
     
     @html @template(@)
