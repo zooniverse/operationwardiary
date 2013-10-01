@@ -21,6 +21,6 @@ class Recents extends Spine.Controller
     @render()
   
   onUserChange: =>
-    Recent.fetch()
+    Recent.fetch() if User.current
 
 module.exports = Recents
