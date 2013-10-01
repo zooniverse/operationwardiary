@@ -1,15 +1,19 @@
 Spine = require 'spine'
 User = require 'zooniverse/models/user'
 Group = require 'zooniverse/models/project-group'
+Recents = require 'zooniverse/models/recent'
 
 class Profile extends Spine.Controller
   template: require '../views/profile'
 
   constructor: ->
     super
+    
+    @recents = []
 
-    User.on 'change', @render
+    User.on 'change', @onUserChange
     Group.on 'fetch', @onGroupFetch
+    Recents.on 'fetch', @onRecentsFetch
 
   render: =>
     console.log User.current
@@ -20,11 +24,23 @@ class Profile extends Spine.Controller
     @html @template
       user: User.current
       groups: group_classifications
+      recents: @recents
       
+  onUserChange: (e, user)=>
+    console.log 'USER LOGGED IN'
+    console.log 'FETCHING RECENTS'
+    Recents.fetch()
+    @render()
   
   onGroupFetch: (e, @groups)=>
+    console.log 'GROUPS FETCHED'
     @render()
     
+  onRecentsFetch: (e, recents)=>
+    console.log 'RECENTS FETCHED'
+    console.log recents
+    @recents = (recent.subjects[0] for recent in recents)
+    @render()
 
   active: =>
     super
@@ -35,6 +51,6 @@ class Profile extends Spine.Controller
     User.fetch().done =>
       @el.css 'opacity', '1'
       # @loading.stop()
-      @render()
+      # @render()
 
 module.exports = Profile

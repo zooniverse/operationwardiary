@@ -135,17 +135,13 @@ class Classifier extends Spine.Controller
     
 
   onSubjectFetch: (e, subjects) =>
-    console?.log 'FETCHED ' + subjects.length
     
     Subject.instances.sort (a,b) ->
       return if a.metadata.page_number > b.metadata.page_number then 1 else -1
       
     pages = (subject.metadata.page_number for subject in Subject.instances)
-    console?.log pages
     
   onSubjectSelect: (e, subject) =>
-    # Subject.current
-    console?.log 'SUBJECT SELECT ' + subject.id
     
     @classification = new Classification { subject }
       
