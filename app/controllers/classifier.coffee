@@ -17,6 +17,8 @@ Editor = require '../lib/text-widgets'
 {WidgetFactory} = Editor
 {toolbars} = Editor
 
+GroupPicker = require './classifier/group_picker'
+
 # groups = require '../lib/localdata'
 
 group_id = store.get 'group_id', '1900/2'
@@ -36,14 +38,6 @@ class Classifier extends Spine.Controller
     'change .documents': ->
       @surface.enable()
       @toggleCategories()
-    'change #diary_picker': ->
-      group_id = $('#diary_picker').val()
-      store.set 'group_id', group_id
-      group = (group for group in @groups when group.id == group_id)
-      
-      
-      @render_group group[0]
-      
     'change .categories': ->
       @surface.markingMode = true
       tool.controls.el.addClass 'closed' for tool in @surface.tools
@@ -74,6 +68,12 @@ class Classifier extends Spine.Controller
     
     @render()
     
+    @group_picker = new GroupPicker
+    @el.find('#group-picker').prepend @group_picker.el
+    
+    @group_picker.el.on 'groupChange', (e, group)=>
+      @render_group group
+    
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -82,7 +82,6 @@ class Classifier extends Spine.Controller
     
 
   render: =>
-    return unless @groups?
     console.log 'RENDERING CLASSIFIER'
     
     @html @template(@)
@@ -158,9 +157,9 @@ class Classifier extends Spine.Controller
     @diaryDisplay.text subject.metadata.file_name
     
   onGroupFetch: (e, @groups) =>
+    @group_picker.render()
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'
     group = (group for group in @groups when group.id == group_id)
-    @render()
     @render_group group[0]
     
   onDoTask: =>

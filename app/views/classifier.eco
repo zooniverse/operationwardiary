@@ -27,18 +27,7 @@
   <div class="toolbar"></div>
  
 
-  <span style="position: absolute; right: 5px; top: -5px;">
-    <% if @groups?: %> 
-      <label>
-        Change diary
-        <select id="diary_picker">
-          <% for group in @groups: %>
-            <option value="<%= group.id %>"><%= group.name %></option>
-          <% end %>
-        </select>
-      </label>
-    <% end %>
-    <br>
+  <span id="group-picker" style="position: absolute; right: 5px; top: -5px;">
     <button class="finish">Finish</button>
   </span>
   
