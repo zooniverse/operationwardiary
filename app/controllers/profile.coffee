@@ -10,8 +10,6 @@ class Profile extends Spine.Controller
   constructor: ->
     super
     
-    @recents = []
-    
     @groups = new Groups
     @recents = new Recents
 
