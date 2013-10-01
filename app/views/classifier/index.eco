@@ -1,5 +1,5 @@
 <% translate = require 't7e' %>
-<% labels = require '../lib/notes' %>
+<% labels = require '../../lib/notes' %>
 <% console.log @ %>
 
 <p>WO 95/<span id="diary_id"></span></p>
