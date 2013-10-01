@@ -1,0 +1,12 @@
+
+<% if @user: %>
+  <h1><%- @user.name %></h1>
+
+  <% if @user.project?: %>
+    <h3>Pages transcribed: <%- @user.project.classification_count %></h3>
+    
+  <% end %>
+  
+<% else: %>
+  <p>Login to view profile</p>
+<% end %>

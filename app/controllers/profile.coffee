@@ -1,45 +1,33 @@
 Spine = require 'spine'
 User = require 'zooniverse/models/user'
-Group = require 'zooniverse/models/project-group'
-Recents = require 'zooniverse/models/recent'
+
+Groups = require './profile/groups'
+Recents = require './profile/recents'
 
 class Profile extends Spine.Controller
-  template: require '../views/profile'
+  template: require '../views/profile/'
 
   constructor: ->
     super
     
     @recents = []
+    
+    @groups = new Groups
+    @recents = new Recents
 
     User.on 'change', @onUserChange
-    Group.on 'fetch', @onGroupFetch
-    Recents.on 'fetch', @onRecentsFetch
 
   render: =>
-    console.log User.current
-    user_groups = User.current?.project.groups
-    group_classifications = @groups?.map (group) ->
-      name: group.name, classifications: user_groups[group.id].classification_count
+    console.log 'RENDERING PROFILE'
       
     @html @template
       user: User.current
-      groups: group_classifications
-      recents: @recents
+      
+    @groups.el.appendTo @el
+    @recents.el.appendTo @el
       
   onUserChange: (e, user)=>
-    console.log 'USER LOGGED IN'
-    console.log 'FETCHING RECENTS'
-    Recents.fetch()
-    @render()
-  
-  onGroupFetch: (e, @groups)=>
-    console.log 'GROUPS FETCHED'
-    @render()
-    
-  onRecentsFetch: (e, recents)=>
-    console.log 'RECENTS FETCHED'
-    console.log recents
-    @recents = (recent.subjects[0] for recent in recents)
+    console.log 'USER CHANGED'
     @render()
 
   active: =>
