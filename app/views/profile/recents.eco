@@ -1,5 +1,7 @@
-<ul class="recents">
-  <% for recent in @recents: %>
-  <li><img width="100" src="<%= recent.location.standard %>"></li>
-  <% end %>
-</ul>
+<% if @recents?: %>
+  <ul class="recents">
+    <% for recent in @recents: %>
+    <li><img width="100" src="<%= recent.location.standard %>"></li>
+    <% end %>
+  </ul>
+<% end %>
