@@ -19,12 +19,6 @@ Editor = require '../lib/text-widgets'
 GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 
-# groups = require '../lib/localdata'
-
-group_id = store.get 'group_id', '1900/2'
-
-# group = groups[group_id]
-
 class Classifier extends Spine.Controller
   
   template: require '../views/classifier/'
