@@ -27,7 +27,7 @@ group_id = store.get 'group_id', '1900/2'
 
 class Classifier extends Spine.Controller
   
-  template: require '../views/classifier'
+  template: require '../views/classifier/'
 
   events:
     'click .task': 'onDoTask'
