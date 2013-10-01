@@ -2,9 +2,7 @@
 <% labels = require '../lib/notes' %>
 <% console.log @ %>
 
-<h1 class="diary_title">title</h1>
 <p>WO 95/<span id="diary_id"></span></p>
-<p class="diary_dates">dates</p>
 
 <div class="tools">
   <ul class="documents">

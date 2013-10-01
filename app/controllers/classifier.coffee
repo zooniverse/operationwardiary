@@ -8,7 +8,6 @@ store = $.jStorage
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
-Group = require 'zooniverse/models/project-group'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
@@ -18,6 +17,7 @@ Editor = require '../lib/text-widgets'
 {toolbars} = Editor
 
 GroupPicker = require './classifier/group_picker'
+GroupDetails = require './classifier/group'
 
 # groups = require '../lib/localdata'
 
@@ -71,14 +71,16 @@ class Classifier extends Spine.Controller
     @group_picker = new GroupPicker
     @el.find('#group-picker').prepend @group_picker.el
     
+    @group_details = new GroupDetails
+    @el.prepend @group_details.el
+    
     @group_picker.el.on 'groupChange', (e, group)=>
-      @render_group group
+      @group_details.render group
     
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     Subject.on 'fetch', @onSubjectFetch
-    Group.on 'fetch', @onGroupFetch
     
 
   render: =>
@@ -94,23 +96,6 @@ class Classifier extends Spine.Controller
       clickDelay: 300
       
     @surface.dotRadius = 5
-    
-  render_group: (group) =>
-    
-    console?.log 'RENDERING GROUP DETAILS'
-    @diaryTitle.text group.name
-    
-    startdate = new Date group.metadata.start_date
-    enddate = new Date group.metadata.end_date
-    
-    DateWidget = WidgetFactory.registry.date
-    DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
-    @diaryDates.text "#{DateWidget.formatDate 'd MM yy', startdate} - #{DateWidget.formatDate 'd MM yy', enddate}"
-    
-    Subject.group = group.id
-    # Subject.queueLength = 1
-    Subject.destroyAll()
-    Subject.next()
     
   render_annotation: ( history ) ->
     
@@ -155,11 +140,6 @@ class Classifier extends Spine.Controller
         @render_annotation @surface_history[ subject.id ]
       )
     @diaryDisplay.text subject.metadata.file_name
-    
-  onGroupFetch: (e, @groups) =>
-    group_id = store.get 'group_id', '5241bcf43ae7406825000003'
-    group = (group for group in @groups when group.id == group_id)
-    @render_group group[0]
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()

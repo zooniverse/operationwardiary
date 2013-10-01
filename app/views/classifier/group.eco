@@ -1,0 +1,2 @@
+<h1 class="diary_title"><%= @group.name %></h1>
+<p class="diary_dates"><%= @group.startdate %> - <%= @group.enddate %></p>
