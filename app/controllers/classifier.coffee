@@ -157,7 +157,6 @@ class Classifier extends Spine.Controller
     @diaryDisplay.text subject.metadata.file_name
     
   onGroupFetch: (e, @groups) =>
-    @group_picker.render()
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'
     group = (group for group in @groups when group.id == group_id)
     @render_group group[0]
