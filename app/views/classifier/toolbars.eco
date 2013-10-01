@@ -1,0 +1,20 @@
+<% translate = require 't7e' %>
+<% labels = require '../../lib/notes' %>
+<ul class="documents">
+  <% for document in labels.toolbars.documents: %>
+    <li class="<%= document %>">
+      <input 
+        type="radio" 
+        name="type" 
+        id="document-<%= document %>" 
+        value="<%= document %>"
+        <%= @helper.selectedDocument(document) %>
+      >
+      <label for="document-<%= document %>"><i class="icon-<%= document %>"></i><%- translate 'span', "documents.#{document}" %></label>
+    </li>
+  <% end %>
+</ul>
+
+<div id="document-metadata" class=""></div>
+
+<div class="toolbar"></div>

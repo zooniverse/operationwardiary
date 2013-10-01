@@ -12,12 +12,9 @@ User = require 'zooniverse/models/user'
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
 
-Editor = require '../lib/text-widgets'
-{WidgetFactory} = Editor
-{toolbars} = Editor
-
 GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
+Toolbars = require './classifier/toolbars'
 
 class Classifier extends Spine.Controller
   
@@ -29,27 +26,11 @@ class Classifier extends Spine.Controller
     'click .back': 'onGoBack'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
-    'change .documents': ->
-      @surface.enable()
-      @toggleCategories()
-    'change .categories': ->
-      @surface.markingMode = true
-      tool.controls.el.addClass 'closed' for tool in @surface.tools
 
   elements:
     '.subject-container': 'subjectContainer'
-    '#document-metadata': 'metadata'
-    '#subject': 'pageNumber'
     '#diary_id': 'diaryDisplay'
-    '.diary_dates': 'diaryDates'
-    '.diary_title': 'diaryTitle'
     
-  helper:
-    selectedCategory: (note) =>
-      return
-    selectedDocument: (document) =>
-      return
-        
   defaults = 
     category: 'date'
 
@@ -62,11 +43,21 @@ class Classifier extends Spine.Controller
     
     @render()
     
+    @toolbars = new Toolbars
+    @el.find('.tools').prepend @toolbars.el
+    
     @group_picker = new GroupPicker
     @el.find('#group-picker').prepend @group_picker.el
     
     @group_details = new GroupDetails
     @el.prepend @group_details.el
+    
+    @toolbars.el.on 'pickDocument', =>
+      @surface.enable()
+    
+    @toolbars.el.on 'pickCategory', =>
+      @surface.markingMode = true
+      tool.controls.el.addClass 'closed' for tool in @surface.tools
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -104,7 +95,7 @@ class Classifier extends Spine.Controller
     @surface.resetTools()
     
     history?.render()
-    @toggleCategories()
+    @toolbars.toggleCategories()
 
   onUserChange: (e, user) =>
     # user, User.current
@@ -185,20 +176,7 @@ class Classifier extends Spine.Controller
     
     @surface_history[ Subject.current.id ] = snapshot
     
-  toggleCategories: ->
-    category = $('.documents :checked').val()
-    @metadata.html ''
-    
-    toolbar = toolbars[ category ] ? { template: '' }
-      
-    switch category
-      when 'orders'
-        orders = WidgetFactory.makeWidget 'orders'
-        @metadata.html orders.template
-      
-    $('.toolbar').html toolbar.template
-    $('.categories').css
-      'visibility': 'visible'
+
 
 class MarkingHistory
   
