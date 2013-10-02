@@ -65,7 +65,7 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
-    Subject.on 'fetch', @onSubjectFetch
+    # Subject.on 'fetch', @onSubjectFetch
     
 
   render: =>
@@ -108,9 +108,6 @@ class Classifier extends Spine.Controller
     
 
   onSubjectFetch: (e, subjects) =>
-    
-    Subject.instances.sort (a,b) ->
-      return if a.metadata.page_number > b.metadata.page_number then 1 else -1
       
     pages = (subject.metadata.page_number for subject in Subject.instances)
     console?.log pages
