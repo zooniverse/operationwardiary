@@ -3,7 +3,7 @@
 
 <div class="annotation">
   
-  <label>Type<br>
+  <label><%- translate 'span', "common.type" %><br>
     <select name="type">
       <% for type in @types: %>
         <option value="<%= type %>"><%- translate 'span', "orders.#{type}" %></option>

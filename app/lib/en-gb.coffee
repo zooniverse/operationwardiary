@@ -4,6 +4,8 @@ module.exports =
   
   common:
     other: 'Other'
+    finish: 'Finish'
+    type: 'Type'
 
   documents:
     cover: 'Cover page'

@@ -8,7 +8,7 @@
  
 
   <span id="group-picker" style="position: absolute; right: 5px; top: -5px;">
-    <button class="finish">Finish</button>
+    <button class="finish"><%- translate 'span', "common.finish" %></button>
   </span>
   
 </div>
