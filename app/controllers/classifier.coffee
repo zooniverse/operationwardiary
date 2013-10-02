@@ -125,8 +125,16 @@ class Classifier extends Spine.Controller
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
+    metadata = {}
+    
+    @toolbars.metadata 
+       .find( ':input' )
+       .each ->
+         metadata[@name] = @value
+         
     annotation = 
       document: document
+      metadata: metadata
       marks: @surface.marks.slice(0)
     @classification.annotate annotation
     console?.log 'Classifying', JSON.stringify @classification
