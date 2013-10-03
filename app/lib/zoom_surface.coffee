@@ -65,8 +65,10 @@ class ZoomableSurface extends MarkingSurface
     w = new_image.width()
     px =  "#{ (@width / 2) - (w / 2) }px"
     
-    new_image.removeClass 'offscreen'
-    new_image.css left: px
+    new_image.on 'load', =>
+    
+      new_image.removeClass 'offscreen'
+      new_image.css left: px
     
     new_image.one 'transitionend', =>
       @image.attr src: src
