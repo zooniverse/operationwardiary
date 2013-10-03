@@ -62,13 +62,17 @@ class ZoomableSurface extends MarkingSurface
     promise = new $.Deferred()
     new_image = $('#loader')
     new_image.attr src: src
+    w = new_image.width()
+    px =  "#{ (@width / 2) - (w / 2) }px"
     
     new_image.removeClass 'offscreen'
+    new_image.css left: px
     
     new_image.one 'transitionend', =>
       @image.attr src: src
       new_image.attr src: ''
       new_image.addClass 'offscreen'
+      new_image.removeAttr 'style'
       @zoomBy = 1
       @pan()
       promise.resolve()
