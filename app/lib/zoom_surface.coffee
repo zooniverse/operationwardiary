@@ -80,6 +80,8 @@ class ZoomableSurface extends MarkingSurface
       @pan()
       promise.resolve()
     
+    new_image.trigger 'transitionend' if @image.attr('src') == ''
+    
     return promise
   
   resetTools: ->
