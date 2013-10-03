@@ -19,4 +19,5 @@
   <button class="zoom-in">+</button>
   <button class="zoom-out">-</button>
   </span>
+  <img id="loader" src="" class="offscreen">
 </div>

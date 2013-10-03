@@ -14,6 +14,8 @@ class ZoomableSurface extends MarkingSurface
     # HACK: turn off image scaling/resizing in SVG.
     @image.node.setAttributeNS null,"preserveAspectRatio" , "xMidYMid meet"
     
+    @image.attr src: ""
+    
     @container.on 'keydown', (e)=>
       @selection.controls.onClickToggle e if e.which == 13
     
@@ -58,14 +60,15 @@ class ZoomableSurface extends MarkingSurface
     {left, top} = @getOffset()
     
     promise = new $.Deferred()
-    new_image = new Image()
-    new_image.src = src
+    new_image = $('#loader')
+    new_image.attr src: src
     
-    @image.attr src: ""
-    message = @paper.text left + @width / (2 * @zoomBy), top + @height / (2 * @zoomBy), 'Loading', font: '12px "Arial"', fill: 'black'
-    new_image.onload = =>
-      message.remove()
+    new_image.removeClass 'offscreen'
+    
+    new_image.one 'transitionend', =>
       @image.attr src: src
+      new_image.attr src: ''
+      new_image.addClass 'offscreen'
       @zoomBy = 1
       @pan()
       promise.resolve()
