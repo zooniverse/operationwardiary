@@ -70,8 +70,11 @@ class ZoomableSurface extends MarkingSurface
     
       new_image.removeClass 'offscreen'
       new_image.css left: px
+      @image.animate opacity:0, 800
     
     new_image.one 'transitionend', =>
+      
+      @image.attr opacity: 1
       @image.attr src: src
       new_image.attr src: ''
       new_image.addClass 'offscreen'
