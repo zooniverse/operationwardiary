@@ -40,7 +40,7 @@ class Geocoder
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
     yql = new YQL query
-    url = yql.signed_request()
+    url = yql.unsigned_request()
     
     $.getJSON( url ).done (response)=>
     
