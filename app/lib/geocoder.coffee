@@ -35,12 +35,11 @@ class Geocoder
     query = queries[@service]
     
     promise = new $.Deferred
-
-    # yql = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
-    # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
     yql = new YQL query
-    url = yql.unsigned_request()
+    url = yql.signed_request()
+    
+    console.log url
     
     $.getJSON( url ).done (response)=>
     

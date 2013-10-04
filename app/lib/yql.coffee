@@ -39,19 +39,16 @@ class YQL
     paramList = baseStr[2][0].split "&"
     paramList.push "oauth_signature=#{encodeURIComponent theSig}"
     
-    console.log paramList
-    # paramList.sort (a,b) ->
-    #   if (a[0] < b[0]) return -1
-    #   if (a[0] > b[0]) return 1
-    #   if (a[1] < b[1]) return  -1
-    #   if (a[1] > b[1]) return 1
-    #   return 0
+    paramList.sort (a,b) ->
+      return -1 if a[0] < b[0]
+      return 1 if a[0] > b[0]
+      return  -1 if a[1] < b[1]
+      return 1 if a[1] > b[1]
+      return 0
  
+    console.log paramList
     locString = ""
     locString = paramList.join '&'
-    
-    console.log locString
-    console.log baseStr
  
     finalStr = baseStr[1][0] + "?" + locString + "&callback=?"
 
