@@ -2,6 +2,8 @@ $ = require 'jqueryify'
 require './jstorage.js'
 store = $.jStorage
 
+YQL = require './yql'
+
 class Geocoder
   
   constructor: (@service = 'geonames') ->
@@ -34,10 +36,13 @@ class Geocoder
     
     promise = new $.Deferred
 
-    yql = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
+    # yql = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     # TODO: OAuth this call to avoid rate-limiting. Cache results too.
     
-    $.getJSON( yql ).done (response)=>
+    yql = new YQL query
+    url = yql.signed_request()
+    
+    $.getJSON( url ).done (response)=>
     
       results = response.query.results
     
