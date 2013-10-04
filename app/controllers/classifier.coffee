@@ -101,7 +101,7 @@ class Classifier extends Spine.Controller
     # user, User.current
 
     if user
-      # @render_group group
+      @group_picker.el.trigger 'change'
     else
       Route.navigate '/'
 
