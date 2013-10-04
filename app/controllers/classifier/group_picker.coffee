@@ -26,6 +26,7 @@ class GroupPicker extends Spine.Controller
     
   refresh_group: =>
     return unless @groups?
+    console.log 'UPDATING GROUP'
     group_id = $('#diary_picker').val()
     store.set 'group_id', group_id
     group = (group for group in @groups when group.id == group_id)

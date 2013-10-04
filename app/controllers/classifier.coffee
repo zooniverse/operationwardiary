@@ -69,7 +69,6 @@ class Classifier extends Spine.Controller
     
 
   render: =>
-    console.log 'RENDERING CLASSIFIER'
     
     @html @template(@)
     
@@ -101,7 +100,8 @@ class Classifier extends Spine.Controller
     # user, User.current
 
     if user
-      @group_picker.el.trigger 'change'
+      # console.log 'TRIGGERING GROUP REFRESH'
+#       @group_picker.refresh_group()
     else
       Route.navigate '/'
 
