@@ -37,7 +37,7 @@ class Geocoder
     promise = new $.Deferred
     
     yql = new YQL query
-    url = yql.signed_request()
+    url = yql.unsigned_request()
     
     console.log url
     
