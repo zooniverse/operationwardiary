@@ -15,8 +15,6 @@ class YQL
     
   
   signed_request: =>
-    console.log 'SIGNED REQUEST'
-    console.log @signed_url
     accessor = 
       consumerSecret: YQL.consumer_secret
       tokenSecret: ""          
@@ -65,7 +63,6 @@ class YQL
       $( newScript ).remove()
     
     headID.appendChild newScript
-    console.log newScript
     
     promise
 
