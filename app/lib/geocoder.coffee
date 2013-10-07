@@ -36,13 +36,7 @@ class Geocoder
     
     promise = new $.Deferred
     
-    yql = new YQL query
-    url = yql.unsigned_request()
-    
-    console.log url
-    
-    $.getJSON( url ).done (response)=>
-    
+    process_request = (response)=>
       results = response.query.results
     
       return promise unless results
@@ -59,6 +53,10 @@ class Geocoder
     
       store.set placename, [lat, long, name]
       promise.resolve lat,long,name
+    
+    yql = new YQL query
+    yql.signed_request().done process_request
+      
       
     promise
     

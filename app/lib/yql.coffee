@@ -5,16 +5,18 @@ class YQL
   @consumer_secret: "6be8e90d9b3fe81bfe846a148bcd69a65981b928"
   
   constructor: (query)->
-    @signed_url = "https://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json"
-    @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json"
+    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=process_request"
+    @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
     
   
   unsigned_request: =>
-    @unsigned_url
+    $.getJSON @unsigned_url
+    
     
   
   signed_request: =>
     console.log 'SIGNED REQUEST'
+    console.log @signed_url
     accessor = 
       consumerSecret: YQL.consumer_secret
       tokenSecret: ""          
@@ -46,11 +48,24 @@ class YQL
       return 1 if a[1] > b[1]
       return 0
  
-    console.log paramList
     locString = ""
     locString = paramList.join '&'
  
-    finalStr = baseStr[1][0] + "?" + locString + "&callback=?"
+    finalStr = baseStr[1][0] + "?" + locString
+    
+    promise = new $.Deferred
+    
+    window.process_request = (response) ->
+      promise.resolve response
+    
+    headID = document.getElementsByTagName("head")[0]         
+    newScript = document.createElement 'script'
+    newScript.type = 'text/javascript'
+    newScript.src = finalStr
+    headID.appendChild newScript
+    console.log newScript
+    
+    promise
 
 module.exports = YQL
   
