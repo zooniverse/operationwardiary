@@ -55,13 +55,15 @@ class YQL
     
     promise = new $.Deferred
     
-    window.process_request = (response) ->
-      promise.resolve response
-    
     headID = document.getElementsByTagName("head")[0]         
     newScript = document.createElement 'script'
     newScript.type = 'text/javascript'
     newScript.src = finalStr
+    
+    window.process_request = (response) ->
+      promise.resolve response
+      $( newScript ).remove()
+    
     headID.appendChild newScript
     console.log newScript
     
