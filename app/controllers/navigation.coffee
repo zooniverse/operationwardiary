@@ -14,8 +14,6 @@ class Navigation extends Spine.Controller
   constructor: ->
     super
     @render()
-    console.log @menuButton[0]
-    console.log @menu[0]
     
     @menuButton.on 'click', =>
       @menu.toggleClass 'closed'
