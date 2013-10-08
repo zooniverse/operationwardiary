@@ -1,4 +1,4 @@
-PROJECT_NAME = 'Team War Diaries'
+PROJECT_NAME = 'Diaries of the First World War'
 
 module.exports =
   
