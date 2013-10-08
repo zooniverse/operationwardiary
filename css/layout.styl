@@ -14,3 +14,28 @@
 
 .zooniverse-footer
   @extends #site-container
+
+.site-navigation
+  text-align: center
+  font-size: 1.5em
+  
+  .links
+    overflow: hidden
+    
+    button
+      float: right
+  
+  ul
+    list-style: none
+    height: 2em
+    overflow: hidden
+    transition: height 1s
+    
+    &.closed
+      height: 0
+    
+    li
+      display: inline-block
+  
+  a
+    text-decoration: none

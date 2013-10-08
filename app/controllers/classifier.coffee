@@ -81,6 +81,10 @@ class Classifier extends Spine.Controller
       
     @surface.dotRadius = 5
     
+  active: =>
+    super
+    $('.site-navigation ul').addClass 'closed'
+    
   render_annotation: ( history ) ->
     
     $('.categories :checked, .documents :checked')

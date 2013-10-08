@@ -2,11 +2,14 @@
 
 <div class="links">
   <h1><a href="#/"><%- translate 'span', 'navigation.projectName' %></a></h1>
-  <a href="#/"><%- translate 'span', 'navigation.home' %></a>
-  <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
-  <a href="#/profile"><%- translate 'span', 'navigation.profile' %></a>
-  <a href="#/guide"><%- translate 'span', 'navigation.guide' %></a>
-  <a href="#/about"><%- translate 'span', 'navigation.about' %></a>
-  <a href="#"><%- translate 'span', 'navigation.talk' %></a>
-  <a href="#"><%- translate 'span', 'navigation.blog' %></a>
+  <button>Menu</button>
+  <ul>
+    <li><a href="#/"><%- translate 'span', 'navigation.home' %></a></li>
+    <li><a href="#/classify"><%- translate 'span', 'navigation.classify' %></a></li>
+    <li><a href="#/profile"><%- translate 'span', 'navigation.profile' %></a></li>
+    <li><a href="#/guide"><%- translate 'span', 'navigation.guide' %></a></li>
+    <li><a href="#/about"><%- translate 'span', 'navigation.about' %></a></li>
+    <li><a href="#"><%- translate 'span', 'navigation.talk' %></a></li>
+    <li><a href="#"><%- translate 'span', 'navigation.blog' %></a></li>
+  </ul>
 </div>
