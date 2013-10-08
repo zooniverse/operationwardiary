@@ -19,6 +19,8 @@ class Profile extends Spine.Controller
       
     @html @template
       user: User.current
+      
+    @el.attr id: 'profile'
     
     return unless User.current?
     

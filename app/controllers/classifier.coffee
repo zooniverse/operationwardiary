@@ -43,6 +43,8 @@ class Classifier extends Spine.Controller
     
     @render()
     
+    @el.attr id: 'classify'
+    
     @toolbars = new Toolbars
     @el.find('.tools').prepend @toolbars.el
     

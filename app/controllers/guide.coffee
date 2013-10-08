@@ -9,5 +9,7 @@ class Guide extends Spine.Controller
 
   render: =>
     @html @template()
+    
+    @el.attr id: 'guide'
 
 module.exports = Guide

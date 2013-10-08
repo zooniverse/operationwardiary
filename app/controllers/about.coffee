@@ -9,5 +9,7 @@ class About extends Spine.Controller
 
   render: =>
     @html @template()
+    
+    @el.attr id: 'about'
 
 module.exports = About

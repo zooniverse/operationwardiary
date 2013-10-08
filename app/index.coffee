@@ -36,10 +36,10 @@ app.stack = new Spine.Stack
 
   routes:
     '/': 'home'
-    '/classify': 'classifier'
-    '/about': 'about'
-    '/guide': 'guide'
-    '/profile': 'profile'
+    'classify': 'classifier'
+    'about': 'about'
+    'guide': 'guide'
+    'profile': 'profile'
 
   default: 'home'
 
