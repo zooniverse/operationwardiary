@@ -1,5 +1,4 @@
 <% translate = require 't7e' %>
-<% console.log @ %>
 
 <p>WO 95/<span id="diary_id"></span></p>
 
