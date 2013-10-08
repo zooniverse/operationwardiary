@@ -9,6 +9,7 @@ store = $.jStorage
 
 class GroupDetails extends Spine.Controller
   template: require '../../views/classifier/group'
+  className: 'diary-title'
 
   constructor: ->
     super

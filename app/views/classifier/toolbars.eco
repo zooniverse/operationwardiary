@@ -1,5 +1,6 @@
 <% translate = require 't7e' %>
 <% labels = require '../../lib/notes' %>
+<h2>Page Types</h2>
 <ul class="documents">
   <% for document in labels.toolbars.documents: %>
     <li class="<%= document %>">

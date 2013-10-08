@@ -52,7 +52,7 @@ class Classifier extends Spine.Controller
     @el.find('#group-picker').prepend @group_picker.el
     
     @group_details = new GroupDetails
-    @el.prepend @group_details.el
+    @subjectContainer.before @group_details.el
     
     @toolbars.el.on 'pickDocument', =>
       @surface.enable()

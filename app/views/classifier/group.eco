@@ -1,2 +1,2 @@
-<h1 class="diary_title"><%= @group.name %></h1>
-<p class="diary_dates"><%= @group.startdate %> - <%= @group.enddate %></p>
+<% translate = require 't7e' %>
+<h1 class="diary_title"><%= @group.name %> (<%= @group.startdate %> - <%= @group.enddate %>)</h1><button class="finish"><%- translate 'span', "common.finish" %></button>
