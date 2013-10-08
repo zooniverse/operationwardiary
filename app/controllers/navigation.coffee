@@ -20,6 +20,9 @@ class Navigation extends Spine.Controller
     
     Spine.bind 'nav:close', =>
       @menu.addClass 'closed'
+    
+    Spine.bind 'nav:open', =>
+      @menu.removeClass 'closed'
       
   render: =>
     @html @template()

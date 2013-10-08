@@ -9,5 +9,9 @@ class Home extends Spine.Controller
 
   render: =>
     @html @template()
+  
+  active: =>
+    super
+    Spine.trigger 'nav:open'
 
 module.exports = Home
