@@ -83,7 +83,7 @@ class Classifier extends Spine.Controller
     
   active: =>
     super
-    $('.site-navigation ul').addClass 'closed'
+    Spine.trigger 'nav:close'
     
   render_annotation: ( history ) ->
     

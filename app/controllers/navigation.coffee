@@ -18,8 +18,10 @@ class Navigation extends Spine.Controller
     console.log @menu[0]
     
     @menuButton.on 'click', =>
-      console.log 'CLICK'
       @menu.toggleClass 'closed'
+    
+    Spine.bind 'nav:close', =>
+      @menu.addClass 'closed'
       
   render: =>
     @html @template()
