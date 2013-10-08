@@ -18,10 +18,15 @@
 .site-navigation
   text-align: center
   font-size: 1.5em
+  background: black
+  color: white
+  
+  h1
+    font-family: serif
   
   .links
     overflow: hidden
-    width: 600px
+    width: 800px
     margin: 0 auto
     position: relative
     
@@ -35,12 +40,16 @@
     height: 2em
     overflow: hidden
     transition: height 1s
+    margin: 0
     
     &.closed
       height: 0
     
     li
       display: inline-block
+      margin: 0 1em
+      text-transform: uppercase
   
   a
     text-decoration: none
+    color: white
