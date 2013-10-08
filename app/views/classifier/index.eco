@@ -1,13 +1,6 @@
 <% translate = require 't7e' %>
 
-<p>WO 95/<span id="diary_id"></span></p>
-
 <div class="tools">
-  
- 
-
-  <span id="group-picker" style="position: absolute; right: 5px; top: -5px;">
-  </span>
   
 </div>
 
@@ -19,3 +12,6 @@
   </span>
   <img id="loader" src="" class="offscreen">
 </div>
+<p>WO 95/<span id="diary_id"></span></p>
+<span id="group-picker">
+</span>
