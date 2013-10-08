@@ -6,6 +6,8 @@ module.exports =
     other: 'Other'
     finish: 'Finish'
     type: 'Type'
+    favourite: 'Favourite'
+    discuss: 'Discuss'
 
   documents:
     cover: 'Cover page'
