@@ -3,10 +3,11 @@ OAuth = require './oauth.js'
 class YQL
   @consumer_key: "dj0yJmk9R2t0dzBOdU5TSFZwJmQ9WVdrOWNVSjBWMHB5TkRJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04NQ--"
   @consumer_secret: "6be8e90d9b3fe81bfe846a148bcd69a65981b928"
+  @cache_life = 3600
   
   constructor: (query)->
-    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=process_request"
-    @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?"
+    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=process_request&_maxage=#{YQL.cache_life}"
+    @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?&_maxage=#{YQL.cache_life}"
     
   
   unsigned_request: =>
