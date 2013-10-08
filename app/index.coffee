@@ -23,8 +23,8 @@ navigation.el.prependTo 'body'
 app.topBar = new TopBar
 app.topBar.el.prependTo 'body'
 
-app.footer = new Footer
-app.footer.el.appendTo 'body'
+# app.footer = new Footer
+# app.footer.el.appendTo 'body'
 
 app.stack = new Spine.Stack
   controllers:
