@@ -7,7 +7,6 @@ require 'spine/lib/route'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
 Group = require 'zooniverse/models/project-group'
-Footer = require 'zooniverse/controllers/footer'
 TopBar = require 'zooniverse/controllers/top-bar'
 
 api = new Api project: 'war_diary'
@@ -22,9 +21,6 @@ navigation.el.prependTo 'body'
 
 app.topBar = new TopBar
 app.topBar.el.prependTo 'body'
-
-# app.footer = new Footer
-# app.footer.el.appendTo 'body'
 
 app.stack = new Spine.Stack
   controllers:
