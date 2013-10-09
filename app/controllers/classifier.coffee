@@ -77,7 +77,7 @@ class Classifier extends Spine.Controller
     @surface ?= new ZoomableSurface
       tool: TextTool
       container: @subjectContainer
-      width: 998
+      width: 1000
       height: 550
       clickDelay: 300
       
