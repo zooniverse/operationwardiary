@@ -35,14 +35,15 @@ activity = blue
   margin: 0
   text-align: center
   background: #ccc
-  height: 580px
+  height: 550px
   font-size: 1.5em
   
   h2
-    background: #333
+    background: #000
     color: #fff
     line-height: 30px
     margin: 0
+    
   ul
     text-indent: 0
     padding: 0
@@ -64,17 +65,6 @@ activity = blue
       
         &:hover
           opacity: .6
-    
-      &.date label, &.diaryDate label
-        background-color: date
-      &.time label, &.diaryTime label
-        background-color: time
-      &.place label
-        background-color: place
-      &.person label
-        background-color: person
-      &.activity label
-        background-color: activity
       
     
       input[type=radio]
@@ -84,6 +74,7 @@ activity = blue
         &:checked + label
           font-weight: bold
           opacity: 1
+          background: #000
       
         &:focus + label
           opacity: .8
@@ -94,7 +85,7 @@ activity = blue
   text-align: center
   position: relative
   float: left
-  width: 1000px
+  width: 100%
   
   h1
     font-size: 1.2em
@@ -146,12 +137,22 @@ activity = blue
     &.activity
       color: activity
         
-ul.documents
-  width: 50%
+div.types
+  width: 75%
   float:left
+  background: #000
+  height: 550px
   
-ul.categories
-  visibility: hidden
+div.toolbar
+  width: 25%
+  overflow: hidden
+  float: left
+  background: #333
+  height: 550px
+  
+#document-metadata
+  color: #fff
+  clear: left
   
 .marking-tool-controls
   position: absolute
