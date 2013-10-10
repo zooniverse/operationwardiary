@@ -17,7 +17,7 @@ class ZoomableSurface extends MarkingSurface
     @image.attr src: ""
     
     @container.on 'keydown', (e)=>
-      @selection.controls.onClickToggle e if e.which == 13
+      @selection?.controls.onClickToggle e if e.which == 13
     
     @container.on 'mousewheel', (e)=>
       

@@ -26,6 +26,8 @@ class Classifier extends Spine.Controller
     'click .back': 'onGoBack'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
+    'click .zoom-in': 'onZoomIn'
+    'click .zoom-out': 'onZoomOut'
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -179,7 +181,7 @@ class Classifier extends Spine.Controller
       
     zoom()
     
-    $( currentTarget ).one( 'mouseup', -> clearTimeout timeout )
+    $( currentTarget ).one( 'mouseup keyup', -> clearTimeout timeout )
     
   onGoBack: ->
     
