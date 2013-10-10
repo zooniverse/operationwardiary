@@ -26,8 +26,8 @@ class Classifier extends Spine.Controller
     'click .back': 'onGoBack'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
-    'click .zoom-in': 'onZoomIn'
-    'click .zoom-out': 'onZoomOut'
+    'keydown .zoom-in': 'onKeyZoomIn'
+    'keydown .zoom-out': 'onKeyZoomOut'
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -169,6 +169,14 @@ class Classifier extends Spine.Controller
   onZoomOut: ({currentTarget})=>
     
     timeout = @onZoom currentTarget, -.2
+    
+  onKeyZoomIn: (e) =>
+    return unless e.which == 13
+    @onZoom e.currentTarget, .2
+  
+  onKeyZoomOut: (e) =>
+    return unless e.which == 13
+    @onZoom e.currentTarget, -.2
     
   onZoom: (currentTarget, delta)=>
     @surface.selection?.deselect()
