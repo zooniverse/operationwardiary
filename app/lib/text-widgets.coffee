@@ -64,8 +64,6 @@ class TextWidget
 WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
   
-  colour: 'green'
-  
   type: 'place'
   
   @gc: new Geocoder
@@ -162,8 +160,6 @@ WidgetFactory.registry.person = class PersonWidget extends TextWidget
   ]
   
   template: require('../views/tools/person')( ranks: PersonWidget.ranks, context: labels.person )
-  
-  colour: 'red'
   
   type: 'person'
   
@@ -263,8 +259,6 @@ WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   
   template: require('../views/tools/activity')( choices: labels.activities )
   
-  colour: 'blue'
-  
   type: 'activity'
   
   getLabel: (target) ->
@@ -300,8 +294,6 @@ WidgetFactory.registry.weather = class WeatherWidget extends TextWidget
 
 WidgetFactory.registry.date = class DateWidget extends TextWidget
   template: require '../views/tools/date'
-  
-  colour: 'purple'
   
   type: 'date'
   
