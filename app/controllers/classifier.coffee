@@ -131,7 +131,7 @@ class Classifier extends Spine.Controller
         @render_annotation @surface_history[ subject.id ]
       )
     @diaryDisplay.text subject.metadata.file_name
-    @talk_url = subject.talkHref()
+    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
