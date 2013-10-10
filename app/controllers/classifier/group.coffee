@@ -10,7 +10,9 @@ store = $.jStorage
 class GroupDetails extends Spine.Controller
   template: require '../../views/classifier/group'
   className: 'diary-title'
-
+  elements:
+    '.discuss': 'talkButton'
+    
   constructor: ->
     super
     
@@ -34,6 +36,10 @@ class GroupDetails extends Spine.Controller
     Subject.group = @group.id
     Subject.destroyAll()
     Subject.next()
+    
+    console.log @talkButton[0]
+    @talkButton.on 'click', =>
+      @el.trigger 'subject:discuss'
     
   onGroupFetch: (e, groups) =>
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'

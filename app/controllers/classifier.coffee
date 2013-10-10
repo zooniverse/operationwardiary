@@ -64,6 +64,9 @@ class Classifier extends Spine.Controller
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
     
+    
+    @el.on 'subject:discuss', =>
+      window.location = @talk_url
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -128,6 +131,7 @@ class Classifier extends Spine.Controller
         @render_annotation @surface_history[ subject.id ]
       )
     @diaryDisplay.text subject.metadata.file_name
+    @talk_url = subject.talkHref()
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
