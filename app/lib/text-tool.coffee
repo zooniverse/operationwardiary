@@ -13,7 +13,9 @@ class TextControls extends ToolControls
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
-      <button name="delete-mark">&times;</button>
+      <button name="delete">&times;</button>
+      <div class="deleted" aria-hidden="true">Deleted</div>
+      <div class="saved" aria-hidden="true">Saved</div>
     </div>
   '''
   
@@ -36,10 +38,17 @@ class TextControls extends ToolControls
     ), 250
 
   bind_events: ->
-    @el.on 'click', 'button[name="delete-mark"]', (e) =>
+    @el.on 'click', 'button[name="delete"]', (e) =>
       return if @tool.surface.disabled
       e.preventDefault()
-      @onClickDelete arguments...
+      @el.find('.deleted').show()
+      
+      setTimeout (=>
+        console.log 'DELETING'
+        @onClickDelete arguments...
+        @el.find('.deleted').hide()
+      ), 500
+      
       
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     
@@ -48,8 +57,13 @@ class TextControls extends ToolControls
     # @el.on 'blur', 'input[type=text], select', @onTextBlur
     
   onClickToggle: =>
-    @el.toggleClass 'closed'
-    @textInput[0].focus() if @el.is ':visible'
+    @el.find('.saved').show()
+    setTimeout (=>
+      @el.toggleClass 'closed'
+      @textInput[0].focus() if @el.is ':visible'
+      @el.find('.saved').hide()
+    ), 500
+    
     
   onTextChange: ({currentTarget}) =>
     
