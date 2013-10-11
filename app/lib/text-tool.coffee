@@ -52,6 +52,7 @@ class TextControls extends ToolControls
     @textInput[0].focus() if @el.is ':visible'
     
   onTextChange: ({currentTarget}) =>
+    console.log currentTarget
     
     label = @widget.getLabel currentTarget ? ''
     

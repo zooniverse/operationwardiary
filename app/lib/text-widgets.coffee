@@ -303,13 +303,14 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     $.datepicker.formatDate format, date
   
   render: (el)->
-    $('.date', el)
+    @input = $('.date', el)
+    $('.calendar', el)
       .datepicker
         dateFormat: 'd MM yy'
         changeMonth: true
         changeYear: true
         defaultDate: DateWidget.date
-      .val DateWidget.date
+        altField: @input
   
   
     
@@ -319,8 +320,11 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     _newPath = Raphael.transformPath "M0,0H1026", "T0,#{y}"
     shapes.animate { path: _newPath }, 0
     
-  updateNote: (target) ->
-    DateWidget.date = super
+  updateNote: (target) =>
+    DateWidget.date = @input.val()
+  
+  getLabel: (target) =>
+    @input.val() ? ''
 
 
 

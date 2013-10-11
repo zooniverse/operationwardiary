@@ -3,4 +3,5 @@
 
 <div class="annotation">
   <input type="text" class="date" value="" />
+  <span class="calendar"></span>
 </div>
