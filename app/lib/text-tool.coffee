@@ -8,12 +8,21 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 
 class TextControls extends ToolControls
   
+  template: '''
+    <div class="marking-tool-controls">
+      <span class="handle"></span>
+      <span class="label"></span>
+      <button name="toggle">✔</button>
+      <button name="delete-mark">&times;</button>
+    </div>
+  '''
+  
   constructor: (params = {})->
     super
     
     category = $( '.categories :checked' ).val()
     @widget = WidgetFactory.makeWidget category
-    @el.append @widget.template
+    @el.prepend @widget.template
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'
