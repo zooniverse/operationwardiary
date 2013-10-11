@@ -12,7 +12,7 @@ class TextControls extends ToolControls
     <div class="marking-tool-controls">
       <span class="handle"></span>
       <span class="label"></span>
-      <button name="toggle">✔</button>
+      <button name="toggle">&#x2714;</button>
       <button name="delete-mark">&times;</button>
     </div>
   '''
