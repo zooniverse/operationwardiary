@@ -41,7 +41,9 @@ class TextControls extends ToolControls
     @el.on 'click', 'button[name="delete"]', (e) =>
       return if @tool.surface.disabled
       e.preventDefault()
-      @el.find('.deleted').show()
+      @el.find('.deleted')
+        .show()
+        .css 'line-height': @el.height() + 'px'
       
       setTimeout (=>
         console.log 'DELETING'
@@ -57,7 +59,10 @@ class TextControls extends ToolControls
     # @el.on 'blur', 'input[type=text], select', @onTextBlur
     
   onClickToggle: =>
-    @el.find('.saved').show()
+    @el.find('.saved')
+      .show()
+      .css 'line-height': @el.height() + 'px'
+    
     setTimeout (=>
       @el.toggleClass 'closed'
       @textInput[0].focus() if @el.is ':visible'
