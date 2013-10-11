@@ -12,6 +12,6 @@
   </span>
   <img id="loader" src="" class="offscreen">
 </div>
-<p>WO 95/<span id="diary_id"></span></p>
+<div>WO 95/<span id="diary_id"></span></div>
 <span id="group-picker">
 </span>
