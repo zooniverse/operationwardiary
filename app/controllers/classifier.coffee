@@ -99,9 +99,7 @@ class Classifier extends Spine.Controller
     
   render_annotation: ( history ) ->
     
-    $('.categories :checked, .documents :checked')
-      .removeAttr('checked')
-      .prop('checked', false)
+    @toolbars.reset()
     
     for tool in @surface.tools
       tool.controls.el.remove() 
