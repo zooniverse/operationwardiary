@@ -131,6 +131,7 @@ class TextTool extends Tool
     super
     
     @dots[2]?.attr opacity: .5
+    @surface.trigger 'select', @mark
     
   deselect: =>
     super

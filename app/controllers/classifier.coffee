@@ -62,6 +62,7 @@ class Classifier extends Spine.Controller
     @toolbars.el.on 'pickCategory', =>
       @surface.markingMode = true
       tool.controls.el.addClass 'closed' for tool in @surface.tools
+      @surface.selection?.deselect()
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -73,6 +74,12 @@ class Classifier extends Spine.Controller
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     # Subject.on 'fetch', @onSubjectFetch
+    
+    @surface.on 'select', (e, mark)=>
+      type = mark.type
+      $( "#category-#{type}" )
+        .attr('checked', 'checked')
+        .prop('checked', true)
     
 
   render: =>
