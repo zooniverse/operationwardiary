@@ -47,5 +47,10 @@ class Toolbars extends Spine.Controller
     $('.categories').css
       'visibility': 'visible'
   
+  select: (type) =>
+    $( "#category-#{type}" )
+      .attr('checked', 'checked')
+      .prop('checked', true)
+  
 
 module.exports = Toolbars

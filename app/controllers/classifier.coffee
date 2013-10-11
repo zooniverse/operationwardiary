@@ -77,9 +77,7 @@ class Classifier extends Spine.Controller
     
     @surface.on 'select', (e, mark)=>
       type = mark.type
-      $( "#category-#{type}" )
-        .attr('checked', 'checked')
-        .prop('checked', true)
+      @toolbars.select type
     
 
   render: =>
