@@ -304,13 +304,21 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
   
   render: (el)->
     @input = $('.date', el)
-    $('.calendar', el)
+    calendar = $('.calendar', el)
+    
+    calendar
       .datepicker
         dateFormat: 'd MM yy'
         changeMonth: true
         changeYear: true
         defaultDate: DateWidget.date
         altField: @input
+        onSelect: =>
+          @input.trigger 'change'
+    
+    @input.on 'change', =>
+      @updateNote @input
+      calendar.datepicker 'setDate', @input.val()
   
   
     
