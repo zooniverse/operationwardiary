@@ -36,8 +36,7 @@ class GroupDetails extends Spine.Controller
     Subject.group = @group.id
     Subject.destroyAll()
     Subject.next()
-    
-    console.log @talkButton[0]
+
     @talkButton.on 'click', =>
       @el.trigger 'subject:discuss'
     
