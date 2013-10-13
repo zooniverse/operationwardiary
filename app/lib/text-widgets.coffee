@@ -30,13 +30,13 @@ class WidgetFactory
   
   @registry = {}
   
-  @makeWidget: (type, dotRadius = 5) =>
+  @makeWidget: (type, dotRadius = 6) =>
     new WidgetFactory.registry[type] dotRadius
 
 class TextWidget
   template: require '../views/tools/person'
   
-  colour: 'black'
+  colour: 'white'
   
   constructor: (@dotRadius) ->
   
@@ -44,7 +44,7 @@ class TextWidget
     
   mark: (tool) ->
     [
-      tool.addShape 'circle', 0, 0, @dotRadius, fill: 'black', stroke: @colour, 'stroke-width': 3
+      tool.addShape 'circle', 0, 0, @dotRadius, fill: 'transparent', stroke: @colour, 'stroke-width': 2
       tool.label
     ]
     
