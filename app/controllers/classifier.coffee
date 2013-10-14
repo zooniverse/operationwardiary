@@ -15,6 +15,7 @@ TextTool = require '../lib/text-tool'
 GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
+Comments = require './classifier/comments'
 
 class Classifier extends Spine.Controller
   
@@ -69,7 +70,8 @@ class Classifier extends Spine.Controller
     
     
     @el.on 'subject:discuss', =>
-      window.location = @talk_url
+      @comments.el.toggle()
+       
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
@@ -137,6 +139,10 @@ class Classifier extends Spine.Controller
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
+    
+    @comments = new Comments subject.zooniverse_id
+    
+    @group_details.el.append @comments.el.hide()
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()

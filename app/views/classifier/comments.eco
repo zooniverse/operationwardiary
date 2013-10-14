@@ -1,0 +1,6 @@
+<% translate = require 't7e' %>
+<% for comment in @comments: %>
+<p><span class="comment"><%= comment.body %></span> – <span class="author"><%= comment.user_name %></span></p>
+<% end %>
+<textarea></textarea>
+<button>Comment</button>
