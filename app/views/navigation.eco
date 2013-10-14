@@ -9,7 +9,7 @@
     <li><a href="#profile"><%- translate 'span', 'navigation.profile' %></a></li>
     <li><a href="#guide"><%- translate 'span', 'navigation.guide' %></a></li>
     <li><a href="#about"><%- translate 'span', 'navigation.about' %></a></li>
-    <li><a href="#"><%- translate 'span', 'navigation.talk' %></a></li>
+    <li><a href="http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/"><%- translate 'span', 'navigation.talk' %></a></li>
     <li><a href="#"><%- translate 'span', 'navigation.blog' %></a></li>
   </ul>
 </div>
