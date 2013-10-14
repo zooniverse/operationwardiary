@@ -84,12 +84,17 @@ class TextControls extends ToolControls
   moveTo: (x, y) ->
     super
     @el.removeAttr 'style'
+    
+    if y < 300
+      top = y + 20
+    else
+      top = y - ( @el.height() + 20 )
 
     @el.css
       left: x - 88
       position: 'absolute'
       right: ''
-      top: y - ( @el.height() + 20 )
+      top: top
 
 class TextTool extends Tool
   
