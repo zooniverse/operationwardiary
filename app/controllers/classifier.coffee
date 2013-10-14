@@ -70,7 +70,7 @@ class Classifier extends Spine.Controller
     
     
     @el.on 'subject:discuss', =>
-      @comments.el.toggle()
+      @comments.el.slideToggle()
        
 
     User.on 'change', @onUserChange
