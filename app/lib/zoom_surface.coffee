@@ -32,7 +32,7 @@ class ZoomableSurface extends MarkingSurface
       @onScroll mouse_delta
     
   zoom: (@zoomBy = 1) ->
-    return if @disabled
+    # return if @disabled
     @zoomBy = Math.max @zoomBy, 1
     
     
@@ -94,7 +94,7 @@ class ZoomableSurface extends MarkingSurface
     @markingMode = false
     
   onMouseDown: (e) ->
-    return if @disabled
+    # return if @disabled
     return unless e.target in [@container.get(0), @paper.canvas, @image.node]
     return if e.isDefaultPrevented()
 
@@ -109,7 +109,7 @@ class ZoomableSurface extends MarkingSurface
         @selection?.deselect()
         tool.select()
         tool.onInitialClick e
-    ), @clickDelay
+    ), @clickDelay unless @disabled
 
     
 
@@ -201,20 +201,6 @@ class ZoomableSurface extends MarkingSurface
     left = @panX - @width / (2 * @zoomBy)
     top = @panY - @height / (2 * @zoomBy)
     left: left, top: top
-  
-  disable: ->
-    super
-    
-    @container
-      .find( '.zoom-controls button')
-      .attr( 'disabled', 'disabled' )
-      
-  enable: ->
-    super
-    
-    @container
-      .find( '.zoom-controls button')
-      .removeAttr( 'disabled' )
     
   hasFocus: =>
     
