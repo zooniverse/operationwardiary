@@ -70,7 +70,7 @@ class Classifier extends Spine.Controller
     
     
     @el.on 'subject:discuss', =>
-      @comments.el.slideToggle()
+      @comments.el.toggleClass('open')
        
 
     User.on 'change', @onUserChange
@@ -142,7 +142,7 @@ class Classifier extends Spine.Controller
     
     @comments = new Comments subject.zooniverse_id
     
-    @group_details.el.append @comments.el.hide()
+    @group_details.el.append @comments.el
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()

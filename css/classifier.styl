@@ -232,9 +232,20 @@ div.toolbar
 .subject-comments
   background: #333
   color: #fff
-  padding: 5px
+  padding: 0
   position: absolute
   right: 0
   top: 30px
   z-index: 20
   text-align: left
+  max-height: 0
+  transition: max-height 1s
+  overflow: hidden
+  
+  &.open
+    max-height: 550px
+    
+  p
+  textarea
+  button
+    margin: 10px
