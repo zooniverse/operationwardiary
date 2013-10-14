@@ -90,7 +90,7 @@ class Classifier extends Spine.Controller
       tool: TextTool
       container: @subjectContainer
       width: 1000
-      height: 550
+      height: 600
       clickDelay: 300
       
     @surface.dotRadius = 5
