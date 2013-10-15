@@ -187,6 +187,11 @@ class TextTool extends Tool
     {x,y} = super
     {left, top} = @surface.getOffset()
     x: (x / @surface.zoomBy) + left, y: (y / @surface.zoomBy) + top
+    
+  setMark: (mark_params) =>
+    for key, value of mark_params
+      @mark[key] = value
+    @controls.setNote @mark.note
 
   
 

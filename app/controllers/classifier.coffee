@@ -147,24 +147,14 @@ class Classifier extends Spine.Controller
         page_type = store.get 'document'
     
         if page_type
-          selector = "#document-#{page_type}"
-          $( selector )
-            .attr( 'checked', 'checked' )
-            .prop( 'checked', true )
+          @toolbars.selectPageType page_type
           @toolbars.toggleCategories()
           @surface.enable()
           
           for mark in marks
-            console.log mark.type
             @toolbars.select mark.type
-            tool = @surface.createTool()
+            @surface.addMark mark
             
-            for key, value of mark
-              tool.mark[key] = value
-            tool.controls.setNote tool.mark.note
-            tool.render()
-            tool.deselect()
-            console.log tool
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"

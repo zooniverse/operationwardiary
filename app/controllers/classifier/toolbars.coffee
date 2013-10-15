@@ -47,6 +47,12 @@ class Toolbars extends Spine.Controller
     $('.categories').css
       'visibility': 'visible'
   
+  selectPageType: (type) =>
+    selector = "#document-#{type}"
+    $( selector )
+      .attr( 'checked', 'checked' )
+      .prop( 'checked', true )
+      
   select: (type) =>
     $( "#category-#{type}" )
       .attr('checked', 'checked')
