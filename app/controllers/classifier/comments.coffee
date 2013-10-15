@@ -18,7 +18,7 @@ class Comments extends Spine.Controller
   constructor: (@zooniverse_id)->
     super
     # uncomment this for testing
-    @zooniverse_id = 'AWD00001qt'
+    # @zooniverse_id = 'AWD00001qt'
     request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
     
     request.done @onCommentsFetch
