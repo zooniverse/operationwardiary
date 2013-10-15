@@ -138,7 +138,6 @@ class Classifier extends Spine.Controller
     @classification = new Classification { subject }
     
     marks = store.get 'marks'
-    console.log marks
       
     @surface
       .loadImage(subject.location.standard)

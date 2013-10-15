@@ -213,6 +213,5 @@ class ZoomableSurface extends MarkingSurface
     tool.setMark mark_params
     tool.render()
     tool.deselect()
-    console.log tool
     
 module.exports = ZoomableSurface
