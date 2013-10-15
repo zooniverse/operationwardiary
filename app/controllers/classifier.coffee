@@ -81,6 +81,9 @@ class Classifier extends Spine.Controller
       type = mark.type
       @toolbars.select type
     
+    @surface.on 'change', =>
+      store.set 'marks', @surface.marks
+    
 
   render: =>
     
