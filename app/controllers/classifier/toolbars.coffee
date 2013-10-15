@@ -62,6 +62,7 @@ class Toolbars extends Spine.Controller
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
       .prop('checked', false)
-  
+    $('.toolbar').html ''
+    @metadata.html ''
 
 module.exports = Toolbars
