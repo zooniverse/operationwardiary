@@ -146,8 +146,6 @@ class Classifier extends Spine.Controller
         @render_annotation @surface_history[ subject.id ]
         page_type = store.get 'document'
     
-        console.log page_type
-    
         if page_type
           selector = "#document-#{page_type}"
           $( selector )
@@ -163,6 +161,7 @@ class Classifier extends Spine.Controller
             
             for key, value of mark
               tool.mark[key] = value
+            tool.controls.setNote tool.mark.note
             tool.controls.bind_events()
             tool.render()
             tool.deselect()

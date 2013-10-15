@@ -97,6 +97,9 @@ class TextControls extends ToolControls
       position: 'absolute'
       right: ''
       top: top
+    
+  setNote: (note) =>
+    @widget.setNote note, @el
 
 class TextTool extends Tool
   
