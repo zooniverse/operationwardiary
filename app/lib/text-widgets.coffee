@@ -129,6 +129,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .val()
   
   render: (el)->
+    return unless google?
     @gmap = $('.map', el)
       .gmap
         zoom: 9

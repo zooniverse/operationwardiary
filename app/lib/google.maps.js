@@ -8,4 +8,4 @@ function loadScript() {
   document.body.appendChild(script);
 }
 
-window.onload = loadScript;
+loadScript();
