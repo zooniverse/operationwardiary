@@ -105,15 +105,7 @@ class Classifier extends Spine.Controller
     Spine.trigger 'nav:close'
     
   render_annotation: ( history ) ->
-    
-    @toolbars.reset()
-    
-    for tool in @surface.tools
-      tool.controls.el.remove() 
-      tool.shapeSet.remove()
-  
-    @surface.resetTools()
-    
+
     history?.render()
     @toolbars.toggleCategories()
 
@@ -136,13 +128,20 @@ class Classifier extends Spine.Controller
   onSubjectSelect: (e, subject) =>
     
     @classification = new Classification { subject }
+      
+    @toolbars.reset()
+      
+    for tool in @surface.tools
+      tool.controls.el.remove() 
+      tool.shapeSet.remove()
+      
+    @surface.resetTools()
     
     marks = store.get 'marks', []
       
     @surface
       .loadImage(subject.location.standard)
       .done( =>
-        @render_annotation @surface_history[ subject.id ]
         page_type = store.get 'document'
     
         if page_type
