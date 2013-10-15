@@ -59,6 +59,8 @@ class Classifier extends Spine.Controller
     
     @toolbars.el.on 'pickDocument', =>
       @surface.enable()
+      page_type = $( '.documents :checked' ).val()
+      store.set 'document', page_type
     
     @toolbars.el.on 'pickCategory', =>
       @surface.markingMode = true
@@ -134,11 +136,25 @@ class Classifier extends Spine.Controller
   onSubjectSelect: (e, subject) =>
     
     @classification = new Classification { subject }
+    
+    marks = store.get 'marks'
+    console.log marks
       
     @surface
       .loadImage(subject.location.standard)
       .done( =>
         @render_annotation @surface_history[ subject.id ]
+        page_type = store.get 'document'
+    
+        console.log page_type
+    
+        if page_type
+          selector = "#document-#{page_type}"
+          console.log selector
+          console.log $( selector )[0]
+          $( selector )
+            .attr( 'checked', 'checked' )
+            .prop( 'checked', true )
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
