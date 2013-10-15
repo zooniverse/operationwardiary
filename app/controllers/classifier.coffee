@@ -137,7 +137,7 @@ class Classifier extends Spine.Controller
     
     @classification = new Classification { subject }
     
-    marks = store.get 'marks'
+    marks = store.get 'marks', []
       
     @surface
       .loadImage(subject.location.standard)
