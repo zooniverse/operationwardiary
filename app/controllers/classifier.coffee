@@ -162,7 +162,6 @@ class Classifier extends Spine.Controller
             for key, value of mark
               tool.mark[key] = value
             tool.controls.setNote tool.mark.note
-            tool.controls.bind_events()
             tool.render()
             tool.deselect()
             console.log tool
