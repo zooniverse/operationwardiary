@@ -49,6 +49,7 @@ class TextControls extends ToolControls
         console.log 'DELETING'
         @onClickDelete arguments...
         @el.find('.deleted').hide()
+        @tool.surface.trigger 'change'
       ), 500
       
       
@@ -67,6 +68,7 @@ class TextControls extends ToolControls
       @el.toggleClass 'closed'
       @textInput[0].focus() if @el.is ':visible'
       @el.find('.saved').hide()
+      @tool.surface.trigger 'change'
     ), 500
     
     
