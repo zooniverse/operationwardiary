@@ -24,14 +24,15 @@ class Comments extends Spine.Controller
     request.done @onCommentsFetch
     
     @render()
-    @el.on 'error', 'p.author img', ->
-      @.attr src: '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
 
   render: =>
     @html @template
       comments: @comments
     
     @comment_button.on 'click', @submitComment
+    
+    $('p.author img', @el).one 'error', ->
+      @.src = '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
     
     
   onCommentsFetch: ({discussion}) =>
