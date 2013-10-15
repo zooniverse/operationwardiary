@@ -17,14 +17,15 @@ class Comments extends Spine.Controller
     
   constructor: (@zooniverse_id)->
     super
-    console.log User.current
     # uncomment this for testing
-    # zooniverse_id = 'AWD00001qt'
+    @zooniverse_id = 'AWD00001qt'
     request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
     
     request.done @onCommentsFetch
     
     @render()
+    @el.on 'error', 'p.author img', ->
+      @.attr src: '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
 
   render: =>
     @html @template
@@ -44,6 +45,7 @@ class Comments extends Spine.Controller
     
     @comments.push
       user_name: User.current.name
+      user_zooniverse_id: User.current.zooniverse_id
       body: comment
     
     @render()
