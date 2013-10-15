@@ -191,7 +191,6 @@ class Classifier extends Spine.Controller
 
   onFinishTask: =>
     @onDoTask()
-    return
     
     # @classification.send()
       
@@ -240,6 +239,9 @@ class Classifier extends Spine.Controller
     snapshot = new MarkingHistory @surface
     
     @surface_history[ Subject.current.id ] = snapshot
+    
+    store.deleteKey 'document'
+    store.deleteKey 'marks'
     
 
 
