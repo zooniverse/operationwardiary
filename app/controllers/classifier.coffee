@@ -181,7 +181,7 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     @onDoTask()
     
-    # @classification.send()
+    @classification.send()
       
     @update_history()
     
