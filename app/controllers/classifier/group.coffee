@@ -19,8 +19,6 @@ class GroupDetails extends Spine.Controller
     Group.on 'fetch', @onGroupFetch
 
   render: (@group)=>
-    console?.log 'RENDERING GROUP DETAILS'
-    
     startdate = new Date @group.metadata.start_date
     enddate = new Date @group.metadata.end_date
     
