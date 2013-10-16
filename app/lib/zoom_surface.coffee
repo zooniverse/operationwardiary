@@ -158,9 +158,11 @@ class ZoomableSurface extends MarkingSurface
     
     false
     
-  createTool: ->
+  createTool: (markDefaults = type: 'date')->
     if not @selection? or @selection.isComplete()
-      tool = new @tool surface: @
+      tool = new @tool 
+        surface: @
+        markDefaults: markDefaults
       mark = tool.mark
 
       @tools.push tool
@@ -208,9 +210,9 @@ class ZoomableSurface extends MarkingSurface
     
   addMark: (mark_params) =>
     
-    tool = @createTool()
+    tool = @createTool mark_params
   
-    tool.setMark mark_params
+    tool.controls.setNote()
     tool.render()
     tool.deselect()
     

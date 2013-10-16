@@ -98,7 +98,7 @@ class TextControls extends ToolControls
       right: ''
       top: top
     
-  setNote: (note) =>
+  setNote: (note = @tool.mark.note) =>
     @widget.setNote note, @el
 
 class TextTool extends Tool
@@ -106,7 +106,6 @@ class TextTool extends Tool
   @Controls: TextControls
   
   markDefaults:
-    p0: [-20, -20]
     type: 'date'
 
   cursors:
@@ -134,7 +133,7 @@ class TextTool extends Tool
     
     @label = @addShape 'text', 0, 0, label, dy: -50, font: '12px "Arial"', fill: @widget.colour 
     dotShapes = @widget.mark @
-      
+    
     @dots = @surface.paper.set dotShapes
     
   select: =>
@@ -187,11 +186,6 @@ class TextTool extends Tool
     {x,y} = super
     {left, top} = @surface.getOffset()
     x: (x / @surface.zoomBy) + left, y: (y / @surface.zoomBy) + top
-    
-  setMark: (mark_params) =>
-    for key, value of mark_params
-      @mark[key] = value
-    @controls.setNote @mark.note
 
   
 
