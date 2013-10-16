@@ -32,7 +32,6 @@ class TextControls extends ToolControls
     @bind_events()
 
     setTimeout (=> 
-      @textInput[0].focus()
       @onTextChange
         currentTarget: @textInput
     ), 250
