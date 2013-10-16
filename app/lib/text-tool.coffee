@@ -81,7 +81,7 @@ class TextControls extends ToolControls
       .css 'line-height': @el.height() + 'px'
     
     setTimeout (=>
-      @close()
+      @tool.deselect()
       @textInput[0].focus() if @el.is ':visible'
       @el.find('.saved').hide()
       @tool.surface.trigger 'change'
