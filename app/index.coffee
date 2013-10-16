@@ -36,6 +36,10 @@ app.stack = new Spine.Stack
     'about': 'about'
     'guide': 'guide'
     'profile': 'profile'
+    '/classify': 'classifier'
+    '/about': 'about'
+    '/guide': 'guide'
+    '/profile': 'profile'
 
   default: 'home'
 
