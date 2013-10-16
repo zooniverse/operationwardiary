@@ -53,23 +53,20 @@ class TextControls extends ToolControls
       ), 500
       
       
-    @el.on 'click', 'button[name="toggle"]', @onClickToggle
+    @el.on 'click', 'button[name="toggle"]', =>
+      @onClickToggle
+      @save()
     
     @el.on 'change', ':input', @onTextChange
+    
+    @tool.on 'select', @open
+    
+    @tool.on 'deselect', @close
     
     # @el.on 'blur', 'input[type=text], select', @onTextBlur
     
   onClickToggle: =>
-    @el.find('.saved')
-      .show()
-      .css 'line-height': @el.height() + 'px'
-    
-    setTimeout (=>
-      @el.toggleClass 'closed'
-      @textInput[0].focus() if @el.is ':visible'
-      @el.find('.saved').hide()
-      @tool.surface.trigger 'change'
-    ), 500
+    @el.toggleClass 'closed'
     
     
   onTextChange: ({currentTarget}) =>
@@ -78,6 +75,19 @@ class TextControls extends ToolControls
     
     @tool.mark.note = @widget.updateNote currentTarget
     @tool.label.attr 'text', label
+    
+  save: =>
+    
+    @el.find('.saved')
+      .show()
+      .css 'line-height': @el.height() + 'px'
+    
+    setTimeout (=>
+      @close()
+      @textInput[0].focus() if @el.is ':visible'
+      @el.find('.saved').hide()
+      @tool.surface.trigger 'change'
+    ), 500
     
   onTextBlur: ({currentTarget}) =>
     
@@ -100,6 +110,12 @@ class TextControls extends ToolControls
     
   setNote: (note = @tool.mark.note) =>
     @widget.setNote note, @el
+    
+  open: =>
+    @el.removeClass 'closed'
+  
+  close: =>
+    @el.addClass 'closed'
 
 class TextTool extends Tool
   
