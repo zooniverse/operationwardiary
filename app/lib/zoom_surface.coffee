@@ -3,6 +3,9 @@ MarkingSurface = require 'marking-surface'
 class ZoomableSurface extends MarkingSurface
   
   clickDelay: 500
+  markDefaults:
+    type: 'date'
+    note: ''
   
   constructor: (params = {}) ->
     super
@@ -158,7 +161,7 @@ class ZoomableSurface extends MarkingSurface
     
     false
     
-  createTool: (markDefaults = type: 'date')->
+  createTool: (markDefaults = @markDefaults)->
     if not @selection? or @selection.isComplete()
       tool = new @tool 
         surface: @
