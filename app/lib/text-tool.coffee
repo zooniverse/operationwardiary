@@ -125,15 +125,12 @@ class TextTool extends Tool
 
   initialize: ->
     
-    tool.controls.el.addClass 'closed' for tool in @surface.tools
-    
     category = $( '.categories :checked' ).val()
     @mark.type = category
     
     @widget = @controls.widget
     
     tmp = translate 'span', "noteTypes.#{@mark.type}"
-    @controls.toggleButton.attr title: $(tmp).text()
     @controls.el.addClass @mark.type
     @draw()
     
