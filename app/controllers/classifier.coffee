@@ -105,6 +105,7 @@ class Classifier extends Spine.Controller
   active: =>
     super
     Spine.trigger 'nav:close'
+    tool.render() for tool in @surface.tools
     
   render_annotation: ( history ) ->
 
