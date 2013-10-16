@@ -15,7 +15,6 @@ class Geocoder
     return promise unless placename
     
     cache = store.get placename
-    console.log cache
     
     if cache?
       [lat, long, name]  = cache
