@@ -53,7 +53,6 @@ class TextControls extends ToolControls
       
       
     @el.on 'click', 'button[name="toggle"]', =>
-      @onClickToggle
       @save()
     
     @el.on 'change', ':input', @onTextChange
