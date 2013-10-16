@@ -72,7 +72,7 @@ module.exports =
   
   person:
     author: 'Author of diary'
-    departed_1: 'Deaprted: on leave'
+    departed_1: 'Departed: on leave'
     departed_2: 'Departed: posted to another unit'
     departed_3: 'Departed: training'
     departed_4: 'Departed: sick'
