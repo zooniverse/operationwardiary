@@ -81,7 +81,6 @@ class TextControls extends ToolControls
     
     setTimeout (=>
       @tool.deselect()
-      @textInput[0].focus() if @el.is ':visible'
       @el.find('.saved').hide()
       @tool.surface.trigger 'change'
     ), 500
