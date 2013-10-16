@@ -13,7 +13,7 @@ class Groups extends Spine.Controller
 
   render: =>
     console.log 'CHECKING USER'
-    return unless User.current? && @groups?
+    return unless User.current && @groups?
     console.log User.current
     console.log 'RENDERING USER GROUPS'
     user_groups = User.current?.project.groups
