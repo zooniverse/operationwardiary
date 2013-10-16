@@ -63,8 +63,6 @@ class TextControls extends ToolControls
     
     @tool.on 'deselect', @close
     
-    # @el.on 'blur', 'input[type=text], select', @onTextBlur
-    
   onClickToggle: =>
     @el.toggleClass 'closed'
     
@@ -88,10 +86,6 @@ class TextControls extends ToolControls
       @el.find('.saved').hide()
       @tool.surface.trigger 'change'
     ), 500
-    
-  onTextBlur: ({currentTarget}) =>
-    
-    setTimeout (=> @el.addClass 'closed'), 500
     
   moveTo: (x, y) ->
     super
