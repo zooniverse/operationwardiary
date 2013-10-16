@@ -109,8 +109,6 @@ class ZoomableSurface extends MarkingSurface
     setTimeout (=>
       if @markingMode
         tool = @createTool()
-        @selection?.deselect()
-        tool.select()
         tool.onInitialClick e
     ), @clickDelay unless @disabled
 
@@ -173,6 +171,7 @@ class ZoomableSurface extends MarkingSurface
 
       tool.on 'select', =>
         @selection?.deselect() unless @selection is tool
+        @trigger 'select', tool.mark
 
         index = i for t, i in @tools when t is tool
         @tools.splice index, 1
@@ -181,6 +180,7 @@ class ZoomableSurface extends MarkingSurface
         @selection = tool
 
       tool.on 'deselect', =>
+        @trigger 'deselect', tool.mark
         @selection = null
 
       tool.on 'destroy', =>

@@ -150,13 +150,11 @@ class TextTool extends Tool
     super
     
     @dots[2]?.attr opacity: .5
-    @surface.trigger 'select', @mark
     
   deselect: =>
     super
     
     @dots[2]?.attr opacity: .3
-    @surface.trigger 'deselect', @mark
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
