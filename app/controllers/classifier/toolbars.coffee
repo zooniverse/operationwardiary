@@ -58,6 +58,11 @@ class Toolbars extends Spine.Controller
       .attr('checked', 'checked')
       .prop('checked', true)
   
+  deselect: (type)=>
+    $( "#category-#{type}" )
+      .removeAttr('checked')
+      .prop('checked', false)
+  
   reset: =>
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
