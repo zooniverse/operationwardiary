@@ -87,7 +87,7 @@ class Classifier extends Spine.Controller
     
     @surface.on 'deselect', (e, mark)=>
       type = mark.type
-      @toolbars.deselect type
+      # @toolbars.deselect type
     
     @surface.on 'change', =>
       store.set 'marks', @surface.marks
