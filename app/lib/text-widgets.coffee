@@ -104,7 +104,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     update_notes()
     
     PlaceWidget.gc.geocode( note.place ).done (lat,long, name)=>
-      @show_place lat, long
       
       $target
         .parents( '.annotation' )
@@ -118,6 +117,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         .val( name )
         
       update_notes()
+      
+      @show_place lat, long
       
         
     note
@@ -146,8 +147,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
       @marker[0].setPosition latlng
       map = @gmap.gmap( 'get', 'map')
-      google.maps.event.trigger(map, 'resize');
       map.setCenter latlng
+      google.maps.event.trigger map, 'resize'
 
     
       
