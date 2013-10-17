@@ -1,7 +1,3 @@
-$ = require 'jqueryify'
-require '../lib/jstorage.js'
-store = $.jStorage
-
 MarkingSurface = require 'marking-surface'
 
 class ZoomableSurface extends MarkingSurface
@@ -112,12 +108,6 @@ class ZoomableSurface extends MarkingSurface
     
     setTimeout (=>
       if @markingMode
-        
-        category = $( '.categories :checked' ).val()
-        note = store.get category, undefined
-        console.log note
-        @markDefaults.note = note if note?
-        
         tool = @createTool()
         tool.onInitialClick e
     ), @clickDelay unless @disabled
