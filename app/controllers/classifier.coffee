@@ -248,8 +248,6 @@ class Classifier extends Spine.Controller
     @surface_history[ Subject.current.id ] = snapshot
     
     store.set 'history', @surface_history
-    store.deleteKey 'document'
-    store.deleteKey 'marks'
     
 
 
