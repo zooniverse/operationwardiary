@@ -74,8 +74,6 @@ class Classifier extends Spine.Controller
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
-      store.deleteKey 'document'
-      store.deleteKey 'marks'
     
     
     @el.on 'subject:discuss', =>
