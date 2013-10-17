@@ -151,12 +151,16 @@ class Classifier extends Spine.Controller
       .loadImage(subject.location.standard)
       .done( =>
         page_type = @surface_history[subject.id]?.document
+        metadata = @surface_history[subject.id]?.metadata
     
         if page_type
           @toolbars.selectPageType page_type
           @toolbars.toggleCategories()
           @surface.enable()
           
+          for key, value of metadata
+            @toolbars.metadata.find("[name=#{key}]").val value
+            
           for mark in marks
             @toolbars.select mark.type
             @surface.addMark mark
@@ -254,10 +258,8 @@ class Transcription
     
     classifier.toolbars.metadata 
        .find( ':input' )
-       .each (input)=>
+       .each (i, input)=>
          @metadata[input.name] = input.value
-    
-    
   
   render: ->
     
