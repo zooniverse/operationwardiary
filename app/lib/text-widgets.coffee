@@ -270,7 +270,6 @@ WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   type: 'activity'
   
   getLabel: (target) ->
-    activity = $(target).val() ? 'trench'
     $(target).find(':selected').text()
 
 
@@ -356,7 +355,7 @@ WidgetFactory.registry.diaryDate = class DiaryDateWidget extends DateWidget
     shapes
 
 
-WidgetFactory.registry.time = class TimeWidget extends DateWidget
+WidgetFactory.registry.time = class TimeWidget extends TextWidget
   template: require '../views/tools/time'
   
   type: 'time'
