@@ -94,8 +94,11 @@ class Classifier extends Spine.Controller
     #   type = mark.type
     #   @toolbars.deselect type
     
-    @surface.on 'change', =>
+    @surface.on 'change', (e, mark)=>
       @update_history()
+      
+      category = $( '.categories :checked' ).val()
+      store.set mark.type, mark.note
     
 
   render: =>

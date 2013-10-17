@@ -1,7 +1,3 @@
-$ = require 'jqueryify'
-require '../lib/jstorage.js'
-store = $.jStorage
-
 translate = require 't7e'
 {WidgetFactory} = require './text-widgets'
 
@@ -80,9 +76,6 @@ class TextControls extends ToolControls
     
   save: =>
     
-    category = $( '.categories :checked' ).val()
-    store.set category, @tool.mark.note
-    
     @el.find('.saved')
       .show()
       .css 'line-height': @el.height() + 'px'
@@ -90,7 +83,7 @@ class TextControls extends ToolControls
     setTimeout (=>
       @tool.deselect()
       @el.find('.saved').hide()
-      @tool.surface.trigger 'change'
+      @tool.surface.trigger 'change', tool.mark
     ), 500
     
   moveTo: (x, y) ->
