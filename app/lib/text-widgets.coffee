@@ -373,6 +373,7 @@ WidgetFactory.registry.time = class TimeWidget extends TextWidget
     @updateNote(target)
     
   setNote: (note, el) =>
+    return unless note?
     time = 
       hour: note[0..1]
       minute: note[2..3]
