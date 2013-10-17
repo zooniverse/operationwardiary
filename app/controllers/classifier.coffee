@@ -71,7 +71,6 @@ class Classifier extends Spine.Controller
       if note?
         @surface.markDefaults.note = note
         @surface.markDefaults.type = type
-        console.log @surface.markDefaults
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -95,7 +94,6 @@ class Classifier extends Spine.Controller
       if note?
         @surface.markDefaults.note = note
         @surface.markDefaults.type = type
-        console.log @surface.markDefaults
     # @surface.on 'deselect', (e, mark)=>
     #   type = mark.type
     #   @toolbars.deselect type
