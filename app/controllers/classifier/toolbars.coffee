@@ -22,7 +22,7 @@ class Toolbars extends Spine.Controller
       @el.trigger 'pickDocument'
       @toggleCategories()
     'change .categories': ->
-      @el.trigger 'pickCategory'
+      @el.trigger 'pickCategory', $('.categories :checked').val()
 
   constructor: ->
     super

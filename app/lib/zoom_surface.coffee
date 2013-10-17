@@ -162,6 +162,7 @@ class ZoomableSurface extends MarkingSurface
   createTool: (markDefaults = @markDefaults)->
     
     if not @selection? or @selection.isComplete()
+      console.log markDefaults
       tool = new @tool 
         surface: @
         markDefaults: markDefaults

@@ -62,9 +62,16 @@ class Classifier extends Spine.Controller
       page_type = $( '.documents :checked' ).val()
       store.set 'document', page_type
     
-    @toolbars.el.on 'pickCategory', =>
+    @toolbars.el.on 'pickCategory', (e,type)=>
+      console.log type
       @surface.markingMode = true
       @surface.selection?.deselect()
+      
+      note = store.get type, undefined
+      if note?
+        @surface.markDefaults.note = note
+        @surface.markDefaults.type = type
+        console.log @surface.markDefaults
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -85,9 +92,10 @@ class Classifier extends Spine.Controller
       @toolbars.select type
       
       note = store.get type, undefined
-      console.log note
-      @surface.markDefaults.note = note if note?
-    
+      if note?
+        @surface.markDefaults.note = note
+        @surface.markDefaults.type = type
+        console.log @surface.markDefaults
     # @surface.on 'deselect', (e, mark)=>
     #   type = mark.type
     #   @toolbars.deselect type
