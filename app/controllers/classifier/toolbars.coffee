@@ -57,6 +57,8 @@ class Toolbars extends Spine.Controller
     $( "#category-#{type}" )
       .attr('checked', 'checked')
       .prop('checked', true)
+      
+    @el.trigger 'pickCategory'
   
   deselect: (type)=>
     $( "#category-#{type}" )
