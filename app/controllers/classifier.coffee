@@ -96,9 +96,7 @@ class Classifier extends Spine.Controller
     
     @surface.on 'change', (e, mark)=>
       @update_history()
-      
-      category = $( '.categories :checked' ).val()
-      store.set mark.type, mark.note
+      store.set mark.type, mark.note if mark?
     
 
   render: =>

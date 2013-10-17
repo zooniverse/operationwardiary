@@ -83,7 +83,7 @@ class TextControls extends ToolControls
     setTimeout (=>
       @tool.deselect()
       @el.find('.saved').hide()
-      @tool.surface.trigger 'change', tool.mark
+      @tool.surface.trigger 'change', @tool.mark
     ), 500
     
   moveTo: (x, y) ->
