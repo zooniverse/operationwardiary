@@ -1,3 +1,7 @@
+$ = require 'jqueryify'
+require '../lib/jstorage.js'
+store = $.jStorage
+
 translate = require 't7e'
 {WidgetFactory} = require './text-widgets'
 
@@ -30,6 +34,8 @@ class TextControls extends ToolControls
     @textInput = @el.find '.annotation :input'
 
     @bind_events()
+    
+    @setNote()
 
     setTimeout (=> 
       @onTextChange
@@ -73,6 +79,9 @@ class TextControls extends ToolControls
     @tool.label.attr 'text', label
     
   save: =>
+    
+    category = $( '.categories :checked' ).val()
+    store.set category, @tool.mark.note
     
     @el.find('.saved')
       .show()
