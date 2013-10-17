@@ -94,9 +94,11 @@ class TextControls extends ToolControls
       top = y + 20
     else
       top = y - ( @el.height() + 20 )
+      
+    left = Math.max x - 88, 10
 
     @el.css
-      left: x - 88
+      left: left
       position: 'absolute'
       right: ''
       top: top
