@@ -138,6 +138,7 @@ class TextTool extends Tool
     label = @widget.getLabel @controls.textInput[0]  ? ''
     
     @label = @addShape 'text', 0, 0, label, font: '12px "Arial"', fill: @widget.colour 
+    @label.hide()
     dotShapes = @widget.mark @
     
     @dots = @surface.paper.set dotShapes
@@ -147,10 +148,14 @@ class TextTool extends Tool
     
     @shapeSet.attr opacity: 1
     
+    @label.show()
+    
   deselect: =>
     super
     
     @shapeSet.attr opacity: 0.7
+    
+    @label.hide()
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
@@ -179,6 +184,12 @@ class TextTool extends Tool
     
   'on mousedown dots': (e, shape)->
     @controls.onClickToggle e
+  
+  'on mouseover dots': (e, shape)=>
+    @label.show()
+    
+  'on mouseout dots': (e, shape)=>
+    @label.hide() unless @ is @surface.selection
     
   render: ->
     @widget.move @dots, @mark.p0[0], @mark.p0[1]
