@@ -70,7 +70,7 @@ class Classifier extends Spine.Controller
       note = store.get type, undefined
       
       @surface.markDefaults.type = type
-      @surface.markDefaults.note = note ? ''
+      @surface.markDefaults.note = note ? undefined
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -98,7 +98,7 @@ class Classifier extends Spine.Controller
     
     @surface.on 'change', (e, mark)=>
       @update_history()
-      store.set mark.type, mark.note if mark?
+      store.set mark.type, mark.note if mark? && mark.type != 'diaryDate'
     
 
   render: =>

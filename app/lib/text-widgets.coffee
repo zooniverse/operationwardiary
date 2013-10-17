@@ -338,11 +338,9 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     
   updateNote: (target) =>
     DateWidget.date = @input.val()
-  
+    
   getLabel: (target) =>
     @input.val() ? ''
-
-
 
 WidgetFactory.registry.diaryDate = class DiaryDateWidget extends DateWidget
   
