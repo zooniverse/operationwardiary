@@ -41,7 +41,7 @@ class Classifier extends Spine.Controller
     super
     
     @defaults = defaults
-    @surface_history = {}
+    @surface_history = store.get 'history', {}
     @category = @defaults.category
     
     @render()
@@ -90,7 +90,7 @@ class Classifier extends Spine.Controller
     #   @toolbars.deselect type
     
     @surface.on 'change', =>
-      store.set 'marks', @surface.marks
+      @update_history()
     
 
   render: =>
@@ -144,12 +144,13 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
-    marks = store.get 'marks', []
-      
+    marks = @surface_history[subject.id]?.marks
+    marks ?= []
+    
     @surface
       .loadImage(subject.location.standard)
       .done( =>
-        page_type = store.get 'document'
+        page_type = @surface_history[subject.id]?.document
     
         if page_type
           @toolbars.selectPageType page_type
@@ -231,44 +232,36 @@ class Classifier extends Spine.Controller
   
   update_history: ->
     
-    snapshot = new MarkingHistory @surface
+    return unless Subject.current
+    
+    snapshot = new Transcription @
     
     @surface_history[ Subject.current.id ] = snapshot
     
+    store.set 'history', @surface_history
     store.deleteKey 'document'
     store.deleteKey 'marks'
     
 
 
-class MarkingHistory
+class Transcription
   
-  surface: null
-  
-  constructor: ( @surface ) ->
+  constructor: ( classifier ) ->
     
     @document = $( '.documents :checked' ).val()
-    @tools = []
-    @marks = []
+    @metadata = {}
+    @marks = classifier.surface.marks
     
-    for tool in @surface.tools
-      @tools.push tool
-      @marks.push tool.mark
+    classifier.toolbars.metadata 
+       .find( ':input' )
+       .each (input)=>
+         @metadata[input.name] = input.value
+    
+    
   
   render: ->
     
-    $( "#document-#{@document}")
-      .attr('checked', 'checked')
-      .prop('checked', true)
     
-    for tool in @tools
-      @surface.tools.push tool
-      @surface.marks.push tool.mark
-      tool.draw()
-      tool.controls.el.appendTo tool.surface.container
-      tool.controls.bind_events()
-      tool.render()
-      
-    @surface.enable()
 
 
 module.exports = Classifier
