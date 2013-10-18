@@ -127,6 +127,8 @@ class ZoomableSurface extends MarkingSurface
   onMouseMove: ->
     return
     
+  onKeyDown: ->
+    
   onDrag: (e) =>
     return if @zoomBy is 1
     @markingMode = false
