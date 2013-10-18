@@ -43,7 +43,7 @@ class TextWidget
   render: ->
     
   mark: (tool) ->
-    circle = 
+    circle = tool.addShape 'circle', 0, 0, @dotRadius, fill: 'transparent', stroke: @colour, 'stroke-width': 2
     circle.node.setAttributeNS null,"tabindex" , "0"
     [
       circle
