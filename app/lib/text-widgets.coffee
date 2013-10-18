@@ -314,9 +314,9 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
   
   render: (el)->
     @input = $('.date', el)
-    calendar = $('.calendar', el)
+    @calendar = $('.calendar', el)
     
-    calendar
+    @calendar
       .datepicker
         dateFormat: 'd MM yy'
         changeMonth: true
@@ -328,7 +328,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     
     @input.on 'change', =>
       @updateNote @input
-      calendar.datepicker 'setDate', @input.val()
+      @calendar.datepicker 'setDate', @input.val()
   
   
     
@@ -339,7 +339,10 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     shapes.animate { path: _newPath }, 0
     
   updateNote: (target) =>
-    DateWidget.date = @input.val()
+    date = @input.val()
+    @calendar.datepicker('setDate', date)
+    DateWidget.date = date
+    
     
   getLabel: (target) =>
     @input.val() ? ''
