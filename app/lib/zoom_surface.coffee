@@ -108,6 +108,7 @@ class ZoomableSurface extends MarkingSurface
     
     setTimeout (=>
       if @markingMode
+        @trigger 'create-tool'
         tool = @createTool()
         tool.onInitialClick e
     ), @clickDelay unless @disabled

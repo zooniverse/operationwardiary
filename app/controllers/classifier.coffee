@@ -63,7 +63,6 @@ class Classifier extends Spine.Controller
       store.set 'document', page_type
     
     @toolbars.el.on 'pickCategory', (e,type)=>
-      console.log type
       @surface.markingMode = true
       @surface.selection?.deselect()
       
@@ -87,6 +86,14 @@ class Classifier extends Spine.Controller
     @surface.on 'select', (e, mark)=>
       type = mark.type
       @toolbars.select type
+      
+      note = store.get type, undefined
+      if note?
+        @surface.markDefaults.note = note
+        @surface.markDefaults.type = type
+        
+    @surface.on 'create-tool', =>
+      type = $('.categories :checked').val()
       
       note = store.get type, undefined
       if note?

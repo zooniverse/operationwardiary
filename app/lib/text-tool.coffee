@@ -75,6 +75,7 @@ class TextControls extends ToolControls
     @tool.label.attr 'text', label
     
   save: =>
+    @tool.surface.trigger 'change', @tool.mark
     
     @el.find('.saved')
       .show()
@@ -83,7 +84,6 @@ class TextControls extends ToolControls
     setTimeout (=>
       @tool.deselect()
       @el.find('.saved').hide()
-      @tool.surface.trigger 'change', @tool.mark
     ), 500
     
   moveTo: (x, y) ->
