@@ -29,7 +29,7 @@ class Geocoder
     
     queries =
       geoplanet: "select * from geo.placefinder where text='#{placename}' and countrycode in ('BE','FR','GB') limit 1"
-      geonames: "select * from xml where url='http://api.geonames.org/search?q=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
+      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{placename}&country=BE&country=GB&country=FR&maxRows=1&username=zooniverse'"
     
     query = queries[@service]
     
