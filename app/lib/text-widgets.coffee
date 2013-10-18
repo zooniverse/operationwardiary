@@ -142,13 +142,13 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     @show_place( lat, long )
 
-  show_place: (lat, long) => 
-      latlng = new google.maps.LatLng lat,long
-      @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
-      @marker[0].setPosition latlng
-      map = @gmap.gmap( 'get', 'map')
-      map.setCenter latlng
-      google.maps.event.trigger map, 'resize'
+  show_place: (lat, long) =>
+    latlng = new google.maps.LatLng lat,long
+    @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
+    @marker[0].setPosition latlng
+    map = @gmap.gmap( 'get', 'map')
+    google.maps.event.trigger map, 'resize'
+    map.setCenter latlng
 
     
       

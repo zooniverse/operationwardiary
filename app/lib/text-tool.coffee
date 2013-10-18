@@ -65,6 +65,7 @@ class TextControls extends ToolControls
     
   onClickToggle: =>
     @el.toggleClass 'closed'
+    @widget.updateNote @textInput[0] if @el.is(':visible')
     
     
   onTextChange: ({currentTarget}) =>
