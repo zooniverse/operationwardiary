@@ -21,8 +21,8 @@ class TextControls extends ToolControls
   
   constructor: (params = {})->
     super
-    
     category = $( '.categories :checked' ).val()
+    
     @widget = WidgetFactory.makeWidget category
     @el.prepend @widget.template
     @widget.render @el

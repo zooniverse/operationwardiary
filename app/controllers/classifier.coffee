@@ -87,7 +87,7 @@ class Classifier extends Spine.Controller
       type = mark.type
       @toolbars.select type
       
-      note = store.get type, undefined
+      note = store.get type, undefined if type?
       if note?
         @surface.markDefaults.note = note
         @surface.markDefaults.type = type
@@ -95,7 +95,7 @@ class Classifier extends Spine.Controller
     @surface.on 'create-tool', =>
       type = $('.categories :checked').val()
       
-      note = store.get type, undefined
+      note = store.get type, undefined if type?
       if note?
         @surface.markDefaults.note = note
         @surface.markDefaults.type = type
@@ -105,7 +105,7 @@ class Classifier extends Spine.Controller
     
     @surface.on 'change', (e, mark)=>
       @update_history()
-      store.set mark.type, mark.note if mark? && mark.type != 'diaryDate'
+      store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
     
 
   render: =>
