@@ -184,7 +184,8 @@ class Classifier extends Spine.Controller
             t = new PageTimeline @surface.tools 
           
             for entry in t.entries
-              console.log entry
+              console.log entry.date
+              console.log (item.label for item in entry.items)
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -268,7 +269,8 @@ class Classifier extends Spine.Controller
       t = new PageTimeline @surface.tools
     
       for entry in t.entries
-        console.log entry
+        console.log entry.date
+        console.log (item.label for item in entry.items)
     
 
 
