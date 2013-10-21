@@ -181,11 +181,7 @@ class Classifier extends Spine.Controller
             @surface.addMark mark
           
           if page_type == 'diary'
-            t = new PageTimeline @surface.tools 
-          
-            for entry in t.entries
-              console.log entry.date
-              console.log (item.label for item in entry.items)
+            t = new PageTimeline @surface.tools
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -268,10 +264,6 @@ class Classifier extends Spine.Controller
     if snapshot.document == 'diary'
       t = new PageTimeline @surface.tools
     
-      for entry in t.entries
-        console.log entry.date
-        console.log (item.label for item in entry.items)
-    
 
 
 class Transcription
@@ -331,7 +323,11 @@ class PageTimeline
           items: []
       else
         entry.items.push item 
-    @entries.push entry    
+    @entries.push entry
+    
+    for entry in @entries
+      console.log entry.date
+      console.log (item.label for item in entry.items)    
 
 
 module.exports = Classifier
