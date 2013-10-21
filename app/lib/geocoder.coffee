@@ -42,12 +42,12 @@ class Geocoder
       long = null
       name = ''
     
-      promise.resolve lat, long, name unless results
+      promise.resolve lat, long, name unless results?
     
       switch @service
         when 'geonames'
           gn = results.geonames
-          if gn.totalResultCount > 1
+          if gn.totalResultsCount > 0
             lat = parseFloat results.geonames?.geoname.lat
             long = parseFloat results.geonames?.geoname.lng
             name = results.geonames?.geoname.toponymName
