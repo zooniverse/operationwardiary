@@ -45,6 +45,5 @@ app.stack = new Spine.Stack
 
 app.stack.el.appendTo app.container
 
-User.fetch()
-Group.fetch()
+User.fetch().done( Group.fetch )
 Spine.Route.setup()
