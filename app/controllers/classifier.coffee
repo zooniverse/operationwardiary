@@ -184,8 +184,7 @@ class Classifier extends Spine.Controller
             t = new PageTimeline @surface.tools 
           
             for entry in t.entries
-              console.log entry.y + ',' + entry.x
-              console.log entry.label
+              console.log entry
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -269,8 +268,7 @@ class Classifier extends Spine.Controller
       t = new PageTimeline @surface.tools
     
       for entry in t.entries
-        console.log entry.y + ',' + entry.x
-        console.log entry.label
+        console.log entry
     
 
 
@@ -297,11 +295,13 @@ class PageTimeline
     
     @entries = []
     
+    items = []
+    
     for tool in tools
       x = parseInt tool.mark.p0[0] / 10
       y = parseInt tool.mark.p0[1] / 10
       
-      @entries.push
+      items.push
         x: x
         y: y
         type: tool.mark.type
@@ -315,8 +315,21 @@ class PageTimeline
         return -1 if a[key] < b[key]
         return 0
     
-    @entries.sort (a,b) ->
-      return sortBy('y', a, b) or sortBy('x', a, b)     
+    items.sort (a,b) ->
+      return sortBy('y', a, b) or sortBy('x', a, b)
+      
+    entry = 
+      date: null
+      items: []
+    for item in items
+      if item.type == 'diaryDate'
+        @entries.push entry
+        entry = 
+          date: item.note
+          items: []
+      else
+        entry.items.push item 
+    @entries.push entry    
 
 
 module.exports = Classifier
