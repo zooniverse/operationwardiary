@@ -180,11 +180,12 @@ class Classifier extends Spine.Controller
             @toolbars.select mark.type
             @surface.addMark mark
           
-          t = new PageTimeline @surface.tools
+          if page_type == 'diary'
+            t = new PageTimeline @surface.tools 
           
-          for entry in t.entries
-            console.log entry.x + ',' + entry.y
-            console.log entry.label
+            for entry in t.entries
+              console.log entry.y + ',' + entry.x
+              console.log entry.label
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -264,11 +265,12 @@ class Classifier extends Spine.Controller
     
     store.set 'history', @surface_history
     
-    t = new PageTimeline @surface.tools
+    if snapshot.document == 'diary'
+      t = new PageTimeline @surface.tools
     
-    for entry in t.entries
-      console.log entry.x + ',' + entry.y
-      console.log entry.label
+      for entry in t.entries
+        console.log entry.y + ',' + entry.x
+        console.log entry.label
     
 
 
