@@ -180,11 +180,11 @@ class Classifier extends Spine.Controller
             @toolbars.select mark.type
             @surface.addMark mark
           
-          t = new PageTimeline @surface_history[subject.id]
+          t = new PageTimeline @surface.tools
           
           for entry in t.entries
             console.log entry.x + ',' + entry.y
-            console.log entry.note
+            console.log entry.label
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -264,6 +264,12 @@ class Classifier extends Spine.Controller
     
     store.set 'history', @surface_history
     
+    t = new PageTimeline @surface.tools
+    
+    for entry in t.entries
+      console.log entry.x + ',' + entry.y
+      console.log entry.label
+    
 
 
 class Transcription
@@ -285,22 +291,20 @@ class PageTimeline
   
   entries: []
   
-  constructor: ( transcription ) ->
-    return unless transcription.document is 'diary'
+  constructor: ( tools ) ->
     
     @entries = []
     
-    marks = transcription.marks
-    
-    for mark in marks
-      x = parseInt mark.p0[0] / 10
-      y = parseInt mark.p0[1] / 10
+    for tool in tools
+      x = parseInt tool.mark.p0[0] / 10
+      y = parseInt tool.mark.p0[1] / 10
       
       @entries.push
         x: x
         y: y
-        type: mark.type
-        note: mark.note
+        type: tool.mark.type
+        note: tool.mark.note
+        label: tool.label.node.textContent
         
     # sort by entry.y then entry.x ascending
     
