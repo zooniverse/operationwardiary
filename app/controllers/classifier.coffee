@@ -179,7 +179,12 @@ class Classifier extends Spine.Controller
           for mark in marks
             @toolbars.select mark.type
             @surface.addMark mark
-            
+          
+          t = new PageTimeline @surface_history[subject.id]
+          
+          for entry in t.entries
+            console.log entry.x + ',' + entry.y
+            console.log entry.note
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -276,7 +281,36 @@ class Transcription
   
   render: ->
     
+class PageTimeline
+  
+  entries: []
+  
+  constructor: ( transcription ) ->
+    return unless transcription.document is 'diary'
     
+    @entries = []
+    
+    marks = transcription.marks
+    
+    for mark in marks
+      x = parseInt mark.p0[0] / 10
+      y = parseInt mark.p0[1] / 10
+      
+      @entries.push
+        x: x
+        y: y
+        type: mark.type
+        note: mark.note
+        
+    # sort by entry.y then entry.x ascending
+    
+    sortBy = (key, a, b) ->
+        return 1 if a[key] > b[key]
+        return -1 if a[key] < b[key]
+        return 0
+    
+    @entries.sort (a,b) ->
+      return sortBy('y', a, b) or sortBy('x', a, b)     
 
 
 module.exports = Classifier
