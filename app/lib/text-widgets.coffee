@@ -254,10 +254,8 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
   getLabel: (target) ->
     
     note = @updateNote( target )
-    
-    output = []
-    total = 0
-    total += note[choice] for choice of note
+
+    total = (note[choice] for choice of note).reduce (a,b) -> a + b
       
     "Casualties: #{total}"
 
