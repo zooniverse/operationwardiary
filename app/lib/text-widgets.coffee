@@ -226,7 +226,7 @@ WidgetFactory.registry.unit = class UnitWidget extends TextWidget
       .find( 'select[name=context] :selected' )
       .text()
     
-    "#{context} #{note.name}"
+    "#{note.name}"
   
 
 
@@ -256,12 +256,10 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
     note = @updateNote( target )
     
     output = []
-    
-    for choice in labels.casualties
-      el = translate 'span', "casualties.#{choice}"
-      output.push $(el).text() + ': ' + note[choice]
+    total = 0
+    total += note[choice] for choice of note
       
-    output.join ', '
+    "Casualties: #{total}"
 
 
 
