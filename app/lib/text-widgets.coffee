@@ -105,7 +105,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     update_notes()
     
-    PlaceWidget.gc.geocode( note.place ).done (lat,long, name)=>
+    PlaceWidget.gc.geocode( note.place ).done (places)=>
       
       $target
         .parents( '.annotation' )

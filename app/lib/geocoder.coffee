@@ -48,23 +48,26 @@ class Geocoder
     
       switch @service
         when 'geonames'
-          places = results.geonames.geoname
+          if results.geonames.geoname.length?
+            places = results.geonames.geoname
+          else
+            places = [results.geonames.geoname]
+          places = places.map (place) ->
+            lat: place.lat
+            long: place.lng
+            name: place.toponymName
+            id: place.geonameId
           console.log places
-          if places?
-            place = places[0]
-            lat = parseFloat place.lat
-            long = parseFloat place.lng
-            name = place.toponymName
         when 'geoplanet'
           places = results.Result
           if places?
-            place = places[0]
+            if places.length? then place = places[0] else place = places
             lat = parseFloat place.latitude
             long = parseFloat place.longitude
             name = if place.neighborhood? then place.neighborhood else place.city
     
       store.set placename, [lat, long, name] if @localCache
-      promise.resolve lat,long,name
+      promise.resolve places
     
     yql = new YQL query
     yql.signed_request().done process_request
