@@ -85,7 +85,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .html ''
     
     note = @update_notes()
-    console.log note
     
     PlaceWidget.gc.geocode( note.place )
       .pipe( (places) =>
@@ -122,7 +121,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     note
   
   update_place: (place) =>
-    console.log place
     {lat, long, name} = place
   
     @el
@@ -169,7 +167,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     map.setCenter latlng
   
   choose_place: (places) =>
-    console.log places
     promise = new $.Deferred
     
     if places.length == 1
