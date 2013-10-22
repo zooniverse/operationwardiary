@@ -6,6 +6,8 @@ YQL = require './yql'
 
 class Geocoder
   
+  localCache = false
+  
   constructor: (@service = 'geonames') ->
 
   geocode: (placename) =>
@@ -14,7 +16,7 @@ class Geocoder
     
     return promise unless placename
     
-    cache = store.get placename
+    cache = store.get placename if @localCache
     
     if cache?
       [lat, long, name]  = cache
@@ -57,7 +59,7 @@ class Geocoder
           long = parseFloat results.Result?.longitude
           name = if results.Result?.neighborhood? then results.Result.neighborhood else results.Result.city
     
-      # store.set placename, [lat, long, name]
+      store.set placename, [lat, long, name] if @localCache
       promise.resolve lat,long,name
     
     yql = new YQL query
