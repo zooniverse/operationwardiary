@@ -179,10 +179,10 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           $("<input/>")
           .attr( "type", 'radio' )
           .attr( 'name', 'placeOption')
-          .on( 'change', (e)->
+          .on( 'change', place, (e)->
+            place = e.data
             e.preventDefault()
             e.stopPropagation()
-            console.log place.name
             promise.notify place
           )
         label = $("<label>#{place.name}</label>").prepend input
