@@ -55,9 +55,11 @@ class Geocoder
             long = parseFloat results.geonames?.geoname.lng
             name = results.geonames?.geoname.toponymName
         when 'geoplanet'
-          lat = parseFloat results.Result?.latitude
-          long = parseFloat results.Result?.longitude
-          name = if results.Result?.neighborhood? then results.Result.neighborhood else results.Result.city
+          places = results.Result
+          if places?
+            lat = parseFloat results.Result?.latitude
+            long = parseFloat results.Result?.longitude
+            name = if results.Result?.neighborhood? then results.Result.neighborhood else results.Result.city
     
       store.set placename, [lat, long, name] if @localCache
       promise.resolve lat,long,name
