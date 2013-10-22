@@ -56,7 +56,7 @@ class Geocoder
           long = parseFloat results.Result?.longitude
           name = if results.Result?.neighborhood? then results.Result.neighborhood else results.Result.city
     
-      store.set placename, [lat, long, name]
+      # store.set placename, [lat, long, name]
       promise.resolve lat,long,name
     
     yql = new YQL query
