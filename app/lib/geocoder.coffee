@@ -46,8 +46,9 @@ class Geocoder
     
       switch @service
         when 'geonames'
-          gn = results.geonames
-          if gn.totalResultsCount > 0
+          places = results.geonames.geoname
+          console.log places
+          if places?
             lat = parseFloat results.geonames?.geoname.lat
             long = parseFloat results.geonames?.geoname.lng
             name = results.geonames?.geoname.toponymName
