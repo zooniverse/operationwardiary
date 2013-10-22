@@ -159,6 +159,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     map.setCenter latlng
   
   choose_place: (places) =>
+    console.log places
     promise = new $.Deferred
     place = places[0]
     setTimeout( ->

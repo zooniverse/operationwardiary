@@ -6,7 +6,7 @@ YQL = require './yql'
 
 class Geocoder
   
-  localCache = false
+  localCache: true
   
   constructor: (@service = 'geonames') ->
 
@@ -19,8 +19,10 @@ class Geocoder
     cache = store.get placename if @localCache
     
     if cache?
-      [lat, long, name]  = cache
-      promise.resolve lat,long,name
+      # older cache entries were arrays, not objects
+      if cache.length?
+        return @call_webservice placename
+      promise.resolve [cache]
     else
       promise = @call_webservice placename
     
