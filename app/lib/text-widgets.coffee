@@ -79,17 +79,29 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   
   updateNote: (target)->
     
-    $target = $( target )
+    $el = $(target).parents '.annotation'
     
-    $(@template)
+    $el
       .find('.suggestions')
       .html ''
     
-    $inputs = 
-      $target
-      .parents( '.annotation' )
-      .find( ':input')
+    note = @update_notes $el
+    console.log note
     
+    PlaceWidget.gc.geocode( note.place )
+      .pipe( (places) =>
+        @choose_place places, $el
+      )
+      .progress( (place)=>
+        @update_place place, $el
+      )
+      .done (place)=>
+        @update_place place, $el
+      
+        
+    note
+  
+  update_notes: ($el)=>
     note =
       place: ''
       lat: ''
@@ -97,46 +109,37 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       location: false
       name: ''
       
-    update_notes = =>
+    $inputs = $el.find( ':input' )
+      
+    $inputs
+      .each ->
+        note[@name] = @value
+      
+    note.location = 
       $inputs
-        .each ->
-          note[@name] = @value
-        
-      note.location = 
-        $inputs
-          .filter('input[name=location]')
-          .is(':checked')
+        .filter('input[name=location]')
+        .is(':checked')
     
-    update_notes()
-    
-    PlaceWidget.gc.geocode( note.place )
-      .pipe( (places) =>
-        @choose_place places
-      )
-      .progress( (place)=>
-        @show_place place.lat, place.long
-      )
-      .done (place)=>
-        {lat, long, name} = place
-      
-        $target
-          .parents( '.annotation' )
-          .find( 'input[name=lat]' )
-          .val( lat )
-          .end()
-          .find( 'input[name=long]' )
-          .val( long )
-          .end()
-          .find( 'input[name=name]')
-          .val( name )
-        
-        update_notes()
-        PlaceWidget.gc.save_place( note.place, place )
-      
-        @show_place lat, long
-      
-        
     note
+  
+  update_place: (place, $el) =>
+    console.log place
+    {lat, long, name} = place
+  
+    $el
+      .find( 'input[name=lat]' )
+      .val( lat )
+      .end()
+      .find( 'input[name=long]' )
+      .val( long )
+      .end()
+      .find( 'input[name=name]')
+      .val( name )
+    
+    note = @update_notes $el
+    PlaceWidget.gc.save_place( note.place, place )
+  
+    @show_place lat, long
     
   getLabel: (target) ->
     $(target)
@@ -165,7 +168,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     google.maps.event.trigger map, 'resize'
     map.setCenter latlng
   
-  choose_place: (places) =>
+  choose_place: (places, $el) =>
     console.log places
     promise = new $.Deferred
     
@@ -173,7 +176,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       place = places[0]
       promise.resolve place
     else
-      $suggestions = $(@template).find '.suggestions'
+      $suggestions = $el.find '.suggestions'
       for place in places
         input = 
           $("<input/>")
