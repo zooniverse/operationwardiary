@@ -66,7 +66,6 @@ class Geocoder
             
             place
             
-          console.log places
         when 'geoplanet'
           if results.Result? && results.Result.length?
             places = results.Result
