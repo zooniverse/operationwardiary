@@ -466,6 +466,7 @@ WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
   type: 'mapRef'
   
   render: (el)->
+    super
     $('.date', el)
       .datepicker
         dateFormat: 'd MM yy'
