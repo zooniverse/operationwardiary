@@ -40,23 +40,32 @@ class Geocoder
     process_request = (response)=>
       results = response.query.results
       
-      lat = null
-      long = null
-      name = ''
+      defaults =
+        lat: null
+        long: null
+        name: ''
+        id: null
     
       promise.resolve lat, long, name unless results?
     
       switch @service
         when 'geonames'
-          if results.geonames.geoname.length?
+          if results.geonames.geoname? && results.geonames.geoname.length?
             places = results.geonames.geoname
           else
             places = [results.geonames.geoname]
-          places = places.map (place) ->
-            lat: place.lat
-            long: place.lng
-            name: place.toponymName
-            id: place.geonameId
+          places = places.map (gnplace) ->
+            if gnplace?
+              place = 
+                lat: gnplace.lat
+                long: gnplace.lng
+                name: gnplace.toponymName
+                id: gnplace.geonameId
+            else
+              place = defaults
+            
+            place
+            
           console.log places
         when 'geoplanet'
           places = results.Result
