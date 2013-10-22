@@ -185,7 +185,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
             e.stopPropagation()
             promise.notify place
           )
-        label = $("<label>#{place.name}</label>").prepend input
+        label = $("<label><span>#{place.name}<span></label>").prepend input
         $suggestions.append label
     
     promise
