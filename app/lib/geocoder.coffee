@@ -84,8 +84,7 @@ class Geocoder
               place = defaults
               
             place
-    
-      store.set placename, [lat, long, name] if @localCache
+            
       promise.resolve places
     
     yql = new YQL query
@@ -93,5 +92,8 @@ class Geocoder
       
       
     promise
+    
+  save_place: (placename, place) =>
+    store.set placename, place if @localCache
     
 module.exports = Geocoder
