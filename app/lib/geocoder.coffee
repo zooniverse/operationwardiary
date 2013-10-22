@@ -68,12 +68,22 @@ class Geocoder
             
           console.log places
         when 'geoplanet'
-          places = results.Result
-          if places?
-            if places.length? then place = places[0] else place = places
-            lat = parseFloat place.latitude
-            long = parseFloat place.longitude
-            name = if place.neighborhood? then place.neighborhood else place.city
+          if results.Result? && results.Result.length?
+            places = results.Result
+          else
+            places = [results.Result]
+            
+          places = places.map (gpplace) ->
+            if gpplace?
+              place = 
+                lat: gpplace.latitude
+                long: gpplace.longitude
+                name: if gpplace.neighborhood? then gpplace.neighborhood else gpplace.city
+                id: gpplace.woeid
+            else
+              place = defaults
+              
+            place
     
       store.set placename, [lat, long, name] if @localCache
       promise.resolve places
