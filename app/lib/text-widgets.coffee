@@ -40,7 +40,8 @@ class TextWidget
   
   constructor: (@dotRadius) ->
   
-  render: ->
+  render: (el)->
+    @el = el
     
   mark: (tool) ->
     circle = tool.addShape 'circle', 0, 0, @dotRadius, fill: 'transparent', stroke: @colour, 'stroke-width': 2
@@ -79,29 +80,27 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   
   updateNote: (target)->
     
-    $el = $(target).parents '.annotation'
-    
-    $el
+    @el
       .find('.suggestions')
       .html ''
     
-    note = @update_notes $el
+    note = @update_notes()
     console.log note
     
     PlaceWidget.gc.geocode( note.place )
       .pipe( (places) =>
-        @choose_place places, $el
+        @choose_place places
       )
       .progress( (place)=>
-        @update_place place, $el
+        @update_place place
       )
       .done (place)=>
-        @update_place place, $el
+        @update_place place
       
         
     note
   
-  update_notes: ($el)=>
+  update_notes: =>
     note =
       place: ''
       lat: ''
@@ -109,7 +108,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       location: false
       name: ''
       
-    $inputs = $el.find( ':input' )
+    $inputs = @el.find( '.annotation :input' )
       
     $inputs
       .each ->
@@ -122,11 +121,11 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     note
   
-  update_place: (place, $el) =>
+  update_place: (place) =>
     console.log place
     {lat, long, name} = place
   
-    $el
+    @el
       .find( 'input[name=lat]' )
       .val( lat )
       .end()
@@ -136,7 +135,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .find( 'input[name=name]')
       .val( name )
     
-    note = @update_notes $el
+    note = @update_notes()
     PlaceWidget.gc.save_place( note.place, place )
   
     @show_place lat, long
@@ -148,6 +147,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .val()
   
   render: (el)->
+    super
     return unless google? && google.maps?
     @gmap = $('.map', el)
       .gmap
@@ -168,7 +168,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     google.maps.event.trigger map, 'resize'
     map.setCenter latlng
   
-  choose_place: (places, $el) =>
+  choose_place: (places) =>
     console.log places
     promise = new $.Deferred
     
@@ -176,7 +176,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       place = places[0]
       promise.resolve place
     else
-      $suggestions = $el.find '.suggestions'
+      $suggestions = @el.find '.suggestions'
       for place in places
         input = 
           $("<input/>")
@@ -350,6 +350,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     $.datepicker.formatDate format, date
   
   render: (el)->
+    super
     @input = $('.date', el)
     @calendar = $('.calendar', el)
     
