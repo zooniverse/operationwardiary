@@ -107,9 +107,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     PlaceWidget.gc.geocode( note.place )
       .pipe( (places) =>
-        promise = new $.Deferred 
-        place = places[0]
-        promise.resolve place
+        @choose_place places
       )
       .done (place)=>
         {lat, long, name} = place
@@ -159,6 +157,15 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     map = @gmap.gmap( 'get', 'map')
     google.maps.event.trigger map, 'resize'
     map.setCenter latlng
+  
+  choose_place: (places) =>
+    promise = new $.Deferred
+    place = places[0]
+    setTimeout( ->
+      promise.resolve place
+    , 500)
+    
+    promise
 
     
       
