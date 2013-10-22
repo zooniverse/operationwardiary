@@ -105,8 +105,14 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     update_notes()
     
-    PlaceWidget.gc.geocode( note.place ).done (places)=>
-      {lat, long, name} = places[0]
+    PlaceWidget.gc.geocode( note.place )
+    .pipe( (places) =>
+      promise = new $.Deferred 
+      place = places[0]
+      promise.resolve place
+    )
+    .done (place)=>
+      {lat, long, name} = place
       
       $target
         .parents( '.annotation' )
