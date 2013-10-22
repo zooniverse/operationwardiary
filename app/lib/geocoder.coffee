@@ -48,7 +48,7 @@ class Geocoder
         name: ''
         id: null
     
-      promise.resolve lat, long, name unless results?
+      promise.resolve defaults.lat, defaults.long, defaults.name unless results?
     
       switch @service
         when 'geonames'
