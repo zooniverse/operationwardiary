@@ -106,28 +106,29 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     update_notes()
     
     PlaceWidget.gc.geocode( note.place )
-    .pipe( (places) =>
-      promise = new $.Deferred 
-      place = places[0]
-      promise.resolve place
-    )
-    .done (place)=>
-      {lat, long, name} = place
+      .pipe( (places) =>
+        promise = new $.Deferred 
+        place = places[0]
+        promise.resolve place
+      )
+      .done (place)=>
+        {lat, long, name} = place
       
-      $target
-        .parents( '.annotation' )
-        .find( 'input[name=lat]' )
-        .val( lat )
-        .end()
-        .find( 'input[name=long]' )
-        .val( long )
-        .end()
-        .find( 'input[name=name]')
-        .val( name )
+        $target
+          .parents( '.annotation' )
+          .find( 'input[name=lat]' )
+          .val( lat )
+          .end()
+          .find( 'input[name=long]' )
+          .val( long )
+          .end()
+          .find( 'input[name=name]')
+          .val( name )
         
-      update_notes()
+        update_notes()
+        PlaceWidget.gc.save_place( note.place, place )
       
-      @show_place lat, long
+        @show_place lat, long
       
         
     note
