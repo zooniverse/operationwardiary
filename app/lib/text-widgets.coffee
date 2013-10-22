@@ -81,6 +81,10 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     $target = $( target )
     
+    $(@template)
+      .find('.suggestions')
+      .html ''
+    
     $inputs = 
       $target
       .parents( '.annotation' )
@@ -108,6 +112,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     PlaceWidget.gc.geocode( note.place )
       .pipe( (places) =>
         @choose_place places
+      )
+      .progress( (place)=>
+        @show_place place.lat, place.long
       )
       .done (place)=>
         {lat, long, name} = place
@@ -161,10 +168,25 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   choose_place: (places) =>
     console.log places
     promise = new $.Deferred
-    place = places[0]
-    setTimeout( ->
+    
+    if places.length == 1
+      place = places[0]
       promise.resolve place
-    , 500)
+    else
+      $suggestions = $(@template).find '.suggestions'
+      for place in places
+        input = 
+          $("<input/>")
+          .attr( "type", 'radio' )
+          .attr( 'name', 'placeOption')
+          .on( 'change', (e)->
+            e.preventDefault()
+            e.stopPropagation()
+            console.log place.name
+            promise.notify place
+          )
+        label = $("<label>#{place.name}</label>").prepend input
+        $suggestions.append label
     
     promise
 

@@ -3,6 +3,7 @@
 
 <div class="annotation">
   <label>Name <input name="place" type="text" value="" /></label>
+  <span class="suggestions"></span>
   <label>Current location <input name="location" type="checkbox" checked ></label>
   <input name="name" type="hidden" value="" />
   <input name="lat" type="hidden" value="" />
