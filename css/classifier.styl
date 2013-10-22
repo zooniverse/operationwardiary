@@ -190,6 +190,14 @@ div.toolbar
   &.place
     max-width: 200px
     min-height: 150px
+
+    input[type=radio]
+      position: absolute
+      left: -9999px
+      
+      &:checked + span
+        background: #333
+        color: #fff
     
   label
     display: block
