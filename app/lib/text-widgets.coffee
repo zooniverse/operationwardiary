@@ -68,7 +68,11 @@ class TextWidget
       @el.find(':input').first().val note
     else
       for name, value of note
-        $("[name=#{name}]", @el).val value
+        $input = @el.find("[name=#{name}]")
+        if $input.attr('type') is 'checkbox'
+          $input.prop 'checked', value
+        else
+          $input.val value
 
 
 WidgetFactory.registry.place = class PlaceWidget extends TextWidget
