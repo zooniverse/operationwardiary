@@ -321,8 +321,7 @@ class PageTimeline
     
     @log()
     
-    
-      
+        
   sort: (items) =>
     # sort by entry.y then entry.x ascending
     
@@ -356,6 +355,13 @@ class PageTimeline
     
     entry = @entries.filter (a) -> a.y < item.y
     entry = entry[entry.length - 1]
+    
+    for a in entry.items
+      equal = a.x == item.x && a.y == item.y && a.type == item.type
+      if equal
+        a = item
+        @log()
+        return
     
     entry.items.push item
     @sort entry.items
