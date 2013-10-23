@@ -106,11 +106,11 @@ class Classifier extends Spine.Controller
     @surface.on 'change', (e, tool)=>
       mark = tool.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
-      @timeline.addItem tool
+      @timeline = new PageTimeline @surface.tools
       @update_history()
     
     @surface.on 'delete', (e, tool)=>
-      @timeline.removeItem tool
+      @timeline = new PageTimeline @surface.tools
       @update_history()
     
 
