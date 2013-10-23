@@ -292,8 +292,8 @@ class PageTimeline
     items = []
     
     for tool in tools
-      x = parseInt tool.mark.p0[0] / 10
-      y = parseInt tool.mark.p0[1] / 10
+      x = parseInt tool.mark.p0[0] / 60
+      y = parseInt tool.mark.p0[1] / 15
       
       items.push
         x: x
