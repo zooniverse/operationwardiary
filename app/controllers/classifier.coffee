@@ -104,9 +104,9 @@ class Classifier extends Spine.Controller
     #   @toolbars.deselect type
     
     @surface.on 'change', (e, tool)=>
-      mark = tool.mark
+      mark = tool?.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
-      @timeline.addItem tool
+      @timeline.addItem tool if tool?
       @update_history()
     
 
