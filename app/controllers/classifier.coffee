@@ -348,6 +348,7 @@ class PageTimeline
     item = @createItem tool
     
     entry = @entries.filter (a) -> a.y < item.y
+    entry = entry[entry.length - 1]
     console.log entry
     
     
