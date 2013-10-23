@@ -32,7 +32,7 @@ class Geocoder
   call_webservice: (placename) =>
     
     queries =
-      geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 1"
+      geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 3"
       geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&isNameRequired=true&country=BE&country=GB&country=FR&maxRows=3&username=zooniverse'"
     
     query = queries[@service]
@@ -95,6 +95,8 @@ class Geocoder
     promise
     
   save_place: (placename, place) =>
+    console.log placename
+    console.log place
     store.set placename, place if @localCache
     
 module.exports = Geocoder
