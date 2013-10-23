@@ -296,15 +296,7 @@ class PageTimeline
       item = @createItem tool
       items.push item
         
-    # sort by entry.y then entry.x ascending
-    
-    sortBy = (key, a, b) ->
-        return 1 if a[key] > b[key]
-        return -1 if a[key] < b[key]
-        return 0
-    
-    items.sort (a,b) ->
-      return sortBy('y', a, b) or sortBy('x', a, b)
+    @sort items
       
     entry = 
       date: null
@@ -327,6 +319,17 @@ class PageTimeline
     
     
       
+  sort: (items) =>
+    # sort by entry.y then entry.x ascending
+    
+    sortBy = (key, a, b) ->
+        return 1 if a[key] > b[key]
+        return -1 if a[key] < b[key]
+        return 0
+    
+    items.sort (a,b) ->
+      return sortBy('y', a, b) or sortBy('x', a, b)
+    
   log: =>
     for entry in @entries
       console.log entry.date
@@ -349,7 +352,13 @@ class PageTimeline
     
     entry = @entries.filter (a) -> a.y < item.y
     entry = entry[entry.length - 1]
-    console.log entry
+    
+    entry.items.push item
+    @sort entry.items
+    
+    @log()
+    
+    
     
     
 
