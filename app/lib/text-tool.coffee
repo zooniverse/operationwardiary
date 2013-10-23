@@ -76,7 +76,7 @@ class TextControls extends ToolControls
     @tool.label.attr 'text', label
     
   save: =>
-    @tool.surface.trigger 'change', @tool.mark
+    @tool.surface.trigger 'change', @tool
     
     @el.find('.saved')
       .show()
