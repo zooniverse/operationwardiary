@@ -165,16 +165,16 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
-    @timeline = @surface_history[subject.id]
+    snapshot = @surface_history[subject.id]
     
-    marks = @timeline?.marks
+    marks = snapshot?.marks
     marks ?= []
     
     @surface
       .loadImage(subject.location.standard)
       .done( =>
-        page_type = @timeline?.document
-        metadata = @timeline?.metadata
+        page_type = snapshot?.document
+        metadata = snapshot?.metadata
     
         if page_type
           @toolbars.selectPageType page_type
