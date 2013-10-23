@@ -103,9 +103,11 @@ class Classifier extends Spine.Controller
     #   type = mark.type
     #   @toolbars.deselect type
     
-    @surface.on 'change', (e, mark)=>
-      @update_history()
+    @surface.on 'change', (e, tool)=>
+      mark = tool.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
+      @timeline.addItem tool
+      @update_history()
     
 
   render: =>
@@ -159,14 +161,16 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
-    marks = @surface_history[subject.id]?.marks
+    @timeline = @surface_history[subject.id]
+    
+    marks = @timeline?.marks
     marks ?= []
     
     @surface
       .loadImage(subject.location.standard)
       .done( =>
-        page_type = @surface_history[subject.id]?.document
-        metadata = @surface_history[subject.id]?.metadata
+        page_type = @timeline?.document
+        metadata = @timeline?.metadata
     
         if page_type
           @toolbars.selectPageType page_type
@@ -181,7 +185,7 @@ class Classifier extends Spine.Controller
             @surface.addMark mark
           
           if page_type == 'diary'
-            t = new PageTimeline @surface.tools
+            @timeline = new PageTimeline @surface.tools
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -261,9 +265,6 @@ class Classifier extends Spine.Controller
     
     store.set 'history', @surface_history
     
-    if snapshot.document == 'diary'
-      t = new PageTimeline @surface.tools
-    
 
 
 class Transcription
@@ -292,15 +293,8 @@ class PageTimeline
     items = []
     
     for tool in tools
-      x = parseInt tool.mark.p0[0] / 60
-      y = parseInt tool.mark.p0[1] / 15
-      
-      items.push
-        x: x
-        y: y
-        type: tool.mark.type
-        note: tool.mark.note
-        label: tool.label.node.textContent
+      item = @createItem tool
+      items.push item
         
     # sort by entry.y then entry.x ascending
     
@@ -329,10 +323,34 @@ class PageTimeline
         entry.items.push item 
     @entries.push entry
     
+    @log()
+    
+    
+      
+  log: =>
     for entry in @entries
       console.log entry.date
       console.log (item.label for item in entry.items)
-        
+      
+  createItem: ( tool ) =>
+    
+    x = parseInt tool.mark.p0[0] / 60
+    y = parseInt tool.mark.p0[1] / 15
+    
+    item =
+      x: x
+      y: y
+      type: tool.mark.type
+      note: tool.mark.note
+      label: tool.label.node.textContent
+  
+  addItem: ( tool ) =>
+    item = @createItem tool
+    
+    entry = @entries.filter (a) -> a.y < item.y
+    console.log entry
+    
+    
 
 
 module.exports = Classifier
