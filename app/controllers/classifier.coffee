@@ -104,9 +104,13 @@ class Classifier extends Spine.Controller
     #   @toolbars.deselect type
     
     @surface.on 'change', (e, tool)=>
-      mark = tool?.mark
+      mark = tool.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
-      @timeline.addItem tool if tool?
+      @timeline.addItem tool
+      @update_history()
+    
+    @surface.on 'delete', (e, tool)=>
+      @timeline.removeItem tool
       @update_history()
     
 
@@ -355,6 +359,18 @@ class PageTimeline
     
     entry.items.push item
     @sort entry.items
+    
+    @log()
+    
+  removeItem: ( tool ) =>
+    item = @createItem tool
+    
+    entry = @entries.filter (a) -> a.y < item.y
+    entry = entry[entry.length - 1]
+    
+    entry.items = entry.items.filter (a) ->
+      equal = a.x == item.x && a.y == item.y && a.type == item.type && a.label == item.label
+      !equal
     
     @log()
     
