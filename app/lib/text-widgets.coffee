@@ -62,13 +62,13 @@ class TextWidget
   getLabel: (target) ->
     $(target).val() ? ''
   
-  setNote: (note, el) =>
+  setNote: (note) =>
     
     if typeof note is 'string'
-      el.find(':input').first().val note
+      @el.find(':input').first().val note
     else
       for name, value of note
-        $("[name=#{name}]", el).val value
+        $("[name=#{name}]", @el).val value
 
 
 WidgetFactory.registry.place = class PlaceWidget extends TextWidget
