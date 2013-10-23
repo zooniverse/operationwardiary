@@ -8,6 +8,10 @@ class PageTimeline extends Spine.Controller
   
   constructor: ->
     super
+    
+  render: =>
+    @html @template
+      entries: @entries
   
   createEntries: ( tools ) ->
     
