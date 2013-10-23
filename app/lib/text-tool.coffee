@@ -49,7 +49,7 @@ class TextControls extends ToolControls
       setTimeout (=>
         console.log 'DELETING'
         @onClickDelete arguments...
-        @tool.surface.trigger 'delete'
+        @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
       ), 500
       
