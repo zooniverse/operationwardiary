@@ -314,12 +314,16 @@ class PageTimeline
       
     entry = 
       date: null
+      x: null
+      y: null
       items: []
     for item in items
       if item.type == 'diaryDate'
         @entries.push entry
         entry = 
           date: item.note
+          x: item.x
+          y: item.y
           items: []
       else
         entry.items.push item 
@@ -327,7 +331,8 @@ class PageTimeline
     
     for entry in @entries
       console.log entry.date
-      console.log (item.label for item in entry.items)    
+      console.log (item.label for item in entry.items)
+        
 
 
 module.exports = Classifier
