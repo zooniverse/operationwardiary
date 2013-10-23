@@ -119,6 +119,18 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         .is(':checked')
     
     note
+    
+  update_location: (location) =>
+    checkbox = @el.find('input[name=location]')
+    
+    if location
+      checkbox
+        .attr('checked', 'checked')
+        .prop('checked', true)
+    else
+      checkbox
+        .removeAttr('checked')
+        .prop('checked', false)
   
   update_place: (place) =>
     {lat, long, name} = place
