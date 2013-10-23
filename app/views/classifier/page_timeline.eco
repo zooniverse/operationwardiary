@@ -1,1 +1,16 @@
 <% translate = require 't7e' %>
+<ul>
+  <% for entry in @entries: %>
+    <% if entry.date: %>
+      <li><%= entry.date %>
+        <% if entry.items: %>
+        <ul>
+          <% for item in entry.items: %>
+            <li><%= item.label %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </li>    
+    <% end %>
+  <% end %>
+</ul>
