@@ -109,7 +109,8 @@ class Classifier extends Spine.Controller
     @surface.on 'change', (e, tool)=>
       mark = tool.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
-      @timeline = new PageTimeline @surface.tools
+      @timeline.createEntries @surface.tools
+      @timeline.render()
       @update_history()
     
     @surface.on 'delete', (e, tool)=>
@@ -195,6 +196,7 @@ class Classifier extends Spine.Controller
           if page_type == 'diary'
             @timeline.createEntries @surface.tools
             @timeline.render()
+            console.log @timeline.el[0]
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
