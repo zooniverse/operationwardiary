@@ -349,36 +349,6 @@ class PageTimeline
       type: tool.mark.type
       note: tool.mark.note
       label: tool.label.node.textContent
-  
-  addItem: ( tool ) =>
-    item = @createItem tool
-    
-    entry = @entries.filter (a) -> a.y < item.y
-    entry = entry[entry.length - 1]
-    
-    for a in entry.items
-      equal = a.x == item.x && a.y == item.y && a.type == item.type
-      if equal
-        a = item
-        @log()
-        return
-    
-    entry.items.push item
-    @sort entry.items
-    
-    @log()
-    
-  removeItem: ( tool ) =>
-    item = @createItem tool
-    
-    entry = @entries.filter (a) -> a.y < item.y
-    entry = entry[entry.length - 1]
-    
-    entry.items = entry.items.filter (a) ->
-      equal = a.x == item.x && a.y == item.y && a.type == item.type && a.label == item.label
-      !equal
-    
-    @log()
     
     
     
