@@ -16,6 +16,7 @@ GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
 Comments = require './classifier/comments'
+PageTimeline = require './classifier/page_timeline'
 
 class Classifier extends Spine.Controller
   
@@ -56,6 +57,8 @@ class Classifier extends Spine.Controller
     
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
+    
+    @timeline = new PageTimeline
     
     @toolbars.el.on 'pickDocument', =>
       @surface.enable()
@@ -110,7 +113,7 @@ class Classifier extends Spine.Controller
       @update_history()
     
     @surface.on 'delete', (e, tool)=>
-      @timeline = new PageTimeline @surface.tools
+      @timeline.createEntries @surface.tools
       @update_history()
     
 
@@ -189,7 +192,7 @@ class Classifier extends Spine.Controller
             @surface.addMark mark
           
           if page_type == 'diary'
-            @timeline = new PageTimeline @surface.tools
+            @timeline.createEntries @surface.tools
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -285,73 +288,6 @@ class Transcription
          @metadata[input.name] = input.value
   
   render: ->
-    
-class PageTimeline
-  
-  entries: []
-  
-  constructor: ( tools ) ->
-    
-    @entries = []
-    
-    items = []
-    
-    for tool in tools
-      item = @createItem tool
-      items.push item
-        
-    @sort items
-      
-    entry = 
-      date: null
-      x: null
-      y: null
-      items: []
-    for item in items
-      if item.type == 'diaryDate'
-        @entries.push entry
-        entry = 
-          date: item.note
-          x: item.x
-          y: item.y
-          items: []
-      else
-        entry.items.push item 
-    @entries.push entry
-    
-    @log()
-    
-        
-  sort: (items) =>
-    # sort by entry.y then entry.x ascending
-    
-    sortBy = (key, a, b) ->
-        return 1 if a[key] > b[key]
-        return -1 if a[key] < b[key]
-        return 0
-    
-    items.sort (a,b) ->
-      return sortBy('y', a, b) or sortBy('x', a, b)
-    
-  log: =>
-    for entry in @entries
-      console.log entry.date
-      console.log (item.label for item in entry.items)
-      
-  createItem: ( tool ) =>
-    
-    x = parseInt tool.mark.p0[0] / 60
-    y = parseInt tool.mark.p0[1] / 15
-    
-    item =
-      x: x
-      y: y
-      type: tool.mark.type
-      note: tool.mark.note
-      label: tool.label.node.textContent
-    
-    
-    
     
 
 
