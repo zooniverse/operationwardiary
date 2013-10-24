@@ -8,7 +8,7 @@
           <% for item in entry.items: %>
             <li>
               <% if item.items.length > 0: %>
-              <p><%= item.place?.name %></p>
+              <p><%= item.place?.place %></p>
               <p><%= (note.label for note in item.items).join ' ' %></p>
               <% end %>
             </li>
