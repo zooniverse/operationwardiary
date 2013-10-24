@@ -9,6 +9,8 @@ module.exports =
     favourite: 'Favourite'
     discuss: 'Discuss'
     comment: 'Comment'
+    timeline: 'Timeline'
+    types: 'Page types'
 
   documents:
     cover: 'Cover page'

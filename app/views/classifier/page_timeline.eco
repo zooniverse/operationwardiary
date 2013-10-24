@@ -1,4 +1,5 @@
 <% translate = require 't7e' %>
+<%- translate 'h2', "common.timeline" %>
 <ul>
   <% for entry in @entries: %>
     <% if entry.items.length > 0: %>
