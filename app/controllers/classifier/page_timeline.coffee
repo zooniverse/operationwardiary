@@ -50,7 +50,7 @@ class PageTimeline extends Spine.Controller
     for item in items
       if item.type == 'diaryDate'
         entry.items = @parseEntryItems entry.items
-        @entries.push entry
+        @entries.push entry if entry.date? || entry.items.length > 0
         entry = 
           date: item.note
           x: item.x
@@ -59,7 +59,7 @@ class PageTimeline extends Spine.Controller
       else
         entry.items.push item 
     entry.items = @parseEntryItems entry.items
-    @entries.push entry
+    @entries.push entry if entry.date? || entry.items.length > 0
   
   parseEntryItems: (items) =>
     entry_items = []
@@ -70,8 +70,8 @@ class PageTimeline extends Spine.Controller
       items: []
     
     for item in items
-      if item.type = 'place' && item.x < 3
-        entry_items.push entry_item
+      if item.type == 'place' && item.x < 3
+        entry_items.push entry_item if entry_item.place? || entry_item.items.length > 0
         entry_item =
           place: item.note
           x: item.x
@@ -80,7 +80,7 @@ class PageTimeline extends Spine.Controller
       else
         entry_item.items.push item
     
-    entry_items.push entry_item
+    entry_items.push entry_item if entry_item.place? || entry_item.items.length > 0
     entry_items
     
   log: =>
