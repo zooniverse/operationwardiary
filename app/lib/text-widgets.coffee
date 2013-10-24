@@ -334,8 +334,7 @@ WidgetFactory.registry.weather = class WeatherWidget extends TextWidget
   type: 'weather'
   
   getLabel: (target) ->
-    weather = $(target).val() ? 'fine'
-    $(target).find(':selected').text()
+    'Weather: ' + $(target).find(':selected').text()
   
     
 
