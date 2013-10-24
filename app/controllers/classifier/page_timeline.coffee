@@ -11,8 +11,10 @@ class PageTimeline extends Spine.Controller
     
   render: =>
     @log()
+    @el.hide()
     @html @template
       entries: @entries
+    @el.fadeIn()
   
   createEntries: ( tools ) ->
     
