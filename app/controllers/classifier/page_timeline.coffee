@@ -49,7 +49,7 @@ class PageTimeline extends Spine.Controller
       items: []
     for item in items
       if item.type == 'diaryDate'
-        entry.items = @parseEntryItems entry.items
+        entry.items = @parsePlaces entry.items
         @entries.push entry if entry.date? || entry.items.length > 0
         entry = 
           date: item.note
@@ -58,12 +58,12 @@ class PageTimeline extends Spine.Controller
           items: []
       else
         entry.items.push item 
-    entry.items = @parseEntryItems entry.items
+    entry.items = @parsePlaces entry.items
     @entries.push entry if entry.date? || entry.items.length > 0
   
-  parseEntryItems: (items) =>
-    entry_items = []
-    entry_item =
+  parsePlaces: (items) =>
+    entries = []
+    entry =
       place: null
       x: null
       y: null
@@ -71,17 +71,41 @@ class PageTimeline extends Spine.Controller
     
     for item in items
       if item.type == 'place' && item.x < 3
-        entry_items.push entry_item if entry_item.place? || entry_item.items.length > 0
-        entry_item =
+        entry.items = @parseTimes entry.items
+        entries.push entry if entry.place? || entry.items.length > 0
+        entry =
           place: item.note
           x: item.x
           y: item.y
           items: []
       else
-        entry_item.items.push item
+        entry.items.push item
     
-    entry_items.push entry_item if entry_item.place? || entry_item.items.length > 0
-    entry_items
+    entry.items = @parseTimes entry.items
+    entries.push entry if entry.place? || entry.items.length > 0
+    entries
+  
+  parseTimes: (items) =>
+    entries = []
+    entry =
+      time: null
+      x: null
+      y: null
+      items: []
+    
+    for item in items
+      if item.type == 'diaryTime' && item.x < 3
+        entries.push entry if entry.time? || entry.items.length > 0
+        entry =
+          time: item.note
+          x: item.x
+          y: item.y
+          items: []
+      else
+        entry.items.push item
+    
+    entries.push entry if entry.time? || entry.items.length > 0
+    entries
     
   log: =>
     for entry in @entries

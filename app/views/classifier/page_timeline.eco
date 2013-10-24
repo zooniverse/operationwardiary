@@ -5,11 +5,20 @@
       <li><%= entry.date %>
         <% if entry.items: %>
         <ul>
-          <% for item in entry.items: %>
+          <% for place in entry.items: %>
             <li>
-              <% if item.items.length > 0: %>
-              <p><%= item.place?.place %></p>
-              <p><%= (note.label for note in item.items).join ' ' %></p>
+              <% if place.items.length > 0: %>
+              <p><%= place.place?.place %></p>
+              <ul>
+                <% for time in place.items: %>
+                  <li>
+                    <% if time.items.length > 0: %>
+                    <p><%= time.time %></p>
+                    <p><%= (note.label for note in time.items).join ' ' %></p>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
               <% end %>
             </li>
           <% end %>
