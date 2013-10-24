@@ -2,18 +2,18 @@
 <ul>
   <% for entry in @entries: %>
     <% if entry.items.length > 0: %>
-      <li class="date"><%= entry.date %>
+      <li class="date"><span><%= entry.date %></span>
         <% if entry.items: %>
         <ul>
           <% for place in entry.items: %>
             <li class="place">
               <% if place.items.length > 0: %>
-              <p><%= place.place?.place %></p>
+              <% if place.place?: %> <p><%= place.place.place %></p><% end %>
               <ul>
                 <% for time in place.items: %>
                   <li class="time">
                     <% if time.items.length > 0: %>
-                    <b><%= time.time %></b>
+                    <% if time.time?: %> <b><%= time.time %></b> <% end %>
                     <span><%= (note.label for note in time.items).join ', ' %></span>
                     <% end %>
                   </li>

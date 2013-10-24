@@ -169,7 +169,7 @@ div.timeline
   text-align: left
   height: 300px
   overflow: auto
-  padding: 0 2px
+  padding: 0 1em
   font-size: .8em
   
   ul
@@ -185,6 +185,22 @@ div.timeline
       &.date
         border-bottom: 1px solid white
         margin-bottom: .5em
+        padding-bottom: .5em
+        
+        > span
+          display: block
+          text-align: center
+          border-bottom: 1px solid white
+      &.place
+        > p
+          background: green
+          margin: 0
+          padding: 0.5em 0
+          text-align: center
+      
+      &.time
+        > b
+          color: cyan
   
 .marking-tool-controls
   position: absolute

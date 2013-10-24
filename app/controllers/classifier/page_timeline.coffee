@@ -10,6 +10,7 @@ class PageTimeline extends Spine.Controller
     super
     
   render: =>
+    @log()
     @html @template
       entries: @entries
   
@@ -26,8 +27,6 @@ class PageTimeline extends Spine.Controller
     @sort items
       
     @parseEntries items
-    
-    @log()
     
         
   sort: (items) =>
