@@ -61,10 +61,6 @@ class Classifier extends Spine.Controller
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
     
-    @timeline = new PageTimeline
-    
-    @toolbars.el.find( '.timeline' ).append( @timeline.el )
-    
     @toolbars.el.on 'pickDocument', =>
       @surface.enable()
       page_type = $( '.documents :checked' ).val()
@@ -174,6 +170,10 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
+    @timeline = new PageTimeline
+    
+    @toolbars.el.find( '.timeline' ).html @timeline.el
+    
     snapshot = @surface_history[subject.id]
     
     marks = snapshot?.marks
@@ -199,7 +199,8 @@ class Classifier extends Spine.Controller
           
           if page_type == 'diary'
             @timeline.createEntries @surface.tools
-            @timeline.render()
+          
+        @timeline.render()
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
