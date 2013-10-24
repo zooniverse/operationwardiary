@@ -90,10 +90,10 @@ class Classifier extends Spine.Controller
       type = mark.type
       @toolbars.select type
       
-      note = store.get type, undefined if type?
-      if note?
-        @surface.markDefaults.note = note
-        @surface.markDefaults.type = type
+      # note = store.get type, undefined if type?
+#       if note?
+#         @surface.markDefaults.note = note
+#         @surface.markDefaults.type = type
         
     @surface.on 'create-tool', =>
       type = $('.categories :checked').val()
@@ -107,16 +107,18 @@ class Classifier extends Spine.Controller
     #   @toolbars.deselect type
     
     @surface.on 'change', (e, tool)=>
+      @update_history()
       mark = tool.mark
       store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
       @timeline.createEntries @surface.tools
       @timeline.render()
-      @update_history()
+      
     
     @surface.on 'delete', (e, tool)=>
+      @update_history()
       @timeline.createEntries @surface.tools
       @timeline.render()
-      @update_history()
+      
     
 
   render: =>
@@ -224,7 +226,7 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     @onDoTask()
     
-    @classification.send()
+    # @classification.send()
       
     @update_history()
     
@@ -273,6 +275,7 @@ class Classifier extends Spine.Controller
     snapshot = new Transcription @
     
     @surface_history[ Subject.current.id ] = snapshot
+    
     
     store.set 'history', @surface_history
     

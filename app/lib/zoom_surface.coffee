@@ -216,7 +216,6 @@ class ZoomableSurface extends MarkingSurface
     return @container[0] == document.activeElement || $.contains @container[0], document.activeElement
     
   addMark: (mark_params) =>
-    
     tool = @createTool mark_params
     tool.render()
     tool.deselect()

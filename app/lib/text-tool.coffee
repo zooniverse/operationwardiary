@@ -106,7 +106,7 @@ class TextControls extends ToolControls
       top: top
     
   setNote: (note = @tool.mark.note) =>
-    @widget.setNote note, @el
+    @widget.setNote note
     
   open: =>
     @el.removeClass 'closed'
