@@ -63,6 +63,8 @@ class Classifier extends Spine.Controller
     
     @timeline = new PageTimeline
     
+    @toolbars.el.find( '.timeline' ).append( @timeline.el )
+    
     @toolbars.el.on 'pickDocument', =>
       @surface.enable()
       page_type = $( '.documents :checked' ).val()

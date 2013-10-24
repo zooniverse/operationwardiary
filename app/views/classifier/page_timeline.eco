@@ -2,19 +2,19 @@
 <ul>
   <% for entry in @entries: %>
     <% if entry.items.length > 0: %>
-      <li><%= entry.date %>
+      <li class="date"><%= entry.date %>
         <% if entry.items: %>
         <ul>
           <% for place in entry.items: %>
-            <li>
+            <li class="place">
               <% if place.items.length > 0: %>
               <p><%= place.place?.place %></p>
               <ul>
                 <% for time in place.items: %>
-                  <li>
+                  <li class="time">
                     <% if time.items.length > 0: %>
-                    <p><%= time.time %></p>
-                    <p><%= (note.label for note in time.items).join ' ' %></p>
+                    <b><%= time.time %></b>
+                    <span><%= (note.label for note in time.items).join ', ' %></span>
                     <% end %>
                   </li>
                 <% end %>
