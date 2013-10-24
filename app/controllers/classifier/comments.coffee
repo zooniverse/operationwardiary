@@ -28,6 +28,7 @@ class Comments extends Spine.Controller
   render: =>
     @html @template
       comments: @comments
+      user: User.current
     
     @comment_button.on 'click', @submitComment
     
