@@ -2,30 +2,28 @@
 <%- translate 'h2', "common.timeline" %>
 <ul>
   <% for entry in @entries: %>
-    <% if entry.items.length > 0: %>
-      <li class="date"><span><%= entry.date %></span>
-        <% if entry.items: %>
-        <ul>
-          <% for place in entry.items: %>
-            <li class="place">
-              <% if place.items.length > 0: %>
-              <% if place.place?: %> <p><%= place.place.place %></p><% end %>
-              <ul>
-                <% for time in place.items: %>
-                  <li class="time">
-                    <% if time.items.length > 0: %>
-                    <% if time.time?: %> <b><%= time.time %></b> <% end %>
-                    <span><%= (note.label for note in time.items).join ', ' %></span>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
+    <li class="date"><span><%= entry.date %></span>
+      <% if entry.items.length > 0: %>
+      <ul>
+        <% for place in entry.items: %>
+          <li class="place">
+            <% if place.place?: %> <p><%= place.place.place %></p><% end %>
+            <% if place.items.length > 0: %>
+            <ul>
+              <% for time in place.items: %>
+                <li class="time">
+                  <% if time.time?: %> <b><%= time.time %></b> <% end %>
+                  <% if time.items.length > 0: %>
+                  <span><%= (note.label for note in time.items).join ', ' %></span>
+                  <% end %>
+                </li>
               <% end %>
-            </li>
-          <% end %>
-        </ul>
+            </ul>
+            <% end %>
+          </li>
         <% end %>
-      </li>    
-    <% end %>
+      </ul>
+      <% end %>
+    </li>    
   <% end %>
 </ul>
