@@ -107,9 +107,7 @@ class PageTimeline extends Spine.Controller
     entries
     
   log: =>
-    for entry in @entries
-      console.log entry.date
-      console.log (item for item in entry.items)
+    console.log JSON.stringify @entries
       
   createItem: ( tool ) =>
     
