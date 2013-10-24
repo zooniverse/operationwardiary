@@ -35,6 +35,9 @@ class Classifier extends Spine.Controller
     '.subject-container': 'subjectContainer'
     '#diary_id': 'diaryDisplay'
     
+  
+  cacheNotes: false
+    
   defaults = 
     category: 'date'
 
@@ -69,10 +72,11 @@ class Classifier extends Spine.Controller
       @surface.markingMode = true
       @surface.selection?.deselect()
       
-      note = store.get type, undefined
+      if @cacheNotes
+        note = store.get type, undefined
       
-      @surface.markDefaults.type = type
-      @surface.markDefaults.note = note ? undefined
+        @surface.markDefaults.type = type
+        @surface.markDefaults.note = note ? undefined
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
@@ -90,18 +94,20 @@ class Classifier extends Spine.Controller
       type = mark.type
       @toolbars.select type
       
-      # note = store.get type, undefined if type?
-#       if note?
-#         @surface.markDefaults.note = note
-#         @surface.markDefaults.type = type
+      if @cacheNotes
+        note = store.get type, undefined
+      
+        @surface.markDefaults.type = type
+        @surface.markDefaults.note = note ? undefined
         
     @surface.on 'create-tool', =>
       type = $('.categories :checked').val()
       
-      note = store.get type, undefined if type?
-      if note?
-        @surface.markDefaults.note = note
-        @surface.markDefaults.type = type
+      if @cacheNotes
+        note = store.get type, undefined if type?
+        if note?
+          @surface.markDefaults.note = note
+          @surface.markDefaults.type = type
     # @surface.on 'deselect', (e, mark)=>
     #   type = mark.type
     #   @toolbars.deselect type
@@ -109,7 +115,7 @@ class Classifier extends Spine.Controller
     @surface.on 'change', (e, tool)=>
       @update_history()
       mark = tool.mark
-      store.set mark.type, mark.note if mark? && mark.type not in ['diaryDate', 'date']
+      store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date']
       @timeline.createEntries @surface.tools
       @timeline.render()
       
