@@ -36,7 +36,7 @@ class Classifier extends Spine.Controller
     '#diary_id': 'diaryDisplay'
     
   
-  cacheNotes: false
+  cacheNotes: true
     
   defaults = 
     category: 'date'
@@ -222,6 +222,7 @@ class Classifier extends Spine.Controller
       marks: @surface.marks.slice(0)
     @classification.annotate annotation
     console?.log 'Classifying', JSON.stringify @classification
+    console.log (mark.note for mark in annotation.marks)
 
   onFinishTask: =>
     @onDoTask()
