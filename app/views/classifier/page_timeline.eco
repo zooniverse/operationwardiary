@@ -1,12 +1,17 @@
 <% translate = require 't7e' %>
 <ul>
   <% for entry in @entries: %>
-    <% if entry.date: %>
+    <% if entry.items.length > 0: %>
       <li><%= entry.date %>
         <% if entry.items: %>
         <ul>
           <% for item in entry.items: %>
-            <li><%= item.label %></li>
+            <li>
+              <% if item.items.length > 0: %>
+              <p><%= item.place?.name %></p>
+              <p><%= (note.label for note in item.items).join ' ' %></p>
+              <% end %>
+            </li>
           <% end %>
         </ul>
         <% end %>

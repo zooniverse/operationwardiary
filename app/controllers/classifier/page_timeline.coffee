@@ -25,22 +25,7 @@ class PageTimeline extends Spine.Controller
         
     @sort items
       
-    entry = 
-      date: null
-      x: null
-      y: null
-      items: []
-    for item in items
-      if item.type == 'diaryDate'
-        @entries.push entry
-        entry = 
-          date: item.note
-          x: item.x
-          y: item.y
-          items: []
-      else
-        entry.items.push item 
-    @entries.push entry
+    @parseEntries items
     
     @log()
     
@@ -55,11 +40,53 @@ class PageTimeline extends Spine.Controller
     
     items.sort (a,b) ->
       return sortBy('y', a, b) or sortBy('x', a, b)
+  
+  parseEntries: (items) =>
+    entry = 
+      date: null
+      x: null
+      y: null
+      items: []
+    for item in items
+      if item.type == 'diaryDate'
+        entry.items = @parseEntryItems entry.items
+        @entries.push entry
+        entry = 
+          date: item.note
+          x: item.x
+          y: item.y
+          items: []
+      else
+        entry.items.push item 
+    entry.items = @parseEntryItems entry.items
+    @entries.push entry
+  
+  parseEntryItems: (items) =>
+    entry_items = []
+    entry_item =
+      place: null
+      x: null
+      y: null
+      items: []
+    
+    for item in items
+      if item.type = 'place' && item.x < 3
+        entry_items.push entry_item
+        entry_item =
+          place: item.note
+          x: item.x
+          y: item.y
+          items: []
+      else
+        entry_item.items.push item
+    
+    entry_items.push entry_item
+    entry_items
     
   log: =>
     for entry in @entries
       console.log entry.date
-      console.log (item.label for item in entry.items)
+      console.log (item for item in entry.items)
       
   createItem: ( tool ) =>
     
