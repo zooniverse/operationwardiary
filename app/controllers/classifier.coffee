@@ -93,12 +93,6 @@ class Classifier extends Spine.Controller
     @surface.on 'select', (e, mark)=>
       type = mark.type
       @toolbars.select type
-      
-      if @cacheNotes
-        note = store.get type, undefined
-      
-        @surface.markDefaults.type = type
-        @surface.markDefaults.note = note ? undefined
         
     @surface.on 'create-tool', =>
       type = $('.categories :checked').val()
