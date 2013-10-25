@@ -42,6 +42,9 @@ class PageTimeline extends Spine.Controller
       return sortBy('y', a, b) or sortBy('x', a, b)
       
   parseLeftColumn: (items, entities) =>
+    
+    entities = entities.slice 0
+    
     entries = []
     entry =
       label: null
@@ -67,7 +70,7 @@ class PageTimeline extends Spine.Controller
     entries.push entry if entry.note? || entry.items.length > 0
     
     if entities.length > 0
-      entry.items = @parseLeftColumn entry.items, entities.slice 0 for entry in entries
+      entry.items = @parseLeftColumn entry.items, entities for entry in entries
       
     entries
     
