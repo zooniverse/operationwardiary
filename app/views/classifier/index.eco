@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="subject-container">
+<div class="subject-container" tabindex="0">
   <span class="zoom-controls">
   <button class="zoom-in">+</button>
   <button class="zoom-out">-</button>
