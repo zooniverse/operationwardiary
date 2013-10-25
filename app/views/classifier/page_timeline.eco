@@ -2,17 +2,17 @@
 <%- translate 'h2', "common.timeline" %>
 <ul>
   <% for entry in @entries: %>
-    <li class="date"><span><%= entry.date %></span>
+    <li class="date"><span><%= entry.note %></span>
       <% if entry.items.length > 0: %>
       <ul>
         <% for place in entry.items: %>
           <li class="place">
-            <% if place.place?: %> <p><%= place.place.place %></p><% end %>
+            <% if place.note?: %> <p><%= place.note.place %></p><% end %>
             <% if place.items.length > 0: %>
             <ul>
               <% for time in place.items: %>
                 <li class="time">
-                  <% if time.time?: %> <b><%= time.time %></b> <% end %>
+                  <% if time.note?: %> <b><%= time.note %></b> <% end %>
                   <% if time.items.length > 0: %>
                   <span><%= (note.label for note in time.items).join ', ' %></span>
                   <% end %>

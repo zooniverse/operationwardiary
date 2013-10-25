@@ -28,6 +28,7 @@ class PageTimeline extends Spine.Controller
         
     @sort items
       
+    # @entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
     @parseEntries items
     
         
@@ -41,10 +42,39 @@ class PageTimeline extends Spine.Controller
     
     items.sort (a,b) ->
       return sortBy('y', a, b) or sortBy('x', a, b)
+      
+  parseLeftColumn: (items, entities) =>
+    entries = []
+    entry =
+      note: null
+      x: null
+      y: null
+      items: []
+    
+    type = entities.shift()
+    
+    for item in items
+      if item.type == type && item.x < 3
+        console.log type
+        console.log item
+        console.log entities
+        entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
+        entries.push entry if entry.note? || entry.items.length > 0
+        entry =
+          note: item.note
+          x: item.x
+          y: item.y
+          items: []
+      else
+        entry.items.push item
+    
+    entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
+    entries.push entry if entry.note? || entry.items.length > 0
+    entries
   
   parseEntries: (items) =>
     entry = 
-      date: null
+      note: null
       x: null
       y: null
       items: []
@@ -53,7 +83,7 @@ class PageTimeline extends Spine.Controller
         entry.items = @parsePlaces entry.items
         @entries.push entry if entry.date? || entry.items.length > 0
         entry = 
-          date: item.note
+          note: item.note
           x: item.x
           y: item.y
           items: []
@@ -65,7 +95,7 @@ class PageTimeline extends Spine.Controller
   parsePlaces: (items) =>
     entries = []
     entry =
-      place: null
+      note: null
       x: null
       y: null
       items: []
@@ -75,7 +105,7 @@ class PageTimeline extends Spine.Controller
         entry.items = @parseTimes entry.items
         entries.push entry if entry.place? || entry.items.length > 0
         entry =
-          place: item.note
+          note: item.note
           x: item.x
           y: item.y
           items: []
@@ -89,7 +119,7 @@ class PageTimeline extends Spine.Controller
   parseTimes: (items) =>
     entries = []
     entry =
-      time: null
+      note: null
       x: null
       y: null
       items: []
@@ -98,7 +128,7 @@ class PageTimeline extends Spine.Controller
       if item.type == 'diaryTime' && item.x < 3
         entries.push entry if entry.time? || entry.items.length > 0
         entry =
-          time: item.note
+          note: item.note
           x: item.x
           y: item.y
           items: []
@@ -109,7 +139,7 @@ class PageTimeline extends Spine.Controller
     entries
     
   log: =>
-    console.log JSON.stringify @entries
+    console.log @entries
       
   createItem: ( tool ) =>
     
