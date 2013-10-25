@@ -70,8 +70,7 @@ class PageTimeline extends Spine.Controller
     entries.push entry if entry.note? || entry.items.length > 0
     
     for entry in entries
-      console.log entities
-      entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
+      entry.items = @parseLeftColumn entry.items, entities.slice 0 if entities.length > 0
       
     entries
   
