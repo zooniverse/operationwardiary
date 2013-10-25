@@ -52,7 +52,6 @@ class PageTimeline extends Spine.Controller
       items: []
     
     type = entities.shift()
-    console.log type
     
     for item in items
       if item.type == type && item.x < 3
