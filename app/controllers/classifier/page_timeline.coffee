@@ -45,7 +45,7 @@ class PageTimeline extends Spine.Controller
   parseLeftColumn: (items, entities) =>
     entries = []
     entry =
-      label: ''
+      label: null
       note: null
       x: null
       y: null
