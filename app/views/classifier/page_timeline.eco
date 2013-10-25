@@ -13,7 +13,7 @@
               <% for time in place.items: %>
                 <li class="time">
                   <% if time.note?: %> <b><%= time.note %></b> <% end %>
-                  <% if time.items.length > 0: %>
+                  <% if time.items? && time.items.length > 0: %>
                   <span><%= (note.label for note in time.items).join ', ' %></span>
                   <% end %>
                 </li>

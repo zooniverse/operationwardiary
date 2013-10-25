@@ -28,7 +28,7 @@ class PageTimeline extends Spine.Controller
         
     @sort items
       
-    # @entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
+    #@entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
     @parseEntries items
     
         
@@ -54,11 +54,7 @@ class PageTimeline extends Spine.Controller
     type = entities.shift()
     
     for item in items
-      console.log item.type
       if item.type == type && item.x < 3
-        console.log type
-        console.log entities
-        entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
         entries.push entry if entry.note? || entry.items.length > 0
         entry =
           note: item.note
@@ -68,8 +64,11 @@ class PageTimeline extends Spine.Controller
       else
         entry.items.push item
     
-    entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
     entries.push entry if entry.note? || entry.items.length > 0
+    
+    for entry in entries
+      entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
+      
     entries
   
   parseEntries: (items) =>
@@ -80,7 +79,6 @@ class PageTimeline extends Spine.Controller
       items: []
     for item in items
       if item.type == 'diaryDate'
-        entry.items = @parsePlaces entry.items
         @entries.push entry if entry.date? || entry.items.length > 0
         entry = 
           note: item.note
@@ -89,32 +87,10 @@ class PageTimeline extends Spine.Controller
           items: []
       else
         entry.items.push item 
-    entry.items = @parsePlaces entry.items
     @entries.push entry if entry.date? || entry.items.length > 0
-  
-  parsePlaces: (items) =>
-    entries = []
-    entry =
-      note: null
-      x: null
-      y: null
-      items: []
     
-    for item in items
-      if item.type == 'place' && item.x < 3
-        entry.items = @parseLeftColumn entry.items, ['diaryTime']
-        entries.push entry if entry.place? || entry.items.length > 0
-        entry =
-          note: item.note
-          x: item.x
-          y: item.y
-          items: []
-      else
-        entry.items.push item
-    
-    entry.items = @parseLeftColumn entry.items, ['diaryTime']
-    entries.push entry if entry.place? || entry.items.length > 0
-    entries
+    for entry in @entries
+      entry.items = @parseLeftColumn entry.items, ['place', 'diaryTime']
     
   log: =>
     console.log @entries
