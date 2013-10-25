@@ -78,7 +78,7 @@ class PageTimeline extends Spine.Controller
   createItem: ( tool ) =>
     
     x = parseInt tool.mark.p0[0] / 60
-    y = parseInt tool.mark.p0[1] / 6
+    y = parseInt tool.mark.p0[1] / 10
     
     item =
       x: x
