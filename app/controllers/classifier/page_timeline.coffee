@@ -10,7 +10,6 @@ class PageTimeline extends Spine.Controller
     super
     
   render: =>
-    @log()
     @el.hide()
     @html @template
       entries: @entries
