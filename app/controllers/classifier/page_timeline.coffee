@@ -28,8 +28,7 @@ class PageTimeline extends Spine.Controller
         
     @sort items
       
-    #@entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
-    @parseEntries items
+    @entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
     
         
   sort: (items) =>
@@ -73,29 +72,6 @@ class PageTimeline extends Spine.Controller
       entry.items = @parseLeftColumn entry.items, entities.slice 0 if entities.length > 0
       
     entries
-  
-  parseEntries: (items) =>
-    entry = 
-      label: ''
-      note: null
-      x: null
-      y: null
-      items: []
-    for item in items
-      if item.type == 'diaryDate'
-        @entries.push entry if entry.date? || entry.items.length > 0
-        entry = 
-          label: item.label
-          note: item.note
-          x: item.x
-          y: item.y
-          items: []
-      else
-        entry.items.push item 
-    @entries.push entry if entry.date? || entry.items.length > 0
-    
-    for entry in @entries
-      entry.items = @parseLeftColumn entry.items, ['place', 'diaryTime']
     
   log: =>
     console.log @entries
