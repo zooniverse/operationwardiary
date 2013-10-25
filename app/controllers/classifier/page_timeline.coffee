@@ -46,17 +46,20 @@ class PageTimeline extends Spine.Controller
   parseLeftColumn: (items, entities) =>
     entries = []
     entry =
+      label: ''
       note: null
       x: null
       y: null
       items: []
     
     type = entities.shift()
+    console.log type
     
     for item in items
       if item.type == type && item.x < 3
         entries.push entry if entry.note? || entry.items.length > 0
         entry =
+          label: item.label
           note: item.note
           x: item.x
           y: item.y
@@ -67,12 +70,14 @@ class PageTimeline extends Spine.Controller
     entries.push entry if entry.note? || entry.items.length > 0
     
     for entry in entries
+      console.log entities
       entry.items = @parseLeftColumn entry.items, entities if entities.length > 0
       
     entries
   
   parseEntries: (items) =>
     entry = 
+      label: ''
       note: null
       x: null
       y: null
@@ -81,6 +86,7 @@ class PageTimeline extends Spine.Controller
       if item.type == 'diaryDate'
         @entries.push entry if entry.date? || entry.items.length > 0
         entry = 
+          label: item.label
           note: item.note
           x: item.x
           y: item.y
