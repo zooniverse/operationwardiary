@@ -20,7 +20,7 @@ class Geocoder
     
     if cache?
       # older cache entries were arrays, not objects
-      if cache.length?
+      if cache.length? || !cache.placename?
         return @call_webservice placename
       promise.resolve [cache]
     else
@@ -43,7 +43,7 @@ class Geocoder
       results = response.query.results
       
       defaults =
-        name: null
+        placename: null
         lat: null
         long: null
         name: ''
@@ -67,7 +67,7 @@ class Geocoder
             else
               place = defaults
               
-            place.name = placename
+            place.placename = placename
             
             place
             
@@ -87,7 +87,7 @@ class Geocoder
             else
               place = defaults
               
-              place.name = placename
+              place.placename = placename
               
             place
             
@@ -100,6 +100,6 @@ class Geocoder
     promise
     
   save_place: (placename, place) =>
-    store.set placename, place if place.name == placename
+    store.set placename, place if place.placename == placename
     
 module.exports = Geocoder
