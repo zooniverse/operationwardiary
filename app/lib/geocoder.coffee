@@ -17,10 +17,12 @@ class Geocoder
     return promise unless placename
     
     cache = store.get placename if @localCache
+    console.log placename
+    console.log cache
     
-    if cache?
+    if cache? && cache.placename? && cache.placename == placename
       # older cache entries were arrays, not objects
-      if cache.length? || !cache.placename?
+      if cache.length?
         return @call_webservice placename
       promise.resolve [cache]
     else
