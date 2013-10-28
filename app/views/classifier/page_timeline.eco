@@ -3,27 +3,19 @@
 <ul>
   <% for entry in @entries: %>
     <li class="date"><span><%= entry.label %></span>
-      <% if entry.items.length > 0: %>
-      <ul>
         <% for place in entry.items: %>
-          <li class="place">
-            <% if place.label?: %> <p><%= place.label %></p><% end %>
-            <% if place.items.length > 0: %>
-            <ul>
+          <div class="place">
+            <% if place.label?: %> <p class="placename"><%= place.label %></p><% end %>
               <% for time in place.items: %>
-                <li class="time">
+                <p class="time">
                   <% if time.label?: %> <b><%= time.label %></b> <% end %>
                   <% if time.items? && time.items.length > 0: %>
                   <span><%= (note.label for note in time.items).join ', ' %></span>
                   <% end %>
-                </li>
+                </p>
               <% end %>
-            </ul>
-            <% end %>
-          </li>
+          </div>
         <% end %>
-      </ul>
-      <% end %>
     </li>    
   <% end %>
 </ul>
