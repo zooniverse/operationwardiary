@@ -102,6 +102,6 @@ class Geocoder
     promise
     
   save_place: (placename, place) =>
-    store.set placename, place if place.placename == placename
+    store.set placename, place if @localCache && place.placename == placename
     
 module.exports = Geocoder
