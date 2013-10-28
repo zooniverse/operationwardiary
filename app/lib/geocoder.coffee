@@ -51,7 +51,7 @@ class Geocoder
         name: ''
         id: null
     
-      promise.resolve [] unless results?
+      promise.resolve [defaults] unless results?
     
       switch @service
         when 'geonames'
@@ -96,7 +96,13 @@ class Geocoder
       promise.resolve places
     
     yql = new YQL query
-    yql.signed_request().done process_request
+    yql
+      .signed_request()
+      .done(process_request)
+      .fail(->
+        console.log 'FAILED'
+        promise.resolve [defaults]
+      )
       
       
     promise
