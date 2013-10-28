@@ -43,6 +43,7 @@ class Geocoder
       results = response.query.results
       
       defaults =
+        name: null
         lat: null
         long: null
         name: ''
@@ -65,6 +66,8 @@ class Geocoder
                 id: gnplace.geonameId
             else
               place = defaults
+              
+            place.name = placename
             
             place
             
@@ -84,6 +87,8 @@ class Geocoder
             else
               place = defaults
               
+              place.name = placename
+              
             place
             
       promise.resolve places
@@ -95,6 +100,6 @@ class Geocoder
     promise
     
   save_place: (placename, place) =>
-    store.set placename, place
+    store.set placename, place if place.name == placename
     
 module.exports = Geocoder
