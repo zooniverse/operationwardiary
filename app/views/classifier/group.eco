@@ -3,5 +3,6 @@
 <span class="page-tools">
 <button class="favourite"><%- translate 'span', "common.favourite" %></button>
 <button class="discuss"><%- translate 'span', "common.discuss" %></button>
+<button class="timeline"><%- translate 'span', "common.timeline" %></button>
 <button class="finish"><%- translate 'span', "common.finish" %></button>
 </span>

@@ -12,6 +12,7 @@ class GroupDetails extends Spine.Controller
   className: 'diary-title'
   elements:
     '.discuss': 'talkButton'
+    '.timeline': 'timelineButton'
     
   constructor: ->
     super
@@ -37,6 +38,9 @@ class GroupDetails extends Spine.Controller
 
     @talkButton.on 'click', =>
       @el.trigger 'subject:discuss'
+    
+    @timelineButton.on 'click', =>
+      @el.trigger 'subject:timeline'
     
   onGroupFetch: (e, groups) =>
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'

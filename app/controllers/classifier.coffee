@@ -82,6 +82,9 @@ class Classifier extends Spine.Controller
     
     @el.on 'subject:discuss', =>
       @comments.el.toggleClass('open')
+    
+    @el.on 'subject:timeline', =>
+      @timeline.el.toggleClass 'open'
        
 
     User.on 'change', @onUserChange
@@ -222,6 +225,7 @@ class Classifier extends Spine.Controller
       document: document
       metadata: metadata
       marks: @surface.marks.slice(0)
+      timeline: @timeline.entries
     @classification.annotate annotation
     console?.log 'Classifying', JSON.stringify @classification
     console.log (mark.note for mark in annotation.marks)
