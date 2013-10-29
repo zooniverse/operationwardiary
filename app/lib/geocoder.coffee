@@ -6,7 +6,7 @@ YQL = require './yql'
 
 class Geocoder
   
-  localCache: true
+  localCache: false
   
   constructor: (@service = 'geonames') ->
 
@@ -17,8 +17,6 @@ class Geocoder
     return promise unless placename
     
     cache = store.get placename if @localCache
-    console.log placename
-    console.log cache
     
     if cache? && cache.placename? && cache.placename == placename
       # older cache entries were arrays, not objects
@@ -32,6 +30,7 @@ class Geocoder
     promise
     
   call_webservice: (placename) =>
+    console.log 'looking up', placename
     
     queries =
       geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 3"
@@ -41,72 +40,76 @@ class Geocoder
     
     promise = new $.Deferred
     
-    process_request = (response)=>
-      results = response.query.results
-      
-      defaults =
-        placename: null
-        lat: null
-        long: null
-        name: ''
-        id: null
-    
-      promise.resolve [defaults] unless results?
-    
-      switch @service
-        when 'geonames'
-          if results.geonames.geoname? && results.geonames.geoname.length?
-            places = results.geonames.geoname
-          else
-            places = [results.geonames.geoname]
-          places = places.map (gnplace) ->
-            if gnplace?
-              place = 
-                lat: gnplace.lat
-                long: gnplace.lng
-                name: gnplace.toponymName
-                id: gnplace.geonameId
-            else
-              place = defaults
-              
-            place.placename = placename
-            
-            place
-            
-        when 'geoplanet'
-          if results.Result? && results.Result.length?
-            places = results.Result
-          else
-            places = [results.Result]
-            
-          places = places.map (gpplace) ->
-            if gpplace?
-              place = 
-                lat: gpplace.latitude
-                long: gpplace.longitude
-                name: if gpplace.neighborhood? then gpplace.neighborhood else gpplace.city
-                id: gpplace.woeid
-            else
-              place = defaults
-              
-              place.placename = placename
-              
-            place
-            
-      promise.resolve places
-    
     yql = new YQL query
     yql
       .signed_request()
-      .done(process_request)
-      .fail(->
+      .done( (response) =>
+        promise.resolve @process_request placename, response
+      )
+      .fail(=>
         console.log 'FAILED'
         promise.resolve [defaults]
       )
       
       
     promise
+  
+  process_request: (placename, response)=>
+    console.log 'processing', placename
+    results = response.query.results
     
+    defaults =
+      placename: null
+      lat: null
+      long: null
+      name: ''
+      id: null
+  
+    return [defaults] unless results?
+  
+    switch @service
+      when 'geonames'
+        if results.geonames.geoname? && results.geonames.geoname.length?
+          places = results.geonames.geoname
+        else
+          places = [results.geonames.geoname]
+        places = places.map (gnplace) ->
+          if gnplace?
+            place = 
+              lat: gnplace.lat
+              long: gnplace.lng
+              name: gnplace.toponymName
+              id: gnplace.geonameId
+          else
+            place = defaults
+            
+          place.placename = placename
+          
+          place
+          
+      when 'geoplanet'
+        if results.Result? && results.Result.length?
+          places = results.Result
+        else
+          places = [results.Result]
+          
+        places = places.map (gpplace) ->
+          if gpplace?
+            place = 
+              lat: gpplace.latitude
+              long: gpplace.longitude
+              name: if gpplace.neighborhood? then gpplace.neighborhood else gpplace.city
+              id: gpplace.woeid
+          else
+            place = defaults
+            
+            place.placename = placename
+            
+          place
+          
+    console.log places
+    places
+  
   save_place: (placename, place) =>
     store.set placename, place if @localCache && place.placename == placename
     
