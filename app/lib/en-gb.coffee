@@ -8,6 +8,7 @@ module.exports =
     type: 'Type'
     favourite: 'Favourite'
     discuss: 'Discuss'
+    comments: 'Talk comments'
     comment: 'Comment'
     timeline: 'Timeline'
     types: 'Page types'
