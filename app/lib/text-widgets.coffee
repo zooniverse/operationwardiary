@@ -1,7 +1,5 @@
 $ = require 'jqueryify'
 require './jquery-ui-1.10.3.custom.min.js'
-
-require './google.maps.js'
 require './jquery.ui.map.full.min.js'
 
 translate = require 't7e'
