@@ -197,6 +197,7 @@ class Classifier extends Spine.Controller
             @toolbars.metadata.find("[name=#{key}]").val value
             
           for mark in marks
+            mark.type = 'time' if mark.type == 'diaryTime'
             @toolbars.select mark.type
             @surface.addMark mark
           
