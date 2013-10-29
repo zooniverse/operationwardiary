@@ -31,7 +31,7 @@ class PageTimeline extends Spine.Controller
         
     @sort items
       
-    @entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'diaryTime']
+    @entries = @parseLeftColumn items, [ 'diaryDate', 'place', 'time']
     
         
   sort: (items) =>
