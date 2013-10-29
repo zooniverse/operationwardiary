@@ -6,7 +6,7 @@ YQL = require './yql'
 
 class Geocoder
   
-  localCache: false
+  localCache: true
   
   constructor: (@service = 'geonames') ->
 
