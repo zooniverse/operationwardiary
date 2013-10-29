@@ -80,7 +80,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   
   type: 'place'
   
-  @gc: new Geocoder
+  gc: new Geocoder
   
   updateNote: (target)->
     
@@ -90,7 +90,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     note = @update_notes()
     
-    PlaceWidget.gc.geocode( note.place )
+    @gc.geocode( note.place )
       .pipe( (places) =>
         @choose_place places
       )
@@ -138,7 +138,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .val( name )
     
     note = @update_notes()
-    PlaceWidget.gc.save_place( note.place, place )
+    @gc.save_place( note.place, place )
   
     @show_place lat, long
     
