@@ -1,5 +1,3 @@
-require './lib/google.maps.js'
-
 require './lib/setup'
 
 Spine = require 'spine'
