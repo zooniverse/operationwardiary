@@ -62,6 +62,7 @@ class YQL
     window[@callback] = (response) ->
       promise.resolve response
       $( newScript ).remove()
+      window[@callback] = null
     
     headID.appendChild newScript
     
