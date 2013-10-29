@@ -3,6 +3,7 @@ Spine = require 'spine'
 class PageTimeline extends Spine.Controller
   
   template: require '../../views/classifier/page_timeline'
+  className: 'subject-timeline'
   
   entries: []
   
@@ -10,10 +11,10 @@ class PageTimeline extends Spine.Controller
     super
     
   render: =>
-    @el.hide()
+    # @el.hide()
     @html @template
       entries: @entries
-    @el.fadeIn()
+    # @el.fadeIn()
   
   createEntries: ( tools ) ->
     

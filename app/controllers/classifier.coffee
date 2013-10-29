@@ -175,7 +175,7 @@ class Classifier extends Spine.Controller
     
     @timeline = new PageTimeline
     
-    @toolbars.el.find( '.timeline' ).html @timeline.el
+    # @toolbars.el.find( '.timeline' ).html @timeline.el
     
     snapshot = @surface_history[subject.id]
     
@@ -211,6 +211,8 @@ class Classifier extends Spine.Controller
     @comments = new Comments subject.zooniverse_id
     
     @group_details.el.append @comments.el
+    
+    @group_details.el.append @timeline.el
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
