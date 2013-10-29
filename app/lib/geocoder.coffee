@@ -30,7 +30,6 @@ class Geocoder
     promise
     
   call_webservice: (placename) =>
-    console.log 'looking up', placename
     
     queries =
       geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 3"
@@ -39,6 +38,13 @@ class Geocoder
     query = queries[@service]
     
     promise = new $.Deferred
+    
+    defaults =
+      placename: null
+      lat: null
+      long: null
+      name: ''
+      id: null
     
     yql = new YQL query
     yql
