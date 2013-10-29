@@ -4,8 +4,7 @@
   <% for entry in @entries: %>
     <li class="date"><span><%= entry.label %></span>
         <% for place in entry.items: %>
-          <div class="place">
-            <% if place.label?: %> <p class="placename"><%= place.label %></p><% end %>
+            <% if place.label?: %> <span class="placename"><%= place.label %></span><% end %>
               <% for time in place.items: %>
                 <p class="time">
                   <% if time.label?: %> <b><%= time.label %></b> <% end %>
@@ -14,7 +13,6 @@
                   <% end %>
                 </p>
               <% end %>
-          </div>
         <% end %>
     </li>    
   <% end %>
