@@ -11,10 +11,13 @@ class PageTimeline extends Spine.Controller
     super
     
   render: =>
-    # @el.hide()
+    
     @html @template
       entries: @entries
-    # @el.fadeIn()
+      
+    timeline = @el.find 'ul'
+    timeline.css 'opacity', 0
+    timeline.animate opacity: 1, 500 
   
   createEntries: ( tools ) ->
     
