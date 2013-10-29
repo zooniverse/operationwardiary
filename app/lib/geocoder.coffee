@@ -6,7 +6,7 @@ YQL = require './yql'
 
 class Geocoder
   
-  localCache: true
+  localCache: false
   
   constructor: (@service = 'geonames') ->
 
@@ -46,7 +46,9 @@ class Geocoder
       name: ''
       id: null
     
-    yql = new YQL query, 'process_' + placename
+    callback = placename.toLowerCase()
+    callback = callback.replace ' ', ''
+    yql = new YQL query, 'process_' + callback
     yql
       .signed_request()
       .done( (response) =>
