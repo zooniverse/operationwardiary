@@ -111,14 +111,19 @@ class Classifier extends Spine.Controller
       @update_history()
       mark = tool.mark
       store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date']
-      @timeline.createEntries @surface.tools
-      @timeline.render()
+      
+      page_type = $( '.documents :checked' ).val()
+      if page_type == 'diary'
+        @timeline.createEntries @surface.tools
+        @timeline.render()
       
     
     @surface.on 'delete', (e, tool)=>
       @update_history()
-      @timeline.createEntries @surface.tools
-      @timeline.render()
+      page_type = $( '.documents :checked' ).val()
+      if page_type == 'diary'
+        @timeline.createEntries @surface.tools
+        @timeline.render()
       
     
 
