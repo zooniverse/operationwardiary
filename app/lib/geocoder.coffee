@@ -46,7 +46,7 @@ class Geocoder
       name: ''
       id: null
     
-    yql = new YQL query
+    yql = new YQL query, 'process_' + placename
     yql
       .signed_request()
       .done( (response) =>

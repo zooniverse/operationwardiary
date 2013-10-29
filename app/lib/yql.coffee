@@ -5,8 +5,8 @@ class YQL
   @consumer_secret: "6be8e90d9b3fe81bfe846a148bcd69a65981b928"
   @cache_life = 3600
   
-  constructor: (query)->
-    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=process_request&_maxage=#{YQL.cache_life}"
+  constructor: (query, @callback = 'process_request')->
+    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=#{ @callback }&_maxage=#{YQL.cache_life}"
     @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?&_maxage=#{YQL.cache_life}"
     
   
@@ -59,7 +59,7 @@ class YQL
     newScript.type = 'text/javascript'
     newScript.src = finalStr
     
-    window.process_request = (response) ->
+    window[@callback] = (response) ->
       promise.resolve response
       $( newScript ).remove()
     
