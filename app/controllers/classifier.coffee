@@ -81,7 +81,7 @@ class Classifier extends Spine.Controller
     
     
     @el.on 'subject:discuss', =>
-      @comments.el.toggleClass('open')
+      @comments.el.toggleClass 'open'
     
     @el.on 'subject:timeline', =>
       @timeline.el.toggleClass 'open'
