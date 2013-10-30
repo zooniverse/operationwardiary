@@ -189,6 +189,24 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           )
         label = $("<label><span>#{place.name}<span></label>").prepend input
         $suggestions.append label
+      
+      input = 
+        $("<input/>")
+        .attr( "type", 'radio' )
+        .attr( 'name', 'placeOption')
+        .on( 'change', (e)=>
+          place =
+            placename: @el.find('input[name=place]').val()
+            lat: null
+            long: null
+            name: ''
+            id: null
+          e.preventDefault()
+          e.stopPropagation()
+          promise.notify place
+        )
+      label = $("<label><span>None of these<span></label>").prepend input
+      $suggestions.append label
     
     promise
 
