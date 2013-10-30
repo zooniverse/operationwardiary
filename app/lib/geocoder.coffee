@@ -32,8 +32,8 @@ class Geocoder
   call_webservice: (placename) =>
     
     queries =
-      geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 3"
-      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&isNameRequired=true&country=BE&country=GB&country=FR&maxRows=3&username=zooniverse'"
+      geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 5"
+      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&maxRows=5&username=zooniverse'"
     
     query = queries[@service]
     
