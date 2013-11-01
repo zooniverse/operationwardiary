@@ -34,6 +34,12 @@ class Toolbars extends Spine.Controller
   render: =>
     @html @template(@)
     
+    @pageTypes
+      .find('h2')
+      .attr('tabindex', '0')
+      .attr('role', 'button')
+      .on 'click keypress', @reset
+    
   toggleCategories: ->
     category = $('.documents :checked').val()
     @metadata.html ''
