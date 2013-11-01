@@ -28,7 +28,7 @@ class WidgetFactory
   
   @registry = {}
   
-  @makeWidget: (type, dotRadius = 6) =>
+  @makeWidget: (type, dotRadius = 12) =>
     new WidgetFactory.registry[type] dotRadius
 
 class TextWidget
@@ -37,21 +37,25 @@ class TextWidget
   colour: 'white'
   
   constructor: (@dotRadius) ->
+    @icon = "/images/icons/#{@type}.png"
   
   render: (el)->
     @el = el
     
   mark: (tool) ->
     circle = tool.addShape 'circle', 0, 0, @dotRadius, fill: 'transparent', stroke: @colour, 'stroke-width': 2
+    icon = tool.addShape 'image', @icon, 0, 0, 20, 20
     circle.node.setAttributeNS null,"tabindex" , "0"
     [
       circle
+      icon
       tool.label
     ]
     
   move: (shapes, x, y)->
     shapes[0].attr cx: x, cy: y
-    shapes[1].attr x: x, y: y - 15
+    shapes[1].attr x: x-10, y: y-10
+    shapes[2].attr x: x, y: y - 15
     
     
   updateNote: (target)->
@@ -403,7 +407,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
 
 WidgetFactory.registry.diaryDate = class DiaryDateWidget extends DateWidget
   
-  type: 'diaryDate'
+  type: 'date'
   
   mark: (tool)->
     shapes = super
