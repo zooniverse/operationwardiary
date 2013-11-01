@@ -1,5 +1,5 @@
 <% translate = require 't7e' %>
-
+<%- translate 'h2', "common.tagging" %>
 <ul class="categories">
   <% for tag in @tags: %>
     <li class="<%= tag %>">
