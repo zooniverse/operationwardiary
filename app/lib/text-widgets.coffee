@@ -53,9 +53,15 @@ class TextWidget
     ]
     
   move: (shapes, x, y)->
+    
+    if y < 300
+      labely = y - 20
+    else
+      labely = y + 20
+      
     shapes[1].attr cx: x, cy: y
     shapes[0].attr x: x-10, y: y-10
-    shapes[2].attr x: x, y: y - 20
+    shapes[2].attr x: x, y: labely
     
     box = shapes[2].getBBox()
     shapes[2][0].attr x: box.x - 2, y: box.y - 2
