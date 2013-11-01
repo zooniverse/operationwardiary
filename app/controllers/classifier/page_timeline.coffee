@@ -92,6 +92,6 @@ class PageTimeline extends Spine.Controller
       y: y
       type: tool.mark.type
       note: tool.mark.note
-      label: tool.label[1].node.textContent
+      label: tool.label[1].attr 'text'
       
 module.exports = PageTimeline
