@@ -9,7 +9,7 @@
         id="category-<%= tag %>" 
         value="<%= tag %>"
       >
-      <label for="category-<%= tag %>"><i class="icon-<%= tag %>"></i><%- translate 'span', "noteTypes.#{tag}" %></label>
+      <label class="icon-<%= tag %>" for="category-<%= tag %>"><%- translate 'span', "noteTypes.#{tag}" %></label>
     </li>
   <% end %>
 </ul>

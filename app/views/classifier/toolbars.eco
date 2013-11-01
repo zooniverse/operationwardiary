@@ -12,7 +12,7 @@
           value="<%= document %>"
           <%= @helper.selectedDocument(document) %>
         >
-        <label for="document-<%= document %>"><i class="icon-<%= document %>"></i><%- translate 'span', "documents.#{document}" %></label>
+        <label class="icon-<%= document %>" for="document-<%= document %>"><%- translate 'span', "documents.#{document}" %></label>
       </li>
     <% end %>
   </ul>
