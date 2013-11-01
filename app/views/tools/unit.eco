@@ -6,7 +6,7 @@
     <input name="name" type="text"/>
   </label>
   
-  <label>Context<br>
+  <label>Context
     <select name="context">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "unit.#{reason}" %></option>
