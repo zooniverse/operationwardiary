@@ -51,8 +51,12 @@ class Toolbars extends Spine.Controller
         orders = WidgetFactory.makeWidget 'orders'
         @metadata.html orders.template
       
-    @pageTypes.addClass 'closed'
-    @pageTools.removeClass('closed').html toolbar.template
+    
+    @pageTools.html toolbar.template
+    if toolbar.template != ''
+      @pageTypes.addClass 'closed'
+      @pageTools.removeClass 'closed'
+      
     $('.categories').css
       'visibility': 'visible'
   
