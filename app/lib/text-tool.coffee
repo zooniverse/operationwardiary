@@ -146,7 +146,9 @@ class TextTool extends Tool
     
     text = @addShape 'text', 0, 0, label, font: '12px "Arial"', fill: 'black'
     box = text.getBBox()
-    textbox = @addShape 'rect', box.x - 2 - box.width / 2, box.y - 2 - box.height / 2, box.width + 4, box.height + 4, fill: 'white', stroke: 'white'
+    x = box.x - box.width / 2
+    y = box.y - box.height / 2
+    textbox = @addShape 'rect', x - 2, y - 2, box.width + 4, box.height + 4, fill: 'white', stroke: 'white'
     text.toFront()
     @label = @addShape 'set'
     @label.push textbox, text
