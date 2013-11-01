@@ -38,9 +38,11 @@ class GroupDetails extends Spine.Controller
 
     @talkButton.on 'click', =>
       @el.trigger 'subject:discuss'
+      @talkButton.toggleClass 'active'
     
     @timelineButton.on 'click', =>
       @el.trigger 'subject:timeline'
+      @timelineButton.toggleClass 'active'
     
   onGroupFetch: (e, groups) =>
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'

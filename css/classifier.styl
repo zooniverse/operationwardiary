@@ -203,10 +203,12 @@
   position: relative
   float: left
   width: 100%
+  padding: 0
+  line-height: 40px
+  vertical-align: middle
   
   h1
     font-size: 1.2em
-    line-height: 30px
     margin: 0
     font-family: $mont
     font-weight: normal
@@ -217,14 +219,30 @@
     right: 4px
     
     button
-      padding: .3em
+      border: none
+      background-color: transparent
+      background-repeat: no-repeat
+      color: $white
       
       &.finish
-        padding-left: 1em
-        padding-right: 1em
+        padding: .3em 1em
         background: $green
-        color: $white
-        border: none
+      
+      &.timeline
+      &.discuss
+        width: 30px
+        height: 30px
+        text-indent: 10000px
+        overflow: hidden
+        
+      &.active
+        background-color: $darkgrey
+      
+      &.timeline
+        background-image: url(images/icons/timeline.png)
+      
+      &.discuss
+        background-image: url(images/icons/talk.png)
     
 .subject-container
   position: relative
