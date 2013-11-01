@@ -1,8 +1,10 @@
 <% translate = require 't7e' %>
 <%- translate 'h2', "common.comments" %>
 <% for comment in @comments: %>
+<div>
   <p class="author"><img width="20" height="20" alt="" src="//zooniverse-avatars.s3.amazonaws.com/ouroboros/<%= comment.user_zooniverse_id %>"> by <%= comment.user_name %></p>
   <p class="comment"><%= comment.body %></p>
+</div>
 <% end %>
 <% if @user: %>
   <textarea></textarea>

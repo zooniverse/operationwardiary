@@ -274,6 +274,7 @@ div.subject-timeline
   max-height: 0
   transition: max-height 1s
   overflow: hidden
+  font-size: 1.2em
   
   &.open
     max-height: 550px
@@ -285,7 +286,7 @@ div.subject-timeline
     padding: 1em 0
     font-family: $mont
     font-weight: normal
-    font-size: 1.2em
+    font-size: 1em
   
   ul
     list-style-type: none
@@ -413,6 +414,7 @@ div.subject-timeline
   max-height: 0
   transition: max-height 1s
   overflow: hidden
+  font-size: 1.2em
   
   &.open
     max-height: 550px
@@ -422,7 +424,7 @@ div.subject-timeline
     background: $greyblue
     font-family: $mont
     font-weight: normal
-    font-size: 1.2em
+    font-size: 1em
     margin: 0
     padding: 1em 0
     
@@ -442,12 +444,15 @@ div.subject-timeline
     color: #fff
     line-height: 30px
     vertical-align: middle
-    font-size: 1.2em
     text-transform: uppercase
+    
+  div:nth-child(2n+1)
+    background: $darkgrey
     
   p.author
     line-height: 20px
     vertical-align: middle
+    color: $darkblue
     img
       width: 20px
       height: 20px
@@ -455,4 +460,5 @@ div.subject-timeline
       margin-right: 5px
     
   p
-    margin: 10px
+    margin: 0 10px
+    padding 10px 0
