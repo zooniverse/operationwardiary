@@ -295,7 +295,7 @@ WidgetFactory.registry.unit = class UnitWidget extends TextWidget
 WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
   template: require('../views/tools/casualties')( choices: labels.casualties )
   
-  type: 'casualties'
+  type: 'casualty'
   
   updateNote: (target) ->
     
@@ -448,7 +448,7 @@ WidgetFactory.registry.time = class TimeWidget extends TextWidget
 
 WidgetFactory.registry.diaryTime = class DiaryTimeWidget extends TimeWidget
   
-  type: 'diaryTime'
+  type: 'time'
   
   mark: (tool)->
     shapes = super
@@ -486,7 +486,7 @@ WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget
 WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
   
-  type: 'mapRef'
+  type: 'map_ref'
   
   render: (el)->
     super
@@ -523,7 +523,7 @@ WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
 WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   template: require '../views/tools/gridref'
   
-  type: 'gridRef'
+  type: 'grid'
   
   updateNote: (target) ->
     
