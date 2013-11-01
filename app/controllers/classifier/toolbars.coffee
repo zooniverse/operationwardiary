@@ -43,7 +43,8 @@ class Toolbars extends Spine.Controller
         orders = WidgetFactory.makeWidget 'orders'
         @metadata.html orders.template
       
-    $('.toolbar').html toolbar.template
+    $('.types').addClass 'closed'
+    $('.toolbar').removeClass('closed').html toolbar.template
     $('.categories').css
       'visibility': 'visible'
   
@@ -64,10 +65,11 @@ class Toolbars extends Spine.Controller
       .prop('checked', false)
   
   reset: =>
+    $('.types').removeClass 'closed'
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
       .prop('checked', false)
-    $('.toolbar').html ''
+    $('.toolbar').addClass('closed').html ''
     @metadata.html ''
 
 module.exports = Toolbars

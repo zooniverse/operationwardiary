@@ -128,22 +128,28 @@
       
         &:focus + label
           background-color: $lightgrey
-          
+    
   div.types
     width: 75%
     float:left
     background: $darkgrey
     height: 600px
+    
+    &.closed
+      width: 25%
 
     label
       line-height: 40px
 
   div.toolbar
-    width: 25%
+    width: 75%
     overflow: hidden
     float: left
     background: $green
     height: 600px
+    
+    &.closed
+      width: 25%
 
     label
       height: 40px
