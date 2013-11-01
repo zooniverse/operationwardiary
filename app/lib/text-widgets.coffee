@@ -55,7 +55,10 @@ class TextWidget
   move: (shapes, x, y)->
     shapes[1].attr cx: x, cy: y
     shapes[0].attr x: x-10, y: y-10
-    shapes[2].attr x: x, y: y - 15
+    shapes[2].attr x: x, y: y - 20
+    
+    box = shapes[2].getBBox()
+    shapes[2][0].attr x: box.x - 2, y: box.y - 2
     
     
   updateNote: (target)->

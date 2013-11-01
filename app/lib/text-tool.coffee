@@ -141,7 +141,12 @@ class TextTool extends Tool
   draw: ->
     label = @widget.getLabel @controls.textInput[0]  ? ''
     
-    @label = @addShape 'text', 0, 0, label, font: '12px "Arial"', fill: @widget.colour 
+    text = @addShape 'text', 0, 0, label, font: '12px "Arial"', fill: 'black'
+    box = text.getBBox()
+    textbox = @addShape 'rect', box.x - 2 - box.width / 2, box.y - 2 - box.height / 2, box.width + 4, box.height + 4, fill: 'white', stroke: 'white'
+    text.toFront()
+    @label = @addShape 'set'
+    @label.push textbox, text
     dotShapes = @widget.mark @
     
     @dots = @surface.paper.set dotShapes
