@@ -148,6 +148,18 @@
 
     label
       line-height: 40px
+      opacity: .4
+      
+      &:hover
+        opacity: .8
+      
+    input[type=radio]
+
+      &:checked + label
+        opacity: 1
+
+      &:focus + label
+        opacity: .8
 
   div.toolbar
     transition: width 1s
