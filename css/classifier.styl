@@ -27,7 +27,6 @@
   width: 200px
   float: left
   margin: 0
-  background: #ccc
   height: 600px
   font-size: 1.2em
   
@@ -52,7 +51,8 @@
     
     li
       overflow: hidden
-      padding: 3px 3px 0
+      padding: 0
+      margin: 3px 3px 0
     
       label
         display: block
@@ -128,14 +128,14 @@
       input[type=radio]
         position: absolute
         left: -9999px
+        
+        &:focus + label
+          background-color: $lightgrey
       
         &:checked + label
           font-weight: bold
           opacity: 1
-          background-color: $darkgrey
-      
-        &:focus + label
-          background-color: $lightgrey
+          background-color: #333
     
   div.types
     transition: width 1s
