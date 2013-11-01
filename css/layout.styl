@@ -19,23 +19,29 @@
   
 .site-navigation
   text-align: center
-  font-size: 1.5em
   background: $black
   color: $white
   
   h1
     font-family: serif
+    font-size: 2em
+    line-height: 60px
+    vertical-align: middle
+    margin: 0
+    height: 60px
+    overflow: hidden
   
   .links
     overflow: hidden
     width: 800px
     margin: 0 auto
     position: relative
+    min-height: 60px
     
     button
       position: absolute
-      top: 10px
-      right: 100px
+      top: 20px
+      right: 130px
       border: none
       background-color: transparent
       text-indent: 10000px
@@ -46,7 +52,7 @@
   
   ul
     list-style: none
-    height: 2em
+    height: 60px
     overflow: hidden
     transition: height 1s
     margin: 0
@@ -56,9 +62,16 @@
     
     li
       display: inline-block
-      margin: 0 1em
+      margin: 0 2em
       text-transform: uppercase
+      line-height: 60px
+      vertical-align: middle
   
   a
     text-decoration: none
-    color: white
+    color: $lightgrey
+    font-size: 1.2em
+    
+    &:hover
+    &:focus
+      color: $white
