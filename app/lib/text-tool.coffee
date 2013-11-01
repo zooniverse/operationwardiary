@@ -73,7 +73,10 @@ class TextControls extends ToolControls
     label = @widget.getLabel currentTarget ? ''
     
     @tool.mark.note = @widget.updateNote currentTarget
-    @tool.label.attr 'text', label
+    @tool.label[1].attr 'text', label
+    
+    box = @tool.label[1].getBBox()
+    @tool.label[0].attr x: box.x - 2, y: box.y - 2, width: box.width + 4, height: box.height + 4
     
   save: =>
     @tool.surface.trigger 'change', @tool
