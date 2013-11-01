@@ -151,14 +151,14 @@ class TextTool extends Tool
     
     @shapeSet.attr opacity: 1
     
-    @label.attr opacity: 1
+    @label.show()
     
   deselect: =>
     super
     
     @shapeSet.attr opacity: 0.7
     
-    @label.attr opacity: .2
+    @label.hide()
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
@@ -189,10 +189,10 @@ class TextTool extends Tool
     @controls.onClickToggle e
   
   'on mouseover dots': (e, shape)=>
-    @label.attr opacity: 1
+    @label.show()
     
   'on mouseout dots': (e, shape)=>
-    @label.attr opacity: .2 unless @ is @surface.selection
+    @label.hide() unless @ is @surface.selection
     
   render: ->
     @widget.move @dots, @mark.p0[0], @mark.p0[1]
