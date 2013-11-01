@@ -10,6 +10,7 @@ class Navigation extends Spine.Controller
   elements:
     '.links button': 'menuButton'
     '.links ul': 'menu'
+    'h1 a': 'home'
     
   constructor: ->
     super
@@ -24,7 +25,21 @@ class Navigation extends Spine.Controller
     Spine.bind 'nav:open', =>
       @menu.removeClass 'closed'
       
+    @menu.on 'click', 'a', ({currentTarget})=>
+      @menu.find('a').removeClass 'active'
+      $(currentTarget).addClass 'active'
+      
+    @home.on 'click', =>
+      @menu.find('a').removeClass 'active'
+      @menu.find('a[href="#/"]').addClass 'active'
+      
   render: =>
     @html @template()
+    
+    hash = window.location.hash
+    
+    if hash != ''
+      @menu.find('a').removeClass 'active'
+      @menu.find("a[href='#{hash}']").addClass 'active'
 
 module.exports = Navigation

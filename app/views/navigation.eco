@@ -5,8 +5,8 @@
   <h1><a href="#/"><%- translate 'span', 'navigation.projectName' %></a></h1>
   <button>Menu</button>
   <ul>
-    <li><a href="#/"><%- translate 'span', 'navigation.home' %></a></li>
-    <li><a href="#classify"><%- translate 'span', 'navigation.classify' %></a></li>
+    <li><a class="active" href="#/"><%- translate 'span', 'navigation.home' %></a></li>
+    <li><a href="#/classify"><%- translate 'span', 'navigation.classify' %></a></li>
     <li><a href="#profile"><%- translate 'span', 'navigation.profile' %></a></li>
     <li><a href="#guide"><%- translate 'span', 'navigation.guide' %></a></li>
     <li><a href="#about"><%- translate 'span', 'navigation.about' %></a></li>
