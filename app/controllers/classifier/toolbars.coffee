@@ -10,6 +10,8 @@ class Toolbars extends Spine.Controller
       
   elements:
     '#document-metadata': 'metadata'
+    '.types': 'pageTypes'
+    '.toolbar': 'pageTools'
     
   helper:
     selectedCategory: (note) =>
@@ -43,8 +45,8 @@ class Toolbars extends Spine.Controller
         orders = WidgetFactory.makeWidget 'orders'
         @metadata.html orders.template
       
-    $('.types').addClass 'closed'
-    $('.toolbar').removeClass('closed').html toolbar.template
+    @pageTypes.addClass 'closed'
+    @pageTools.removeClass('closed').html toolbar.template
     $('.categories').css
       'visibility': 'visible'
   
@@ -65,11 +67,11 @@ class Toolbars extends Spine.Controller
       .prop('checked', false)
   
   reset: =>
-    $('.types').removeClass 'closed'
+    @pageTypes.removeClass 'closed'
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
       .prop('checked', false)
-    $('.toolbar').addClass('closed').html ''
+    @pageTools.addClass('closed').html ''
     @metadata.html ''
 
 module.exports = Toolbars
