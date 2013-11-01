@@ -37,7 +37,7 @@ class TextWidget
   colour: 'white'
   
   constructor: (@dotRadius) ->
-    @icon = "/images/icons/#{@type}.png"
+    @icon = "images/icons/#{@type}.png"
   
   render: (el)->
     @el = el
