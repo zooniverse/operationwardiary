@@ -17,6 +17,7 @@ class Comments extends Spine.Controller
     
   constructor: (@zooniverse_id)->
     super
+    $(@el).draggable()
     # uncomment this for testing
     # @zooniverse_id = 'AWD00001qt'
     request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"

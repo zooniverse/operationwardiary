@@ -9,6 +9,7 @@ class PageTimeline extends Spine.Controller
   
   constructor: ->
     super
+    $(@el).draggable()
     
   render: =>
     
