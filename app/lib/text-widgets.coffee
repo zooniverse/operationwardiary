@@ -47,14 +47,14 @@ class TextWidget
     icon = tool.addShape 'image', @icon, 0, 0, 20, 20
     circle.node.setAttributeNS null,"tabindex" , "0"
     [
-      circle
       icon
+      circle
       tool.label
     ]
     
   move: (shapes, x, y)->
-    shapes[0].attr cx: x, cy: y
-    shapes[1].attr x: x-10, y: y-10
+    shapes[1].attr cx: x, cy: y
+    shapes[0].attr x: x-10, y: y-10
     shapes[2].attr x: x, y: y - 15
     
     
