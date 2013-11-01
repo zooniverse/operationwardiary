@@ -36,6 +36,7 @@
     color: #fff
     line-height: 30px
     margin: 0
+    white-space: nowrap
     
   ul
     text-indent: 0
@@ -56,6 +57,7 @@
         padding-left: 50px
         background-position: 10px center
         background-repeat: no-repeat
+        white-space: nowrap
       
         &:hover
           background-color: $darkgrey
@@ -130,6 +132,7 @@
           background-color: $lightgrey
     
   div.types
+    transition: width 1s
     width: 75%
     float:left
     background: $darkgrey
@@ -142,6 +145,7 @@
       line-height: 40px
 
   div.toolbar
+    transition: width 1s
     width: 75%
     overflow: hidden
     float: left
