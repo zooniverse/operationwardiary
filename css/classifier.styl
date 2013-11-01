@@ -188,12 +188,12 @@
 
 
     input[type=radio]
+    
+      &:focus + label
+        background-color: $lightgreen
 
       &:checked + label
         background-color: $darkgreen
-
-      &:focus + label
-        background-color: $lightgreen
   
 .diary-title
   background: $greyblue
