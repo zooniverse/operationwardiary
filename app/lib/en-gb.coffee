@@ -12,7 +12,7 @@ module.exports =
     comment: 'Comment'
     timeline: 'Timeline'
     types: 'Page types'
-    tagging: 'Start tagging!'
+    tagging: 'Get tagging!'
 
   documents:
     cover: 'Cover page'
