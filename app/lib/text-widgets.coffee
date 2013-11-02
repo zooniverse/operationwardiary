@@ -63,8 +63,8 @@ class TextWidget
     shapes[0].attr x: x-10, y: y-10
     shapes[2].attr x: x, y: labely
     
-    box = shapes[2].getBBox()
-    shapes[2][0].attr x: box.x - 2, y: box.y - 2
+    box = shapes[2][1].getBBox()
+    shapes[2][0].attr x: box.x - 2, y: box.y - 2, width: box.width + 4, height: box.height + 4
     
     
   updateNote: (target)->
