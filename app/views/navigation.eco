@@ -2,8 +2,10 @@
 
 <div class="links">
   <a style="float:left;" href="https://docs.google.com/spreadsheet/viewform?usp=drive_web&formkey=dEUzT1B3OGtnOGZUZ2FTSjNSUXIzWGc6MA#gid=0">Feedback</a>
-  <h1><a href="#/"><%- translate 'span', 'navigation.projectName' %></a></h1>
-  <button>Menu</button>
+  <div class="header">
+    <h1><a href="#/"><%- translate 'span', 'navigation.projectName' %></a></h1>
+    <button>Menu</button>
+  </div>
   <ul>
     <li><a class="active" href="#/"><%- translate 'span', 'navigation.home' %></a></li>
     <li><a href="#/classify"><%- translate 'span', 'navigation.classify' %></a></li>
