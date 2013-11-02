@@ -200,9 +200,12 @@ class TextTool extends Tool
   
   'on mouseover dots': (e, shape)=>
     @label.show()
+    @shapeSet.attr opacity: 1
     
   'on mouseout dots': (e, shape)=>
-    @label.hide() unless @ is @surface.selection
+    unless @ is @surface.selection
+      @label.hide()
+      @shapeSet.attr opacity: 0.7
     
   render: ->
     @widget.move @dots, @mark.p0[0], @mark.p0[1]
