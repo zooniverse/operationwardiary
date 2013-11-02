@@ -32,17 +32,26 @@
   font-size: 1.2em
   
   h2
-    background-position: 10px center
-    background-repeat: no-repeat
     color: $white
     background-color: $black
     line-height: 30px
     margin: 0
     white-space: nowrap
-    padding-left: 50px
+    padding-left: 15px
     font-size: 1em
     font-weight: normal
     text-transform: none
+    
+    &:before
+      width: 20px
+      height: 20px
+      background: $white
+      color: $black
+      display: inline-block
+      border-radius: 10px
+      line-height: 20px
+      text-align: center
+      margin-right: 15px
     
   ul
     text-indent: 0
@@ -150,8 +159,9 @@
     &.closed
       width: 25%
       
-    h2
-      background-image: url(images/icons/tools.png)
+    h2:before
+      content: '1'
+      
 
     label
       line-height: 40px
@@ -180,8 +190,11 @@
       width: 25%
     
     h2
-      background-image: url(images/icons/tools.png)
       background-color: $midgreen
+      
+      &:before
+        content: '2'
+        color: $midgreen
 
     label
       line-height: 40px
