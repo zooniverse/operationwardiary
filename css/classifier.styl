@@ -171,12 +171,12 @@
         opacity: .8
       
     input[type=radio]
+    
+      &:focus + label
+        opacity: .8
 
       &:checked + label
         opacity: 1
-
-      &:focus + label
-        opacity: .8
 
   div.toolbar
     transition: width 1s
