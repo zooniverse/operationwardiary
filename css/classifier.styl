@@ -428,7 +428,7 @@
     vertical-align: middle
     text-transform: uppercase
     
-  div:nth-child(2n)
+  div:nth-of-type(2n+1)
     background: $darkgrey
     
   p.author
@@ -461,7 +461,7 @@ div.subject-timeline
       padding: .5em 1em
       margin: 0
   
-      &:nth-child(2n+1)
+      &:nth-of-type(2n+1)
         background: $darkgrey
 
       &.date
