@@ -17,7 +17,7 @@ class GroupDetails extends Spine.Controller
   constructor: ->
     super
     
-    Group.on 'fetch', @onGroupFetch
+    # Group.on 'fetch', @onGroupFetch
 
   render: (@group)=>
     startdate = new Date @group.metadata.start_date

@@ -8,6 +8,8 @@ store = $.jStorage
 Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
+Recent = require 'zooniverse/models/recent'
+Api = require 'zooniverse/lib/api'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
@@ -158,9 +160,15 @@ class Classifier extends Spine.Controller
     @user = user
     
     if user_changed
-      Subject.destroyAll()
-      Subject.next()
-
+      Recent.one 'fetch', (e, recents)=>
+        subject_id = recents[recents.length-1].subjects[0].zooniverse_id
+        console.log subject_id
+        request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+        
+        request.done ({group_id}) =>
+          console.log group_id
+          $('#diary_picker').val group_id
+          @group_picker.refresh_group()
     
 
   onSubjectFetch: (e, subjects) =>
