@@ -20,6 +20,8 @@ class GroupPicker extends Spine.Controller
       
     @html @template
       groups: @groups
+      
+    $('#diary_picker').val store.get 'group_id', '5241bcf43ae7406825000003'
   
   onGroupFetch: (e, @groups) =>
     @render()
