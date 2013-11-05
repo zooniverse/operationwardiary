@@ -160,16 +160,21 @@ class Classifier extends Spine.Controller
     @user = user
     
     if user_changed
-      Recent.one 'fetch', (e, recents)=>
-        subject_id = recents[recents.length-1].subjects[0].zooniverse_id
-        console.log subject_id
-        request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
-        
-        request.done ({group_id}) =>
-          console.log group_id
-          $('#diary_picker').val group_id
-          @group_picker.refresh_group()
-    
+      Subject.destroyAll()
+      
+      if user
+        Recent.fetch()
+          .pipe( (recents) =>
+            subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
+            console.log subject_id
+            Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+          )
+          .done ({group_id}) =>
+            console.log group_id
+            $('#diary_picker').val group_id
+            @group_picker.refresh_group()
+      else
+        Subject.next()
 
   onSubjectFetch: (e, subjects) =>
       
