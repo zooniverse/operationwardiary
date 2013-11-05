@@ -165,9 +165,16 @@ class Classifier extends Spine.Controller
       if user
         Recent.fetch()
           .pipe( (recents) =>
-            subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
-            console.log subject_id
-            Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+            
+            if recents.length
+              subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
+              console.log subject_id
+              promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+            else
+              promise = new $.Deferred
+              promise.resolve group_id: '5241bcf43ae7406825000003'
+            
+            promise
           )
           .done ({group_id}) =>
             console.log group_id
