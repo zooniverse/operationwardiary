@@ -1,5 +1,5 @@
 {
-  "name": "project-example",
+  "name": "war-diaries",
   "version": "0.0.1",
   "dependencies": {
     "es5-shimify": "~0.0.1",
