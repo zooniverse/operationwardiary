@@ -37,6 +37,8 @@ class Classifier extends Spine.Controller
     
   
   cacheNotes: true
+  
+  user: null
     
   defaults = 
     category: 'date'
@@ -152,12 +154,12 @@ class Classifier extends Spine.Controller
 
   onUserChange: (e, user) =>
     # user, User.current
-
-    if user
-      # console.log 'TRIGGERING GROUP REFRESH'
-#       @group_picker.refresh_group()
-    else
-      Route.navigate '/'
+    user_changed = @user?.zooniverse_id != user?.zooniverse_id
+    @user = user
+    
+    if user_changed
+      Subject.destroyAll()
+      Subject.next()
 
     
 
