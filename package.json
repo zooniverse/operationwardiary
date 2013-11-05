@@ -9,7 +9,7 @@
     "marking-surface": "~0.0.15",
     "publisssh": "git://github.com/brian-c/publisssh.git",
     "zootorial": "git://github.com/brian-c/zootorial.git#new-features",
-    "zooniverse": "git://github.com/zooniverse/Zooniverse.git#no-deps",
+    "zooniverse": "git://github.com/zooniverse/Zooniverse.git",
     "spine": "~1.1.0",
     "t7e": "~0.1.3"
   },
