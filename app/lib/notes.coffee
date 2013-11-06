@@ -121,7 +121,7 @@ labels =
     'fine'
     'storm'
     'hot'
-    'rain'
+    'heavy_rain'
     'fog'
     'overcast'
     'rain'
