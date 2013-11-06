@@ -114,7 +114,7 @@ module.exports =
     fine: 'Fine'
     storm: 'Stormy'
     hot: 'Very hot'
-    rain: 'Heavy rain'
+    heavy_rain: 'Heavy rain'
     fog: 'Fog'
     overcast: 'Overcast'
     rain: 'Rain'
