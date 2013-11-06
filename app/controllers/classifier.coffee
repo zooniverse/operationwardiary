@@ -202,6 +202,9 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
+    @comments?.el.remove()
+    @timeline?.el.remove()
+    
     @timeline = new PageTimeline
     
     # @toolbars.el.find( '.timeline' ).html @timeline.el
