@@ -108,6 +108,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         @update_place place
       
         
+    note = @update_notes()
     note
   
   update_notes: =>
