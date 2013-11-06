@@ -128,6 +128,9 @@ class Classifier extends Spine.Controller
         @timeline.createEntries @surface.tools
         @timeline.render()
       
+      
+    @toolbars.on 'reset', =>
+      @update_history()
     
 
   render: =>

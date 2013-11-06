@@ -38,7 +38,9 @@ class Toolbars extends Spine.Controller
       .find('h2')
       .attr('tabindex', '0')
       .attr('role', 'button')
-      .on 'click keypress', @reset
+      .on 'click keypress', =>
+        @reset()
+        @trigger 'reset'
     
   toggleCategories: ->
     category = $('.documents :checked').val()
