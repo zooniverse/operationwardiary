@@ -95,9 +95,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .find('.suggestions')
       .html ''
     
-    place = @el.find('input[name=place]').val()
+    placename = @el.find('input[name=place]').val()
     
-    @gc.geocode( place )
+    @gc.geocode( placename )
       .pipe( (places) =>
         @choose_place places
       )
@@ -145,8 +145,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .find( 'input[name=name]')
       .val( name )
     
-    note = @update_notes()
-    @gc.save_place( note.place, place )
+    placename = @el.find('input[name=place]').val()
+    @gc.save_place( placename, place )
   
     @show_place lat, long
     
