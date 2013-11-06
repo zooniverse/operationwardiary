@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "es5-shimify": "~0.0.1",
-    "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "haw": "0.0.7",
     "marking-surface": "~0.0.15",
