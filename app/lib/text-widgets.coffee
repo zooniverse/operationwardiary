@@ -1,7 +1,3 @@
-$ = require 'jqueryify'
-require './jquery-ui-1.10.3.custom.min.js'
-require './jquery.ui.map.full.min.js'
-
 translate = require 't7e'
 labels = require './notes'
 Geocoder = require './geocoder'

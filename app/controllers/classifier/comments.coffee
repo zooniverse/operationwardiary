@@ -1,4 +1,3 @@
-$ = require 'jqueryify'
 Spine = require 'spine'
 Subject = require 'zooniverse/models/subject'
 Api = require 'zooniverse/lib/api'
