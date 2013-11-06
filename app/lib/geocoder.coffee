@@ -1,4 +1,3 @@
-$ = require 'jqueryify'
 require './jstorage.js'
 store = $.jStorage
 

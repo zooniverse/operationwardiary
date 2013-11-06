@@ -1,4 +1,3 @@
-$ = require 'jqueryify'
 Spine = require 'spine'
 {Route} = Spine
 
