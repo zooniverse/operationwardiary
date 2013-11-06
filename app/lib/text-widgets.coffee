@@ -159,7 +159,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   render: (el)->
     super
     return unless google? && google.maps?
-    @gmap = $('.map', el)
+    @gmap = $('.map', @el)
       .gmap
         zoom: 9
         mapTypeId: google.maps.MapTypeId.TERRAIN
