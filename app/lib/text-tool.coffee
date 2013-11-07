@@ -144,7 +144,7 @@ class TextTool extends Tool
   draw: ->
     label = @widget.getLabel @controls.textInput[0]  ? ''
     
-    text = @addShape 'text', 0, 0, label, fill: 'black'
+    text = @addShape 'text', 0, 0, label, fill: 'grey'
     box = text.getBBox()
     x = box.x - box.width / 2
     y = box.y - box.height / 2
