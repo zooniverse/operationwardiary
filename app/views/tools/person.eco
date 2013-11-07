@@ -3,7 +3,7 @@
 
 
 <div class="annotation">
-  <label>Rank<br>
+  <label>Rank
     <select name="rank">
       <% for rank in @ranks: %>
         <option><%= rank %></option>
@@ -20,7 +20,7 @@
     <input name="number" type="text">
   </label>
   
-  <label>Context<br>
+  <label>Context
     <select name="context">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
