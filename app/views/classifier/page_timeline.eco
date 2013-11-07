@@ -2,7 +2,7 @@
 <%- translate 'h2', "common.timeline" %>
 <ul>
   <% for entry in @entries: %>
-    <li class="date"><span><%= entry.label %></span>
+    <li class="entry"><span class="date"><%= entry.label %></span>
         <% for place in entry.items: %>
             <% if place.label?: %> <span class="placename"><%= place.label %></span><% end %>
               <% for time in place.items: %>

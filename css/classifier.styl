@@ -364,6 +364,9 @@
     color: $darkgrey
     font-family: $mont
     
+    &[type=checkbox]
+      float: right
+    
     &[type=number]
       width: 3em
       margin-bottom: .5em
@@ -498,25 +501,41 @@ div.subject-timeline
     overflow: auto
 
     li
-      padding: .5em 1em
+      padding: 0
       margin: 0
   
       &:nth-of-type(2n+1)
         background: $darkgrey
 
-      &.date
+      &.entry
         margin-bottom: 0
         padding-bottom: .5em
     
         > span
-          padding: .5em 0
-      .placename
-        margin: 0
-        padding: 0.5em 0
-        margin-bottom: .5em
+          display: inline-block
+          padding: 0.5em 0
+          margin: 0
+          background: $midgreen
+          margin-bottom: .5em
+          width: 50%
+          
+          &.date
+            font-family: $mont
+            font-weight: bold
+            padding-left: 2em
+            width: 40%
+          
+          &.placename
+            margin: 0
+            margin-left: -1em
+            width: 54%
+          
+      
   
       .time
-        padding: 0
+        padding: 0 0 0 2em
         margin: 0 0 .5em 0
+        background: transparent
+        font-family: $helv
         > b
           font-weight: normal
