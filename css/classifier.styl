@@ -508,39 +508,38 @@ div.subject-timeline
     li
       padding: 0
       margin: 0
+      background: $midgreen
+      
+      .time
+        background: $black
   
       &:nth-of-type(2n+1)
-        background: $darkgrey
+      
+        .time
+          background: $darkgrey
 
-      &.entry
-        margin-bottom: 0
-        padding-bottom: .5em
     
-        > span
-          display: inline-block
-          padding: 0.5em 0
-          margin: 0
+      > span
+        display: inline-block
+        padding: 0.5em 0
+        margin: 0
+        
+        &.date
+          font-family: $mont
+          font-weight: bold
+          padding-left: 2em
           background: $midgreen
-          margin-bottom: .5em
-          width: 50%
-          
-          &.date
-            font-family: $mont
-            font-weight: bold
-            padding-left: 2em
-            width: 40%
-          
-          &.placename
-            margin: 0
-            margin-left: -1em
-            width: 54%
+        
+        &.placename
+          margin: 0
+          padding-right: .5em
           
       
   
       .time
         padding: 0 0 0 2em
-        margin: 0 0 .5em 0
-        background: transparent
+        margin: .5em 0
         font-family: $helv
+        clear: both
         > b
           font-weight: normal
