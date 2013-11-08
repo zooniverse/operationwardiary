@@ -9,7 +9,7 @@
     background: transparent
     overflow: hidden
     
-    &:after {
+    &:after
       content: "";
       background: url(images/backgrounds/Royal_Irish_Rifles_ration_party_Somme_July_1916.jpg) no-repeat
       background-size: 100%
@@ -20,15 +20,23 @@
       height: 800px
       position: absolute
       z-index: -1
-    }
     
     h1
       font-size: 2em
       font-family: $mont
       width: 30%
-      margin: auto
+      margin: 0 auto
       opacity: 1
+      padding: 1em 0
+      
+      &:before
+      &:after
+        content: '—'
+        display: block
 
     div
       font-size: 1.2em
       opacity: 1
+      padding: 4em 0
+      width: 40%
+      margin: auto
