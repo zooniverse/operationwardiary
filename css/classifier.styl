@@ -512,6 +512,15 @@ div.subject-timeline
       
       .time
         background: $black
+        margin: 0
+        padding: 0.5em 1em 0 3em
+        clear: both
+        > b
+          font-weight: normal
+          color: $lightblue
+          
+        &:last-of-type
+          padding-bottom: 1em
   
       &:nth-of-type(2n+1)
       
@@ -521,25 +530,21 @@ div.subject-timeline
     
       > span
         display: inline-block
-        padding: 0.3em 0
+        padding: .5em 0
         margin: 0
         
         &.date
           font-family: $mont
           font-weight: bold
-          padding-left: 2em
+          padding-left: 3em
           background: $midgreen
+          
+          + .placename
+            padding-left: .5em
         
         &.placename
           margin: 0
-          padding-right: .5em
-          
-      
-  
-      .time
-        padding: 0 0 0 2em
-        margin: 1em 0
-        font-family: $helv
-        clear: both
-        > b
-          font-weight: normal
+          padding-right: 1em
+          padding-left: 3em
+          float: right
+        
