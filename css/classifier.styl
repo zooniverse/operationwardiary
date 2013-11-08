@@ -506,21 +506,22 @@ div.subject-timeline
     overflow: auto
 
     li
-      padding: 0
+      padding: .5em 0 0
       margin: 0
       background: $midgreen
       
       .time
+        line-height: 1.6
         background: $black
         margin: 0
-        padding: 0.5em 1em 0 3em
+        padding: 0 5em .5em 3em
         clear: both
         > b
           font-weight: normal
           color: $lightblue
           
-        &:last-of-type
-          padding-bottom: 1em
+        &:first-of-type
+          padding-top: .5em
   
       &:nth-of-type(2n+1)
       
@@ -530,7 +531,7 @@ div.subject-timeline
     
       > span
         display: inline-block
-        padding: .3em 0
+        padding: 0 0 .3em
         margin: 0
         
         &.date
@@ -545,6 +546,6 @@ div.subject-timeline
         &.placename
           margin: 0
           padding-right: 1em
-          padding-left: 3em
+          padding-left: 5em
           float: right
         
