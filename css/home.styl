@@ -1,16 +1,34 @@
 .home
+  
   .description
     display: table-cell
     width: 1185px
     text-align: center
-    height: 400px
+    height: 600px
     vertical-align: middle
-  
+    background: transparent
+    overflow: hidden
+    
+    &:after {
+      content: "";
+      background: url(images/backgrounds/Royal_Irish_Rifles_ration_party_Somme_July_1916.jpg) no-repeat
+      background-size: 100%
+      opacity: 0.3
+      top: 0
+      left: 0
+      right: 0
+      height: 600px
+      position: absolute
+      z-index: -1
+    }
+    
     h1
       font-size: 2em
       font-family: $mont
       width: 30%
       margin: auto
+      opacity: 1
 
     div
       font-size: 1.2em
+      opacity: 1
