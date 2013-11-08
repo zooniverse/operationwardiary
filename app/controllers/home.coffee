@@ -3,6 +3,7 @@ Footer = require 'zooniverse/controllers/footer'
 
 class Home extends Spine.Controller
   template: require '../views/home'
+  className: 'home'
   
   constructor: ->
     super
