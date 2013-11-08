@@ -131,9 +131,9 @@ module.exports =
 
   home:
     projectDescription: '''
-      <p>Help us transcribe the British Army diaries, from the Western Front, by recording times, people, places and events.</p>
+      <p>Help historians by tagging the people, places and activities in 1.5 million pages of official First World War diaries.</p>
     '''
-    title: 'Map the First World War'
+    title: 'Reveal the story of the British Army on the Western Front'
     start: 'Start searching'
     about: 'About'
     images: 'Images'
