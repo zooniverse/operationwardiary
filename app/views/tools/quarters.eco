@@ -2,10 +2,12 @@
 
 
 <div class="annotation">
-  <select>
-    <% for quarter in @choices: %>
-      <option value="<%= quarter %>"><%- translate 'span', "quarters.#{quarter}" %></option>
-    <% end %>
-  </select>
-  <option value="other"><%- translate 'span', "common.other" %></option>
+  <label>Quarters
+    <select>
+      <% for quarter in @choices: %>
+        <option value="<%= quarter %>"><%- translate 'span', "quarters.#{quarter}" %></option>
+      <% end %>
+      <option value="other"><%- translate 'span', "common.other" %></option>
+    </select>
+    </label>
 </div>
