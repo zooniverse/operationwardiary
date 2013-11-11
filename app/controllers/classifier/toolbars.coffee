@@ -47,6 +47,7 @@ class Toolbars extends Spine.Controller
     @metadata.html ''
     
     toolbar = toolbars[ category ] ? { template: '' }
+    @pageTools.find('.tags').html toolbar.template
       
     switch category
       when 'orders'
@@ -54,10 +55,8 @@ class Toolbars extends Spine.Controller
         @metadata.html orders.template
       
     
-    @pageTools.html toolbar.template
-    if toolbar.template != ''
-      @pageTypes.addClass 'closed'
-      @pageTools.removeClass 'closed'
+    @pageTypes.addClass 'closed'
+    @pageTools.removeClass 'closed'
       
     $('.categories').css
       'visibility': 'visible'
@@ -83,7 +82,7 @@ class Toolbars extends Spine.Controller
     $('.categories :checked, .documents :checked')
       .removeAttr('checked')
       .prop('checked', false)
-    @pageTools.addClass('closed').html ''
+    @pageTools.addClass('closed').find('.tags').html ''
     @metadata.html ''
 
 module.exports = Toolbars

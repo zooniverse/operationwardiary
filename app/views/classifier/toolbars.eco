@@ -16,7 +16,9 @@
       </li>
     <% end %>
   </ul>
-  <div id="document-metadata" class=""></div>
   <div class="timeline"></div>
 </div>
-<div class="toolbar closed"></div>
+<div class="toolbar closed">
+  <div class="tags"></div>
+  <div id="document-metadata" class=""></div>
+</div>

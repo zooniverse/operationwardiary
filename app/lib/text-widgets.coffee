@@ -18,6 +18,11 @@ class OrdersToolbar extends Toolbar
 class SignalsToolbar extends Toolbar
   
   tags: labels.toolbars.signals
+  
+class DefaultToolbar extends Toolbar
+  
+  constructor: ->
+    @template = require('../views/toolbars/default')( @ )
 
 
 class WidgetFactory
@@ -551,5 +556,9 @@ Editor =
     diary: new DiaryToolbar
     orders: new OrdersToolbar
     signals: new SignalsToolbar
+    blank: new DefaultToolbar
+    cover: new DefaultToolbar
+    report: new DefaultToolbar
+    other: new DefaultToolbar
 
 module.exports = Editor

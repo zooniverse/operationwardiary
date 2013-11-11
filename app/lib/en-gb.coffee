@@ -13,6 +13,8 @@ module.exports =
     timeline: 'Timeline'
     types: 'Page types'
     tagging: 'Get tagging!'
+    done: 'All done'
+    easy: "That was easy! Click 'Finished' to move on to the next page."
 
   documents:
     cover: 'Cover page'

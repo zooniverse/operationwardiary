@@ -1,0 +1,3 @@
+<% translate = require 't7e' %>
+<%- translate 'h2', "common.done" %>
+<%- translate 'p', "common.easy" %>
