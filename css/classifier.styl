@@ -206,28 +206,33 @@
     &.closed
       width: 27%
     
-    h2
-      background-color: $midgreen
+    #document-metadata
+      text-align: center
       
-      &:before
-        content: '2'
-        color: $midgreen
-
-    label
-      line-height: 40px
-
-
-      &:hover
-        background-color: $lightgreen
-
-
-    input[type=radio]
+    .tags
     
-      &:focus + label
-        background-color: $lightgreen
+      h2
+        background-color: $midgreen
+      
+        &:before
+          content: '2'
+          color: $midgreen
 
-      &:checked + label
-        background-color: $darkgreen
+      label
+        line-height: 40px
+
+
+        &:hover
+          background-color: $lightgreen
+
+
+      input[type=radio]
+    
+        &:focus + label
+          background-color: $lightgreen
+
+        &:checked + label
+          background-color: $darkgreen
   
 .diary-title
   background: $greyblue
