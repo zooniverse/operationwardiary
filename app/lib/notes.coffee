@@ -43,24 +43,18 @@ labels =
     ]
   
   activities: [
-    'rest'
-    'trench'
+    'domestic'
     'repair'
-    'movement_1'
-    'movement_2'
-    'movement_3'
+    'movement'
+    'reconnoitered'
     'training'
-    'fire'
+    'line'
     'attack'
     'raid'
     'withdraw'
-    'line'
-    'routine'
-    'domestic'
     'quiet'
-    'artillery'
-    'enemy_movement'
-    'reconnoitered'
+    'fire'
+    'enemy_activity'
     'strength'
   ]
   
