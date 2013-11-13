@@ -148,37 +148,37 @@ module.exports =
   guide:
     title: 'Transcribing the diaries'
     content: '''
-      <p>Overview of transcribing the papers.</p>
+      <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! We need to know what type of information it contains by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples choose one Classification: Blank Page,Cover Page, Diary Page, Orders, Signal, Report, Other</p>
     '''
     diaries:
-      title: 'British Army Diaries'
-      content: '''
-        <p>Summary goes here.</p>
-      '''
 
       blank:
         title: 'Blank page'
-        content: 'TODO'
+        content: 'You may come across a blank page, possibly a cover or a piece of paper folded around a series of pages, or an unused diary page or signal sheet. You can also include anything with \'intentionally blank\' written on it in this class.'
 
       cover:
         title: 'Cover page'
-        content: 'TODO'
+        content: 'Each diary section had a cover page with the name of the unit and dates included. When the diary was passed up the army chain of command and then into the care of TNA additional cover pages may have been added. You can include anything that just contains title information.'
       
       diary:
         title: 'C2118 form'
-        content: 'TODO'
+        content: 'The pre-printed C2118 forms provided units with a structured way in which to record essential information about their activities. But when some units mobilized (went on active service) the  forms were not available so officers used their notebooks. It is most common to find this happen in the early months of the war from August 1914 and when units first went overseas. You can include any page that has been written as a diary entry even if it isn\'t on a C2118 form. Once you have classified an item as a Diary Page you can then start tagging key pieces of information on that page.'
         
-      map:
-        title: 'Maps'
-        content: 'TODO'
+      signals:
+        title: 'Signals Pads'
+        content: 'Signals pads were used for short, urgent messages between front line positions and unit headquarters (HQ) or between unit HQ and their command chain. They may have been delivered by a \'runner\'. Once you have classified an item as a Signal you can then tag key pieces of information.'
+      
+      orders:
+        title: 'Orders'
+        content: 'Orders were official army instructions, issued in a cascade system from the top of the hierarchy to the bottom. Each Order had a specific purpose and covered a single subject or event. They were issued on every aspect of army life and activity. Once you have classified an item as an Order you can then tag key pieces of information including what the instructions were for.'
       
       report:
         title: 'Reports'
-        content: 'TODO'
+        content: 'Reports and appendices are used to provide detailed accounts of a raid or attack or other significant incident, Unit Strength, Casualties or nominal roll.There is often a short entry in the C2118 diary page which references the appendix or report.'
       
       other:
         title: 'Other documents'
-        content: 'TODO'
+        content: 'The diary may include other materials such as maps, sketches, plans, photographs etc. You can include anything not listed in any of the other classes. '
 
   about:
     diaries:
