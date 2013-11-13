@@ -18,6 +18,10 @@ class OrdersToolbar extends Toolbar
 class SignalsToolbar extends Toolbar
   
   tags: labels.toolbars.signals
+
+class ReportToolbar extends Toolbar
+  
+  tags: labels.toolbars.report
   
 class DefaultToolbar extends Toolbar
   
@@ -558,7 +562,7 @@ Editor =
     signals: new SignalsToolbar
     blank: new DefaultToolbar
     cover: new DefaultToolbar
-    report: new DefaultToolbar
+    report: new ReportToolbar
     other: new DefaultToolbar
 
 module.exports = Editor
