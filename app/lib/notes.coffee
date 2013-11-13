@@ -59,9 +59,11 @@ labels =
   ]
   
   casualties: [
-    'killed'
-    'died'
+    'sick'
     'wounded'
+    'died'
+    'missing'
+    'killed'
     'prisoner'
   ]
   

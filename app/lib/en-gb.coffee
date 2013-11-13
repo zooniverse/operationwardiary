@@ -58,6 +58,8 @@ module.exports =
     strength: 'Unit strength'
     
   casualties:
+    sick: 'Sick'
+    missing: 'Missing'
     killed: 'Killed in action'
     died: 'Died of wounds'
     wounded: 'Wounded'
