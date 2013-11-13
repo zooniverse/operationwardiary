@@ -1,50 +1,18 @@
 <% translate = require 't7e' %>
 
-<div class="organizations team">
-  <%- translate 'h1', "about.organizations.heading" %>
-
-  <% organizations = ['rsmas', 'uMiami', 'adler', 'zooniverse'] %>
-
-  <% for organization in organizations: %>
-    <div class="member organization">
-      <a href="<%- translate "about.organizations.#{organization}.url" %>">
-        <img src="<%- translate "about.organizations.#{organization}.image" %>" />
-        <%- translate 'div.name', "about.organizations.#{organization}.name" %>
-      </a>
-    </div>
-  <% end %>
+<div class="main">
+  <%- translate 'h2', 'about.diaries.title' %>
+  <%- translate 'div', 'about.diaries.text' %>
+  
+  <%- translate 'h2', 'about.questions.title' %>
+  <%- translate 'div', 'about.questions.text' %>
+  
+</div>
+<div class="sidebar">
+  <%- translate 'h2', 'about.project.title' %>
+  <%- translate 'div', 'about.project.text' %>
+  
+  <%- translate 'h2', 'about.platform.title' %>
+  <%- translate 'div', 'about.platform.text' %>
 </div>
 
-<div class="science team">
-  <%- translate 'h1', "about.scientists.heading" %>
-
-  <% scientists = ['cowen', 'guigand', 'cousin', 'greer', 'luo', 'tang', 'grassian'] %>
-
-  <% for scientist in scientists: %>
-    <div class="science member">
-      <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
-      <%- translate 'div.name', "about.scientists.#{scientist}.name" %>
-
-      <div class="description-popup">
-        <%- translate 'p.description', "about.scientists.#{scientist}.description" %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div class="development team">
-  <%- translate 'h1', "about.developers.heading" %>
-
-  <% developers = ['borden', 'carstensen', 'lintott', 'miller', 'parrish', 'smith'] %>
-
-  <% for developer in developers: %>
-    <div class="development member">
-      <img src="<%- translate "about.developers.#{developer}.image" %>" />
-      <%- translate 'div.name', "about.developers.#{developer}.name" %>
-
-      <div class="description-popup">
-        <%- translate 'p.description', "about.developers.#{developer}.description" %>
-      </div>
-    </div>
-  <% end %>
-</div>
