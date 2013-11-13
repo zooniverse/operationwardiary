@@ -20,8 +20,8 @@
     <input name="number" type="text">
   </label>
   
-  <label>Context
-    <select name="context">
+  <label>Reason
+    <select name="reason">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
       <% end %>

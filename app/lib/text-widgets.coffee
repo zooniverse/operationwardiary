@@ -257,7 +257,7 @@ WidgetFactory.registry.person = class PersonWidget extends TextWidget
       first: ''
       surname: ''
       number: ''
-      context: ''
+      reason: ''
       unit: ''
     
     $( target )
