@@ -15,7 +15,7 @@ labels =
     
     orders: [
       'date'
-      'order'
+      'orders'
       'reference'
     ]
     

@@ -42,7 +42,7 @@ module.exports =
     mapRef: 'Map sheet'
     gridRef: 'Grid ref'
     signals: 'Reason'
-    order: 'Type'
+    orders: 'Type'
     
   activities:
     domestic: 'Domestic & army life'
