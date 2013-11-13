@@ -41,6 +41,7 @@ module.exports =
     reference: 'Reference'
     mapRef: 'Map sheet'
     gridRef: 'Grid ref'
+    signals: 'Reason'
     
   activities:
     domestic: 'Domestic & army life'

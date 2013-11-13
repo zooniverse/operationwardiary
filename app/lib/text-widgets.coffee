@@ -477,6 +477,17 @@ WidgetFactory.registry.orders = class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
   
   type: 'orders'
+  
+  getLabel: (target) ->
+    $(target).find(':selected').text()
+  
+WidgetFactory.registry.signals = class SignalsWidget extends TextWidget
+  template: require( '../views/tools/signals' )( types: labels.signals )
+  
+  type: 'signals'
+  
+  getLabel: (target) ->
+    $(target).find(':selected').text()
 
 
 WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget

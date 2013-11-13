@@ -21,6 +21,7 @@ labels =
     signals: [
       'date'
       'time'
+      'signals'
       'person'
       'mapRef'
       'gridRef'
@@ -73,6 +74,13 @@ labels =
     'withdraw'
     'entrench'
     'training'
+  ]
+  
+  signals: [
+    'situation'
+    'request'
+    'order'
+    'warning'
   ]
   
   person: [
