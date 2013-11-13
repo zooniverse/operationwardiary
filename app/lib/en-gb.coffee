@@ -43,6 +43,7 @@ module.exports =
     gridRef: 'Grid ref'
     signals: 'Reason'
     orders: 'Type'
+    title: 'Title'
     
   activities:
     domestic: 'Domestic & army life'

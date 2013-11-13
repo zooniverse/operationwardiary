@@ -30,6 +30,7 @@ labels =
     
     report: [
       'date'
+      'title'
       'reference'
       'person'
     ]

@@ -489,6 +489,11 @@ WidgetFactory.registry.signals = class SignalsWidget extends TextWidget
   getLabel: (target) ->
     $(target).find(':selected').text()
 
+WidgetFactory.registry.title = class TitleWidget extends TextWidget
+  template: require '../views/tools/title'
+  
+  type: 'title'
+  
 
 WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget
   template: require '../views/tools/reference'
