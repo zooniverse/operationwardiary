@@ -39,7 +39,7 @@ module.exports =
     casualties: 'Casualties'
     weather: 'Weather'
     reference: 'Reference'
-    mapRef: 'Map ref'
+    mapRef: 'Map sheet'
     gridRef: 'Grid ref'
     
   activities:
