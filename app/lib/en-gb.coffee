@@ -109,13 +109,12 @@ module.exports =
     
     
   weather:
-    fine: 'Fine'
-    storm: 'Stormy'
-    hot: 'Very hot'
-    heavy_rain: 'Heavy rain'
+    fine: 'Dry/Fine/Sunny'
+    hot: 'Hot/Very hot'
+    overcast: 'Dull/Overcast/Drizzle'
+    rain: 'Rain/Storm'
     fog: 'Fog'
-    overcast: 'Overcast'
-    rain: 'Rain'
+    cold: 'Cold/Very cold/Snow'
 
   navigation:
     projectName: PROJECT_NAME

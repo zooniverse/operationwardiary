@@ -115,12 +115,11 @@ labels =
   
   weather: [
     'fine'
-    'storm'
     'hot'
-    'heavy_rain'
-    'fog'
     'overcast'
     'rain'
+    'fog'
+    'cold'
   ]  
 
 module.exports = labels
