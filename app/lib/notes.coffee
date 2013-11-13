@@ -5,9 +5,7 @@ labels =
       'time'
       'place'
       'person'
-      'unit'
       'activity'
-      'quarters'
       'casualties'
       'weather'
       'reference'
@@ -23,13 +21,15 @@ labels =
     signals: [
       'date'
       'time'
-      'place'
       'person'
-      'unit'
-      'activity'
-      'quarters'
-      'casualties'
-      'weather'
+      'mapRef'
+      'gridRef'
+    ]
+    
+    report: [
+      'date'
+      'reference'
+      'person'
     ]
 
     documents: [
