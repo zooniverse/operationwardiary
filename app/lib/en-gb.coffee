@@ -71,6 +71,12 @@ module.exports =
     withdraw: 'Withdrawal'
     entrench: 'Entrenching'
     training: 'Training'
+    
+  signals:
+    situation: 'Situation report'
+    request: 'Request for assistance'
+    order: 'Order to attack/withdraw'
+    warning: 'Warning of enemy activity'
   
   person:
     author: 'Author of diary'
