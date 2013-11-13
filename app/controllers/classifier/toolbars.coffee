@@ -49,10 +49,10 @@ class Toolbars extends Spine.Controller
     toolbar = toolbars[ category ] ? { template: '' }
     @pageTools.find('.tags').html toolbar.template
       
-    switch category
-      when 'orders'
-        orders = WidgetFactory.makeWidget 'orders'
-        @metadata.html orders.template
+    # switch category
+    #   when 'orders'
+    #     orders = WidgetFactory.makeWidget 'orders'
+    #     @metadata.html orders.template
       
     
     @pageTypes.addClass 'closed'

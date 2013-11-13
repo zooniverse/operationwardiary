@@ -14,8 +14,9 @@ labels =
     ]
     
     orders: [
-      'reference'
       'date'
+      'order'
+      'reference'
     ]
     
     signals: [
