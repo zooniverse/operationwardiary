@@ -74,6 +74,8 @@ module.exports =
     withdraw: 'Withdrawal'
     entrench: 'Entrenching'
     training: 'Training'
+    standing: 'Standing'
+    routine: 'Routine'
     
   signals:
     situation: 'Situation report'

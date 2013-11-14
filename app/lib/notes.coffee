@@ -16,6 +16,7 @@ labels =
     orders: [
       'date'
       'orders'
+      'person'
       'reference'
     ]
     
@@ -76,6 +77,8 @@ labels =
     'withdraw'
     'entrench'
     'training'
+    'standing'
+    'routine'
   ]
   
   signals: [
