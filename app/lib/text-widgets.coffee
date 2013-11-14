@@ -558,16 +558,22 @@ WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   
   updateNote: (target) ->
     
-    note = 
-      gridref: ''
+    note = {}
     
-    $(target)
-      .parents( '.annotation' )
-      .find( ':input' )
+    @el
+      .find( '.annotation :input' )
       .each ->
         note[@name] = @value
     
     note
+    
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
+    
+    labels = (value for key, value of note)
+    
+    labels.join ' '
 
 
 Editor =

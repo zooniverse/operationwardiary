@@ -2,7 +2,11 @@
 
 
 <div class="annotation">
-  <label>Grid Reference 
-    <input name="gridref" type="text"/>
-  </label>
+  <label>Grid Reference</label>
+    <input name="gridref_a" type="text" size="1" placeholder="A"/>
+    <input name="gridref_b" type="number" placeholder="35" size="2" />
+    <input name="gridref_c" type="text" size="1" placeholder="b" />
+    <input name="gridref_d" type="number" size="2" placeholder="20" />
+    .
+    <input name="gridref_e" type="number" size="2" placeholder="20" />
 </div>
