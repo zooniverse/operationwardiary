@@ -2,7 +2,7 @@
 
 
 <div class="annotation">
-  <label>Title 
+  <label><%- translate 'span', "noteTypes.title" %>
     <input name="title" type="text"/>
   </label>
 </div>

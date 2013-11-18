@@ -2,7 +2,7 @@
 
 
 <div class="annotation">
-  <label>Weather
+  <label><%- translate 'span', "noteTypes.weather" %>
     <select>
       <% for weather in @choices: %>
         <option value="<%= weather %>"><%- translate 'span', "weather.#{weather}" %></option>

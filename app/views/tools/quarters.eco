@@ -2,7 +2,7 @@
 
 
 <div class="annotation">
-  <label>Quarters
+  <label><%- translate 'span', "noteTypes.quarters" %>
     <select>
       <% for quarter in @choices: %>
         <option value="<%= quarter %>"><%- translate 'span', "quarters.#{quarter}" %></option>

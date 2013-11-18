@@ -2,7 +2,7 @@
 
 
 <div class="annotation">
-  <label>Reference 
+  <label><%- translate 'span', "noteTypes.reference" %>
     <input name="reference" type="text"/>
   </label>
 </div>

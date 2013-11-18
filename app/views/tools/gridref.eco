@@ -2,7 +2,7 @@
 
 
 <div class="annotation">
-  <label id="gridref">Grid Reference</label>
+  <label id="gridref"><%- translate 'span', "noteTypes.gridRef" %></label>
     <input aria-labelledby="gridref" name="gridref_a" type="text" size="1" placeholder="A"/>
     <input aria-labelledby="gridref" name="gridref_b" type="number" placeholder="35" size="2" />
     <input aria-labelledby="gridref" name="gridref_c" type="text" size="1" placeholder="b" />
