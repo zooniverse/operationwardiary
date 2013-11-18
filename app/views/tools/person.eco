@@ -3,24 +3,24 @@
 
 
 <div class="annotation">
-  <label>Rank
+  <label><%- translate 'span', "classifier.person.rank" %>
     <select name="rank">
       <% for rank in @ranks: %>
         <option><%= rank %></option>
       <% end %>    
     </select>
   </label>
-  <label>First name
+  <label><%- translate 'span', "classifier.person.first" %>
     <input name="first" type="text"/>
   </label>
-  <label>Surname
+  <label><%- translate 'span', "classifier.person.surname" %>
     <input name="surname" type="text">
   </label>
-  <label>Number
+  <label><%- translate 'span', "classifier.person.number" %>
     <input name="number" type="text">
   </label>
   
-  <label>Reason
+  <label><%- translate 'span', "classifier.person.reason" %>
     <select name="reason">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "person.#{reason}" %></option>
@@ -29,7 +29,7 @@
     </select>
   </label>
   
-  <label>Sub-unit
+  <label><%- translate 'span', "classifier.person.subunit" %>
     <input name="unit" type="text">
   </label>
 </div>

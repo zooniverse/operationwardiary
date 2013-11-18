@@ -45,6 +45,20 @@ module.exports =
     orders: 'Type'
     title: 'Title'
     
+  classifier:
+    mapRef:
+      sheet: 'Sheet'
+      scale: 'Scale'
+      date: 'Date'
+    person:
+      rank: 'Rank'
+      first: 'First name'
+      surname: 'Surname'
+      number: 'Number'
+      reason: 'Reason'
+      subunit: 'Sub unit'
+      
+    
   activity:
     domestic: 'Domestic & army life'
     repair: 'Digging & repairing trenches'

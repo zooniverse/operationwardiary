@@ -2,15 +2,15 @@
 
 
 <div class="annotation">
-  <label>Sheet
+  <label><%- translate 'span', "classifier.mapRef.sheet" %>
     <input name="sheet" type="text"/>
   </label>
   
-  <label>Scale
+  <label><%- translate 'span', "classifier.mapRef.scale" %>
     <input name="scale" type="text"/>
   </label>
   
-  <label>Date
+  <label><%- translate 'span', "classifier.mapRef.date" %>
     <input class="date" name="date" type="text"/>
   </label>
 </div>
