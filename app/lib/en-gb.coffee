@@ -177,9 +177,9 @@ module.exports =
       reference: "Reports may have been given a reference so it could be easily identified  in the short entry in the diary page."
       person: "Tag any individuals named in the report. Tell us who they were and why they were mentioned."
   
-  menus:
+  tools:
     
-    activities:
+    activity:
       domestic: "No matter where the unit was and what it was doing everyone still needed to be fed and clothed. But finding a way of bathing 1,000 men and obtaining clean clothes was a challenge that may be recorded in the diary! Parades were held to enable senior officers to communicate with the entire unit. The Padre held church services on a Sunday or before a battle and the Medical Officer  carried out inspections to check for trench foot. The men had to be 'quartered' in billets or tents and discipline had to be enforced. Away from the front line there may have been horse shows and boxing matches, concert parties and sporting fixtures. Tag references to food, clothing, accommodation, parades, sport and leisure, health, religion and discipline."
       repair: "Trenches provided protection and a route for bringing up supplies, equipment and reinforcements. They needed to be carefully constructed and maintained. Tag any mention of the unit digging, repairing or improving trenches or 'saps' (shallow trenches that went out from the main trench system into no-mans-land)."
       movement: "Each movement between the rear, reserve and front line and from one sector of the line to another was carefully co-ordinated. Units may have been moved long distances by train or marched. Instructions for the move would be sent to the unit as an Order. Tag each time the unit moved location."
@@ -203,11 +203,11 @@ module.exports =
       prisoner: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses."
   
     orders:
-      move: ""
-      attack: ""
-      withdraw: ""
-      entrench: ""
-      training: ""
+      move: "Movement Orders detaied where, when and how a unit was to move location. It may have incuded a marching table showing how each section of the unit would fit into the plan, the time the unit had to be at a specifc place so that cross roads did not become blocked and how the luggage and equipment was to be transported."
+      attack: "Operational Orders gave instructions on the location and time of an attack, what equipment and supplies must be carried and the tactics to be employed."
+      withdraw: "A withdrawal may have been ordered because the line could not be held against an enemy attack or because of strategic necessity. On occasion it was agreed that selected ground would be given up in a managed withdrawal so that the line could be consolidated in a better location. The withdrawal needed to be carried out very carefully so that the German forces could not exploit the situation."
+      entrench: "The trench system not only provided protection for troops but a complex system for them to move between the rear areas and the front line. Therefore the trenches needed to be carefully constucted and maintained with different techniques employed depending on the purpose of the line and the local geology. "
+      training: "Over the course of the conflict considerable developments occurred in how war was waged. Each side introduced new technolgy such as tanks, poison gas and aeroplanes. In response the army developed new techniques to protect themselves, such as improvements to the trench system, and learnt new tactics to use the opportunities they offered. Training and instruction was important to ensure confusion on the battlefield was avoided. Selected officers and men were sent on specific training courses but Training Orders were also issued where information needed to be shared with every individual."
       standing: ""
       routine: ""
   
@@ -236,6 +236,14 @@ module.exports =
       promotion: ""
       combat: ""
       discipline: ""
+      
+    weather:
+      fine: ""
+      hot: ""
+      overcast: ""
+      rain: ""
+      fog: ""
+      cold: ""
 
   guide:
     title: 'Transcribing the diaries'
