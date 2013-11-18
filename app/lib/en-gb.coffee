@@ -162,6 +162,7 @@ module.exports =
       reference: "Each Order would have been given a reference when it was issued. The same Order may have been issued to a number of units."
       date: "This is the date the Orders were issued on. The date is important because different versions of the Order may been issued to update or supersede the original."
       orders: "The title of each Order will indicate the type of activity it refers to.  Pick the category that is closest to the content of the Order. If none of the named categories are releant pick 'Other'"
+      person: "Tag any individuals named in the signal. Tell us who they were and why they were mentioned."
       
     signals:
       date: "A series of signals can be sent just before and just after midnight so the date is important."
