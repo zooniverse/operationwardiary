@@ -2,11 +2,11 @@
 
 
 <div class="annotation">
-  <label>Name 
+  <label><%- translate 'span', "classifier.unit.name" %>
     <input name="name" type="text"/>
   </label>
   
-  <label>Context
+  <label><%- translate 'span', "classifier.unit.context" %>
     <select name="context">
       <% for reason in @context: %>
         <option value="<%= reason %>"><%- translate 'span', "unit.#{reason}" %></option>

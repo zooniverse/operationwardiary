@@ -57,6 +57,12 @@ module.exports =
       number: 'Number'
       reason: 'Reason'
       subunit: 'Sub unit'
+    place:
+      name: 'Name'
+      loacation: 'Current location'
+    unit:
+      name: 'Name'
+      context: 'Reason'
       
     
   activity:
