@@ -142,10 +142,7 @@ module.exports =
       <p>Help historians by tagging the people, places and activities in 1.5 million pages of official First World War diaries.</p>
     '''
     title: 'Reveal the story of the British Army on the Western Front'
-    start: 'Start searching'
-    about: 'About'
-    images: 'Images'
-    species: 'Species'
+    start: 'Get started!'
 
   guide:
     title: 'Transcribing the diaries'
