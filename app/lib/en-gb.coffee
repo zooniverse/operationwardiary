@@ -212,10 +212,10 @@ module.exports =
       routine: "TODO"
   
     signals:
-      situation: ""
-      request: ""
-      order: ""
-      warning: ""
+      situation: "The signal might be a report of the situation in the front line."
+      request: "The signal might be a request assistance in the front line inlcuding sending up re-inforcements, ammunition or equipment."
+      order: "The signal might be an instruction from HQ to the men in the front line to 'hold the line' , to push forward with the attack or to withdraw."
+      warning: "The signal might be a warning either from the front line to HQ or from HQ to the front line warning of an enemy attack."
   
     person:
       author: ""
