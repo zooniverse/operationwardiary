@@ -176,7 +176,66 @@ module.exports =
       date: "The date the report was written."
       reference: "Reports may have been given a reference so it could be easily identified  in the short entry in the diary page."
       person: "Tag any individuals named in the report. Tell us who they were and why they were mentioned."
+  
+  menus:
+    
+    activities:
+      domestic: ""
+      repair: ""
+      movement: ""
+      reconnoitered: ""
+      training: ""
+      line: ""
+      attack: ""
+      raid: ""
+      withdraw: ""
+      quiet: ""
+      fire: ""
+      enemy_activity: ""
+      strength: ""
       
+  casualties:
+    sick: ""
+    wounded: ""
+    died: ""
+    missing: ""
+    killed: ""
+    prisoner: ""
+  
+  orders:
+    move: ""
+    attack: ""
+    withdraw: ""
+    entrench: ""
+    training: ""
+    standing: ""
+    routine: ""
+  
+  signals:
+    situation: ""
+    request: ""
+    order: ""
+    warning: ""
+  
+  person:
+    author: ""
+    joined: ""
+    departed_sick: "" 
+    departed_leave: ""
+    departed_posted: ""
+    departed_training: ""
+    returned_hospital: "" 
+    returned_leave: "" 
+    returned_training: "" 
+    casualty_wounded: ""
+    casualty_died: ""
+    casualty_mia: ""
+    casualty_kia: ""
+    casualty_pow: ""
+    award: ""
+    promotion: ""
+    combat: ""
+    discipline: ""
 
   guide:
     title: 'Transcribing the diaries'
