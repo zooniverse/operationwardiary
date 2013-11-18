@@ -9,7 +9,7 @@ class Toolbar
     
 class DiaryToolbar extends Toolbar
   
-  tags: labels.toolbars.tags
+  tags: labels.toolbars.diary
   
 class OrdersToolbar extends Toolbar
   

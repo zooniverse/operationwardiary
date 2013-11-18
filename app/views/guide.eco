@@ -1,11 +1,20 @@
 <% translate = require 't7e' %>
 <% labels = require '../lib/notes' %>
+<% console.log labels %>
 
 <div class="main">
 
   <% for document in labels.toolbars.documents: %>
     <%- translate 'h2', "guide.diaries.#{document}.title" %>
     <%- translate 'p', "guide.diaries.#{document}.content" %>
+    
+    <% if labels.toolbars[document]?: %>
+      <% for tag in labels.toolbars[document]: %>
+        <%- translate 'h3', "noteTypes.#{tag}" %>
+        <%- translate 'p', "help.#{document}.#{tag}" %>
+      <% end %>
+    
+    <% end %>
 
   
   

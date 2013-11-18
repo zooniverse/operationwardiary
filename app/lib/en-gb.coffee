@@ -147,7 +147,7 @@ module.exports =
   help:
     
     diary:
-      date: 'Each entry in the diary page should be dated. Sometimes only the day and month are recorded with the year mentioned only once on a page. If there was little to record or there had been a major incident over a few days the dates might be written as a range. In this case place the first tage at the start of the entry and enter the first date then place the second tage at the end and record the last date in the range.'
+      diaryDate: 'Each entry in the diary page should be dated. Sometimes only the day and month are recorded with the year mentioned only once on a page. If there was little to record or there had been a major incident over a few days the dates might be written as a range. In this case place the first tage at the start of the entry and enter the first date then place the second tage at the end and record the last date in the range.'
       time: 'Exact times were critically important to ensure that co-ordination between different units, between the artillery and infantry and between the air and the ground forces could be achieved. Mistakes with time could prove fatal. Hours and minutes should be recorded using the 24 hour clock.  If a period of time is recorded as a range place the first tage at the start of the entry and enter the first time then place the second tage at the end and record the last time in the range.'
       place: "Each unit started it's War Diary when they were mobilized, so when the first entries were recorded they may still have been in the UK or embarking on a ship. This series of diaries covers the Western Front so all the other places mentioned should be locations in France or Belgium, sometimes called Flanders."
       person: "Because the instructions for writing the diary stipulate that officers should be mentioned by name it has been assumed that very few other ranks can be identified in the diary entries. However units did take different approaches according to the conditions and cirumstances they found themselves in and depending on the individual Adjutant. So now we want to tag every person mentioned by name and reveal why they were mentioned."
@@ -161,12 +161,12 @@ module.exports =
     orders:
       reference: "Each Order would have been given a reference when it was issued. The same Order may have been issued to a number of units."
       date: "This is the date the Orders were issued on. The date is important because different versions of the Order may been issued to update or supersede the original."
-      type: "The title of each Order will indicate the type of activity it refers to.  Pick the category that is closest to the content of the Order. If none of the named categories are releant pick 'Other'"
+      orders: "The title of each Order will indicate the type of activity it refers to.  Pick the category that is closest to the content of the Order. If none of the named categories are releant pick 'Other'"
       
     signals:
       date: "A series of signals can be sent just before and just after midnight so the date is important."
       time: "A series of signals can be sent within a few minutes so the time is important."
-      reason: "Choose which of these reasons summarises why the message was sent."
+      signals: "Choose which of these reasons summarises why the message was sent."
       person: "Tag any individuals named in the report. Tell us who they were and why they were mentioned."
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres"
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."

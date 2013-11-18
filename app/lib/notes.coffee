@@ -1,6 +1,6 @@
 labels =
   toolbars: 
-    tags: [
+    diary: [
       'diaryDate'
       'time'
       'place'
