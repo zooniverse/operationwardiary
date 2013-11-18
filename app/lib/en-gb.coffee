@@ -45,7 +45,7 @@ module.exports =
     orders: 'Type'
     title: 'Title'
     
-  activities:
+  activity:
     domestic: 'Domestic & army life'
     repair: 'Digging & repairing trenches'
     movement: 'Unit movement'

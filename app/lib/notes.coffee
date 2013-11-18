@@ -46,7 +46,7 @@ labels =
       'other'
     ]
   
-  activities: [
+  activity: [
     'domestic'
     'repair'
     'movement'

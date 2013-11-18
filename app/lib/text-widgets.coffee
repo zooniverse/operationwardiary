@@ -341,7 +341,7 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
 
 WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   
-  template: require('../views/tools/activity')( choices: labels.activities )
+  template: require('../views/tools/activity')( choices: labels.activity )
   
   type: 'activity'
   
