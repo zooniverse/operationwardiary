@@ -2,10 +2,10 @@
 
 
 <div class="annotation">
-  <label>Activity
+  <label><%- translate 'span', "noteTypes.activity" %>
     <select>
       <% for activity in @choices: %>
-        <option value="<%= activity %>"><%- translate 'span', "activities.#{activity}" %></option>
+        <option value="<%= activity %>"><%- translate 'span', "activity.#{activity}" %></option>
       <% end %>
       <option value="other"><%- translate 'span', "common.other" %></option>
     </select>
