@@ -195,12 +195,12 @@ module.exports =
       strength: "Each unit had an established strength, with a pre-set number of officers, NCO's  and Other Ranks. The Adjutant may have recorded this information at intervals, particularly when first arriving in a Theatre of War."
       
     casualties:
-      sick: ""
-      wounded: ""
-      died: ""
-      missing: ""
-      killed: ""
-      prisoner: ""
+      sick: "A distinction was made between those who were ill and those who had suffered a physical wound. In the unsanitary conditions of the front, sickness of all kinds was prevalent."
+      wounded: "Minor wounds were commonplace and may not have been recorded. The casualty return would usually have included men who were receiving medical treatment and were not on the fighting strength of the unit. Sometimes distinctions are made between men who are wounded but still at their post, men who had been poisoned by gas or who were suffering shell shock symptoms as a result of an explosion eg Wounded (Gas), Wounded (At Duty), Wounded (Shell Shock). Tag them all as Wounded."
+      died: "This term was usually used when men who were known to have survived their wouds initially, later died as a result. This could have been on the battlefield if there was a witness to them being wounded but they were later found dead, and then at any point in the medical evacuation system. (DOW)"
+      missing: "Anyone who could not be accounted for was reported at 'Missing'. In the confusion of a raid or battle men may have been wounded and either entered the medical evacuation system or have remained on the battlefield unable to move. They may have become muddled up with men from anouther unit, been captured or suffered such catastrophic injuries that it was impossible to identify them. Until some evidence could be found to indicate their fate, such men remained 'Missing in Action' (MIA)"
+      killed: "This term was usually used when men were killed outright or when they died on the battlefield. (KIA)"
+      prisoner: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses."
   
     orders:
       move: ""
