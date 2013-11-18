@@ -208,8 +208,8 @@ module.exports =
       withdraw: "A withdrawal may have been ordered because the line could not be held against an enemy attack or because of strategic necessity. On occasion it was agreed that selected ground would be given up in a managed withdrawal so that the line could be consolidated in a better location. The withdrawal needed to be carried out very carefully so that the German forces could not exploit the situation."
       entrench: "The trench system not only provided protection for troops but a complex system for them to move between the rear areas and the front line. Therefore the trenches needed to be carefully constucted and maintained with different techniques employed depending on the purpose of the line and the local geology. "
       training: "Over the course of the conflict considerable developments occurred in how war was waged. Each side introduced new technolgy such as tanks, poison gas and aeroplanes. In response the army developed new techniques to protect themselves, such as improvements to the trench system, and learnt new tactics to use the opportunities they offered. Training and instruction was important to ensure confusion on the battlefield was avoided. Selected officers and men were sent on specific training courses but Training Orders were also issued where information needed to be shared with every individual."
-      standing: ""
-      routine: ""
+      standing: "TODO"
+      routine: "TODO"
   
     signals:
       situation: ""
