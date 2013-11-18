@@ -180,19 +180,19 @@ module.exports =
   menus:
     
     activities:
-      domestic: ""
-      repair: ""
-      movement: ""
-      reconnoitered: ""
-      training: ""
-      line: ""
-      attack: ""
-      raid: ""
-      withdraw: ""
-      quiet: ""
-      fire: ""
-      enemy_activity: ""
-      strength: ""
+      domestic: "No matter where the unit was and what it was doing everyone still needed to be fed and clothed. But finding a way of bathing 1,000 men and obtaining clean clothes was a challenge that may be recorded in the diary! Parades were held to enable senior officers to communicate with the entire unit. The Padre held church services on a Sunday or before a battle and the Medical Officer  carried out inspections to check for trench foot. The men had to be 'quartered' in billets or tents and discipline had to be enforced. Away from the front line there may have been horse shows and boxing matches, concert parties and sporting fixtures. Tag references to food, clothing, accommodation, parades, sport and leisure, health, religion and discipline."
+      repair: "Trenches provided protection and a route for bringing up supplies, equipment and reinforcements. They needed to be carefully constructed and maintained. Tag any mention of the unit digging, repairing or improving trenches or 'saps' (shallow trenches that went out from the main trench system into no-mans-land)."
+      movement: "Each movement between the rear, reserve and front line and from one sector of the line to another was carefully co-ordinated. Units may have been moved long distances by train or marched. Instructions for the move would be sent to the unit as an Order. Tag each time the unit moved location."
+      reconnoitered: "A knowledge of the area, the trench system and enemy positions was critical. During the take over of a section of the line the unit would reconnoiter the area, sometimes with a guide from the unit handing over. They would establish the boundaries of the area they were responsible for, note where repairs or strengenthing of the line was needed and where they might be vulnerable. Prior to a raid or attack a unit would gather evidence on the opposing forces. Artillery units woud need to find suitable locations for their guns.Tag any mention of a unit recommoitering, familiarising themselves with the area or sending out patrols."
+      training: "Men needed to be trained in tactics and instructed in how to use new equipment as well as staying fit. Tag any references to the unit undergoing instruction or training , including route marches."
+      line: "When a unit moved into the line they took over responsibility for that sector of the front, both to defend it against enemy action and to launch a raid or attack from it. Tag any reference to the unit taking over, moving into or  being in the (front) line."
+      attack: "Headquarters allocated infantry units objectives such as a village or trench line as the focus for their part in an attack. Artillery units supported attacks by laying down a barrage or wall of shells, all in a pre-planned and carefully timed pattern. Other units assisted by bringing up ammunition and other other supplies or removing casualties. Tag any mention of the unit participating in or supporting an attack."
+      raid: "Not all attacks were large scale battles. Units carried out small scale raids to test the strength of the German units, to gather intelligence and to maintain their aggressive spirit."
+      withdraw: "Although there were long periods when the line was static there were also occasions when units had to withdraw, either because they were forced back by a German attack or because it was decided that there were advantages to the line being moved to a different position. Tag any mention of the unit consolidating the line by withdrawing, or retreating or  moving back."
+      quiet: "Units had to be on the lookout for enemy attacks all the time. If nothing was happening they would record that the situation was quiet."
+      fire: "Units would come under fire from enemy artillery both as part of the daily routine of trench warfare and also in the lead up to an attack. Tag any reports of the unit being under fire."
+      enemy_activity: "Careful observation of enemy troops and artillery could reveal if they were preparing to raid, launch an attack or withdraw. Tag any mention of German activity including troop movements. "
+      strength: "Each unit had an established strength, with a pre-set number of officers, NCO's  and Other Ranks. The Adjutant may have recorded this information at intervals, particularly when first arriving in a Theatre of War."
       
     casualties:
       sick: ""
