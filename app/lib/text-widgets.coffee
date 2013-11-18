@@ -556,6 +556,18 @@ WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   
   type: 'grid'
   
+  render: (el)->
+    super
+    id = el
+      .find('label')
+      .uniqueId()
+      .attr('id')
+    
+    el
+      .find( 'input' )
+      .attr('aria-labelledby', id)
+    
+  
   updateNote: (target) ->
     
     note = {}
