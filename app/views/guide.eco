@@ -9,11 +9,23 @@
     <%- translate 'p', "guide.diaries.#{document}.content" %>
     
     <% if labels.toolbars[document]?: %>
-      <% for tag in labels.toolbars[document]: %>
-        <%- translate 'h3', "noteTypes.#{tag}" %>
-        <%- translate 'p', "help.#{document}.#{tag}" %>
-      <% end %>
-    
+      <ul>
+          <% for tag in labels.toolbars[document]: %>
+            <li>
+            <%- translate 'h3', "noteTypes.#{tag}" %>
+            <%- translate 'p', "help.#{document}.#{tag}" %>
+            
+            <% if labels[tag]?: %>
+              <dl>
+                <% for item in labels[tag]: %>
+                  <%- translate 'dt', "#{tag}.#{item}" %>
+                  <%- translate 'dd', "tools.#{tag}.#{item}" %>
+                <% end %>
+              </dl>
+            <% end %>
+          </li>
+          <% end %>
+      </ul>
     <% end %>
 
   
