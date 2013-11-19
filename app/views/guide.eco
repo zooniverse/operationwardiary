@@ -9,20 +9,24 @@
     <%- translate 'p', "guide.diaries.#{document}.content" %>
     
     <% if labels.toolbars[document]?: %>
-      <ul>
+      <ul class="accordion">
           <% for tag in labels.toolbars[document]: %>
             <li>
             <%- translate 'h3', "noteTypes.#{tag}" %>
+            <div>
             <%- translate 'p', "help.#{document}.#{tag}" %>
             
             <% if labels[tag]?: %>
-              <dl>
+              <ul class='accordion'>
                 <% for item in labels[tag]: %>
-                  <%- translate 'dt', "#{tag}.#{item}" %>
-                  <%- translate 'dd', "tools.#{tag}.#{item}" %>
+                <li>
+                  <%- translate 'h4', "#{tag}.#{item}" %>
+                  <%- translate 'p', "tools.#{tag}.#{item}" %>
+                </li>
                 <% end %>
-              </dl>
+              </ul>
             <% end %>
+          </div>
           </li>
           <% end %>
       </ul>

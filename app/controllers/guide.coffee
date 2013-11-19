@@ -11,5 +11,11 @@ class Guide extends Spine.Controller
     @html @template()
     
     @el.attr id: 'guide'
+    @el
+      .find('.accordion')
+      .accordion
+        active: false
+        collapsible: true
+        heightStyle: 'content'
 
 module.exports = Guide
