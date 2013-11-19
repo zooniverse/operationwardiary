@@ -59,7 +59,7 @@ module.exports =
       subunit: 'Sub unit'
     place:
       name: 'Name'
-      loacation: 'Current location'
+      location: 'Current location'
     unit:
       name: 'Name'
       context: 'Reason'
