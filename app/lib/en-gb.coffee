@@ -32,7 +32,7 @@ module.exports =
     time: 'Time'
     diaryTime: 'Time'
     person: 'Person'
-    unit: 'Unit'
+    unit: 'Other unit'
     place: 'Place'
     activity: 'Military Activity'
     domestic: 'Domestic Activity'
