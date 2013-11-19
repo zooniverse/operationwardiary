@@ -1,0 +1,13 @@
+<% translate = require 't7e' %>
+
+
+<div class="annotation">
+  <label><%- translate 'span', "noteTypes.domestic" %>
+    <select>
+      <% for activity in @choices: %>
+        <option value="<%= activity %>"><%- translate 'span', "domestic.#{activity}" %></option>
+      <% end %>
+      <option value="other"><%- translate 'span', "common.other" %></option>
+    </select>
+    </label>
+</div>

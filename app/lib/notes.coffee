@@ -8,9 +8,11 @@ labels =
       'activity'
       'casualties'
       'weather'
+      'domestic'
       'reference'
       'mapRef'
       'gridRef'
+      'unit'
     ]
     
     orders: [
@@ -27,6 +29,7 @@ labels =
       'person'
       'mapRef'
       'gridRef'
+      'unit'
     ]
     
     report: [
@@ -47,7 +50,6 @@ labels =
     ]
   
   activity: [
-    'domestic'
     'repair'
     'movement'
     'reconnoitered'
@@ -60,6 +62,19 @@ labels =
     'fire'
     'enemy_activity'
     'strength'
+  ]
+  
+  domestic: [
+    'accomodation'
+    'sport'
+    'religion'
+    'rations'
+    'parades'
+    'inspections'
+    'discipline'
+    'medical'
+    'uniform'
+    'hygiene'
   ]
   
   casualties: [

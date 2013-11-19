@@ -34,7 +34,8 @@ module.exports =
     person: 'Person'
     unit: 'Unit'
     place: 'Place'
-    activity: 'Activity'
+    activity: 'Military Activity'
+    domestic: 'Domestic Activity'
     quarters: 'Quarters'
     casualties: 'Casualties'
     weather: 'Weather'
@@ -66,7 +67,6 @@ module.exports =
       
     
   activity:
-    domestic: 'Domestic & army life'
     repair: 'Digging & repairing trenches'
     movement: 'Unit movement'
     reconnoitered: 'Reconnoitering'
@@ -79,6 +79,18 @@ module.exports =
     fire: 'Under fire '
     enemy_activity: 'Enemy activity'
     strength: 'Unit strength'
+    
+  domestic:
+    accomodation: 'Accommodation'
+    sport: 'Sport & Leisure'
+    religion: 'Religion'
+    rations: 'Rations'
+    parades: 'Parades'
+    inspections: 'Inspections'
+    discipline: 'Discipline'
+    medical: 'Medical'
+    uniform: 'Uniform'
+    hygiene: 'Hygiene'
     
   casualties:
     sick: 'Sick'

@@ -348,7 +348,14 @@ WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   getLabel: (target) ->
     $(target).find(':selected').text()
 
-
+WidgetFactory.registry.domestic = class DomesticWidget extends TextWidget
+  
+  template: require('../views/tools/domestic')( choices: labels.domestic )
+  
+  type: 'domestic'
+  
+  getLabel: (target) ->
+    $(target).find(':selected').text()
 
 WidgetFactory.registry.quarters = class QuartersWidget extends TextWidget
   
