@@ -219,6 +219,10 @@ class Classifier extends Spine.Controller
     
     @classification = new Classification { subject }
       
+    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
+      
+    $('button.favourite').addClass 'active' if favourite?
+      
     @toolbars.reset()
       
     for tool in @surface.tools
