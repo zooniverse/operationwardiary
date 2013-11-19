@@ -96,6 +96,7 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    Favorite.on 'fetch', @onFavoriteFetch
     # Subject.on 'fetch', @onSubjectFetch
     
     @surface.on 'select', (e, mark)=>
@@ -194,13 +195,24 @@ class Classifier extends Spine.Controller
     pages = (subject.metadata.page_number for subject in Subject.instances)
     console?.log pages
   
-  onFavourite: =>
-    @favorite = new Favorite subjects: [@classification.subject]
-
-    @favorite.send()
+  onFavoriteFetch: (e, favourites)=>
+    
+    @favourites = (favourite.subjects[0] for favourite in favourites)
+    console.log @favourite
   
-  onUnfavourite: =>
-    @favorite?.delete()
+  onFavourite: =>
+    
+    @favourite = new Favorite subjects: [@classification.subject]
+    @favourite
+      .send()
+      .done =>
+        favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
+    
+        console.log favourite
+
+        @favourite.delete() if favourite? 
+    
+        Favorite.fetch()
     
     
   onSubjectSelect: (e, subject) =>
