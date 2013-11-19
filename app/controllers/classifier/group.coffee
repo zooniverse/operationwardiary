@@ -13,6 +13,7 @@ class GroupDetails extends Spine.Controller
   elements:
     '.discuss': 'talkButton'
     '.timeline': 'timelineButton'
+    '.favourite': 'favouriteButton'
     
   constructor: ->
     super
@@ -43,6 +44,10 @@ class GroupDetails extends Spine.Controller
     @timelineButton.on 'click', =>
       @el.trigger 'subject:timeline'
       @timelineButton.toggleClass 'active'
+    
+    @favouriteButton.on 'click', =>
+      @el.trigger 'subject:favourite'
+      @favouriteButton.toggleClass 'active'
     
   onGroupFetch: (e, groups) =>
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'

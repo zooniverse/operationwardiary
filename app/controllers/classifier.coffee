@@ -8,6 +8,7 @@ Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
+Favorite = require 'zooniverse/models/favorite'
 Api = require 'zooniverse/lib/api'
 
 ZoomableSurface = require '../lib/zoom_surface'
@@ -88,6 +89,9 @@ class Classifier extends Spine.Controller
     
     @el.on 'subject:timeline', =>
       @timeline.el.toggleClass 'open'
+      
+    @el.on 'subject:favourite', =>
+      @onFavourite()
        
 
     User.on 'change', @onUserChange
@@ -189,6 +193,15 @@ class Classifier extends Spine.Controller
       
     pages = (subject.metadata.page_number for subject in Subject.instances)
     console?.log pages
+  
+  onFavourite: =>
+    @favorite = new Favorite subjects: [@classification.subject]
+
+    @favorite.send()
+  
+  onUnfavourite: =>
+    @favorite?.delete()
+    
     
   onSubjectSelect: (e, subject) =>
     

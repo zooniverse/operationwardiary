@@ -3,6 +3,7 @@ User = require 'zooniverse/models/user'
 
 Groups = require './profile/groups'
 Recents = require './profile/recents'
+Favourites = require './profile/favourites'
 
 class Profile extends Spine.Controller
   template: require '../views/profile/'
@@ -12,6 +13,7 @@ class Profile extends Spine.Controller
     
     @groups = new Groups
     @recents = new Recents
+    @favourites = new Favourites
 
     User.on 'change', @onUserChange
 
@@ -26,6 +28,7 @@ class Profile extends Spine.Controller
     
     @groups.el.appendTo @el
     @recents.el.appendTo @el
+    @favourites.el.appendTo @el
       
   onUserChange: (e, user)=>
     @render()
