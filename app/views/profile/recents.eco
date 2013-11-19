@@ -1,7 +1,7 @@
 <% if @recents?: %>
   <ul class="recents">
     <% for recent in @recents: %>
-    <li><img width="100" src="<%= recent.location.standard %>"></li>
+    <li><a href="http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/<%= recent.zooniverse_id %>"><img width="100" src="<%= recent.location.standard %>"></a></li>
     <% end %>
   </ul>
 <% end %>
