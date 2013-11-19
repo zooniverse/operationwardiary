@@ -2,10 +2,11 @@
 <% labels = require '../lib/notes' %>
 <% console.log labels %>
 
-<div class="main">
+<div class="main accordion">
 
   <% for document in labels.toolbars.documents: %>
     <%- translate 'h2', "guide.diaries.#{document}.title" %>
+    <div>
     <%- translate 'p', "guide.diaries.#{document}.content" %>
     
     <% if labels.toolbars[document]?: %>
@@ -31,7 +32,7 @@
           <% end %>
       </ul>
     <% end %>
-
+  </div>
   
   
   <% end %>
