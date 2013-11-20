@@ -75,13 +75,13 @@ class Guide extends Spine.Controller
     currContent.toggleClass 'accordion-content-active',!isPanelSelected 
     if isPanelSelected
       currContent
-        .attr( 'aria-hidden', 'false' )
-        .attr( 'aria-expanded', 'true' )
+        .attr( 'aria-hidden', 'true' )
+        .attr( 'aria-expanded', 'false' )
         .slideUp()
     else
       currContent
-        .attr( 'aria-hidden', 'true' )
-        .attr( 'aria-expanded', 'false' )
+        .attr( 'aria-hidden', 'false' )
+        .attr( 'aria-expanded', 'true' )
         .slideDown()
 
     false
