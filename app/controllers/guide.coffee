@@ -32,6 +32,8 @@ class Guide extends Spine.Controller
       .each ->
         $(@)
           .removeClass( 'accordion-content-active' )
+          .attr( 'ari-hidden', 'true' )
+          .attr( 'aria-expanded', 'false' )
           .hide()
           .prev( '.ui-accordion-header' )
           .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
@@ -40,6 +42,8 @@ class Guide extends Spine.Controller
       .each ->
         $(@)
           .addClass( 'accordion-content-active' )
+          .attr( 'ari-hidden', 'false' )
+          .attr( 'aria-expanded', 'true' )
           .show()
           .prev( '.ui-accordion-header' )
           .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
@@ -70,9 +74,15 @@ class Guide extends Spine.Controller
 
     currContent.toggleClass 'accordion-content-active',!isPanelSelected 
     if isPanelSelected
-      currContent.slideUp()
+      currContent
+        .attr( 'ari-hidden', 'false' )
+        .attr( 'aria-expanded', 'true' )
+        .slideUp()
     else
-      currContent.slideDown()
+      currContent
+        .attr( 'ari-hidden', 'true' )
+        .attr( 'aria-expanded', 'false' )
+        .slideDown()
 
     false
 
