@@ -284,13 +284,17 @@ module.exports =
       combat: "The actions of individuals during trench raids, large scale attacks and withdrawals are sometimes recorded."
       discipline: "Behaviour and conduct was controlled by Army Regulations. Anyone who broke the rules was subject to strict discipline. Punishments may have been carried out in front of the unit. More severe offences might have involved the individual being taken into custody and removed from the unit by the military police. These events may be recorded in the unit diary."
       
-    weather:
-      fine: ""
-      hot: ""
-      overcast: ""
-      rain: ""
-      fog: ""
-      cold: ""
+    domestic:
+      accomodation: "TODO"
+      sport: "TODO"
+      religion: "TODO"
+      rations: "TODO"
+      parades: "TODO"
+      inspections: "TODO"
+      discipline: "TODO"
+      medical: "TODO"
+      uniform: "TODO"
+      hygiene: "TODO"
 
   guide:
     title: 'Transcribing the diaries'
