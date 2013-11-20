@@ -26,7 +26,6 @@ class Guide extends Spine.Controller
   
   search: =>
     term = @searchbox.val()
-    console.log term
     
     accordions = @el
       .find( '.ui-accordion-content' )
