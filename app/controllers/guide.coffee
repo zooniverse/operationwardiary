@@ -2,10 +2,14 @@ Spine = require 'spine'
 
 class Guide extends Spine.Controller
   template: require '../views/guide'
+  elements:
+    'input[type=search]': 'searchbox'
 
   constructor: ->
     super
     @render()
+    
+    @searchbox.on 'change', @search
 
   render: =>
     @html @template()
@@ -19,6 +23,26 @@ class Guide extends Spine.Controller
         heightStyle: 'content'
         icons: false
         beforeActivate: @override_accordion
+  
+  search: =>
+    term = @searchbox.val()
+    console.log term
+    
+    accordions = @el
+      .find( '.ui-accordion-content' )
+      .each ->
+        $(@)
+          .removeClass( 'accordion-content-active' )
+          .hide()
+          .prev( '.ui-accordion-header' )
+          .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
+      .filter( ":contains('#{term}')")
+      .each ->
+        $(@)
+          .addClass( 'accordion-content-active' )
+          .show()
+          .prev( '.ui-accordion-header' )
+          .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
     
   override_accordion: (event, ui) ->
     # Adapted from http://stackoverflow.com/questions/15702444/jquery-ui-accordion-open-multiple-panels-at-once

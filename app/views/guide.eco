@@ -57,4 +57,7 @@
 <div class="sidebar">
   <%- translate 'h2', "guide.title" %>
   <%- translate 'div', "guide.content" %>
+  <label>Search 
+    <input type="search">
+  </label>
 </div>
