@@ -14,12 +14,45 @@
   background: $white
   color: $darkgrey
   padding: 1em
+  
+  .accordion
+    font-size: 1em
+    border: none
+    
+    .ui-accordion-header
+    .ui-accordion-content
+      border: none
+    
+    .ui-accordion-header
+      background: $midgreen
+      color: $white
+      padding-left: 1em
+      background-image: none
+      
+      &:hover
+      &.ui-state-active
+        background: $lightgreen
+
 .main
   width: 63%
   padding: 0
   margin: 0 1% 0 0
   display: inline-block
   vertical-align: top
+  font-size: 1em
+  font-family: $helv
+  
+  
+  h2
+  h3
+  h4
+    font-size: 1.2em
+    line-height: 1.4
+    font-family: $mont
+  
+  p
+    font-size: 1.2em
+    line-height: 1.4
   
 .sidebar
   width: 35%

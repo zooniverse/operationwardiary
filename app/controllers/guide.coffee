@@ -17,5 +17,6 @@ class Guide extends Spine.Controller
         active: false
         collapsible: true
         heightStyle: 'content'
+        icons: false
 
 module.exports = Guide
