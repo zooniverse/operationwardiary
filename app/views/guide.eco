@@ -19,11 +19,11 @@
             <% if labels[tag]?: %>
               <ul class='accordion'>
                 <% for item in labels[tag]: %>
-                  <% help = translate 'p', "tools.#{tag}.#{item}", raw: false %>
-                  <% if $(help).text() != "tools.#{tag}.#{item}": %>
+                  <% help = translate 'p', "tools.#{tag}.#{item}", raw: true %>
+                  <% if help.innerHTML != "tools.#{tag}.#{item}": %>
                   <li>
                     <%- translate 'h4', "#{tag}.#{item}" %>
-                    <%- help %>
+                    <p><%- help.innerHTML %></p>
                   </li>
                   <% end %>
                 <% end %>
