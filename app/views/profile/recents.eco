@@ -1,4 +1,6 @@
+<% translate = require 't7e' %>
 <% if @recents?: %>
+  <%- translate 'h2', "common.recent" %>
   <ul class="recents">
     <% for recent in @recents: %>
     <li><a href="http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/<%= recent.zooniverse_id %>"><img width="100" src="<%= recent.location.standard %>"></a></li>

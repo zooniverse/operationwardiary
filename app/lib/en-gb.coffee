@@ -15,6 +15,8 @@ module.exports =
     tagging: 'Get tagging!'
     done: 'All done'
     easy: "That was easy! Click 'Finished' to move on to the next page."
+    favourites: "Favourites"
+    recent: "Recent pages"
 
   documents:
     cover: 'Cover page'
