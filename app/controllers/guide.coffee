@@ -36,6 +36,7 @@ class Guide extends Spine.Controller
           .hide()
           .prev( '.ui-accordion-header' )
           .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
+          .attr 'aria-selected', 'false'
       .filter( ":contains('#{term}')")
       .each ->
         $(@)
@@ -43,6 +44,7 @@ class Guide extends Spine.Controller
           .show()
           .prev( '.ui-accordion-header' )
           .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
+          .attr 'aria-selected', 'true'
     
   override_accordion: (event, ui) ->
     # Adapted from http://stackoverflow.com/questions/15702444/jquery-ui-accordion-open-multiple-panels-at-once
