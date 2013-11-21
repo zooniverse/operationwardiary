@@ -4,7 +4,7 @@
 
 <div class="annotation">
   
-  <label><%- translate 'span', "classifier.place.name" %> <input name="place" type="text" value="" /></label>
+  <label><%- translate 'span', "classifier.place.name" %> <input name="place" type="search" value="" /></label>
   <span class="suggestions"></span>
   <label><%- translate 'span', "classifier.place.location" %> <input name="location" type="checkbox" checked ></label>
   <input name="name" type="hidden" value="" />

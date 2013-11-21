@@ -19,9 +19,6 @@ class ZoomableSurface extends MarkingSurface
     
     @image.attr src: ""
     
-    @container.on 'keydown', (e)=>
-      @selection?.controls.save() if e.which == 13
-    
     @container.on 'mousewheel', (e)=>
       
       mouse_delta = e.originalEvent.wheelDelta
