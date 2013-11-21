@@ -27,6 +27,14 @@ class Guide extends Spine.Controller
   search: =>
     term = @searchbox.val()
     
+    @el
+      .find( 'b.highlight' )
+      .each ->
+        $el = $(@)
+        text = $el.text()
+        $el.replaceWith text
+          
+    
     accordions = @el
       .find( '.ui-accordion-content' )
       .each ->
