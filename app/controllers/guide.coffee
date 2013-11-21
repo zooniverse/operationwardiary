@@ -46,7 +46,7 @@ class Guide extends Spine.Controller
           .prev( '.ui-accordion-header' )
           .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
           .attr 'aria-selected', 'false'
-      .filter( ":contains(#{term})")
+      .filter( ":contains('#{term}')")
       .each ->
         $(@)
           .addClass( 'accordion-content-active' )
@@ -58,7 +58,7 @@ class Guide extends Spine.Controller
           .attr 'aria-selected', 'true'
     
     accordions
-      .find( "p:contains(#{term})" )
+      .find( "p:contains('#{term}')" )
       .each ->
         $el = $(@)
         new_html = $el.html().replace new RegExp(term, 'g'), "<b class='highlight'>#{term}</b>"
