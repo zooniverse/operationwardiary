@@ -178,6 +178,12 @@ class TextTool extends Tool
     points = ['p0']
     @mark.set point, [x,y] for point in points
     @render()
+    @dots[0].attr
+      width: 24
+      height: 24
+    @dots[1].attr r: 14
+    @dots[0].animate { width: 20, height: 20 }, 100
+    @dots[1].animate r: 12, 100
     
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
