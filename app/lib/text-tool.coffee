@@ -158,6 +158,20 @@ class TextTool extends Tool
     dotShapes = @widget.mark @
     
     @dots = @surface.paper.set dotShapes
+  
+  bounce: =>
+    r = @dots[1].attr 'r'
+    w = @dots[0].attr 'width'
+    h = @dots[0].attr 'height'
+    @dots[0].attr
+      width: 0
+      height: 0
+    @dots[1].attr r: 0
+    @shapeSet.attr opacity: 0
+    
+    @dots[0].animate { width: w, height: h }, 100, 'ease-in'
+    @dots[1].animate r: r, 100, 'ease-in'
+    @shapeSet.animate opacity: 1, 100, 'ease-in'
     
   select: =>
     super
@@ -178,12 +192,7 @@ class TextTool extends Tool
     points = ['p0']
     @mark.set point, [x,y] for point in points
     @render()
-    @dots[0].attr
-      width: 24
-      height: 24
-    @dots[1].attr r: 14
-    @dots[0].animate { width: 20, height: 20 }, 100
-    @dots[1].animate r: 12, 100
+    @bounce()
     
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
