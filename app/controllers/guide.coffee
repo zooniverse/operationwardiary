@@ -38,7 +38,7 @@ class Guide extends Spine.Controller
           .prev( '.ui-accordion-header' )
           .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
           .attr 'aria-selected', 'false'
-      .filter( ":contains('#{term}')")
+      .filter( ":contains(#{term})")
       .each ->
         $(@)
           .addClass( 'accordion-content-active' )
@@ -48,6 +48,13 @@ class Guide extends Spine.Controller
           .prev( '.ui-accordion-header' )
           .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
           .attr 'aria-selected', 'true'
+    
+    accordions
+      .find( "p:contains(#{term})" )
+      .each ->
+        $el = $(@)
+        new_html = $el.html().replace new RegExp(term, 'g'), "<b class='highlight'>#{term}</b>"
+        $el.html new_html
     
   override_accordion: (event, ui) ->
     # Adapted from http://stackoverflow.com/questions/15702444/jquery-ui-accordion-open-multiple-panels-at-once
