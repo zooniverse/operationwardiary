@@ -102,7 +102,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     @el
       .find('.suggestions')
-      .html ''
+      .html('')
+      .removeClass 'open'
     
     placename = @el.find('input[name=place]').val()
     
@@ -226,6 +227,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         )
       label = $("<label><span>None of these<span></label>").prepend input
       $suggestions.append label
+      
+      $suggestions.addClass 'open'
     
     promise
 

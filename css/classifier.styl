@@ -363,11 +363,23 @@
   
   .suggestions
     width: 90%
-    padding: 2px 5px
+    margin: -.5em 5px 2px
+    max-height: 0
+    display: block
+    transition: max-height 1s
+    
+    &.open
+      max-height: 300px
+      box-shadow: 0 3px 3px 1px #666;
+    
+    label:hover span
+      background: $midgreen
+      color: $white
     
     label span
       display: block
-      width: 100%
+      margin: 1px 0
+      padding: 0 5px
   
   &.place
     max-width: 200px
@@ -378,8 +390,9 @@
       left: -9999px
       
       &:checked + span
-        background: #333
-        color: #fff
+        background: $darkgreen
+        color: $white
+        
   &.gridRef
     whitespace: nowrap
     
