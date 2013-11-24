@@ -5,7 +5,6 @@ class ZoomableSurface extends MarkingSurface
   clickDelay: 500
   markDefaults:
     type: 'date'
-    note: ''
   
   constructor: (params = {}) ->
     super
