@@ -188,15 +188,15 @@ module.exports =
         <p>Because the instructions for writing the diary stipulate that officers should be mentioned by name it has been assumed that very few other ranks can be identified in the diary entries. However units did take different approaches according to the conditions and cirumstances they found themselves in and depending on the individual Adjutant. So now we want to tag every person mentioned by name and reveal why they were mentioned.</p>
       '''
       person_fields: '''
-                           <h3>Rank</h3>
+                           <h4>Rank</h4>
                            <p>The army worked on an hierarchical system. Rank was very important as it would indicate a person's level of responsibility. Within each unit selected people would also have been assigned to carry out a specific job. These appointments should not be mixed up with the persons rank. Choose a rank from the drop down list.</p>
-                           <h3>First name</h3>
+                           <h4>First name</h4>
                            <p>It is not unusal for initials to be used instead of a first name. Record initials with a space between them.</p>
-                           <h3>Surname</h3>
+                           <h4>Surname</h4>
                            <p>Double barrelled names either with our without a hypen were common. They should be recorded as written. If you see the same name written more than once see how it is usually written and record it consistently.</p>
-                           <h3>Number</h3>
+                           <h4>Number</h4>
                            <p>Officers did not have Regimental Numbers but Non-Commissioned Officers and Other Ranks did.</p>
-                           <h3>Sub unit</h3>
+                           <h4>Sub unit</h4>
                            <p>Units were broken down into smaller groups of men. Infantry units had 4 Companies, each Company (Coy) had 4 Platoons and each Platoon had 4 Sections, each of approx 12 men. Artillery, cavalry, engineer, medical and other units would each have had their own structure.  The mention of a sub unit can help pin point an individual.</p>
                            '''
       person_reason:

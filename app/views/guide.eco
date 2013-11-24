@@ -20,7 +20,7 @@
             <% person_fields = translate 'div', "help.diary.person_fields", raw: true %>
             <div class="accordion">
               <%- person_fields.innerHTML %>
-              <%- translate 'h3', "help.diary.person_reason.heading" %>
+              <%- translate 'h4', "help.diary.person_reason.heading" %>
               <div>
                 <%- translate 'p', "help.diary.person_reason.text" %>
             <% end %>
