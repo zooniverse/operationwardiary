@@ -198,7 +198,6 @@ class Classifier extends Spine.Controller
   onFavoriteFetch: (e, favourites)=>
     
     @favourites = (favourite.subjects[0] for favourite in favourites)
-    console.log @favourite
   
   onFavourite: =>
     
