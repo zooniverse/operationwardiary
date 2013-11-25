@@ -29,8 +29,7 @@ class GroupPicker extends Spine.Controller
   refresh_group: =>
     return unless @groups?
     console.log 'UPDATING GROUP'
-    group_id = $('#diary_picker').val()
-    @set_group group_id
+    @navigate '/classify', $('#diary_picker').val()
   
   set_group: (group_id) =>
     $('#diary_picker').val group_id
