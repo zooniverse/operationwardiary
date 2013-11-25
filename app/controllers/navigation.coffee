@@ -29,16 +29,17 @@ class Navigation extends Spine.Controller
       $(currentTarget).addClass 'active'
       
     @home.on 'click', =>
-      @menu.find('a').removeClass 'active'
-      @menu.find('a[href="#/"]').addClass 'active'
+      @highlight_menu '/'
       
   render: =>
     @html @template()
     
     hash = window.location.hash
     
-    if hash != ''
-      @menu.find('a').removeClass 'active'
-      @menu.find("a[href='#{hash}']").addClass 'active'
+    @highlight_menu hash if hash != ''
+  
+  highlight_menu: (hash) =>
+    @menu.find('a').removeClass 'active'
+    @menu.find("a[href='#{hash}']").addClass 'active'
 
 module.exports = Navigation
