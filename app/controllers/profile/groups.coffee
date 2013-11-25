@@ -15,7 +15,7 @@ class Groups extends Spine.Controller
     return unless User.current && @groups?
     user_groups = User.current?.project.groups
     group_classifications = @groups?.map (group) ->
-      name: group.name, classifications: user_groups[group.id].classification_count
+      id: group.id, name: group.name, classifications: user_groups[group.id].classification_count
       
     @html @template
       groups: group_classifications

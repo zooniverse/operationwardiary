@@ -1,7 +1,7 @@
 <% if @groups?: %>
   <ul>
     <% for group in @groups: %>
-    <li><%= group.name %>: <%= group.classifications %></li>
+    <li><a href="#/classify/<%= group.id %>"><%= group.name %></a>: <%= group.classifications %></li>
     <% end %>
   </ul>
 <% end %>
