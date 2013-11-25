@@ -30,6 +30,11 @@ class GroupPicker extends Spine.Controller
     return unless @groups?
     console.log 'UPDATING GROUP'
     group_id = $('#diary_picker').val()
+    @set_group group_id
+  
+  set_group: (group_id) =>
+    $('#diary_picker').val group_id
+    
     store.set 'group_id', group_id
     group = (group for group in @groups when group.id == group_id)
   

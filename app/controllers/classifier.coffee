@@ -156,9 +156,7 @@ class Classifier extends Spine.Controller
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
     
-    if params.group_id?
-      $('#diary_picker').val params.group_id
-      @group_picker.refresh_group()
+    @group_picker.set_group params.group_id if params.group_id?
     
   render_annotation: ( history ) ->
 
@@ -189,8 +187,7 @@ class Classifier extends Spine.Controller
           )
           .done ({group_id}) =>
             console.log group_id
-            $('#diary_picker').val group_id
-            @group_picker.refresh_group()
+            @group_picker.set_group group_id
       else
         Subject.next()
 
