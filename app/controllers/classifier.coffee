@@ -156,7 +156,13 @@ class Classifier extends Spine.Controller
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
     
-    @group_picker.set_group params.group_id if params.group_id?
+    if params.group_id?
+      @group_picker.set_group params.group_id
+      $('.site-navigation .links ul')
+        .find('a')
+        .removeClass('active')
+        .filter("[href='#/classify']")
+        .addClass 'active'
     
   render_annotation: ( history ) ->
 
