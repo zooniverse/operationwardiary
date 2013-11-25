@@ -7,16 +7,14 @@ class Groups extends Spine.Controller
 
   constructor: ->
     super
-
-   Group.on 'fetch', @onGroupFetch
+    @el.attr id: 'groups'
+    Group.on 'fetch', @onGroupFetch
 
   render: =>
       
     @html @template
       user: User.current
       groups: @groups
-      
-    @el.attr id: 'groups'
     
   onGroupFetch: (e, @groups) =>
     @render()
