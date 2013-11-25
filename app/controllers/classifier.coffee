@@ -151,10 +151,14 @@ class Classifier extends Spine.Controller
       
     @surface.dotRadius = 5
     
-  active: =>
+  active: (params) =>
     super
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
+    
+    if params.group_id?
+      $('#diary_picker').val params.group_id
+      @group_picker.refresh_group()
     
   render_annotation: ( history ) ->
 
