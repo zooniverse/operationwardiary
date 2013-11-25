@@ -3,7 +3,11 @@
 <% if @groups?: %>
   <ul>
     <% for group in @groups: %>
-    <li><a href="#/classify/<%= group.id %>"><%= group.name %></a></li>
+    <% console.log group %>
+    <li>
+      <a href="#/classify/<%= group.id %>"><%= group.name %></a>
+      (<%= group.startdate %> &ndash; <%= group.enddate %>)
+    </li>
     <% end %>
   </ul>
 <% end %>
