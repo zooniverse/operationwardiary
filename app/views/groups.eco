@@ -1,0 +1,9 @@
+<% translate = require 't7e' %>
+
+<% if @groups?: %>
+  <ul>
+    <% for group in @groups: %>
+    <li><a href="#/classify/<%= group.id %>"><%= group.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
