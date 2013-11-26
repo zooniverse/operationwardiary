@@ -7,6 +7,8 @@
     <li>
       <a href="#/classify/<%= group.id %>"><%= group.name %></a>
       (<%= group.startdate %> &ndash; <%= group.enddate %>)
+      <br>
+      Pages: <%= group.stats.total %> Completed: <%= group.stats.complete %>
     </li>
     <% end %>
   </ul>
