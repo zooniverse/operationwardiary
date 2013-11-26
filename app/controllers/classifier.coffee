@@ -187,13 +187,15 @@ class Classifier extends Spine.Controller
               promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
             else
               promise = new $.Deferred
-              promise.resolve group_id: '5241bcf43ae7406825000003'
+              promise.reject()
             
             promise
           )
           .done ({group_id}) =>
             console.log group_id
             @group_picker.set_group group_id
+          .fail =>
+            @navigate '/groups'
       else
         Subject.next()
 
