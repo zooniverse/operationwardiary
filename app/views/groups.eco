@@ -6,6 +6,7 @@
     <% console.log group %>
     <li>
       <a href="#/classify/<%= group.id %>"><%= group.name %></a>
+      <br>
       (<%= group.startdate %> &ndash; <%= group.enddate %>)
       <br>
       Pages: <%= group.stats.total %> Completed: <%= group.stats.complete %>

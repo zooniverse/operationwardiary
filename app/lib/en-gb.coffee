@@ -213,6 +213,7 @@ module.exports =
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres. Fill in as much information as you can."
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."
       domestic: "No matter where the unit was and what it was doing everyone still needed to be fed and clothed. But finding a way of bathing 1,000 men and obtaining clean clothes was a challenge that may be recorded in the diary! Parades were held to enable senior officers to communicate with the entire unit. The Padre held church services on a Sunday or before a battle and the Medical Officer carried out inspections to check for trench foot. The men had to be 'quartered' and discipline had to be enforced. Away from the front line there were horse shows and boxing matches, concert parties and sporting fixtures. Tag references to accommodation,sport and leisure, religion, food, parades, inspections, discipline, health, clothing and hygiene."
+      unit: "Units did not work in isolation. They took over a sector of the line from the unit they were relieving and were themselves relieved when their tour was complete. They depended on the units on either side of them to protect their flanks and on artillery units to lay down an accurate creeping barrage. Show how units interacted with each other by tagging when other units were mentioned in the war diary."
     
     orders:
       reference: "Each Order would have been given a reference when it was issued. The same Order may have been issued to a number of units."
@@ -258,6 +259,14 @@ module.exports =
       missing: "Anyone who could not be accounted for was reported at 'Missing'. In the confusion of a raid or battle men may have been wounded and either entered the medical evacuation system or have remained on the battlefield unable to move. They may have become muddled up with men from anouther unit, been captured or suffered such catastrophic injuries that it was impossible to identify them. Until some evidence could be found to indicate their fate, such men remained 'Missing in Action' (MIA)"
       killed: "This term was usually used when men were killed outright or when they died on the battlefield. (KIA)"
       prisoner: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses."
+      
+    unit:
+      relieved: "Use this tag if the unit who wrote this diary took over the line from another unit."
+      relieved_by: "Use this tag if another unit took over the line from the unit who wrote this diary."
+      billeted: "Use this tag if two or more units shared accommodation."
+      right: "Use this tag if the unit who wrote this diary are recording the name of the unit on their right."
+      left: "Use this tag if the unit who wrote this diary are recording the name of the unit on their left."
+      joined: "Use this tag if the unit who wrote the diary, or men from that unti join with another unit."
   
     orders:
       move: "Movement Orders detaied where, when and how a unit was to move location. It may have incuded a marching table showing how each section of the unit would fit into the plan, the time the unit had to be at a specifc place so that cross roads did not become blocked and how the luggage and equipment was to be transported."
