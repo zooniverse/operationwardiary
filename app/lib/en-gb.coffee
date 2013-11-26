@@ -178,6 +178,9 @@ module.exports =
     title: 'Welcome to Operation War Diaries'
     start: 'Get started!'
   
+  groups:
+    title: 'Pick a diary to work on'
+  
   help:
     
     diary:

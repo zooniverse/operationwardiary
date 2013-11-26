@@ -1,6 +1,7 @@
 <% translate = require 't7e' %>
 
 <% if @groups?: %>
+<%- translate 'h2', 'groups.title' %>
   <ul>
     <% for group in @groups: %>
     <% console.log group %>
