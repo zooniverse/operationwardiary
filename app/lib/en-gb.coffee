@@ -212,6 +212,7 @@ module.exports =
       reference: "Specific incidents may be described in detail in additional documents included as appendices at the end of the month. The C2118 diary page should inlcude a reference or Appendix number to them,usually in the right hand column."
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres. Fill in as much information as you can."
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."
+      domestic: "No matter where the unit was and what it was doing everyone still needed to be fed and clothed. But finding a way of bathing 1,000 men and obtaining clean clothes was a challenge that may be recorded in the diary! Parades were held to enable senior officers to communicate with the entire unit. The Padre held church services on a Sunday or before a battle and the Medical Officer carried out inspections to check for trench foot. The men had to be 'quartered' and discipline had to be enforced. Away from the front line there were horse shows and boxing matches, concert parties and sporting fixtures. Tag references to accommodation,sport and leisure, religion, food, parades, inspections, discipline, health, clothing and hygiene."
     
     orders:
       reference: "Each Order would have been given a reference when it was issued. The same Order may have been issued to a number of units."
@@ -294,16 +295,16 @@ module.exports =
       discipline: "Behaviour and conduct was controlled by Army Regulations. Anyone who broke the rules was subject to strict discipline. Punishments may have been carried out in front of the unit. More severe offences might have involved the individual being taken into custody and removed from the unit by the military police. These events may be recorded in the unit diary."
       
     domestic:
-      accomodation: "TODO"
-      sport: "TODO"
-      religion: "TODO"
-      rations: "TODO"
-      parades: "TODO"
-      inspections: "TODO"
-      discipline: "TODO"
-      medical: "TODO"
-      uniform: "TODO"
-      hygiene: "TODO"
+      accomodation: "Accommodation varied according to where the unit was in realtion to the line. Tag terms including billets, quarters, bivouacs, camps, tents and dug outs."
+      sport: "Behind the line the men were kept occupied and entertained with sporting events, concerts, competitions and dinners."
+      religion: "Tag references to religion, church services, communion, burial services conducted and other work of the unit Padre or Chaplain."
+      rations: "Tag any mention of food including rations being acquired, prepared or delivered inlcuding food parcels received from home."
+      parades: "Units paraded for the visit of a senior office or VIP, when awards were being presented, to enable the commander to talk to everyone at the same time and to commemorate a significant event in the history of the unit. Do not include parades for religious or medical reasons which should be tagged separately."
+      inspections: "Inspections took place to check that the men were correctly dressed, equipped and trained."
+      discipline: "Even minor infringements of the rules could have serious consequences eg a dirty rifle might not fire correctly. Depending on the offence men were disciplined by their unit or referred up the chain. Tag any reference to discipline, arrest, punishment, forfeiture of pay, demotion or courts martial."
+      medical: "Tag any reference to routine medical inspections eg for trench foot, vaccinations or the work of the unit Medical Officer (MO)."
+      uniform: "Tag any mention of the men receiving clean clothing or new equipment."
+      hygiene: "It was exteremly difficult to provide proper washing facilities so baths were improvised from farm carts and streams and ponds were used for swimming. Lice infested clothes and spread disease. Tag any mention of washing, fumigation or any other element of personal hygiene."
 
   guide:
     title: 'Transcribing the diaries'
