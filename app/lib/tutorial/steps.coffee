@@ -8,7 +8,7 @@ module.exports =
     welcome: new Step
       number: 1
       header: "Welcome to Operation War Diaries!"
-      details: "This short tutorial will walk you through the tagging process. Let’s get started!" 
+      details: "This short tutorial will walk you through the tagging process. Let&#039;s get started!" 
       attachment: "center center .viewport center center"
       next: "intro"
 
@@ -22,14 +22,14 @@ module.exports =
     choose: new Step
       number: 3
       header: "Select a diary to work on"
-      details: "You’ll be given a sequence of pages from a diary – if you’d rather work on a different diary to the one you’re given, select another from the drop-down list at the bottom of the screen."
+      details: "You&#039;ll be given a sequence of pages from a diary – if you&#039;d rather work on a different diary to the one you&#039;re given, select another from the drop-down list at the bottom of the screen."
       attachment: "center center .viewport center center"
       next: "page_type"
     
     page_type: new Step
       number: 4
       header: "Classifying diary pages"
-      details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You’ll also notice that some are handwritten while others have been typed.<br><br>Select <b>Diary page</b> from the toolbar on the left of the screen to classify the page.
+      details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed.<br><br>Select <b>Diary page</b> from the toolbar on the left of the screen to classify the page.
 "
       attachment: "center center .viewport center center"
       next: "get_tagging"
@@ -37,7 +37,7 @@ module.exports =
     get_tagging: new Step
       number: 5
       header: "Get tagging"
-      details: "Now that you’ve decided what type of page it is, it’s time to start tagging!"
+      details: "Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!"
       attachment: "center center .viewport center center"
       next: "tagging_intro"
     
@@ -56,13 +56,13 @@ module.exports =
     tag_dates: new Step
       number: 8
       header: "Tagging dates and times"
-      details: "Dates and times are even simpler – when you attach them to the diary page you’ll get a calendar tool and drop-down boxes to select from."
+      details: "Dates and times are even simpler – when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
       next: "tag_people"
     
     tag_people: new Step
       number: 9
       header: "Tagging people"
-      details: "People are also easy to tag – click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You’ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
+      details: "People are also easy to tag – click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
       next: "tag_other"
     
     tag_other: new Step
@@ -74,16 +74,16 @@ module.exports =
     tag_pages: new Step
       number: 11
       header: "Classifying other page types"
-      details: "As well as diary pages, you may come across some more unusual pages like this one. If you’re unsure of the different page types you can view typical examples through the <a href='#/guide'>Field Guide</a>.<br><br>The list of available tags may change depending on the type of page that you’re looking at."
+      details: "As well as diary pages, you may come across some more unusual pages like this one. If you&#039;re unsure of the different page types you can view typical examples through the <a href='#/guide'>Field Guide</a>.<br><br>The list of available tags may change depending on the type of page that you&#039;re looking at."
       next: "timeline"
       
     timeline: new Step
       number: 12
       header: "Editing or deleting tags"
-      details: "Before you finish a page, you can review your tags to make sure that you’re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you’ve attached to this image – you can then click on individual tags to edit or delete them."
+      details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image – you can then click on individual tags to edit or delete them."
       next: "finished"
       
     finished: new Step
       number: 13
       header: "Finished"
-      details: "Once you’re happy that you’ve tagged as much as you can, click Finished to submit this page and your tags."
+      details: "Once you&#039;re happy that you&#039;ve tagged as much as you can, click Finished to submit this page and your tags."
