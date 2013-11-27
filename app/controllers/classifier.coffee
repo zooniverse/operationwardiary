@@ -19,6 +19,10 @@ GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
 Comments = require './classifier/comments'
 PageTimeline = require './classifier/page_timeline'
+  
+{Tutorial} = require 'zootorial'
+steps = require '../lib/tutorial/steps'
+tutorial_subject = require '../lib/tutorial/subjects'
 
 class Classifier extends Spine.Controller
   
@@ -180,6 +184,7 @@ class Classifier extends Spine.Controller
       if user
         Recent.fetch()
           .pipe( (recents) =>
+            recents = []
             
             if recents.length
               subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
@@ -195,7 +200,8 @@ class Classifier extends Spine.Controller
             console.log group_id
             @group_picker.set_group group_id
           .fail =>
-            @navigate '/groups'
+            @tutorial()
+            # @navigate '/groups'
       else
         Subject.next()
 
@@ -274,8 +280,6 @@ class Classifier extends Spine.Controller
             @timeline.createEntries @surface.tools
           
         @timeline.render()
-        
-        @navigate '/tutorial'
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
@@ -360,6 +364,41 @@ class Classifier extends Spine.Controller
     
     store.set 'history', @surface_history
     
+  tutorial: =>
+    tutorial = new Tutorial steps
+    subject = tutorial_subject
+    
+    @toolbars.reset()
+      
+    for tool in @surface.tools
+      tool.controls.el.remove() 
+      tool.shapeSet.remove()
+      
+    @surface.resetTools()
+    
+    @comments?.el.remove()
+    @timeline?.el.remove()
+    
+    @timeline = new PageTimeline
+    
+    @group_details.render subject.group
+    
+    @surface
+      .loadImage(subject.location.standard)
+      .done( =>
+        @surface.enable()
+        @timeline.render()
+      )
+    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
+    
+    @comments = new Comments subject.zooniverse_id
+    
+    @group_details.el.append @comments.el
+    
+    @group_details.el.append @timeline.el
+    
+    
+    tutorial.start()
 
 
 class Transcription
