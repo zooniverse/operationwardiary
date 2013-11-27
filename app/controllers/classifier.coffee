@@ -370,7 +370,7 @@ class Classifier extends Spine.Controller
     
     @group_details.render subject.group
     
-    Subject.on 'select', =>
+    Subject.one 'select', =>
       @surface
         .loadImage(subject.location.standard)
         .done( =>
