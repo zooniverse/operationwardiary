@@ -237,29 +237,20 @@ class Classifier extends Spine.Controller
       
     $('button.favourite').addClass 'active' if favourite?
       
-    @toolbars.reset()
-      
-    for tool in @surface.tools
-      tool.controls.el.remove() 
-      tool.shapeSet.remove()
-      
-    @surface.resetTools()
-    
-    @comments?.el.remove()
-    @timeline?.el.remove()
-    
-    @timeline = new PageTimeline
+    @reset subject
     
     # @toolbars.el.find( '.timeline' ).html @timeline.el
-    
-    snapshot = @surface_history[subject.id]
-    
-    marks = snapshot?.marks
-    marks ?= []
     
     @surface
       .loadImage(subject.location.standard)
       .done( =>
+        @diaryDisplay.text subject.metadata.file_name
+        
+        snapshot = @surface_history[subject.id]
+    
+        marks = snapshot?.marks
+        marks ?= []
+        
         page_type = snapshot?.document
         metadata = snapshot?.metadata
     
@@ -281,14 +272,6 @@ class Classifier extends Spine.Controller
           
         @timeline.render()
       )
-    @diaryDisplay.text subject.metadata.file_name
-    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
-    
-    @comments = new Comments subject.zooniverse_id
-    
-    @group_details.el.append @comments.el
-    
-    @group_details.el.append @timeline.el
     
   onDoTask: =>
     document = $( '.documents :checked' ).val()
@@ -364,6 +347,28 @@ class Classifier extends Spine.Controller
     
     store.set 'history', @surface_history
     
+  reset: (subject)=>
+    @toolbars.reset()
+      
+    for tool in @surface.tools
+      tool.controls.el.remove() 
+      tool.shapeSet.remove()
+      
+    @surface.resetTools()
+    
+    @comments?.el.remove()
+    @timeline?.el.remove()
+    
+    @timeline = new PageTimeline
+    
+    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
+    
+    @comments = new Comments subject.zooniverse_id
+    
+    @group_details.el.append @comments.el
+    
+    @group_details.el.append @timeline.el
+    
   tutorial: =>
     tutorial = new Tutorial steps
     subject = tutorial_subject
@@ -375,30 +380,10 @@ class Classifier extends Spine.Controller
         .loadImage(subject.location.standard)
         .done( =>
           
-          @toolbars.reset()
-      
-          for tool in @surface.tools
-            tool.controls.el.remove() 
-            tool.shapeSet.remove()
-      
-          @surface.resetTools()
-    
-          @comments?.el.remove()
-          @timeline?.el.remove()
-    
-          @timeline = new PageTimeline
+          @reset subject
           
           @surface.enable()
           @timeline.render()
-          
-          @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
-    
-          @comments = new Comments subject.zooniverse_id
-    
-          @group_details.el.append @comments.el
-    
-          @group_details.el.append @timeline.el
-    
     
           tutorial.start()
         )
