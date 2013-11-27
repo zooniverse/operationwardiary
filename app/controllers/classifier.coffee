@@ -161,7 +161,11 @@ class Classifier extends Spine.Controller
     tool.render() for tool in @surface.tools
     
     if params.group_id?
-      @group_picker.set_group params.group_id
+      if params.group_id == 'tutorial'
+        @tutorial()
+      else
+        @group_picker.set_group params.group_id
+      
       $('.site-navigation .links ul')
         .find('a')
         .removeClass('active')
@@ -200,7 +204,7 @@ class Classifier extends Spine.Controller
             console.log group_id
             @group_picker.set_group group_id
           .fail =>
-            @tutorial()
+            @navigate '/classify', 'tutorial'
             # @navigate '/groups'
       else
         Subject.next()
