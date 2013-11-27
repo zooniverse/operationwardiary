@@ -10,8 +10,11 @@ class ClassifierTutorial extends Classifier
     
     @el.attr id: 'tutorial'
     
-    tutorial = new Tutorial steps
+    @tutorial = new Tutorial steps
+  
+  active: (params) =>
     
-    tutorial.start()
+    @tutorial.start()
+    
       
 module.exports = ClassifierTutorial

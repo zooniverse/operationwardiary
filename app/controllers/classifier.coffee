@@ -274,6 +274,8 @@ class Classifier extends Spine.Controller
             @timeline.createEntries @surface.tools
           
         @timeline.render()
+        
+        @navigate '/tutorial'
       )
     @diaryDisplay.text subject.metadata.file_name
     @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
