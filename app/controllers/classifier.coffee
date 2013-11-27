@@ -368,37 +368,40 @@ class Classifier extends Spine.Controller
     tutorial = new Tutorial steps
     subject = tutorial_subject
     
-    @toolbars.reset()
-      
-    for tool in @surface.tools
-      tool.controls.el.remove() 
-      tool.shapeSet.remove()
-      
-    @surface.resetTools()
-    
-    @comments?.el.remove()
-    @timeline?.el.remove()
-    
-    @timeline = new PageTimeline
-    
     @group_details.render subject.group
     
-    @surface
-      .loadImage(subject.location.standard)
-      .done( =>
-        @surface.enable()
-        @timeline.render()
-      )
-    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
+    Subject.on 'select', =>
+      @surface
+        .loadImage(subject.location.standard)
+        .done( =>
+          
+          @toolbars.reset()
+      
+          for tool in @surface.tools
+            tool.controls.el.remove() 
+            tool.shapeSet.remove()
+      
+          @surface.resetTools()
     
-    @comments = new Comments subject.zooniverse_id
+          @comments?.el.remove()
+          @timeline?.el.remove()
     
-    @group_details.el.append @comments.el
+          @timeline = new PageTimeline
+          
+          @surface.enable()
+          @timeline.render()
+          
+          @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
     
-    @group_details.el.append @timeline.el
+          @comments = new Comments subject.zooniverse_id
+    
+          @group_details.el.append @comments.el
+    
+          @group_details.el.append @timeline.el
     
     
-    tutorial.start()
+          tutorial.start()
+        )
 
 
 class Transcription
