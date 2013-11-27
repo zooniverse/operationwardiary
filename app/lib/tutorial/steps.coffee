@@ -3,7 +3,7 @@
 module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
-  length: 2
+  length: 13
   steps:    
     welcome: new Step
       number: 1
@@ -31,7 +31,7 @@ module.exports =
       header: "Classifying diary pages"
       details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed.<br><br>Select <b>Diary page</b> from the toolbar on the left of the screen to classify the page.
 "
-      attachment: "center center .viewport center center"
+      attachment: "left center label[for='document-diary'] right center"
       next: "get_tagging"
     
     get_tagging: new Step
@@ -51,24 +51,28 @@ module.exports =
       number: 7
       header: "Tagging places"
       details: "Click on the <b>Place</b> tag in the toolbar on the left of the screen, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
+      attachment: "left center label[for='category-place'] right center"
       next: "tag_dates"
     
     tag_dates: new Step
       number: 8
       header: "Tagging dates and times"
       details: "Dates and times are even simpler – when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
+      attachment: "left center label[for='category-diaryDate'] right center"
       next: "tag_people"
     
     tag_people: new Step
       number: 9
       header: "Tagging people"
       details: "People are also easy to tag – click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
+      attachment: "left center label[for='category-person'] right center"
       next: "tag_other"
     
     tag_other: new Step
       number: 10
       header: "Tagging other information"
       details: "You may well find other important pieces of information in the fourth column, such as what the unit was doing or what the weather was like. Choose and apply the other tags in the menu/toolbar whenever you find this type of information listed."
+      attachment: "left center label[for='category-activity'] right center"
       next: "tag_pages"
     
     tag_pages: new Step
@@ -81,6 +85,7 @@ module.exports =
       number: 12
       header: "Editing or deleting tags"
       details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image – you can then click on individual tags to edit or delete them."
+      attachment: "center top button.timeline center bottom"
       next: "finished"
       
     finished: new Step
