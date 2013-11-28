@@ -217,6 +217,11 @@ class Classifier extends Spine.Controller
   onFavoriteFetch: (e, favourites)=>
     
     @favourites = (favourite.subjects[0] for favourite in favourites)
+    
+    Subject.on 'select', (e, subject) =>
+    
+      favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
+      $('button.favourite').addClass 'active' if favourite?
   
   onFavourite: =>
     
@@ -236,10 +241,6 @@ class Classifier extends Spine.Controller
   onSubjectSelect: (e, subject) =>
     
     @classification = new Classification { subject }
-      
-    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
-      
-    $('button.favourite').addClass 'active' if favourite?
       
     @reset subject
     
