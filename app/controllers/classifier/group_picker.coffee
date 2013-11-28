@@ -18,10 +18,10 @@ class GroupPicker extends Spine.Controller
 
   render: =>
       
-    @html @template
-      groups: @groups
-      
-    $('#diary_picker').val store.get 'group_id', '5241bcf43ae7406825000003'
+#   @html @template
+#     groups: @groups
+#     
+#   $('#diary_picker').val store.get 'group_id', '5241bcf43ae7406825000003'
   
   onGroupFetch: (e, @groups) =>
     @render()
@@ -32,7 +32,7 @@ class GroupPicker extends Spine.Controller
     @navigate '/classify', $('#diary_picker').val()
   
   set_group: (group_id) =>
-    $('#diary_picker').val group_id
+    # $('#diary_picker').val group_id
     
     store.set 'group_id', group_id
     group = (group for group in @groups when group.id == group_id)
