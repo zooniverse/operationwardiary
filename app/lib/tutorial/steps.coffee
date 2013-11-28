@@ -29,9 +29,9 @@ module.exports =
     page_type: new Step
       number: 4
       header: "Classifying diary pages"
-      details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed.<br><br>Select <b>Diary page</b> from the toolbar on the left of the screen to classify the page.
-"
-      attachment: "left center label[for='document-diary'] right center"
+      details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed. Select <b>Diary page</b> from the toolbar to classify the page."
+      instruction: "Click <b>Diary page</b>"
+      attachment: "left top .tools right top"
       next: "get_tagging"
     
     get_tagging: new Step
@@ -50,7 +50,8 @@ module.exports =
     tag_places: new Step
       number: 7
       header: "Tagging places"
-      details: "Click on the <b>Place</b> tag in the toolbar on the left of the screen, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
+      details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
+      instruction: "Click the <b>Place</b> tag."
       attachment: "left center label[for='category-place'] right center"
       next: "tag_dates"
     
