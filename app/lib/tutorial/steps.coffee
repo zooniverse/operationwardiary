@@ -54,28 +54,35 @@ module.exports =
       details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
       instruction: "Click the <b>Place</b> tag."
       attachment: "left center label[for='category-place'] right center"
-      next: "tag_dates"
+      next: 
+        "click label[for=category-place]": "tag_dates"
     
     tag_dates: new Step
       number: 8
       header: "Tagging dates and times"
       details: "Dates and times are even simpler &ndash; when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
       attachment: "left center label[for='category-diaryDate'] right center"
-      next: "tag_people"
+      instruction: "Click the <b>Date</b> tag."
+      next: 
+        "click label[for=category-diaryDate]": "tag_people"
     
     tag_people: new Step
       number: 9
       header: "Tagging people"
       details: "People are also easy to tag &ndash; click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
       attachment: "left center label[for='category-person'] right center"
-      next: "tag_other"
+      instruction: "Click the <b>Person</b> tag."
+      next: 
+        "click label[for=category-person]": "tag_other"
     
     tag_other: new Step
       number: 10
       header: "Tagging other information"
       details: "You may well find other important pieces of information in the fourth column, such as what the unit was doing or what the weather was like. Choose and apply the other tags in the menu/toolbar whenever you find this type of information listed."
       attachment: "left center label[for='category-activity'] right center"
-      next: "tag_pages"
+      instruction: "Click the <b>Unit activity</b> tag."
+      next: 
+        "click label[for=category-activity]":"tag_pages"
     
     tag_pages: new Step
       number: 11
@@ -88,7 +95,9 @@ module.exports =
       header: "Editing or deleting tags"
       details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit or delete them."
       attachment: "center top button.timeline center bottom"
-      next: "finished"
+      instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
+      next: 
+        "click button.timeline":"finished"
       
     finished: new Step
       number: 13
