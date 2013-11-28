@@ -103,3 +103,4 @@ module.exports =
       number: 13
       header: "Finished"
       details: "Once you&#039;re happy that you&#039;ve tagged as much as you can, click Finished to submit this page and your tags."
+      attachment: "right top button.finish center bottom"
