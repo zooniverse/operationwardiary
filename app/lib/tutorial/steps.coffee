@@ -22,7 +22,7 @@ module.exports =
     choose: new Step
       number: 3
       header: "Select a diary to work on"
-      details: "You&#039;ll be given a sequence of pages from a diary – if you&#039;d rather work on a different diary to the one you&#039;re given, select another from the drop-down list at the bottom of the screen."
+      details: "You&#039;ll be given a sequence of pages from a diary &ndash; if you&#039;d rather work on a different diary to the one you&#039;re given, select another from the drop-down list at the bottom of the screen."
       attachment: "center center .viewport center center"
       next: "page_type"
     
@@ -57,14 +57,14 @@ module.exports =
     tag_dates: new Step
       number: 8
       header: "Tagging dates and times"
-      details: "Dates and times are even simpler – when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
+      details: "Dates and times are even simpler &ndash; when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
       attachment: "left center label[for='category-diaryDate'] right center"
       next: "tag_people"
     
     tag_people: new Step
       number: 9
       header: "Tagging people"
-      details: "People are also easy to tag – click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
+      details: "People are also easy to tag &ndash; click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
       attachment: "left center label[for='category-person'] right center"
       next: "tag_other"
     
@@ -84,7 +84,7 @@ module.exports =
     timeline: new Step
       number: 12
       header: "Editing or deleting tags"
-      details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image – you can then click on individual tags to edit or delete them."
+      details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit or delete them."
       attachment: "center top button.timeline center bottom"
       next: "finished"
       
