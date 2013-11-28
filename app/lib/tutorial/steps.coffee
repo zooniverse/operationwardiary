@@ -46,17 +46,8 @@ module.exports =
       number: 6
       header: "Tagging the data in diary pages"
       details: "Diary pages are laid out in a standard four-column format. The first three columns list place, date and hour, while the fourth column contains the narrative account of operations. <br><br>The fourth column could contain lots of different information, including people, activities and references to other pages within the diaries (including maps)."
-      next: "tag_places"
-    
-    tag_places: new Step
-      number: 7
-      header: "Tagging places"
-      details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
-      instruction: "Click the <b>Place</b> tag."
-      attachment: "left center label[for='category-place'] right center"
-      next: 
-        "click label[for=category-place]": "tag_dates"
-    
+      next: "tag_dates"
+      
     tag_dates: new Step
       number: 8
       header: "Tagging dates and times"
@@ -64,7 +55,16 @@ module.exports =
       attachment: "left center label[for='category-diaryDate'] right center"
       instruction: "Click the <b>Date</b> tag."
       next: 
-        "click label[for=category-diaryDate]": "tag_people"
+        "click label[for=category-diaryDate]": "tag_places"
+    
+    tag_places: new Step
+      number: 8
+      header: "Tagging places"
+      details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
+      instruction: "Click the <b>Place</b> tag."
+      attachment: "left center label[for='category-place'] right center"
+      next: 
+        "click label[for=category-place]": "tag_people"
     
     tag_people: new Step
       number: 9
