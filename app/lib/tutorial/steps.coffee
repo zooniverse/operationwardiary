@@ -31,7 +31,7 @@ module.exports =
       header: "Classifying diary pages"
       details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed. Select <b>Diary page</b> from the toolbar to classify the page."
       instruction: "Click <b>Diary page</b>"
-      attachment: "left top .tools right top"
+      attachment: "left center label[for='document-diary'] right center"
       next:
         "click label[for=document-diary]": "get_tagging"
     
