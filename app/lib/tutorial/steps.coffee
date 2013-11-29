@@ -49,13 +49,22 @@ module.exports =
       next: "tag_dates"
       
     tag_dates: new Step
-      number: 8
+      number: 7
       header: "Tagging dates and times"
       details: "Dates and times are even simpler &ndash; when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
       attachment: "left center label[for='category-diaryDate'] right center"
       instruction: "Click the <b>Date</b> tag."
       next: 
-        "click label[for=category-diaryDate]": "tag_places"
+        "click label[for=category-diaryDate]": "add_dates"
+    
+    add_dates: new Step
+      number: 7
+      header: "Tagging dates and times"
+      details: "TODO"
+      attachment: "center center .subject-container center center"
+      instruction: "Add a date"
+      next: 
+        "click button[name=toggle]": "tag_places"
     
     tag_places: new Step
       number: 8
@@ -64,7 +73,16 @@ module.exports =
       instruction: "Click the <b>Place</b> tag."
       attachment: "left center label[for='category-place'] right center"
       next: 
-        "click label[for=category-place]": "tag_people"
+        "click label[for=category-place]": "add_places"
+    
+    add_places: new Step
+      number: 7
+      header: "Tagging places"
+      details: "TODO"
+      attachment: "center center .subject-container center center"
+      instruction: "Add a place"
+      next: 
+        "click button[name=toggle]": "tag_people"
     
     tag_people: new Step
       number: 9
@@ -73,7 +91,17 @@ module.exports =
       attachment: "left center label[for='category-person'] right center"
       instruction: "Click the <b>Person</b> tag."
       next: 
-        "click label[for=category-person]": "tag_other"
+        "click label[for=category-person]": "add_people"
+        
+    
+    add_people: new Step
+      number: 7
+      header: "Tagging people"
+      details: "TODO"
+      attachment: "center center .subject-container center center"
+      instruction: "Add a person"
+      next: 
+        "click button[name=toggle]": "tag_other"
     
     tag_other: new Step
       number: 10
@@ -82,7 +110,16 @@ module.exports =
       attachment: "left center label[for='category-activity'] right center"
       instruction: "Click the <b>Unit activity</b> tag."
       next: 
-        "click label[for=category-activity]":"tag_pages"
+        "click label[for=category-activity]":"add_activity"
+    
+    add_activity: new Step
+      number: 7
+      header: "Tagging other information"
+      details: "TODO"
+      attachment: "center center .subject-container center center"
+      instruction: "Add an activity"
+      next: 
+        "click button[name=toggle]": "tag_pages"
     
     tag_pages: new Step
       number: 11
