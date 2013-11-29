@@ -184,11 +184,11 @@ module.exports =
   help:
     
     diary:
-      diaryDate: 'Each entry in the diary page should be dated. Sometimes only the day and month are recorded with the year mentioned only once on a page. If there was little to record or there had been a major incident over a few days the dates might be written as a range. In this case place the first tage at the start of the entry and enter the first date then place the second tage at the end and record the last date in the range.'
-      time: 'Exact times were critically important to ensure that co-ordination between different units, between the artillery and infantry and between the air and the ground forces could be achieved. Mistakes with time could prove fatal. Hours and minutes should be recorded using the 24 hour clock.  If a period of time is recorded as a range place the first tage at the start of the entry and enter the first time then place the second tage at the end and record the last time in the range.'
-      place: "Each unit started it's War Diary when they were mobilized, so when the first entries were recorded they may still have been in the UK or embarking on a ship. This series of diaries covers the Western Front so all the other places mentioned should be locations in France or Belgium, sometimes called Flanders."
+      diaryDate: 'Each entry in the diary page should be dated. Sometimes only the day and month were recorded with the year mentioned only once on a page. If there was little to record or a major incident had taken place over a few days the dates might have been written as a range. In this case place the first tag at the start of the entry and enter the first date then place the second tag at the end and record the last date in the range.'
+      time: 'Exact times were critically important to ensure that co-ordination between different units, between the artillery and infantry and between air and ground forces were achieved. Mistakes with time could prove fatal. Record hours and minutes using the 24 hour clock.  If a period of time is recorded as a range place the first tag at the start of the entry and enter the first time then place the second tag at the end and record the last time in the range.'
+      place: "Each unit started it's War Diary when it was mobilized, so the first entries may have been  recorded when they were still in the UK or embarking on a ship. This series of diaries covers the Western Front so all the other places mentioned should be locations in France or Belgium, sometimes called Flanders."
       person: '''
-        <p>Because the instructions for writing the diary stipulate that officers should be mentioned by name it has been assumed that very few other ranks can be identified in the diary entries. However units did take different approaches according to the conditions and cirumstances they found themselves in and depending on the individual Adjutant. So now we want to tag every person mentioned by name and reveal why they were mentioned.</p>
+        Because the instructions for writing the diary stipulated that officers should be mentioned by name it has been assumed that very few other ranks can be identified in the diary entries. However units did take different approaches according to the conditions and cirumstances they found themselves in and depending on the individual Adjutant. So now we want to tag every person mentioned by name and reveal why they were mentioned.
       '''
       person_fields: '''
                            <h4>Rank</h4>
@@ -209,33 +209,34 @@ module.exports =
                       '''
         
       
-      activity: "Despite popular myth not every unit spent four long years in a muddy front line trench with the officers writing poetry! We know that units rotated between being in reserve, to the front line and then to the rear with a period of rest. They moved to different sectors and were engaged in a variety of tasks. Help  us find out how long they spent in each area and what they were doing on a daily basis by tagging the different types of activity."
-      casualties: "Field Service Regulations stipluated that only officer casualties should be named. However the diaries do report the total numbers of all casualties by type and sometimes the names. Can you find a casualty report? They are usually found immediately after a period of fighting or at the end of the month."
+      activity: "Despite popular myth not every unit spent four long years in a muddy front line trench with the officers writing poetry! We know that units rotated between being in reserve, the front line and the rear for a period of rest. They moved to different sectors and were engaged in a variety of tasks. Help us find out how long they spent in each area and what they were doing on a daily basis by tagging the different types of activity."
+      casualties: "Field Service Regulations stipluated that only officer casualties should be named. However the diaries do report the total numbers of all casualties by type and sometimes by name. Can you find a casualty report? They are usually found immediately after a period of fighting or at the end of the month."
       weather: "The weather conditions had a significant effect on the life of the men and on the outcome of the fighting. In hot conditions drinking water became an issue whilst in low lying areas heavy rain turned the ground into a swamp. Help us build up the picture by tagging different types of weather. Pick the category that is closest to the description in the diary."
-      reference: "Specific incidents may be described in detail in additional documents included as appendices at the end of the month. The C2118 diary page should inlcude a reference or Appendix number to them,usually in the right hand column."
+      reference: "The C2118 entry is usually quite brief. More detail was provided in additional documents included as appendices at the end of the month. We need to know what other documents are mentioned. Tag any reference or Appendix number which you will usually find in the right hand column."
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres. Fill in as much information as you can."
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."
       domestic: "No matter where the unit was and what it was doing everyone still needed to be fed and clothed. But finding a way of bathing 1,000 men and obtaining clean clothes was a challenge that may be recorded in the diary! Parades were held to enable senior officers to communicate with the entire unit. The Padre held church services on a Sunday or before a battle and the Medical Officer carried out inspections to check for trench foot. The men had to be 'quartered' and discipline had to be enforced. Away from the front line there were horse shows and boxing matches, concert parties and sporting fixtures. Tag references to accommodation,sport and leisure, religion, food, parades, inspections, discipline, health, clothing and hygiene."
       unit: "Units did not work in isolation. They took over a sector of the line from the unit they were relieving and were themselves relieved when their tour was complete. They depended on the units on either side of them to protect their flanks and on artillery units to lay down an accurate creeping barrage. Show how units interacted with each other by tagging when other units were mentioned in the war diary."
     
     orders:
-      reference: "Each Order would have been given a reference when it was issued. The same Order may have been issued to a number of units."
+      reference: "Each Order was given a reference when it was issued. The same Order may have been issued to a number of units but each copy will have the same reference."
       date: "This is the date the Orders were issued on. The date is important because different versions of the Order may been issued to update or supersede the original."
-      orders: "The title of each Order will indicate the type of activity it refers to.  Pick the category that is closest to the content of the Order. If none of the named categories are releant pick 'Other'"
-      person: "Tag any individuals named in the order. Tell us who they were and why they were mentioned."
+      orders: "The title of each Order indicates the type of activity it refers to.  Pick the category that is closest to the content of the Order. If none of the named categories are relevant pick 'Other'"
+      person: "Because the instructions for writing the diary stipulated that officers should be mentioned by name it has been assumed that very few other ranks can be identified in the diary entries. However units did take different approaches according to the conditions and cirumstances they found themselves in and depending on the individual Adjutant. So now we want to tag every person mentioned by name and reveal why they were mentioned."
       
     signals:
-      date: "A series of signals can be sent just before and just after midnight so the date is important."
-      time: "A series of signals can be sent within a few minutes so the time is important."
+      date: "A series of signals might have spanned the time just before and just after midnight so the date is important."
+      time: "A series of signals might have been sent within a few minutes. The time is important so the sequence fo events can be worked out."
       signals: "Choose which of these reasons summarises why the message was sent."
       person: "Tag any individuals named in the signal. Tell us who they were and why they were mentioned."
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres"
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."
+      unit: "Units did not work in isolation. They took over a sector of the line from the unit they were relieving and were themselves relieved when their tour was complete. They depended on the units on either side of them to protect their flanks and on artillery units to lay down an accurate creeping barrage. Show how units interacted with each other by tagging when other units were mentioned in the war diary."
       
     report:
-      title: "Each report should have a title that describes the content. This might be a Casualty report, a narrative of operations or a nominal roll of the unit."
-      date: "The date the report was written."
-      reference: "Reports may have been given a reference so it could be easily identified  in the short entry in the diary page."
+      title: "The report title will provide some information about the content. Common examples included a Casualty Report, a Narrative of Operations or a Nominal Roll of the unit."
+      date: "The date on which the report was written."
+      reference: "So that the report could be linked to the short entry in the diary page it was given a reference or appendix number."
       person: "Tag any individuals named in the report. Tell us who they were and why they were mentioned."
   
   tools:
@@ -321,7 +322,7 @@ module.exports =
   guide:
     title: 'Transcribing the diaries'
     content: '''
-      <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! We need to know what type of information it contains by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples choose one Classification: Blank Page,Cover Page, Diary Page, Orders, Signal, Report, Other</p>
+      <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! Help us reveal what information they contain by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples, choose one Classification: Blank Page,Cover Page, Diary Page, Orders, Signal, Report, Other</p>
     '''
     diaries:
 
@@ -347,7 +348,7 @@ module.exports =
       
       report:
         title: 'Reports'
-        content: 'Reports and appendices are used to provide detailed accounts of a raid or attack or other significant incident, Unit Strength, Casualties or nominal roll.There is often a short entry in the C2118 diary page which references the appendix or report.'
+        content: 'Reports and appendices were used to provide detailed accounts of a raid or attack or other significant incident, Unit Strength, Casualties or nominal roll.There was often a short entry in the C2118 diary page which referenced the appendix or report.'
       
       other:
         title: 'Other documents'
