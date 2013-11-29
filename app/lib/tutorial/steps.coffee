@@ -3,27 +3,27 @@
 module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
-  length: 13
+  length: 17
   steps:    
     welcome: new Step
       number: 1
       header: "Welcome to Operation War Diaries!"
       details: "This short tutorial will walk you through the tagging process. Let&#039;s get started!" 
-      attachment: "center center .viewport center center"
+      attachment: "center center .subject-container center center"
       next: "intro"
 
     intro: new Step
       number: 2
       header: "Check out the diaries"
       details: "There are around 1.5 million pages of unit war diaries. Half of them are standard diary pages, like this one, but there are also lots of other types of pages. We need your help to classify the page types and then tag the data on that page. "
-      attachment: "center center .viewport center center"
+      attachment: "center center .subject-container center center"
       next: "choose"
     
     choose: new Step
       number: 3
       header: "Select a diary to work on"
       details: "You&#039;ll be given a sequence of pages from a diary &ndash; if you&#039;d rather work on a different diary to the one you&#039;re given, select another from the drop-down list at the bottom of the screen."
-      attachment: "center center .viewport center center"
+      attachment: "center center .subject-container center center"
       next: "page_type"
     
     page_type: new Step
@@ -39,13 +39,14 @@ module.exports =
       number: 5
       header: "Get tagging"
       details: "Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!"
-      attachment: "center center .viewport center center"
+      attachment: "center center .subject-container center center"
       next: "tagging_intro"
     
     tagging_intro: new Step
       number: 6
       header: "Tagging the data in diary pages"
       details: "Diary pages are laid out in a standard four-column format. The first three columns list place, date and hour, while the fourth column contains the narrative account of operations. <br><br>The fourth column could contain lots of different information, including people, activities and references to other pages within the diaries (including maps)."
+      attachment: "center center .subject-container center center"
       next: "tag_dates"
       
     tag_dates: new Step
@@ -125,6 +126,7 @@ module.exports =
       number: 15
       header: "Classifying other page types"
       details: "As well as diary pages, you may come across some more unusual pages like this one. If you&#039;re unsure of the different page types you can view typical examples through the <a href='#/guide'>Field Guide</a>.<br><br>The list of available tags may change depending on the type of page that you&#039;re looking at."
+      attachment: "center center .subject-container center center"
       next: "timeline"
       
     timeline: new Step
