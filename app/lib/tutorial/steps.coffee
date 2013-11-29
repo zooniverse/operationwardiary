@@ -58,7 +58,7 @@ module.exports =
         "click label[for=category-diaryDate]": "add_dates"
     
     add_dates: new Step
-      number: 7
+      number: 8
       header: "Tagging dates and times"
       details: "TODO"
       attachment: "center center .subject-container center center"
@@ -67,7 +67,7 @@ module.exports =
         "click button[name=toggle]": "tag_places"
     
     tag_places: new Step
-      number: 8
+      number: 9
       header: "Tagging places"
       details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
       instruction: "Click the <b>Place</b> tag."
@@ -76,7 +76,7 @@ module.exports =
         "click label[for=category-place]": "add_places"
     
     add_places: new Step
-      number: 7
+      number: 10
       header: "Tagging places"
       details: "TODO"
       attachment: "center center .subject-container center center"
@@ -85,7 +85,7 @@ module.exports =
         "click button[name=toggle]": "tag_people"
     
     tag_people: new Step
-      number: 9
+      number: 11
       header: "Tagging people"
       details: "People are also easy to tag &ndash; click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
       attachment: "left center label[for='category-person'] right center"
@@ -95,7 +95,7 @@ module.exports =
         
     
     add_people: new Step
-      number: 7
+      number: 12
       header: "Tagging people"
       details: "TODO"
       attachment: "center center .subject-container center center"
@@ -104,7 +104,7 @@ module.exports =
         "click button[name=toggle]": "tag_other"
     
     tag_other: new Step
-      number: 10
+      number: 13
       header: "Tagging other information"
       details: "You may well find other important pieces of information in the fourth column, such as what the unit was doing or what the weather was like. Choose and apply the other tags in the menu/toolbar whenever you find this type of information listed."
       attachment: "left center label[for='category-activity'] right center"
@@ -113,7 +113,7 @@ module.exports =
         "click label[for=category-activity]":"add_activity"
     
     add_activity: new Step
-      number: 7
+      number: 14
       header: "Tagging other information"
       details: "TODO"
       attachment: "center center .subject-container center center"
@@ -122,13 +122,13 @@ module.exports =
         "click button[name=toggle]": "tag_pages"
     
     tag_pages: new Step
-      number: 11
+      number: 15
       header: "Classifying other page types"
       details: "As well as diary pages, you may come across some more unusual pages like this one. If you&#039;re unsure of the different page types you can view typical examples through the <a href='#/guide'>Field Guide</a>.<br><br>The list of available tags may change depending on the type of page that you&#039;re looking at."
       next: "timeline"
       
     timeline: new Step
-      number: 12
+      number: 16
       header: "Editing or deleting tags"
       details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit or delete them."
       attachment: "center top button.timeline center bottom"
@@ -137,7 +137,7 @@ module.exports =
         "click button.timeline":"finished"
       
     finished: new Step
-      number: 13
+      number: 17
       header: "Finished"
       details: "Once you&#039;re happy that you&#039;ve tagged as much as you can, click Finished to submit this page and your tags."
       attachment: "right top button.finish center bottom"
