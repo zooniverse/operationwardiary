@@ -7,88 +7,95 @@ module.exports =
   steps:    
     welcome: new Step
       number: 1
-      header: "Welcome to Operation War Diaries!"
-      details: "This short tutorial will walk you through the tagging process. Let&#039;s get started!" 
+      header: "Welcome to Operation War Diary"
+      details: "<p>This short tutorial will walk you through the tagging process. Let&#039;s get started!</p>" 
       attachment: "center center .subject-container center center"
       next: "intro"
 
     intro: new Step
       number: 2
       header: "Check out the diaries"
-      details: "There are around 1.5 million pages of unit war diaries. Half of them are standard diary pages, like this one, but there are also lots of other types of pages. We need your help to classify the page types and then tag the data on that page. "
-      attachment: "center center .subject-container center center"
-      next: "choose"
-    
-    choose: new Step
-      number: 3
-      header: "Select a diary to work on"
-      details: "You&#039;ll be given a sequence of pages from a diary &ndash; if you&#039;d rather work on a different diary to the one you&#039;re given, select another from the drop-down list at the bottom of the screen."
+      details: "<p>There are around 1.5 million pages of unit war diaries that cover activity on the Western Front. There are lots of different types of page full of fascinating details about the people involved and descriptions of what they were doing. </p>
+<p>We need your help to classify the type of page and then tag the data.</p> "
       attachment: "center center .subject-container center center"
       next: "page_type"
     
     page_type: new Step
-      number: 4
+      number: 3
       header: "Classifying diary pages"
-      details: "Around half of the pages are diary pages, like the one shown here. Most use a pre-printed template, although some may be free-form. You&#039;ll also notice that some are handwritten while others have been typed. Select <b>Diary page</b> from the toolbar to classify the page."
+      details: "<p>Choose the classification that best matches the page you can see. If you are not sure which one to choose you can see examples in the Field Guide.</p>
+<p>Around half of the pages are standard diary pages, like this one.</p> 
+<p>Select <b>Diary page</b> from the menu on the left of the screen to classify the page.</p>"
       instruction: "Click <b>Diary page</b>"
       attachment: "left center label[for='document-diary'] right center"
       next:
         "click label[for=document-diary]": "get_tagging"
     
     get_tagging: new Step
-      number: 5
+      number: 4
       header: "Get tagging"
-      details: "Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!"
+      details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
+<p>Different page types are likely to contain different types of information so the list of available tags will change depending on the type of page you&#039;ve selected.</p>"
       attachment: "center center .subject-container center center"
       next: "tagging_intro"
     
     tagging_intro: new Step
-      number: 6
-      header: "Tagging the data in diary pages"
-      details: "Diary pages are laid out in a standard four-column format. The first three columns list place, date and hour, while the fourth column contains the narrative account of operations. <br><br>The fourth column could contain lots of different information, including people, activities and references to other pages within the diaries (including maps)."
+      number: 5
+      header: "Tagging the diary pages"
+      details: "<p>Most Diary pages use a pre-printed template although some may be written on note paper. They can be either typed or handwritten.</p>
+<p>The form is a standard five-column format. The first three columns list place, date and hour. The fourth column contains the narrative account of operations and can contain lots of different information about people and activities. </p>
+<p>References to other documents within the diaries including maps and reports are recorded in the fifth column.</p>"
       attachment: "center center .subject-container center center"
       next: "tag_dates"
       
     tag_dates: new Step
-      number: 7
+      number: 6
       header: "Tagging dates and times"
-      details: "Dates and times are even simpler &ndash; when you attach them to the diary page you&#039;ll get a calendar tool and drop-down boxes to select from."
+      details: "<p>Start tagging by working your way down the Date column. This will divide the page into horizontal sections based on the date. Any other tags you place will then be associated with that date so we can create a timeline of activity.</p>
+<p>Select Date from the tag menu on the left of the screen.</p>"
       attachment: "left center label[for='category-diaryDate'] right center"
       instruction: "Click the <b>Date</b> tag."
       next: 
         "click label[for=category-diaryDate]": "add_dates"
     
     add_dates: new Step
-      number: 8
-      header: "Tagging dates and times"
-      details: "TODO"
+      number: 7
+      header: "Adding a date"
+      details: "<p>Now click on the first date at the top of the Date column. You can now choose the day from the calendar tool. You should see a horizontal line appear.</p>
+<p>Do the same thing for the next date and a second line will appear, dividing the entries into sections.</p>
+<p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
       attachment: "center center .subject-container center center"
       instruction: "Add a date"
       next: 
         "click button[name=toggle]": "tag_places"
     
     tag_places: new Step
-      number: 9
+      number: 8
       header: "Tagging places"
-      details: "Click the <b>Place</b> tag, then click again on the diary page to attach it to where a place is listed. The pop-up box will ask you to enter the place name, and the map will centre on that place."
+      details: "<p>Once you have tagged all the dates follow the same approach for Places.</p>
+<p>Select the <b>Place</b> tag in the tag menu.</p>"
       instruction: "Click the <b>Place</b> tag."
       attachment: "left center label[for='category-place'] right center"
       next: 
         "click label[for=category-place]": "add_places"
     
     add_places: new Step
-      number: 10
-      header: "Tagging places"
-      details: "TODO"
+      number: 9
+      header: "Choosing a place"
+      details: "<p>Click on the diary page to attach the tag to where a place is listed. Try to make sure that you click within the horizontal lines for the relevant date.</p>
+<p>In the pop-up box enter the place name, and the map will centre on that place.</p>
+<p>If you make a mistake you can delete the tag by clicking on the X box or tick to complete the tag.</p>"
       attachment: "center center .subject-container center center"
       instruction: "Add a place"
       next: 
         "click button[name=toggle]": "tag_people"
     
     tag_people: new Step
-      number: 11
+      number: 10
       header: "Tagging people"
-      details: "People are also easy to tag &ndash; click on the toolbar on the left of the screen, then again on the diary page to attach the tag. You&#039;ll then be asked to fill in as much detail as you can about that individual, including their rank and regimental number if given."
+      details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
+
+<p>If you see an individual mentioned by name select <b>Person</b> in the tag menu, then click on the diary page by their name to attach the tag.</p>"
       attachment: "left center label[for='category-person'] right center"
       instruction: "Click the <b>Person</b> tag."
       next: 
@@ -96,50 +103,61 @@ module.exports =
         
     
     add_people: new Step
-      number: 12
-      header: "Tagging people"
-      details: "TODO"
+      number: 11
+      header: "Tell us why they were mentioned"
+      details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
+<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned.</p>
+<p>Click the tick box to complete the tag.</p>"
       attachment: "center center .subject-container center center"
       instruction: "Add a person"
       next: 
         "click button[name=toggle]": "tag_other"
     
     tag_other: new Step
-      number: 13
+      number: 12
       header: "Tagging other information"
-      details: "You may well find other important pieces of information in the fourth column, such as what the unit was doing or what the weather was like. Choose and apply the other tags in the menu/toolbar whenever you find this type of information listed."
+      details: "<p>You may well find other important pieces of information such as what the unit was doing or what the weather was like.</p>
+
+<p>Remember you can always have a look through the Field Guide if you are not sure what a military phrase means or if it is something that you should tag.</p>
+
+<p>On this diary page there is a description of XXXXXXXXX (military activity) so select the <b>Unit Activity</b> tag in the tag menu.</p>"
       attachment: "left center label[for='category-activity'] right center"
-      instruction: "Click the <b>Unit activity</b> tag."
+      instruction: "Click the <b>Unit Activity</b> tag."
       next: 
         "click label[for=category-activity]":"add_activity"
     
     add_activity: new Step
-      number: 14
-      header: "Tagging other information"
-      details: "TODO"
+      number: 13
+      header: "Unit Activity"
+      details: "<p>Place the tag on the page and then choose an entry from the drop down list that most closely matches the action described in the diary.</p>
+<p>In this example choose XXXXXX from the drop down list.</p>
+<p>If you can&#039;t find a relevant description have a look at the Army Life tag list which includes domestic activities, religion, sport and food.</p>
+<p>Click the tick box to complete the tag.</p>"
       attachment: "center center .subject-container center center"
       instruction: "Add an activity"
       next: 
-        "click button[name=toggle]": "tag_pages"
-    
-    tag_pages: new Step
-      number: 15
-      header: "Classifying other page types"
-      details: "As well as diary pages, you may come across some more unusual pages like this one. If you&#039;re unsure of the different page types you can view typical examples through the <a href='#/guide'>Field Guide</a>.<br><br>The list of available tags may change depending on the type of page that you&#039;re looking at."
-      attachment: "center center .subject-container center center"
-      next: "timeline"
+        "click button[name=toggle]": "timeline"
       
     timeline: new Step
-      number: 16
+      number: 14
       header: "Editing or deleting tags"
-      details: "Before you finish a page, you can review your tags to make sure that you&#039;re happy with them. Click on the <b>timeline</b> icon on the top right of the screen to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit or delete them."
+      details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
+      <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to move, edit or delete them.</p>"
       attachment: "center top button.timeline center bottom"
       instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
       next: 
         "click button.timeline":"finished"
       
     finished: new Step
-      number: 17
+      number: 15
       header: "Finished"
-      details: "Once you&#039;re happy that you&#039;ve tagged as much as you can, click Finished to submit this page and your tags."
+      details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
       attachment: "right top button.finish center bottom"
+      next: "choose"
+      
+    choose: new Step
+      number: 16
+      header: "What happens next"
+      details: "<p>Well done! You have successfully completed the tutorial.</p>
+<p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
+      attachment: "center center .subject-container center center"
