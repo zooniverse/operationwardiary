@@ -287,14 +287,16 @@ class Classifier extends Spine.Controller
        .each ->
          metadata[@name] = @value
          
-    annotation = 
+    @classification.annotate
       document: document
-      metadata: metadata
-      marks: @surface.marks.slice(0)
-      timeline: @timeline.entries
-    @classification.annotate annotation
+    
+    for mark in @surface.marks
+      @classification.annotate
+        type: mark.type
+        coords: mark.p0
+        note: mark.note
     console?.log 'Classifying', JSON.stringify @classification
-    console.log (mark.note for mark in annotation.marks)
+    console.log (mark.note for mark in @surface.marks)
 
   onFinishTask: =>
     @onDoTask()
