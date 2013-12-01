@@ -292,8 +292,8 @@ class Classifier extends Spine.Controller
     
     for mark in @surface.marks
       [x,y] = mark.p0
-      x = x / @surface.width
-      y = y / @surface.height
+      x = parseInt 100 * x / @surface.width
+      y = parseInt 100 * y / @surface.height
       @classification.annotate
         type: mark.type
         coords: [x,y]
