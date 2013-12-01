@@ -291,9 +291,12 @@ class Classifier extends Spine.Controller
       document: document
     
     for mark in @surface.marks
+      [x,y] = mark.p0
+      x = x / @surface.width
+      y = y / @surface.height
       @classification.annotate
         type: mark.type
-        coords: mark.p0
+        coords: [x,y]
         note: mark.note
     console?.log 'Classifying', JSON.stringify @classification
     console.log (mark.note for mark in @surface.marks)
