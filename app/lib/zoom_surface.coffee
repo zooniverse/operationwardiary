@@ -33,8 +33,6 @@ class ZoomableSurface extends MarkingSurface
   zoom: (@zoomBy = 1) ->
     # return if @disabled
     @zoomBy = Math.max @zoomBy, 1
-    
-    
     @pan()
     
   pan: (@panX = @panX, @panY = @panY) ->
