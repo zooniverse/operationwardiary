@@ -63,11 +63,20 @@ module.exports =
     add_dates: new Step
       number: 7
       header: "Adding a date"
-      details: "<p>Now click on the first date at the top of the Date column. You can now choose the day from the calendar tool. You should see a horizontal line appear.</p>
-<p>Do the same thing for the next date and a second line will appear, dividing the entries into sections.</p>
+      details: "<p>You can see that there were a number of entries at different times during 20 May.</p>
+<p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick box to confirm.</p>"
+      attachment: "left middle .subject-container .20 .44"
+      instruction: "Add <b>20 May 1915</b>"
+      next: 
+        "click button[name=toggle]": "second_date"
+    
+    second_date: new Step
+      number: 7
+      header: "Adding a second date"
+      details: "<p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
 <p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
-      attachment: "top left .subject-container .13 .36"
-      instruction: "Add <b>19 May 1915</b>"
+      attachment: "left middle .subject-container .20 .80"
+      instruction: "Add <b>21 May 1915</b>"
       next: 
         "click button[name=toggle]": "tag_places"
     
@@ -85,10 +94,10 @@ module.exports =
     add_places: new Step
       number: 9
       header: "Choosing a place"
-      details: "<p>Click on the diary page to attach the tag to where a place is listed. Try to make sure that you click within the horizontal lines for the relevant date.</p>
-<p>In the pop-up box enter the place name, and the map will centre on that place.</p>
+      details: "<p>Click on the second entry for 20 May where it says ‘Aldershot’ to attach the tag. Try to make sure that you click within the horizontal lines for the relevant date.</p>
+<p>In the pop-up box enter 'Aldershot', and the map will centre on that place.</p>
 <p>If you make a mistake you can delete the tag by clicking on the X box or tick to complete the tag.</p>"
-      attachment: "top left .subject-container .06 .33"
+      attachment: "left middle .subject-container .13 .50"
       instruction: "Add <b>Aldershot</b>"
       next: 
         "click button[name=toggle]": "tag_people"
@@ -98,7 +107,7 @@ module.exports =
       header: "Tagging people"
       details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
 
-<p>If you see an individual mentioned by name select <b>Person</b> in the tag menu, then click on the diary page by their name to attach the tag.</p>"
+<p>Can you see an individual mentioned by name on this page? <b>Sergeant Byrne</b> became a casualty on 21 May. Select Person in the tag menu, then click on the diary page by his name to attach the tag.</p>"
       attachment: "left center label[for='category-person'] right center"
       instruction: "Click the <b>Person</b> tag."
       focus: "label[for='category-person']"
@@ -110,10 +119,10 @@ module.exports =
       number: 11
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
-<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned.</p>
+<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a Casualty so choose the closest match – Casualty:Wounded</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "top left .subject-container .50 .38"
-      instruction: "Add <b>Major J A Hope</b>"
+      attachment: "left middle .subject-container .45 .88"
+      instruction: "Add <b>Sgt Byrne</b>"
       next: 
         "click button[name=toggle]": "tag_other"
     
@@ -124,7 +133,7 @@ module.exports =
 
 <p>Remember you can always have a look through the Field Guide if you are not sure what a military phrase means or if it is something that you should tag.</p>
 
-<p>On this diary page there is a description of 'Battalion transport' (military activity) so select the <b>Unit Activity</b> tag in the tag menu.</p>"
+<p>On this diary page there is a description of the Battalion embarking on the SS Victoria so select the <b>Unit Activity</b> tag in the tag menu.</p>"
       attachment: "left center label[for='category-activity'] right center"
       instruction: "Click the <b>Unit Activity</b> tag."
       focus: "label[for='category-activity']"
@@ -134,11 +143,10 @@ module.exports =
     add_activity: new Step
       number: 13
       header: "Unit Activity"
-      details: "<p>Place the tag on the page and then choose an entry from the drop down list that most closely matches the action described in the diary.</p>
-<p>In this example choose <b>Unit movement</b> from the drop down list.</p>
-<p>If you can&#039;t find a relevant description have a look at the Army Life tag list which includes domestic activities, religion, sport and food.</p>
+      details: "<p>Place the tag on the page where it says ’Embarked’ and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
+<p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "top left .subject-container .26 .37"
+      attachment: "left middle .subject-container .50 .77"
       instruction: "Add <b>Unit movement</b>"
       next: 
         "click button[name=toggle]": "timeline"
