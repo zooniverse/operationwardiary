@@ -2,6 +2,7 @@ Spine = require 'spine'
 Subject = require 'zooniverse/models/subject'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
+{WidgetFactory} = require '../../lib/text-widgets'
 
 
 class Comments extends Spine.Controller
@@ -39,6 +40,11 @@ class Comments extends Spine.Controller
     
   onCommentsFetch: ({discussion}) =>
     @comments = discussion.comments
+    DateWidget = WidgetFactory.registry.date
+    
+    for comment in @comments
+      comment.timeago = $.timeago comment.updated_at
+      comment.date = DateWidget.formatDate 'd MM yy', new Date comment.updated_at
     @render()
     
   submitComment: =>
