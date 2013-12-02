@@ -71,7 +71,7 @@ module.exports =
         "click button[name=toggle]": "second_date"
     
     second_date: new Step
-      number: 7
+      number: 8
       header: "Adding a second date"
       details: "<p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
 <p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
@@ -81,7 +81,7 @@ module.exports =
         "click button[name=toggle]": "tag_places"
     
     tag_places: new Step
-      number: 8
+      number: 9
       header: "Tagging places"
       details: "<p>Once you have tagged all the dates follow the same approach for Places.</p>
 <p>Select the <b>Place</b> tag in the tag menu.</p>"
@@ -92,7 +92,7 @@ module.exports =
         "click label[for=category-place]": "add_places"
     
     add_places: new Step
-      number: 9
+      number: 10
       header: "Choosing a place"
       details: "<p>Click on the second entry for 20 May where it says ‘Aldershot’ to attach the tag. Try to make sure that you click within the horizontal lines for the relevant date.</p>
 <p>In the pop-up box enter 'Aldershot', and the map will centre on that place.</p>
@@ -103,7 +103,7 @@ module.exports =
         "click button[name=toggle]": "tag_people"
     
     tag_people: new Step
-      number: 10
+      number: 11
       header: "Tagging people"
       details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
 
@@ -116,7 +116,7 @@ module.exports =
         
     
     add_people: new Step
-      number: 11
+      number: 12
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a Casualty so choose the closest match – Casualty:Wounded</p>
@@ -127,7 +127,7 @@ module.exports =
         "click button[name=toggle]": "tag_other"
     
     tag_other: new Step
-      number: 12
+      number: 13
       header: "Tagging other information"
       details: "<p>You may well find other important pieces of information such as what the unit was doing or what the weather was like.</p>
 
@@ -141,7 +141,7 @@ module.exports =
         "click label[for=category-activity]":"add_activity"
     
     add_activity: new Step
-      number: 13
+      number: 14
       header: "Unit Activity"
       details: "<p>Place the tag on the page where it says ’Embarked’ and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
@@ -152,7 +152,7 @@ module.exports =
         "click button[name=toggle]": "timeline"
       
     timeline: new Step
-      number: 14
+      number: 15
       header: "Editing or deleting tags"
       details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
       <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to move, edit or delete them.</p>"
@@ -163,14 +163,14 @@ module.exports =
         "click button.timeline":"finished"
       
     finished: new Step
-      number: 15
+      number: 16
       header: "Finished"
       details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
       attachment: "right top button.finish center bottom"
       next: "choose"
       
     choose: new Step
-      number: 16
+      number: 17
       header: "What happens next"
       details: "<p>Well done! You have successfully completed the tutorial.</p>
 <p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
