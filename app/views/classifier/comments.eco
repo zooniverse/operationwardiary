@@ -5,7 +5,7 @@
 <div>
   <p class="author"><img width="20" height="20" alt="" src="//zooniverse-avatars.s3.amazonaws.com/ouroboros/<%= comment.user_zooniverse_id %>"> by <%= comment.user_name %></p>
   <p class="comment"><%= comment.body %></p>
-  <p class="time"><abbr title="<%= comment.date %>"><%= comment.timeago %></abbr></p>
+  <p class="posted"><abbr title="<%= comment.date %>"><%= comment.timeago %></abbr></p>
 </div>
 <% end %>
 <% if @user: %>
