@@ -66,8 +66,8 @@ module.exports =
       details: "<p>Now click on the first date at the top of the Date column. You can now choose the day from the calendar tool. You should see a horizontal line appear.</p>
 <p>Do the same thing for the next date and a second line will appear, dividing the entries into sections.</p>
 <p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
-      attachment: "center center .subject-container center center"
-      instruction: "Add a date"
+      attachment: "top left .subject-container .13 .36"
+      instruction: "Add <b>19 May 1915</b>"
       next: 
         "click button[name=toggle]": "tag_places"
     
@@ -88,8 +88,8 @@ module.exports =
       details: "<p>Click on the diary page to attach the tag to where a place is listed. Try to make sure that you click within the horizontal lines for the relevant date.</p>
 <p>In the pop-up box enter the place name, and the map will centre on that place.</p>
 <p>If you make a mistake you can delete the tag by clicking on the X box or tick to complete the tag.</p>"
-      attachment: "center center .subject-container center center"
-      instruction: "Add a place"
+      attachment: "top left .subject-container .06 .33"
+      instruction: "Add <b>Aldershot</b>"
       next: 
         "click button[name=toggle]": "tag_people"
     
@@ -112,8 +112,8 @@ module.exports =
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned.</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "center center .subject-container center center"
-      instruction: "Add a person"
+      attachment: "top left .subject-container .50 .38"
+      instruction: "Add <b>Major J A Hope</b>"
       next: 
         "click button[name=toggle]": "tag_other"
     
@@ -124,7 +124,7 @@ module.exports =
 
 <p>Remember you can always have a look through the Field Guide if you are not sure what a military phrase means or if it is something that you should tag.</p>
 
-<p>On this diary page there is a description of XXXXXXXXX (military activity) so select the <b>Unit Activity</b> tag in the tag menu.</p>"
+<p>On this diary page there is a description of 'Battalion transport' (military activity) so select the <b>Unit Activity</b> tag in the tag menu.</p>"
       attachment: "left center label[for='category-activity'] right center"
       instruction: "Click the <b>Unit Activity</b> tag."
       focus: "label[for='category-activity']"
@@ -135,11 +135,11 @@ module.exports =
       number: 13
       header: "Unit Activity"
       details: "<p>Place the tag on the page and then choose an entry from the drop down list that most closely matches the action described in the diary.</p>
-<p>In this example choose XXXXXX from the drop down list.</p>
+<p>In this example choose <b>Unit movement</b> from the drop down list.</p>
 <p>If you can&#039;t find a relevant description have a look at the Army Life tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "center center .subject-container center center"
-      instruction: "Add an activity"
+      attachment: "top left .subject-container .26 .37"
+      instruction: "Add <b>Unit movement</b>"
       next: 
         "click button[name=toggle]": "timeline"
       
