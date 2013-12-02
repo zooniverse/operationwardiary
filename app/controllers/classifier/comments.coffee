@@ -3,6 +3,7 @@ Subject = require 'zooniverse/models/subject'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
 {WidgetFactory} = require '../../lib/text-widgets'
+DateWidget = WidgetFactory.registry.date
 
 
 class Comments extends Spine.Controller
@@ -40,7 +41,6 @@ class Comments extends Spine.Controller
     
   onCommentsFetch: ({discussion}) =>
     @comments = discussion.comments
-    DateWidget = WidgetFactory.registry.date
     
     for comment in @comments
       comment.timeago = $.timeago comment.updated_at
@@ -51,11 +51,14 @@ class Comments extends Spine.Controller
     console.log 'CLICK'
     comment = @comment_text.val()
     request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}/comments", comment: comment
+    time = new Date
     
-    @comments.push
+    @comments.unshift
       user_name: User.current.name
       user_zooniverse_id: User.current.zooniverse_id
       body: comment
+      timeago: $.timeago time
+      date: DateWidget.formatDate 'd MM yy', time
     
     @render()
 
