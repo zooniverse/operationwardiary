@@ -28,6 +28,7 @@ module.exports =
 <p>Select <b>Diary page</b> from the menu on the left of the screen to classify the page.</p>"
       instruction: "Click <b>Diary page</b>"
       attachment: "left center label[for='document-diary'] right center"
+      focus: "label[for='document-diary']"
       next:
         "click label[for=document-diary]": "get_tagging"
     
@@ -55,6 +56,7 @@ module.exports =
 <p>Select Date from the tag menu on the left of the screen.</p>"
       attachment: "left center label[for='category-diaryDate'] right center"
       instruction: "Click the <b>Date</b> tag."
+      focus: "label[for=category-diaryDate]"
       next: 
         "click label[for=category-diaryDate]": "add_dates"
     
@@ -76,6 +78,7 @@ module.exports =
 <p>Select the <b>Place</b> tag in the tag menu.</p>"
       instruction: "Click the <b>Place</b> tag."
       attachment: "left center label[for='category-place'] right center"
+      focus: "label[for='category-place']"
       next: 
         "click label[for=category-place]": "add_places"
     
@@ -98,6 +101,7 @@ module.exports =
 <p>If you see an individual mentioned by name select <b>Person</b> in the tag menu, then click on the diary page by their name to attach the tag.</p>"
       attachment: "left center label[for='category-person'] right center"
       instruction: "Click the <b>Person</b> tag."
+      focus: "label[for='category-person']"
       next: 
         "click label[for=category-person]": "add_people"
         
@@ -123,6 +127,7 @@ module.exports =
 <p>On this diary page there is a description of XXXXXXXXX (military activity) so select the <b>Unit Activity</b> tag in the tag menu.</p>"
       attachment: "left center label[for='category-activity'] right center"
       instruction: "Click the <b>Unit Activity</b> tag."
+      focus: "label[for='category-activity']"
       next: 
         "click label[for=category-activity]":"add_activity"
     
@@ -145,6 +150,7 @@ module.exports =
       <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to move, edit or delete them.</p>"
       attachment: "center top button.timeline center bottom"
       instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
+      focus: "button.timeline"
       next: 
         "click button.timeline":"finished"
       
