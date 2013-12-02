@@ -383,6 +383,8 @@ class Classifier extends Spine.Controller
     tutorial = new Tutorial steps
     subject = tutorial_subject
     
+    @classification = new Classification { subject }
+    
     @group_details.render subject.group
     
     Subject.one 'select', =>
