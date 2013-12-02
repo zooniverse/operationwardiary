@@ -28,6 +28,7 @@ class Comments extends Spine.Controller
   render: =>
     @html @template
       comments: @comments
+      talk_url: "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{@zooniverse_id}"
       user: User.current
     
     @comment_button.on 'click', @submitComment

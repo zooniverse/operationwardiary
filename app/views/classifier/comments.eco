@@ -1,5 +1,6 @@
 <% translate = require 't7e' %>
 <%- translate 'h2', "common.comments" %>
+<p>Add comments and hashtags here, or <a href="<%= @talk_url %>">discuss this page on Talk</a></p>
 <% for comment in @comments: %>
 <div>
   <p class="author"><img width="20" height="20" alt="" src="//zooniverse-avatars.s3.amazonaws.com/ouroboros/<%= comment.user_zooniverse_id %>"> by <%= comment.user_name %></p>
