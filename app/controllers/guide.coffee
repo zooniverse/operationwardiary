@@ -64,6 +64,8 @@ class Guide extends Spine.Controller
         new_html = $el.html().replace new RegExp(term, 'g'), "<b class='highlight'>#{term}</b>"
         $el.html new_html
     
+    false
+    
   override_accordion: (event, ui) ->
     # Adapted from http://stackoverflow.com/questions/15702444/jquery-ui-accordion-open-multiple-panels-at-once
     if ui.newHeader[0]
