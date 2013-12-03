@@ -60,8 +60,11 @@ class TextControls extends ToolControls
     @el.on 'change', ':input', @onTextChange
     
     @el.on 'keydown', (e)=>
-      if e.which == 13 && @widget.type != 'place'
-        @save()
+      if e.which == 13
+        if @widget.type != 'place'
+          @save()
+        else
+          @widget.updateNote e.target
         return false
     
     @tool.on 'select', @open
