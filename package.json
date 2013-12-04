@@ -7,7 +7,7 @@
     "haw": "0.0.7",
     "marking-surface": "~0.0.15",
     "publisssh": "git://github.com/brian-c/publisssh.git",
-    "zootorial": "git://github.com/brian-c/zootorial.git#new-features",
+    "zootorial": "~0.3.4",
     "zooniverse": "git://github.com/zooniverse/Zooniverse.git",
     "spine": "~1.1.0",
     "t7e": "~0.1.3"
