@@ -4,8 +4,8 @@ Route = require 'spine/lib/route'
 module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
-  length: 17
   steps:    
+    length: 17
     welcome: new Step
       number: 1
       header: "Welcome to Operation War Diary"
