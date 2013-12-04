@@ -1,4 +1,5 @@
 {Step} = require 'zootorial'
+Route = require 'spine/lib/route'
 
 module.exports =
   id: "diaries-tut"
@@ -175,3 +176,4 @@ module.exports =
       details: "<p>Well done! You have successfully completed the tutorial.</p>
 <p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
       attachment: "center center .subject-container center center"
+      onExit: -> Route.navigate '/groups'
