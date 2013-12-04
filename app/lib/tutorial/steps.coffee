@@ -67,7 +67,7 @@ module.exports =
       details: "<p>You can see that there were a number of entries at different times during 20 May.</p>
 <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick box to confirm.</p>"
       attachment: "left middle .subject-container .20 .44"
-      instruction: "Add <b>20 May 1915</b>"
+      instruction: "Add <b>20 May 1915</b> above the entry"
       next: 
         "click button[name=toggle]": "second_date"
     
@@ -77,7 +77,7 @@ module.exports =
       details: "<p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
 <p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
       attachment: "left middle .subject-container .20 .80"
-      instruction: "Add <b>21 May 1915</b>"
+      instruction: "Add <b>21 May 1915</b> above the entry"
       next: 
         "click button[name=toggle]": "tag_places"
     
