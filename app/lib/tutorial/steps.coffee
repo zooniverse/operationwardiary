@@ -67,7 +67,7 @@ module.exports =
       className: "point-left"
       details: "<p>You can see that there were a number of entries at different times during 20 May.</p>
 <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick box to confirm.</p>"
-      attachment: "left middle .subject-container .20 .44"
+      attachment: "left middle .subject-container .20 .41"
       instruction: "Add <b>20 May 1915</b> above the entry"
       next: 
         "click button[name=toggle]": "second_date"
@@ -126,7 +126,7 @@ module.exports =
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a Casualty so choose the closest match – Casualty:Wounded</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "left middle .subject-container .45 .88"
+      attachment: "left middle .subject-container .45 .85"
       instruction: "Add <b>Sgt Byrne</b>"
       next: 
         "click button[name=toggle]": "tag_other"
@@ -152,7 +152,7 @@ module.exports =
       details: "<p>Place the tag on the page where it says ’Embarked’ and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the tick box to complete the tag.</p>"
-      attachment: "left middle .subject-container .50 .77"
+      attachment: "left middle .subject-container .50 .74"
       instruction: "Add <b>Unit movement</b>"
       next: 
         "click button[name=toggle]": "timeline"
