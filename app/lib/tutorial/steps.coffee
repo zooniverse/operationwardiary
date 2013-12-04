@@ -64,6 +64,7 @@ module.exports =
     add_dates: new Step
       number: 7
       header: "Adding a date"
+      className: "point-left"
       details: "<p>You can see that there were a number of entries at different times during 20 May.</p>
 <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick box to confirm.</p>"
       attachment: "left middle .subject-container .20 .44"
@@ -74,6 +75,7 @@ module.exports =
     second_date: new Step
       number: 8
       header: "Adding a second date"
+      className: "point-left"
       details: "<p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
 <p>When you are happy you have recorded the correct information click on the tick box to complete the tag.</p>"
       attachment: "left middle .subject-container .20 .80"
@@ -95,6 +97,7 @@ module.exports =
     add_places: new Step
       number: 10
       header: "Choosing a place"
+      className: "point-left"
       details: "<p>Click on the second entry for 20 May where it says ‘Aldershot’ to attach the tag. Try to make sure that you click within the horizontal lines for the relevant date.</p>
 <p>In the pop-up box enter 'Aldershot', and the map will centre on that place.</p>
 <p>If you make a mistake you can delete the tag by clicking on the X box or tick to complete the tag.</p>"
@@ -119,6 +122,7 @@ module.exports =
     add_people: new Step
       number: 12
       header: "Tell us why they were mentioned"
+      className: "point-left"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a Casualty so choose the closest match – Casualty:Wounded</p>
 <p>Click the tick box to complete the tag.</p>"
@@ -144,6 +148,7 @@ module.exports =
     add_activity: new Step
       number: 14
       header: "Unit Activity"
+      className: "point-left"
       details: "<p>Place the tag on the page where it says ’Embarked’ and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the tick box to complete the tag.</p>"

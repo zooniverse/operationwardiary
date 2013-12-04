@@ -610,4 +610,25 @@ div.subject-timeline
           padding-right: 1em
           padding-left: 5em
           float: right
-        
+      
+.tutorial
+  $arrow-size = 15px
+
+  text-align: left;
+
+  .progress .track
+    display: none // Use the dots instead
+
+  .dialog-arrow
+    border: $arrow-size solid transparent
+    height: 0
+    margin: ($arrow-size * -1) 0 0 ($arrow-size * -1)
+    position: absolute
+    width: 0
+
+  &.point-left .dialog-arrow
+    border-right-color: #fff
+    border-left-width: 0
+    left: ($arrow-size * -1)
+    margin-left: 0
+    top: 50%
