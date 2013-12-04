@@ -165,12 +165,14 @@ class Classifier extends Spine.Controller
         @tutorial()
       else
         @group_picker.set_group params.group_id
+    
+    @navigate '/classify', 'tutorial' unless User.current
       
-      $('.site-navigation .links ul')
-        .find('a')
-        .removeClass('active')
-        .filter("[href='#/classify']")
-        .addClass 'active'
+    $('.site-navigation .links ul')
+      .find('a')
+      .removeClass('active')
+      .filter("[href='#/classify']")
+      .addClass 'active'
     
   render_annotation: ( history ) ->
 
