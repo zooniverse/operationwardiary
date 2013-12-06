@@ -335,7 +335,6 @@
   position: absolute
   top: 0
   left: 25%
-  width: 176px
   padding: 2px
   background-color: #fff
   border: 1px solid #aaa
@@ -348,7 +347,6 @@
   color: grey
   
   .ui-widget
-    font-size: .8em
     margin: .3em auto
 
   &.closed
@@ -394,6 +392,25 @@
       &:checked + span
         background: $darkgreen
         color: $white
+  
+  &.date
+  &.diaryDate
+  
+    .ui-widget-header
+      color: $white
+      background: $lightgrey
+    
+    .ui-state-default
+      color: $white
+      background: $greyblue
+    
+    .ui-state-hover
+      color: $white
+      background: $lightblue
+    
+    .ui-state-active
+      color: $white
+      background: $darkblue
         
   &.gridRef
     whitespace: nowrap
