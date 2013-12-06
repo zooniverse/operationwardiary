@@ -167,6 +167,8 @@ class Classifier extends Spine.Controller
         @group_picker.set_group params.group_id
     
     @navigate '/classify', 'tutorial' unless User.current
+    
+    @navigate '/groups' unless @group_details.group
       
     $('.site-navigation .links ul')
       .find('a')
@@ -190,7 +192,7 @@ class Classifier extends Spine.Controller
       if user
         Recent.fetch()
           .pipe( (recents) =>
-            recents = []
+            # recents = []
             
             if recents.length
               subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
@@ -206,7 +208,7 @@ class Classifier extends Spine.Controller
             console.log group_id
             @group_picker.set_group group_id
           .fail =>
-            @navigate '/classify', 'tutorial'
+            # @navigate '/classify', 'tutorial'
             # @navigate '/groups'
       else
         Subject.next()
