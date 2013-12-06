@@ -160,15 +160,15 @@ class Classifier extends Spine.Controller
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
     
+    @navigate '/classify', 'tutorial' unless User.current
+    
     if params.group_id?
       if params.group_id == 'tutorial'
         @tutorial()
       else
         @group_picker.set_group params.group_id
-    
-    @navigate '/classify', 'tutorial' unless User.current
-    
-    @navigate '/groups' unless @group_details.group
+    else
+      @navigate '/groups' unless @group_details.group
       
     $('.site-navigation .links ul')
       .find('a')
