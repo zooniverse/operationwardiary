@@ -207,7 +207,11 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
             e.stopPropagation()
             promise.notify place
           )
-        label = $("<label><span>#{place.name}<span></label>").prepend input
+        label = $("<label><span>#{place.name}</span></label>").prepend input
+        label.on 'mouseover focus', place, (e)=>
+          place = e.data
+          @show_place place.lat, place.long
+          
         $suggestions.append label
       
       input = 
