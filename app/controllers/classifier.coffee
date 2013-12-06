@@ -264,6 +264,7 @@ class Classifier extends Spine.Controller
           @toolbars.selectPageType page_type
           @toolbars.toggleCategories()
           @surface.enable()
+          $('button.finish').attr disabled: false
           
           for key, value of metadata
             @toolbars.metadata.find("[name=#{key}]").val value
