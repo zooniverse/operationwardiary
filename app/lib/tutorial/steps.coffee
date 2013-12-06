@@ -173,7 +173,10 @@ module.exports =
       header: "Finished"
       details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
       attachment: "right top button.finish center bottom"
-      next: "choose"
+      instruction: "Click <b>Finished!</b>"
+      focus: "button.finish"
+      next: "click button.finish":"choose"
+      onExit: -> Route.navigate '/groups'
       
     choose: new Step
       number: 17
@@ -181,4 +184,3 @@ module.exports =
       details: "<p>Well done! You have successfully completed the tutorial.</p>
 <p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
       attachment: "center center .subject-container center center"
-      onExit: -> Route.navigate '/groups'
