@@ -74,6 +74,7 @@ class Classifier extends Spine.Controller
       @surface.enable()
       page_type = $( '.documents :checked' ).val()
       store.set 'document', page_type
+      $('button.finish').attr disabled: false
     
     @toolbars.el.on 'pickCategory', (e,type)=>
       @surface.markingMode = true
@@ -384,6 +385,8 @@ class Classifier extends Spine.Controller
     @group_details.el.append @comments.el
     
     @group_details.el.append @timeline.el
+    
+    $('button.finish').attr disabled: true
     
   run_tutorial: =>
     subject = tutorial_subject
