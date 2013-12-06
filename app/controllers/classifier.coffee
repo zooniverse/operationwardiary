@@ -224,11 +224,6 @@ class Classifier extends Spine.Controller
     
     @favourites = (favourite.subjects[0] for favourite in favourites)
     
-    Subject.on 'select', (e, subject) =>
-    
-      favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
-      $('button.favourite').addClass 'active' if favourite?
-  
   onFavourite: =>
     
     @favourite = new Favorite subjects: [@classification.subject]
@@ -387,6 +382,10 @@ class Classifier extends Spine.Controller
     @group_details.el.append @timeline.el
     
     $('button.finish').attr disabled: true
+    
+    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
+    @group_details.favouriteButton.removeClass 'active'
+    @group_details.favouriteButton.addClass 'active' if favourite?
     
   run_tutorial: =>
     subject = tutorial_subject
