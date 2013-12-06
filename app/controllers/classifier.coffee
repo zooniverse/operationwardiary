@@ -55,6 +55,7 @@ class Classifier extends Spine.Controller
     @defaults = defaults
     @surface_history = store.get 'history', {}
     @category = @defaults.category
+    @tutorial = new Tutorial steps
     
     @render()
     
@@ -160,15 +161,15 @@ class Classifier extends Spine.Controller
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
     
-    @navigate '/classify', 'tutorial' unless User.current
-    
     if params.group_id?
       if params.group_id == 'tutorial'
-        @tutorial()
+        @run_tutorial()
       else
         @group_picker.set_group params.group_id
     else
       @navigate '/groups' unless @group_details.group
+      
+    @navigate '/classify', 'tutorial' unless User.current
       
     $('.site-navigation .links ul')
       .find('a')
@@ -205,8 +206,7 @@ class Classifier extends Spine.Controller
             promise
           )
           .done ({group_id}) =>
-            console.log group_id
-            @group_picker.set_group group_id
+            @group_picker.set_group group_id unless @tutorial.started?
           .fail =>
             # @navigate '/classify', 'tutorial'
             # @navigate '/groups'
@@ -383,11 +383,12 @@ class Classifier extends Spine.Controller
     
     @group_details.el.append @timeline.el
     
-  tutorial: =>
-    tutorial = new Tutorial steps
+  run_tutorial: =>
     subject = tutorial_subject
     
     @group_details.render subject.group
+    
+    @tutorial.start()
     
     Subject.one 'select', =>
       @surface
@@ -401,7 +402,6 @@ class Classifier extends Spine.Controller
           @surface.enable()
           @timeline.render()
     
-          tutorial.start()
         )
 
 
