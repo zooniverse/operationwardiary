@@ -206,6 +206,7 @@ class Classifier extends Spine.Controller
             promise
           )
           .done ({group_id}) =>
+            console.log @user
             @group_picker.set_group group_id unless @tutorial.started?
           .fail =>
             # @navigate '/classify', 'tutorial'
@@ -308,7 +309,8 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     @onDoTask()
     
-    # @classification.send()
+    console.log @tutorial.started?
+    @classification.send() unless @tutorial.started?
       
     @update_history()
     
@@ -387,22 +389,20 @@ class Classifier extends Spine.Controller
     subject = tutorial_subject
     
     @group_details.render subject.group
-    
-    @tutorial.start()
-    
     Subject.one 'select', =>
       @surface
         .loadImage(subject.location.standard)
         .done( =>
-          
+        
           @reset subject
-          
+        
           @classification = new Classification { subject }
-          
+        
           @surface.enable()
           @timeline.render()
-    
+  
         )
+    @tutorial.start()
 
 
 class Transcription

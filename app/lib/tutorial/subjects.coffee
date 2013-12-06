@@ -14,7 +14,13 @@ module.exports =
       "zooniverse_id":"GWD0000002"
   group_id:"5241bcf43ae74068250003c2"
   location:{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae740682500068d.jpg"}
-  metadata:{"page_number":1,"file_name":"1899/0/1.jpg","original_size":{"width":4072,"height":2603},"aspect_ratio":1.5649500384319754,"size":{"width":1400,"height":895}}
+  metadata:
+    tutorial: true
+    "page_number":1
+    "file_name":"1899/0/1.jpg"
+    "original_size":{"width":4072,"height":2603}
+    "aspect_ratio":1.5649500384319754
+    "size":{"width":1400,"height":895}
   project_id:"5241bcf43ae7406825000001"
   random:0.10878280159349252
   state:"active"
