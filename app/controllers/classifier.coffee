@@ -205,17 +205,7 @@ class Classifier extends Spine.Controller
         
   onFavourite: =>
     
-    @favourite = new Favorite subjects: [@classification.subject]
-    @favourite
-      .send()
-      .done =>
-        favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
-    
-        console.log favourite
-
-        @favourite.delete() if favourite? 
-    
-        Favorite.fetch()
+    @group_details.addFavourite @classification.subject
 
   onSubjectFetch: (e, subjects) =>
       

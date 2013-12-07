@@ -64,10 +64,10 @@ class GroupDetails extends Spine.Controller
   
   onSubjectSelect: (e, {zooniverse_id}) =>
     
-    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0] if @favourites?
+    is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0]? if @favourites?
     console.log favourite
     @favouriteButton.removeClass 'active'
-    @favouriteButton.addClass 'active' if favourite?
+    @favouriteButton.addClass 'active' if is_favourite
     
     @comments.fetchComments zooniverse_id
   
@@ -79,5 +79,19 @@ class GroupDetails extends Spine.Controller
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'
     group = (group for group in groups when group.id == group_id)
     @render group[0]
+  
+  addFavourite: (subject) =>
+    new_favourite = new Favorite subjects: [subject]
+    
+    new_favourite
+      .send()
+      .done =>
+        is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == subject.zooniverse_id)[0]?
+    
+        console.log is_favourite
+
+        new_favourite.delete() if is_favourite 
+    
+        Favorite.fetch()
 
 module.exports = GroupDetails
