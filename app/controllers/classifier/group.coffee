@@ -70,6 +70,7 @@ class GroupDetails extends Spine.Controller
     @favouriteButton.addClass 'active' if favourite?
     
     @comments.fetchComments zooniverse_id
+    Spine.trigger 'tools:change', []
   
   onFavoriteFetch: (e, favourites)=>
     
