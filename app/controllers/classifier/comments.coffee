@@ -16,14 +16,11 @@ class Comments extends Spine.Controller
   
   comments: []
     
-  constructor: (@zooniverse_id)->
+  constructor: ->
     super
     $(@el).draggable()
     # uncomment this for testing
     # @zooniverse_id = 'AWD00001qt'
-    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
-    
-    request.done @onCommentsFetch
     
     @render()
 
@@ -61,5 +58,11 @@ class Comments extends Spine.Controller
       date: DateWidget.formatDate 'd MM yy', time
     
     @render()
+  
+  fetchComments: (@zooniverse_id) =>
+    console.log @zooniverse_id
+    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
+    
+    request.done @onCommentsFetch
 
 module.exports = Comments

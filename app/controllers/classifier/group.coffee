@@ -23,6 +23,7 @@ class GroupDetails extends Spine.Controller
     # Group.on 'fetch', @onGroupFetch
     Subject.on 'select', @onSubjectSelect
     Favorite.on 'fetch', @onFavoriteFetch
+    
 
   render: (@group)=>
     startdate = new Date @group.metadata.start_date
@@ -36,7 +37,10 @@ class GroupDetails extends Spine.Controller
         name: group.name
         startdate: DateWidget.formatDate 'd MM yy', startdate
         enddate: DateWidget.formatDate 'd MM yy', enddate
-        
+    
+    @comments = new Comments
+    @el.append @comments.el
+    
     Subject.group = @group.id
     Subject.destroyAll()
     Subject.next()
@@ -61,9 +65,7 @@ class GroupDetails extends Spine.Controller
     @favouriteButton.removeClass 'active'
     @favouriteButton.addClass 'active' if favourite?
     
-    @comments?.el.remove()
-    @comments = new Comments zooniverse_id
-    @el.append @comments.el
+    @comments.fetchComments zooniverse_id
   
   onFavoriteFetch: (e, favourites)=>
     
