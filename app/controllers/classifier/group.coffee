@@ -56,7 +56,7 @@ class GroupDetails extends Spine.Controller
   
   onSubjectSelect: (e, {zooniverse_id}) =>
     
-    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0]
+    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0] if @favourites?
     console.log favourite
     @favouriteButton.removeClass 'active'
     @favouriteButton.addClass 'active' if favourite?
