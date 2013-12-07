@@ -165,6 +165,7 @@ module.exports =
     projectName: PROJECT_NAME
     home: 'Home'
     classify: 'Classify'
+    diaries: 'Diaries'
     profile: 'Profile'
     guide: 'Field Guide'
     about: 'About Us'
