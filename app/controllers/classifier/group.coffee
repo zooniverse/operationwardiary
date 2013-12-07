@@ -3,6 +3,7 @@ Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
+Comments = require './comments'
 
 require '../../lib/jstorage.js'
 store = $.jStorage
@@ -41,6 +42,7 @@ class GroupDetails extends Spine.Controller
     Subject.next()
 
     @talkButton.on 'click', =>
+      @comments.el.toggleClass 'open'
       @el.trigger 'subject:discuss'
       @talkButton.toggleClass 'active'
     
@@ -58,6 +60,10 @@ class GroupDetails extends Spine.Controller
     console.log favourite
     @favouriteButton.removeClass 'active'
     @favouriteButton.addClass 'active' if favourite?
+    
+    @comments?.el.remove()
+    @comments = new Comments zooniverse_id
+    @el.append @comments.el
   
   onFavoriteFetch: (e, favourites)=>
     

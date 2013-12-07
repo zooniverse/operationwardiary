@@ -17,7 +17,6 @@ TextTool = require '../lib/text-tool'
 GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
-Comments = require './classifier/comments'
 PageTimeline = require './classifier/page_timeline'
   
 {Tutorial} = require 'zootorial'
@@ -88,10 +87,7 @@ class Classifier extends Spine.Controller
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
-    
-    
-    @el.on 'subject:discuss', =>
-      @comments.el.toggleClass 'open'
+      
     
     @el.on 'subject:timeline', =>
       @timeline.el.toggleClass 'open' 
@@ -364,16 +360,9 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
-    @comments?.el.remove()
     @timeline?.el.remove()
     
     @timeline = new PageTimeline
-    
-    @talk_url = "http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/#{subject.zooniverse_id}"
-    
-    @comments = new Comments subject.zooniverse_id
-    
-    @group_details.el.append @comments.el
     
     @group_details.el.append @timeline.el
     
