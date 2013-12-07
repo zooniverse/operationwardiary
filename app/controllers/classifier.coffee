@@ -8,7 +8,6 @@ Classification = require 'zooniverse/models/classification'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
-Favorite = require 'zooniverse/models/favorite'
 Api = require 'zooniverse/lib/api'
 
 ZoomableSurface = require '../lib/zoom_surface'
