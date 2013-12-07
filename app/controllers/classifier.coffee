@@ -94,15 +94,14 @@ class Classifier extends Spine.Controller
       @comments.el.toggleClass 'open'
     
     @el.on 'subject:timeline', =>
-      @timeline.el.toggleClass 'open'
-      
+      @timeline.el.toggleClass 'open' 
+    
     @el.on 'subject:favourite', =>
       @onFavourite()
        
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
-    Favorite.on 'fetch', @onFavoriteFetch
     # Subject.on 'fetch', @onSubjectFetch
     
     @surface.on 'select', (e, mark)=>
@@ -214,16 +213,7 @@ class Classifier extends Spine.Controller
             # @navigate '/groups'
       else
         Subject.next()
-
-  onSubjectFetch: (e, subjects) =>
-      
-    pages = (subject.metadata.page_number for subject in Subject.instances)
-    console?.log pages
-  
-  onFavoriteFetch: (e, favourites)=>
-    
-    @favourites = (favourite.subjects[0] for favourite in favourites)
-    
+        
   onFavourite: =>
     
     @favourite = new Favorite subjects: [@classification.subject]
@@ -237,6 +227,11 @@ class Classifier extends Spine.Controller
         @favourite.delete() if favourite? 
     
         Favorite.fetch()
+
+  onSubjectFetch: (e, subjects) =>
+      
+    pages = (subject.metadata.page_number for subject in Subject.instances)
+    console?.log pages
     
     
   onSubjectSelect: (e, subject) =>
@@ -383,10 +378,6 @@ class Classifier extends Spine.Controller
     @group_details.el.append @timeline.el
     
     $('button.finish').attr disabled: true
-    
-    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == @classification.subject.zooniverse_id)[0]
-    @group_details.favouriteButton.removeClass 'active'
-    @group_details.favouriteButton.addClass 'active' if favourite?
     
   run_tutorial: =>
     subject = tutorial_subject

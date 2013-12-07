@@ -1,6 +1,7 @@
 Spine = require 'spine'
 Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
+Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
 
 require '../../lib/jstorage.js'
@@ -19,6 +20,8 @@ class GroupDetails extends Spine.Controller
     super
     
     # Group.on 'fetch', @onGroupFetch
+    Subject.on 'select', @onSubjectSelect
+    Favorite.on 'fetch', @onFavoriteFetch
 
   render: (@group)=>
     startdate = new Date @group.metadata.start_date
@@ -48,6 +51,17 @@ class GroupDetails extends Spine.Controller
     @favouriteButton.on 'click', =>
       @el.trigger 'subject:favourite'
       @favouriteButton.toggleClass 'active'
+  
+  onSubjectSelect: (e, {zooniverse_id}) =>
+    
+    favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0]
+    console.log favourite
+    @favouriteButton.removeClass 'active'
+    @favouriteButton.addClass 'active' if favourite?
+  
+  onFavoriteFetch: (e, favourites)=>
+    
+    @favourites = (favourite.subjects[0] for favourite in favourites)
     
   onGroupFetch: (e, groups) =>
     group_id = store.get 'group_id', '5241bcf43ae7406825000003'
