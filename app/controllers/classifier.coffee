@@ -354,6 +354,8 @@ class Classifier extends Spine.Controller
       
     @surface.resetTools()
     
+    Spine.trigger 'tools:change', @surface.tools
+    
     $('button.finish').attr disabled: true
     
   run_tutorial: =>
