@@ -373,18 +373,8 @@ class Classifier extends Spine.Controller
     
     @group_details.render subject.group
     Subject.one 'select', =>
-      @surface
-        .loadImage(subject.location.standard)
-        .done( =>
-        
-          @reset subject
-        
-          @classification = new Classification { subject }
-        
-          @surface.enable()
-          @timeline.render()
-  
-        )
+      Subject.current = subject
+      Subject.trigger 'select', subject
     @tutorial.start()
 
 
