@@ -298,7 +298,10 @@ class Classifier extends Spine.Controller
     @onDoTask()
     
     console.log @classification.subject.metadata.tutorial
-    @classification.send() unless @classification.subject.metadata.tutorial
+    @nextSubject() unless @classification.subject.metadata.tutorial
+  
+  nextSubject: =>
+    @classification.send()
       
     @update_history()
     
@@ -373,7 +376,7 @@ class Classifier extends Spine.Controller
     
     @group_details.render subject.group
     Subject.one 'select', =>
-      Subject.current = subject
+      Subject.current = new Subject subject
       Subject.trigger 'select', subject
     @tutorial.start()
 

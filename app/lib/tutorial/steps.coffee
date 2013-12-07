@@ -176,7 +176,9 @@ module.exports =
       instruction: "Click <b>Finished!</b>"
       focus: "button.finish"
       next: "click button.finish":"choose"
-      onExit: -> Route.navigate '/groups'
+      onExit: ->
+        console.log 'finishing tutorial' 
+        Route.navigate '/groups'
       
     choose: new Step
       number: 17
