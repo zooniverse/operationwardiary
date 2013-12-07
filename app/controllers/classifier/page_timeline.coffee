@@ -11,6 +11,10 @@ class PageTimeline extends Spine.Controller
     super
     $(@el).draggable()
     
+    Spine.bind 'tools:change', (tools) =>
+      @createEntries tools
+      @render()
+    
   render: =>
     
     @html @template

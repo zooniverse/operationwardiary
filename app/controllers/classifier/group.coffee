@@ -4,6 +4,7 @@ Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
 Comments = require './comments'
+PageTimeline = require './page_timeline'
 
 require '../../lib/jstorage.js'
 store = $.jStorage
@@ -41,6 +42,9 @@ class GroupDetails extends Spine.Controller
     @comments = new Comments
     @el.append @comments.el
     
+    @timeline = new PageTimeline
+    @el.append @timeline.el
+    
     Subject.group = @group.id
     Subject.destroyAll()
     Subject.next()
@@ -51,7 +55,7 @@ class GroupDetails extends Spine.Controller
       @talkButton.toggleClass 'active'
     
     @timelineButton.on 'click', =>
-      @el.trigger 'subject:timeline'
+      @timeline.el.toggleClass 'open'
       @timelineButton.toggleClass 'active'
     
     @favouriteButton.on 'click', =>

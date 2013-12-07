@@ -17,7 +17,6 @@ TextTool = require '../lib/text-tool'
 GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
-PageTimeline = require './classifier/page_timeline'
   
 {Tutorial} = require 'zootorial'
 steps = require '../lib/tutorial/steps'
@@ -87,10 +86,6 @@ class Classifier extends Spine.Controller
     
     @group_picker.el.on 'groupChange', (e, group)=>
       @group_details.render group
-      
-    
-    @el.on 'subject:timeline', =>
-      @timeline.el.toggleClass 'open' 
     
     @el.on 'subject:favourite', =>
       @onFavourite()
@@ -123,16 +118,14 @@ class Classifier extends Spine.Controller
       
       page_type = $( '.documents :checked' ).val()
       if page_type == 'diary'
-        @timeline.createEntries @surface.tools
-        @timeline.render()
+       Spine.trigger 'tools:change', @surface.tools
       
     
     @surface.on 'delete', (e, tool)=>
       @update_history()
       page_type = $( '.documents :checked' ).val()
       if page_type == 'diary'
-        @timeline.createEntries @surface.tools
-        @timeline.render()
+        Spine.trigger 'tools:change', @surface.tools
       
       
     @toolbars.on 'reset', =>
@@ -266,9 +259,7 @@ class Classifier extends Spine.Controller
             @surface.addMark mark
           
           if page_type == 'diary'
-            @timeline.createEntries @surface.tools
-          
-        @timeline.render()
+            Spine.trigger 'tools:change', @surface.tools
       )
     
   onDoTask: =>
@@ -362,12 +353,6 @@ class Classifier extends Spine.Controller
       tool.shapeSet.remove()
       
     @surface.resetTools()
-    
-    @timeline?.el.remove()
-    
-    @timeline = new PageTimeline
-    
-    @group_details.el.append @timeline.el
     
     $('button.finish').attr disabled: true
     
