@@ -166,7 +166,9 @@ class Classifier extends Spine.Controller
   activate: =>
     super
     # @navigate '/classify', 'tutorial' unless User.current
-    @tutorial.start() unless User.current
+    unless User.current
+      @run_tutorial()
+      @tutorial.start()
       
   render_annotation: ( history ) ->
 
@@ -175,7 +177,6 @@ class Classifier extends Spine.Controller
 
   onUserChange: (e, user) =>
     # user, User.current
-    @run_tutorial() unless user
     user_changed = @user?.zooniverse_id != user?.zooniverse_id
     @user = user
     
