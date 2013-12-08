@@ -176,9 +176,6 @@ module.exports =
       instruction: "Click <b>Finished!</b>"
       focus: "button.finish"
       next: "click button.finish":"choose"
-      onExit: ->
-        console.log 'finishing tutorial' 
-        Route.navigate '/groups'
       
     choose: new Step
       number: 17
@@ -186,3 +183,6 @@ module.exports =
       details: "<p>Well done! You have successfully completed the tutorial.</p>
 <p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
       attachment: "center center .subject-container center center"
+      onEnter: ->
+        console.log 'finishing tutorial' 
+        Route.navigate '/groups'
