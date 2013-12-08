@@ -168,7 +168,6 @@ class Classifier extends Spine.Controller
     # @navigate '/classify', 'tutorial' unless User.current
     unless User.current
       @run_tutorial()
-      @tutorial.start()
       
   render_annotation: ( history ) ->
 
@@ -186,7 +185,7 @@ class Classifier extends Spine.Controller
       if user
         Recent.fetch()
           .pipe( (recents) =>
-            # recents = []
+            recents = []
             
             if recents.length
               subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
@@ -358,6 +357,7 @@ class Classifier extends Spine.Controller
     Subject.one 'select', =>
       subject = new Subject tutorial_subject
       subject.select()
+      @tutorial.start()
     
 
 
