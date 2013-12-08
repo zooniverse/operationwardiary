@@ -165,7 +165,8 @@ class Classifier extends Spine.Controller
     
   activate: =>
     super
-    @navigate '/classify', 'tutorial' unless User.current
+    # @navigate '/classify', 'tutorial' unless User.current
+    @tutorial.start() unless User.current
       
   render_annotation: ( history ) ->
 
@@ -174,6 +175,7 @@ class Classifier extends Spine.Controller
 
   onUserChange: (e, user) =>
     # user, User.current
+    @run_tutorial() unless user
     user_changed = @user?.zooniverse_id != user?.zooniverse_id
     @user = user
     
@@ -197,7 +199,7 @@ class Classifier extends Spine.Controller
           )
           .done ({group_id}) =>
             console.log @user
-            @group_picker.set_group group_id unless @tutorial.started?
+            @group_picker.set_group group_id
           .fail =>
             @navigate '/classify', 'tutorial' if @.isActive()
             # @navigate '/groups'
@@ -350,13 +352,12 @@ class Classifier extends Spine.Controller
     $('button.finish').attr disabled: true
     
   run_tutorial: =>
-    subject = tutorial_subject
     
-    @group_details.render subject.group
+    @group_details.render tutorial_subject.group
     Subject.one 'select', =>
-      Subject.current = new Subject subject
-      Subject.trigger 'select', subject
-    @tutorial.start()
+      subject = new Subject tutorial_subject
+      subject.select()
+    
 
 
 class Transcription
