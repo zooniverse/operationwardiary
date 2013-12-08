@@ -189,7 +189,7 @@ class Classifier extends Spine.Controller
       if user
         Recent.fetch()
           .pipe( (recents) =>
-            recents = []
+            # recents = []
             
             if recents.length
               subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
