@@ -42,6 +42,8 @@ class Classifier extends Spine.Controller
   cacheNotes: true
   
   user: null
+  
+  tutorial_done = false
     
   defaults = 
     category: 'date'
@@ -130,6 +132,8 @@ class Classifier extends Spine.Controller
     @toolbars.on 'reset', =>
       @update_history()
     
+    Spine.bind 'tutorial:done', =>
+      @tutorial_done = true
 
   render: =>
     
@@ -151,7 +155,7 @@ class Classifier extends Spine.Controller
     
     if params.group_id?
       if params.group_id == 'tutorial'
-        @run_tutorial()
+        @run_tutorial() if @tutorial_done
       else
         @group_picker.set_group params.group_id
     else
@@ -166,7 +170,7 @@ class Classifier extends Spine.Controller
   activate: =>
     super
     # @navigate '/classify', 'tutorial' unless User.current
-    unless User.current
+    unless @tutorial_done
       @run_tutorial()
       
   render_annotation: ( history ) ->
@@ -199,9 +203,9 @@ class Classifier extends Spine.Controller
           )
           .done ({group_id}) =>
             console.log @user
+            @tutorial_done = true
             @group_picker.set_group group_id
           .fail =>
-            @navigate '/classify', 'tutorial' if @.isActive()
             # @navigate '/groups'
       else
         Subject.next()

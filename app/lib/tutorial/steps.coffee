@@ -1,4 +1,5 @@
 {Step} = require 'zootorial'
+Spine = require 'spine'
 Route = require 'spine/lib/route'
 
 module.exports =
@@ -186,3 +187,5 @@ module.exports =
       onEnter: ->
         console.log 'finishing tutorial' 
         Route.navigate '/groups'
+      onExit: ->
+        Spine.trigger 'tutorial:done'
