@@ -187,7 +187,7 @@ class Classifier extends Spine.Controller
       Subject.destroyAll()
       
       if user
-        @getRecentGroup()
+        @getRecentSubject()
           .done ({group_id}) =>
             console.log @user
             @tutorial_done = true
@@ -201,7 +201,7 @@ class Classifier extends Spine.Controller
       @user ?= false
       console.log @user
   
-  getRecentGroup: =>
+  getRecentSubject: =>
     Recent.fetch()
       .pipe( (recents) =>
         # recents = []
