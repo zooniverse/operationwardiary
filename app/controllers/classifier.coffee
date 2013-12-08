@@ -41,8 +41,6 @@ class Classifier extends Spine.Controller
   
   cacheNotes: true
   
-  user: null
-  
   tutorial_done = false
     
   defaults = 
@@ -169,8 +167,11 @@ class Classifier extends Spine.Controller
   activate: =>
     super
     # @navigate '/classify', 'tutorial' unless User.current
-    unless @tutorial_done
-      @run_tutorial()
+    if @user?
+      @run_tutorial() unless @tutorial_done
+    else
+      User.one 'change', (e, user)=>
+        @run_tutorial() unless user
       
   render_annotation: ( history ) ->
 
@@ -186,20 +187,7 @@ class Classifier extends Spine.Controller
       Subject.destroyAll()
       
       if user
-        Recent.fetch()
-          .pipe( (recents) =>
-            # recents = []
-            
-            if recents.length
-              subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
-              console.log subject_id
-              promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
-            else
-              promise = new $.Deferred
-              promise.reject()
-            
-            promise
-          )
+        @getRecentGroup()
           .done ({group_id}) =>
             console.log @user
             @tutorial_done = true
@@ -208,6 +196,26 @@ class Classifier extends Spine.Controller
             # @navigate '/groups'
       else
         Subject.next()
+    
+    else
+      @user ?= false
+      console.log @user
+  
+  getRecentGroup: =>
+    Recent.fetch()
+      .pipe( (recents) =>
+        # recents = []
+        
+        if recents.length
+          subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
+          console.log subject_id
+          promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+        else
+          promise = new $.Deferred
+          promise.reject()
+        
+        promise
+      )
         
   onFavourite: =>
     
