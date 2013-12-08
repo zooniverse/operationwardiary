@@ -204,7 +204,7 @@ class Classifier extends Spine.Controller
           .done ({group_id}) =>
             console.log @user
             @tutorial_done = true
-            @group_picker.set_group group_id
+            @group_picker.set_group group_id unless @tutorial.started?
           .fail =>
             # @navigate '/groups'
       else
