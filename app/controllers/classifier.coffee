@@ -36,7 +36,7 @@ class Classifier extends Spine.Controller
 
   elements:
     '.subject-container': 'subjectContainer'
-    '#diary_id': 'diaryDisplay'
+    # '#diary_id': 'diaryDisplay'
     
   
   cacheNotes: true
@@ -231,7 +231,7 @@ class Classifier extends Spine.Controller
     @surface
       .loadImage(subject.location.standard)
       .done( =>
-        @diaryDisplay.text subject.metadata.file_name
+        # @diaryDisplay.text subject.metadata.file_name
         
         snapshot = @surface_history[subject.id]
     
