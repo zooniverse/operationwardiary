@@ -155,9 +155,7 @@ class Classifier extends Spine.Controller
       else
         @group_picker.set_group params.group_id
     else
-      @navigate '/groups' unless @group_details.group
-      
-    @navigate '/classify', 'tutorial' unless User.current
+      # @navigate '/groups' unless @group_details.group
       
     $('.site-navigation .links ul')
       .find('a')
@@ -165,6 +163,10 @@ class Classifier extends Spine.Controller
       .filter("[href='#/classify']")
       .addClass 'active'
     
+  activate: =>
+    super
+    @navigate '/classify', 'tutorial' unless User.current
+      
   render_annotation: ( history ) ->
 
     history?.render()
@@ -197,7 +199,7 @@ class Classifier extends Spine.Controller
             console.log @user
             @group_picker.set_group group_id unless @tutorial.started?
           .fail =>
-            # @navigate '/classify', 'tutorial'
+            @navigate '/classify', 'tutorial' if @.isActive()
             # @navigate '/groups'
       else
         Subject.next()
