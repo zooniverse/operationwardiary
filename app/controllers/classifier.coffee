@@ -152,7 +152,7 @@ class Classifier extends Spine.Controller
     
     if params.group_id?
       if params.group_id == 'tutorial'
-        @run_tutorial() if @tutorial_done
+        @run_tutorial()
       else
         @group_picker.set_group params.group_id
     else
@@ -358,6 +358,7 @@ class Classifier extends Spine.Controller
     $('button.finish').attr disabled: true
     
   run_tutorial: =>
+    return if @tutorial.started?
     
     @group_details.render tutorial_subject.group
     Subject.one 'select', =>
