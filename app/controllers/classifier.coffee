@@ -94,7 +94,6 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
-    # Subject.on 'fetch', @onSubjectFetch
     
     @surface.on 'select', (e, mark)=>
       type = mark.type
@@ -213,11 +212,6 @@ class Classifier extends Spine.Controller
   onFavourite: =>
     
     @group_details.addFavourite @classification.subject
-
-  onSubjectFetch: (e, subjects) =>
-      
-    pages = (subject.metadata.page_number for subject in Subject.instances)
-    console?.log pages
     
     
   onSubjectSelect: (e, subject) =>
