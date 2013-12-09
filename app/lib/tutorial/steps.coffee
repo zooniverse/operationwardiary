@@ -173,7 +173,7 @@ module.exports =
       number: 16
       header: "Finished"
       details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
-      attachment: "right top button.finish center bottom"
+      attachment: "center center .subject-container center center"
       instruction: "Click <b>Finished!</b>"
       focus: "button.finish"
       next: "click button.finish":"choose"
