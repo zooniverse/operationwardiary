@@ -149,14 +149,6 @@ class Classifier extends Spine.Controller
     super
     Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
-    
-    if params.group_id?
-      if params.group_id == 'tutorial'
-        @run_tutorial()
-      else
-        @group_picker.set_group params.group_id
-    else
-      # @navigate '/groups' unless @group_details.group
       
     $('.site-navigation .links ul')
       .find('a')
@@ -164,10 +156,18 @@ class Classifier extends Spine.Controller
       .filter("[href='#/classify']")
       .addClass 'active'
     
-  activate: =>
+  activate: (params)=>
     super
     # @navigate '/classify', 'tutorial' unless User.current
-    @run_tutorial() unless @tutorial_done
+    
+    if params.group_id?
+      if params.group_id == 'tutorial'
+        @run_tutorial()
+      else
+        @group_picker.set_group params.group_id
+    else
+      @run_tutorial() unless @tutorial_done
+      # @navigate '/groups' unless @group_details.group
       
   render_annotation: ( history ) ->
 
