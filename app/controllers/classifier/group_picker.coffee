@@ -37,6 +37,6 @@ class GroupPicker extends Spine.Controller
     store.set 'group_id', group_id
     group = (group for group in @groups when group.id == group_id)
   
-    @el.trigger 'groupChange', group
+    @el.trigger 'group:change', group
 
 module.exports = GroupPicker

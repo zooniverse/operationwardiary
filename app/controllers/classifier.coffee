@@ -67,13 +67,12 @@ class Classifier extends Spine.Controller
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
     
-    @toolbars.el.on 'pickDocument', =>
+    @toolbars.el.on 'page_type:change', (e, type)=>
       @surface.enable()
-      page_type = $( '.documents :checked' ).val()
-      store.set 'document', page_type
+      store.set 'document', type
       $('button.finish').attr disabled: false
     
-    @toolbars.el.on 'pickCategory', (e,type)=>
+    @toolbars.el.on 'tag:change', (e,type)=>
       @surface.markingMode = true
       @surface.selection?.deselect()
       
@@ -83,7 +82,7 @@ class Classifier extends Spine.Controller
         @surface.markDefaults.type = type
         @surface.markDefaults.note = note ? undefined
     
-    @group_picker.el.on 'groupChange', (e, group)=>
+    @group_picker.el.on 'group:change', (e, group)=>
       @group_details.render group
     
     @el.on 'subject:favourite', =>
