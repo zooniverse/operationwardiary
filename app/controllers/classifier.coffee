@@ -190,7 +190,7 @@ class Classifier extends Spine.Controller
     else
       @user ?= false
       console.log @user
-      @run_tutorial()
+      @run_tutorial() unless @user
   
   onUserLogin: (user) =>
     if user.project.classification_count > 0
@@ -362,8 +362,10 @@ class Classifier extends Spine.Controller
     $('button.finish').attr disabled: true
     
   run_tutorial: =>
+    console.log 'run tutorial'
     return if @tutorial.started?
     return unless @user? and @isActive()
+    console.log 'WOO'
     
     @group_details.render tutorial_subject.group
     Subject.one 'select', =>
