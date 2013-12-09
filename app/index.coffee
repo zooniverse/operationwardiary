@@ -56,3 +56,6 @@ app.stack.el.appendTo app.container
 
 Group.fetch().done( User.fetch )
 Spine.Route.setup()
+
+GoogleAnalytics = require 'zooniverse/lib/google-analytics'
+ga = new GoogleAnalytics account: 'UA-1224199-51'
