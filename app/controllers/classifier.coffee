@@ -183,22 +183,28 @@ class Classifier extends Spine.Controller
       Subject.destroyAll()
       
       if user
-        @getRecentSubject()
-          .done ({group_id}) =>
-            console.log @user
-            @tutorial_done = true
-            @group_picker.set_group group_id unless @tutorial.started?
-          .fail =>
-            @run_tutorial() unless @tutorial_done
-            # @navigate '/groups'
+        @onUserLogin user
       else
-        Subject.next()
+        @onUserLogout()
     
     else
       @user ?= false
       console.log @user
       @run_tutorial()
   
+  onUserLogin: (user) =>
+    @getRecentSubject()
+      .done ({group_id}) =>
+        console.log @user
+        @tutorial_done = true
+        @group_picker.set_group group_id unless @tutorial.started?
+      .fail =>
+        @run_tutorial() unless @tutorial_done
+        # @navigate '/groups'
+        
+  onUserLogout: =>
+    Subject.next()
+    
   getRecentSubject: =>
     Recent.fetch()
       .pipe( (recents) =>
