@@ -189,14 +189,12 @@ class Classifier extends Spine.Controller
     
     else
       @user ?= false
-      console.log @user
       @run_tutorial() unless @user
   
   onUserLogin: (user) =>
     if user.project.classification_count > 0
       @getRecentSubject()
         .done ({group_id}) =>
-          console.log @user
           @tutorial_done = true
           @group_picker.set_group group_id unless @tutorial.started?
     else
@@ -212,7 +210,6 @@ class Classifier extends Spine.Controller
         
         if recents.length
           subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
-          console.log subject_id
           promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
         else
           promise = new $.Deferred
@@ -362,10 +359,8 @@ class Classifier extends Spine.Controller
     $('button.finish').attr disabled: true
     
   run_tutorial: =>
-    console.log 'run tutorial'
     return if @tutorial.started?
     return unless @user? and @isActive()
-    console.log 'WOO'
     
     @group_details.render tutorial_subject.group
     Subject.one 'select', =>
