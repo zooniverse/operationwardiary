@@ -167,11 +167,7 @@ class Classifier extends Spine.Controller
   activate: =>
     super
     # @navigate '/classify', 'tutorial' unless User.current
-    if @user?
-      @run_tutorial() unless @tutorial_done
-    else
-      User.one 'change', (e, user)=>
-        @run_tutorial() unless user
+    @run_tutorial() unless @tutorial_done
       
   render_annotation: ( history ) ->
 
@@ -193,6 +189,7 @@ class Classifier extends Spine.Controller
             @tutorial_done = true
             @group_picker.set_group group_id unless @tutorial.started?
           .fail =>
+            @run_tutorial() unless @tutorial_done
             # @navigate '/groups'
       else
         Subject.next()
@@ -200,6 +197,7 @@ class Classifier extends Spine.Controller
     else
       @user ?= false
       console.log @user
+      @run_tutorial()
   
   getRecentSubject: =>
     Recent.fetch()
@@ -359,6 +357,7 @@ class Classifier extends Spine.Controller
     
   run_tutorial: =>
     return if @tutorial.started?
+    return unless @user? and @isActive()
     
     @group_details.render tutorial_subject.group
     Subject.one 'select', =>
