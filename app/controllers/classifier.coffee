@@ -193,15 +193,15 @@ class Classifier extends Spine.Controller
       @run_tutorial()
   
   onUserLogin: (user) =>
-    @getRecentSubject()
-      .done ({group_id}) =>
-        console.log @user
-        @tutorial_done = true
-        @group_picker.set_group group_id unless @tutorial.started?
-      .fail =>
-        @run_tutorial() unless @tutorial_done
-        # @navigate '/groups'
-        
+    if user.project.classification_count > 0
+      @getRecentSubject()
+        .done ({group_id}) =>
+          console.log @user
+          @tutorial_done = true
+          @group_picker.set_group group_id unless @tutorial.started?
+    else
+      @run_tutorial() unless @tutorial_done
+      
   onUserLogout: =>
     Subject.next()
     
