@@ -54,7 +54,7 @@ app.stack = new Spine.Stack
 
 app.stack.el.appendTo app.container
 
-Group.fetch().done( User.fetch )
+Group.fetch().done( User.fetch() )
 Spine.Route.setup()
 
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
