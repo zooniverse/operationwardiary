@@ -226,6 +226,7 @@ class Classifier extends Spine.Controller
     
     
   onSubjectSelect: (e, subject) =>
+    console.log subject
     
     @classification = new Classification { subject }
       
@@ -365,10 +366,9 @@ class Classifier extends Spine.Controller
     return unless @user? and @isActive()
     
     @group_details.render tutorial_subject.group
-    Subject.one 'select', =>
-      subject = new Subject tutorial_subject
-      subject.select()
-      @tutorial.start()
+    subject = new Subject tutorial_subject
+    subject.select()
+    @tutorial.start()
     
 
 
