@@ -1,4 +1,5 @@
 Spine = require 'spine'
+Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
