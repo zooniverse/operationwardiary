@@ -84,6 +84,9 @@ class Classifier extends Spine.Controller
     
     @group_picker.el.on 'group:change', (e, group)=>
       @group_details.render group
+      Subject.group = @group.id
+      Subject.destroyAll()
+      Subject.next()
     
     @el.on 'subject:favourite', =>
       @onFavourite()

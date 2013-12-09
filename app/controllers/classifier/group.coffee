@@ -1,5 +1,4 @@
 Spine = require 'spine'
-Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
@@ -44,10 +43,6 @@ class GroupDetails extends Spine.Controller
     
     @timeline = new PageTimeline
     @el.append @timeline.el
-    
-    Subject.group = @group.id
-    Subject.destroyAll()
-    Subject.next()
 
     @talkButton.on 'click', =>
       @comments.el.toggleClass 'open'
