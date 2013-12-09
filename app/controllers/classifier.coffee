@@ -234,6 +234,9 @@ class Classifier extends Spine.Controller
     
     # @toolbars.el.find( '.timeline' ).html @timeline.el
     
+    @loadImage subject
+  
+  loadImage: (subject) =>
     @surface
       .loadImage(subject.location.standard)
       .done( =>
