@@ -82,54 +82,20 @@ class Classifier extends Spine.Controller
         @surface.markDefaults.type = type
         @surface.markDefaults.note = note ? undefined
     
-    @group_picker.el.on 'group:change', (e, group)=>
-      @group_details.render group
-      Subject.group = group.id
-      Subject.destroyAll()
-      Subject.next()
+    @group_picker.el.on 'group:change', @onGroupChange
     
-    @el.on 'subject:favourite', =>
-      @onFavourite()
+    @el.on 'subject:favourite', @onFavourite
        
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     
-    @surface.on 'select', (e, mark)=>
-      type = mark.type
-      @toolbars.select type
-        
-    @surface.on 'create-tool', =>
-      type = $('.categories :checked').val()
-      
-      if @cacheNotes
-        note = store.get type, undefined if type?
-        if note?
-          @surface.markDefaults.note = note
-          @surface.markDefaults.type = type
-    # @surface.on 'deselect', (e, mark)=>
-    #   type = mark.type
-    #   @toolbars.deselect type
-    
-    @surface.on 'change', (e, tool)=>
-      @update_history()
-      mark = tool.mark
-      store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date']
-      
-      page_type = $( '.documents :checked' ).val()
-      if page_type == 'diary'
-       Spine.trigger 'tools:change', @surface.tools
-      
-    
-    @surface.on 'delete', (e, tool)=>
-      @update_history()
-      page_type = $( '.documents :checked' ).val()
-      if page_type == 'diary'
-        Spine.trigger 'tools:change', @surface.tools
-      
-      
-    @toolbars.on 'reset', =>
-      @update_history()
+    @surface.on 'select', @onToolSelect
+    @surface.on 'create-tool', @onToolCreate
+    @surface.on 'change', @onToolChange
+    @surface.on 'delete', @onToolDelete
+            
+    @toolbars.on 'reset', @update_history
     
     Spine.bind 'tutorial:done', =>
       @tutorial_done = true
@@ -176,6 +142,40 @@ class Classifier extends Spine.Controller
     history?.render()
     @toolbars.toggleCategories()
 
+  onGroupChange: (e, group)=>
+    @group_details.render group
+    Subject.group = group.id
+    Subject.destroyAll()
+    Subject.next()
+      
+  onToolChange: (e, tool)=>
+    @update_history()
+    mark = tool.mark
+    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date']
+
+    page_type = $( '.documents :checked' ).val()
+    if page_type == 'diary'
+      Spine.trigger 'tools:change', @surface.tools
+  
+  onToolDelete: (e, tool)=>
+    @update_history()
+    page_type = $( '.documents :checked' ).val()
+    if page_type == 'diary'
+      Spine.trigger 'tools:change', @surface.tools
+  
+  onToolCreate: =>
+    type = $('.categories :checked').val()
+  
+    if @cacheNotes
+      note = store.get type, undefined if type?
+      if note?
+        @surface.markDefaults.note = note
+        @surface.markDefaults.type = type
+
+  onToolSelect: (e, mark)=>
+    type = mark.type
+    @toolbars.select type
+  
   onUserChange: (e, user) =>
     # user, User.current
     user_changed = @user?.zooniverse_id != user?.zooniverse_id
