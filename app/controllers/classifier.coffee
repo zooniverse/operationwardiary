@@ -50,7 +50,7 @@ class Classifier extends Spine.Controller
     super
     
     @defaults = defaults
-    @surface_history = store.get 'history', {}
+    # @surface_history = store.get 'history', {}
     @category = @defaults.category
     @tutorial = new Tutorial steps
     
@@ -194,6 +194,9 @@ class Classifier extends Spine.Controller
       @run_tutorial() unless @user
   
   onUserLogin: (user) =>
+    old_history = store.get 'history', {}
+    key = "history#{@user.zooniverse_id}"
+    @surface_history = store.get key, old_history
     if user.project.classification_count > 0
       @getRecentSubject()
         .done ({group_id}) =>
@@ -242,7 +245,7 @@ class Classifier extends Spine.Controller
       .done( =>
         # @diaryDisplay.text subject.metadata.file_name
         
-        snapshot = @surface_history[subject.id]
+        snapshot = @surface_history[subject.id] if @surface_history?
     
         marks = snapshot?.marks
         marks ?= []
@@ -342,14 +345,14 @@ class Classifier extends Spine.Controller
   
   update_history: ->
     
-    return unless Subject.current
+    return unless Subject.current && @surface_history?
     
     snapshot = new Transcription @
     
     @surface_history[ Subject.current.id ] = snapshot
     
-    
-    store.set 'history', @surface_history
+    key = "history#{@user.zooniverse_id}"
+    store.set key, @surface_history
     
   reset: (subject)=>
     @toolbars.reset()
