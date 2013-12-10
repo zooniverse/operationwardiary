@@ -68,8 +68,8 @@ class Classifier extends Spine.Controller
     @el.find('.tools').before @group_details.el
     
     @toolbars.el.on 'page_type:change', @onPageChange
-    
     @toolbars.el.on 'tag:change', @onTagChange
+    @toolbars.on 'reset', @update_history
     
     @group_picker.el.on 'group:change', @onGroupChange
     
@@ -83,8 +83,6 @@ class Classifier extends Spine.Controller
     @surface.on 'create-tool', @onToolCreate
     @surface.on 'change', @onToolChange
     @surface.on 'delete', @onToolDelete
-            
-    @toolbars.on 'reset', @update_history
     
     Spine.bind 'tutorial:done', =>
       @tutorial_done = true
