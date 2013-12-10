@@ -67,20 +67,9 @@ class Classifier extends Spine.Controller
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
     
-    @toolbars.el.on 'page_type:change', (e, type)=>
-      @surface.enable()
-      store.set 'document', type
-      $('button.finish').attr disabled: false
+    @toolbars.el.on 'page_type:change', @onPageChange
     
-    @toolbars.el.on 'tag:change', (e,type)=>
-      @surface.markingMode = true
-      @surface.selection?.deselect()
-      
-      if @cacheNotes
-        note = store.get type, undefined
-      
-        @surface.markDefaults.type = type
-        @surface.markDefaults.note = note ? undefined
+    @toolbars.el.on 'tag:change', @onTagChange
     
     @group_picker.el.on 'group:change', @onGroupChange
     
@@ -148,6 +137,21 @@ class Classifier extends Spine.Controller
     Subject.destroyAll()
     Subject.next()
       
+  onPageChange: (e, type)=>
+    @surface.enable()
+    store.set 'document', type
+    $('button.finish').attr disabled: false
+  
+  onTagChange: (e,type)=>
+    @surface.markingMode = true
+    @surface.selection?.deselect()
+    
+    if @cacheNotes
+      note = store.get type, undefined
+    
+      @surface.markDefaults.type = type
+      @surface.markDefaults.note = note ? undefined
+  
   onToolChange: (e, tool)=>
     @update_history()
     mark = tool.mark
