@@ -10,6 +10,10 @@ class Guide extends Spine.Controller
     @render()
     
     @searchbox.on 'change', @search
+    @searchbox.on 'keydown', (e) =>
+      return unless e.which == 13
+      @search()
+      return false
 
   render: =>
     @html @template()
