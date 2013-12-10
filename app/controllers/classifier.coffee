@@ -206,6 +206,7 @@ class Classifier extends Spine.Controller
       @run_tutorial() unless @tutorial_done
       
   onUserLogout: =>
+    @surface_history = null
     Subject.next()
     
   getRecentSubject: =>
