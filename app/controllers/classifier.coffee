@@ -28,7 +28,6 @@ class Classifier extends Spine.Controller
   events:
     'click .task': 'onDoTask'
     'click .finish': 'onFinishTask'
-    'click .back': 'onGoBack'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
     'keydown .zoom-in': 'onKeyZoomIn'
