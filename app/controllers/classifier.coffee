@@ -48,9 +48,6 @@ class Classifier extends Spine.Controller
   constructor: ->
     super
     
-    @defaults = defaults
-    # @surface_history = store.get 'history', {}
-    @category = @defaults.category
     @tutorial = new Tutorial steps
     
     @render()
