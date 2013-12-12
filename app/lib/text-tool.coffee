@@ -32,6 +32,8 @@ class TextControls extends ToolControls
     @bind_events()
     
     @setNote()
+    
+    @el.draggable()
 
     setTimeout (=> 
       @onTextChange
