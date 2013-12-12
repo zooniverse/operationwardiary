@@ -124,7 +124,7 @@ class Classifier extends Spine.Controller
       @run_tutorial() unless @tutorial_done
       # @navigate '/groups' unless @group_details.group
       
-  render_tags: ( snapshot ) ->
+  render_tags: ( snapshot ) =>
 
     marks = snapshot?.marks
     marks ?= []
