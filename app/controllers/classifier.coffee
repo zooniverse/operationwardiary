@@ -124,10 +124,30 @@ class Classifier extends Spine.Controller
       @run_tutorial() unless @tutorial_done
       # @navigate '/groups' unless @group_details.group
       
-  render_annotation: ( history ) ->
+  render_tags: ( snapshot ) ->
 
-    history?.render()
-    @toolbars.toggleCategories()
+    marks = snapshot?.marks
+    marks ?= []
+    
+    page_type = snapshot?.document
+    metadata = snapshot?.metadata
+
+    if page_type
+      @toolbars.selectPageType page_type
+      @toolbars.toggleCategories()
+      @surface.enable()
+      $('button.finish').attr disabled: false
+      
+      for key, value of metadata
+        @toolbars.metadata.find("[name=#{key}]").val value
+        
+      for mark in marks
+        mark.type = 'time' if mark.type == 'diaryTime'
+        @toolbars.select mark.type
+        @surface.addMark mark
+      
+      if page_type == 'diary'
+        Spine.trigger 'tools:change', @surface.tools
 
   onGroupChange: (e, group)=>
     @group_details.render group
@@ -250,28 +270,7 @@ class Classifier extends Spine.Controller
         
         snapshot = @surface_history[subject.id] if @surface_history?
     
-        marks = snapshot?.marks
-        marks ?= []
-        
-        page_type = snapshot?.document
-        metadata = snapshot?.metadata
-    
-        if page_type
-          @toolbars.selectPageType page_type
-          @toolbars.toggleCategories()
-          @surface.enable()
-          $('button.finish').attr disabled: false
-          
-          for key, value of metadata
-            @toolbars.metadata.find("[name=#{key}]").val value
-            
-          for mark in marks
-            mark.type = 'time' if mark.type == 'diaryTime'
-            @toolbars.select mark.type
-            @surface.addMark mark
-          
-          if page_type == 'diary'
-            Spine.trigger 'tools:change', @surface.tools
+        @render_tags snapshot
       )
     
   onDoTask: =>
