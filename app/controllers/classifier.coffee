@@ -258,8 +258,7 @@ class Classifier extends Spine.Controller
     console.log subject
     @surface.width = @subjectContainer.width()
     @surface.height = @subjectContainer.height()
-    @surface.image.attr 'width', @subjectContainer.width()
-    @surface.image.attr 'height', @subjectContainer.height()
+    @surface.pan()
     
     @classification = new Classification { subject }
     
