@@ -68,7 +68,7 @@ class Classifier extends Spine.Controller
     @toolbars.on 'reset', @update_history
     
     @group_picker.el.on 'group:change', @onGroupChange
-    @group_picker.el.on, 'group:ready', @onGroupReady
+    @group_picker.el.on 'group:ready', @onGroupReady
     
     @el.on 'subject:favourite', @onFavourite
        
