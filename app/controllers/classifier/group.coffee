@@ -36,12 +36,7 @@ class GroupDetails extends Spine.Controller
     @html @template
       group: @group
     
-    
-    @el.append @comments.el
-    @el.append @timeline.el
-    
-    @comments.el.draggable()
-    @timeline.el.draggable()
+    @el.append popup.el.draggable().removeClass 'open' for popup in [@comments, @timeline]
 
     @talkButton.on 'click', =>
       @comments.el.toggleClass 'open'
@@ -63,6 +58,8 @@ class GroupDetails extends Spine.Controller
     @favouriteButton.removeClass 'active'
     @favouriteButton.addClass 'active' if is_favourite
     
+    popup.el.removeClass 'open' for popup in [@comments, @timeline]
+    button.removeClass 'active' for button in [@timelineButton, @talkButton]
     @comments.fetchComments zooniverse_id
   
   onFavoriteFetch: (e, favourites)=>
