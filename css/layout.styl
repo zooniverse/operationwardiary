@@ -1,13 +1,19 @@
 .stack
   position: relative
+  width: 1185px
+  margin: 0 auto
   
   > div
     @extends #site-container
-    display: none
+    position: absolute
+    left: -3000px
+    opacity: 0
+    transition: opacity 1s
     
   > div.active
   > div:target
-    display: block
+    opacity: 1
+    left: 0
     
 .zootorial-dialog
   font-size: 1em
