@@ -147,7 +147,6 @@ class Classifier extends Spine.Controller
         Spine.trigger 'tools:change', @surface.tools
 
   onGroupChange: (e, group_id)=>
-    console.log group_id
     Subject.group = group_id
     Subject.destroyAll()
     Subject.next()
