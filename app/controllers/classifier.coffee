@@ -258,8 +258,6 @@ class Classifier extends Spine.Controller
     console.log subject
     
     @classification = new Classification { subject }
-      
-    @reset subject
     
     # @toolbars.el.find( '.timeline' ).html @timeline.el
     
@@ -270,6 +268,7 @@ class Classifier extends Spine.Controller
       .loadImage(subject.location.standard)
       .done( =>
         # @diaryDisplay.text subject.metadata.file_name
+        @reset subject
         
         snapshot = @surface_history[subject.id] if @surface_history?
     
