@@ -5,6 +5,7 @@ require '../lib/jstorage.js'
 store = $.jStorage
 
 Classification = require 'zooniverse/models/classification'
+Group = require 'zooniverse/models/project-group'
 Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
@@ -13,7 +14,6 @@ Api = require 'zooniverse/lib/api'
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
 
-GroupPicker = require './classifier/group_picker'
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
   
@@ -57,9 +57,6 @@ class Classifier extends Spine.Controller
     @toolbars = new Toolbars
     @el.find('.tools').prepend @toolbars.el
     
-    @group_picker = new GroupPicker
-    @el.find('#group-picker').prepend @group_picker.el
-    
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
     
@@ -67,14 +64,12 @@ class Classifier extends Spine.Controller
     @toolbars.el.on 'tag:change', @onTagChange
     @toolbars.on 'reset', @update_history
     
-    @group_picker.el.on 'group:change', @onGroupChange
-    @group_picker.el.on 'group:ready', @onGroupReady
-    
     @el.on 'subject:favourite', @onFavourite
        
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    Group.on 'fetch', @onGroupFetch
     
     @surface.on 'select', @onToolSelect
     @surface.on 'create-tool', @onToolCreate
@@ -116,7 +111,7 @@ class Classifier extends Spine.Controller
       if params.group_id == 'tutorial'
         @run_tutorial()
       else
-        @group_picker.set_group params.group_id
+        @onGroupChange params.group_id
     else
       @run_tutorial() unless @tutorial_done
       # @navigate '/groups' unless @group_details.group
@@ -146,12 +141,21 @@ class Classifier extends Spine.Controller
       if page_type == 'diary'
         Spine.trigger 'tools:change', @surface.tools
 
-  onGroupChange: (e, group_id)=>
+  onGroupChange: (group_id)=>
     Subject.group = group_id
     Subject.destroyAll()
     Subject.next()
+    @getGroupDetails()
     
-  onGroupReady: (e, group) =>
+  onGroupFetch: (e, @groups) =>
+    @getGroupDetails()
+  
+  getGroupDetails: =>
+    return unless Subject.group and @groups?
+    group = (group for group in @groups when group.id == Subject.group)[0]
+    @onGroupReady group
+    
+  onGroupReady: (group) =>
     @group_details.render group
     
   onPageChange: (e, type)=>
@@ -222,7 +226,7 @@ class Classifier extends Spine.Controller
       @getRecentSubject()
         .done ({group_id}) =>
           @tutorial_done = true
-          @group_picker.set_group group_id unless @tutorial.started?
+          @onGroupChange group_id unless @tutorial.started?
     else
       @run_tutorial() unless @tutorial_done
       

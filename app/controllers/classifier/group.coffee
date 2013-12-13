@@ -29,17 +29,12 @@ class GroupDetails extends Spine.Controller
     
 
   render: (@group)=>
-    startdate = new Date @group.metadata.start_date
-    enddate = new Date @group.metadata.end_date
     
     DateWidget = WidgetFactory.registry.date
-    DateWidget.date = DateWidget.formatDate 'd MM yy', startdate
+    DateWidget.date = @group.startdate
     
     @html @template
-      group:
-        name: group.name
-        startdate: DateWidget.formatDate 'd MM yy', startdate
-        enddate: DateWidget.formatDate 'd MM yy', enddate
+      group: @group
     
     
     @el.append @comments.el
