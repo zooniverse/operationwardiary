@@ -41,10 +41,11 @@ class ZoomableSurface extends MarkingSurface
     
     width = @width
     height = @height
-    console.log width, height
+    image_width = @image.attr 'width'
+    image_height = @image.attr 'height'
     
-    left = Math.min left, width, width - (width / @zoomBy)
-    top = Math.min top, height, height - (height / @zoomBy)
+    left = Math.min left, image_width, image_width - (width / @zoomBy)
+    top = Math.min top, image_height, image_height - (height / @zoomBy)
     left = Math.max left, 0
     top = Math.max top, 0
     
