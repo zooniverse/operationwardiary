@@ -68,6 +68,7 @@ class Classifier extends Spine.Controller
     @toolbars.on 'reset', @update_history
     
     @group_picker.el.on 'group:change', @onGroupChange
+    @group_picker.el.on, 'group:ready', @onGroupReady
     
     @el.on 'subject:favourite', @onFavourite
        
@@ -145,12 +146,15 @@ class Classifier extends Spine.Controller
       if page_type == 'diary'
         Spine.trigger 'tools:change', @surface.tools
 
-  onGroupChange: (e, group)=>
-    @group_details.render group
-    Subject.group = group.id
+  onGroupChange: (e, group_id)=>
+    
+    Subject.group = group_id
     Subject.destroyAll()
     Subject.next()
-      
+    
+  onGroupReady: (e, group) =>
+    @group_details.render group
+    
   onPageChange: (e, type)=>
     @surface.enable()
     store.set 'document', type
