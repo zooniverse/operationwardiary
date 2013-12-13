@@ -35,13 +35,7 @@ class Profile extends Spine.Controller
 
   active: =>
     super
-    @el.css 'opacity', '0.5'
 
-    # @loading = new Spinner().spin @el.get(0)
-
-    User.fetch().done =>
-      @el.css 'opacity', '1'
-      # @loading.stop()
-      # @render()
+    User.fetch()
 
 module.exports = Profile
