@@ -18,11 +18,9 @@ class Comments extends Spine.Controller
     
   constructor: ->
     super
-    $(@el).draggable()
+    @render()
     # uncomment this for testing
     # @zooniverse_id = 'AWD00001qt'
-    
-    @render()
 
   render: =>
     @html @template

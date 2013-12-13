@@ -39,6 +39,9 @@ class GroupDetails extends Spine.Controller
     
     @el.append @comments.el
     @el.append @timeline.el
+    
+    @comments.el.draggable()
+    @timeline.el.draggable()
 
     @talkButton.on 'click', =>
       @comments.el.toggleClass 'open'
