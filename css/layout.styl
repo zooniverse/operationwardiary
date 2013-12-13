@@ -1,19 +1,21 @@
+@keyframes fadeIn 
+    from 
+      opacity: 0
+    to 
+      opacity: 1
+
+
 .stack
   position: relative
-  width: 1185px
-  margin: 0 auto
   
   > div
     @extends #site-container
-    position: absolute
-    left: -3000px
-    opacity: 0
-    transition: opacity 1s
+    display: none
     
   > div.active
   > div:target
-    opacity: 1
-    left: 0
+    display: block
+    animation: fadeIn 1s
     
 .zootorial-dialog
   font-size: 1em
