@@ -33,10 +33,11 @@ class GroupPicker extends Spine.Controller
   
   set_group: (group_id) =>
     # $('#diary_picker').val group_id
+    @el.trigger 'group:change', group_id
     
     store.set 'group_id', group_id
     group = (group for group in @groups when group.id == group_id)
   
-    @el.trigger 'group:change', group
+    @el.trigger 'group:ready', group
 
 module.exports = GroupPicker

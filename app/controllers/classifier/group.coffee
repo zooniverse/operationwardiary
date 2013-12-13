@@ -21,6 +21,9 @@ class GroupDetails extends Spine.Controller
   constructor: ->
     super
     
+    @comments = new Comments
+    @timeline = new PageTimeline
+    
     # Group.on 'fetch', @onGroupFetch
     Subject.on 'select', @onSubjectSelect
     Favorite.on 'fetch', @onFavoriteFetch
@@ -39,10 +42,8 @@ class GroupDetails extends Spine.Controller
         startdate: DateWidget.formatDate 'd MM yy', startdate
         enddate: DateWidget.formatDate 'd MM yy', enddate
     
-    @comments = new Comments
-    @el.append @comments.el
     
-    @timeline = new PageTimeline
+    @el.append @comments.el
     @el.append @timeline.el
 
     @talkButton.on 'click', =>
