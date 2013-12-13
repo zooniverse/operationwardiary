@@ -24,7 +24,6 @@ class GroupDetails extends Spine.Controller
     @comments = new Comments
     @timeline = new PageTimeline
     
-    # Group.on 'fetch', @onGroupFetch
     Subject.on 'select', @onSubjectSelect
     Favorite.on 'fetch', @onFavoriteFetch
     
@@ -71,11 +70,6 @@ class GroupDetails extends Spine.Controller
   onFavoriteFetch: (e, favourites)=>
     
     @favourites = (favourite.subjects[0] for favourite in favourites)
-    
-  onGroupFetch: (e, groups) =>
-    group_id = store.get 'group_id', '5241bcf43ae7406825000003'
-    group = (group for group in groups when group.id == group_id)
-    @render group[0]
   
   addFavourite: (subject) =>
     new_favourite = new Favorite subjects: [subject]
