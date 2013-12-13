@@ -256,6 +256,10 @@ class Classifier extends Spine.Controller
     
   onSubjectSelect: (e, subject) =>
     console.log subject
+    @surface.width = @subjectContainer.width()
+    @surface.height = @subjectContainer.height()
+    @surface.image.attr 'width', @subjectContainer.width()
+    @surface.image.attr 'height', @subjectContainer.height()
     
     @classification = new Classification { subject }
     

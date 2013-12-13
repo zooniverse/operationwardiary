@@ -32,22 +32,26 @@ class ZoomableSurface extends MarkingSurface
     
   zoom: (@zoomBy = 1) ->
     # return if @disabled
-    @zoomBy = Math.max @zoomBy, 1
+    @zoomBy = Math.max @zoomBy, .5
     @pan()
     
   pan: (@panX = @panX, @panY = @panY) ->
     
     {left, top} = @getOffset()
     
-    left = Math.min left, @width, @width - (@width / @zoomBy)
-    top = Math.min top, @height, @height - (@height / @zoomBy)
+    width = @width
+    height = @height
+    console.log width, height
+    
+    left = Math.min left, width, width - (width / @zoomBy)
+    top = Math.min top, height, height - (height / @zoomBy)
     left = Math.max left, 0
     top = Math.max top, 0
     
-    @panX = left + @width / (2 * @zoomBy)
-    @panY = top + @height / (2 * @zoomBy)
+    @panX = left + width / (2 * @zoomBy)
+    @panY = top + height / (2 * @zoomBy)
 
-    @paper.setViewBox left, top, @width / @zoomBy, @height / @zoomBy
+    @paper.setViewBox left, top, width / @zoomBy, height / @zoomBy
 
     tool.render() for tool in @tools
     
@@ -126,7 +130,6 @@ class ZoomableSurface extends MarkingSurface
     super
     
   onDrag: (e) =>
-    return if @zoomBy is 1
     @markingMode = false
     @selection?.deselect()
     tool.controls.el.addClass 'closed' for tool in @tools
