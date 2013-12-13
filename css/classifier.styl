@@ -26,7 +26,8 @@
   width: 185px
   float: left
   margin: 0
-  height: 600px
+  height: 100%
+  max-height: 600px
   font-size: 1.2em
   font-family: $mont
   
@@ -54,7 +55,7 @@
       margin-right: 15px
   
   p
-    width: 128px
+    max-width: 128px
     margin-left: 3px
     
   ul
@@ -232,6 +233,7 @@
   position: relative
   float: left
   width: 100%
+  max-width: 1185px
   padding: 0
   line-height: 40px
   vertical-align: middle
@@ -285,7 +287,7 @@
   float:left
   background: $lightblue
   overflow: hidden
-  width: 100%
+  width: 1000px
   height: 100%
   max-width: 1000px
   max-height: 600px
@@ -309,7 +311,6 @@
   svg
     z-index: 1
     width: 100%
-    height: 100%
     
     text
     tspan
@@ -645,3 +646,10 @@ div.subject-timeline
     left: ($arrow-size * -1)
     margin-left: 0
     top: 50%
+    
+@media (max-width: 1185px)
+  
+  .tools
+    width: 20%
+  .subject-container
+    width: 80%
