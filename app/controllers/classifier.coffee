@@ -308,7 +308,7 @@ class Classifier extends Spine.Controller
     @nextSubject() unless @classification.subject.metadata.tutorial
   
   nextSubject: =>
-    @classification.send()
+    # @classification.send()
       
     @update_history()
     
