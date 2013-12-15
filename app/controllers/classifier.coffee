@@ -310,8 +310,6 @@ class Classifier extends Spine.Controller
   
   nextSubject: =>
     # @classification.send()
-      
-    @update_history()
     
     Subject.current.destroy()
     subject = Subject.first()
