@@ -39,20 +39,20 @@ class ZoomableSurface extends MarkingSurface
     
     {left, top} = @getOffset()
     
-    width = @width
-    height = @height
+    view_width = @width / @zoomBy
+    view_height = @height / @zoomBy
     image_width = @image.attr 'width'
     image_height = @image.attr 'height'
     
-    left = Math.min left, image_width, image_width - (width / @zoomBy)
-    top = Math.min top, image_height, image_height - (height / @zoomBy)
+    left = Math.min left, image_width, image_width - view_width
+    top = Math.min top, image_height, image_height - view_height
     left = Math.max left, 0
     top = Math.max top, 0
     
-    @panX = left + width / (2 * @zoomBy)
-    @panY = top + height / (2 * @zoomBy)
+    @panX = left + view_width / 2
+    @panY = top + view_height / 2
 
-    @paper.setViewBox left, top, width / @zoomBy, height / @zoomBy
+    @paper.setViewBox left, top, view_width, view_height
 
     tool.render() for tool in @tools
     
