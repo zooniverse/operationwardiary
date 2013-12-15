@@ -117,6 +117,7 @@ class Classifier extends Spine.Controller
       # @navigate '/groups' unless @group_details.group
       
   render_tags: ( snapshot ) =>
+    console.log 'rendering tags for', Subject.current.zooniverse_id
 
     marks = snapshot?.marks
     marks ?= []
@@ -353,6 +354,7 @@ class Classifier extends Spine.Controller
   update_history: ->
     
     return unless Subject.current && @surface_history?
+    console.log 'Saving work for ', Subject.current.zooniverse_id
     
     snapshot = new Transcription @
     
