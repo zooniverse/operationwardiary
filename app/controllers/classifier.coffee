@@ -304,8 +304,8 @@ class Classifier extends Spine.Controller
   onFinishTask: =>
     @onDoTask()
     
-    console.log @classification.subject.metadata.tutorial
-    @nextSubject() unless @classification.subject.metadata.tutorial
+    console.log 'Tutorial? ', @classification.subject.metadata.tutorial?
+    @nextSubject() unless @classification.subject.metadata.tutorial?
   
   nextSubject: =>
     # @classification.send()
