@@ -634,40 +634,71 @@ module.exports =
       '''
       instruction: "Add <b>20 May 1915</b> above the entry"
 
-    wrongSpecies:
-      header: 'A case of mistaken identity'
+    second_date:
+      header: "Adding a second date"
       details: '''
-        This creature is actually a $species.
+        <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
+        <p>You can move tags by dragging them, if you need to.</p>
+        <p>Confirm your tag to continue.</p>
       '''
-      instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
+      instruction: "Add <b>21 May 1915</b> above the entry"
 
-    markTheOtherOne:
-      header: 'Mark the next creature'
-      details: '''
-        Try marking the creature in the top-right of the image on your own.
-        It's tiny, but try your best to be accurate.
-        You can always adjust the lines you've drawn by dragging the end points.
-        Remember: Drag out the major axis (length), then the minor axis (width), then choose the species.
-      '''
-      instruction: 'Mark the next creature on your own.'
+    tag_places:
+      header: "Tagging places"
+      details: "<p>Once you have tagged all the dates follow the same approach for Places.</p>
+<p>Select the <b>Place</b> tag in the tag menu.</p>"
+      instruction: "Click the <b>Place</b> tag."
+    
+    add_places:
+      header: "Choosing a place"
+      details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag. Try to make sure that you click within the horizontal lines for the relevant date.</p>
+<p>In the pop-up box enter 'Aldershot', and the map will centre on that place.</p>
+<p>If you make a mistake you can delete the tag by clicking on the X.</p>"
+      instruction: "Add <b>Aldershot</b>"
+      
+    tag_people:
+      header: "Tagging people"
+      details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
+<p>Can you see an individual mentioned by name on this page? <b>Sergeant Byrne</b> became a casualty on 21 May. Select Person in the tag menu, then click on the diary page by his name to attach the tag.</p>"
+      instruction: "Click the <b>Person</b> tag."
+      
+    add_people:
+      header: "Tell us why they were mentioned"
+      details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
+<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>
+<p>Click the tick box to complete the tag.</p>"
+      instruction: "Add <b>Sgt Byrne</b>"
+    
+    tag_other:
+      header: "Tagging other information"
+      details: "<p>You may well find other important pieces of information such as what the unit was doing or what the weather was like.</p>
 
-    finish:
-      header: 'Move on to the next image'
-      details: '''
-        When you're finished, click "Finish" to submit your classification.
-      '''
+<p>Remember you can always have a look through the Field Guide if you are not sure what a military phrase means or if it is something that you should tag.</p>
 
-    beSocial:
-      header: 'Be social'
-      details: '''
-        Before you move on to the next image, you can discuss it with other scientists if you have a question or observation.
-        You can also share it with your friends!
-      '''
-      instruction: 'Click "Next" to load the next image.'
+<p>On this diary page there is a description of the Battalion embarking on the SS Victoria so select the <b>Unit Activity</b> tag in the tag menu.</p>"
+      instruction: "Click the <b>Unit Activity</b> tag."
+    
+    add_activity:
+      header: "Unit Activity"
+      details: "<p>Place the tag on the page where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
+<p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
+<p>Click the tick box to complete the tag.</p>"
+      instruction: "Add <b>Unit movement</b>"
+    
+    timeline:
+      header: "Editing or deleting tags"
+      details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
+      <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to move, edit or delete them.</p>"
+      instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
+      
+    finished:
+      header: "Finished"
+      details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
+      instruction: "Click <b>Finished!</b>"
+    
+    choose:
+      header: "What happens next"
+      details: "<p>Well done! You have successfully completed the tutorial.</p>
+<p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
 
-    haveFun:
-      header: 'Have fun'
-      details: '''
-        It looks like you've got a handle on this.
-        Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
-      '''
+
