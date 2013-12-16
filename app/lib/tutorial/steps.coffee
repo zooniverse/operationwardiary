@@ -1,6 +1,11 @@
 {Step} = require 'zootorial'
 Spine = require 'spine'
 Route = require 'spine/lib/route'
+translate = require 't7e'
+
+get_text = (key) =>
+  el = translate 'div', key, raw: true
+  el.innerHTML
 
 module.exports =
   id: "diaries-tut"
@@ -9,24 +14,23 @@ module.exports =
     length: 17
     welcome: new Step
       number: 1
-      header: "Welcome to Operation War Diary"
-      details: "<p>This short tutorial will walk you through the tagging process. Let&#039;s get started!</p>" 
+      header: get_text 'tutorial.welcome.header'
+      details: get_text 'tutorial.welcome.details'
       attachment: "center center .subject-container center center"
       next: "intro"
 
     intro: new Step
       number: 2
-      header: "Check out the diaries"
-      details: "<p>Around 1.5 million pages of unit war diaries cover activity on the Western Front. There are lots of different types of pages full of fascinating details about the people involved and descriptions of their activities. </p>
-<p>We need your help to classify the type of page and then tag the data.</p> "
+      header: get_text 'tutorial.intro.header'
+      details: get_text 'tutorial.intro.details'
       attachment: "center center .subject-container center center"
       next: "page_type"
     
     page_type: new Step
       number: 3
-      header: "Classifying diary pages"
-      details: "<p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide</p>"
-      instruction: "Click <b>Diary page</b>"
+      header: get_text 'tutorial.page_type.header'
+      details: get_text 'tutorial.page_type.details'
+      instruction: get_text 'tutorial.page_type.instruction'
       attachment: "left center label[for='document-diary'] right center"
       focus: "label[for='document-diary']"
       next:
@@ -34,44 +38,35 @@ module.exports =
     
     get_tagging: new Step
       number: 4
-      header: "Get tagging"
-      details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
-<p>Different page types are likely to contain different types of information so the list of available tags will change depending on the type of page you&#039;ve selected.</p>"
+      header: get_text 'tutorial.get_tagging.header'
+      details: get_text 'tutorial.get_tagging.details'
       attachment: "center center .subject-container center center"
       next: "tagging_intro"
     
     tagging_intro: new Step
       number: 5
-      header: "Tagging the diary pages"
-      details: "<p>Most (not all) Diary pages use a pre-printed template with 5 columns</p>
-<ul>
-  <li> 1-3: place, date and hour</li>
-  <li> 4: narrative account of operations, which can contain a variety of  information about people and activities. </li>
-  <li> 5: References  to other documents in the diaries including maps and reports.</li>
-</ul>"
+      header: get_text 'tutorial.tagging_intro.header'
+      details: get_text 'tutorial.tagging_intro.details'
       attachment: "center center .subject-container center center"
       next: "tag_dates"
       
     tag_dates: new Step
       number: 6
-      header: "Tagging dates and times"
-      details: "<p>Let's start tagging by working your way down the Date column.</p>
-      <p>This will mean you can group events together and create a timeline of activity without having to add a date to every other tag. </p>
-<p>Select <b>Date</b> from the tag menu on the left of the screen.</p>"
+      header: get_text 'tutorial.tag_dates.header'
+      details: get_text 'tutorial.tag_dates.details'
       attachment: "left center label[for='category-diaryDate'] right center"
-      instruction: "Click the <b>Date</b> tag."
+      instruction: get_text 'tutorial.tag_dates.instruction'
       focus: "label[for=category-diaryDate]"
       next: 
         "click label[for=category-diaryDate]": "add_dates"
     
     add_dates: new Step
       number: 7
-      header: "Adding a date"
+      header: get_text 'tutorial.add_dates.header'
       className: "point-left"
-      details: "<p>You can see that there were a number of entries at different times during 20 May.</p>
-<p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick button to confirm.</p>"
+      details: get_text 'tutorial.add_dates.details'
       attachment: "left middle .subject-container .20 .41"
-      instruction: "Add <b>20 May 1915</b> above the entry"
+      instruction: get_text 'tutorial.add_dates.instruction'
       next: 
         "click button[name=toggle]": "second_date"
     

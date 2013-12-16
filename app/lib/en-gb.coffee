@@ -585,57 +585,54 @@ module.exports =
     welcome:
       header: "Welcome to #{PROJECT_NAME}!"
       details: '''
-        This short tutorial will show you how to use the tools to mark and identify plankton.
-        Before you start, it's a good idea to check out the "science" page to learn about the different species we're classifying.
-        Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
+        <p>This short tutorial will walk you through the tagging process. Let&#039;s get started!</p>
       '''
 
-    beforeMark:
-      header: 'What we\'re marking'
+    intro:
+      header: "Check out the diaries"
       details: '''
-        Let's start with the large tentacled creature to the right.
-        To mark a creature, you need to draw lines across its major and minor axes.
-        We're mainly interested in the size and direction of the plankton.
+        <p>Around 1.5 million pages of unit war diaries cover activity on the Western Front. There are lots of different types of pages full of fascinating details about the people involved and descriptions of their activities. </p>
+        <p>We need your help to classify the type of page and then tag the data.</p>
       '''
 
-    majorAxis:
-      header: 'Major axis'
-      details: '''
-        Always mark the length of the plankton first, from the "front" toward the "bottom".
-        This will tell us how long the creature is and what direction it's moving.
-        Remember to check the science page if you're not sure how to mark something.
-        Do not include any tentacles!
-      '''
-      instruction: 'Drag vertically from the top of the bell across to where the tentacles start.'
+    page_type:
+      header: "Classifying diary pages"
+      details: "<p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide</p>"
+      instruction: "Click <b>Diary page</b>"
 
-    minorAxis:
-      header: 'Minor axis'
-      details: '''
-        Now we'll mark the width of the creature.
-      '''
+    get_tagging:
+      header: "Get tagging"
+      details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
+<p>Different page types are likely to contain different types of information so the list of available tags will change depending on the type of page you&#039;ve selected.</p>"
       instruction: 'Drag from left to right across the bell.'
 
-    chooseCategory:
-      header: 'Narrow down possible species'
+    tagging_intro:
+      header: "Tagging the diary pages"
       details: '''
-        A row of category icons has appeared. Choose the one that looks closest to the creature you see.
+        <p>Most (not all) Diary pages use a pre-printed template with 5 columns</p>
+        <ul>
+          <li> 1-3: place, date and hour</li>
+          <li> 4: narrative account of operations, which can contain a variety of  information about people and activities. </li>
+          <li> 5: References  to other documents in the diaries including maps and reports.</li>
+        </ul>
       '''
-      instruction: 'Click the icon that best matches the creature.'
 
-    chooseSpecies:
-      header: 'Choose the species'
+    tag_dates:
+      header: "Tagging dates and times"
       details: '''
-        From the new row of species icons, again click the closest match.
+        <p>Let's start tagging by working your way down the Date column.</p>
+              <p>This will mean you can group events together and create a timeline of activity without having to add a date to every other tag. </p>
+        <p>Select <b>Date</b> from the tag menu on the left of the screen.</p>
       '''
-      instruction: 'Click the icon that best matches the creature.'
+      instruction: "Click the <b>Date</b> tag."
 
-    badCoordinates:
-      header: 'Close, but no cigar'
+    add_dates:
+      header: "Adding a date"
       details: '''
-        It looks like the axes are a bit off.
-        We've drawn some guides to help you out.
+        <p>You can see that there were a number of entries at different times during 20 May.</p>
+        <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick button to confirm.</p>
       '''
-      instruction: 'Drag the handles at the end of each line until they match the guides.'
+      instruction: "Add <b>20 May 1915</b> above the entry"
 
     wrongSpecies:
       header: 'A case of mistaken identity'
