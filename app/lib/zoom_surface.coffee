@@ -155,7 +155,7 @@ class ZoomableSurface extends MarkingSurface
     
     return unless @hasFocus()
     
-    delta = if mouse_delta > 0 then .05 else -.05
+    delta = if mouse_delta > 0 then -.02 else .02
     
     @zoom( @zoomBy + delta )
     

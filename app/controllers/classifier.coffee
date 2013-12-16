@@ -318,19 +318,19 @@ class Classifier extends Spine.Controller
 
   onZoomIn: ({currentTarget})=>
     
-    timeout = @onZoom currentTarget, .2
+    timeout = @onZoom currentTarget, .1
     
   onZoomOut: ({currentTarget})=>
     
-    timeout = @onZoom currentTarget, -.2
+    timeout = @onZoom currentTarget, -.1
     
   onKeyZoomIn: (e) =>
     return unless e.which == 13
-    @onZoom e.currentTarget, .2
+    @onZoom e.currentTarget, .1
   
   onKeyZoomOut: (e) =>
     return unless e.which == 13
-    @onZoom e.currentTarget, -.2
+    @onZoom e.currentTarget, -.1
     
   onZoom: (currentTarget, delta)=>
     @surface.selection?.deselect()
