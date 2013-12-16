@@ -7,14 +7,18 @@
 
 .stack
   position: relative
+  width: 100%
+  max-width: 1185px
+  margin: 0 auto
   
   > div
     @extends #site-container
-    display: none
+    visibility: hidden
+    position: absolute
     
   > div.active
   > div:target
-    display: block
+    visibility: visible
     
     > *
       animation: fadeIn 1s

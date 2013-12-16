@@ -85,7 +85,6 @@ class ZoomableSurface extends MarkingSurface
       @pan()
       promise.resolve()
     
-    new_image.trigger 'transitionend' if @image.attr('src') == ''
     new_image.trigger 'transitionend' if !document.body.style.transition? && !document.body.style.WebkitTransition?
     
     return promise
