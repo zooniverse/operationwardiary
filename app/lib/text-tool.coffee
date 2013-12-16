@@ -130,6 +130,7 @@ class TextControls extends ToolControls
     
   open: =>
     @el.removeClass 'closed'
+    @el.focus()
   
   close: =>
     @el.addClass 'closed'
