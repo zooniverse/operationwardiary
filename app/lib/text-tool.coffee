@@ -110,8 +110,10 @@ class TextControls extends ToolControls
     
     if y < 300
       top = y + 20
+      bottom = 'auto'
     else
-      top = y - ( @el.height() + 20 )
+      top = 'auto'
+      bottom = @tool.surface.height - y + 20
       
     left = Math.max x - 88, 10
     left = Math.min left, @tool.surface.width - 186
@@ -121,6 +123,7 @@ class TextControls extends ToolControls
       position: 'absolute'
       right: ''
       top: top
+      bottom: bottom
     
   setNote: (note = @tool.mark.note) =>
     @widget.setNote note
