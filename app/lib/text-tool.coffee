@@ -74,8 +74,7 @@ class TextControls extends ToolControls
     @tool.on 'deselect', @close
     
     @el.on 'focus', =>
-      console.log @tool
-      @tool.select()
+      @tool.select() unless @tool.surface.selection == @tool
     
   onClickToggle: =>
     @el.toggleClass 'closed'
@@ -129,8 +128,8 @@ class TextControls extends ToolControls
     @widget.setNote note
     
   open: =>
+    @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
-    @el.focus()
   
   close: =>
     @el.addClass 'closed'
