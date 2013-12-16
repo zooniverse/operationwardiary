@@ -256,7 +256,7 @@ class Classifier extends Spine.Controller
     
     
   onSubjectSelect: (e, subject) =>
-    console.log subject
+    console.log 'selecting ', subject.zooniverse_id
     @surface.width = @subjectContainer.width()
     @surface.height = @subjectContainer.height()
     @surface.pan()
