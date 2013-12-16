@@ -9,7 +9,7 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 class TextControls extends ToolControls
   
   template: '''
-    <div class="marking-tool-controls">
+    <div tabindex="0" class="marking-tool-controls">
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
@@ -72,6 +72,10 @@ class TextControls extends ToolControls
     @tool.on 'select', @open
     
     @tool.on 'deselect', @close
+    
+    @el.on 'focus', =>
+      console.log @tool
+      @tool.select()
     
   onClickToggle: =>
     @el.toggleClass 'closed'

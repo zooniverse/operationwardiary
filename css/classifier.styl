@@ -334,18 +334,19 @@
   border: 1px solid #aaa
   box-shadow: 0 3px 3px 2px #666;
   z-index: 10
-  display: block
+  max-height: 400px
   overflow: hidden
   font-size: 1.2em
   font-family: $mont
   color: grey
+  transition: max-height .5s
   
   .ui-widget
     margin: .3em auto
 
   &.closed
     z-index: -1
-    display: none
+    max-height: 0
     
   &.selected
     z-index: 20
