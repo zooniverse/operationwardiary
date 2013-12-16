@@ -146,7 +146,7 @@ module.exports =
       header: get_text 'tutorial.timeline.header'
       details: get_text 'tutorial.timeline.details'
       attachment: "center top button.timeline center bottom"
-      instruction: get_text 'tutorial.timeline,instruction'
+      instruction: get_text 'tutorial.timeline.instruction'
       focus: "button.timeline"
       next: 
         "click button.timeline":"finished"
