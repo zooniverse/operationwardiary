@@ -176,7 +176,7 @@ module.exports =
     projectDescription: '''
       <p>The story of the British Army on the Western Front during the First World War is waiting to be discovered in 1.5 million pages of unit war diaries. We need your help to reveal the stories of those who fought in the global conflict that shaped the world we live in today.</p>
     '''
-    title: "Welcome to #{PROJECT_NAME}"
+    title: "Welcome to <span class='project_name'>#{PROJECT_NAME}</span>"
     start: 'Get started!'
   
   groups:
