@@ -15,5 +15,5 @@
   <% end %>
   
 <% else: %>
-  <p><>%- translate 'span', "profile.login" %></p>
+  <p><%- translate 'span', "profile.login" %></p>
 <% end %>
