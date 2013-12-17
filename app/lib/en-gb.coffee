@@ -582,6 +582,11 @@ module.exports =
     favourites: 'Favourites'
     groups: 'Your diaries'
     tags: 'Your tags'
+    activities: 'Activities'
+    dates: 'Dates'
+    places: 'Places'
+    people: 'People'
+    login: 'Login to view profile'
 
   tutorial:
     welcome:
