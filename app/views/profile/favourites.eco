@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 <% if @favourites?: %>
-<%- translate 'h2', "common.favourites" %>
+<%- translate 'h2', "profile.favourites" %>
   <ul class="recents">
     <% for favourite in @favourites: %>
     <li><a href="http://zooniverse-demo.s3-website-us-east-1.amazonaws.com/diaries_talk/#/subjects/<%= favourite.zooniverse_id %>"><img width="100" src="<%= favourite.location.standard %>"></a></li>

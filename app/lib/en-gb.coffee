@@ -578,8 +578,10 @@ module.exports =
     return: 'Home'
 
   profile:
-    recents: 'Recents'
-    favorites: 'Favorites'
+    recents: 'Recent pages'
+    favourites: 'Favourites'
+    groups: 'Your diaries'
+    tags: 'Your tags'
 
   tutorial:
     welcome:

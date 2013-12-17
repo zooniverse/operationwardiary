@@ -1,9 +1,9 @@
-
+<% translate = require 't7e' %>
 <% if @user: %>
   <h1><%- @user.name %></h1>
 
   <% if @user.project?: %>
-  <h2>Your tags</h2>
+  <%- translate 'h2', "profile.tags" %>
     <p>Pages transcribed: <%- @user.project.classification_count %></p>
     <ul>
       <li>Activities: <%- @user.project.activity_count %></li>
