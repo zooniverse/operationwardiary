@@ -258,7 +258,7 @@ class Classifier extends Spine.Controller
     console.log 'selecting ', subject.zooniverse_id
     @surface.width = @subjectContainer.width()
     @surface.height = @subjectContainer.height()
-    @surface.pan()
+    # @surface.pan 0, 0
     
     @classification = new Classification { subject }
     
