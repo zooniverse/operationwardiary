@@ -507,11 +507,12 @@
   z-index: 20
   text-align: left
   max-height: 0
-  transition: max-height 1s
+  transition: opacity .2s ease-in-out
   overflow: hidden
   font-size: 1.2em
   line-height: 1.4
   border-radius: 6px
+  opacity: 0
   
   a
     color: $white
@@ -519,6 +520,7 @@
   
   &.open
     max-height: 550px
+    opacity: 1
   
   h2
     text-align: center
