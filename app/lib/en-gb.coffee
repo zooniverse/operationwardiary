@@ -637,7 +637,7 @@ module.exports =
       header: "Adding a date"
       details: '''
         <p>You can see that there were a number of entries at different times during 20 May.</p>
-        <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the tick button to confirm.</p>
+        <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the &#x2714; button to confirm.</p>
       '''
       instruction: "Add <b>20 May 1915</b> above the entry"
 
@@ -673,7 +673,7 @@ module.exports =
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>
-<p>Click the tick box to complete the tag.</p>"
+<p>Click the &#x2714; box to complete the tag.</p>"
       instruction: "Add <b>Sgt Byrne</b>"
     
     tag_other:
@@ -689,7 +689,7 @@ module.exports =
       header: "Unit Activity"
       details: "<p>Place the tag on the page where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
-<p>Click the tick box to complete the tag.</p>"
+<p>Click the &#x2714; box to complete the tag.</p>"
       instruction: "Add <b>Unit movement</b>"
     
     timeline:
