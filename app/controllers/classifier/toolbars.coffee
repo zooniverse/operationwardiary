@@ -57,9 +57,6 @@ class Toolbars extends Spine.Controller
     
     @pageTypes.addClass 'closed'
     @pageTools.removeClass 'closed'
-      
-    $('.categories').css
-      'visibility': 'visible'
   
   selectPageType: (type) =>
     selector = "#document-#{type}"
