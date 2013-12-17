@@ -57,8 +57,7 @@ class TextControls extends ToolControls
       
       
     @el.on 'mousewheel wheel', (e)=>
-      e.stopPropagation(
-      )
+      e.stopPropagation()
     @el.on 'click', 'button[name="toggle"]', =>
       @save()
     
