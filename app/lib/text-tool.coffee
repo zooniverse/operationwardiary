@@ -114,8 +114,8 @@ class TextControls extends ToolControls
       top = 'auto'
       bottom = @tool.surface.height - y + 20
       
-    left = Math.max x - 88, 10
-    left = Math.min left, @tool.surface.width - 186
+    left = Math.max x - 107, 10
+    left = Math.min left, @tool.surface.width - 214
 
     @el.css
       left: left
