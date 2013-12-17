@@ -162,7 +162,7 @@
           opacity: 1
           background-color: #333
     
-  div.types
+  .types
     transition: width .4s ease-in-out
     width: 135px
     float:left
@@ -191,7 +191,7 @@
       &:checked + label
         opacity: 1
 
-  div.toolbar
+  .toolbar
     transition: width .4s ease-in-out
     width: 135px
     overflow: hidden
@@ -665,5 +665,13 @@ div.subject-timeline
   
   .tools
     width: 20%
+    
+    .types
+    .toolbar
+      width: 73%
+      
+      &.closed
+        width: 27%
+        
   .subject-container
     width: 80%
