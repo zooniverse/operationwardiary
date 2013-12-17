@@ -54,8 +54,7 @@ class Classifier extends Spine.Controller
     
     @el.attr id: 'classify'
     
-    @toolbars = new Toolbars
-    @el.find('.tools').prepend @toolbars.el
+    @toolbars = new Toolbars el: @el.find '.tools'
     
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
