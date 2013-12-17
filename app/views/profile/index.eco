@@ -3,7 +3,14 @@
   <h1><%- @user.name %></h1>
 
   <% if @user.project?: %>
-    <h3>Pages transcribed: <%- @user.project.classification_count %></h3>
+  <h2>Your tags</h2>
+    <p>Pages transcribed: <%- @user.project.classification_count %></p>
+    <ul>
+      <li>Activities: <%- @user.project.activity_count %></li>
+      <li>Dates: <%- @user.project.diary_date_count %></li>
+      <li>Places: <%- @user.project.place_count %></li>
+      <li>People: <%- @user.project.person_count %></li>
+    </ul>
     
   <% end %>
   
