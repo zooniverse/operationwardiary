@@ -12,6 +12,7 @@
     <img height="40" src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>">
     <img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
     <img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
+    <%- translate 'p', 'home.byline' %>
   </div>
 </div>
 

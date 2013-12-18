@@ -183,6 +183,7 @@ module.exports =
     title: "<img class='project_name' src=\"images/logos/owd-hero-logo.svg\" alt='#{PROJECT_NAME}'>"
     start: 'Get started!'
     partners: 'In association with'
+    byline: "Working together with Citizen Historians during the First World War Centenary"
   
   groups:
     title: 'Pick a diary to work on'
