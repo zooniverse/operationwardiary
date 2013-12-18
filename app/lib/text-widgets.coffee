@@ -196,6 +196,29 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       promise.resolve place
     else
       $suggestions = @el.find '.suggestions'
+      
+      place =
+        placename: @el.find('input[name=place]').val()
+        lat: null
+        long: null
+        name: ''
+        id: null
+      input = 
+        $("<input/>")
+        .attr( "type", 'radio' )
+        .attr( 'name', 'placeOption')
+        .on( 'change', place, (e)=>
+          place = e.data
+          e.preventDefault()
+          e.stopPropagation()
+          promise.notify place
+        )
+      label = $("<label><span>None of these<span></label>").prepend input
+      label.on 'mouseover focus', place, (e)=>
+        place = e.data
+        @show_place place.lat, place.long
+      $suggestions.append label
+      
       for place in places
         input = 
           $("<input/>")
@@ -213,25 +236,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           @show_place place.lat, place.long
           
         $suggestions.append label
-      
-      input = 
-        $("<input/>")
-        .attr( "type", 'radio' )
-        .attr( 'name', 'placeOption')
-        .on( 'change', (e)=>
-          place =
-            placename: @el.find('input[name=place]').val()
-            lat: null
-            long: null
-            name: ''
-            id: null
-          e.preventDefault()
-          e.stopPropagation()
-          promise.notify place
-        )
-      label = $("<label><span>None of these<span></label>").prepend input
-      $suggestions.append label
-      
+        
       $suggestions.addClass 'open'
     
     promise
