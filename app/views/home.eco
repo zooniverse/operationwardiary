@@ -1,4 +1,5 @@
 <% translate = require 't7e' %>
+<% zoo = translate 'span', 'common.zoo', raw: true %>
 <% iwm = translate 'span', 'common.iwm', raw: true %>
 <% tna = translate 'span', 'common.tna', raw: true %>
 
@@ -8,8 +9,9 @@
   <a class="button" href="#/classify"><%- translate 'span', 'home.start' %></a>
   <div class="logos">
     <%- translate 'h2', 'home.partners' %>
-    <img src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
-    <img src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
+    <img src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>">
+    <img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
+    <img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
   </div>
 </div>
 

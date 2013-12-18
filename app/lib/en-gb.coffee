@@ -20,6 +20,7 @@ module.exports =
     recent: "Recent pages"
     iwm: "Imperial War Museums"
     tna: "The National Archives"
+    zoo: "The Zooniverse"
 
   documents:
     cover: 'Cover page'
