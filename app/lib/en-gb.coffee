@@ -18,7 +18,7 @@ module.exports =
     easy: "That was easy! Click 'Finished' to move on to the next page."
     favourites: "Favourites"
     recent: "Recent pages"
-    iwm: "Imperial War Museum"
+    iwm: "Imperial War Museums"
     tna: "The National Archives"
 
   documents:
