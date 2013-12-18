@@ -93,7 +93,6 @@ class Classifier extends Spine.Controller
     
   active: (params) =>
     super
-    Spine.trigger 'nav:close'
     tool.render() for tool in @surface.tools
       
     $('.site-navigation .links ul')
