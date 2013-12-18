@@ -1,8 +1,15 @@
 <% translate = require 't7e' %>
+<% iwm = translate 'span', 'common.iwm', raw: true %>
+<% tna = translate 'span', 'common.tna', raw: true %>
 
 <div class="description">
   <%- translate 'h1', 'home.title' %>
   <%- translate 'div', 'home.projectDescription' %>
   <a class="button" href="#/classify"><%- translate 'span', 'home.start' %></a>
+  <div class="logos">
+    <h2>Project collaborators</h2>
+    <img src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
+    <img src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
+  </div>
 </div>
 
