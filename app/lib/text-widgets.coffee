@@ -500,9 +500,9 @@ WidgetFactory.registry.time = class TimeWidget extends TextWidget
     note = ''
     $( target )
       .parents( '.annotation')
-      .find( 'select')
+      .find( 'select, input')
       .each ->
-        note += $(@).val()
+        note += "0#{ $(@).val() }"[-2..-1]
     
     note
     

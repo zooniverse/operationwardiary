@@ -7,11 +7,7 @@
       <option><%= "0#{i}"[-2..-1] %></option>
     <% end %>    
   </select>
-  <select name="minute">
-    <% for i in [0..59] by 15: %>
-      <option><%= "0#{i}"[-2..-1] %></option>
-    <% end %>    
-  </select>
+  <input name="minute" type="number" value="00" min="00" max="60" step="1">
   <select name="am">
     <option>AM</option>
     <option>PM</option>  
