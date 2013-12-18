@@ -5,9 +5,11 @@
 <div class="annotation">
   <label><%- translate 'span', "classifier.person.rank" %>
     <select name="rank">
+      <option value=""><%- translate 'span', "common.none" %></option>
       <% for rank in @ranks: %>
         <option><%= rank %></option>
-      <% end %>    
+      <% end %>
+      <option value="other"><%- translate 'span', "common.other" %></option>    
     </select>
   </label>
   <label><%- translate 'span', "classifier.person.first" %>

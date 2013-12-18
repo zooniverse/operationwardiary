@@ -4,6 +4,7 @@ module.exports =
   
   common:
     other: 'Other'
+    none: 'None'
     finish: 'Finished!'
     type: 'Type'
     favourite: 'Favourite'
