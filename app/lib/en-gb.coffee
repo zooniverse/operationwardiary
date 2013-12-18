@@ -180,7 +180,7 @@ module.exports =
     projectDescription: '''
       <p>The story of the British Army on the Western Front during the First World War is waiting to be discovered in 1.5 million pages of unit war diaries. We need your help to reveal the stories of those who fought in the global conflict that shaped the world we live in today.</p>
     '''
-    title: "Welcome to <span class='project_name'>#{PROJECT_NAME}</span>"
+    title: "<img class='project_name' src=\"images/logos/owd-hero-logo.svg\" alt='#{PROJECT_NAME}'>"
     start: 'Get started!'
     partners: 'In association with'
   
