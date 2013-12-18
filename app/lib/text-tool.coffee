@@ -9,7 +9,7 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 class TextControls extends ToolControls
   
   template: '''
-    <div tabindex="0" class="marking-tool-controls">
+    <div tabindex="0" class="marking-tool-controls" role="dialog">
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>

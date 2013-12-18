@@ -19,6 +19,8 @@ class Comments extends Spine.Controller
   constructor: ->
     super
     @render()
+    
+    @el.attr role: 'dialog'
     # uncomment this for testing
     # @zooniverse_id = 'AWD00001qt'
 

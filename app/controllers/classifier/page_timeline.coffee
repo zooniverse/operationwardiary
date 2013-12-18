@@ -11,6 +11,8 @@ class PageTimeline extends Spine.Controller
     super
     @render()
     
+    @el.attr role: 'dialog'
+    
     Spine.bind 'tools:change', (tools) =>
       @createEntries tools
       @render()
