@@ -166,16 +166,12 @@ class Classifier extends Spine.Controller
     @surface.markingMode = true
     @surface.selection?.deselect()
     
-    if @cacheNotes
-      note = store.get type, undefined
     
-      @surface.markDefaults.type = type
-      @surface.markDefaults.note = note ? undefined
   
   onToolChange: (e, tool)=>
     @update_history()
     mark = tool.mark
-    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date']
+    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date', 'person']
 
     page_type = $( '.documents :checked' ).val()
     if page_type == 'diary'
@@ -191,9 +187,9 @@ class Classifier extends Spine.Controller
     type = $('.categories :checked').val()
   
     if @cacheNotes
-      note = store.get type, undefined if type?
-      if note?
-        @surface.markDefaults.note = note
+      note = store.get type, undefined if type? && type not in ['diaryDate', 'date', 'person']
+      if type?
+        @surface.markDefaults.note = note ? undefined
         @surface.markDefaults.type = type
 
   onToolSelect: (e, mark)=>
