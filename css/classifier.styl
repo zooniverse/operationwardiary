@@ -336,19 +336,19 @@
   border-radius: 6px
   box-shadow: 0 3px 3px 2px #666;
   z-index: 10
-  max-height: 400px
+  opacity: 1
   overflow: hidden
   font-size: 1.2em
   font-family: $mont
   color: grey
-  transition: max-height .5s
+  transition: opacity .2s ease-in-out
   
   .ui-widget
     margin: .3em auto
 
   &.closed
     z-index: -1
-    max-height: 0
+    opacity: 0
     
   &.selected
     z-index: 20
