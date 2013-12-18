@@ -181,6 +181,7 @@ module.exports =
     '''
     title: "Welcome to <span class='project_name'>#{PROJECT_NAME}</span>"
     start: 'Get started!'
+    partners: 'In association with'
   
   groups:
     title: 'Pick a diary to work on'

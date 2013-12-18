@@ -7,7 +7,7 @@
   <%- translate 'div', 'home.projectDescription' %>
   <a class="button" href="#/classify"><%- translate 'span', 'home.start' %></a>
   <div class="logos">
-    <h2>Project collaborators</h2>
+    <%- translate 'h2', 'home.partners' %>
     <img src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
     <img src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
   </div>
