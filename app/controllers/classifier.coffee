@@ -165,9 +165,7 @@ class Classifier extends Spine.Controller
   onTagChange: (e,type)=>
     @surface.markingMode = true
     @surface.selection?.deselect()
-    
-    
-  
+
   onToolChange: (e, tool)=>
     @update_history()
     mark = tool.mark
