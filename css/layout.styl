@@ -15,10 +15,12 @@
     @extends #site-container
     visibility: hidden
     position: absolute
+    height: 0
     
   > div.active
   > div:target
     visibility: visible
+    height: auto
     
     > *
       animation: fadeIn .2s ease-in-out
