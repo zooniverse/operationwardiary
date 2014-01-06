@@ -63,7 +63,7 @@ class TextControls extends ToolControls
     
     @el.on 'change', ':input', @onTextChange
     
-    @el.on 'keydown', ':input', (e)=>
+    @el.on 'keydown', '.annotation :input', (e)=>
       if e.which == 13
         $( e.currentTarget ).blur().focus()
         @save() unless @widget.type is 'place'
