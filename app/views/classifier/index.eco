@@ -12,5 +12,16 @@
   </span>
   <img id="loader" src="" class="offscreen">
 </div>
-<span id="group-picker">
-</span>
+
+<% zoo = translate 'span', 'common.zoo', raw: true %>
+<% iwm = translate 'span', 'common.iwm', raw: true %>
+<% tna = translate 'span', 'common.tna', raw: true %>
+<div class="logos">
+  <%- translate 'h2', 'home.partners' %>
+  <p>
+    <img height="40" src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>">
+    <img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
+    <img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
+  </p>
+  <%- translate 'p', 'home.byline' %>
+</div>

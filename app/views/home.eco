@@ -7,14 +7,15 @@
   <%- translate 'h1', 'home.title' %>
   <%- translate 'div', 'home.projectDescription' %>
   <a class="button" href="#/classify"><%- translate 'span', 'home.start' %></a>
-  <div class="logos">
-    <%- translate 'h2', 'home.partners' %>
-    <p>
-      <img height="40" src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>">
-      <img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
-      <img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
-    </p>
-    <%- translate 'p', 'home.byline' %>
-  </div>
+</div>
+
+<div class="logos">
+  <%- translate 'h2', 'home.partners' %>
+  <p>
+    <img height="40" src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>">
+    <img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>">
+    <img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>">
+  </p>
+  <%- translate 'p', 'home.byline' %>
 </div>
 
