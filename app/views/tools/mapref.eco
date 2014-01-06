@@ -11,6 +11,6 @@
   </label>
   
   <label><%- translate 'span', "classifier.mapRef.date" %>
-    <input class="date" name="date" type="text"/>
+    <input name="date" type="text"/>
   </label>
 </div>
