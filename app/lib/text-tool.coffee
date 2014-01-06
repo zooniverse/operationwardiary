@@ -65,10 +65,8 @@ class TextControls extends ToolControls
     
     @el.on 'keydown', ':input', (e)=>
       if e.which == 13
-        if @widget.type != 'place'
-          @save()
-        else
-          $( e.currentTarget ).blur().focus()
+        $( e.currentTarget ).blur().focus()
+        @save() unless @widget.type is 'place'
         return false
     
     @tool.on 'select', @open
