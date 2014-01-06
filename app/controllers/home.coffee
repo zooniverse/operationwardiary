@@ -10,8 +10,8 @@ class Home extends Spine.Controller
     
     @render()
     
-    footer = new Footer
-    @el.append footer.el
+    # footer = new Footer
+    # @el.append footer.el
 
   render: =>
     @html @template()
