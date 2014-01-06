@@ -85,6 +85,7 @@ module.exports =
     fire: 'Under fire '
     enemy_activity: 'Enemy activity'
     strength: 'Unit strength'
+    resting: 'Resting'
     
   domestic:
     accomodation: 'Accommodation'
@@ -154,7 +155,7 @@ module.exports =
     relieved_by: 'Relieved by'
     right: 'On right'
     left: 'On left'
-    joined: 'Joined with'
+    joined: 'With'
     
     
   weather:

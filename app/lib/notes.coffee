@@ -62,6 +62,7 @@ labels =
     'fire'
     'enemy_activity'
     'strength'
+    'resting'
   ]
   
   domestic: [
