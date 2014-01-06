@@ -576,7 +576,7 @@ WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget
 WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
   
-  type: 'map_ref'
+  type: 'mapref'
   
   render: (el)->
     super
@@ -613,7 +613,7 @@ WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
 WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   template: require '../views/tools/gridref'
   
-  type: 'grid'
+  type: 'gridref'
   
   render: (el)->
     super
