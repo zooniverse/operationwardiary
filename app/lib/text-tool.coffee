@@ -223,9 +223,6 @@ class TextTool extends Tool
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x,y]
     @render()
-    
-  'on mousedown dots': (e, shape)->
-    @controls.onClickToggle e
   
   'on mouseover dots': (e, shape)=>
     @label.show()
