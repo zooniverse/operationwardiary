@@ -325,7 +325,7 @@ module.exports =
       discipline: "Even minor infringements of the rules could have serious consequences eg a dirty rifle might not fire correctly. Depending on the offence men were disciplined by their unit or referred up the chain. Tag any reference to discipline, arrest, punishment, forfeiture of pay, demotion or courts martial."
       medical: "Tag any reference to routine medical inspections eg for trench foot, vaccinations or the work of the unit Medical Officer (MO)."
       uniform: "Tag any mention of the men receiving clean clothing or new equipment."
-      hygiene: "It was exteremly difficult to provide proper washing facilities so baths were improvised from farm carts and streams and ponds were used for swimming. Lice infested clothes and spread disease. Tag any mention of washing, fumigation or any other element of personal hygiene."
+      hygiene: "It was extremely difficult to provide proper washing facilities so baths were improvised from farm carts and streams and ponds were used for swimming. Lice infested clothes and spread disease. Tag any mention of washing, fumigation or any other element of personal hygiene."
 
   guide:
     title: 'Transcribing the diaries'
