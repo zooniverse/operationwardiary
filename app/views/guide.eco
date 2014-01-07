@@ -1,11 +1,11 @@
 <% translate = require 't7e' %>
 <% labels = require '../lib/notes' %>
 
-<%- translate 'h2', "guide.tags.title" %>
-<%- translate 'p', "guide.tags.content" %>
+<div class="main">
+  <%- translate 'h2', "guide.tags.title" %>
+  <%- translate 'p', "guide.tags.content" %>
 
-<div class="main accordion">
-
+  <div class="accordion">
   <% for document in labels.toolbars.documents: %>
     <%- translate 'h2', "guide.diaries.#{document}.title" %>
     <div>
@@ -56,6 +56,7 @@
   
   
   <% end %>
+  </div>
 </div>
 <div class="sidebar">
   <%- translate 'h2', "guide.title" %>
