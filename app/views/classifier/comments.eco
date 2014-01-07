@@ -9,7 +9,7 @@
 </div>
 <% end %>
 <% if @user: %>
-  <textarea placeholder="Say something&hellip;"></textarea>
+  <textarea placeholder="Say something or add a #tag&hellip;"></textarea>
   <button><%- translate 'span', "common.comment" %></button>
 <% else: %>
   <p>You must log in to post comments.</p>
