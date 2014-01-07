@@ -2,6 +2,8 @@
 <% labels = require '../lib/notes' %>
 
 <div class="main accordion">
+  <%- translate 'h2', "guide.tags.title" %>
+  <%- translate 'p', "guide.tags.content" %>
 
   <% for document in labels.toolbars.documents: %>
     <%- translate 'h2', "guide.diaries.#{document}.title" %>
