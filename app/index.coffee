@@ -56,7 +56,7 @@ app.stack.el.appendTo app.container
 
 Footer = require './controllers/footer'
 footer = new Footer
-app.stack.el.after footer.el
+app.stack.el.parent().after footer.el
 
 Group.fetch()
 User.fetch()
