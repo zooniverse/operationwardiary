@@ -2,7 +2,7 @@
 <% project = translate 'span', 'navigation.projectName', raw: true %>
 
 <div class="links">
-  <a style="float:left;" href="https://docs.google.com/spreadsheet/viewform?usp=drive_web&formkey=dEUzT1B3OGtnOGZUZ2FTSjNSUXIzWGc6MA#gid=0">Feedback</a>
+  
   <div class="header">
     <h1><a href="#/"><img src="images/logos/owd-logo.svg" alt="<%- project.innerHTML %>"></a></h1>
     <button>Menu</button>
