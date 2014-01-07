@@ -10,4 +10,5 @@
     <a href="http://iwm.org.uk"><img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>"></a>
     <a href="http://nationalarchives.org.uk"><img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>"></a>
   </p>
+  <a href="//zooniverse.org/privacy"><%- translate 'span', 'home.privacy' %></a>
 </div>
