@@ -63,7 +63,7 @@ module.exports =
       surname: 'Surname'
       number: 'Number'
       reason: 'Reason'
-      subunit: 'Sub unit'
+      subunit: 'Named unit'
     place:
       name: 'Name'
       location: 'Is the unit currently here?'
