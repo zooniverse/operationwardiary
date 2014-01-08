@@ -16,7 +16,7 @@
       </li>
     <% end %>
   </ul>
-  <div class="timeline"></div>
+  <p class="tutorial"><a href="#/classify/tutorial">Restart the tutorial</a></p>
 </div>
 <div class="toolbar closed">
   <div class="tags"></div>
