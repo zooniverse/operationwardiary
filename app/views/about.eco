@@ -1,17 +1,23 @@
 <% translate = require 't7e' %>
 
-<div class="main">
+<%- translate 'h2', 'about.project.title' %>
+<%- translate 'div', 'about.project.text' %>
+
+<div class="project">
+  
   <%- translate 'h2', 'about.diaries.title' %>
-  <%- translate 'div', 'about.diaries.text' %>
+  <div>
+    <%- translate 'div', 'about.diaries.text' %>
+  
+    <%- translate 'h3', 'about.platform.title' %>
+    <%- translate 'div', 'about.platform.text' %>
+  </div>
+  
+</div>
+
+<div class="questions">
   
   <%- translate 'h2', 'about.questions.title' %>
   <%- translate 'div', 'about.questions.text' %>
   
-</div>
-<div class="sidebar">
-  <%- translate 'h2', 'about.project.title' %>
-  <%- translate 'div', 'about.project.text' %>
-  
-  <%- translate 'h2', 'about.platform.title' %>
-  <%- translate 'div', 'about.platform.text' %>
 </div>

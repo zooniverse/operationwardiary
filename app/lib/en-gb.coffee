@@ -396,7 +396,7 @@ module.exports =
           <p>It was essential for each unit to know it's 'fighting strength' at all times. This meant compiling Casualty returns, counting those who had been wounded inlcuding those who had been gassed, or the number who were sick and whether they were still able to carry out their duties; those who has been taken Prisoner of War or who were 'Missing' and those who were Killed in Action or who had Died of Wounds. Tag the casualties and help build a picture of the risks of life on the Western Front. Combined with the other information this will help us understand whether and how things changed over time, or in different locations or commands.  </p>
         '''
       project:
-        title: 'The Diaries of the First World War Project'
+        title: "About #{PROJECT_NAME}"
         text: '''
           <p>This project is a joint effort between The National Archives and Imperial War Museums (IWM).</p>
           <p>The National Archives has held the unit war diaries since 1920, and is responsible for preserving them and making them available to the public, along with millions of other public records. The diaries are among the most requested documents in The National Archives’ reading rooms, and complement other digitised record series already available to researchers such as service records and medal index cards. The catalogue descriptions for the unit war diaries contain the name of the unit, the theatre of operations and the date range covered by each diary. By adding details about the people, places and activities within the diaries, we can create a rich resource that will help unlock the contents of these contemporary accounts.</p>
@@ -749,7 +749,7 @@ module.exports =
         <p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b>.</p>
         <p>This will submit the page with your tags so you cannot go back to make any changes.</p>
 
-        <p>Don&#039;t worry about missing a tag or making a mistake.</p> 
+        <p>Don&#039;§t worry about missing a tag or making a mistake.</p> 
 
         <p>To get results that are as accurate as possible, each page will be tagged more than once and all the tags compared.</p>
         
