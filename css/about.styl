@@ -1,14 +1,21 @@
 #about
   background: $white
   color: $darkgrey
-  padding: 2em
+  padding: 2em 0 0
   font-family: $mont
+  
+  > h2
+    padding: 0 1em
+    margin: 0
+    
+  > div
+    padding: 2em
   
   h2
     font-size: 2em
     
 .questions
-  padding: 2em 0
+  background: $lightgrey
   
   div
     -moz-column-count: 2
@@ -16,11 +23,12 @@
     column-count: 2
   
 .project
-  margin: 0
-  padding: 2em 0
-  border-bottom: 1px solid $lightgrey
+  background: $lightgrey
+  padding-bottom: 0
   
   > div
     -moz-column-count: 2
     -webkit-column-count: 2
     column-count: 2
+    border-bottom: 1px solid $darkgrey
+    padding-bottom: 2em
