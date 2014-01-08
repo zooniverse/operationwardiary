@@ -262,6 +262,9 @@ class Classifier extends Spine.Controller
     # @toolbars.el.find( '.timeline' ).html @timeline.el
     
     @loadImage subject
+    
+    unless User.current
+      require('zooniverse/controllers/signup-dialog').show() if @tutorial_done
   
   loadImage: (subject) =>
     @surface
