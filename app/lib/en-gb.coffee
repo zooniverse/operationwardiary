@@ -75,7 +75,7 @@ module.exports =
   activity:
     repair: 'Digging & repairing trenches'
     movement: 'Unit movement'
-    reconnoitered: 'Reconnoitering'
+    reconnoitered: 'Reconnoitring'
     training: 'Training'
     line: 'In the line'
     attack: 'Attacking'
