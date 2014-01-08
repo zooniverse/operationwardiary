@@ -735,9 +735,9 @@ module.exports =
     talk:
       header: "Have you found an entry that you want to talk about?"
       details: '''
-          <p>If you want to share an interesting entry or discuss a problem choose Discuss from the top toolbar to go to the Talk area</p>
+          <p>If you want to share an interesting entry or discuss a problem, you can use the <b>talk</b> icon to comment on this page.</p>
 
-          <p>You can create a # tag so the page appears in your favourites and other people can view it.</p>
+          <p>Add hashtags in your comment to tag this page with similar pages in Talk.</p>
           
             
             '''
