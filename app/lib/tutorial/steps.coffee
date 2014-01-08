@@ -155,7 +155,6 @@ module.exports =
       details: get_text 'tutorial.timeline.details'
       attachment: "center top button.timeline center bottom"
       instruction: get_text 'tutorial.timeline.instruction'
-      focus: "button.timeline"
       next: 
         "click button.timeline":"talk"
     
@@ -165,7 +164,6 @@ module.exports =
       details: get_text 'tutorial.talk.details'
       attachment: "center top button.discuss center bottom"
       instruction: get_text 'tutorial.talk.instruction'
-      focus: "button.discuss"
       next: 
         "click button.discuss":"finished"
       
@@ -175,7 +173,6 @@ module.exports =
       details: get_text 'tutorial.finished.details'
       attachment: "center center .subject-container center center"
       instruction: get_text 'tutorial.finished.instruction'
-      focus: "button.finish"
       next: "click button.finish":"profile"
     
     profile: new Step
