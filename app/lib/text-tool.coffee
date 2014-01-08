@@ -54,10 +54,12 @@ class TextControls extends ToolControls
         @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
       ), 500
+
       
       
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
+      
     @el.on 'click', 'button[name="toggle"]', =>
       @save()
     
@@ -109,10 +111,9 @@ class TextControls extends ToolControls
     
     if y < 300
       top = y + 20
-      bottom = 'auto'
+      
     else
-      top = 'auto'
-      bottom = @tool.surface.height - y + 20
+      top = y - 40 - @el.height()
       
     left = Math.max x - 107, 10
     left = Math.min left, @tool.surface.width - 214
@@ -122,7 +123,6 @@ class TextControls extends ToolControls
       position: 'absolute'
       right: ''
       top: top
-      bottom: bottom
     
   setNote: (note = @tool.mark.note) =>
     @widget.setNote note
