@@ -68,6 +68,7 @@ class Classifier extends Spine.Controller
 
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
+    Subject.on 'no-more', @onNoMoreSubjects
     Group.on 'fetch', @onGroupFetch
     
     @surface.on 'select', @onToolSelect
@@ -246,6 +247,9 @@ class Classifier extends Spine.Controller
     
     @group_details.addFavourite @classification.subject
     
+    
+  onNoMoreSubjects: =>
+    # TODO: do something at end of a diary
     
   onSubjectSelect: (e, subject) =>
     console.log 'selecting ', subject.zooniverse_id
