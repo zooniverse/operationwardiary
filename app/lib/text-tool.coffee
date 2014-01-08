@@ -54,8 +54,9 @@ class TextControls extends ToolControls
         @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
       ), 500
-
-      
+    
+    @el.on 'mousedown', 'select', (e)=>
+      e.stopPropagation()
       
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
