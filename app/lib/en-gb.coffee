@@ -608,7 +608,7 @@ module.exports =
     welcome:
       header: "Welcome to #{PROJECT_NAME}!"
       details: '''
-        <p>Become a Citizen Historian and help Imperial War Museums and The National Archives reveal the story of the British Army on the Western Front during the First World War.!</p>
+        <p>Become a Citizen Historian and help Imperial War Museums and The National Archives reveal the story of the British Army on the Western Front during the First World War.</p>
       '''
 
     intro:
@@ -632,8 +632,8 @@ module.exports =
     page_type:
       header: "Classifying diary pages"
       details: '''
-        <p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide</p>
-        <p>You can return to the menu by clicking on '1 Page Types'</p>
+        <p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide.</p>
+        <p>You can return to the menu by clicking on '1 Page Types'.</p>
         <p>Around half of the pages are standard diary pages, like this one.</p>
       '''
       instruction: "Select <b>Diary page</b> from the Page Types menu"
@@ -642,7 +642,7 @@ module.exports =
       header: "Get tagging"
       details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
 <p>Different page types contain different pieces of information, so the list of available tags will change depending on your page classification.</p>
-  <p>We can’t tag everything!</p>
+  <p>We can&#039;t tag everything!</p>
   <p>There are tags for all the key pieces of information that we need to know about.</p>
   "
 
@@ -685,15 +685,15 @@ module.exports =
 
     tag_places:
       header: "Tagging places"
-      details: "<p>Once you have tagged all the dates follow the same approach for Places, working your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
-<p>The Place column shows the unit location when the diary entry was written. Other places maybe mentioned in the narrative column.</p>"
-      instruction: "Select the <b>Place</b> tag."
+      details: "<p>Once you have tagged all the dates follow the same approach for the Places column, working your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
+<p>This shows the unit location when the diary entry was written. Other places may be mentioned in the narrative column.</p>"
+      instruction: "Select the <b>Place</b> tag"
     
     add_places:
       header: "Choosing a place"
       details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag.</p>
 
-<p>Enter the place name in the pop-up box. Choose the most likely location from the list, using the map to help you. If you’re not sure select 'None of these'.</p>
+<p>Enter the place name in the pop-up box. If there are multiple options, choose the most likely location from the list using the map to help you. If you&{039;re not sure select 'None of these'.</p>
 "
       instruction: "Add <b>Aldershot</b> and select the 'Is the unit currently here?' box"
       
@@ -701,8 +701,8 @@ module.exports =
       header: "Tagging people"
       details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
 <p>As an example, can you see an individual mentioned by name on this page?</p>
-<p><b>Sergeant Byrne</b> became a casualty on 21 May.</p>"
-      instruction: "Select <b>Person</b> and attach the tag by his name."
+<p><b>1860, Sergeant Byrne</b> became a casualty on 21 May.</p>"
+      instruction: "Select <b>Person</b> and attach the tag by his name"
       
     add_people:
       header: "Tell us why they were mentioned"
@@ -721,7 +721,7 @@ module.exports =
     
     add_activity:
       header: "Unit Activity"
-      details: "<p>Place the tag where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
+      details: "<p>Place the tag where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary &ndash; in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the &#x2714; box to complete the tag.</p>"
       instruction: "Add <b>Unit movement</b>"
@@ -729,15 +729,15 @@ module.exports =
     timeline:
       header: "Editing or deleting tags"
       details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
-      <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
+      <p>Click on the <b>timeline</b> button to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
       instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
     
     talk:
       header: "Have you found an entry that you want to talk about?"
       details: '''
-          <p>If you want to share an interesting entry or discuss a problem, you can use the <b>talk</b> icon to comment on this page.</p>
+          <p>If you want to share an interesting entry or discuss a problem, you can use the <b>talk</b> button to comment on this page.</p>
 
-          <p>Add hashtags in your comment to tag this page with similar pages in Talk.</p>
+          <p>Add hashtags in your comment to link this page with similar pages in Talk.</p>
           
             
             '''
@@ -749,7 +749,7 @@ module.exports =
         <p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b>.</p>
         <p>This will submit the page with your tags so you cannot go back to make any changes.</p>
 
-        <p>Don’t worry about missing a tag or making a mistake.</p> 
+        <p>Don&#039;t worry about missing a tag or making a mistake.</p> 
 
         <p>To get results that are as accurate as possible, each page will be tagged more than once and all the tags compared.</p>
         
