@@ -11,7 +11,7 @@ module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
   steps:    
-    length: 22
+    length: 20
     welcome: new Step
       number: 1
       header: get_text 'tutorial.welcome.header'
