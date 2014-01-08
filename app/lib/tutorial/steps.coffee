@@ -11,7 +11,7 @@ module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
   steps:    
-    length: 17
+    length: 20
     welcome: new Step
       number: 1
       header: get_text 'tutorial.welcome.header'
@@ -24,10 +24,18 @@ module.exports =
       header: get_text 'tutorial.intro.header'
       details: get_text 'tutorial.intro.details'
       attachment: "center center .subject-container center center"
+      next: "about"
+    
+    about: new Step
+      number: 3
+      header: get_text 'tutorial.about.header'
+      details: get_text 'tutorial.about.details'
+      nextButton: get_text "tutorial.about.instruction"
+      attachment: "center center .subject-container center center"
       next: "page_type"
     
     page_type: new Step
-      number: 3
+      number: 4
       header: get_text 'tutorial.page_type.header'
       details: get_text 'tutorial.page_type.details'
       instruction: get_text 'tutorial.page_type.instruction'
@@ -37,21 +45,21 @@ module.exports =
         "click label[for=document-diary]": "get_tagging"
     
     get_tagging: new Step
-      number: 4
+      number: 5
       header: get_text 'tutorial.get_tagging.header'
       details: get_text 'tutorial.get_tagging.details'
       attachment: "center center .subject-container center center"
       next: "tagging_intro"
     
     tagging_intro: new Step
-      number: 5
+      number: 6
       header: get_text 'tutorial.tagging_intro.header'
       details: get_text 'tutorial.tagging_intro.details'
       attachment: "center center .subject-container center center"
       next: "tag_dates"
       
     tag_dates: new Step
-      number: 6
+      number: 7
       header: get_text 'tutorial.tag_dates.header'
       details: get_text 'tutorial.tag_dates.details'
       attachment: "left center label[for='category-diaryDate'] right center"
@@ -61,7 +69,7 @@ module.exports =
         "click label[for=category-diaryDate]": "add_dates"
     
     add_dates: new Step
-      number: 7
+      number: 8
       header: get_text 'tutorial.add_dates.header'
       className: "point-left"
       details: get_text 'tutorial.add_dates.details'
@@ -71,7 +79,7 @@ module.exports =
         "click button[name=toggle]": "second_date"
     
     second_date: new Step
-      number: 8
+      number: 9
       header: get_text 'tutorial.second_date.header'
       className: "point-left"
       details: get_text 'tutorial.second_date.details'
@@ -81,7 +89,7 @@ module.exports =
         "click button[name=toggle]": "tag_places"
     
     tag_places: new Step
-      number: 9
+      number: 10
       header: get_text 'tutorial.tag_places.header'
       details: get_text 'tutorial.tag_places.details'
       instruction: get_text 'tutorial.tag_places.instruction'
@@ -91,7 +99,7 @@ module.exports =
         "click label[for=category-place]": "add_places"
     
     add_places: new Step
-      number: 10
+      number: 11
       header: get_text 'tutorial.add_places.header'
       className: "point-left"
       details: get_text 'tutorial.add_places.details'
@@ -101,7 +109,7 @@ module.exports =
         "click button[name=toggle]": "tag_people"
     
     tag_people: new Step
-      number: 11
+      number: 12
       header: get_text 'tutorial.tag_people.header'
       details: get_text 'tutorial.tag_people.details'
       attachment: "left center label[for='category-person'] right center"
@@ -112,7 +120,7 @@ module.exports =
         
     
     add_people: new Step
-      number: 12
+      number: 13
       header: get_text 'tutorial.add_people.header'
       className: "point-left"
       details: get_text 'tutorial.add_people.details'
@@ -122,7 +130,7 @@ module.exports =
         "click button[name=toggle]": "tag_other"
     
     tag_other: new Step
-      number: 13
+      number: 14
       header: get_text 'tutorial.tag_other.header'
       details: get_text 'tutorial.tag_other.details'
       attachment: "left center label[for='category-activity'] right center"
@@ -132,7 +140,7 @@ module.exports =
         "click label[for=category-activity]":"add_activity"
     
     add_activity: new Step
-      number: 14
+      number: 15
       header: get_text 'tutorial.add_activity.header'
       className: "point-left"
       details: get_text 'tutorial.add_activity.details'
@@ -142,26 +150,43 @@ module.exports =
         "click button[name=toggle]": "timeline"
       
     timeline: new Step
-      number: 15
+      number: 16
       header: get_text 'tutorial.timeline.header'
       details: get_text 'tutorial.timeline.details'
       attachment: "center top button.timeline center bottom"
       instruction: get_text 'tutorial.timeline.instruction'
       focus: "button.timeline"
       next: 
-        "click button.timeline":"finished"
+        "click button.timeline":"talk"
+    
+    talk: new Step
+      number: 17
+      header: get_text 'tutorial.talk.header'
+      details: get_text 'tutorial.talk.details'
+      attachment: "center top button.discuss center bottom"
+      instruction: get_text 'tutorial.talk.instruction'
+      focus: "button.discuss"
+      next: 
+        "click button.discuss":"finished"
       
     finished: new Step
-      number: 16
+      number: 18
       header: get_text 'tutorial.finished.header'
       details: get_text 'tutorial.finished.details'
       attachment: "center center .subject-container center center"
       instruction: get_text 'tutorial.finished.instruction'
       focus: "button.finish"
-      next: "click button.finish":"choose"
+      next: "click button.finish":"profile"
+    
+    profile: new Step
+      number: 19
+      header: get_text 'tutorial.profile.header'
+      details: get_text 'tutorial.profile.details'
+      attachment: "center center .subject-container center center"
+      next: "choose"
       
     choose: new Step
-      number: 17
+      number: 20
       header: get_text 'tutorial.choose.header'
       details: get_text 'tutorial.choose.details'
       attachment: "center center .subject-container center center"

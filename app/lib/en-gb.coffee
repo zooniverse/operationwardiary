@@ -608,26 +608,43 @@ module.exports =
     welcome:
       header: "Welcome to #{PROJECT_NAME}!"
       details: '''
-        <p>This short tutorial will walk you through the tagging process. Let&#039;s get started!</p>
+        <p>Become a Citizen Historian and help Imperial War Museums and The National Archives reveal the story of the British Army on the Western Front during the First World War.!</p>
       '''
 
     intro:
       header: "Check out the diaries"
       details: '''
         <p>Around 1.5 million pages of unit war diaries cover activity on the Western Front. There are lots of different types of pages full of fascinating details about the people involved and descriptions of their activities. </p>
-        <p>We need your help to classify the type of page and then tag the data.</p>
+        <p>We need your help to classify the type of page and then tag key data.</p>
       '''
+    
+    about:
+      header: "About #{PROJECT_NAME}"
+      details: '''
+                   <p>From the tags we can create a detailed index to the people who appear in these pages and learn more about what they were doing. We are not transcribing every word.</p>
+
+                   <p>This short tutorial will walk you through the classification and tagging process.</p> 
+                 
+                   '''
+      instruction: "Let's get started!"
+    
 
     page_type:
       header: "Classifying diary pages"
-      details: "<p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide</p>"
-      instruction: "Click <b>Diary page</b>"
+      details: '''
+        <p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide</p>
+        <p>You can return to the menu by clicking on '1 Page Types'</p>
+        <p>Around half of the pages are standard diary pages, like this one.</p>
+      '''
+      instruction: "Select <b>Diary page</b> from the Page Types menu"
 
     get_tagging:
       header: "Get tagging"
       details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
-<p>Different page types are likely to contain different types of information so the list of available tags will change depending on the type of page you&#039;ve selected.</p>"
-      instruction: 'Drag from left to right across the bell.'
+<p>Different page types contain different pieces of information, so the list of available tags will change depending on your page classification.</p>
+  <p>We can’t tag everything!</p>
+  <p>There are tags for all the key pieces of information that we need to know about.</p>
+  "
 
     tagging_intro:
       header: "Tagging the diary pages"
@@ -638,72 +655,73 @@ module.exports =
           <li> 4: narrative account of operations, which can contain a variety of  information about people and activities. </li>
           <li> 5: References  to other documents in the diaries including maps and reports.</li>
         </ul>
+        <p>Look at the page in more detail by using the magnifying tool to zoom in/out.</p>
       '''
 
     tag_dates:
       header: "Tagging dates and times"
       details: '''
-        <p>Let's start tagging by working your way down the Date column.</p>
-              <p>This will mean you can group events together and create a timeline of activity without having to add a date to every other tag. </p>
-        <p>Select <b>Date</b> from the tag menu on the left of the screen.</p>
+        <p>Start tagging by working your way down the Date column.</p>
+              <p>This will group events together and create a timeline of activity without you having to add a date to every other tag.</p>
       '''
-      instruction: "Click the <b>Date</b> tag."
+      instruction: "Select <b>Date</b> from the Tag menu"
 
     add_dates:
       header: "Adding a date"
       details: '''
-        <p>You can see that there were a number of entries at different times during 20 May.</p>
+        <p>There were a number of entries at different times on 20 May.</p>
         <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the &#x2714; button to confirm.</p>
+        <p>If the tag box is covering the area of the page you want to look at, drag it to a new position.</p>
       '''
       instruction: "Add <b>20 May 1915</b> above the entry"
 
     second_date:
       header: "Adding a second date"
       details: '''
-        <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the entries into sections.</p>
-        <p>You can move tags by dragging them, if you need to.</p>
-        <p>Confirm your tag to continue.</p>
+        <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections.</p>
+        <p>You can adjust the position of a tag by dragging the icon.</p>
       '''
       instruction: "Add <b>21 May 1915</b> above the entry"
 
     tag_places:
       header: "Tagging places"
-      details: "<p>Once you have tagged all the dates follow the same approach for Places.</p>
-<p>Select the <b>Place</b> tag in the tag menu.</p>"
-      instruction: "Click the <b>Place</b> tag."
+      details: "<p>Once you have tagged all the dates follow the same approach for Places, working your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
+<p>The Place column shows the unit location when the diary entry was written. Other places maybe mentioned in the narrative column.</p>"
+      instruction: "Select the <b>Place</b> tag."
     
     add_places:
       header: "Choosing a place"
-      details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag. Try to make sure that you click within the horizontal lines for the relevant date.</p>
-<p>In the pop-up box enter 'Aldershot', and the map will centre on that place.</p>
-<p>If you make a mistake you can delete the tag by clicking on the X.</p>"
-      instruction: "Add <b>Aldershot</b>"
+      details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag.</p>
+
+<p>Enter the place name in the pop-up box. Choose the most likely location from the list, using the map to help you. If you’re not sure select 'None of these'.</p>
+"
+      instruction: "Add <b>Aldershot</b> and select the 'Is the unit currently here?' box"
       
     tag_people:
       header: "Tagging people"
       details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
-<p>Can you see an individual mentioned by name on this page? <b>Sergeant Byrne</b> became a casualty on 21 May. Select Person in the tag menu, then click on the diary page by his name to attach the tag.</p>"
-      instruction: "Click the <b>Person</b> tag."
+<p>As an example, can you see an individual mentioned by name on this page?</p>
+<p><b>Sergeant Byrne</b> became a casualty on 21 May.</p>"
+      instruction: "Select <b>Person</b> and attach the tag by his name."
       
     add_people:
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
-<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>
-<p>Click the &#x2714; box to complete the tag.</p>"
+<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>"
       instruction: "Add <b>Sgt Byrne</b>"
     
     tag_other:
       header: "Tagging other information"
-      details: "<p>You may well find other important pieces of information such as what the unit was doing or what the weather was like.</p>
+      details: "<p>You may find other key pieces of information such as what the unit was doing or what the weather was like.</p>
 
-<p>Remember you can always have a look through the Field Guide if you are not sure what a military phrase means or if it is something that you should tag.</p>
+<p>The Field Guide gives help on what to tag as well as examples of military phrases that you might come across.</p>
 
-<p>On this diary page there is a description of the Battalion embarking on the SS Victoria so select the <b>Unit Activity</b> tag in the tag menu.</p>"
-      instruction: "Click the <b>Unit Activity</b> tag."
+<p>On this diary page there is a description of the Battalion embarking on the SS Victoria.</p>"
+      instruction: "Select the <b>Unit Activity</b> tag."
     
     add_activity:
       header: "Unit Activity"
-      details: "<p>Place the tag on the page where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
+      details: "<p>Place the tag where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary – in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
 <p>Click the &#x2714; box to complete the tag.</p>"
       instruction: "Add <b>Unit movement</b>"
@@ -711,17 +729,48 @@ module.exports =
     timeline:
       header: "Editing or deleting tags"
       details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
-      <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to move, edit or delete them.</p>"
+      <p>Click on the <b>timeline</b> icon to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
       instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
+    
+    talk:
+      header: "Have you found an entry that you want to talk about?"
+      details: '''
+          <p>If you want to share an interesting entry or discuss a problem choose Discuss from the top toolbar to go to the Talk area</p>
+
+          <p>You can create a # tag so the page appears in your favourites and other people can view it.</p>
+          
+            
+            '''
+      instruction: "Click the <img src='images/icons/talk.png' alt='talk'> button."
       
     finished:
       header: "Finished"
-      details: "<p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b> to submit this page and your tags.</p>"
+      details: '''
+        <p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b>.</p>
+        <p>This will submit the page with your tags so you cannot go back to make any changes.</p>
+
+        <p>Don’t worry about missing a tag or making a mistake.</p> 
+
+        <p>To get results that are as accurate as possible, each page will be tagged more than once and all the tags compared.</p>
+        
+        '''
       instruction: "Click <b>Finished!</b>"
+    
+    profile:
+      header: "Your profile"
+      details: '''
+          <p>You can see which diary pages you have classified and a summary of the tags you have submitted on your Profile page.</p>
+
+          <p>If you want to download a full diary you can visit The National Archives site (TNA fees may apply).</p>
+          
+                     '''
+      
     
     choose:
       header: "What happens next"
       details: "<p>Well done! You have successfully completed the tutorial.</p>
-<p>Now you can start classifying and tagging. Choose from the list of diaries and get started.</p>"
+<p>If you want repeat it, you will find the tutorial link in the Field Guide.</p>
+
+<p>If you are happy to start classifying and tagging, log in to your Zooniverse account, choose a diary and get started.</p>"
 
 
