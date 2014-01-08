@@ -203,6 +203,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         long: null
         name: ''
         id: null
+      label = $("<label><span>None of these<span></label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
@@ -212,14 +213,16 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           e.preventDefault()
           e.stopPropagation()
           promise.notify place
+          $suggestions.find('label').off 'mouseover focus'
         )
-      label = $("<label><span>None of these<span></label>").prepend input
+      label.prepend input
       label.on 'mouseover focus', place, (e)=>
         place = e.data
         @show_place place.lat, place.long
       $suggestions.append label
       
       for place in places
+        label = $("<label><span>#{place.name}</span></label>")
         input = 
           $("<input/>")
           .attr( "type", 'radio' )
@@ -229,8 +232,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
             e.preventDefault()
             e.stopPropagation()
             promise.notify place
+            $suggestions.find('label').off 'mouseover focus'
           )
-        label = $("<label><span>#{place.name}</span></label>").prepend input
+        label.prepend input
         label.on 'mouseover focus', place, (e)=>
           place = e.data
           @show_place place.lat, place.long
