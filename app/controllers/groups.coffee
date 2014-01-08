@@ -9,7 +9,7 @@ class Groups extends Spine.Controller
 
   constructor: ->
     super
-    @el.attr id: 'groups'
+    @el.attr id: 'diaries'
     Group.on 'fetch', @onGroupFetch
 
   render: =>

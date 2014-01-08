@@ -207,6 +207,6 @@ module.exports =
       attachment: "center center .subject-container center center"
       onEnter: ->
         console.log 'finishing tutorial' 
-        Route.navigate '/groups'
+        Route.navigate '/diaries'
       onExit: ->
         Spine.trigger 'tutorial:done'

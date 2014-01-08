@@ -42,13 +42,13 @@ app.stack = new Spine.Stack
     'about': 'about'
     'guide': 'guide'
     'profile': 'profile'
-    'groups': 'groups'
+    'diaries': 'groups'
     '/classify/:group_id': 'classifier'
     '/classify': 'classifier'
     '/about': 'about'
     '/guide': 'guide'
     '/profile': 'profile'
-    '/groups': 'groups'
+    '/diaries': 'groups'
 
   default: 'home'
 

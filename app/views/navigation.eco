@@ -9,7 +9,7 @@
   </div>
   <ul>
     <li><a class="active" href="#/"><%- translate 'span', 'navigation.home' %></a></li>
-    <li><a href="#/groups"><%- translate 'span', 'navigation.diaries' %></a></li>
+    <li><a href="#/diaries"><%- translate 'span', 'navigation.diaries' %></a></li>
     <li><a href="#/classify"><%- translate 'span', 'navigation.classify' %></a></li>
     <li><a href="#/guide"><%- translate 'span', 'navigation.guide' %></a></li>
     <li><a href="#/profile"><%- translate 'span', 'navigation.profile' %></a></li>
