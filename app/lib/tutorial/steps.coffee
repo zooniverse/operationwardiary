@@ -11,7 +11,7 @@ module.exports =
   id: "diaries-tut"
   firstStep: "welcome"
   steps:    
-    length: 20
+    length: 22
     welcome: new Step
       number: 1
       header: get_text 'tutorial.welcome.header'
@@ -156,6 +156,15 @@ module.exports =
       attachment: "center top button.timeline center bottom"
       instruction: get_text 'tutorial.timeline.instruction'
       next: 
+        "click button.timeline":"timeline2"
+    
+    timeline2: new Step
+      number: 16
+      header: get_text 'tutorial.timeline.header'
+      details: get_text 'tutorial.timeline.details'
+      attachment: "right middle .subject-timeline left middle"
+      instruction: get_text 'tutorial.timeline.instruction'
+      next: 
         "click button.timeline":"talk"
     
     talk: new Step
@@ -163,6 +172,15 @@ module.exports =
       header: get_text 'tutorial.talk.header'
       details: get_text 'tutorial.talk.details'
       attachment: "center top button.discuss center bottom"
+      instruction: get_text 'tutorial.talk.instruction'
+      next: 
+        "click button.discuss":"talk2"
+      
+    talk2: new Step
+      number: 17
+      header: get_text 'tutorial.talk.header'
+      details: get_text 'tutorial.talk.details'
+      attachment: "right middle .subject-comments left middle"
       instruction: get_text 'tutorial.talk.instruction'
       next: 
         "click button.discuss":"finished"
