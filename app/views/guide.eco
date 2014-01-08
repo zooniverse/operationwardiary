@@ -6,55 +6,53 @@
   <%- translate 'p', "guide.tags.content" %>
 
   <div class="accordion">
-  <% for document in labels.toolbars.documents: %>
-    <%- translate 'h2', "guide.diaries.#{document}.title" %>
-    <div>
-    <%- translate 'p', "guide.diaries.#{document}.content" %>
+    <% for document in labels.toolbars.documents: %>
+      <%- translate 'h2', "guide.diaries.#{document}.title" %>
+      <div>
+        <%- translate 'p', "guide.diaries.#{document}.content" %>
     
-    <% if labels.toolbars[document]?: %>
-      <ul class="accordion">
-          <% for tag in labels.toolbars[document]: %>
-            <li>
-            <%- translate 'h3', "noteTypes.#{tag}" %>
-            <div>
-            <%- translate 'p', "help.#{document}.#{tag}" %>
+        <% if labels.toolbars[document]?: %>
+          <ul class="accordion">
+              <% for tag in labels.toolbars[document]: %>
+                <li>
+                <%- translate 'h3', "noteTypes.#{tag}" %>
+                <div>
+                <%- translate 'p', "help.#{document}.#{tag}" %>
             
-            <% if tag == 'person': %>
-            <% person_fields = translate 'div', "help.diary.person_fields", raw: true %>
-            <div class="accordion">
-              <%- person_fields.innerHTML %>
-              <%- translate 'h4', "help.diary.person_reason.heading" %>
-              <div>
-                <%- translate 'p', "help.diary.person_reason.text" %>
-            <% end %>
-            
-            <% if labels[tag]?: %>
-              <ul class='accordion'>
-                <% for item in labels[tag]: %>
-                  <% help = translate 'p', "tools.#{tag}.#{item}", raw: true %>
-                  <% if help.innerHTML != "tools.#{tag}.#{item}": %>
-                  <li>
-                    <%- translate 'h4', "#{tag}.#{item}" %>
-                    <p><%- help.innerHTML %></p>
-                  </li>
-                  <% end %>
+                <% if tag == 'person': %>
+                <% person_fields = translate 'div', "help.diary.person_fields", raw: true %>
+                <div class="accordion">
+                  <%- person_fields.innerHTML %>
+                  <%- translate 'h4', "help.diary.person_reason.heading" %>
+                  <div>
+                    <%- translate 'p', "help.diary.person_reason.text" %>
                 <% end %>
-              </ul>
-            <% end %>
             
-            <% if tag == 'person': %>
+                <% if labels[tag]?: %>
+                  <ul class='accordion'>
+                    <% for item in labels[tag]: %>
+                      <% help = translate 'p', "tools.#{tag}.#{item}", raw: true %>
+                      <% if help.innerHTML != "tools.#{tag}.#{item}": %>
+                      <li>
+                        <%- translate 'h4', "#{tag}.#{item}" %>
+                        <p><%- help.innerHTML %></p>
+                      </li>
+                      <% end %>
+                    <% end %>
+                  </ul>
+                <% end %>
+            
+                <% if tag == 'person': %>
+                  </div>
+                </div>
+                <% end %>
+            
               </div>
-            </div>
-            <% end %>
-            
-          </div>
-          </li>
-          <% end %>
-      </ul>
-    <% end %>
-  </div>
-  
-  
+              </li>
+              <% end %>
+          </ul>
+        <% end %>
+      </div>
   <% end %>
   </div>
 </div>
