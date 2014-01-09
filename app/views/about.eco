@@ -37,11 +37,11 @@
       <h3>Imperial War Museums</h3>
       <dl>
         <dd>Luke Smith</dd>
-        <dt><%- translate 'p', 'about.people.luke.bio' %></dt>
+        <%- translate 'dt', 'about.people.luke.bio' %>
         <dd>Mel Donnelly</dd>
-        <dt><%- translate 'p', 'about.people.mel.bio' %></dt>
+        <%- translate 'dt', 'about.people.mel.bio' %>
         <dd>Nigel Steele</dd>
-        <dt><%- translate 'p', 'about.people.nigel.bio' %></dt>
+        <%- translate 'dt', 'about.people.nigel.bio' %>
       </dl>
     </div>
   
@@ -49,15 +49,15 @@
       <h3>The National Archives</h3>
       <dl>
         <dd>Sarah Leggett</dd>
-        <dt><%- translate 'p', 'about.people.sarah.bio' %></dt>
+        <%- translate 'dt', 'about.people.sarah.bio' %>
         <dd>William Spencer</dd>
-        <dt><%- translate 'p', 'about.people.william.bio' %></dt>
+        <%- translate 'dt', 'about.people.william.bio' %>
         <dd>Emma Bayne</dd>
-        <dt><%- translate 'p', 'about.people.emma.bio' %></dt>
+        <%- translate 'dt', 'about.people.emma.bio' %>
         <dd>Steve Hirschorn</dd>
-        <dt><%- translate 'p', 'about.people.steve.bio' %></dt>
+        <%- translate 'dt', 'about.people.steve.bio' %>
         <dd>Vikki Corker</dd>
-        <dt><%- translate 'p', 'about.people.vikki.bio' %></dt>
+        <%- translate 'dt', 'about.people.vikki.bio' %>
       </dl>
     </div>
   
@@ -65,15 +65,15 @@
       <h3>Zooniverse</h3>
       <dl>
         <dd>Jim O'Donnell'</dd>
-        <dt><%- translate 'p', 'about.people.jim.bio' %></dt>
+        <%- translate 'dt', 'about.people.jim.bio' %>
         <dd>Heath van Singel</dd>
-        <dt><%- translate 'p', 'about.people.heath.bio' %></dt>
+        <%- translate 'dt', 'about.people.heath.bio' %>
         <dd>Michael Parrish</dd>
-        <dt><%- translate 'p', 'about.people.michael.bio' %></dt>
+        <%- translate 'dt', 'about.people.michael.bio' %>
         <dd>Stuart Lynn</dd>
-        <dt><%- translate 'p', 'about.people.stuart.bio' %></dt>
+        <%- translate 'dt', 'about.people.stuart.bio' %>
         <dd>Rob Simpson</dd>
-        <dt><%- translate 'p', 'about.people.rob.bio' %></dt>
+        <%- translate 'dt', 'about.people.rob.bio' %>
       </dl>
     </div>
   
