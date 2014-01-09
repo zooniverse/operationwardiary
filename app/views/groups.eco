@@ -6,10 +6,12 @@
     <% percent = parseInt group.stats.complete / group.stats.total %>
     <% name = group.name.replace /:/g, '<br>' %>
     <li>
-      <p class="complete"><b><%= percent %>% </b><br>complete</p>
-      <p class="name"><a href="#/classify/<%= group.id %>"><%- name %></a></p>
-      <p class="dates"><%= group.startdate %> &ndash; <%= group.enddate %></p>
-      <p class="stats"><b><%= group.stats.complete %>/<%= group.stats.total %></b><br><%- translate 'span', 'groups.complete' %></p>
+      <div>
+        <p class="complete"><b><%= percent %>% </b><br>complete</p>
+        <p class="name"><a href="#/classify/<%= group.id %>"><%- name %></a></p>
+        <p class="dates"><%= group.startdate %> &ndash; <%= group.enddate %></p>
+        <p class="stats"><b><%= group.stats.complete %>/<%= group.stats.total %></b><br><%- translate 'span', 'groups.complete' %></p>
+      </div>
       <a class="button" href="#/classify/<%= group.id %>"><%- translate 'span', 'common.start' %></a>
     </li>
     <% end %>
