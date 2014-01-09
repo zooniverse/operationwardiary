@@ -1,16 +1,16 @@
 <% translate = require 't7e' %>
 
 <% if @groups?: %>
-<%- translate 'h2', 'groups.title' %>
   <ul>
     <% for group in @groups: %>
-    <% console.log group %>
+    <% percent = parseInt group.stats.complete / group.stats.total %>
+    <% name = group.name.replace /:/g, '<br>' %>
     <li>
-      <a href="#/classify/<%= group.id %>"><%= group.name %></a>
-      <br>
-      (<%= group.startdate %> &ndash; <%= group.enddate %>)
-      <br>
-      Pages: <%= group.stats.total %> Completed: <%= group.stats.complete %>
+      <p class="complete"><b><%= percent %>% </b><br>complete</p>
+      <p class="name"><a href="#/classify/<%= group.id %>"><%- name %></a></p>
+      <p class="dates"><%= group.startdate %> &ndash; <%= group.enddate %></p>
+      <p class="stats"><b><%= group.stats.complete %>/<%= group.stats.total %></b><br><%- translate 'span', 'groups.complete' %></p>
+      <a class="button" href="#/classify/<%= group.id %>"><%- translate 'span', 'common.start' %></a>
     </li>
     <% end %>
   </ul>

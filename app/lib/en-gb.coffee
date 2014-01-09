@@ -21,6 +21,7 @@ module.exports =
     iwm: "Imperial War Museums"
     tna: "The National Archives"
     zoo: "The Zooniverse"
+    start: 'Start'
 
   documents:
     cover: 'Cover page'
@@ -189,6 +190,7 @@ module.exports =
   
   groups:
     title: 'Pick a diary to work on'
+    complete: 'pages complete'
   
   help:
     

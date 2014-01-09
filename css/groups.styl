@@ -1,13 +1,45 @@
 #diaries
+  background: $white
+  color: $black
+  
   ul
     list-style-type: none
     font-size: 1.2em
-    line-height: 1.5 
+    line-height: 1.5
+    font-family: $mont
     
-    a
-      color: white
-      font-family: $mont
-      text-decoration: none
+    li
+      display: inline-block
+      vertical-align: top
+      padding: 1em
+      width: 15%
+      border: 1px solid $lightgrey
+      border-radius: 6px
+      margin: 1em
+      font-size: 1em
+      line-height: 2
+      text-align: center
+      color: grey
       
-      &:hover
-        text-decoration: underline
+      .complete
+      .name
+        text-transform: uppercase
+        
+      .complete
+      .stats
+        color: $darkgrey
+      
+      .name
+        
+        a
+          text-decoration: none
+          color: grey
+      
+      .dates
+        font-size: 1em
+    
+    a.button
+      @extends .button
+      font-size: 1em
+      line-height: 1.5
+      padding: .25em 2em
