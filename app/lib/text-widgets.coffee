@@ -454,7 +454,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     
     @calendar
       .datepicker
-        dateFormat: 'd M yy'
+        dateFormat: 'd MM yy'
         changeMonth: true
         changeYear: true
         defaultDate: DateWidget.date
