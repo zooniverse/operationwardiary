@@ -669,11 +669,11 @@ module.exports =
     add_dates:
       header: "Adding a date"
       details: '''
-        <p>There were a number of entries at different times on 20 May.</p>
-        <p>Click on the first entry and choose 20 May from the calendar tool. You should see a horizontal line appear above the entry. Click on the &#x2714; button to confirm.</p>
+        <p>There are a number of entries at different times on 20 May.</p>
+        <p>Place the tag above the text of the first entry and a horizontal line should appear.</p>
         <p>If the tag box is covering the area of the page you want to look at, drag it to a new position.</p>
       '''
-      instruction: "Add <b>20 May 1915</b> above the entry"
+      instruction: "Choose 20 May 1915 from the calendar tool. Click on the &#x2714; button to confirm."
 
     second_date:
       header: "Adding a second date"
@@ -681,11 +681,11 @@ module.exports =
         <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections.</p>
         <p>You can adjust the position of a tag by dragging the icon.</p>
       '''
-      instruction: "Add <b>21 May 1915</b> above the entry"
+      instruction: "Choose 21 May 1915 from the calendar tool and confirm your tag."
 
     tag_places:
       header: "Tagging places"
-      details: "<p>Once you have tagged all the dates follow the same approach for the Places column, working your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
+      details: "<p>Once you have tagged all the dates follow the same approach for the Places column.</p>
 <p>This shows the unit location when the diary entry was written. Other places may be mentioned in the narrative column.</p>"
       instruction: "Select the <b>Place</b> tag"
     
