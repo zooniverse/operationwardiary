@@ -31,13 +31,51 @@
 <div class="people">
   <%- translate 'h2', 'about.people.title' %>
   
-  <h3>Imperial War Museums</h3>
-  <dl>
-    <dd>Luke Smith</dd>
-    <dt><%- translate 'p', 'about.people.luke.bio' %></dt>
-    <dd>Mel Donnelly</dd>
-    <dt><%- translate 'p', 'about.people.mel.bio' %></dt>
-    <dd>Nigel Steele</dd>
-    <dt><%- translate 'p', 'about.people.nigel.bio' %></dt>
-  </dl>
+  <div>
+    
+    <div>
+      <h3>Imperial War Museums</h3>
+      <dl>
+        <dd>Luke Smith</dd>
+        <dt><%- translate 'p', 'about.people.luke.bio' %></dt>
+        <dd>Mel Donnelly</dd>
+        <dt><%- translate 'p', 'about.people.mel.bio' %></dt>
+        <dd>Nigel Steele</dd>
+        <dt><%- translate 'p', 'about.people.nigel.bio' %></dt>
+      </dl>
+    </div>
+  
+    <div>
+      <h3>The National Archives</h3>
+      <dl>
+        <dd>Sarah Leggett</dd>
+        <dt><%- translate 'p', 'about.people.sarah.bio' %></dt>
+        <dd>William Spencer</dd>
+        <dt><%- translate 'p', 'about.people.william.bio' %></dt>
+        <dd>Emma Bayne</dd>
+        <dt><%- translate 'p', 'about.people.emma.bio' %></dt>
+        <dd>Steve Hirschorn</dd>
+        <dt><%- translate 'p', 'about.people.steve.bio' %></dt>
+        <dd>Vikki Corker</dd>
+        <dt><%- translate 'p', 'about.people.vikki.bio' %></dt>
+      </dl>
+    </div>
+  
+    <div>
+      <h3>Zooniverse</h3>
+      <dl>
+        <dd>Jim O'Donnell'</dd>
+        <dt><%- translate 'p', 'about.people.jim.bio' %></dt>
+        <dd>Heath van Singel</dd>
+        <dt><%- translate 'p', 'about.people.heath.bio' %></dt>
+        <dd>Michael Parrish</dd>
+        <dt><%- translate 'p', 'about.people.michael.bio' %></dt>
+        <dd>Stuart Lynn</dd>
+        <dt><%- translate 'p', 'about.people.stuart.bio' %></dt>
+        <dd>Rob Simpson</dd>
+        <dt><%- translate 'p', 'about.people.rob.bio' %></dt>
+      </dl>
+    </div>
+  
+  </div>
 </div>

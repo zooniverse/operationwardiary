@@ -10,6 +10,15 @@
     
   > div
     padding: 2em 2em 4em
+    
+    > div
+      -moz-column-count: 2
+      -webkit-column-count: 2
+      column-count: 2
+      
+      > div
+      > p
+        display: inline-block
   
   h2
     font-size: 2em
@@ -18,21 +27,17 @@
   .questions
     background: $lightgrey
   
-    > div
-      -moz-column-count: 2
-      -webkit-column-count: 2
-      column-count: 2
-      
-      div
-        display: inline-block
-  
   .project
     background: $lightgrey
     padding-bottom: 0
   
     > div
-      -moz-column-count: 2
-      -webkit-column-count: 2
-      column-count: 2
       border-bottom: 1px solid grey
       padding-bottom: 4em
+  
+  .people
+    
+    > div
+      -moz-column-count: 3
+      -webkit-column-count: 3
+      column-count: 3
