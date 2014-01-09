@@ -8,9 +8,12 @@
 
 <div class="project">
   
-  <%- translate 'h2', 'about.diaries.title' %>
+  
   <div>
-    <%- translate 'div', 'about.diaries.text' %>
+    <div>
+      <%- translate 'h3', 'about.diaries.title' %>
+      <%- translate 'div', 'about.diaries.text' %>
+    </div>
   
     <div>
       <%- translate 'h3', 'about.platform.title' %>
