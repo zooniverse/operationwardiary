@@ -28,6 +28,29 @@
   
 </div>
 
+<div class="partners">
+  <%- translate 'h2', 'about.organisations.heading' %>
+  
+  <div>
+  
+    <div>
+      <%- translate 'h3', 'about.organisations.iwm.name' %>
+      <%- translate 'div', 'about.organisations.iwm.text' %>
+    </div>
+  
+    <div>
+      <%- translate 'h3', 'about.organisations.tna.name' %>
+      <%- translate 'div', 'about.organisations.tna.text' %>
+    </div>
+  
+    <div>
+      <%- translate 'h3', 'about.organisations.zooniverse.name' %>
+      <%- translate 'div', 'about.organisations.zooniverse.text' %>
+    </div>
+  
+  </div>
+</div>
+
 <div class="people">
   <%- translate 'h2', 'about.people.title' %>
   
@@ -64,7 +87,7 @@
     <div>
       <h3>Zooniverse</h3>
       <dl>
-        <dd>Jim O'Donnell'</dd>
+        <dd>Jim O'Donnell</dd>
         <%- translate 'dt', 'about.people.jim.bio' %>
         <dd>Heath van Singel</dd>
         <%- translate 'dt', 'about.people.heath.bio' %>
