@@ -20,8 +20,8 @@ class Groups extends Spine.Controller
     
   onGroupFetch: (e, @groups) =>
     for group in @groups
-      group.startdate = DateWidget.formatDate 'd MM yy', new Date group.metadata.start_date
-      group.enddate = DateWidget.formatDate 'd MM yy', new Date group.metadata.end_date
+      group.startdate = DateWidget.formatDate 'd M yy', new Date group.metadata.start_date
+      group.enddate = DateWidget.formatDate 'd M yy', new Date group.metadata.end_date
       
     @render()
 
