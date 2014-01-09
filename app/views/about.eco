@@ -3,6 +3,9 @@
 <%- translate 'h2', 'about.project.title' %>
 <%- translate 'div', 'about.project.text' %>
 
+<%- translate 'h2', 'about.outcomes.title' %>
+<%- translate 'div', 'about.outcomes.text' %>
+
 <div class="project">
   
   <%- translate 'h2', 'about.diaries.title' %>
@@ -11,6 +14,9 @@
   
     <%- translate 'h3', 'about.platform.title' %>
     <%- translate 'div', 'about.platform.text' %>
+    
+    <%- translate 'h3', 'about.browsers.title' %>
+    <%- translate 'div', 'about.browsers.text' %>
   </div>
   
 </div>
@@ -20,4 +26,18 @@
   <%- translate 'h2', 'about.questions.title' %>
   <%- translate 'div', 'about.questions.text' %>
   
+</div>
+
+<div class="people">
+  <%- translate 'h2', 'about.people.title' %>
+  
+  <h3>Imperial War Museums</h3>
+  <dl>
+    <dd>Luke Smith</dd>
+    <dt><%- translate 'p', 'about.people.luke.bio' %></dt>
+    <dd>Mel Donnelly</dd>
+    <dt><%- translate 'p', 'about.people.mel.bio' %></dt>
+    <dd>Nigel Steele</dd>
+    <dt><%- translate 'p', 'about.people.nigel.bio' %></dt>
+  </dl>
 </div>
