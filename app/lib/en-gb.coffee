@@ -446,7 +446,7 @@ them explore.</p>
         text: '''
         <p>Operation War Diary brings together original First World War documents from The National Archives, the historical expertise of IWM and the power of the Zooniverse community.</p>
 
-        <p>It will create new ‘Citizen Historians’. Working together we will make previously inaccessible information available to academics, researchers and family historians worldwide, leaving a lasting legacy for the centenary of the First World War.</p>
+        <p>It will create new ‘Citizen Historians&#039;. Working together we will make previously inaccessible information available to academics, researchers and family historians worldwide, leaving a lasting legacy for the centenary of the First World War.</p>
         '''
       
       platform:
@@ -520,7 +520,7 @@ them explore.</p>
         url: 'http://www.zooniverse.org/'
         text: '''
         <p>Zooniverse was established in 2007 to use the efforts and ability of volunteers to help scientists and researchers deal with the flood of data that confronts them.</p>
-        <p>It is a collaboration between universities and museums, led by the University of Oxford and the Adler Planetarium in Chicago, which creates citizen science and humanities projects. To date, nearly a million people have used Zooniverse websites to discover planets, transcribe ancient papyri and keep an eye on plankton. The Operation War Diary project builds on the team’s experience with the award-winning Old Weather project, which has mined more than a million pages drawn from 19th and early 20th century ship’s logs in order to find information of interest to climate scientists and historians.</p>
+        <p>It is a collaboration between universities and museums, led by the University of Oxford and the Adler Planetarium in Chicago, which creates citizen science and humanities projects. To date, nearly a million people have used Zooniverse websites to discover planets, transcribe ancient papyri and keep an eye on plankton. The Operation War Diary project builds on the team&#039;s experience with the award-winning Old Weather project, which has mined more than a million pages drawn from 19th and early 20th century ship&#039;s logs in order to find information of interest to climate scientists and historians.</p>
         '''
         
 
