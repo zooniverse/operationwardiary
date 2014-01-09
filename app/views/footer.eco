@@ -4,11 +4,11 @@
 <% tna = translate 'span', 'common.tna', raw: true %>
 
 <div class="logos">
-  <%- translate 'p', 'home.byline' %>
+  <%- translate 'p.byline', 'home.byline' %>
   <p>
     <a href="http://zooniverse.org"><img height="40" src="images/logos/zooniverse-logo.svg" alt="<%- zoo.innerHTML %>"></a>
     <a href="http://iwm.org.uk"><img height="75" src="images/logos/iwm-gray.svg" alt="<%- iwm.innerHTML %>"></a>
     <a href="http://nationalarchives.org.uk"><img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>"></a>
   </p>
-  <a href="//zooniverse.org/privacy"><%- translate 'span', 'home.privacy' %></a>
+  <p class="privacy"><a href="//zooniverse.org/privacy"><%- translate 'span', 'home.privacy' %></a></p>
 </div>

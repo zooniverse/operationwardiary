@@ -185,7 +185,7 @@ module.exports =
     start: 'Get started!'
     partners: 'In association with'
     byline: "Working together with Citizen Historians during the First World War Centenary"
-    privacy: 'Privacy policy'
+    privacy: 'Zooniverse privacy policy'
   
   groups:
     title: 'Pick a diary to work on'
