@@ -199,6 +199,8 @@ module.exports =
       details: get_text 'tutorial.profile.details'
       attachment: "center center .subject-container center center"
       next: "choose"
+      onEnter: ->
+        Route.navigate '/profile'
       
     choose: new Step
       number: 10
@@ -206,7 +208,6 @@ module.exports =
       details: get_text 'tutorial.choose.details'
       attachment: "center center .subject-container center center"
       onEnter: ->
-        console.log 'finishing tutorial' 
         Route.navigate '/diaries'
       onExit: ->
         Spine.trigger 'tutorial:done'
