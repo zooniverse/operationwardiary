@@ -62,4 +62,6 @@
   <label>Search 
     <input type="search">
   </label>
+  <p><a class="button" href="#/classify"><%- translate 'span', 'guide.classify' %></a></p>
+  <p><a class="button" href="#/classify/tutorial"><%- translate 'span', 'guide.tutorial' %></a></p>
 </div>

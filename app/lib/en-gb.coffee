@@ -336,6 +336,8 @@ module.exports =
     content: '''
       <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! Help us reveal what information they contain by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples, choose one Classification: Blank Page,Cover Page, Diary Page, Orders, Signal, Report, Other</p>
     '''
+    classify: "Continue classifying"
+    tutorial: "Restart the tutorial"
     
     tags:
       title: 'Tagging the diaries'
