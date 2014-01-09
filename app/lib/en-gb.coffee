@@ -416,12 +416,8 @@ module.exports =
         
       questions:
         title: 'Our Questions'
+        intro: "Historians at IWM and The National Archives have worked with members of IWM&#039;s Digital Centenary Academic Advisory Group to compile a list of questions that the data in the unit war diaries will help them explore."
         text: '''
-          <p>Historians at IWM and The National Archives have worked with members of IWM&#039;s Digital Centenary
-
-Academic Advisory Group to compile a list of questions that the data in the unit war diaries will help 
-
-them explore.</p>
           <div>
           <h3>Military Activity</h3>
           <p>Each unit played its own individual part in the conflict but it did not operate in isolation. Commanders agreed strategic objectives and their staff officers planned the tactics, engineer units helped move and supply every section of the army; artillery guns worked together to bring down a barrage on enemy positions in support of the infantry; medical units evacuated the wounded and prisoners of war were taken into captivity. But exactly how did all this happen? How much time did each unit spend in the front line, in reserve and at rest?  How did units work together during an attack or retreat?  How did tactics develop, what prompted change and were lessons shared? Tagging key types of activity for one unit will enable us to gain a snapshot of life on the Western Front - putting the tags for all the units together will reveal a detailed picture that has never been visible before.</p>

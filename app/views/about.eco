@@ -30,6 +30,7 @@
 <div class="questions">
   
   <%- translate 'h2', 'about.questions.title' %>
+  <%- translate 'p', 'about.questions.intro' %>
   <%- translate 'div', 'about.questions.text' %>
   
 </div>
