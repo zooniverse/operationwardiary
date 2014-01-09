@@ -693,7 +693,7 @@ module.exports =
       header: "Choosing a place"
       details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag.</p>
 
-<p>Enter the place name in the pop-up box. If there are multiple options, choose the most likely location from the list using the map to help you. If you&{039;re not sure select 'None of these'.</p>
+<p>Enter the place name in the pop-up box. If there are multiple options, choose the most likely location from the list using the map to help you. If you&039;re not sure select 'None of these'.</p>
 "
       instruction: "Add <b>Aldershot</b> and select the 'Is the unit currently here?' box"
       
