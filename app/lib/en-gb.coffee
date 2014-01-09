@@ -491,7 +491,7 @@ them explore.</p>
           bio: "Zooniverse developer at the Adler Planetarium in Chicago. Data analysis maestro."
           
         jim:
-          bio: "Just this guy, you know?"
+          bio: "Zooniverse developer at Oxford University. Just this guy, you know?"
         
     organisations:
       heading: 'The partnership'
