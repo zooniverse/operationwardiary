@@ -757,7 +757,7 @@ module.exports =
         <p>Once you&#039;re happy that you&#039;ve tagged as much as you can, click <b>Finished</b>.</p>
         <p>This will submit the page with your tags so you cannot go back to make any changes.</p>
 
-        <p>Don&#039;§t worry about missing a tag or making a mistake.</p> 
+        <p>Don&#039;t worry about missing a tag or making a mistake.</p> 
 
         <p>To get results that are as accurate as possible, each page will be tagged more than once and all the tags compared.</p>
         
