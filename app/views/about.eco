@@ -65,44 +65,44 @@
     <div>
       <h3>Imperial War Museums</h3>
       <dl>
-        <dd>Luke Smith</dd>
-        <%- translate 'dt', 'about.people.luke.bio' %>
-        <dd>Mel Donnelly</dd>
-        <%- translate 'dt', 'about.people.mel.bio' %>
-        <dd>Nigel Steele</dd>
-        <%- translate 'dt', 'about.people.nigel.bio' %>
+        <dt>Luke Smith</dt>
+        <%- translate 'dd', 'about.people.luke.bio' %>
+        <dt>Mel Donnelly</dt>
+        <%- translate 'dd', 'about.people.mel.bio' %>
+        <dt>Nigel Steele</dt>
+        <%- translate 'dd', 'about.people.nigel.bio' %>
       </dl>
     </div>
   
     <div>
       <h3>The National Archives</h3>
       <dl>
-        <dd>Sarah Leggett</dd>
-        <%- translate 'dt', 'about.people.sarah.bio' %>
-        <dd>William Spencer</dd>
-        <%- translate 'dt', 'about.people.william.bio' %>
-        <dd>Emma Bayne</dd>
-        <%- translate 'dt', 'about.people.emma.bio' %>
-        <dd>Steve Hirschorn</dd>
-        <%- translate 'dt', 'about.people.steve.bio' %>
-        <dd>Vikki Corker</dd>
-        <%- translate 'dt', 'about.people.vikki.bio' %>
+        <dt>Sarah Leggett</dt>
+        <%- translate 'dd', 'about.people.sarah.bio' %>
+        <dt>William Spencer</dt>
+        <%- translate 'dd', 'about.people.william.bio' %>
+        <dt>Emma Bayne</dt>
+        <%- translate 'dd', 'about.people.emma.bio' %>
+        <dt>Steve Hirschorn</dt>
+        <%- translate 'dd', 'about.people.steve.bio' %>
+        <dt>Vikki Corker</dt>
+        <%- translate 'dd', 'about.people.vikki.bio' %>
       </dl>
     </div>
   
     <div>
       <h3>Zooniverse</h3>
       <dl>
-        <dd>Jim O'Donnell</dd>
-        <%- translate 'dt', 'about.people.jim.bio' %>
-        <dd>Heath van Singel</dd>
-        <%- translate 'dt', 'about.people.heath.bio' %>
-        <dd>Michael Parrish</dd>
-        <%- translate 'dt', 'about.people.michael.bio' %>
-        <dd>Stuart Lynn</dd>
-        <%- translate 'dt', 'about.people.stuart.bio' %>
-        <dd>Rob Simpson</dd>
-        <%- translate 'dt', 'about.people.rob.bio' %>
+        <dt>Jim O'Donnell</dt>
+        <%- translate 'dd', 'about.people.jim.bio' %>
+        <dt>Heath van Singel</dt>
+        <%- translate 'dd', 'about.people.heath.bio' %>
+        <dt>Michael Parrish</dt>
+        <%- translate 'dd', 'about.people.michael.bio' %>
+        <dt>Stuart Lynn</dt>
+        <%- translate 'dd', 'about.people.stuart.bio' %>
+        <dt>Rob Simpson</dt>
+        <%- translate 'dd', 'about.people.rob.bio' %>
       </dl>
     </div>
   
