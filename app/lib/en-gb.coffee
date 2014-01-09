@@ -431,10 +431,11 @@ them explore.</p>
           <div>
           <h3>Weather</h3>
           <p>In popular culture the Western Front was a morass of mud for four long years. But the geology of the battlefield varied dramatically from the low lying fields of Flanders where the water table was barely below the surface to the chalk downs of Picardy. The war was fought in all seasons and the army had to function in all weather conditions. But what effect did the weather have on daily life and on the conduct of the conflict? Tag and describe the weather each day across the Western Front and help us find out.</p>
-          <div>
           </div>
+          <div>
           <h3>Army Life</h3>
           <p>Little time was actually spent in combat, so what was life like on the Western Front when you were not fighting? How did the men live? How often did they eat hot food, have a bath or change their clothes? When they were resting how did they entertain themselves? Tag mentions of concert parties, sporting events, religious services, food, hygiene and help us learn more about life beyond the fighting. </p>
+          </div>
           <div>
           <h3>Casualties</h3>
           <p>It was essential for each unit to know its 'fighting strength' at all times. This meant compiling Casualty returns, counting those who had been wounded including those who had been gassed, or the number who were sick and whether they were still able to carry out their duties; those who has been taken Prisoner of War or who were 'Missing' and those who were Killed in Action or who had Died of Wounds. Tag the casualties and help build a picture of the risks of life on the Western Front. Combined with the other information this will help us understand whether and how things changed over time, or in different locations or commands.  </p>
