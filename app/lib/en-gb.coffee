@@ -446,7 +446,7 @@ them explore.</p>
         text: '''
         <p>Operation War Diary brings together original First World War documents from The National Archives, the historical expertise of IWM and the power of the Zooniverse community.</p>
 
-        <p>It will create new ‘Citizen Historians&#039;. Working together we will make previously inaccessible information available to academics, researchers and family historians worldwide, leaving a lasting legacy for the centenary of the First World War.</p>
+        <p>It will create new &lsquo;Citizen Historians&#039;. Working together we will make previously inaccessible information available to academics, researchers and family historians worldwide, leaving a lasting legacy for the centenary of the First World War.</p>
         '''
       
       platform:
