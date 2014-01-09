@@ -384,16 +384,25 @@ module.exports =
       questions:
         title: 'Our Questions'
         text: '''
+          <div>
           <h3>Military Activity</h3>
           <p>Each unit played its own individual part in the conflict but it did not operate in isolation. Commanders agreed strategic objectives and their staff officers planned the tactics, engineer units helped move and supply every section of the army; artillery guns worked together to bring down a barrage on enemy positions in support of the infantry; medical units evacuated the wounded and prisoners of war were taken into captivity. But exactly how did all this happen? How much time did each unit spend in the front line, in reserve and at rest?  How did units work together during an attack or retreat?  How did tactics develop, what prompted change and were lessons shared? Tagging all the different types of activity for one unit will enable us to gain a snapshot of life on the Western Front - putting the tags for all the units together will reveal a detailed picture that has never been visible before.</p>
+          </div>
+          <div>
           <h3>People</h3>
           <p>It is generally believed that only officers are mentioned by name in the unit war diaries. However, whilst each Adjutant followed guidelines when compiling the diary they were all individuals with different levels of experience, education and enthusiasm for the task! The conditions in which they wrote their reports varied considerably depending on their location, the weather and military situation. So whilst some diaries can be sparse on detail, many others provide a fascinating insight into the activities of named individuals. Until now the only way to find such reports was to read every single page of a diary searching for a reference to a person. Tagging named individuals will enable us to create an index. Including details of why an individual is named will help us add detail to their Life Story in Lives of the First World War.</p>
+          </div>
+          <div>
           <h3>Weather</h3>
           <p>In popular culture the Western Front was a morass of mud for four long years. But the geology of the battlefield varied dramtically from the low lying fields of Flanders where the water table was barely below the surface to the chalk downs of Picardy. The war was fought in all seasons and the army had to function in all weather conditions. But what effect did the weather have on daily life and on the conduct of the conflict? Tag and describe the weather each day across the Western Front and help us find out.</p>
+          <div>
+          </div>
           <h3>Domestic Life</h3>
           <p>Little time was actually spent in combat, so what was life like on the Western Front when you were not fighting? How did the men live? Did they sleep in local houses and barns, did they pitch tents or bivouak in fields? How often did they eat hot food, have a bath or change their clothes? When they were resting how did they entertain themselves? Tag mentions of concert parties, sporting events, religious services, food, hygiene and help us learn more about life beyond the fighting. </p>
+          <div>
           <h3>Casualties</h3>
           <p>It was essential for each unit to know it's 'fighting strength' at all times. This meant compiling Casualty returns, counting those who had been wounded inlcuding those who had been gassed, or the number who were sick and whether they were still able to carry out their duties; those who has been taken Prisoner of War or who were 'Missing' and those who were Killed in Action or who had Died of Wounds. Tag the casualties and help build a picture of the risks of life on the Western Front. Combined with the other information this will help us understand whether and how things changed over time, or in different locations or commands.  </p>
+          </div>
         '''
       project:
         title: "About #{PROJECT_NAME}"
