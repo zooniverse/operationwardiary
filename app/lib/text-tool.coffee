@@ -69,6 +69,7 @@ class TextControls extends ToolControls
     @el.on 'keydown', '.annotation :input', (e)=>
       if e.which == 13
         $( e.currentTarget ).blur().focus()
+        @widget.updateNote e.currentTarget
         @save() unless @widget.type in ['place', 'person', 'gridref', 'mapref']
         return false
     
