@@ -12,11 +12,14 @@
   <div>
     <%- translate 'div', 'about.diaries.text' %>
   
-    <%- translate 'h3', 'about.platform.title' %>
-    <%- translate 'div', 'about.platform.text' %>
-    
-    <%- translate 'h3', 'about.browsers.title' %>
-    <%- translate 'div', 'about.browsers.text' %>
+    <div>
+      <%- translate 'h3', 'about.platform.title' %>
+      <%- translate 'div', 'about.platform.text' %>
+    </div>
+    <div>
+      <%- translate 'h3', 'about.browsers.title' %>
+      <%- translate 'div', 'about.browsers.text' %>
+    </div>
   </div>
   
 </div>
