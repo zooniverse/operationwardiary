@@ -444,9 +444,9 @@ them explore.</p>
       project:
         title: "About #{PROJECT_NAME}"
         text: '''
-          <p>This project is a joint effort between The National Archives and Imperial War Museums (IWM).</p>
-          <p>The National Archives has held the unit war diaries since 1920, and is responsible for preserving them and making them available to the public, along with millions of other public records. The diaries are among the most requested documents in The National Archives&#039; reading rooms, and complement other digitised record series already available to researchers such as service records and medal index cards. The catalogue descriptions for the unit war diaries contain the name of the unit, the theatre of operations and the date range covered by each diary. By adding details about the people, places and activities within the diaries, we can create a rich resource that will help unlock the contents of these contemporary accounts.</p>
-          <p>IWM was founded in 1917 to tell the story of the causes, course and consequences of modern conflicts that involve Britain and the Commonwealth. To mark the centenary of the global conflict that shaped the word we live in today, IWM is launching Lives of the First World War. This innovative citizen history project will engage a global audience in researching the First World War stories of more than 8 million men and women. The information previously hidden in the unit war diaries and now revealed through [project name] will provide a new and unique dataset that will add fascinating evidence to many of these Life Stories, and saved as a permanent digital memorial for future generations.</p>
+        <p>Operation War Diary brings together original First World War documents from The National Archives, the historical expertise of IWM and the power of the Zooniverse community.</p>
+
+        <p>It will create new ‘Citizen Historians’. Working together we will make previously inaccessible information available to academics, researchers and family historians worldwide, leaving a lasting legacy for the centenary of the First World War.</p>
         '''
       
       platform:
