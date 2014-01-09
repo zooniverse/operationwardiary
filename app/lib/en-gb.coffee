@@ -679,7 +679,7 @@ module.exports =
       header: "Adding a date"
       details: '''
         <p>There are a number of entries at different times on 20 May.</p>
-        <p>Place the tag above the text of the first entry and a horizontal line should appear.</p>
+        <p>Place the tag above the text of the first entry. A horizontal line appears, to indicate the start of the text for that day.</p>
         <p>If the tag box is covering the area of the page you want to look at, drag it to a new position.</p>
       '''
       instruction: "Choose 20 May 1915 from the calendar tool. Click on the &#x2714; button to confirm."
@@ -717,7 +717,7 @@ module.exports =
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>"
-      instruction: "Add <b>Sgt Byrne</b>"
+      instruction: "Fill in Sergeant Byrne's details. If you make a mistake you can delete the tag by clicking on the X."
     
     tag_other:
       header: "Tagging other information"
@@ -731,9 +731,8 @@ module.exports =
     add_activity:
       header: "Unit Activity"
       details: "<p>Place the tag where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary &ndash; in this case <b>Unit Movement</b></p>
-<p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>
-<p>Click the &#x2714; box to complete the tag.</p>"
-      instruction: "Add <b>Unit movement</b>"
+<p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>"
+      instruction: "Choose <b>Unit movement</b> and click the &#x2714; box to complete the tag."
     
     timeline:
       header: "Editing or deleting tags"
