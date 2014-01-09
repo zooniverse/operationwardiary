@@ -704,7 +704,7 @@ module.exports =
 
 <p>Enter the place name in the pop-up box. If there are multiple options, choose the most likely location from the list using the map to help you. If you&039;re not sure select 'None of these'.</p>
 "
-      instruction: "Add <b>Aldershot</b> and select the 'Is the unit currently here?' box"
+      instruction: "Enter 'Aldershot' in the text box and select the 'Is the unit currently here?' box."
       
     tag_people:
       header: "Tagging people"
@@ -732,7 +732,7 @@ module.exports =
       header: "Unit Activity"
       details: "<p>Place the tag where it says 'Embarked' and then choose an entry from the drop down list that most closely matches the action described in the diary &ndash; in this case <b>Unit Movement</b></p>
 <p>If you can&#039;t find a relevant description have a look at the <b>Army Life</b> tag list which includes domestic activities, religion, sport and food.</p>"
-      instruction: "Choose <b>Unit movement</b> and click the &#x2714; box to complete the tag."
+      instruction: "Choose 'Unit movement' and click the &#x2714; box to complete the tag."
     
     timeline:
       header: "Editing or deleting tags"
