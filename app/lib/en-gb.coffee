@@ -375,20 +375,54 @@ module.exports =
 
   about:
     diaries:
-        title: 'About the War Diaries'
+        title: 'The Unit War Diaries'
         text: '''
           <p>War diaries were kept for two reasons: to provide an accurate record of operations for preparing the official history of the war, and to collect information that would help make improvements in preparing the army for war.</p>
           <p>The war diaries contain a wealth of information of far greater interest than the army could ever have predicted. They provide unrivalled insight into daily events on the front line, and are full of fascinating detail about the decisions that were made and the activities that resulted from them.</p>
       
-          <p>The National Archives has digitised the war diaries of the units under the command of the British and Indian cavalry and infantry divisions on the Western Front. The war diaries are made up of a variety of different types of pages, including cover pages, title pages, orders, signals, maps, narrative reports and the main diary pages themselves. They are catalogued by theatre of operations, unit and the date range covered, but we don’t know much more about the content of the diaries beyond this. </p>
+          <p>The National Archives has digitised the war diaries of the units under the command of the British and Indian cavalry and infantry divisions on the Western Front. The war diaries are made up of a variety of different types of pages, including cover pages, title pages, orders, signals, maps, narrative reports and the main diary pages themselves. They are catalogued by theatre of operations, unit and the date range covered, but we don&#039;t know much more about the content of the diaries beyond this. </p>
         '''
+      
+      outcomes:
+        title: 'The Project Outcomes'
+        text: '''
+              <p>Data gathered through Operation War Diary will be used for three main purposes:</p>
+              
+              <ul>
+
+              <li>to enrich The National Archives&#039; catalogue descriptions for the unit war diaries,</li>
+              
+              <li>to provide evidence about the experience of named individuals in IWM&#039;s Lives of the First World War project</li>
+              
+              <li>to present academics with large amounts of accurate data to help them gain a better understanding of how the war was fought</li>
+              
+              </ul>
+
+              <p>Operation War Diary depends on the work done by The National Archives to digitise the unit war 
+              
+                            diaries, and they&#039;ve made individual pages available free of charge on the Zooniverse platform for this 
+              
+                            project. Whole war diaries are available from Discovery, The National Archives&#039; catalogue, where they 
+              
+                            can be searched free of charge and downloaded for a small fee.</p> 
+
+              <p>All of the data produced by Operation War Diary will eventually be available to everyone free of 
+              
+                            charge- a lasting legacy and a rich and valuable introduction to the world of the War Diaries.</p>
+              '''
+        
         
       questions:
         title: 'Our Questions'
         text: '''
+          <p>Historians at IWM and The National Archives have worked with members of IWM&#039;s Digital Centenary
+
+Academic Advisory Group to compile a list of questions that the data in the unit war diaries will help 
+
+them explore.</p>
           <div>
           <h3>Military Activity</h3>
-          <p>Each unit played its own individual part in the conflict but it did not operate in isolation. Commanders agreed strategic objectives and their staff officers planned the tactics, engineer units helped move and supply every section of the army; artillery guns worked together to bring down a barrage on enemy positions in support of the infantry; medical units evacuated the wounded and prisoners of war were taken into captivity. But exactly how did all this happen? How much time did each unit spend in the front line, in reserve and at rest?  How did units work together during an attack or retreat?  How did tactics develop, what prompted change and were lessons shared? Tagging all the different types of activity for one unit will enable us to gain a snapshot of life on the Western Front - putting the tags for all the units together will reveal a detailed picture that has never been visible before.</p>
+          <p>Each unit played its own individual part in the conflict but it did not operate in isolation. Commanders agreed strategic objectives and their staff officers planned the tactics, engineer units helped move and supply every section of the army; artillery guns worked together to bring down a barrage on enemy positions in support of the infantry; medical units evacuated the wounded and prisoners of war were taken into captivity. But exactly how did all this happen? How much time did each unit spend in the front line, in reserve and at rest?  How did units work together during an attack or retreat?  How did tactics develop, what prompted change and were lessons shared? Tagging key types of activity for one unit will enable us to gain a snapshot of life on the Western Front - putting the tags for all the units together will reveal a detailed picture that has never been visible before.</p>
           </div>
           <div>
           <h3>People</h3>
@@ -396,21 +430,21 @@ module.exports =
           </div>
           <div>
           <h3>Weather</h3>
-          <p>In popular culture the Western Front was a morass of mud for four long years. But the geology of the battlefield varied dramtically from the low lying fields of Flanders where the water table was barely below the surface to the chalk downs of Picardy. The war was fought in all seasons and the army had to function in all weather conditions. But what effect did the weather have on daily life and on the conduct of the conflict? Tag and describe the weather each day across the Western Front and help us find out.</p>
+          <p>In popular culture the Western Front was a morass of mud for four long years. But the geology of the battlefield varied dramatically from the low lying fields of Flanders where the water table was barely below the surface to the chalk downs of Picardy. The war was fought in all seasons and the army had to function in all weather conditions. But what effect did the weather have on daily life and on the conduct of the conflict? Tag and describe the weather each day across the Western Front and help us find out.</p>
           <div>
           </div>
-          <h3>Domestic Life</h3>
-          <p>Little time was actually spent in combat, so what was life like on the Western Front when you were not fighting? How did the men live? Did they sleep in local houses and barns, did they pitch tents or bivouak in fields? How often did they eat hot food, have a bath or change their clothes? When they were resting how did they entertain themselves? Tag mentions of concert parties, sporting events, religious services, food, hygiene and help us learn more about life beyond the fighting. </p>
+          <h3>Army Life</h3>
+          <p>Little time was actually spent in combat, so what was life like on the Western Front when you were not fighting? How did the men live? How often did they eat hot food, have a bath or change their clothes? When they were resting how did they entertain themselves? Tag mentions of concert parties, sporting events, religious services, food, hygiene and help us learn more about life beyond the fighting. </p>
           <div>
           <h3>Casualties</h3>
-          <p>It was essential for each unit to know it's 'fighting strength' at all times. This meant compiling Casualty returns, counting those who had been wounded inlcuding those who had been gassed, or the number who were sick and whether they were still able to carry out their duties; those who has been taken Prisoner of War or who were 'Missing' and those who were Killed in Action or who had Died of Wounds. Tag the casualties and help build a picture of the risks of life on the Western Front. Combined with the other information this will help us understand whether and how things changed over time, or in different locations or commands.  </p>
+          <p>It was essential for each unit to know its 'fighting strength' at all times. This meant compiling Casualty returns, counting those who had been wounded including those who had been gassed, or the number who were sick and whether they were still able to carry out their duties; those who has been taken Prisoner of War or who were 'Missing' and those who were Killed in Action or who had Died of Wounds. Tag the casualties and help build a picture of the risks of life on the Western Front. Combined with the other information this will help us understand whether and how things changed over time, or in different locations or commands.  </p>
           </div>
         '''
       project:
         title: "About #{PROJECT_NAME}"
         text: '''
           <p>This project is a joint effort between The National Archives and Imperial War Museums (IWM).</p>
-          <p>The National Archives has held the unit war diaries since 1920, and is responsible for preserving them and making them available to the public, along with millions of other public records. The diaries are among the most requested documents in The National Archives’ reading rooms, and complement other digitised record series already available to researchers such as service records and medal index cards. The catalogue descriptions for the unit war diaries contain the name of the unit, the theatre of operations and the date range covered by each diary. By adding details about the people, places and activities within the diaries, we can create a rich resource that will help unlock the contents of these contemporary accounts.</p>
+          <p>The National Archives has held the unit war diaries since 1920, and is responsible for preserving them and making them available to the public, along with millions of other public records. The diaries are among the most requested documents in The National Archives&#039; reading rooms, and complement other digitised record series already available to researchers such as service records and medal index cards. The catalogue descriptions for the unit war diaries contain the name of the unit, the theatre of operations and the date range covered by each diary. By adding details about the people, places and activities within the diaries, we can create a rich resource that will help unlock the contents of these contemporary accounts.</p>
           <p>IWM was founded in 1917 to tell the story of the causes, course and consequences of modern conflicts that involve Britain and the Commonwealth. To mark the centenary of the global conflict that shaped the word we live in today, IWM is launching Lives of the First World War. This innovative citizen history project will engage a global audience in researching the First World War stories of more than 8 million men and women. The information previously hidden in the unit war diaries and now revealed through [project name] will provide a new and unique dataset that will add fascinating evidence to many of these Life Stories, and saved as a permanent digital memorial for future generations.</p>
         '''
       
@@ -419,6 +453,31 @@ module.exports =
         text: '''
           <p>The platform built by Zooniverse captures the place, date and time information you identify and then associates any tags you create with that core data. This means that we can see what happened to the unit, what people were mentioned, how many casualties there had been and what conditions were, within a specific time and location. We can then use that information to create indexes eg of people mentioned by name of a particular page, we can aggregate the date to provide an overview of different elements of life on the Western Front and academics can investigate specific questions using detailed and extensive data rather than small scale studies.</p>
         '''
+      
+      browsers:
+        title: 'Browsers'
+        text: '''
+              <p>The platform is designed to work on a PC with IE 9 (or higher) or with latest versions of Chrome and
+              
+                            Firefox. On a Mac it is designed to work with the latest version of Safari. On PCs running Windows XP 
+              
+                            the platform will work with latest versions of Chrome and Firefox, but not with IE 8.</p> 
+
+              <p>Users of older browsers will need to upgrade to ensure all the site functionality is available.</p>
+              '''
+      
+      people:
+        title: 'About the people'
+        
+        luke:
+          bio: "Luke is Digital Lead for the First World War Centenary at Imperial War Museums. He leads IWM's Lives of the First World War and is passionate about engaging large numbers of people in Citizen History. Luke has delivered complex online systems at Sony Playstation, Arts Council England and elsewhere. 2014 is a big year for Luke but he'll still find time for seeing obscure rock bands, flying kites with his children and going on a few sailing trips."
+        
+        mel:
+          bio: "Mel is the Project Manager for IWM's Lives of the First World War and spends far too much time researching family history. She has had an eclectic career journey, starting as an RAF Air Traffic Control officer before moving on via the NHS to IWM. Prior to Lives of the First World War she worked on the Their Past Your Future project leading commemorative visits to the battlefields."
+          
+        nigel:
+          bio: "Nigel is Principal Historian for the First World War Centenary at Imperial War Museums. He is a leading public historian, has published several books on the war and makes frequent appearances on television. He is actively involved in digital projects for the centenary."
+        
     organizations:
       heading: 'Organizations'
 
@@ -450,10 +509,10 @@ module.exports =
         name: 'Bob Cowen'
         role: ''
         description: '''
-          Bob Cowen is currently Professor and Maytag Chair of Ichthyology at the University of Miami’s Rosenstiel School of Marine and Atmospheric Science.
+          Bob Cowen is currently Professor and Maytag Chair of Ichthyology at the University of Miami&#039;s Rosenstiel School of Marine and Atmospheric Science.
           His research interests are focused on larval fish and the plankton communities upon which they depend.
           To better understand life on the time and space scales relevant to these organisms, he seeks novel ways to study the plankton realm.
-          The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.
+          The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing&#039; on the secret lives of plankters.
         '''
 
       guigand:
@@ -475,7 +534,7 @@ module.exports =
           She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.
           She moved to Miami in 2010 from Northern California, where she was working as the ocean education coordinator at Point Reyes National Seashore.
           Jessica got her B.S. and M.S. degrees from Stanford University in 2007, studying the chemical oceanography of Red Sea copepods.
-          In her free time, she enjoys landscape photography and running 10K’s and half marathons.
+          In her free time, she enjoys landscape photography and running 10K&#039;s and half marathons.
         '''
 
       greer:
@@ -485,7 +544,7 @@ module.exports =
         description: '''
           Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.
           Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.
-          He also enjoys sports, particularly baseball and basketball, and 90’s rock music.
+          He also enjoys sports, particularly baseball and basketball, and 90&#039;s rock music.
         '''
 
       cousin:
