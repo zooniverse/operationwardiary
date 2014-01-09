@@ -1,20 +1,30 @@
 #about
   background: $white
   color: $darkgrey
-  padding: 0
+  padding: 5em 0 0
   font-family: $mont
   
   > h2
-    padding: 1em 1em 0
+  > h3
+    padding: 0 1em 0
     margin: 0
     
   > div
-    padding: 1em 2em 3em
+    padding: 0 2em 3em
+    
+    h3
+    p
+      font-size: 1.4em
+      line-height: 2
     
     &.intro
-      padding: 1em 0 3em
+      padding: 0
       margin: 0 2em
-      border-bottom: 1px solid grey
+      color: #585858
+      
+      p
+        font-size: 1.8em
+        line-height: 1.4
     
     > div
       -moz-column-count: 2
@@ -26,8 +36,11 @@
         display: inline-block
   
   h2
-    font-size: 2em
+    font-size: 2.4em
+    line-height: 1
     text-transform: none
+    margin-bottom: 1.1em
+    color: #181818
   
   .questions
   .project
@@ -46,8 +59,8 @@
     dd
     dt
       margin: 0 0 1em
-      font-size: 1.2em
-      line-height: 1.5
+      font-size: 1.4em
+      line-height: 2
     
     > div
       -moz-column-count: 3
