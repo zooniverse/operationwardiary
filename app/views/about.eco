@@ -104,6 +104,8 @@
         <%- translate 'dd', 'about.people.stuart.bio' %>
         <dt>Rob Simpson</dt>
         <%- translate 'dd', 'about.people.rob.bio' %>
+        <dt>Chris Lintott</dt>
+        <%- translate 'dd', 'about.people.chris.bio' %>
       </dl>
     </div>
   

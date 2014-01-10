@@ -492,6 +492,9 @@ module.exports =
         rob:
           bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
         
+        chris:
+          bio: "Astronomer at the University of Oxford. PI of the Zooniverse (it's his fault)."
+        
     organisations:
       heading: 'The partnership'
 
