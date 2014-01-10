@@ -128,6 +128,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       long: ''
       location: false
       name: ''
+      id: ''
       
     $inputs = @el.find( '.annotation :input' )
       
@@ -143,7 +144,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     note
   
   update_place: (place) =>
-    {lat, long, name} = place
+    {lat, long, name, id} = place
   
     @el
       .find( 'input[name=lat]' )
@@ -154,6 +155,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .end()
       .find( 'input[name=name]')
       .val( name )
+      .end()
+      .find( 'input[name=id]')
+      .val( id )
     
     placename = @el.find('input[name=place]').val()
     @gc.save_place( placename, place )

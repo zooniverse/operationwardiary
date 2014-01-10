@@ -10,5 +10,6 @@
   <input name="name" type="hidden" value="" />
   <input name="lat" type="hidden" value="" />
   <input name="long" type="hidden" value="" />
+  <input name="id" type="hidden" value="" />
   
 </div>
