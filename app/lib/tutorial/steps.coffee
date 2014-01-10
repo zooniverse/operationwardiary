@@ -16,14 +16,12 @@ module.exports =
       number: 1
       header: get_text 'tutorial.welcome.header'
       details: get_text 'tutorial.welcome.details'
-      attachment: "center center .subject-container center center"
       next: "intro"
 
     intro: new Step
       number: 1
       header: get_text 'tutorial.intro.header'
       details: get_text 'tutorial.intro.details'
-      attachment: "center center .subject-container center center"
       next: "about"
     
     about: new Step
@@ -31,7 +29,6 @@ module.exports =
       header: get_text 'tutorial.about.header'
       details: get_text 'tutorial.about.details'
       nextButton: get_text "tutorial.about.instruction"
-      attachment: "center center .subject-container center center"
       next: "page_type"
     
     page_type: new Step
