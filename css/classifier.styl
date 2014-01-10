@@ -286,6 +286,7 @@
       
       &.timeline
       &.discuss
+      &.favourite
         width: 30px
         height: 30px
         text-indent: 10000px
@@ -299,6 +300,14 @@
       
       &.discuss
         background-image: url(images/icons/talk.png)
+      
+      &.favourite
+        background-image: url(images/icons/fav-off.png)
+        background-position: center
+        
+        &.active
+          background-image: url(images/icons/fav-on.png)
+          background-color: transparent
     
 .subject-container
   position: relative
