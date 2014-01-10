@@ -487,7 +487,7 @@ module.exports =
           bio: "Zooniverse developer at the Adler Planetarium in Chicago. Data analysis maestro."
           
         jim:
-          bio: "Zooniverse developer at Oxford University. Just this guy, you know?"
+          bio: "Zooniverse developer at Oxford University. Professional cynic but my heart's not in it."
         
         rob:
           bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
