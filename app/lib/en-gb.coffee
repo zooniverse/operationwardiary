@@ -495,6 +495,9 @@ module.exports =
         chris:
           bio: "Astronomer at the University of Oxford. PI of the Zooniverse (it's his fault)."
         
+        grant:
+          bio: "Scientist and disseminator of useless facts - community user liason for the Zooniverse."
+        
     organisations:
       heading: 'The partnership'
 
