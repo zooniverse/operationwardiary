@@ -527,16 +527,8 @@ module.exports =
 
 
   classify:
-    metersUnit: 'm'
-    degreesUnit: '°C'
-    numberCounted: 'Number counted'
-    finish: 'Finish'
-    discuss: 'Discuss'
-    favorite: 'Favorite'
-    next: 'Next'
-    share: 'Share'
-    tweet: 'Tweet'
-    return: 'Home'
+    select: 'Select another diary'
+    thanks: 'Thank you for finishing'
 
   profile:
     recents: 'Recent pages'

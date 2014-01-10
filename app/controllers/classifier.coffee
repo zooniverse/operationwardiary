@@ -1,3 +1,4 @@
+translate = require 't7e'
 Spine = require 'spine'
 {Route} = Spine
 
@@ -10,6 +11,7 @@ Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
 Api = require 'zooniverse/lib/api'
+Dialog = require 'zooniverse/controllers/dialog'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
@@ -249,7 +251,16 @@ class Classifier extends Spine.Controller
     
     
   onNoMoreSubjects: =>
-    # TODO: do something at end of a diary
+    select = translate 'span', 'classify.select'
+    thanks = translate 'span', 'classify.thanks'
+    dialog = new Dialog 
+      content: "<p>#{thanks} #{@group_details.group.name}.</p> <p><a class='button' href='#/diaries'>#{select}</a></p>"
+    
+    dialog.el.find('a').on 'click', ->
+      dialog.hide()
+      dialog.el.remove()
+    
+    dialog.show()
     
   onSubjectSelect: (e, subject) =>
     console.log 'selecting ', subject.zooniverse_id
