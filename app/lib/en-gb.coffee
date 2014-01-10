@@ -508,7 +508,7 @@ module.exports =
           bio: "Emma leads the Systems Development and Search team at The National Archives, and is passionate about finding new and innovative ways to open access to its vast and varied historical collection. Emma is often seen wearing pink and hanging out with her little dachshund Max."
         
         steve:
-          bio: "Steven works in the Systems Development team and spends most of his time writing scripts to do stuff. He’s looking forward to doing some really cool things with the Operation War Diary data, and will do anything for cheese."
+          bio: "Steven works in the Systems Development team and spends most of his time writing scripts to do stuff. He&#039;s looking forward to doing some really cool things with the Operation War Diary data, and will do anything for cheese."
         
         vikki:
           bio: "Vikki works in the Systems Development team on finding new ways for people to explore our records and share their knowledge about them. Her mojito-making skills are legendary."
