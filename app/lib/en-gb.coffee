@@ -68,6 +68,7 @@ module.exports =
     place:
       name: 'Name'
       location: 'Is the unit currently here?'
+      none: 'None of these/not sure'
     unit:
       name: 'Name'
       context: 'Reason'

@@ -203,7 +203,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         long: null
         name: ''
         id: null
-      label = $("<label><span>None of these<span></label>")
+      label = $("<label>#{translate 'span', 'classifier.place.none'}</label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
