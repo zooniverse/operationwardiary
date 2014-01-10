@@ -489,6 +489,9 @@ module.exports =
         jim:
           bio: "Zooniverse developer at Oxford University. Just this guy, you know?"
         
+        rob:
+          bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
+        
     organisations:
       heading: 'The partnership'
 
