@@ -4,12 +4,12 @@
 
   <% if @user.project?: %>
   <%- translate 'h2', "profile.tags" %>
-    <p>Pages transcribed: <%- @user.project.classification_count %></p>
-    <ul>
-      <li><%- translate 'span', "profile.activities" %>: <%- @user.project.activity_count %></li>
-      <li><%- translate 'span', "profile.dates" %>: <%- @user.project.diary_date_count %></li>
-      <li><%- translate 'span', "profile.places" %>: <%- @user.project.place_count %></li>
-      <li><%- translate 'span', "profile.people" %>: <%- @user.project.person_count %></li>
+    <ul class="annotations">
+      <li><%- translate 'span', "profile.pages" %> <%- @user.project.classification_count %></li>
+      <li><%- translate 'span', "profile.activities" %> <%- @user.project.activity_count %></li>
+      <li><%- translate 'span', "profile.dates" %> <%- @user.project.diary_date_count %></li>
+      <li><%- translate 'span', "profile.places" %> <%- @user.project.place_count %></li>
+      <li><%- translate 'span', "profile.people" %> <%- @user.project.person_count %></li>
     </ul>
     
   <% end %>

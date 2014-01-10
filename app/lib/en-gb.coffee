@@ -553,6 +553,7 @@ module.exports =
     thanks: 'Thank you for finishing'
 
   profile:
+    pages: 'pages'
     recents: 'Recent pages'
     favourites: 'Favourites'
     groups: 'Your diaries'

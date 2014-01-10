@@ -1,9 +1,9 @@
 <% translate = require 't7e' %>
 <% if @groups?: %>
 <%- translate 'h2', "profile.groups" %>
-  <ul>
+  <ul class="diaries">
     <% for group in @groups: %>
-    <li><a href="#/classify/<%= group.id %>"><%= group.name %></a>: <%= group.classifications %></li>
+    <li><a href="#/classify/<%= group.id %>"><%= group.name %></a> <b><%= group.classifications %>/<%= group.total %></b> <%- translate 'span', 'profile.pages' %></li>
     <% end %>
   </ul>
 <% end %>
