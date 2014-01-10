@@ -175,8 +175,15 @@
     &.closed
       width: 50px
       
-    h2:before
-      content: '1'
+    h2
+      opacity: .8
+      overflow: hidden
+      
+      &:before
+        content: '1'
+      
+      &:hover
+        opacity: 1
     
     p.tutorial
       a
