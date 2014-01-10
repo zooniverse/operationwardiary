@@ -15,7 +15,7 @@ module.exports =
       startdate: '1 May 1915'
       enddate: '30 June 1918'
   group_id:"5241bcf43ae74068250003c2"
-  location:{"standard":"http://zooniverse-demo.s3.amazonaws.com/war_diaries/subjects/standard/5241bcf43ae740682500068d.jpg"}
+  location:{"standard":"/images/tutorial/5241bcf43ae740682500068d.jpg"}
   metadata:
     tutorial: true
     "page_number":1
