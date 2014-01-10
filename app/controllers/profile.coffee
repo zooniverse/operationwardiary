@@ -24,9 +24,11 @@ class Profile extends Spine.Controller
       
     @el.attr id: 'profile'
     
-    @groups.el.appendTo @el
-    @recents.el.appendTo @el
-    @favourites.el.appendTo @el
+    if User.current
+    
+      @groups.el.appendTo @el
+      @recents.el.appendTo @el
+      @favourites.el.appendTo @el
       
   onUserChange: (e, user)=>
     @render()
