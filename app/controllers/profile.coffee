@@ -24,7 +24,7 @@ class Profile extends Spine.Controller
       
     @el.attr id: 'profile'
     
-    return unless User.current?
+    return unless User.current
     
     @groups.el.appendTo @el
     @recents.el.appendTo @el
