@@ -554,6 +554,7 @@ module.exports =
 
   profile:
     pages: 'pages'
+    pages_done: 'Pages'
     recents: 'Recent pages'
     favourites: 'Favourites'
     groups: 'Your diaries'
