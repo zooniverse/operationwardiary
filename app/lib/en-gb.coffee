@@ -498,6 +498,21 @@ module.exports =
         grant:
           bio: "Scientist and disseminator of useless facts - community user liason for the Zooniverse."
         
+        william:
+          bio: "William is the Principal Military Specialist at The National Archives where he has worked since 1993. He served in the Royal Navy, including operational service in the Falklands in 1982, and holds an MA in War Studies from the Department of War Studies at King's College London. He is a big fan of books, beer and music."
+        
+        sarah:
+          bio: "Sarah is responsible for delivering First World War 100 and lots of centenary activities at The National Archives. When not working on the war she is learning to play the bass guitar (badly)."
+        
+        emma:
+          bio: "Emma leads the Systems Development and Search team at The National Archives, and is passionate about finding new and innovative ways to open access to its vast and varied historical collection. Emma is often seen wearing pink and hanging out with her little dachshund Max."
+        
+        steve:
+          bio: "Steven works in the Systems Development team and spends most of his time writing scripts to do stuff. He’s looking forward to doing some really cool things with the Operation War Diary data, and will do anything for cheese."
+        
+        vikki:
+          bio: "Vikki works in the Systems Development team on finding new ways for people to explore our records and share their knowledge about them. Her mojito-making skills are legendary."
+        
     organisations:
       heading: 'The partnership'
 

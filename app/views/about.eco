@@ -84,7 +84,7 @@
         <%- translate 'dd', 'about.people.william.bio' %>
         <dt>Emma Bayne</dt>
         <%- translate 'dd', 'about.people.emma.bio' %>
-        <dt>Steve Hirschorn</dt>
+        <dt>Steven Hirschorn</dt>
         <%- translate 'dd', 'about.people.steve.bio' %>
         <dt>Vikki Corker</dt>
         <%- translate 'dd', 'about.people.vikki.bio' %>
