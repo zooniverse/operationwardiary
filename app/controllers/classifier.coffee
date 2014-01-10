@@ -118,7 +118,7 @@ class Classifier extends Spine.Controller
       # @navigate '/groups' unless @group_details.group
       
   render_tags: ( snapshot ) =>
-    console.log 'rendering tags for', Subject.current.zooniverse_id
+    console?.log 'rendering tags for', Subject.current.zooniverse_id
 
     marks = snapshot?.marks
     marks ?= []
@@ -263,7 +263,7 @@ class Classifier extends Spine.Controller
     dialog.show()
     
   onSubjectSelect: (e, subject) =>
-    console.log 'selecting ', subject.zooniverse_id
+    console?.log 'selecting ', subject.zooniverse_id
     @surface.width = @subjectContainer.width()
     @surface.height = @subjectContainer.height()
     # @surface.pan 0, 0
@@ -310,12 +310,10 @@ class Classifier extends Spine.Controller
         coords: [x,y]
         note: mark.note
     console?.log 'Classifying', JSON.stringify @classification
-    console.log (mark.note for mark in @surface.marks)
 
   onFinishTask: =>
     @onDoTask()
     
-    console.log 'Tutorial? ', @classification.subject.metadata.tutorial?
     @nextSubject() unless @classification.subject.metadata.tutorial?
   
   nextSubject: =>
@@ -362,7 +360,6 @@ class Classifier extends Spine.Controller
   update_history: ->
     
     return unless Subject.current && @surface_history?
-    console.log 'Saving work for ', Subject.current.zooniverse_id
     
     snapshot = new Transcription @
     

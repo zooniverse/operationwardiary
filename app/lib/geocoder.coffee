@@ -54,7 +54,6 @@ class Geocoder
         promise.resolve @process_request placename, response
       )
       .fail(=>
-        console.log 'FAILED'
         promise.resolve [defaults]
       )
       
@@ -62,7 +61,6 @@ class Geocoder
     promise
   
   process_request: (placename, response)=>
-    console.log 'processing', placename
     results = response.query.results
     
     defaults =

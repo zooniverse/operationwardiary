@@ -45,7 +45,6 @@ class Comments extends Spine.Controller
     @render()
     
   submitComment: =>
-    console.log 'CLICK'
     comment = @comment_text.val()
     request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}/comments", comment: comment
     time = new Date
@@ -60,7 +59,6 @@ class Comments extends Spine.Controller
     @render()
   
   fetchComments: (@zooniverse_id) =>
-    console.log @zooniverse_id
     request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
     
     request.done @onCommentsFetch

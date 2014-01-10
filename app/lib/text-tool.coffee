@@ -49,7 +49,6 @@ class TextControls extends ToolControls
         .css 'line-height': @el.height() + 'px'
       
       setTimeout (=>
-        console.log 'DELETING'
         @onClickDelete arguments...
         @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
