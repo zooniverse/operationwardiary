@@ -178,6 +178,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         zoom: 9
         mapTypeId: google.maps.MapTypeId.TERRAIN
         mapTypeControl: false
+        zoomControl: true,
+        zoomControlOptions:
+          style: google.maps.ZoomControlStyle.SMALL
     
     lat = el.find( 'input[name=lat]' ).val()
     long = el.find( 'input[name=long]' ).val()
@@ -188,7 +191,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     latlng = new google.maps.LatLng lat,long
     @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
     @marker[0].setPosition latlng
-    map = @gmap.gmap( 'get', 'map')
+    map = @gmap.gmap 'get', 'map'
     google.maps.event.trigger map, 'resize'
     map.setCenter latlng
   
