@@ -610,7 +610,7 @@ module.exports =
         <p>Place the tag above the text of the first entry. A horizontal line appears, to indicate the start of the text for that day.</p>
         <p>If the tag box is covering the area of the page you want to look at, drag it to a new position.</p>
       '''
-      instruction: "Choose 20 May 1915 from the calendar tool. Click on the &#x2714; button to confirm."
+      instruction: "Select 20 May 1915 from the calendar. Click on the &#x2714; button to confirm."
 
     second_date:
       header: "Adding a second date"
@@ -618,7 +618,7 @@ module.exports =
         <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections.</p>
         <p>You can adjust the position of a tag by dragging the icon.</p>
       '''
-      instruction: "Choose 21 May 1915 from the calendar tool and confirm your tag."
+      instruction: "Select 21 May 1915 from the calendar and confirm your tag."
 
     tag_places:
       header: "Tagging places"
