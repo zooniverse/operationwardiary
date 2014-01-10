@@ -45,21 +45,19 @@ module.exports =
       number: 2
       header: get_text 'tutorial.get_tagging.header'
       details: get_text 'tutorial.get_tagging.details'
-      attachment: "center center .subject-container center center"
       next: "tagging_intro"
     
     tagging_intro: new Step
       number: 2
       header: get_text 'tutorial.tagging_intro.header'
       details: get_text 'tutorial.tagging_intro.details'
-      attachment: "center center .subject-container center center"
       next: "tag_dates"
       
     tag_dates: new Step
       number: 3
       header: get_text 'tutorial.tag_dates.header'
       details: get_text 'tutorial.tag_dates.details'
-      attachment: "left center label[for='category-diaryDate'] right center"
+      attachment: "left middle label[for='category-diaryDate'] right middle"
       instruction: get_text 'tutorial.tag_dates.instruction'
       focus: "label[for=category-diaryDate]"
       next: 
@@ -90,7 +88,7 @@ module.exports =
       header: get_text 'tutorial.tag_places.header'
       details: get_text 'tutorial.tag_places.details'
       instruction: get_text 'tutorial.tag_places.instruction'
-      attachment: "left center label[for='category-place'] right center"
+      attachment: "left middle label[for='category-place'] right middle"
       focus: "label[for='category-place']"
       next: 
         "click label[for=category-place]": "add_places"
@@ -109,7 +107,7 @@ module.exports =
       number: 5
       header: get_text 'tutorial.tag_people.header'
       details: get_text 'tutorial.tag_people.details'
-      attachment: "left center label[for='category-person'] right center"
+      attachment: "left middle label[for='category-person'] right middle"
       instruction: get_text 'tutorial.tag_people.instruction'
       focus: "label[for='category-person']"
       next: 
@@ -130,7 +128,7 @@ module.exports =
       number: 6
       header: get_text 'tutorial.tag_other.header'
       details: get_text 'tutorial.tag_other.details'
-      attachment: "left center label[for='category-activity'] right center"
+      attachment: "left middle label[for='category-activity'] right middle"
       instruction: get_text 'tutorial.tag_other.instruction'
       focus: "label[for='category-activity']"
       next: 
@@ -186,7 +184,6 @@ module.exports =
       number: 9
       header: get_text 'tutorial.finished.header'
       details: get_text 'tutorial.finished.details'
-      attachment: "center center .subject-container center center"
       instruction: get_text 'tutorial.finished.instruction'
       next: "click button.finish":"profile"
     
@@ -194,7 +191,6 @@ module.exports =
       number: 9
       header: get_text 'tutorial.profile.header'
       details: get_text 'tutorial.profile.details'
-      attachment: "center center .subject-container center center"
       next: "choose"
       onEnter: ->
         Route.navigate '/profile'
@@ -203,7 +199,6 @@ module.exports =
       number: 10
       header: get_text 'tutorial.choose.header'
       details: get_text 'tutorial.choose.details'
-      attachment: "center center .subject-container center center"
       onEnter: ->
         Route.navigate '/diaries'
       onExit: ->
