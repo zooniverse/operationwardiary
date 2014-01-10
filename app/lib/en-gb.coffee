@@ -350,31 +350,31 @@ module.exports =
 
       blank:
         title: 'Blank page'
-        content: '<img src="images/guide/Page_blank_sm.jpg"> You may come across a blank page, possibly a cover or a piece of paper folded around a series of pages, or an unused diary page or signal sheet. You can also include anything with \'intentionally blank\' written on it in this class.'
+        content: '<img alt="sample blank page" src="images/guide/Page_blank_sm.jpg"> You may come across a blank page, possibly a cover or a piece of paper folded around a series of pages, or an unused diary page or signal sheet. You can also include anything with \'intentionally blank\' written on it in this class.'
 
       cover:
         title: 'Cover page'
-        content: '<img src="images/guide/Page_cover_sm.jpg"> Each diary section had a cover page with the name of the unit and dates included. When the diary was passed up the army chain of command and then into the care of TNA additional cover pages may have been added. You can include anything that just contains title information.'
+        content: '<img alt="sample cover page" src="images/guide/Page_cover_sm.jpg"> Each diary section had a cover page with the name of the unit and dates included. When the diary was passed up the army chain of command and then into the care of TNA additional cover pages may have been added. You can include anything that just contains title information.'
       
       diary:
         title: 'Diary page'
-        content: '<img src="images/guide/Page_diary.jpg"> The pre-printed C2118 forms provided units with a structured way in which to record essential information about their activities. But when some units mobilized (went on active service) the  forms were not available so officers used their notebooks. It is most common to find this happen in the early months of the war from August 1914 and when units first went overseas. You can include any page that has been written as a diary entry even if it isn\'t on a C2118 form. Once you have classified an item as a Diary Page you can then start tagging key pieces of information on that page.'
+        content: '<img alt="sample diary page" src="images/guide/Page_diary.jpg"> The pre-printed C2118 forms provided units with a structured way in which to record essential information about their activities. But when some units mobilized (went on active service) the  forms were not available so officers used their notebooks. It is most common to find this happen in the early months of the war from August 1914 and when units first went overseas. You can include any page that has been written as a diary entry even if it isn\'t on a C2118 form. Once you have classified an item as a Diary Page you can then start tagging key pieces of information on that page.'
         
       signals:
         title: 'Signals Pads'
-        content: '<img src="images/guide/Page_signals.jpg"> Signals pads were used for short, urgent messages between front line positions and unit headquarters (HQ) or between unit HQ and their command chain. They may have been delivered by a \'runner\'. Once you have classified an item as a Signal you can then tag key pieces of information.'
+        content: '<img alt="sample signals page" src="images/guide/Page_signals.jpg"> Signals pads were used for short, urgent messages between front line positions and unit headquarters (HQ) or between unit HQ and their command chain. They may have been delivered by a \'runner\'. Once you have classified an item as a Signal you can then tag key pieces of information.'
       
       orders:
         title: 'Orders'
-        content: '<img src="images/guide/Page_orders.jpg"> Orders were official army instructions, issued in a cascade system from the top of the hierarchy to the bottom. Each Order had a specific purpose and covered a single subject or event. They were issued on every aspect of army life and activity. Once you have classified an item as an Order you can then tag key pieces of information including what the instructions were for.'
+        content: '<img alt="sample orders page" src="images/guide/Page_orders.jpg"> Orders were official army instructions, issued in a cascade system from the top of the hierarchy to the bottom. Each Order had a specific purpose and covered a single subject or event. They were issued on every aspect of army life and activity. Once you have classified an item as an Order you can then tag key pieces of information including what the instructions were for.'
       
       report:
         title: 'Reports'
-        content: '<img src="images/guide/Page_reports.jpg"> Reports and appendices were used to provide detailed accounts of a raid or attack or other significant incident, Unit Strength, Casualties or nominal roll.There was often a short entry in the C2118 diary page which referenced the appendix or report.'
+        content: '<img alt="sample reports page" src="images/guide/Page_reports.jpg"> Reports and appendices were used to provide detailed accounts of a raid or attack or other significant incident, Unit Strength, Casualties or nominal roll.There was often a short entry in the C2118 diary page which referenced the appendix or report.'
       
       other:
         title: 'Other documents'
-        content: '<img src="images/guide/Page_other.jpg"> The diary may include other materials such as maps, sketches, plans, photographs etc. You can include anything not listed in any of the other classes. '
+        content: '<img alt="sample map sheet" src="images/guide/Page_other.jpg"> The diary may include other materials such as maps, sketches, plans, photographs etc. You can include anything not listed in any of the other classes. '
 
   about:
     diaries:
