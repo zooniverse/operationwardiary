@@ -207,6 +207,7 @@ module.exports =
       header: get_text 'tutorial.choose.header'
       details: get_text 'tutorial.choose.details'
       nextButton: get_text 'tutorial.choose.instruction'
+      attachment: 'right top .zooniverse-top-bar center bottom'
       focus: '.zooniverse-top-bar'
       onEnter: ->
         Route.navigate '/diaries'
