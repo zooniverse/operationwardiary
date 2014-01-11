@@ -741,6 +741,6 @@ module.exports =
 <p>If you are happy to start classifying and tagging, create a Zooniverse account and log in, then choose a diary from <b>Diaries</b> and get started.</p>
   <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards – use the <b>Discuss</b> menu option.</p>
   "
-    instruction: "Create a Zonniverse account, log in and get started!"
+      instruction: "Create a Zonniverse account, log in and get started!"
 
 
