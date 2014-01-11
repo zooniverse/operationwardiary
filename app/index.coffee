@@ -58,7 +58,6 @@ Footer = require './controllers/footer'
 footer = new Footer
 app.stack.el.parent().after footer.el
 
-Group.fetch()
 User.fetch()
 Spine.Route.setup()
 
