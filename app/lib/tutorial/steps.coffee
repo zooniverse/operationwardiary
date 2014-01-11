@@ -149,7 +149,7 @@ module.exports =
       number: 7
       header: get_text 'tutorial.timeline.header'
       details: get_text 'tutorial.timeline.details'
-      attachment: "center top button.timeline center bottom"
+      attachment: "right top button.timeline center bottom"
       instruction: get_text 'tutorial.timeline.instruction'
       focus: 'button.timeline'
       next: 
@@ -169,7 +169,7 @@ module.exports =
       number: 8
       header: get_text 'tutorial.talk.header'
       details: get_text 'tutorial.talk.details'
-      attachment: "center top button.discuss center bottom"
+      attachment: "right top button.discuss center bottom"
       instruction: get_text 'tutorial.talk.instruction'
       focus: 'button.discuss'
       next: 
@@ -190,7 +190,7 @@ module.exports =
       header: get_text 'tutorial.finished.header'
       details: get_text 'tutorial.finished.details'
       instruction: get_text 'tutorial.finished.instruction'
-      attachment: "right top button.finish left middle"
+      attachment: "right top button.finish center bottom"
       focus: 'button.finish'
       next: "click button.finish":"profile"
     
