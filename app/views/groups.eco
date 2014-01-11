@@ -1,8 +1,13 @@
 <% translate = require 't7e' %>
 
 <%- translate 'h2', 'groups.title' %>
+<ul class="pages">
+  <% for i in [1..5]: %>
+  <li><a href="#/diaries/<%- i %>"><%- i %></a></li>
+  <% end %>
+</ul>
 <% if @groups?: %>
-  <ul>
+  <ul class="diaries">
     <% for group in @groups: %>
     <% percent = parseInt group.stats.complete / group.stats.total %>
     <% name = group.name.replace /:/g, '<br>' %>
@@ -18,3 +23,8 @@
     <% end %>
   </ul>
 <% end %>
+<ul class="pages">
+  <% for i in [1..5]: %>
+  <li><a href="#/diaries/<%- i %>"><%- i %></a></li>
+  <% end %>
+</ul>

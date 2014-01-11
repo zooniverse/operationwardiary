@@ -9,7 +9,31 @@
     text-transform: none
     margin-bottom: 1.1em
   
-  ul
+  .pages
+    list-style-type: none
+    padding; 0
+    margin: 0
+    text-align: center
+    font-size: 1.2em
+    line-height: 1.5
+    font-family: $mont
+    
+    li
+      display: inline-block
+      padding: .5em 1em
+      
+      a
+        color: #999
+        text-decoration: none
+        
+        &.current
+          color: $text_darkgrey
+        
+        &:hover
+        &:focus
+          text-decoration: underline
+  
+  .diaries
     list-style-type: none
     font-size: 1.2em
     line-height: 1.5
