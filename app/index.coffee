@@ -48,6 +48,7 @@ app.stack = new Spine.Stack
     '/about': 'about'
     '/guide': 'guide'
     '/profile': 'profile'
+    '/diaries/:page' : 'groups'
     '/diaries': 'groups'
 
   default: 'home'

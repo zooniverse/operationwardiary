@@ -11,7 +11,11 @@ class Groups extends Spine.Controller
   constructor: ->
     super
     @el.attr id: 'diaries'
-    Api.current.get("/projects/#{Api.current.project}/groups/active", {page: 1, per_page: 20}).done @onGroupFetch
+
+  activate: (params) =>
+    super
+    params.page ?= 1
+    Api.current.get("/projects/#{Api.current.project}/groups/active", {page: params.page, per_page: 20}).done @onGroupFetch
 
   render: =>
       
