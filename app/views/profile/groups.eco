@@ -2,7 +2,8 @@
 <% if @groups?: %>
 <%- translate 'h2', "profile.groups" %>
   <ul class="diaries">
-    <% for group in @groups: %>
+    <% for group_id of @groups: %>
+    <% group = @groups[group_id] %>
     <li><a href="#/classify/<%= group.id %>"><%= group.name %></a> <b><%= group.classifications %>/<%= group.total %></b> <%- translate 'span', 'profile.pages' %></li>
     <% end %>
   </ul>
