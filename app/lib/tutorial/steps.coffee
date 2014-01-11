@@ -151,6 +151,7 @@ module.exports =
       details: get_text 'tutorial.timeline.details'
       attachment: "center top button.timeline center bottom"
       instruction: get_text 'tutorial.timeline.instruction'
+      focus: 'button.timeline'
       next: 
         "click button.timeline":"timeline2"
     
@@ -160,6 +161,7 @@ module.exports =
       details: get_text 'tutorial.timeline.details'
       attachment: "right middle .subject-timeline left middle"
       instruction: get_text 'tutorial.timeline.instruction'
+      focus: 'button.timeline'
       next: 
         "click button.timeline":"talk"
     
@@ -169,6 +171,7 @@ module.exports =
       details: get_text 'tutorial.talk.details'
       attachment: "center top button.discuss center bottom"
       instruction: get_text 'tutorial.talk.instruction'
+      focus: 'button.discuss'
       next: 
         "click button.discuss":"talk2"
       
@@ -178,6 +181,7 @@ module.exports =
       details: get_text 'tutorial.talk.details'
       attachment: "right middle .subject-comments left middle"
       instruction: get_text 'tutorial.talk.instruction'
+      focus: 'button.discuss'
       next: 
         "click button.discuss":"finished"
       
@@ -186,6 +190,8 @@ module.exports =
       header: get_text 'tutorial.finished.header'
       details: get_text 'tutorial.finished.details'
       instruction: get_text 'tutorial.finished.instruction'
+      attachment: "right top button.finish left middle"
+      focus: 'button.finish'
       next: "click button.finish":"profile"
     
     profile: new Step
@@ -201,6 +207,7 @@ module.exports =
       header: get_text 'tutorial.choose.header'
       details: get_text 'tutorial.choose.details'
       nextButton: get_text 'tutorial.choose.instruction'
+      focus: '.zooniverse-top-bar'
       onEnter: ->
         Route.navigate '/diaries'
       onExit: ->
