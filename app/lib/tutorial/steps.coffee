@@ -16,6 +16,7 @@ module.exports =
       number: 1
       header: get_text 'tutorial.welcome.header'
       details: get_text 'tutorial.welcome.details'
+      nextButton: get_text 'tutorial.welcome.instruction'
       next: "intro"
 
     intro: new Step
@@ -199,6 +200,7 @@ module.exports =
       number: 10
       header: get_text 'tutorial.choose.header'
       details: get_text 'tutorial.choose.details'
+      nextButton: get_text 'tutorial.choose.instruction'
       onEnter: ->
         Route.navigate '/diaries'
       onExit: ->

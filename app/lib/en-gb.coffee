@@ -571,6 +571,7 @@ module.exports =
       details: '''
         <p>Become a Citizen Historian and help Imperial War Museums and The National Archives reveal the story of the British Army on the Western Front during the First World War.</p>
       '''
+      instruction: "Continue with this 10 minute tutorial and get started"
 
     intro:
       header: "Check out the diaries"
@@ -593,28 +594,29 @@ module.exports =
     page_type:
       header: "Classifying diary pages"
       details: '''
-        <p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples in the Field Guide.</p>
-        <p>You can return to the menu by clicking on '1 Page Types'.</p>
+        <p>Choose the classification that best matches the page you can see. If you are not sure which one to choose, you can see examples by going to the <b>Field Guide</b> in the top menu.</p>
+        <p>You can return to the classification menu by clicking on '1 Page Types'.</p>
         <p>Around half of the pages are standard diary pages, like this one.</p>
       '''
       instruction: "Select <b>Diary page</b> from the Page Types menu"
 
     get_tagging:
       header: "Get tagging"
-      details: "<p>Now that you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
+      details: "<p>Once you&#039;ve decided what type of page it is, it&#039;s time to start tagging!</p>
 <p>Different page types contain different pieces of information, so the list of available tags will change depending on your page classification.</p>
-  <p>We can&#039;t tag everything!</p>
+  <p>Several users will tag each page, so don&#039;t worry about making a mistake. And remember we can&#039;t tag everything! 
+</p>
   <p>There are tags for all the key pieces of information that we need to know about.</p>
   "
 
     tagging_intro:
-      header: "Tagging the diary pages"
+      header: "Tagging the data in diary pages"
       details: '''
         <p>Most (not all) Diary pages use a pre-printed template with 5 columns</p>
         <ul>
           <li> 1-3: place, date and hour</li>
-          <li> 4: narrative account of operations, which can contain a variety of  information about people and activities. </li>
-          <li> 5: References  to other documents in the diaries including maps and reports.</li>
+          <li> 4: narrative account of operations, which can contain a variety of  information about people and activities</li>
+          <li> 5: References  to other documents in the diaries including maps and reports</li>
         </ul>
         <p>Look at the page in more detail by using the magnifying tool to zoom in/out.</p>
       '''
@@ -639,7 +641,10 @@ module.exports =
     second_date:
       header: "Adding a second date"
       details: '''
-        <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections.</p>
+        <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections. Remember to place it just above the date entry.</p>
+        <p>If the year does not appear on the page, choose the default year of 1915.</p>
+
+        <p>You can delete unwanted tags by selecting them and using the X.</p>
         <p>You can adjust the position of a tag by dragging the icon.</p>
       '''
       instruction: "Select 21 May 1915 from the calendar and confirm your tag."
@@ -647,14 +652,15 @@ module.exports =
     tag_places:
       header: "Tagging places"
       details: "<p>Once you have tagged all the dates follow the same approach for the Places column.</p>
-<p>This shows the unit location when the diary entry was written. Other places may be mentioned in the narrative column.</p>"
+<p>This shows the unit location when the diary entry was written. Other places may be mentioned in the narrative column.</p>
+<p>Work your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>"
       instruction: "Select the <b>Place</b> tag"
     
     add_places:
       header: "Choosing a place"
       details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag.</p>
 
-<p>Enter the place name in the pop-up box. If there are multiple options, choose the most likely location from the list using the map to help you. If you&039;re not sure select 'None of these'.</p>
+<p>Add the place name in the pop-up box and hit enter. If there are multiple options, use the map to help you choose the most likely location from the list. If you&#039;re not sure select 'None of these/not sure'.</p>
 "
       instruction: "Enter 'Aldershot' in the text box and select the 'Is the unit currently here?' box."
       
@@ -675,7 +681,7 @@ module.exports =
       header: "Tagging other information"
       details: "<p>You may find other key pieces of information such as what the unit was doing or what the weather was like.</p>
 
-<p>The Field Guide gives help on what to tag as well as examples of military phrases that you might come across.</p>
+<p>The Field Guide, available in the top menu, gives help on what to tag as well as examples of military phrases that you might come across.</p>
 
 <p>On this diary page there is a description of the Battalion embarking on the SS Victoria.</p>"
       instruction: "Select the <b>Unit Activity</b> tag."
@@ -690,7 +696,7 @@ module.exports =
       header: "Editing or deleting tags"
       details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
       <p>Click on the <b>timeline</b> button to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
-      instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button."
+      instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button. Then click it again to dismiss."
     
     talk:
       header: "Have you found an entry that you want to talk about?"
@@ -699,9 +705,9 @@ module.exports =
 
           <p>Add hashtags in your comment to link this page with similar pages in Talk.</p>
           
-            
+          <p>You can also go to Talk boards by clicking on <b>Discuss</b> in the top menu. There you can suggest improvements, get help and find fascinating stories.</p>
             '''
-      instruction: "Click the <img src='images/icons/talk.png' alt='talk'> button."
+      instruction: "Click the <img src='images/icons/talk.png' alt='talk'> button. Then click it again to dismiss."
       
     finished:
       header: "Finished"
@@ -711,7 +717,7 @@ module.exports =
 
         <p>Don&#039;t worry about missing a tag or making a mistake.</p> 
 
-        <p>To get results that are as accurate as possible, each page will be tagged more than once and all the tags compared.</p>
+        <p>To get results that are as accurate as possible, each page will be tagged by several people and all the tags compared.</p>
         
         '''
       instruction: "Click <b>Finished!</b>"
@@ -729,8 +735,12 @@ module.exports =
     choose:
       header: "What happens next"
       details: "<p>Well done! You have successfully completed the tutorial.</p>
-<p>If you want repeat it, you will find the tutorial link in the Field Guide.</p>
+<p>If you want repeat it, you can <b>restart the tutorial</b> anytime from the <b>Field Guide</b>.
+</p>
 
-<p>If you are happy to start classifying and tagging, log in to your Zooniverse account, choose a diary and get started.</p>"
+<p>If you are happy to start classifying and tagging, create a Zooniverse account and log in, then choose a diary from <b>Diaries</b> and get started.</p>
+  <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards – use the <b>Discuss</b> menu option.</p>
+  "
+    instruction: "Create a Zonniverse account, log in and get started!"
 
 
