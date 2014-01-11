@@ -71,7 +71,6 @@ class Classifier extends Spine.Controller
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
-    Group.on 'fetch', @onGroupFetch
     
     @surface.on 'select', @onToolSelect
     @surface.on 'create-tool', @onToolCreate
@@ -153,11 +152,12 @@ class Classifier extends Spine.Controller
     @getGroupDetails()
   
   getGroupDetails: =>
-    return unless Subject.group and @groups?
-    group = (group for group in @groups when group.id == Subject.group)[0]
-    @onGroupReady group
+    return unless Subject.group
+    console?.log 'requesting /groups/', Subject.group
+    Api.current.get("/projects/#{Api.current.project}/groups/#{Subject.group}").done @onGroupReady
     
   onGroupReady: (group) =>
+    console.log group
     @group_details.render group
     
   onPageChange: (e, type)=>
@@ -264,6 +264,7 @@ class Classifier extends Spine.Controller
     
   onSubjectSelect: (e, subject) =>
     console?.log 'selecting ', subject.zooniverse_id
+    
     @surface.width = @subjectContainer.width()
     @surface.height = @subjectContainer.height()
     # @surface.pan 0, 0
