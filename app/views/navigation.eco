@@ -15,6 +15,6 @@
     <li><a href="#/profile"><%- translate 'span', 'navigation.profile' %></a></li>
     <li><a href="#/about"><%- translate 'span', 'navigation.about' %></a></li>
     <li><a href="http://talk.operationwardiary.org"><%- translate 'span', 'navigation.talk' %></a></li>
-    <li><a href="#"><%- translate 'span', 'navigation.blog' %></a></li>
+    <li><a href="http://blog.operationwardiary.org"><%- translate 'span', 'navigation.blog' %></a></li>
   </ul>
 </div>
