@@ -117,7 +117,7 @@ class Classifier extends Spine.Controller
       else
         @onGroupChange params.group_id if @user?
     else
-      @run_tutorial() unless @tutorial_done or @group_details.group?
+      @run_tutorial() unless @tutorial_done or @group_details.group.name?
       # @navigate '/groups' unless @group_details.group
       
   render_tags: ( snapshot ) =>

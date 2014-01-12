@@ -1,5 +1,9 @@
 <% translate = require 't7e' %>
-<h1 class="diary_title"><%= @group.name %> (<%= @group.startdate %> - <%= @group.enddate %>)</h1>
+<h1 class="diary_title">
+<% if @group.name?: %>
+  <%= @group.name %> (<%= @group.startdate %> - <%= @group.enddate %>)
+<% end %>
+</h1>
 <span class="page-tools">
 <button class="favourite"><%- translate 'span', "common.favourite" %></button>
 <button class="discuss"><%- translate 'span', "common.discuss" %></button>
