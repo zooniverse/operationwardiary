@@ -198,24 +198,40 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   choose_place: (places) =>
     promise = new $.Deferred
     
-    if places.length == 1
-      place = places[0]
-      promise.resolve place
-    else
-      $suggestions = @el.find '.suggestions'
-      
-      place =
-        placename: @el.find('input[name=place]').val()
-        lat: null
-        long: null
-        name: ''
-        id: null
-      label = $("<label>#{translate 'span', 'classifier.place.none'}</label>")
+    
+    $suggestions = @el.find '.suggestions'
+    
+    place =
+      placename: @el.find('input[name=place]').val()
+      lat: null
+      long: null
+      name: ''
+      id: null
+    label = $("<label>#{translate 'span', 'classifier.place.none'}</label>")
+    input = 
+      $("<input/>")
+      .attr( "type", 'radio' )
+      .attr( 'name', 'placeOption')
+      .on( 'change', place, (e)=>
+        place = e.data
+        e.preventDefault()
+        e.stopPropagation()
+        promise.notify place
+        $suggestions.find('label').off 'mouseover focus'
+      )
+    label.prepend input
+    label.on 'mouseover focus', place, (e)=>
+      place = e.data
+      @show_place place.lat, place.long
+    $suggestions.append label
+    
+    for place in places
+      label = $("<label><span>#{place.name}</span></label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
         .attr( 'name', 'placeOption')
-        .on( 'change', place, (e)=>
+        .on( 'change', place, (e)->
           place = e.data
           e.preventDefault()
           e.stopPropagation()
@@ -226,29 +242,10 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       label.on 'mouseover focus', place, (e)=>
         place = e.data
         @show_place place.lat, place.long
+        
       $suggestions.append label
       
-      for place in places
-        label = $("<label><span>#{place.name}</span></label>")
-        input = 
-          $("<input/>")
-          .attr( "type", 'radio' )
-          .attr( 'name', 'placeOption')
-          .on( 'change', place, (e)->
-            place = e.data
-            e.preventDefault()
-            e.stopPropagation()
-            promise.notify place
-            $suggestions.find('label').off 'mouseover focus'
-          )
-        label.prepend input
-        label.on 'mouseover focus', place, (e)=>
-          place = e.data
-          @show_place place.lat, place.long
-          
-        $suggestions.append label
-        
-      $suggestions.addClass 'open'
+    $suggestions.addClass 'open'
     
     promise
 
