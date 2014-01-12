@@ -12,9 +12,10 @@ class Rights extends Spine.Controller
     
   constructor: ->
     super
+    
+    @render({})
   
   render: (group) =>
-    console.log group
     @html @template
       group: group
   
