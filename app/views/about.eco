@@ -103,7 +103,7 @@
         <dt>Stuart Lynn</dt>
         <%- translate 'dd', 'about.people.stuart.bio' %>
         <dt>Chris Snyder</dt>
-        <%- translate 'dd', 'about.people.chris.bio' %>
+        <%- translate 'dd', 'about.people.chris_s.bio' %>
         <dt>Grant Miller</dt>
         <%- translate 'dd', 'about.people.grant.bio' %>
         <dt>Rob Simpson</dt>

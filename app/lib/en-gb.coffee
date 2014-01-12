@@ -537,7 +537,7 @@ If there was little to record or a major incident had taken place over a few day
         rob:
           bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
         
-        chris:
+        chris_s:
           bio: "Astronomer at the University of Oxford. PI of the Zooniverse (it's his fault)."
         
         grant:
