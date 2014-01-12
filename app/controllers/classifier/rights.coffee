@@ -10,11 +10,11 @@ class Rights extends Spine.Controller
     
   constructor: ->
     super
-    
-    @render()
   
-  render: =>
+  render: (group)=>
+    console.log group
     @html @template
+      group: group
   
 
 module.exports = Rights

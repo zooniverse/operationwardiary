@@ -163,6 +163,7 @@ class Classifier extends Spine.Controller
   onGroupReady: (group) =>
     console.log group
     @group_details.render group
+    @rights.render group
     
   onPageChange: (e, type)=>
     @surface.enable()
