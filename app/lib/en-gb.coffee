@@ -532,7 +532,7 @@ If there was little to record or a major incident had taken place over a few day
           bio: "Zooniverse developer at the Adler Planetarium in Chicago. Data analysis maestro."
           
         jim:
-          bio: "Zooniverse developer at Oxford University. Likes HTML standards, guinea pigs and hamsters. Listened to 'Misplaced Childhood' a lot while building #{PROJECT_NAME}"
+          bio: "Zooniverse developer at Oxford University. Likes HTML standards, guinea pigs and hamsters. Listened to 'Misplaced Childhood' a lot while building #{PROJECT_NAME}."
         
         rob:
           bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
