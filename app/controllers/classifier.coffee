@@ -325,6 +325,8 @@ class Classifier extends Spine.Controller
     @nextSubject() unless @classification.subject.metadata.tutorial?
   
   nextSubject: =>
+    $('button.finish').attr disabled: true
+    
     @classification.send()
     
     Subject.current.destroy()
