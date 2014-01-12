@@ -543,6 +543,9 @@ If there was little to record or a major incident had taken place over a few day
         grant:
           bio: "Scientist and disseminator of useless facts - community user liason for the Zooniverse."
         
+        chris:
+          bio: "Zooniverse developer at the Adler Planetarium in Chicago. An experienced developer who joined the Zooniverse team in 2012. He enjoys reading, running and playing games of all sorts."
+        
         william:
           bio: "William is the Principal Military Specialist at The National Archives where he has worked since 1993. He served in the Royal Navy, including operational service in the Falklands in 1982, and holds an MA in War Studies from the Department of War Studies at King's College London. He is a big fan of books, beer and music."
         
