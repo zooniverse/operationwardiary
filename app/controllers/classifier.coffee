@@ -18,6 +18,7 @@ TextTool = require '../lib/text-tool'
 
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
+Rights = require './classifier/rights'
   
 {Tutorial} = require 'zootorial'
 steps = require '../lib/tutorial/steps'
@@ -60,6 +61,9 @@ class Classifier extends Spine.Controller
     
     @group_details = new GroupDetails
     @el.find('.tools').before @group_details.el
+    
+    @rights = new Rights
+    @el.find('.subject-container').after @rights.el
     
     @toolbars.el.on 'page_type:change', @onPageChange
     @toolbars.el.on 'tag:change', @onTagChange
