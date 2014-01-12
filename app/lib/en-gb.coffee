@@ -537,13 +537,13 @@ If there was little to record or a major incident had taken place over a few day
         rob:
           bio: "If you can keep your head when all around you are losing theirs, you are probably Rob Simpson."
         
-        chris_s:
+        chris:
           bio: "Astronomer at the University of Oxford. PI of the Zooniverse (it's his fault)."
         
         grant:
           bio: "Scientist and disseminator of useless facts - community user liason for the Zooniverse."
         
-        chris:
+        chris_s:
           bio: "Zooniverse developer at the Adler Planetarium in Chicago. An experienced developer who joined the Zooniverse team in 2012. He enjoys reading, running and playing games of all sorts."
         
         william:
