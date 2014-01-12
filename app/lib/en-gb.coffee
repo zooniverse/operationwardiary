@@ -439,7 +439,7 @@ If there was little to record or a major incident had taken place over a few day
 
               <li>to enrich The National Archives&#039; catalogue descriptions for the unit war diaries,</li>
               
-              <li>to provide evidence about the experience of named individuals in IWM&#039;s Lives of the First World War project</li>
+              <li>to provide evidence about the experience of named individuals in IWM&#039;s <a href="http://livesofthefirstworldwar.org">Lives of the First World War</a> project</li>
               
               <li>to present academics with large amounts of accurate data to help them gain a better understanding of how the war was fought</li>
               
@@ -469,7 +469,7 @@ If there was little to record or a major incident had taken place over a few day
           </div>
           <div>
           <h3>People</h3>
-          <p>It is generally believed that only officers are mentioned by name in the unit war diaries. However, whilst each Adjutant followed guidelines when compiling the diary they were all individuals with different levels of experience, education and enthusiasm for the task! The conditions in which they wrote their reports varied considerably depending on their location, the weather and military situation. So whilst some diaries can be sparse on detail, many others provide a fascinating insight into the activities of named individuals. Until now the only way to find such reports was to read every single page of a diary searching for a reference to a person. Tagging named individuals will enable us to create an index. Including details of why an individual is named will help us add detail to their Life Story in Lives of the First World War.</p>
+          <p>It is generally believed that only officers are mentioned by name in the unit war diaries. However, whilst each Adjutant followed guidelines when compiling the diary they were all individuals with different levels of experience, education and enthusiasm for the task! The conditions in which they wrote their reports varied considerably depending on their location, the weather and military situation. So whilst some diaries can be sparse on detail, many others provide a fascinating insight into the activities of named individuals. Until now the only way to find such reports was to read every single page of a diary searching for a reference to a person. Tagging named individuals will enable us to create an index. Including details of why an individual is named will help us add detail to their Life Story in <a href="http://livesofthefirstworldwar.org">Lives of the First World War</a>.</p>
           </div>
           <div>
           <h3>Weather</h3>
@@ -514,10 +514,10 @@ If there was little to record or a major incident had taken place over a few day
         title: 'About the people'
         
         luke:
-          bio: "Luke is Digital Lead for the First World War Centenary at Imperial War Museums. He leads IWM's Lives of the First World War and is passionate about engaging large numbers of people in Citizen History. Luke has delivered complex online systems at Sony Playstation, Arts Council England and elsewhere. 2014 is a big year for Luke but he'll still find time for seeing obscure rock bands, flying kites with his children and going on a few sailing trips."
+          bio: "Luke is Digital Lead for the First World War Centenary at Imperial War Museums. He leads IWM's <a href=\"http://livesofthefirstworldwar.org\">Lives of the First World War</a> and is passionate about engaging large numbers of people in Citizen History. Luke has delivered complex online systems at Sony Playstation, Arts Council England and elsewhere. 2014 is a big year for Luke but he'll still find time for seeing obscure rock bands, flying kites with his children and going on a few sailing trips."
         
         mel:
-          bio: "Mel is the Project Manager for IWM's Lives of the First World War and spends far too much time researching family history. She has had an eclectic career journey, starting as an RAF Air Traffic Control officer before moving on via the NHS to IWM. Prior to Lives of the First World War she worked on the Their Past Your Future project leading commemorative visits to the battlefields."
+          bio: "Mel is the Project Manager for IWM's <a href=\"http://livesofthefirstworldwar.org\">Lives of the First World War</a> and spends far too much time researching family history. She has had an eclectic career journey, starting as an RAF Air Traffic Control officer before moving on via the NHS to IWM. Prior to <a href=\"http://livesofthefirstworldwar.org\">Lives of the First World War</a> she worked on the Their Past Your Future project leading commemorative visits to the battlefields."
           
         nigel:
           bio: "Nigel is Principal Historian for the First World War Centenary at Imperial War Museums. He is a leading public historian, has published several books on the war and makes frequent appearances on television. He is actively involved in digital projects for the centenary."
@@ -576,8 +576,8 @@ If there was little to record or a major incident had taken place over a few day
         name: 'Imperial War Museums'
         url: 'http://iwm.org.uk/'
         text: '''
-        <p>IWM was founded in 1917 to tell the story of the causes, course and consequences of modern conflicts that involve Britain and the Commonwealth. To mark the centenary of the global conflict that shaped the word we live in today, IWM is launching Lives of the First World War. This innovative citizen history project will engage a global audience in researching the First World War stories of more than 8 million men and women.</p> 
-        <p>Operation War Diary will unlock the information previously hidden in the unit diaries, providing a new and unique dataset that will add fascinating evidence to many of those Life Stories. These will be shared on Lives of the First World War and saved for future generations as part of the permanent digital memorial.</p>
+        <p>IWM was founded in 1917 to tell the story of the causes, course and consequences of modern conflicts that involve Britain and the Commonwealth. To mark the centenary of the global conflict that shaped the word we live in today, IWM is launching <a href="http://livesofthefirstworldwar.org">Lives of the First World War</a>. This innovative citizen history project will engage a global audience in researching the First World War stories of more than 8 million men and women.</p> 
+        <p>Operation War Diary will unlock the information previously hidden in the unit diaries, providing a new and unique dataset that will add fascinating evidence to many of those Life Stories. These will be shared on <a href="http://livesofthefirstworldwar.org">Lives of the First World War</a> and saved for future generations as part of the permanent digital memorial.</p>
         '''
         
 
