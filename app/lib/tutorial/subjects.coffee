@@ -4,7 +4,7 @@ module.exports =
       "id":"5241bcf43ae7406825000687"
       "categories":[]
       "classification_count":75,"created_at":"2013-09-24T21:03:31Z"
-      "metadata":{"year":1900,"diary_number":2,"page_offset":194,"start_date":"1915-05-01T00:00:00Z","end_date":"1918-06-30T00:00:00Z"}
+      "metadata":{"year":1900,"diary_number":2,"page_offset":194,"start_date":"1915-05-01T00:00:00Z","end_date":"1918-06-30T00:00:00Z", source: "WO/95/1900/2"}
       "name":"14 Division: 42 Infantry Brigade: 9 Battalion King's Royal Rifle Corps"
       "project_id":"5241bcf43ae7406825000001"
       "project_name":"war_diary"

@@ -392,6 +392,7 @@ class Classifier extends Spine.Controller
     return unless @user? and @isActive()
     
     @group_details.render tutorial_subject.group
+    @rights.render tutorial_supject.group
     subject = new Subject tutorial_subject
     subject.select()
     @tutorial.start()
