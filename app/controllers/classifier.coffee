@@ -293,6 +293,8 @@ class Classifier extends Spine.Controller
         snapshot = @surface_history[subject.id] if @surface_history?
     
         @render_tags snapshot
+        
+        @rights.show_page subject.metadata.page_number
       )
     
   onDoTask: =>
