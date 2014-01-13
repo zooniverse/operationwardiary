@@ -726,7 +726,7 @@ If there was little to record or a major incident had taken place over a few day
       header: "Adding a second date"
       details: '''
         <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections. Remember to place it just above the date entry.</p>
-        <p>If the year does not appear on the page, type the date as it appears in the diary. All pages tagged in this way will be corrected as part of the data analysis process when the diary is finished.</p>
+        <p>If you cannot tell what the full date is, just type what you do know into the date box.</p>
 
         <p>You can delete unwanted tags by selecting them and using the X.</p>
         <p>You can adjust the position of a tag by dragging the icon.</p>
