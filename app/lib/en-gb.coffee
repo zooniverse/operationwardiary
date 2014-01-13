@@ -522,6 +522,9 @@ If there was little to record or a major incident had taken place over a few day
         nigel:
           bio: "Nigel is Principal Historian for the First World War Centenary at Imperial War Museums. He is a leading public historian, has published several books on the war and makes frequent appearances on television. He is actively involved in digital projects for the centenary."
           
+        richard:
+          bio: "Richard is Head of History & Professor of Twentieth Century History at Goldsmiths, University of London. He chairs IWM’s <a href='http://www.1914.org/news/academic-advisors-help-iwms-digital-centenary-programme/'>Digital Centenary Academic Advisory Group</a>. He was invited to convene this group because his book Belfast Boys pioneered using large quantities of digital and other sources to analyse the war experience of one area.  In his spare time he enjoys coaching at Hemel Hempstead Town Cricket Club and endures a season ticket at QPR."
+          
         heath:
           bio: "UI/UX Designer at the Zooniverse in Chicago. He makes websites look and feel amazing."
         

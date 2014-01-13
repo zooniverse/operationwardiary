@@ -72,6 +72,8 @@
         <%- translate 'dd', 'about.people.mel.bio' %>
         <dt>Nigel Steele</dt>
         <%- translate 'dd', 'about.people.nigel.bio' %>
+        <dt>Prof Richard Grayson</dt>
+        <%- translate 'dd', 'about.people.richard.bio' %>
       </dl>
     </div>
   
