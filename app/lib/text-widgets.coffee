@@ -456,6 +456,9 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     @input = $('.date', el)
     @calendar = $('.calendar', el)
     
+    @input.on 'change', =>
+      @updateNote @input
+    
     @calendar
       .datepicker
         dateFormat: 'd M yy'
@@ -463,12 +466,9 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
         changeYear: true
         defaultDate: DateWidget.date
         altField: @input
+        altFormat: 'd M yy'
         onSelect: =>
           @input.trigger 'change'
-    
-    @input.on 'change', =>
-      @updateNote @input
-      @calendar.datepicker 'setDate', @input.val()
   
   
     
@@ -480,8 +480,15 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     
   updateNote: (target) =>
     date = @input.val()
-    @calendar.datepicker('setDate', date)
-    DateWidget.date = date
+    
+    try 
+      $.datepicker.parseDate 'd M yy', date
+      @calendar.datepicker('setDate', date)
+      DateWidget.date = date
+    catch e
+      try 
+        @calendar.datepicker( 'setDate', $.datepicker.parseDate 'd MM yy', date )
+        DateWidget.date = date
     
     
   getLabel: (target) =>
