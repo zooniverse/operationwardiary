@@ -823,7 +823,7 @@ If there was little to record or a major incident had taken place over a few day
 </p>
 
 <p>If you are happy to start classifying and tagging, create a Zooniverse account and log in, then choose a diary from <b>Diaries</b> and get started.</p>
-  <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards – use the <b>Discuss</b> menu option.</p>
+  <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards &ndash; use the <b>Discuss</b> menu option.</p>
   "
       instruction: "Create a Zooniverse account, log in and get started!"
 
