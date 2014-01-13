@@ -482,12 +482,12 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
     date = @input.val()
     
     try 
-      $.datepicker.parseDate 'd M yy', date
-      @calendar.datepicker('setDate', date)
+      
+      @calendar.datepicker 'setDate', $.datepicker.parseDate 'd M yy', date
       DateWidget.date = date
     catch e
       try 
-        @calendar.datepicker( 'setDate', $.datepicker.parseDate 'd MM yy', date )
+        @calendar.datepicker 'setDate', $.datepicker.parseDate 'd MM yy', date
         DateWidget.date = date
     
     
