@@ -1,8 +1,8 @@
 OAuth = require './oauth.js'
 
 class YQL
-  @consumer_key: "dj0yJmk9R2t0dzBOdU5TSFZwJmQ9WVdrOWNVSjBWMHB5TkRJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04NQ--"
-  @consumer_secret: "6be8e90d9b3fe81bfe846a148bcd69a65981b928"
+  @consumer_key: "dj0yJmk9aGRGNkljemE4YmdmJmQ9WVdrOVlteHhlV2R3TjJFbWNHbzlNemMwTlRrMk16WXkmcz1jb25zdW1lcnNlY3JldCZ4PWE0"
+  @consumer_secret: "5c18b03860c7c28522cc11f1aedc7bc8e220fc14"
   @cache_life = 3600
   
   constructor: (query, @callback = 'process_request')->
