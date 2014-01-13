@@ -117,3 +117,9 @@
   
   </div>
 </div>
+
+<div class="aag">
+  <%- translate 'h2', 'about.aag.title' %>
+  <%- translate 'p', 'about.aag.intro' %>
+  <%- translate 'div', 'about.aag.text' %>
+</div>

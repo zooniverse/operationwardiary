@@ -510,6 +510,40 @@ If there was little to record or a major incident had taken place over a few day
               <p>Users of older browsers will need to upgrade to ensure all the site functionality is available.</p>
               '''
       
+      aag:
+        title: 'The Academic Advisory Group'
+        intro: 'A panel of experts, drawn from across the UK and the Republic of Ireland, convened by IWM to offer their advice on the museum&#039;s First World War Centenary digital projects.'
+        text: '''
+        <ul>
+        <li><strong>Chair: <a href="http://www.gold.ac.uk/history/staff/graysonprofrichard/" target="_blank">Prof Richard Grayson</a></strong> Head of History &amp; Professor of Twentieth Century History, Goldsmiths, University of London<strong></strong></li>
+        <li><strong><a href="http://www.kent.ac.uk/history/staff/profiles/bowman.html" target="_blank">Dr Timothy Bowman</a> </strong>Senior Lecturer in History, University of Kent<strong></strong></li>
+        <li><strong><a href="http://www.kent.ac.uk/history/staff/profiles/connelly.html" target="_blank">Prof Mark Connelly</a> </strong>Professor of Modern British Military History, University of Kent&nbsp;<strong></strong></li>
+        <li><strong><a href="http://www.nationalarchives.ie/" target="_blank">Catriona Crowe</a></strong> Head of Special Projects, National Archives of Ireland</li>
+        <li><strong><a href="http://www.kcl.ac.uk/artshums/depts/english/people/staff/academic/das.aspx" target="_blank">Dr&nbsp;Santanu Das</a> </strong>Reader in English Literature, King&#039;s College London<strong></strong></li>
+        <li><strong><a href="http://www.leeds.ac.uk/arts/people/20053/french/person/726/alison_fell" target="_blank">Prof Alison Fell</a> </strong>Professor of French Cultural History, University of Leeds <strong></strong></li>
+        <li><strong><a href="http://www.wales.ac.uk/en/CentreforAdvancedWelshCelticStudies/StaffPages/LornaHughes.aspx" target="_blank">Prof Lorna Hughes</a></strong> Chair in Digital Collections, University of Wales <strong></strong></li>
+        <li><strong><a href="http://www.ed.ac.uk/schools-departments/history-classics-archaeology/about-us/staff-profiles?cw_xml=profile_tab1_academic.php?uun=ajackso6" target="_blank">Professor Alvin Jackson</a> </strong>Richard Lodge Professor of History, University of Edinburgh<strong></strong></li>
+        <li><strong><a href="http://www.qub.ac.uk/schools/SchoolofHistoryandAnthropology/Staff/AcademicStaff/ProfessorKeithJeffery/" target="_blank">Prof Keith Jeffery</a> </strong>Professor of British History, Queen&#039;s University Belfast <strong></strong></li>
+        <li><strong><a href="http://www.iop.kcl.ac.uk/staff/profile/default.aspx?go=10465" target="_blank">Prof Edgar Jones</a> </strong>Professor of the History of Medicine and Psychiatry, Institute of Psychiatry, King&#039;s College London <strong></strong></li>
+        <li><strong><a href="http://www2.lse.ac.uk/internationalHistory/whosWho/academicStaff/jones.aspx" target="_blank">Dr Heather Jones</a> </strong>Senior Lecturer in International History, London School of Economics&nbsp;<strong></strong></li>
+        <li><strong><a href="http://www2.physics.ox.ac.uk/contacts/people/lintott" target="_blank">Dr Chris Lintott</a> </strong>Citizen Science Project Lead, Department of Physics, University of Oxford, and Director of ‘Zooniverse&#039; crowdsourcing project<strong></strong></li>
+        <li><strong><a href="http://www.swan.ac.uk/staff/academic/artshumanities/hc/matthewsg/" target="_blank">Dr&nbsp;Gethin Matthews</a> </strong>Lecturer, College of Arts and Humanities, Swansea University <strong></strong></li>
+        <li><strong><a href="http://rg.kcl.ac.uk/staffprofiles/staffprofile.php?pid=1847" target="_blank">Dr Helen McCartney</a> </strong>Senior Lecturer in Defence Studies, King&#039;s College London&nbsp;<strong></strong></li>
+        <li><strong><a href="http://www.ed.ac.uk/schools-departments/history-classics-archaeology/archaeology/about/staff-profiles/staff?uun=ymcewen&amp;search=3&amp;cw_xml=profile_tab1_academic.php" target="_blank">Yvonne McEwen</a> </strong>Director, Scotland&#039;s War 1914-1919, University of Edinburgh; Official Historian of the British Army Nursing Service<strong></strong></li>
+        <li><strong><a href="http://www2.hull.ac.uk/fass/history/our-staff/jenny-macleod.aspx" target="_blank">Dr Jenny&nbsp;Macleod</a> </strong>Lecturer in Twentieth Century History,&nbsp;University of Hull&nbsp;<strong></strong></li>
+        <li><strong><a href="http://people.tcd.ie/ohalpine" target="_blank">Prof&nbsp;Eunan O&#039;Halpin</a> </strong>Professor of Contemporary Irish History, Centre for Contemporary Irish History, Trinity College Dublin&nbsp;<strong></strong></li>
+        <li><a href="https://humanities.exeter.ac.uk/history/staff/pennell/" target="_blank">Dr&nbsp;Catriona Pennell</a> Senior Lecturer in History,&nbsp;University of Exeter</li>
+        <li><strong><a href="http://www.birmingham.ac.uk/staff/profiles/history/purseigle-pierre.aspx" target="_blank">Dr Pierre Purseigle</a>&nbsp;</strong>Senior Lecturer in Modern History, Centre for First World War Studies, University of Birmingham</li>
+        <li><strong><a href="http://www.birmingham.ac.uk/staff/profiles/history/simkins-peter.aspx" target="_blank">Prof Peter Simkins</a> </strong>Visiting Lecturer, Department of History, University of Birmingham<strong></strong></li>
+        <li><strong><a href="http://www.nationalarchives.gov.uk/pressroom/press-spokespeople.htm" target="_blank">William Spencer</a></strong> Principal Military Specialist, The National Archives</li>
+        <li><strong><a href="http://www.dailybrink.com/?p=1932" target="_blank">Nick Stanhope</a> </strong>CEO, We Are What We Do<strong></strong></li>
+        <li><strong><a href="http://www.all-souls.ox.ac.uk/people.php?personid=67" target="_blank">Prof Hew Strachan</a> </strong>Chichele Professor of the History of War, University of Oxford<strong></strong></li>
+        <li><strong><a href="http://www.ucl.ac.uk/dis/people/melissaterras" target="_blank">Dr Melissa Terras</a> </strong>Co-Director of UCL Centre for Digital Humanities; Reader in Electronic Communication in the Department of Information Studies at UCL<strong></strong></li>
+        <li><strong><a href="http://www.history.qmul.ac.uk/staff/todmand.html" target="_blank">Dr Dan Todman</a> </strong>Senior Lecturer in History, Queen Mary, University of London</li>
+        </ul>
+        '''
+        
+      
       people:
         title: 'About the people'
         
@@ -523,7 +557,7 @@ If there was little to record or a major incident had taken place over a few day
           bio: "Nigel is Principal Historian for the First World War Centenary at Imperial War Museums. He is a leading public historian, has published several books on the war and makes frequent appearances on television. He is actively involved in digital projects for the centenary."
           
         richard:
-          bio: "Richard is Head of History & Professor of Twentieth Century History at Goldsmiths, University of London. He chairs IWM’s <a href='http://www.1914.org/news/academic-advisors-help-iwms-digital-centenary-programme/'>Digital Centenary Academic Advisory Group</a>. He was invited to convene this group because his book Belfast Boys pioneered using large quantities of digital and other sources to analyse the war experience of one area.  In his spare time he enjoys coaching at Hemel Hempstead Town Cricket Club and endures a season ticket at QPR."
+          bio: "Richard is Head of History & Professor of Twentieth Century History at Goldsmiths, University of London. He chairs IWM&#039;s <a href='http://www.1914.org/news/academic-advisors-help-iwms-digital-centenary-programme/'>Digital Centenary Academic Advisory Group</a>. He was invited to convene this group because his book Belfast Boys pioneered using large quantities of digital and other sources to analyse the war experience of one area.  In his spare time he enjoys coaching at Hemel Hempstead Town Cricket Club and endures a season ticket at QPR."
           
         heath:
           bio: "UI/UX Designer at the Zooniverse in Chicago. He makes websites look and feel amazing."
