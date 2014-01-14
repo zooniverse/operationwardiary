@@ -9,6 +9,8 @@ class Rights extends Spine.Controller
   className: 'copyright'
   elements:
     '#page_number': 'page'
+  
+  offset: 0
     
   constructor: ->
     super
@@ -16,11 +18,12 @@ class Rights extends Spine.Controller
     @render({})
   
   render: (group) =>
+    @offset = group.metadata.page_offset
     @html @template
       group: group
   
   show_page: (page_number) =>
-    @page.text page_number
+    @page.text page_number - @offset + 1
   
 
 module.exports = Rights
