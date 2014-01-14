@@ -21,12 +21,6 @@ api = new Api project: 'war_diary'
 app = {}
 app.container = '#app'
 
-Navigation = require './controllers/navigation'
-navigation = new Navigation
-navigation.el.prependTo 'body'
-
-app.topBar = new TopBar
-app.topBar.el.prependTo 'body'
 
 app.stack = new Spine.Stack
   controllers:
@@ -53,6 +47,19 @@ app.stack = new Spine.Stack
     '/diaries': 'groups'
 
   default: 'home'
+
+try
+  Navigation = require './controllers/navigation'
+  navigation = new Navigation
+  navigation.el.prependTo 'body'
+catch e
+  BrowserDialog.show()
+
+try
+  app.topBar = new TopBar
+  app.topBar.el.prependTo 'body'
+catch e
+  BrowserDialog.show()
 
 app.stack.el.appendTo app.container
 
