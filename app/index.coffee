@@ -13,6 +13,7 @@ Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
 Group = require 'zooniverse/models/project-group'
 TopBar = require 'zooniverse/controllers/top-bar'
+BrowserDialog = require 'zooniverse/controllers/browser-dialog'
 
 api = new Api project: 'war_diary'
 
@@ -64,3 +65,5 @@ Spine.Route.setup()
 
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 ga = new GoogleAnalytics account: 'UA-1224199-51'
+
+BrowserDialog.check msie: 9
