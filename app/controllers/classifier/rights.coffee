@@ -18,12 +18,11 @@ class Rights extends Spine.Controller
     @render({})
   
   render: (group) =>
-    @offset = group.metadata.page_offset
+    @offset = group.metadata?.page_offset
     @html @template
       group: group
   
   show_page: (page_number) =>
     @page.text page_number - @offset + 1
-  
 
 module.exports = Rights
