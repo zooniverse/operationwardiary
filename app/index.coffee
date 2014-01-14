@@ -9,11 +9,16 @@ Spine = require 'spine'
 require 'spine/lib/manager'
 require 'spine/lib/route'
 
-Api = require 'zooniverse/lib/api'
-User = require 'zooniverse/models/user'
-Group = require 'zooniverse/models/project-group'
-TopBar = require 'zooniverse/controllers/top-bar'
 BrowserDialog = require 'zooniverse/controllers/browser-dialog'
+
+try
+  Api = require 'zooniverse/lib/api'
+  User = require 'zooniverse/models/user'
+  Group = require 'zooniverse/models/project-group'
+  TopBar = require 'zooniverse/controllers/top-bar'
+catch e
+  BrowserDialog.show()
+  
 
 api = new Api project: 'war_diary'
 
