@@ -9,11 +9,11 @@
 <% if @groups?: %>
   <ul class="diaries">
     <% for group in @groups: %>
-    <% percent = parseInt group.stats.complete / group.stats.total %>
+    <% percent = 100 * group.stats.complete / group.stats.total %>
     <% name = group.name.replace /:/g, '<br>' %>
     <li>
       <div>
-        <p class="complete"><b><%= percent %>% </b><br>complete</p>
+        <p class="complete"><b><%= parseInt percent %>% </b><br>complete</p>
         <p class="name"><a href="#/classify/<%= group.id %>"><%- name %></a></p>
         <p class="dates"><%= group.startdate %> &ndash; <%= group.enddate %></p>
         <p class="stats"><b><%= group.stats.complete %>/<%= group.stats.total %></b><br><%- translate 'span', 'groups.complete' %></p>
