@@ -137,7 +137,9 @@ class Classifier extends Spine.Controller
       @toolbars.selectPageType page_type
       @toolbars.toggleCategories()
       @surface.enable()
-      $('button.finish').attr disabled: false
+      $('button.finish')
+        .removeAttr( 'disabled' )
+        .prop disabled: false
       
       for key, value of metadata
         @toolbars.metadata.find("[name=#{key}]").val value
@@ -172,7 +174,9 @@ class Classifier extends Spine.Controller
   onPageChange: (e, type)=>
     @surface.enable()
     store.set 'document', type
-    $('button.finish').attr disabled: false
+    $('button.finish')
+      .removeAttr( 'disabled' )
+      .prop disabled: false
   
   onTagChange: (e,type)=>
     @surface.markingMode = true
@@ -329,7 +333,9 @@ class Classifier extends Spine.Controller
     @nextSubject() unless @classification.subject.metadata.tutorial?
   
   nextSubject: =>
-    $('button.finish').attr disabled: true
+    $('button.finish')
+      .attr( 'disabled', 'disabled' )
+      .prop disabled: true
     
     @classification.send()
     
@@ -395,7 +401,9 @@ class Classifier extends Spine.Controller
     
     Spine.trigger 'tools:change', @surface.tools
     
-    $('button.finish').attr disabled: true
+    $('button.finish')
+      .attr( 'disabled', 'disabled' )
+      .prop disabled: true
     
   run_tutorial: =>
     return if @tutorial.started?
