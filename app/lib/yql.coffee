@@ -3,7 +3,7 @@ OAuth = require './oauth.js'
 class YQL
   @consumer_key: "dj0yJmk9aGRGNkljemE4YmdmJmQ9WVdrOVlteHhlV2R3TjJFbWNHbzlNemMwTlRrMk16WXkmcz1jb25zdW1lcnNlY3JldCZ4PWE0"
   @consumer_secret: "5c18b03860c7c28522cc11f1aedc7bc8e220fc14"
-  @cache_life = 3600
+  @cache_life = 7200
   
   constructor: (query, @callback = 'process_request')->
     @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=#{ @callback }&_maxage=#{YQL.cache_life}"

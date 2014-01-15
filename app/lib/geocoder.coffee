@@ -112,7 +112,7 @@ class Geocoder
             
           place
           
-    console.log places
+    console?.log places
     places
   
   save_place: (placename, place) =>
