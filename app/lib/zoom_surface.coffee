@@ -8,6 +8,7 @@ class ZoomableSurface extends MarkingSurface
   
   constructor: (params = {}) ->
     super
+    
     @panX = @width / (2 * @zoomBy)
     @panY = @height / (2 * @zoomBy)
     
@@ -65,6 +66,8 @@ class ZoomableSurface extends MarkingSurface
     new_image = $('#loader')
     new_image.attr src: src
     
+    @zoomBy = @container.width() / @image.attr 'width'
+    
     new_image.on 'load', =>
       
       w = new_image.width()
@@ -81,7 +84,7 @@ class ZoomableSurface extends MarkingSurface
       new_image.attr src: ''
       new_image.addClass 'offscreen'
       new_image.removeAttr 'style'
-      @zoomBy = 1
+      console.log @zoomBy
       @pan()
       promise.resolve()
     
