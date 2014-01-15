@@ -35,6 +35,10 @@ class Classifier extends Spine.Controller
     'mousedown .zoom-out': 'onZoomOut'
     'keydown .zoom-in': 'onKeyZoomIn'
     'keydown .zoom-out': 'onKeyZoomOut'
+    'mouseup .zoom-in': 'onStopZoom'
+    'mouseup .zoom-out': 'onStopZoom'
+    'keyup .zoom-in': 'onStopZoom'
+    'keyup .zoom-out': 'onStopZoom'
 
   elements:
     '.subject-container': 'subjectContainer'
@@ -336,11 +340,11 @@ class Classifier extends Spine.Controller
 
   onZoomIn: ({currentTarget})=>
     
-    timeout = @onZoom currentTarget, .1
+    @onZoom currentTarget, .1
     
   onZoomOut: ({currentTarget})=>
     
-    timeout = @onZoom currentTarget, -.1
+    @onZoom currentTarget, -.1
     
   onKeyZoomIn: (e) =>
     return unless e.which == 13
@@ -349,19 +353,21 @@ class Classifier extends Spine.Controller
   onKeyZoomOut: (e) =>
     return unless e.which == 13
     @onZoom e.currentTarget, -.1
+  
+  onStopZoom: ({currentTarget}) =>
+    @onZoom currentTarget, 0
     
   onZoom: (currentTarget, delta)=>
     @surface.selection?.deselect()
-    timeout = null
+    clearTimeout @zoom_timeout if @zoom_timeout?
 
     zoom = =>
+      return if delta == 0
       @surface.zoom @surface.zoomBy + delta
-      clearTimeout timeout if timeout
-      timeout = setTimeout zoom, 200
+      clearTimeout @zoom_timeout if @zoom_timeout?
+      @zoom_timeout = setTimeout zoom, 200
       
     zoom()
-    
-    $( currentTarget ).one( 'mouseup keyup', -> clearTimeout timeout )
     
   onGoBack: ->
     
