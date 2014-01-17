@@ -32,9 +32,6 @@ class TextControls extends ToolControls
     @bind_events()
     
     @setNote()
-    
-    @el.draggable
-      cancel: "input,textarea,button,select,option,label,.map"
 
     setTimeout (=> 
       @onTextChange
@@ -132,9 +129,12 @@ class TextControls extends ToolControls
   open: =>
     @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
+    @el.draggable
+      cancel: "input,textarea,button,select,option,label,.map"
   
   close: =>
     @el.addClass 'closed'
+    @el.draggable 'destroy'
 
 class TextTool extends Tool
   
