@@ -112,6 +112,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         @choose_place places
       )
       .progress( (place)=>
+        console?.log place
         @update_place place
       )
       .done (place)=>
@@ -119,6 +120,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       
         
     note = @update_notes()
+    console?.log note
     note
   
   update_notes: =>
@@ -200,6 +202,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     
     $suggestions = @el.find '.suggestions'
+    $placename = @el.find('input[name=place]')
     
     place =
       placename: @el.find('input[name=place]').val()
@@ -218,6 +221,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         e.stopPropagation()
         promise.notify place
         $suggestions.find('label').off 'mouseover focus'
+        $placename.trigger 'change'
       )
     label.prepend input
     label.on 'mouseover focus', place, (e)=>
@@ -237,6 +241,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           e.stopPropagation()
           promise.notify place
           $suggestions.find('label').off 'mouseover focus'
+          $placename.trigger 'change'
+          
         )
       label.prepend input
       label.on 'mouseover focus', place, (e)=>
