@@ -206,6 +206,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     $suggestions = @el.find '.suggestions'
     $placename = @el.find('input[name=place]')
+    $id = @el.find('input[name=id]')
+    
+    console?.log $id.val()
     
     place =
       placename: @el.find('input[name=place]').val()
@@ -248,6 +251,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           
         )
       label.prepend input
+      input.attr('checked', 'checked').prop 'checked', true if place.id == $id.val()
       label.on 'mouseover focus', place, (e)=>
         place = e.data
         @show_place place.lat, place.long
