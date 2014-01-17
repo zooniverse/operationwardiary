@@ -33,7 +33,8 @@ class TextControls extends ToolControls
     
     @setNote()
     
-    @el.draggable()
+    @el.draggable
+      cancel: "input,textarea,button,select,option,label,.map"
 
     setTimeout (=> 
       @onTextChange
