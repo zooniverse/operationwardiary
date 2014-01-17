@@ -113,9 +113,10 @@ class Geocoder
           place
           
     console?.log places
+    @save_place placename, places
     places
   
-  save_place: (placename, place) =>
-    store.set placename, place if @localCache && place.placename == placename
+  save_place: (placename, places) =>
+    store.set placename, places if @localCache
     
 module.exports = Geocoder
