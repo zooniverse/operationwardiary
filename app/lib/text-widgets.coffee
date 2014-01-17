@@ -162,7 +162,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .val( id )
     
     placename = @el.find('input[name=place]').val()
-    @gc.save_place( placename, place )
   
     @show_place lat, long
     
@@ -175,21 +174,25 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   render: (el)->
     super
     return unless google? && google.maps?
-    @gmap = $('.map', @el)
-      .gmap
-        zoom: 9
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-        mapTypeControl: false
-        zoomControl: true,
-        zoomControlOptions:
-          style: google.maps.ZoomControlStyle.SMALL
+    try
+      @gmap = $('.map', @el)
+        .gmap
+          zoom: 9
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+          mapTypeControl: false
+          zoomControl: true,
+          zoomControlOptions:
+            style: google.maps.ZoomControlStyle.SMALL
     
-    lat = el.find( 'input[name=lat]' ).val()
-    long = el.find( 'input[name=long]' ).val()
+      lat = el.find( 'input[name=lat]' ).val()
+      long = el.find( 'input[name=long]' ).val()
     
-    @show_place( lat, long )
+      @show_place( lat, long )
+    catch e
+      console?.log 'Google maps not available'
 
   show_place: (lat, long) =>
+    return unless google? && google.maps?
     latlng = new google.maps.LatLng lat,long
     @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
     @marker[0].setPosition latlng
