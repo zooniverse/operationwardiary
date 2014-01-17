@@ -492,6 +492,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
           date.setMonth month - 1
           date.setYear year
           @calendar.datepicker 'setDate', date
+          @input.trigger 'change'
   
   
     
