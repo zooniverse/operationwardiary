@@ -117,6 +117,7 @@ class Geocoder
     places
   
   save_place: (placename, places) =>
+    return unless places[0].id?
     store.set placename, places if @localCache
     
 module.exports = Geocoder
