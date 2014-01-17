@@ -486,6 +486,12 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
         altFormat: 'd M yy'
         onSelect: =>
           @input.trigger 'change'
+        onChangeMonthYear: (year, month, inst) =>
+          date = @calendar.datepicker 'getDate'
+          return unless date?
+          date.setMonth month - 1
+          date.setYear year
+          @calendar.datepicker 'setDate', date
   
   
     
