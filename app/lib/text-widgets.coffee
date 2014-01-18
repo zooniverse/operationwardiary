@@ -193,12 +193,15 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
 
   show_place: (lat, long) =>
     return unless google? && google.maps?
-    latlng = new google.maps.LatLng lat,long
-    @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
-    @marker[0].setPosition latlng
-    map = @gmap.gmap 'get', 'map'
-    google.maps.event.trigger map, 'resize'
-    map.setCenter latlng
+    try
+      latlng = new google.maps.LatLng lat,long
+      @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
+      @marker[0].setPosition latlng
+      map = @gmap.gmap 'get', 'map'
+      google.maps.event.trigger map, 'resize'
+      map.setCenter latlng
+    catch e
+      console?.log e.message
   
   choose_place: (places) =>
     promise = new $.Deferred
