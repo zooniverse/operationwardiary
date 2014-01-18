@@ -240,6 +240,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       @show_place place.lat, place.long
     $suggestions.append label
     
+    selected = false
+    
     for place in places
       label = $("<label><span>#{place.name}</span></label>")
       input = 
@@ -264,8 +266,10 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       if place.id == $id.val()
         input.attr('checked', 'checked').prop 'checked', true 
         @show_place place.lat, place.long
+        selected = true
       
     $suggestions.addClass 'open'
+    $suggestions.find('label').off 'mouseover focus' if selected
     
     promise
 
