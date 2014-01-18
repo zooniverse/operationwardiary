@@ -51,12 +51,6 @@ class TextControls extends ToolControls
         @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
       ), 500
-    
-    @el.on 'mousedown', 'select', (e)=>
-      e.stopPropagation()
-      
-    @el.on 'mousewheel wheel', (e)=>
-      e.stopPropagation()
       
     @el.on 'click', 'button[name="toggle"]', =>
       @save()
@@ -131,10 +125,18 @@ class TextControls extends ToolControls
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
+    
+    @el.on 'mousedown', 'select', (e)=>
+      e.stopPropagation()
+      
+    @el.on 'mousewheel wheel', (e)=>
+      e.stopPropagation()
   
   close: =>
     try
       @el.draggable 'destroy'
+      @el.off 'mousewheel wheel'
+      @el.off 'mousedown', 'select'
     catch e
       console?.log e
       
