@@ -208,6 +208,8 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     $placename = @el.find('input[name=place]')
     $id = @el.find('input[name=id]')
     
+    group_id = $suggestions.uniqueId().attr 'id'
+    
     console?.log $id.val()
     
     place =
@@ -220,7 +222,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     input = 
       $("<input/>")
       .attr( "type", 'radio' )
-      .attr( 'name', 'placeOption')
+      .attr( 'name', group_id)
       .on( 'change', place, (e)=>
         place = e.data
         e.preventDefault()
@@ -240,7 +242,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
-        .attr( 'name', 'placeOption')
+        .attr( 'name', group_id)
         .on( 'change', place, (e)->
           place = e.data
           e.preventDefault()
