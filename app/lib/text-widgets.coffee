@@ -230,10 +230,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         $placename.trigger 'change'
       )
     label.prepend input
-    if $id.val() == ''
-      label.on 'mouseover focus', place, (e)=>
-        place = e.data
-        @show_place place.lat, place.long
+    label.on 'mouseover focus', place, (e)=>
+      place = e.data
+      @show_place place.lat, place.long
     $suggestions.append label
     
     for place in places
@@ -252,10 +251,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
           
         )
       label.prepend input
-      if $id.val() == ''
-        label.on 'mouseover focus', place, (e)=>
-          place = e.data
-          @show_place place.lat, place.long
+      label.on 'mouseover focus', place, (e)=>
+        place = e.data
+        @show_place place.lat, place.long
         
       $suggestions.append label
       if place.id == $id.val()
