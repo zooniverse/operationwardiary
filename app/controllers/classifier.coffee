@@ -331,6 +331,8 @@ class Classifier extends Spine.Controller
     @onDoTask()
     
     @nextSubject() unless @classification.subject.metadata.tutorial?
+    
+    Route.navigate '/diaries' if @classification.subject.metadata.tutorial?
   
   nextSubject: =>
     $('button.finish')
