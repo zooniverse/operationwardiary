@@ -133,6 +133,11 @@ class TextControls extends ToolControls
       cancel: "input,textarea,button,select,option,label,.map"
   
   close: =>
+    try
+      @el.draggable 'destroy'
+    catch e
+      console?.log e
+      
     @el.addClass 'closed'
 
 class TextTool extends Tool
