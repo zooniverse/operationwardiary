@@ -134,7 +134,6 @@ class TextControls extends ToolControls
   
   close: =>
     @el.addClass 'closed'
-    @el.draggable 'destroy'
 
 class TextTool extends Tool
   
