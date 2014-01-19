@@ -3,6 +3,7 @@
   &.active
     height: 640px
     padding-bottom: 40px
+    overflow: visible
   
 .zoom-controls
   position:absolute
@@ -579,7 +580,7 @@
     font-weight: bold
   
   &.open
-    max-height: 550px
+    max-height: 450px
     opacity: 1
   
   h2
@@ -611,8 +612,12 @@
     vertical-align: middle
     text-transform: uppercase
     
-  div:nth-of-type(2n+1)
-    background: $darkgrey
+  > div
+    max-height: 240px
+    overflow: auto
+    
+    div:nth-of-type(2n+1)
+      background: $darkgrey
     
   p
     margin: 0 10px

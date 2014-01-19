@@ -17,11 +17,11 @@ class Geocoder
     
     cache = store.get placename if @localCache
     
-    if cache? && cache.placename? && cache.placename == placename
-      # older cache entries were arrays, not objects
-      if cache.length?
+    if cache?
+      # cqche entry should be an array of places
+      unless cache.length?
         return @call_webservice placename
-      promise.resolve [cache]
+      promise.resolve cache
     else
       promise = @call_webservice placename
     
@@ -32,7 +32,7 @@ class Geocoder
     
     queries =
       geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 5"
-      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&maxRows=5&username=zooniverse'"
+      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse'"
     
     query = queries[@service]
     
@@ -113,9 +113,11 @@ class Geocoder
           place
           
     console?.log places
+    @save_place placename, places
     places
   
-  save_place: (placename, place) =>
-    store.set placename, place if @localCache && place.placename == placename
+  save_place: (placename, places) =>
+    return unless places[0].id?
+    store.set placename, places if @localCache
     
 module.exports = Geocoder

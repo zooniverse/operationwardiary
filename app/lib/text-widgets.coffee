@@ -112,6 +112,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         @choose_place places
       )
       .progress( (place)=>
+        console?.log place
         @update_place place
       )
       .done (place)=>
@@ -119,6 +120,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       
         
     note = @update_notes()
+    console?.log note
     note
   
   update_notes: =>
@@ -160,7 +162,6 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       .val( id )
     
     placename = @el.find('input[name=place]').val()
-    @gc.save_place( placename, place )
   
     @show_place lat, long
     
@@ -173,33 +174,46 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   render: (el)->
     super
     return unless google? && google.maps?
-    @gmap = $('.map', @el)
-      .gmap
-        zoom: 9
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-        mapTypeControl: false
-        zoomControl: true,
-        zoomControlOptions:
-          style: google.maps.ZoomControlStyle.SMALL
+    try
+      @gmap = $('.map', @el)
+        .gmap
+          zoom: 9
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+          mapTypeControl: false
+          zoomControl: true,
+          zoomControlOptions:
+            style: google.maps.ZoomControlStyle.SMALL
     
-    lat = el.find( 'input[name=lat]' ).val()
-    long = el.find( 'input[name=long]' ).val()
+      lat = el.find( 'input[name=lat]' ).val()
+      long = el.find( 'input[name=long]' ).val()
     
-    @show_place( lat, long )
+      @show_place( lat, long )
+    catch e
+      console?.log 'Google maps not available'
 
   show_place: (lat, long) =>
-    latlng = new google.maps.LatLng lat,long
-    @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
-    @marker[0].setPosition latlng
-    map = @gmap.gmap 'get', 'map'
-    google.maps.event.trigger map, 'resize'
-    map.setCenter latlng
+    return unless google? && google.maps?
+    try
+      latlng = new google.maps.LatLng lat,long
+      @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
+      @marker[0].setPosition latlng
+      map = @gmap.gmap 'get', 'map'
+      google.maps.event.trigger map, 'resize'
+      map.setCenter latlng
+    catch e
+      console?.log e.message
   
   choose_place: (places) =>
     promise = new $.Deferred
     
     
     $suggestions = @el.find '.suggestions'
+    $placename = @el.find('input[name=place]')
+    $id = @el.find('input[name=id]')
+    
+    group_id = $suggestions.uniqueId().attr 'id'
+    
+    console?.log $id.val()
     
     place =
       placename: @el.find('input[name=place]').val()
@@ -211,13 +225,14 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     input = 
       $("<input/>")
       .attr( "type", 'radio' )
-      .attr( 'name', 'placeOption')
+      .attr( 'name', group_id)
       .on( 'change', place, (e)=>
         place = e.data
         e.preventDefault()
         e.stopPropagation()
         promise.notify place
         $suggestions.find('label').off 'mouseover focus'
+        $placename.trigger 'change'
       )
     label.prepend input
     label.on 'mouseover focus', place, (e)=>
@@ -225,18 +240,22 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       @show_place place.lat, place.long
     $suggestions.append label
     
+    selected = false
+    
     for place in places
       label = $("<label><span>#{place.name}</span></label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
-        .attr( 'name', 'placeOption')
+        .attr( 'name', group_id)
         .on( 'change', place, (e)->
           place = e.data
           e.preventDefault()
           e.stopPropagation()
           promise.notify place
           $suggestions.find('label').off 'mouseover focus'
+          $placename.trigger 'change'
+          
         )
       label.prepend input
       label.on 'mouseover focus', place, (e)=>
@@ -244,8 +263,13 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         @show_place place.lat, place.long
         
       $suggestions.append label
+      if place.id == $id.val()
+        input.attr('checked', 'checked').prop 'checked', true 
+        @show_place place.lat, place.long
+        selected = true
       
     $suggestions.addClass 'open'
+    $suggestions.find('label').off 'mouseover focus' if selected
     
     promise
 
@@ -468,6 +492,13 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
         altField: @input
         altFormat: 'd M yy'
         onSelect: =>
+          @input.trigger 'change'
+        onChangeMonthYear: (year, month, inst) =>
+          date = @calendar.datepicker 'getDate'
+          return unless date?
+          date.setMonth month - 1
+          date.setYear year
+          @calendar.datepicker 'setDate', date
           @input.trigger 'change'
   
   

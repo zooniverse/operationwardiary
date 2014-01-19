@@ -32,8 +32,6 @@ class TextControls extends ToolControls
     @bind_events()
     
     @setNote()
-    
-    @el.draggable()
 
     setTimeout (=> 
       @onTextChange
@@ -53,12 +51,6 @@ class TextControls extends ToolControls
         @tool.surface.trigger 'delete', @tool
         @el.find('.deleted').hide()
       ), 500
-    
-    @el.on 'mousedown', 'select', (e)=>
-      e.stopPropagation()
-      
-    @el.on 'mousewheel wheel', (e)=>
-      e.stopPropagation()
       
     @el.on 'click', 'button[name="toggle"]', =>
       @save()
@@ -131,8 +123,23 @@ class TextControls extends ToolControls
   open: =>
     @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
+    @el.draggable
+      cancel: "input,textarea,button,select,option,label,.map"
+    
+    @el.on 'mousedown', 'select', (e)=>
+      e.stopPropagation()
+      
+    @el.on 'mousewheel wheel', (e)=>
+      e.stopPropagation()
   
   close: =>
+    try
+      @el.draggable 'destroy'
+      @el.off 'mousewheel wheel'
+      @el.off 'mousedown', 'select'
+    catch e
+      console?.log e
+      
     @el.addClass 'closed'
 
 class TextTool extends Tool

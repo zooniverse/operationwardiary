@@ -19,21 +19,21 @@ class ZoomableSurface extends MarkingSurface
     
     @image.attr src: ""
     
-    @container.on 'mousewheel', (e)=>
-      
-      mouse_delta = e.originalEvent.wheelDelta
-      
-      @onScroll mouse_delta
-    
-    @container.on 'wheel', (e)=>
-      
-      mouse_delta = e.originalEvent.deltaY
-      
-      @onScroll mouse_delta
+    # @container.on 'mousewheel', (e)=>
+    #   
+    #   mouse_delta = e.originalEvent.wheelDelta
+    #   
+    #   @onScroll mouse_delta
+    # 
+    # @container.on 'wheel', (e)=>
+    #   
+    #   mouse_delta = e.originalEvent.deltaY
+    #   
+    #   @onScroll mouse_delta
     
   zoom: (@zoomBy = 1) ->
     # return if @disabled
-    @zoomBy = Math.max @zoomBy, .5
+    @zoomBy = Math.max @zoomBy, .9
     @pan()
     
   pan: (@panX = @panX, @panY = @panY) ->

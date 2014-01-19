@@ -185,7 +185,7 @@ class Classifier extends Spine.Controller
   onToolChange: (e, tool)=>
     @update_history()
     mark = tool.mark
-    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date', 'person']
+    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date', 'person', 'casualties']
 
     page_type = $( '.documents :checked' ).val()
     if page_type == 'diary'
@@ -201,7 +201,7 @@ class Classifier extends Spine.Controller
     type = $('.categories :checked').val()
   
     if @cacheNotes
-      note = store.get type, undefined if type? && type not in ['diaryDate', 'date', 'person']
+      note = store.get type, undefined if type? && type not in ['diaryDate', 'date', 'person', 'casualties']
       if type?
         @surface.markDefaults.note = note ? undefined
         @surface.markDefaults.type = type
@@ -331,6 +331,8 @@ class Classifier extends Spine.Controller
     @onDoTask()
     
     @nextSubject() unless @classification.subject.metadata.tutorial?
+    
+    Route.navigate '/diaries' if @classification.subject.metadata.tutorial?
   
   nextSubject: =>
     $('button.finish')
