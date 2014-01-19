@@ -28,10 +28,17 @@ class TextControls extends ToolControls
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'
-
-    @bind_events()
     
     @setNote()
+    
+    @bind_events()
+    
+    @tool.on 'select', @open
+    
+    @tool.on 'deselect', @close
+    
+    @el.on 'focus', =>
+      @tool.select() unless @tool.surface.selection == @tool
 
     setTimeout (=> 
       @onTextChange
@@ -63,13 +70,12 @@ class TextControls extends ToolControls
         @widget.updateNote e.currentTarget
         @save() unless @widget.type in ['place', 'person', 'gridref', 'mapref']
         return false
-    
-    @tool.on 'select', @open
-    
-    @tool.on 'deselect', @close
-    
-    @el.on 'focus', =>
-      @tool.select() unless @tool.surface.selection == @tool
+  
+  unbind: =>
+    @el.off 'click', 'button[name=delete]'
+    @el.off 'click', 'button[name=toggle]'
+    @el.off 'change', ':input'
+    @el.off 'keydown', '.annotation :input'
     
   onClickToggle: =>
     @el.toggleClass 'closed'
@@ -126,17 +132,16 @@ class TextControls extends ToolControls
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
     
-    @el.on 'mousedown', 'select', (e)=>
+    @el.on 'mousedown mouseover mousemove', 'select', (e)=>
       e.stopPropagation()
-      
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
   
   close: =>
     try
-      @el.draggable 'destroy'
+      @el.off 'mousedown mouseover mousemove', 'select'
       @el.off 'mousewheel wheel'
-      @el.off 'mousedown', 'select'
+      @el.draggable 'destroy'
     catch e
       console?.log e
       

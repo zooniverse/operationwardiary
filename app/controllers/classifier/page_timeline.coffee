@@ -86,7 +86,7 @@ class PageTimeline extends Spine.Controller
     entries
     
   log: =>
-    console.log @entries
+    console?.log @entries
       
   createItem: ( tool ) =>
     

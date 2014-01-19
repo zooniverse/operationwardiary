@@ -167,7 +167,7 @@ class Classifier extends Spine.Controller
     Api.current.get("/projects/#{Api.current.project}/groups/#{Subject.group}").done @onGroupReady
     
   onGroupReady: (group) =>
-    console.log group
+    console?.log group
     @group_details.render group
     @rights.render group
     
