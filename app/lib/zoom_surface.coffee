@@ -84,7 +84,6 @@ class ZoomableSurface extends MarkingSurface
       new_image.attr src: ''
       new_image.addClass 'offscreen'
       new_image.removeAttr 'style'
-      console.log @zoomBy
       @pan()
       promise.resolve()
     
