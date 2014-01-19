@@ -28,7 +28,6 @@ class TextControls extends ToolControls
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'
-    
     @setNote()
     
     @tool.on 'select', @open
@@ -37,7 +36,7 @@ class TextControls extends ToolControls
     
     @el.on 'focus', =>
       @tool.select() unless @tool.surface.selection == @tool
-
+      
     setTimeout (=> 
       @onTextChange
         currentTarget: @textInput
