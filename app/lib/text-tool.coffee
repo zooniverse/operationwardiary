@@ -31,8 +31,6 @@ class TextControls extends ToolControls
     
     @setNote()
     
-    @bind_events()
-    
     @tool.on 'select', @open
     
     @tool.on 'deselect', @close
@@ -45,7 +43,8 @@ class TextControls extends ToolControls
         currentTarget: @textInput
     ), 250
 
-  bind_events: ->
+  bind_events: =>
+    console?.log 'binding', @el[0]
     @el.on 'click', 'button[name="delete"]', (e) =>
       return if @tool.surface.disabled
       e.preventDefault()
@@ -72,8 +71,9 @@ class TextControls extends ToolControls
         return false
   
   unbind: =>
-    @el.off 'click', 'button[name=delete]'
-    @el.off 'click', 'button[name=toggle]'
+    console?.log 'unbinding', @el[0]
+    @el.off 'click', 'button[name="delete"]'
+    @el.off 'click', 'button[name="toggle"]'
     @el.off 'change', ':input'
     @el.off 'keydown', '.annotation :input'
     
@@ -127,8 +127,10 @@ class TextControls extends ToolControls
     @widget.setNote note
     
   open: =>
+    @unbind()
     @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
+    @bind_events()
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
     
@@ -145,6 +147,7 @@ class TextControls extends ToolControls
     catch e
       console?.log e
       
+    @unbind()
     @el.addClass 'closed'
 
 class TextTool extends Tool
