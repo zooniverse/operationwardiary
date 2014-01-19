@@ -131,9 +131,16 @@ class TextControls extends ToolControls
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
+    
+    @el.on 'mousedown mouseover mousemove', 'select', (e)=>
+      e.stopPropagation()
+    @el.on 'mousewheel wheel', (e)=>
+      e.stopPropagation()
   
   close: =>
     try
+      @el.off 'mousedown mouseover mousemove', 'select'
+      @el.off 'mousewheel wheel'
       @el.draggable 'destroy'
     catch e
       console?.log e
