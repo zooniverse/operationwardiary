@@ -215,12 +215,13 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     console?.log $id.val()
     
+    selected = false
     place =
       placename: @el.find('input[name=place]').val()
       lat: null
       long: null
       name: ''
-      id: null
+      id: ''
     label = $("<label>#{translate 'span', 'classifier.place.none'}</label>")
     input = 
       $("<input/>")
@@ -239,8 +240,10 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       place = e.data
       @show_place place.lat, place.long
     $suggestions.append label
-    
-    selected = false
+    if place.id == $id.val()
+      input.attr('checked', 'checked').prop 'checked', true 
+      @show_place place.lat, place.long
+      selected = true
     
     for place in places
       label = $("<label><span>#{place.name}</span></label>")
