@@ -21,6 +21,7 @@ class TextControls extends ToolControls
   
   constructor: (params = {})->
     super
+    @active = false
     category = $( '.categories :checked' ).val()
     
     @widget = WidgetFactory.makeWidget category
@@ -33,15 +34,17 @@ class TextControls extends ToolControls
     @el.off 'mousedown touchstart'
     
     @tool.on 'select', =>
+      @active = true
       @bind_events()
       @open()
     
     @tool.on 'deselect', =>
       @unbind()
       @close()
+      @active = false
     
     @el.on 'focus', =>
-      @tool.select() unless @tool.surface.selection == @tool
+      @tool.select() unless @active
       
     setTimeout (=> 
       @onTextChange
@@ -134,7 +137,7 @@ class TextControls extends ToolControls
     
   open: =>
     return unless @el.hasClass 'closed'
-    @el.focus() unless document.activeElement == @.el[0]
+    # @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
