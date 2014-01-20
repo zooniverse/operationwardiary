@@ -147,7 +147,6 @@ class Classifier extends Spine.Controller
       for mark in marks
         mark.type = 'time' if mark.type == 'diaryTime'
         @toolbars.select mark.type
-        console?.log 'adding', mark
         @surface.addMark mark
       
       if page_type == 'diary'
