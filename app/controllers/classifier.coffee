@@ -7,7 +7,6 @@ store = $.jStorage
 
 Classification = require 'zooniverse/models/classification'
 Group = require 'zooniverse/models/project-group'
-Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
 Api = require 'zooniverse/lib/api'
@@ -15,6 +14,7 @@ Dialog = require 'zooniverse/controllers/dialog'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
+Subject = require '../models/subject'
 
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
@@ -339,7 +339,7 @@ class Classifier extends Spine.Controller
       .attr( 'disabled', 'disabled' )
       .prop disabled: true
     
-    @classification.send()
+    # @classification.send()
     
     Subject.current.destroy()
     subject = Subject.first()
