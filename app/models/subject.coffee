@@ -10,11 +10,21 @@ class CachedSubject extends Subject
     super
     CachedSubject.cache = {}
     
+  @destroyAll: =>
+    super
+    
+    if @group
+      @cache[ @group ] = @instances
+      store.set "subjects#{User.current.zooniverse_id}", @cache
+    
   @first: =>
+    instance = super
     console?.log 'subject.first', @instances
     @cache[ @group ] = @instances
     store.set "subjects#{User.current.zooniverse_id}", @cache
-    super
+    
+    instance
+    
     
   
   @next: (done, fail) =>
