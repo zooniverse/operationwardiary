@@ -30,9 +30,15 @@ class TextControls extends ToolControls
     @textInput = @el.find '.annotation :input'
     @setNote()
     
-    @tool.on 'select', @open
+    @el.off 'mousedown touchstart'
     
-    @tool.on 'deselect', @close
+    @tool.on 'select', =>
+      @bind_events()
+      @open()
+    
+    @tool.on 'deselect', =>
+      @unbind()
+      @close()
     
     @el.on 'focus', =>
       @tool.select() unless @tool.surface.selection == @tool
@@ -92,6 +98,7 @@ class TextControls extends ToolControls
     @tool.label[0].attr x: box.x - 2, y: box.y - 2, width: box.width + 4, height: box.height + 4
     
   save: =>
+    console?.log 'saving', @tool
     @tool.surface.trigger 'change', @tool
     
     @el.find('.saved')
@@ -129,7 +136,6 @@ class TextControls extends ToolControls
     return unless @el.hasClass 'closed'
     @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
-    @bind_events()
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
     
@@ -147,7 +153,6 @@ class TextControls extends ToolControls
     catch e
       console?.log e
       
-    @unbind()
     @el.addClass 'closed'
 
 class TextTool extends Tool
@@ -204,6 +209,7 @@ class TextTool extends Tool
     @shapeSet.animate opacity: 1, 100, 'ease-in'
     
   select: =>
+    console?.log 'select', @
     super
     
     @shapeSet.attr opacity: 1
@@ -211,6 +217,7 @@ class TextTool extends Tool
     @label.show()
     
   deselect: =>
+    console?.log 'deselect', @
     super
     
     @shapeSet.attr opacity: 0.7
