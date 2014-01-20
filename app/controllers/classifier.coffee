@@ -153,8 +153,8 @@ class Classifier extends Spine.Controller
         Spine.trigger 'tools:change', @surface.tools
 
   onGroupChange: (group_id)=>
-    Subject.group = group_id
     Subject.destroyAll()
+    Subject.group = group_id
     Subject.next()
     @getGroupDetails()
     
