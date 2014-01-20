@@ -10,16 +10,12 @@ class CachedSubject extends Subject
     super
     CachedSubject.cache = {}
     
-  @destroyAll: =>
-    console?.log @group
-    @cache[ @group ] = [] if @group
-    super
-    
   @first: =>
     console?.log 'subject.first', @instances
     @cache[ @group ] = @instances
     store.set "subjects#{User.current.zooniverse_id}", @cache
     super
+    
   
   @next: (done, fail) =>
     console?.log @group
@@ -32,12 +28,12 @@ class CachedSubject extends Subject
     
     console?.log @group
     
-    subjects = cache[ @group ] ? []
+    cached_subjects = cache[ @group ] ? []
     
-    if subjects.length > 0
-      subject = new CachedSubject subject for subject in subjects
-      console?.log 'from cache', subjects
-      promise.resolve subjects
+    if cached_subjects.length > 0
+      cached_subjects = (new CachedSubject subject for subject in cached_subjects)
+      console?.log 'from cache', cached_subjects
+      promise.resolve cached_subjects
     else
       promise = super params, done, fail
     
