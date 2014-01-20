@@ -52,7 +52,6 @@ class TextControls extends ToolControls
     ), 250
 
   bind_events: =>
-    console?.log 'binding', @el[0]
     @el.on 'click', 'button[name="delete"]', (e) =>
       return if @tool.surface.disabled
       e.preventDefault()
@@ -79,7 +78,6 @@ class TextControls extends ToolControls
         return false
   
   unbind: =>
-    console?.log 'unbinding', @el[0]
     @el.off 'click', 'button[name="delete"]'
     @el.off 'click', 'button[name="toggle"]'
     @el.off 'change', ':input'
@@ -101,7 +99,6 @@ class TextControls extends ToolControls
     @tool.label[0].attr x: box.x - 2, y: box.y - 2, width: box.width + 4, height: box.height + 4
     
   save: =>
-    console?.log 'saving', @tool
     @tool.surface.trigger 'change', @tool
     
     @el.find('.saved')
@@ -212,7 +209,6 @@ class TextTool extends Tool
     @shapeSet.animate opacity: 1, 100, 'ease-in'
     
   select: =>
-    console?.log 'select', @
     super
     
     @shapeSet.attr opacity: 1
@@ -220,7 +216,6 @@ class TextTool extends Tool
     @label.show()
     
   deselect: =>
-    console?.log 'deselect', @
     super
     
     @shapeSet.attr opacity: 0.7
