@@ -8,7 +8,7 @@ class CachedSubject extends Subject
   
   constructor: ->
     super
-    CachedSubject.cache = {}
+    CachedSubject.cache = @get_cache()
     
   
   @set_cache: =>
@@ -18,7 +18,7 @@ class CachedSubject extends Subject
     store.set "subjects#{User.current.zooniverse_id}", @cache
   
   @get_cache: =>
-    return unless User.current
+    return {} unless User.current
     @cache = store.get "subjects#{User.current.zooniverse_id}", {}
     
   @destroyAll: =>
