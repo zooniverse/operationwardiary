@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 <%- translate 'h2', "common.comments" %>
-<p>Add comments and hashtags here, or <a href="<%= @talk_url %>">discuss this page on Talk</a></p>
+<p>Add comments and hashtags here, or <a target="_blank" href="<%= @talk_url %>">discuss this page on Talk</a></p>
 <div>
   <% for comment in @comments: %>
   <div>

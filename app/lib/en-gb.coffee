@@ -633,8 +633,9 @@ If there was little to record or a major incident had taken place over a few day
 
 
   classify:
-    select: 'Select another diary'
-    thanks: 'Thank you for finishing'
+    select: 'Please select another'
+    thanks: 'Thank you for helping to classify'
+    completed: 'This diary has now been completed.'
 
   profile:
     pages: 'pages'

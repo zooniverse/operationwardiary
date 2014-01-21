@@ -9,7 +9,7 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 class TextControls extends ToolControls
   
   template: '''
-    <div tabindex="0" class="marking-tool-controls" role="dialog">
+    <div tabindex="0" class="marking-tool-controls closed" role="dialog">
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
@@ -21,6 +21,7 @@ class TextControls extends ToolControls
   
   constructor: (params = {})->
     super
+    @active = false
     category = $( '.categories :checked' ).val()
     
     @widget = WidgetFactory.makeWidget category
@@ -28,24 +29,29 @@ class TextControls extends ToolControls
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'
-    
     @setNote()
     
-    @bind_events()
+    @el.off 'mousedown touchstart'
     
-    @tool.on 'select', @open
+    @tool.on 'select', =>
+      @active = true
+      @bind_events()
+      @open()
     
-    @tool.on 'deselect', @close
+    @tool.on 'deselect', =>
+      @unbind()
+      @close()
+      @active = false
     
     @el.on 'focus', =>
-      @tool.select() unless @tool.surface.selection == @tool
-
+      @tool.select() unless @active
+      
     setTimeout (=> 
       @onTextChange
         currentTarget: @textInput
     ), 250
 
-  bind_events: ->
+  bind_events: =>
     @el.on 'click', 'button[name="delete"]', (e) =>
       return if @tool.surface.disabled
       e.preventDefault()
@@ -72,8 +78,8 @@ class TextControls extends ToolControls
         return false
   
   unbind: =>
-    @el.off 'click', 'button[name=delete]'
-    @el.off 'click', 'button[name=toggle]'
+    @el.off 'click', 'button[name="delete"]'
+    @el.off 'click', 'button[name="toggle"]'
     @el.off 'change', ':input'
     @el.off 'keydown', '.annotation :input'
     
@@ -127,7 +133,8 @@ class TextControls extends ToolControls
     @widget.setNote note
     
   open: =>
-    @el.focus() unless document.activeElement == @.el[0]
+    return unless @el.hasClass 'closed'
+    # @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
@@ -138,6 +145,7 @@ class TextControls extends ToolControls
       e.stopPropagation()
   
   close: =>
+    return if @el.hasClass 'closed'
     try
       @el.off 'mousedown mouseover mousemove', 'select'
       @el.off 'mousewheel wheel'
