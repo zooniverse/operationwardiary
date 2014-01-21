@@ -231,6 +231,9 @@ class Classifier extends Spine.Controller
     old_history = store.get 'history', {}
     key = "history#{@user.zooniverse_id}"
     @surface_history = store.get key, old_history
+    
+    Subject.get_cache()
+    
     if user.project.classification_count > 0
       @getRecentSubject()
         .done ({group_id}) =>
