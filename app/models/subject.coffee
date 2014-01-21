@@ -10,18 +10,26 @@ class CachedSubject extends Subject
     super
     CachedSubject.cache = {}
     
+  
+  @set_cache: =>
+    return unless User.current
+    @cache[ @group ] = @instances
+    console?.log 'set cache', @cache
+    store.set "subjects#{User.current.zooniverse_id}", @cache
+  
+  @get_cache: =>
+    return unless User.current
+    @cache = store.get "subjects#{User.current.zooniverse_id}", {}
+    
   @destroyAll: =>
     super
     
     if @group
-      @cache[ @group ] = @instances
-      store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
+      @set_cache()
     
   @first: =>
     instance = super
-    console?.log 'subject.first', @instances
-    @cache[ @group ] = @instances
-    store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
+    @set_cache()
     
     instance
     
@@ -34,23 +42,22 @@ class CachedSubject extends Subject
     
   @fetch: (params, done, fail) =>
     promise = new $.Deferred
-    @cache = store.get "subjects#{User.current.zooniverse_id}", {} if User.current
-    
-    console?.log @group
+    @get_cache()
     
     cached_subjects = @cache[ @group ] ? []
+    console?.log 'cache contents', cached_subjects
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
-      console?.log 'from cache', cached_subjects
+      console?.log 'from cache', @instances
       promise.resolve cached_subjects
     else
       promise = super params, done, fail
     
       promise.done (subjects) =>
-        console?.log 'from API', subjects
+        console?.log 'from API', @instances
         @cache[ @group ] = subjects
-        store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
+        @set_cache()
     
     promise
   
