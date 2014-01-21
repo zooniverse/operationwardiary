@@ -134,7 +134,7 @@ class TextControls extends ToolControls
     
   open: =>
     return unless @el.hasClass 'closed'
-    # @el.focus() unless document.activeElement == @.el[0]
+    @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
