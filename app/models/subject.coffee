@@ -8,7 +8,7 @@ class CachedSubject extends Subject
   
   constructor: ->
     super
-    CachedSubject.cache = @get_cache()
+    CachedSubject.cache = CachedSubject.get_cache()
     
   
   @set_cache: =>
