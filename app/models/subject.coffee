@@ -15,13 +15,13 @@ class CachedSubject extends Subject
     
     if @group
       @cache[ @group ] = @instances
-      store.set "subjects#{User.current.zooniverse_id}", @cache
+      store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
     
   @first: =>
     instance = super
     console?.log 'subject.first', @instances
     @cache[ @group ] = @instances
-    store.set "subjects#{User.current.zooniverse_id}", @cache
+    store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
     
     instance
     
@@ -34,11 +34,11 @@ class CachedSubject extends Subject
     
   @fetch: (params, done, fail) =>
     promise = new $.Deferred
-    cache = store.get "subjects#{User.current.zooniverse_id}", {}
+    @cache = store.get "subjects#{User.current.zooniverse_id}", {} if User.current
     
     console?.log @group
     
-    cached_subjects = cache[ @group ] ? []
+    cached_subjects = @cache[ @group ] ? []
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
@@ -49,8 +49,8 @@ class CachedSubject extends Subject
     
       promise.done (subjects) =>
         console?.log 'from API', subjects
-        cache[ @group ] = subjects
-        store.set "subjects#{User.current.zooniverse_id}", cache
+        @cache[ @group ] = subjects
+        store.set "subjects#{User.current.zooniverse_id}", @cache if User.current
     
     promise
   
