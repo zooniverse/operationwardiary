@@ -264,6 +264,7 @@ class Classifier extends Spine.Controller
     
     
   onNoMoreSubjects: =>
+    return unless @group_details.group?
     select = translate 'span', 'classify.select'
     thanks = translate 'span', 'classify.thanks'
     completed = translate 'span', 'classify.completed'
