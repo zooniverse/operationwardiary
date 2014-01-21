@@ -12,7 +12,7 @@ class CachedSubject extends Subject
     
   
   @set_cache: =>
-    return unless User.current
+    return unless @group && User.current
     @cache[ @group ] = @instances
     console?.log 'set cache', @cache
     store.set "subjects#{User.current.zooniverse_id}", @cache
