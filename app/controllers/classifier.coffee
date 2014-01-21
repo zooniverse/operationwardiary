@@ -266,8 +266,9 @@ class Classifier extends Spine.Controller
   onNoMoreSubjects: =>
     select = translate 'span', 'classify.select'
     thanks = translate 'span', 'classify.thanks'
+    completed = translate 'span', 'classify.completed'
     dialog = new Dialog 
-      content: "<p>#{thanks} #{@group_details.group.name}.</p> <p><a class='button' href='#/diaries'>#{select}</a></p>"
+      content: "<p>#{thanks} #{@group_details.group.name}. #{completed}</p> <p><a class='button' href='#/diaries'>#{select}</a></p>"
     
     dialog.el.find('a').on 'click', ->
       dialog.hide()
