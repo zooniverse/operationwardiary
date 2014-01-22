@@ -34,10 +34,6 @@ class CachedSubject extends Subject
     instance
     
     
-  
-  @next: (done, fail) =>
-    super done, fail
-    
   @fetch: (params, done, fail) =>
     promise = new $.Deferred
     @get_cache()
@@ -46,6 +42,7 @@ class CachedSubject extends Subject
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
+      @trigger 'fetch', cached_subjects
       promise.resolve cached_subjects
     else
       promise = super params, done, fail
