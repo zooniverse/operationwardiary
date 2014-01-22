@@ -54,8 +54,6 @@ class ZoomableSurface extends MarkingSurface
     @panY = top + view_height / 2
 
     @paper.setViewBox left, top, view_width, view_height
-
-    tool.render() for tool in @tools
     
   loadImage: (src) ->
     @disable()
@@ -134,7 +132,6 @@ class ZoomableSurface extends MarkingSurface
   onDrag: (e) =>
     @markingMode = false
     @selection?.deselect()
-    tool.controls.el.addClass 'closed' for tool in @tools
     
     {x, y} = @mouseOffset e
     
@@ -150,8 +147,8 @@ class ZoomableSurface extends MarkingSurface
     e.preventDefault()
     @oldX = null
     @oldY = null
+    tool.render() for tool in @tools
     @selection?.onInitialRelease e
-    @markingMode = true
     
   onScroll: (mouse_delta) =>
     
