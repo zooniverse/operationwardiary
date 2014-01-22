@@ -411,6 +411,7 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
       .parents( '.annotation' )
       .find( ':input' )
       .each ->
+        @value = 0 if @value == ''
         note[@name] = parseInt @value
     
     note
