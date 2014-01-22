@@ -15,7 +15,6 @@ class CachedSubject extends Subject
     return unless @group && User.current
     @cache[ @group ] = @instances
     @cache.active_group = @group
-    console?.log 'set cache', @cache
     store.set "subjects#{User.current.zooniverse_id}", @cache
   
   @get_cache: =>
@@ -37,8 +36,6 @@ class CachedSubject extends Subject
     
   
   @next: (done, fail) =>
-    console?.log @group
-    console?.log 'subject.next', @instances
     super done, fail
     
   @fetch: (params, done, fail) =>
@@ -46,11 +43,9 @@ class CachedSubject extends Subject
     @get_cache()
     
     cached_subjects = @cache[ @group ] ? []
-    console?.log 'cache contents', cached_subjects
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
-      console?.log 'from cache', @instances
       promise.resolve cached_subjects
     else
       promise = super params, done, fail
