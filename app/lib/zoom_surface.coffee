@@ -31,6 +31,10 @@ class ZoomableSurface extends MarkingSurface
     #   
     #   @onScroll mouse_delta
     
+  enable: =>
+    super
+    @markingMode = true
+    
   zoom: (@zoomBy = 1) ->
     # return if @disabled
     @zoomBy = Math.max @zoomBy, .9
