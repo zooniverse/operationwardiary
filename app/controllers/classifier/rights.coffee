@@ -1,6 +1,7 @@
 Spine = require 'spine'
-Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
+
+Subject = require '../../models/subject'
 
 
 class Rights extends Spine.Controller
