@@ -232,7 +232,6 @@ class Classifier extends Spine.Controller
     key = "history#{@user.zooniverse_id}"
     @surface_history = store.get key, old_history
     
-    # if user.project.classification_count > 0
     @getRecentSubject()
       .fail( =>
         @run_tutorial() unless @tutorial_done
