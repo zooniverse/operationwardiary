@@ -54,8 +54,6 @@ class ZoomableSurface extends MarkingSurface
     @panY = top + view_height / 2
 
     @paper.setViewBox left, top, view_width, view_height
-
-    tool.render() for tool in @tools
     
   loadImage: (src) ->
     @disable()
@@ -150,6 +148,7 @@ class ZoomableSurface extends MarkingSurface
     e.preventDefault()
     @oldX = null
     @oldY = null
+    tool.render() for tool in @tools
     @selection?.onInitialRelease e
     
   onScroll: (mouse_delta) =>
