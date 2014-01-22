@@ -353,7 +353,7 @@ class Classifier extends Spine.Controller
       .attr( 'disabled', 'disabled' )
       .prop disabled: true
     
-    # @classification.send()
+    @classification.send()
     
     Subject.current.destroy()
     subject = Subject.first()
