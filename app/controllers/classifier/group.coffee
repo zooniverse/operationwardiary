@@ -5,7 +5,7 @@ Favorite = require 'zooniverse/models/favorite'
 Comments = require './comments'
 PageTimeline = require './page_timeline'
 
-Subject = require '../models/subject'
+Subject = require '../../models/subject'
 
 require '../../lib/jstorage.js'
 store = $.jStorage
