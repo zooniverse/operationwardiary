@@ -1,9 +1,10 @@
 Spine = require 'spine'
-Subject = require 'zooniverse/models/subject'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
 {WidgetFactory} = require '../../lib/text-widgets'
 DateWidget = WidgetFactory.registry.date
+
+Subject = require '../../models/subject'
 
 
 class Comments extends Spine.Controller
