@@ -1,10 +1,11 @@
 Spine = require 'spine'
-Subject = require 'zooniverse/models/subject'
 Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
 {WidgetFactory} = require '../../lib/text-widgets'
 Comments = require './comments'
 PageTimeline = require './page_timeline'
+
+Subject = require '../models/subject'
 
 require '../../lib/jstorage.js'
 store = $.jStorage
