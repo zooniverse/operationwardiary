@@ -151,7 +151,6 @@ class ZoomableSurface extends MarkingSurface
     @oldX = null
     @oldY = null
     @selection?.onInitialRelease e
-    @markingMode = true
     
   onScroll: (mouse_delta) =>
     

@@ -369,6 +369,10 @@ class Classifier extends Spine.Controller
     @onZoom currentTarget, 0
     
   onZoom: (currentTarget, delta)=>
+    @surface.markingMode = false
+    $('.categories :checked')
+      .removeAttr( 'checked' )
+      .prop 'checked', false
     @surface.selection?.deselect()
     clearTimeout @zoom_timeout if @zoom_timeout?
 
