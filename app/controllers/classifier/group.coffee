@@ -70,6 +70,10 @@ class GroupDetails extends Spine.Controller
   onFavoriteFetch: (e, favourites)=>
     
     @favourites = (favourite.subjects[0] for favourite in favourites)
+    
+    is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == Subject.current.zooniverse_id)[0]?
+    @favouriteButton.removeClass 'active'
+    @favouriteButton.addClass 'active' if is_favourite
   
   addFavourite: (subject) =>
     new_favourite = new Favorite subjects: [subject]
