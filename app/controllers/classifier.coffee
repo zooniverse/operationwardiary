@@ -7,7 +7,6 @@ store = $.jStorage
 
 Classification = require 'zooniverse/models/classification'
 Group = require 'zooniverse/models/project-group'
-Subject = require 'zooniverse/models/subject'
 User = require 'zooniverse/models/user'
 Recent = require 'zooniverse/models/recent'
 Api = require 'zooniverse/lib/api'
@@ -15,6 +14,7 @@ Dialog = require 'zooniverse/controllers/dialog'
 
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
+Subject = require '../models/subject'
 
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
@@ -153,8 +153,8 @@ class Classifier extends Spine.Controller
         Spine.trigger 'tools:change', @surface.tools
 
   onGroupChange: (group_id)=>
-    Subject.group = group_id
     Subject.destroyAll()
+    Subject.group = group_id
     Subject.next()
     @getGroupDetails()
     
@@ -231,13 +231,14 @@ class Classifier extends Spine.Controller
     old_history = store.get 'history', {}
     key = "history#{@user.zooniverse_id}"
     @surface_history = store.get key, old_history
-    if user.project.classification_count > 0
-      @getRecentSubject()
-        .done ({group_id}) =>
-          @tutorial_done = true
-          @onGroupChange group_id unless @tutorial.started?
-    else
-      @run_tutorial() unless @tutorial_done
+    
+    @getRecentSubject()
+      .fail( =>
+        @run_tutorial() unless @tutorial_done
+      )
+      .done ({group_id}) =>
+        @tutorial_done = true
+        @onGroupChange group_id unless @tutorial.started?
       
   onUserLogout: =>
     @user = false
@@ -245,19 +246,29 @@ class Classifier extends Spine.Controller
     Subject.next()
     
   getRecentSubject: =>
-    Recent.fetch()
-      .pipe( (recents) =>
-        # recents = []
+    promise = new $.Deferred
+    
+    {active_group} = Subject.get_cache()
+    console?.log active_group
+    
+    if active_group?
+      promise.resolve
+        group_id: active_group
+    else
+      promise = Recent.fetch()
+        .pipe( (recents) =>
+          # recents = []
         
-        if recents.length
-          subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
-          promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
-        else
-          promise = new $.Deferred
-          promise.reject()
+          if recents.length
+            subject_id = recents[recents.length-1]?.subjects[0].zooniverse_id
+            promise = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{subject_id}"
+          else
+            promise.reject()
         
-        promise
-      )
+          promise
+        )
+      
+      promise
         
   onFavourite: =>
     
