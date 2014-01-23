@@ -9,6 +9,7 @@
     <% for document in labels.toolbars.documents: %>
       <%- translate "h2.#{document}", "guide.diaries.#{document}.title" %>
       <div>
+        <p class="permalink"><a href="#/guide/<%- document %>">link</a></p>
         <%- translate 'p', "guide.diaries.#{document}.content" %>
     
         <% if labels.toolbars[document]?: %>
@@ -17,6 +18,7 @@
                 <li>
                 <%- translate "h3.#{tag}", "noteTypes.#{tag}" %>
                 <div>
+                  <p class="permalink"><a href="#/guide/<%- document %>/<%- tag %>">link</a></p>
                 <%- translate 'p', "help.#{document}.#{tag}" %>
             
                 <% if tag == 'person': %>
