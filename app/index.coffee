@@ -47,6 +47,8 @@ app.stack = new Spine.Stack
     '/classify': 'classifier'
     '/about': 'about'
     '/guide': 'guide'
+    '/guide/:page': 'guide'
+    '/guide/:page/:tag': 'guide'
     '/profile': 'profile'
     '/diaries/:page' : 'groups'
     '/diaries': 'groups'
