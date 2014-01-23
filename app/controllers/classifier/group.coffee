@@ -57,34 +57,38 @@ class GroupDetails extends Spine.Controller
       @el.trigger 'subject:favourite'
       @favouriteButton.toggleClass 'active'
   
-  onSubjectSelect: (e, {zooniverse_id}) =>
+  onSubjectSelect: (e, subject) =>
     
-    is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == zooniverse_id)[0]? if @favourites?
-    @favouriteButton.removeClass 'active'
-    @favouriteButton.addClass 'active' if is_favourite
+    @setFavourite subject
     
     popup.el.removeClass 'open' for popup in [@comments, @timeline]
     button.removeClass 'active' for button in [@timelineButton, @talkButton]
-    @comments.fetchComments zooniverse_id
+    @comments.fetchComments subject.zooniverse_id
   
   onFavoriteFetch: (e, favourites)=>
     
-    @favourites = (favourite.subjects[0] for favourite in favourites)
-    
-    is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == Subject.current.zooniverse_id)[0]?
-    @favouriteButton.removeClass 'active'
-    @favouriteButton.addClass 'active' if is_favourite
+    favourites = (favourite.subjects[0] for favourite in favourites)
+    is_favourite = (favourite for favourite in favourites when favourite.zooniverse_id == Subject.current.zooniverse_id)[0]?
+    Subject.current.is_favourite = is_favourite
+    @setFavourite Subject.current
   
+  setFavourite: (subject) =>
+    return unless subject.is_favourite?
+    console.log subject.is_favourite
+    @favouriteButton.removeClass 'active'
+    @favouriteButton.addClass 'active' if subject.is_favourite
+    
   addFavourite: (subject) =>
     new_favourite = new Favorite subjects: [subject]
     
     new_favourite
       .send()
       .done =>
-        is_favourite = (favourite for favourite in @favourites when favourite.zooniverse_id == subject.zooniverse_id)[0]?
-
-        new_favourite.delete() if is_favourite 
+        
+        subject.is_favourite = @favouriteButton.hasClass 'active'
     
-        Favorite.fetch()
+        Subject.set_cache()
+
+        new_favourite.delete() unless subject.is_favourite
 
 module.exports = GroupDetails
