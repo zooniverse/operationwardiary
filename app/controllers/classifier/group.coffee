@@ -74,7 +74,7 @@ class GroupDetails extends Spine.Controller
   
   setFavourite: (subject) =>
     return unless subject.is_favourite?
-    console.log subject.is_favourite
+    console?.log subject.is_favourite
     @favouriteButton.removeClass 'active'
     @favouriteButton.addClass 'active' if subject.is_favourite
     
