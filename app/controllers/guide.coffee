@@ -15,6 +15,11 @@ class Guide extends Spine.Controller
       @search()
       return false
 
+  activate: (params) =>
+    super
+    
+    @open params.page, params.tag if params.page?
+    
   render: =>
     @html @template()
     
@@ -28,6 +33,37 @@ class Guide extends Spine.Controller
         icons: false
         beforeActivate: @override_accordion
   
+  open: (page, tag) =>
+    scrollTop = null
+    
+    if page?
+      scrollTop = $("h2.#{page}")
+        .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
+        .attr( 'aria-selected', 'true' )
+        .next()
+        .addClass( 'accordion-content-active' )
+        .attr( 'aria-hidden', 'false' )
+        .attr( 'aria-expanded', 'true' )
+        .show()
+        .end()
+        .offset()
+        .top
+    
+    if tag?
+      scrollTop = $("h3.#{tag}")
+        .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
+        .attr( 'aria-selected', 'true' )
+        .next()
+        .addClass( 'accordion-content-active' )
+        .attr( 'aria-hidden', 'false' )
+        .attr( 'aria-expanded', 'true' )
+        .show()
+        .end()
+        .offset()
+        .top
+    
+    $(document).scrollTop scrollTop if scrollTop?
+    
   search: =>
     term = @searchbox.val()
     

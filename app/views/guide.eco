@@ -7,7 +7,7 @@
 
   <div class="accordion">
     <% for document in labels.toolbars.documents: %>
-      <%- translate 'h2', "guide.diaries.#{document}.title" %>
+      <%- translate "h2.#{document}", "guide.diaries.#{document}.title" %>
       <div>
         <%- translate 'p', "guide.diaries.#{document}.content" %>
     
@@ -15,7 +15,7 @@
           <ul class="accordion">
               <% for tag in labels.toolbars[document]: %>
                 <li>
-                <%- translate 'h3', "noteTypes.#{tag}" %>
+                <%- translate "h3.#{tag}", "noteTypes.#{tag}" %>
                 <div>
                 <%- translate 'p', "help.#{document}.#{tag}" %>
             
