@@ -318,9 +318,10 @@ class Classifier extends Spine.Controller
         # @diaryDisplay.text subject.metadata.file_name
         @reset subject
         
-        snapshot = store.get "sub#{User.current.zooniverse_id}#{subject.id}", {}
+        if User.current
+          snapshot = store.get "sub#{User.current.zooniverse_id}#{subject.id}", {}
     
-        @render_tags snapshot
+          @render_tags snapshot
         
         @rights.show_page subject.metadata.page_number
       )
@@ -360,6 +361,8 @@ class Classifier extends Spine.Controller
       .prop disabled: true
     
     @classification.send()
+    
+    store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
     
     Subject.first().destroy()
     subject = Subject.first()
@@ -404,11 +407,11 @@ class Classifier extends Spine.Controller
   
   update_history: ->
     
-    return unless Subject.current?
+    return unless Subject.current? && User.current
     
     snapshot = new Transcription @
     
-    key = "sub#{@user.zooniverse_id}#{Subject.current.id}"
+    key = "sub#{User.current.zooniverse_id}#{Subject.current.id}"
     store.set key, snapshot
     
   reset: (subject)=>
