@@ -381,7 +381,6 @@ class Classifier extends Spine.Controller
     
   onZoom: (currentTarget, delta)=>
     @surface.markingMode = false
-    @toolbars.deselect()
     @surface.selection?.deselect()
     clearTimeout @zoom_timeout if @zoom_timeout?
 

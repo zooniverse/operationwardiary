@@ -148,6 +148,7 @@ class ZoomableSurface extends MarkingSurface
     @oldY = y
   
   onRelease: (e) ->
+    @markingMode = true
     e.preventDefault()
     @oldX = null
     @oldY = null
