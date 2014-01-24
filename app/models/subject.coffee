@@ -13,9 +13,9 @@ class CachedSubject extends Subject
     CachedSubject.cache = CachedSubject.get_cache()
     
   
-  @set_cache: =>
+  @set_cache: (subjects = @instances)=>
     return unless @group && User.current
-    @cache[ @group ] = @instances
+    @cache[ @group ] = subjects
     @cache.active_group = @group
     store.set "subjects#{User.current.zooniverse_id}", @cache
     # console?.log 'setting', @cache[@group][0]
@@ -55,9 +55,9 @@ class CachedSubject extends Subject
       promise = super params, done, fail
     
       promise.done (subjects) =>
-        console?.log 'from API', @instances
+        console?.log 'from API', subjects
         @cache[ @group ] = subjects
-        @set_cache()
+        @set_cache subjects
     
     promise
   
