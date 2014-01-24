@@ -97,7 +97,7 @@ class Classifier extends Spine.Controller
       container: @subjectContainer
       width: 1000
       height: 600
-      clickDelay: 300
+      clickDelay: 500
       
     @surface.dotRadius = 5
     
