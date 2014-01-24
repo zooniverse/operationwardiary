@@ -18,7 +18,6 @@ class Groups extends Spine.Controller
     Api.current.get("/projects/#{Api.current.project}/groups/active", {page: params.page, per_page: 20})
       .done (groups) =>
         @onGroupFetch groups
-        console?.log @page_nav
         @page_nav
           .removeClass('current')
           .filter("a[href='#/diaries/#{params.page}']")
