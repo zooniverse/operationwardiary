@@ -230,7 +230,14 @@ class Classifier extends Spine.Controller
   onUserLogin: (user) =>
     old_history = store.get 'history', {}
     key = "history#{@user.zooniverse_id}"
-    @surface_history = store.get key, old_history
+    # migrate old surface history
+    surface_history = store.get key, old_history
+    
+    for subject_id, value of surface_history
+      store.set "sub#{@user.zooniverse_id}#{subject_id}", value
+    store.deleteKey key
+    store.deleteKey 'history'
+    surface_history = null
     
     @getRecentSubject()
       .fail( =>
@@ -242,7 +249,6 @@ class Classifier extends Spine.Controller
       
   onUserLogout: =>
     @user = false
-    @surface_history = null
     Subject.next()
     
   getRecentSubject: =>
@@ -312,7 +318,7 @@ class Classifier extends Spine.Controller
         # @diaryDisplay.text subject.metadata.file_name
         @reset subject
         
-        snapshot = @surface_history[subject.id] if @surface_history?
+        snapshot = store.get "sub#{User.current.zooniverse_id}#{subject.id}", {}
     
         @render_tags snapshot
         
@@ -398,14 +404,12 @@ class Classifier extends Spine.Controller
   
   update_history: ->
     
-    return unless Subject.current && @surface_history?
+    return unless Subject.current?
     
     snapshot = new Transcription @
     
-    @surface_history[ Subject.current.id ] = snapshot
-    
-    key = "history#{@user.zooniverse_id}"
-    store.set key, @surface_history
+    key = "sub#{@user.zooniverse_id}#{Subject.current.id}"
+    store.set key, snapshot
     
   reset: (subject)=>
     @toolbars.reset()
