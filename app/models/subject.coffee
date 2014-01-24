@@ -15,8 +15,10 @@ class CachedSubject extends Subject
   
   @set_cache: (subjects = @instances)=>
     return unless @group && User.current
-    @cache[ @group ] = subjects
-    @cache.active_group = @group
+    @cache = 
+      subjects: subjects
+      active_group: @group
+      
     store.set "subjects#{User.current.zooniverse_id}", @cache
     # console?.log 'setting', @cache[@group][0]
   
@@ -44,7 +46,7 @@ class CachedSubject extends Subject
     promise = new $.Deferred
     @get_cache()
     
-    cached_subjects = @cache[ @group ] ? []
+    cached_subjects = @cache.subjects ? []
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
