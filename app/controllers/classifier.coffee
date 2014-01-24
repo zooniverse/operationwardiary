@@ -297,6 +297,11 @@ class Classifier extends Spine.Controller
       store.deleteKey key
       store.deleteKey 'history'
       surface_history = null
+      
+      start = "sub#{@user.zooniverse_id}"
+      old_keys = store.index().filter (key) -> start == key.substr 0, start.length
+      old_keys = old_keys.filter (key) -> key!= "sub#{User.current.zooniverse_id}#{subject.id}"
+      store.deleteKey old_key for old_key in old_keys
       console?.log store.storageSize()
     
     console?.log 'selecting ', subject.zooniverse_id
