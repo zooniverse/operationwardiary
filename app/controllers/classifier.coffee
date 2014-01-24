@@ -355,7 +355,7 @@ class Classifier extends Spine.Controller
     
     @classification.send()
     
-    Subject.current.destroy()
+    Subject.first().destroy()
     subject = Subject.first()
     
     if subject? then subject.select() else Subject.next()
