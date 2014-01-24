@@ -228,16 +228,6 @@ class Classifier extends Spine.Controller
       @run_tutorial() unless @user
   
   onUserLogin: (user) =>
-    old_history = store.get 'history', {}
-    key = "history#{@user.zooniverse_id}"
-    # migrate old surface history
-    surface_history = store.get key, old_history
-    
-    for subject_id, value of surface_history
-      store.set "sub#{@user.zooniverse_id}#{subject_id}", value
-    store.deleteKey key
-    store.deleteKey 'history'
-    surface_history = null
     
     @getRecentSubject()
       .fail( =>
@@ -296,6 +286,19 @@ class Classifier extends Spine.Controller
     dialog.show()
     
   onSubjectSelect: (e, subject) =>
+    
+    if @user
+      # migrate old surface history and delete
+      old_history = store.get 'history', {}
+      key = "history#{@user.zooniverse_id}"
+      surface_history = store.get key, old_history
+    
+      store.set "sub#{@user.zooniverse_id}#{subject.id}", surface_history[ subject.id ] if surface_history[subject.id]?
+      store.deleteKey key
+      store.deleteKey 'history'
+      surface_history = null
+      console?.log store.storageSize()
+    
     console?.log 'selecting ', subject.zooniverse_id
     
     @surface.width = @subjectContainer.width()
