@@ -76,6 +76,7 @@ class Classifier extends Spine.Controller
     @el.on 'subject:favourite', @onFavourite
        
 
+    Subject.queueLength = 10
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
