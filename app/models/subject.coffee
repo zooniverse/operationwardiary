@@ -33,7 +33,7 @@ class CachedSubject extends Subject
     super
     
     if @group
-      @set_cache()
+      @set_cache []
     
   @first: =>
     instance = super
