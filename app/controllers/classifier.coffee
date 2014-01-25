@@ -240,7 +240,7 @@ class Classifier extends Spine.Controller
       
   onUserLogout: =>
     @user = false
-    Subject.next()
+    Route.navigate '/classify/tutorial'
     
   getRecentSubject: =>
     promise = new $.Deferred
