@@ -80,6 +80,7 @@ class Classifier extends Spine.Controller
     User.on 'change', @onUserChange
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
+    Classification.on 'send-pending', @onPendingClassification
     
     @surface.on 'select', @onToolSelect
     @surface.on 'create-tool', @onToolCreate
@@ -368,15 +369,29 @@ class Classifier extends Spine.Controller
     $('button.finish')
       .attr( 'disabled', 'disabled' )
       .prop disabled: true
+      
+    done = (response)=>
     
-    @classification.send()
+      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
     
-    store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
+      Subject.first().destroy()
+      subject = Subject.first()
     
-    Subject.first().destroy()
-    subject = Subject.first()
+      if subject? then subject.select() else Subject.next()
     
-    if subject? then subject.select() else Subject.next()
+    fail = (response)=>
+    
+      Subject.first().destroy()
+      subject = Subject.first()
+    
+      if subject? then subject.select() else Subject.next()
+    
+    @classification.send done, fail
+  
+  onPendingClassification: (e, response) =>
+    
+    store.deleteKey "sub#{User.current.zooniverse_id}#{subject_id}" for subject_id in response.classification.subject_ids
+    
 
   onZoomIn: ({currentTarget})=>
     
