@@ -50,7 +50,7 @@ class CachedSubject extends Subject
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
-      @trigger 'fetch', cached_subjects
+      @trigger 'fetch', [cached_subjects]
       console?.log cached_subjects
       promise.resolve cached_subjects
     else
