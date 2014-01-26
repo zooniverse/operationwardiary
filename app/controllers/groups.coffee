@@ -1,16 +1,17 @@
-Spine = require 'spine'
+TabController = require './tab_controller'
 User = require 'zooniverse/models/user'
 Group = require 'zooniverse/models/project-group'
 Api = require 'zooniverse/lib/api'
 {WidgetFactory} = require '../lib/text-widgets'
 DateWidget = WidgetFactory.registry.date
 
-class Groups extends Spine.Controller
+class Groups extends TabController
   template: require '../views/groups'
 
   constructor: ->
     super
     @el.attr id: 'diaries'
+    @el.attr 'aria-labelledby': 'diariesTab'
 
   activate: (params) =>
     super

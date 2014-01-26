@@ -15,6 +15,7 @@ Dialog = require 'zooniverse/controllers/dialog'
 ZoomableSurface = require '../lib/zoom_surface'
 TextTool = require '../lib/text-tool'
 Subject = require '../models/subject'
+TabController = require './tab_controller'
 
 GroupDetails = require './classifier/group'
 Toolbars = require './classifier/toolbars'
@@ -24,7 +25,7 @@ Rights = require './classifier/rights'
 steps = require '../lib/tutorial/steps'
 tutorial_subject = require '../lib/tutorial/subjects'
 
-class Classifier extends Spine.Controller
+class Classifier extends TabController
   
   template: require '../views/classifier/'
 
@@ -60,6 +61,7 @@ class Classifier extends Spine.Controller
     @render()
     
     @el.attr id: 'classify'
+    @el.attr 'aria-labelledby': 'classifyTab'
     
     @toolbars = new Toolbars el: @el.find '.tools'
     

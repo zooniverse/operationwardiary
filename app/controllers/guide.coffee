@@ -1,12 +1,13 @@
-Spine = require 'spine'
+TabController = require './tab_controller'
 
-class Guide extends Spine.Controller
+class Guide extends TabController
   template: require '../views/guide'
   elements:
     'input[type=search]': 'searchbox'
 
   constructor: ->
     super
+    @el.attr 'aria-labelledby': 'guideTab'
     @render()
     
     @searchbox.on 'change', @search
