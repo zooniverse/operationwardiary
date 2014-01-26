@@ -13,6 +13,7 @@ class Navigation extends Spine.Controller
     
   constructor: ->
     super
+    @el.attr role: 'navigation'
     @render()
     
     @menuButton.on 'click', =>
