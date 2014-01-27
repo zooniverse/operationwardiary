@@ -10,6 +10,7 @@ class TextControls extends ToolControls
   
   template: '''
     <div tabindex="0" class="marking-tool-controls closed" role="dialog">
+      <p class="help"><a href="#/guide">Help</a></p>
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
@@ -25,7 +26,12 @@ class TextControls extends ToolControls
     category = $( '.categories :checked' ).val()
     
     @widget = WidgetFactory.makeWidget category
-    @el.prepend @widget.template
+    @help = @el.find 'p.help'
+    @help.after @widget.template
+    @help
+      .find( 'a' )
+      .attr 'href', (i, href)=>
+        href + @widget.help
     @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'

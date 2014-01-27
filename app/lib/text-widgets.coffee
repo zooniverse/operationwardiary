@@ -95,6 +95,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
   template: require '../views/tools/place'
   
   type: 'place'
+  help: '/diary/place'
   
   gc: new Geocoder
   
@@ -337,6 +338,7 @@ WidgetFactory.registry.person = class PersonWidget extends TextWidget
   template: require('../views/tools/person')( ranks: PersonWidget.ranks, context: labels.person )
   
   type: 'person'
+  help: '/diary/person'
   
   updateNote: (target)->
     note =
@@ -366,6 +368,7 @@ WidgetFactory.registry.unit = class UnitWidget extends TextWidget
   template: require('../views/tools/unit')( context: labels.unit )
   
   type: 'unit'
+  help: '/diary/unit'
   
   updateNote: (target) ->
     
@@ -398,6 +401,7 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
   template: require('../views/tools/casualties')( choices: labels.casualties )
   
   type: 'casualty'
+  help: '/diary/casualties'
   
   updateNote: (target) ->
     
@@ -432,6 +436,7 @@ WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   template: require('../views/tools/activity')( choices: labels.activity )
   
   type: 'activity'
+  help: '/diary/activity'
   
   getLabel: (target) ->
     $(target).find(':selected').text()
@@ -441,6 +446,7 @@ WidgetFactory.registry.domestic = class DomesticWidget extends TextWidget
   template: require('../views/tools/domestic')( choices: labels.domestic )
   
   type: 'domestic'
+  help: '/diary/domestic'
   
   getLabel: (target) ->
     $(target).find(':selected').text()
@@ -450,6 +456,7 @@ WidgetFactory.registry.quarters = class QuartersWidget extends TextWidget
   template: require('../views/tools/quarters')( choices: labels.quarters )
   
   type: 'quarters'
+  help: '/diary/quarters'
   
   getLabel: (target) ->
     activity = $(target).val() ? 'billets'
@@ -462,6 +469,7 @@ WidgetFactory.registry.weather = class WeatherWidget extends TextWidget
   template: require('../views/tools/weather')( choices: labels.weather )
   
   type: 'weather'
+  help: '/diary/weather'
   
   getLabel: (target) ->
     'Weather: ' + $(target).find(':selected').text()
@@ -473,6 +481,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
   template: require '../views/tools/date'
   
   type: 'date'
+  help: '/signals/date'
   
   @date: '1 May 1915'
   
@@ -533,6 +542,7 @@ WidgetFactory.registry.date = class DateWidget extends TextWidget
 WidgetFactory.registry.diaryDate = class DiaryDateWidget extends DateWidget
   
   type: 'date'
+  help: '/diary/diaryDate'
   
   mark: (tool)->
     shapes = super
@@ -546,6 +556,7 @@ WidgetFactory.registry.time = class TimeWidget extends TextWidget
   template: require '../views/tools/time'
   
   type: 'time'
+  help: '/diary/time'
   
   updateNote: (target)->
     note = ''
@@ -574,6 +585,7 @@ WidgetFactory.registry.time = class TimeWidget extends TextWidget
 WidgetFactory.registry.diaryTime = class DiaryTimeWidget extends TimeWidget
   
   type: 'time'
+  help: '/diary/diaryTime'
   
   mark: (tool)->
     shapes = super
@@ -587,6 +599,7 @@ WidgetFactory.registry.orders = class OrdersWidget extends TextWidget
   template: require( '../views/tools/orders' )( types: labels.orders )
   
   type: 'orders'
+  help: '/orders/orders'
   
   getLabel: (target) ->
     $(target).find(':selected').text()
@@ -595,6 +608,7 @@ WidgetFactory.registry.signals = class SignalsWidget extends TextWidget
   template: require( '../views/tools/signals' )( types: labels.signals )
   
   type: 'signals'
+  help: '/signals/signals'
   
   getLabel: (target) ->
     $(target).find(':selected').text()
@@ -603,12 +617,14 @@ WidgetFactory.registry.title = class TitleWidget extends TextWidget
   template: require '../views/tools/title'
   
   type: 'title'
+  help: '/report/title'
   
 
 WidgetFactory.registry.reference = class ReferenceWidget extends TextWidget
   template: require '../views/tools/reference'
   
   type: 'reference'
+  help: '/diary/reference'
   
   updateNote: (target) ->
     
@@ -628,6 +644,7 @@ WidgetFactory.registry.mapRef = class MapRefWidget extends TextWidget
   template: require '../views/tools/mapref'
   
   type: 'mapref'
+  help: '/diary/mapRef'
   
   render: (el)->
     super
@@ -665,6 +682,7 @@ WidgetFactory.registry.gridRef = class GridRefWidget extends TextWidget
   template: require '../views/tools/gridref'
   
   type: 'gridref'
+  help: '/diary/gridRef'
   
   render: (el)->
     super
