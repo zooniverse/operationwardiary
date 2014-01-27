@@ -10,7 +10,7 @@ module.exports =
     favourite: 'Favourite'
     discuss: 'Discuss'
     comments: 'Talk comments'
-    comment: 'Comment'
+    comment: 'Post comment'
     timeline: 'Timeline'
     types: 'Page types'
     tagging: 'Get tagging!'
