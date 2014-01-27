@@ -17,7 +17,7 @@ class Comments extends Spine.Controller
   
   comments: []
   
-  refresh: 120
+  refresh: null
     
   constructor: ->
     super
@@ -75,6 +75,6 @@ class Comments extends Spine.Controller
     
     @timeout = setTimeout => 
       @fetchComments zooniverse_id
-    , @refresh * 1000
+    , @refresh * 1000 if @refresh
 
 module.exports = Comments
