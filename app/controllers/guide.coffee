@@ -37,6 +37,18 @@ class Guide extends TabController
   open: (page, tag) =>
     scrollTop = null
     
+    accordions = @el
+      .find( '.ui-accordion-content' )
+      .each ->
+        $(@)
+          .removeClass( 'accordion-content-active' )
+          .attr( 'aria-hidden', 'true' )
+          .attr( 'aria-expanded', 'false' )
+          .hide()
+          .prev( '.ui-accordion-header' )
+          .removeClass( 'accordion-header-active ui-state-active ui-corner-top' )
+          .attr 'aria-selected', 'false'
+    
     if page?
       scrollTop = $("h2.#{page}")
         .addClass( 'accordion-header-active ui-state-active ui-corner-top' )
