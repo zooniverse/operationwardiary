@@ -16,6 +16,8 @@ class Comments extends Spine.Controller
     'button': 'comment_button'
   
   comments: []
+  
+  refresh: 120
     
   constructor: ->
     super
@@ -59,9 +61,15 @@ class Comments extends Spine.Controller
     
     @render()
   
-  fetchComments: (@zooniverse_id) =>
-    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}"
+  fetchComments: (zooniverse_id = @zooniverse_id) =>
+    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{zooniverse_id}"
     
     request.done @onCommentsFetch
+    
+    clearTimeout @timeout if @timeout?
+    
+    @timeout = setTimeout => 
+      @fetchComments zooniverse_id
+    , @refresh * 1000
 
 module.exports = Comments
