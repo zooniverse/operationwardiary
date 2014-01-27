@@ -38,6 +38,10 @@ class Comments extends Spine.Controller
     $('p.author img', @el).one 'error', ->
       @.src = '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
     
+    comments = @el.find '> div'
+    comments.css 'opacity', 0
+    comments.animate opacity: 1, 500
+    
     
   onCommentsFetch: ({discussion}) =>
     @comments = discussion.comments
