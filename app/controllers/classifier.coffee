@@ -108,12 +108,6 @@ class Classifier extends TabController
   active: (params) =>
     super
     tool.render() for tool in @surface.tools
-      
-    $('.site-navigation .links ul')
-      .find('a')
-      .removeClass('active')
-      .filter("[href='#/classify']")
-      .addClass 'active'
     
   activate: (params)=>
     super
