@@ -65,7 +65,8 @@ class Comments extends Spine.Controller
     
     @render()
   
-  fetchComments: (@zooniverse_id) =>
+  fetchComments: (zooniverse_id) =>
+    @zooniverse_id = zooniverse_id
     request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{zooniverse_id}"
     
     request.done @onCommentsFetch
