@@ -17,7 +17,7 @@ class Comments extends Spine.Controller
   
   comments: []
   
-  refresh: null
+  refresh: 120
     
   constructor: ->
     super
@@ -30,10 +30,13 @@ class Comments extends Spine.Controller
   render: =>
     @html @template
       comments: @comments
-      talk_url: "http://talk.operationwardiary.org/#/subjects/#{@zooniverse_id}"
+      talk_url: "http://talk.operationwardiary.org/#/subjects/#{Subject.current?.zooniverse_id}"
       user: User.current
     
     @comment_button.on 'click', @submitComment
+    
+    @comment_text.on 'focus', =>
+      clearTimeout @timeout if @timeout?
     
     $('p.author img', @el).one 'error', ->
       @.src = '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
@@ -53,7 +56,7 @@ class Comments extends Spine.Controller
     
   submitComment: =>
     comment = @comment_text.val()
-    request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{@zooniverse_id}/comments", comment: comment
+    request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{Subject.current?.zooniverse_id}/comments", comment: comment
     time = new Date
     
     @comments.unshift
@@ -64,17 +67,22 @@ class Comments extends Spine.Controller
       date: DateWidget.formatDate 'd MM yy', time
     
     @render()
+    
+    clearTimeout @timeout if @timeout?
+    
+    @timeout = setTimeout => 
+      @fetchComments()
+    , @refresh * 1000 if @refresh?
   
-  fetchComments: (zooniverse_id) =>
-    @zooniverse_id = zooniverse_id
-    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{zooniverse_id}"
+  fetchComments: =>
+    request = Api.current.get "/projects/#{Api.current.project}/talk/subjects/#{Subject.current?.zooniverse_id}"
     
     request.done @onCommentsFetch
     
     clearTimeout @timeout if @timeout?
     
     @timeout = setTimeout => 
-      @fetchComments zooniverse_id
-    , @refresh * 1000 if @refresh
+      @fetchComments()
+    , @refresh * 1000 if @refresh?
 
 module.exports = Comments
