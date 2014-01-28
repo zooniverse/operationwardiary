@@ -10,7 +10,7 @@ class TextControls extends ToolControls
   
   template: '''
     <div tabindex="0" class="marking-tool-controls closed" role="dialog">
-      <p class="help"><a href="#/guide">Help</a></p>
+      <p class="help"><a target="help" href="#/guide">Help</a></p>
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
