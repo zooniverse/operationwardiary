@@ -360,7 +360,7 @@ WidgetFactory.registry.person = class PersonWidget extends TextWidget
   getLabel: (target) ->
     note = @updateNote(target)
     reason = @el.find('select[name=reason] :selected').text()
-    "#{note.rank} #{note.first} #{note.surname} (#{reason})"
+    "#{note.rank} #{note.first} #{note.surname}\n(#{reason})"
 
 
 
