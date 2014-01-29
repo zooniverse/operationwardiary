@@ -52,6 +52,7 @@ module.exports =
     signals: 'Reason'
     orders: 'Type'
     title: 'Title'
+    strength: 'Unit strength'
     
   classifier:
     mapRef:

@@ -7,6 +7,7 @@ labels =
       'person'
       'activity'
       'casualties'
+      'strength'
       'weather'
       'domestic'
       'reference'

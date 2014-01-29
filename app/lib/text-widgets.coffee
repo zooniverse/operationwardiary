@@ -428,9 +428,17 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
       
     "Casualties: #{total}"
 
+WidgetFactory.registry.strength = class StrengthWidget extends CasualtiesWidget
 
+  type: 'strength'
+  
+  getLabel: (target) ->
+    
+    note = @updateNote( target )
 
-
+    total = (note[choice] for choice of note).reduce (a,b) -> a + b
+      
+    "Strength: #{total}"
 WidgetFactory.registry.activity = class ActvityWidget extends TextWidget
   
   template: require('../views/tools/activity')( choices: labels.activity )
