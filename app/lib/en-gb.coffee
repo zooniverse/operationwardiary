@@ -75,12 +75,12 @@ module.exports =
       
     
   activity:
-    repair: 'Digging & repairing trenches'
+    repair: 'Digging/repairing positions'
     movement: 'Unit movement'
-    reconnoitered: 'Reconnoitring'
+    reconnoitered: 'Patrolling & reconnoitring'
     training: 'Training'
     line: 'In the line'
-    attack: 'Attacking'
+    attack: 'Attacking/Firing'
     raid: 'Raiding'
     withdraw: 'Withdrawing'
     quiet: 'All quiet'
@@ -126,15 +126,15 @@ module.exports =
   
   person:
     author: 'Author of diary'
-    joined: 'Joined'
+    joined: 'Joined or attached'
     departed_sick: 'Departed: sick'
     departed_leave: 'Departed: on leave'
-    departed_posted: 'Departed: posted to another unit'
+    departed_posted: 'Departed: posted or detached to another unit'
     departed_training: 'Departed: training'
     returned_hospital: 'Returned: from hospital'
     returned_leave: 'Returned: from leave'
     returned_training: 'Returned: from training'
-    casualty_wounded: 'Casualty: Wounded'
+    casualty_wounded: 'Casualty: Sick or wounded'
     casualty_died: 'Casualty: Died of Wounds'
     casualty_mia: 'Casualty: Missing in Action'
     casualty_kia: 'Casualty: Killed in Action '
