@@ -224,7 +224,7 @@ class TextTool extends Tool
   deselect: =>
     super
     
-    @shapeSet.attr opacity: 0.7
+    @shapeSet.attr opacity: 0.4
     
     @label.hide()
 
@@ -258,7 +258,7 @@ class TextTool extends Tool
   'on mouseout dots': (e, shape)=>
     unless @ is @surface.selection
       @label.hide()
-      @shapeSet.attr opacity: 0.7
+      @shapeSet.attr opacity: 0.4
     
   render: ->
     @widget.move @dots, @mark.p0[0], @mark.p0[1]
