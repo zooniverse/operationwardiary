@@ -88,6 +88,12 @@ labels =
     'prisoner'
   ]
   
+  strength: [
+    'officer'
+    'nco'
+    'other'
+  ]
+  
   orders: [
     'move'
     'attack'

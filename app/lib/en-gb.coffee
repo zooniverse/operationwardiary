@@ -109,6 +109,11 @@ module.exports =
     died: 'Died of wounds'
     wounded: 'Wounded'
     prisoner: 'Prisoner of war'
+  
+  strength:
+    officer: 'Officers'
+    nco: 'NCOs'
+    other: 'Other Ranks'
     
   orders:
     move: 'Movement'

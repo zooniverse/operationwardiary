@@ -429,8 +429,25 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
     "Casualties: #{total}"
 
 WidgetFactory.registry.strength = class StrengthWidget extends CasualtiesWidget
+  template: require('../views/tools/strength')( choices: labels.strength )
 
   type: 'strength'
+  
+  updateNote: (target) ->
+    
+    note = 
+      officer: 0
+      nco: 0
+      other: 0
+    
+    $(target)
+      .parents( '.annotation' )
+      .find( ':input' )
+      .each ->
+        @value = 0 if @value == ''
+        note[@name] = parseInt @value
+    
+    note
   
   getLabel: (target) ->
     
