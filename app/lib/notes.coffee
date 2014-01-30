@@ -55,8 +55,11 @@ labels =
     'movement'
     'reconnoitered'
     'training'
+    'reserve'
+    'support'
     'line'
     'attack'
+    'achieved'
     'raid'
     'withdraw'
     'quiet'
@@ -64,6 +67,11 @@ labels =
     'enemy_activity'
     'strength'
     'resting'
+    'construction'
+    'resupplying'
+    'working'
+    'clearing'
+    'casualty'
   ]
   
   domestic: [

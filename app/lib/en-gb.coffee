@@ -80,8 +80,11 @@ module.exports =
     movement: 'Unit movement'
     reconnoitered: 'Patrolling & reconnoitring'
     training: 'Training'
+    reserve: 'In reserve'
+    support: 'In support'
     line: 'In the line'
     attack: 'Attacking/Firing'
+    achieved: 'Achieved objective'
     raid: 'Raiding'
     withdraw: 'Withdrawing'
     quiet: 'All quiet'
@@ -89,6 +92,11 @@ module.exports =
     enemy_activity: 'Enemy activity'
     strength: 'Unit strength'
     resting: 'Resting'
+    construction: 'Construction'
+    resupplying: 'Re-supplying'
+    working: 'Working party'
+    clearing: 'Clearing & burials'
+    casualty: 'Casualty treatment'
     
   domestic:
     accomodation: 'Accommodation'
