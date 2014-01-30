@@ -30,7 +30,7 @@ class ZoomableSurface extends MarkingSurface
     #   mouse_delta = e.originalEvent.deltaY
     #   
     #   @onScroll mouse_delta
-    
+      
   enable: =>
     super
     @markingMode = true
