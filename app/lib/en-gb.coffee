@@ -131,12 +131,14 @@ module.exports =
     warning: 'Warning of enemy activity'
   
   person:
+    commander: "Unit commander"
     author: 'Author of diary'
     joined: 'Joined or attached'
     departed_sick: 'Departed: sick'
     departed_leave: 'Departed: on leave'
     departed_posted: 'Departed: posted or detached to another unit'
     departed_training: 'Departed: training'
+    resigned: 'Resigned, Discharged or Demobilised'
     returned_hospital: 'Returned: from hospital'
     returned_leave: 'Returned: from leave'
     returned_training: 'Returned: from training'
@@ -145,10 +147,12 @@ module.exports =
     casualty_mia: 'Casualty: Missing in Action'
     casualty_kia: 'Casualty: Killed in Action '
     casualty_pow: 'Casualty: Prisoner of War'
+    casualty_non: 'Caualty: Non-combat Death'
     award: 'Awards and commendations'
     promotion: 'Promoted'
     combat: 'Combat'
     discipline: 'Discipline'
+    awol: 'Absent Without Leave or Deserter'
     
   quarters:
     billets: 'In billets'

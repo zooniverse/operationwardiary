@@ -112,12 +112,14 @@ labels =
   ]
   
   person: [
+    'commander'
     'author'
     'joined'
     'departed_sick' 
     'departed_leave'
     'departed_posted'
     'departed_training'
+    'resigned'
     'returned_hospital' 
     'returned_leave' 
     'returned_training' 
@@ -126,10 +128,12 @@ labels =
     'casualty_mia'
     'casualty_kia'
     'casualty_pow'
+    'casualty_non'
     'award'
     'promotion'
     'combat'
     'discipline'
+    'awol'
   ]
     
   quarters: [  
