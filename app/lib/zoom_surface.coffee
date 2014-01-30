@@ -30,7 +30,7 @@ class ZoomableSurface extends MarkingSurface
     #   mouse_delta = e.originalEvent.deltaY
     #   
     #   @onScroll mouse_delta
-    
+      
   enable: =>
     super
     @markingMode = true
@@ -135,6 +135,7 @@ class ZoomableSurface extends MarkingSurface
     
   onDrag: (e) =>
     @markingMode = false
+    @container.css cursor: 'move'
     @selection?.deselect()
     
     {x, y} = @mouseOffset e
@@ -149,6 +150,7 @@ class ZoomableSurface extends MarkingSurface
   
   onRelease: (e) ->
     @markingMode = true
+    @container.css cursor: ''
     e.preventDefault()
     @oldX = null
     @oldY = null
