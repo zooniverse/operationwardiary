@@ -4,7 +4,7 @@
   <ul class="recents">
     <% for subject in @subjects: %>
     <li>
-      <a href="http://talk.operationwardiary.org/#/subjects/<%= subject.focus.zooniverse_id %>"><img src="<%= subject.focus.location.standard %>"></a>
+      <a href="http://talk.operationwardiary.org/#/subjects/<%= subject.focus.name %>"><img src="<%= subject.focus.location.standard %>"></a>
       <p class="caption"><%- subject.comment.body %></p>
     </li>
     <% end %>
