@@ -140,7 +140,6 @@ class TextControls extends ToolControls
     
   open: =>
     return unless @el.hasClass 'closed'
-    @el.focus() unless document.activeElement == @.el[0]
     @el.removeClass 'closed'
     @el.draggable
       cancel: "input,textarea,button,select,option,label,.map"
@@ -149,6 +148,8 @@ class TextControls extends ToolControls
       e.stopPropagation()
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
+    
+    @textInput.filter(':first').focus() unless document.activeElement == @.el[0]
   
   close: =>
     return if @el.hasClass 'closed'
