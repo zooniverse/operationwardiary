@@ -39,7 +39,6 @@ class Toolbars extends Spine.Controller
       .attr('tabindex', '0')
       .attr('role', 'button')
       .on 'click keypress', =>
-        @reset()
         @trigger 'reset'
     
   toggleCategories: ->
