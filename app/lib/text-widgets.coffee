@@ -59,10 +59,13 @@ class TextWidget
     
   move: (shapes, x, y)->
     
+    box = shapes[2][1].getBBox()
+    y_offset = 15 + box.height / 2
+    
     if y < 300
-      labely = y - 20
+      labely = y - y_offset
     else
-      labely = y + 20
+      labely = y + y_offset
       
     shapes[1].attr cx: x, cy: y
     shapes[0].attr x: x-10, y: y-10
@@ -359,7 +362,8 @@ WidgetFactory.registry.person = class PersonWidget extends TextWidget
     
   getLabel: (target) ->
     note = @updateNote(target)
-    "#{note.rank} #{note.first} #{note.surname}"
+    reason = @el.find('select[name=reason] :selected').text()
+    "#{note.rank} #{note.first} #{note.surname}\n(#{reason})"
 
 
 

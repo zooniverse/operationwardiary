@@ -73,7 +73,7 @@ class Classifier extends TabController
     
     @toolbars.el.on 'page_type:change', @onPageChange
     @toolbars.el.on 'tag:change', @onTagChange
-    @toolbars.on 'reset', @update_history
+    @toolbars.on 'reset', @onToolbarReset
     
     @el.on 'subject:favourite', @onFavourite
        
@@ -168,7 +168,14 @@ class Classifier extends TabController
     console?.log group
     @group_details.render group
     @rights.render group
-    
+  
+  onToolbarReset: =>
+    if @surface.tools.length
+      @reset() if window.confirm 'You have already begun to tag this page. Reset your tags and start again?'
+      # @update_history()
+    else
+      @toolbars.reset()
+      
   onPageChange: (e, type)=>
     @surface.enable()
     store.set 'document', type
