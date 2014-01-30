@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 <% if @subjects?: %>
-  <%- translate 'h2', "profile.recents" %>
+  <%- translate 'h2', "recents.comments" %>
   <ul class="recents">
     <% for subject in @subjects: %>
     <li>

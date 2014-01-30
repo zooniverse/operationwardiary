@@ -649,6 +649,9 @@ If there was little to record or a major incident had taken place over a few day
     places: 'Places'
     people: 'People'
     login: 'Login to view profile'
+  
+  recents:
+    comments: 'Recent comments and hashtags'
 
   tutorial:
     welcome:
