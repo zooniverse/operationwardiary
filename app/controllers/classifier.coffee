@@ -208,9 +208,9 @@ class Classifier extends TabController
     if @surface.tools.length
       if window.confirm 'You have already begun to tag this page. Reset your tags and start again?'
         @reset()
-        @toolbars.selectPageType type
+        @toolbars.selectPageType( type ).focus()
       else
-        @toolbars.selectPageType store.get 'document', ''
+        @toolbars.selectPageType( store.get 'document', '' ).focus()
         @toolbars.toggleCategories()
         return
         
