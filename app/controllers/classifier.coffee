@@ -205,12 +205,19 @@ class Classifier extends TabController
       @toolbars.reset()
       
   onPageChange: (e, type)=>
+    if @surface.tools.length
+      if window.confirm 'You have already begun to tag this page. Reset your tags and start again?'
+        @reset()
+      else
+        @toolbars.selectPageType store.get 'document', ''
+        return
+        
     @surface.enable()
     store.set 'document', type
     $('button.finish')
       .removeAttr( 'disabled' )
       .prop disabled: false
-  
+      
   onTagChange: (e,type)=>
     @surface.markingMode = true
     @surface.selection?.deselect()
