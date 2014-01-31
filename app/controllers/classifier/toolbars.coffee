@@ -22,7 +22,6 @@ class Toolbars extends Spine.Controller
   events:
     'change .documents': ->
       @el.trigger 'page_type:change', $( '.documents :checked' ).val()
-      @toggleCategories()
     'change .categories': ->
       @el.trigger 'tag:change', $('.categories :checked').val()
 

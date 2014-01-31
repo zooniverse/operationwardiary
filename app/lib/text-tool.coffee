@@ -8,17 +8,17 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 
 class TextControls extends ToolControls
   
-  template: '''
+  template: """
     <div tabindex="0" class="marking-tool-controls closed" role="dialog">
-      <p class="help"><a target="help" href="#/guide">Help</a></p>
+      <p class="help"><a target="help" href="#/guide">#{translate 'span', 'common.help'}</a></p>
       <span class="handle"></span>
       <span class="label"></span>
       <button name="toggle">&#x2714;</button>
       <button name="delete">&times;</button>
-      <div class="deleted" aria-hidden="true">Deleted</div>
-      <div class="saved" aria-hidden="true">Saved</div>
+      <div class="deleted" aria-hidden="true">#{translate 'span', 'common.deleted'}</div>
+      <div class="saved" aria-hidden="true">#{translate 'span', 'common.saved'}</div>
     </div>
-  '''
+  """
   
   constructor: (params = {})->
     super

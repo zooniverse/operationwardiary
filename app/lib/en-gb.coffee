@@ -22,6 +22,10 @@ module.exports =
     tna: "The National Archives"
     zoo: "The Zooniverse"
     start: 'Start'
+    reset_tags: 'You have already begun to tag this page. Reset your tags and start again?'
+    help: 'Help'
+    saved: 'Saved'
+    deleted: 'Deleted'
 
   documents:
     cover: 'Cover page'
