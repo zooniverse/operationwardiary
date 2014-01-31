@@ -162,6 +162,7 @@ class Classifier extends TabController
     if page_type
       @toolbars.selectPageType page_type
       @toolbars.toggleCategories()
+      store.set 'document', page_type
       @surface.enable()
       $('button.finish')
         .removeAttr( 'disabled' )
