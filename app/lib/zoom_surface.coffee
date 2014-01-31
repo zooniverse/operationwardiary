@@ -1,3 +1,11 @@
+KEYS =
+  left: 37
+  up: 38
+  right: 39
+  down: 40
+  plus: 187
+  minus: 189
+
 MarkingSurface = require 'marking-surface'
 
 class ZoomableSurface extends MarkingSurface
@@ -130,7 +138,25 @@ class ZoomableSurface extends MarkingSurface
   onMouseMove: ->
     return
     
-  onKeyDown: ->
+  onKeyDown: (e) =>
+    switch e.which
+  
+      when KEYS.left
+        @pan @panX - 20, @panY
+        e.preventDefault()
+      when KEYS.up
+        @pan @panX, @panY - 20
+        e.preventDefault()
+      when KEYS.right
+        @pan @panX + 20, @panY
+        e.preventDefault()
+      when KEYS.down
+        @pan @panX, @panY + 20
+        e.preventDefault()
+      when KEYS.plus
+        @zoom @zoomBy + .1
+      when KEYS.minus
+        @zoom @zoomBy - .1
     
     
   onDrag: (e) =>

@@ -1,11 +1,3 @@
-KEYS =
-  left: 37
-  up: 38
-  right: 39
-  down: 40
-  plus: 187
-  minus: 189
-  
 translate = require 't7e'
 Spine = require 'spine'
 {Route} = Spine
@@ -96,26 +88,6 @@ class Classifier extends TabController
     @surface.on 'create-tool', @onToolCreate
     @surface.on 'change', @onToolChange
     @surface.on 'delete', @onToolDelete
-    
-    @subjectContainer.on 'keydown', (e) =>
-      switch e.which
-      
-        when KEYS.left
-          @surface.pan @surface.panX - 20, @surface.panY
-          e.preventDefault()
-        when KEYS.up
-          @surface.pan @surface.panX, @surface.panY - 20
-          e.preventDefault()
-        when KEYS.right
-          @surface.pan @surface.panX + 20, @surface.panY
-          e.preventDefault()
-        when KEYS.down
-          @surface.pan @surface.panX, @surface.panY + 20
-          e.preventDefault()
-        when KEYS.plus
-          @surface.zoom @surface.zoomBy + .1
-        when KEYS.minus
-          @surface.zoom @surface.zoomBy - .1
     
     Spine.bind 'tutorial:done', =>
       @tutorial_done = true
