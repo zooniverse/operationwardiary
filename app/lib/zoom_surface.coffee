@@ -1,3 +1,11 @@
+KEYS =
+  left: 37
+  up: 38
+  right: 39
+  down: 40
+  plus: 187
+  minus: 189
+
 MarkingSurface = require 'marking-surface'
 
 class ZoomableSurface extends MarkingSurface
@@ -109,16 +117,11 @@ class ZoomableSurface extends MarkingSurface
     $(document.activeElement).blur()
     @container.focus()
     
-    setTimeout (=>
-      if @markingMode
-        @trigger 'create-tool'
-        tool = @createTool()
-        tool.onInitialClick e
-    ), @clickDelay unless @disabled
+    create_mark = true
 
-    
-
-    onDrag = => @onDrag arguments...
+    onDrag = => 
+      create_mark = false
+      @onDrag arguments...
     
     doc = $(document)
     
@@ -126,11 +129,33 @@ class ZoomableSurface extends MarkingSurface
     doc.one 'mouseup touchend', =>
       @onRelease arguments...
       doc.off 'mousemove touchmove', onDrag
+      if create_mark
+        @trigger 'create-tool'
+        tool = @createTool()
+        tool.onInitialClick e
   
   onMouseMove: ->
     return
     
-  onKeyDown: ->
+  onKeyDown: (e) =>
+    switch e.which
+  
+      when KEYS.left
+        @pan @panX - 20, @panY
+        e.preventDefault()
+      when KEYS.up
+        @pan @panX, @panY - 20
+        e.preventDefault()
+      when KEYS.right
+        @pan @panX + 20, @panY
+        e.preventDefault()
+      when KEYS.down
+        @pan @panX, @panY + 20
+        e.preventDefault()
+      when KEYS.plus
+        @zoom @zoomBy + .1
+      when KEYS.minus
+        @zoom @zoomBy - .1
     
     
   onDrag: (e) =>
