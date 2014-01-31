@@ -117,16 +117,11 @@ class ZoomableSurface extends MarkingSurface
     $(document.activeElement).blur()
     @container.focus()
     
-    setTimeout (=>
-      if @markingMode
-        @trigger 'create-tool'
-        tool = @createTool()
-        tool.onInitialClick e
-    ), @clickDelay unless @disabled
+    create_mark = true
 
-    
-
-    onDrag = => @onDrag arguments...
+    onDrag = => 
+      create_mark = false
+      @onDrag arguments...
     
     doc = $(document)
     
@@ -134,6 +129,10 @@ class ZoomableSurface extends MarkingSurface
     doc.one 'mouseup touchend', =>
       @onRelease arguments...
       doc.off 'mousemove touchmove', onDrag
+      if create_mark
+        @trigger 'create-tool'
+        tool = @createTool()
+        tool.onInitialClick e
   
   onMouseMove: ->
     return
