@@ -38,7 +38,7 @@ class TextControls extends ToolControls
     @setNote()
     
     @el.off 'mousedown touchstart'
-    @el.on 'mouseup touchend', (e) ->
+    @el.on 'mouseup touchend', '.annotation, button, a', (e) ->
       e.stopPropagation()
     
     @tool.on 'select', =>
@@ -144,7 +144,7 @@ class TextControls extends ToolControls
     return unless @el.hasClass 'closed'
     @el.removeClass 'closed'
     @el.draggable
-      cancel: "input,textarea,button,select,option,label,.map"
+      cancel: "input,textarea,button,select,option,label,.map,.annotation,a"
     
     @el.on 'mousedown mouseover mousemove', 'select', (e)=>
       e.stopPropagation()
