@@ -38,6 +38,8 @@ class TextControls extends ToolControls
     @setNote()
     
     @el.off 'mousedown touchstart'
+    @el.on 'mouseup touchend', (e) ->
+      e.stopPropagation()
     
     @tool.on 'select', =>
       @active = true

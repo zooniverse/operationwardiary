@@ -123,12 +123,10 @@ class ZoomableSurface extends MarkingSurface
       create_mark = false
       @onDrag arguments...
     
-    doc = $(document)
-    
-    doc.on 'mousemove touchmove', onDrag
-    doc.one 'mouseup touchend', =>
+    @container.on 'mousemove touchmove', onDrag
+    @container.one 'mouseup touchend', =>
       @onRelease arguments...
-      doc.off 'mousemove touchmove', onDrag
+      @container.off 'mousemove touchmove', onDrag
       if create_mark
         @trigger 'create-tool'
         tool = @createTool()
