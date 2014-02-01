@@ -149,7 +149,8 @@ class TextControls extends ToolControls
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
     
-    @textInput.filter(':first').focus() unless document.activeElement == @.el[0]
+    input = @textInput.filter(':first')
+    input.focus() unless document.activeElement == input[0]
   
   close: =>
     return if @el.hasClass 'closed'
