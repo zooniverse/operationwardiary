@@ -68,7 +68,6 @@ class Comments extends Spine.Controller
     is_valid = comment.length > 0 && comment.length <= @comment_length
     
   submitComment: =>
-    console.log 'click'
     comment = @comment_text.val()
     is_valid = @validateComment comment
     return unless is_valid
