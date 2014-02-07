@@ -4,12 +4,22 @@ Api = require 'zooniverse/lib/api'
 class Recents extends Spine.Controller
   template: require '../views/recents'
   
-  delay: 120
+  delay: null
 
   constructor: ->
     super
     @render []
+    
+  
+  activate: (params) =>
+    super
+    
     @fetch()
+  
+  deactivate: =>
+    super
+    
+    clearTimeout @fetch if @fetch?
 
   render: (subjects = []) =>
     @html @template
