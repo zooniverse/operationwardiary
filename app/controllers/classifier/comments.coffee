@@ -62,6 +62,8 @@ class Comments extends Spine.Controller
   updateCount: =>
     count = @comment_text.val().length
     @count.text @comment_length - count
+    invalid = count > @comment_length
+    @count.toggleClass 'invalid', invalid
     
   validateComment: (comment)=>
     is_valid = comment.length > 0 && comment.length <= @comment_length
