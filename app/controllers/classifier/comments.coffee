@@ -29,7 +29,6 @@ class Comments extends Spine.Controller
     @el.attr role: 'dialog'
     # uncomment this for testing
     # @zooniverse_id = 'AWD00001qt'
-    console.log @comment_length
 
   render: =>
     @html @template
