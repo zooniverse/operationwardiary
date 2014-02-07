@@ -12,6 +12,7 @@
 </div>
 <% if @user: %>
   <textarea placeholder="Say something or add a #tag&hellip;"></textarea>
+  <p class="warning"><span class="count">140</span> characters</p>
   <button><%- translate 'span', "common.comment" %></button>
 <% else: %>
   <p>You must log in to post comments.</p>
