@@ -19,7 +19,7 @@ class Recents extends Spine.Controller
   deactivate: =>
     super
     
-    clearTimeout @fetch if @fetch?
+    clearTimeout @fetch_comments if @fetch_comments?
 
   render: (subjects = []) =>
     @html @template
@@ -35,6 +35,6 @@ class Recents extends Spine.Controller
       .done ({subjects})=>
         @render subjects
     
-    setTimeout @fetch, @delay * 1000 if @delay?
+    @fetch_comments = setTimeout @fetch, @delay * 1000 if @delay?
 
 module.exports = Recents
