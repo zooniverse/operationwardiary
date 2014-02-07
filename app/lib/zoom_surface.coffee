@@ -124,7 +124,7 @@ class ZoomableSurface extends MarkingSurface
       @onDrag arguments...
     
     @container.on 'mousemove touchmove', onDrag
-    @container.one 'mouseup touchend', (e)=>
+    @container.one 'mouseup touchend', =>
       @onRelease arguments...
       @container.off 'mousemove touchmove', onDrag
       @container.off 'mouseup touchend'
