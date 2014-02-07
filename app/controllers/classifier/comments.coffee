@@ -54,8 +54,13 @@ class Comments extends Spine.Controller
       comment.date = DateWidget.formatDate 'd MM yy', new Date comment.updated_at
     @render()
     
+  validateComment: (comment)=>
+    comment.length > 0 && comment.length <= 140
+    
   submitComment: =>
     comment = @comment_text.val()
+    is_valid = @validateComment comment
+    return unless is_valid
     request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{Subject.current?.zooniverse_id}/comments", comment: comment
     time = new Date
     
