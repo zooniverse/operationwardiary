@@ -23,7 +23,7 @@ class CachedSubject extends Subject
     # console?.log 'setting', @cache[@group][0]
   
   @get_cache: =>
-    return {} unless User.current
+    return { subjects: [] } unless User.current
     @cache = store.get "subjects#{User.current.zooniverse_id}", {}
     # console?.log 'getting', @cache[@group]?[0]
     
@@ -44,9 +44,10 @@ class CachedSubject extends Subject
     
   @fetch: (params, done, fail) =>
     promise = new $.Deferred
-    @get_cache()
+    cache = @get_cache()
+    cache.subjects ?= []
     
-    cached_subjects = @cache.subjects ? []
+    cached_subjects = cache.subjects
     
     if cached_subjects.length > 0
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)

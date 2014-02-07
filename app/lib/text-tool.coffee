@@ -38,6 +38,8 @@ class TextControls extends ToolControls
     @setNote()
     
     @el.off 'mousedown touchstart'
+    @el.on 'mouseup touchend', '.annotation, button, a', (e) ->
+      e.stopPropagation()
     
     @tool.on 'select', =>
       @active = true
@@ -142,14 +144,15 @@ class TextControls extends ToolControls
     return unless @el.hasClass 'closed'
     @el.removeClass 'closed'
     @el.draggable
-      cancel: "input,textarea,button,select,option,label,.map"
+      cancel: "input,textarea,button,select,option,label,.map,.annotation,a"
     
     @el.on 'mousedown mouseover mousemove', 'select', (e)=>
       e.stopPropagation()
     @el.on 'mousewheel wheel', (e)=>
       e.stopPropagation()
     
-    @textInput.filter(':first').focus() unless document.activeElement == @.el[0]
+    input = @textInput.filter(':first')
+    input.focus() unless document.activeElement == input[0]
   
   close: =>
     return if @el.hasClass 'closed'
