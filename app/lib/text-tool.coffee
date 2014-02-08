@@ -225,6 +225,8 @@ class TextTool extends Tool
     
     @label.show()
     
+    @render()
+    
   deselect: =>
     super
     
