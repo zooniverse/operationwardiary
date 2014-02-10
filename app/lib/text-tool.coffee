@@ -153,6 +153,8 @@ class TextControls extends ToolControls
     
     input = @textInput.filter(':first')
     input.focus() unless document.activeElement == input[0]
+    
+    @tool.render() if @tool.mark.p0?
   
   close: =>
     return if @el.hasClass 'closed'

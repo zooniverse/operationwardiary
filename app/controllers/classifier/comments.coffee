@@ -14,10 +14,13 @@ class Comments extends Spine.Controller
   elements:
     'textarea': 'comment_text'
     'button': 'comment_button'
+    '.warning .count': 'count'
   
   comments: []
   
   refresh: 120
+  
+  comment_length: 140
     
   constructor: ->
     super
@@ -38,6 +41,8 @@ class Comments extends Spine.Controller
     @comment_text.on 'focus', =>
       clearTimeout @timeout if @timeout?
     
+    @comment_text.on 'keyup', @updateCount
+    
     $('p.author img', @el).one 'error', ->
       @.src = '//zooniverse-avatars.s3.amazonaws.com/default_forum_avatar.png'
     
@@ -54,8 +59,19 @@ class Comments extends Spine.Controller
       comment.date = DateWidget.formatDate 'd MM yy', new Date comment.updated_at
     @render()
     
+  updateCount: =>
+    count = @comment_text.val().length
+    @count.text @comment_length - count
+    invalid = count > @comment_length
+    @count.toggleClass 'invalid', invalid
+    
+  validateComment: (comment)=>
+    is_valid = comment.length > 0 && comment.length <= @comment_length
+    
   submitComment: =>
     comment = @comment_text.val()
+    is_valid = @validateComment comment
+    return unless is_valid
     request = Api.current.post "/projects/#{Api.current.project}/talk/subjects/#{Subject.current?.zooniverse_id}/comments", comment: comment
     time = new Date
     

@@ -34,10 +34,14 @@ class Classifier extends TabController
     'click .finish': 'onFinishTask'
     'mousedown .zoom-in': 'onZoomIn'
     'mousedown .zoom-out': 'onZoomOut'
+    'touchstart .zoom-in': 'onZoomIn'
+    'touchstart .zoom-out': 'onZoomOut'
     'keydown .zoom-in': 'onKeyZoomIn'
     'keydown .zoom-out': 'onKeyZoomOut'
     'mouseup .zoom-in': 'onStopZoom'
     'mouseup .zoom-out': 'onStopZoom'
+    'touchend .zoom-in': 'onStopZoom'
+    'touchend .zoom-out': 'onStopZoom'
     'keyup .zoom-in': 'onStopZoom'
     'keyup .zoom-out': 'onStopZoom'
 
@@ -407,13 +411,13 @@ class Classifier extends TabController
     store.deleteKey "sub#{User.current.zooniverse_id}#{subject_id}" for subject_id in response.classification.subject_ids
     
 
-  onZoomIn: ({currentTarget})=>
+  onZoomIn: (e)=>
+    e.preventDefault()
+    @onZoom e.currentTarget, .1
     
-    @onZoom currentTarget, .1
-    
-  onZoomOut: ({currentTarget})=>
-    
-    @onZoom currentTarget, -.1
+  onZoomOut: (e)=>
+    e.preventDefault()
+    @onZoom e.currentTarget, -.1
     
   onKeyZoomIn: (e) =>
     return unless e.which == 13
@@ -423,8 +427,9 @@ class Classifier extends TabController
     return unless e.which == 13
     @onZoom e.currentTarget, -.1
   
-  onStopZoom: ({currentTarget}) =>
-    @onZoom currentTarget, 0
+  onStopZoom: (e) =>
+    e.stopPropagation()
+    @onZoom e.currentTarget, 0
     
   onZoom: (currentTarget, delta)=>
     @surface.markingMode = false

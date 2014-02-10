@@ -127,6 +127,8 @@ class ZoomableSurface extends MarkingSurface
     @container.one 'mouseup touchend', =>
       @onRelease arguments...
       @container.off 'mousemove touchmove', onDrag
+      @container.off 'mouseup touchend'
+      return unless e.target in [@container.get(0), @paper.canvas, @image.node]
       if create_mark
         @trigger 'create-tool'
         tool = @createTool()
