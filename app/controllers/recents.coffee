@@ -31,8 +31,8 @@ class Recents extends Spine.Controller
     
   
   fetch: =>
-    Api.current.get("/projects/#{Api.current.project}/talk/recents")
-      .done ({subjects})=>
+    Api.current.get("/projects/#{Api.current.project}/talk/recents/subjects")
+      .done (subjects)=>
         @render subjects
     
     @fetch_comments = setTimeout @fetch, @delay * 1000 if @delay?
