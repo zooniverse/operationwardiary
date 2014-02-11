@@ -79,6 +79,7 @@ class TextControls extends ToolControls
     @el.on 'change', ':input', @onTextChange
     
     @el.on 'keydown', '.annotation :input', (e)=>
+      e.stopPropagation()
       if e.which == 13
         $( e.currentTarget ).blur().focus()
         @widget.updateNote e.currentTarget
@@ -267,11 +268,17 @@ class TextTool extends Tool
       @shapeSet.attr opacity: 0.4
     
   render: ->
-    @widget.move @dots, @mark.p0[0], @mark.p0[1]
+    [x, y] = @mark.p0
+    x = Math.max x, 0
+    x = Math.min x, @surface.image.attr 'width'
+    y = Math.max y, 0
+    y = Math.min y, @surface.image.attr 'height'
+    @mark.p0 = [x,y]
+    @widget.move @dots, x, y
       
       
     {left, top} = @surface.getOffset()
-    @controls.moveTo (@mark.p0[0]  - left) * @surface.zoomBy, (@mark.p0[1]  - top) * @surface.zoomBy
+    @controls.moveTo (x  - left) * @surface.zoomBy, (y  - top) * @surface.zoomBy
     
   mouseOffset: (e) ->
     {x,y} = super
