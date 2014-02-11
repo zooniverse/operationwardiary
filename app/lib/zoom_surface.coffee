@@ -1,3 +1,5 @@
+body = $( 'body' )
+
 KEYS =
   left: 37
   up: 38
@@ -124,10 +126,10 @@ class ZoomableSurface extends MarkingSurface
       @onDrag arguments...
     
     @container.on 'mousemove touchmove', onDrag
-    @container.one 'mouseup touchend', =>
+    body.one 'mouseup touchend', =>
       @onRelease arguments...
       @container.off 'mousemove touchmove', onDrag
-      @container.off 'mouseup touchend'
+      body.off 'mouseup touchend'
       return unless e.target in [@container.get(0), @paper.canvas, @image.node]
       if create_mark
         @trigger 'create-tool'
