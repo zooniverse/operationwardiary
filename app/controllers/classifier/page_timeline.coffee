@@ -73,7 +73,7 @@ class PageTimeline extends Spine.Controller
     left = true if type in ['diaryDate', 'time']
     
     for item in items
-      left = true if type == 'place' && item.note.location
+      left = true if item.type == 'place' && item.note.location
       if item.type == type && left
         entries.push entry if entry.note? || entry.items.length > 0
         entry =
