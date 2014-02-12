@@ -65,7 +65,7 @@ class PageTimeline extends Spine.Controller
       items: []
     
     # arbitary limit for our left column  
-    x_limit = 3 
+    x_limit = 4 
     
     type = entities.shift()
     
