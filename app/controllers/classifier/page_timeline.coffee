@@ -64,15 +64,14 @@ class PageTimeline extends Spine.Controller
       y: null
       items: []
     
-    # are we in the left column?  
-    left = false 
-    
     type = entities.shift()
     
-    # dates/times count wherever they are in x
-    left = true if type in ['diaryDate', 'time']
-    
     for item in items
+      # are we in the left column?
+      left = false
+      # dates/times count wherever they are in x
+      left = true if type in ['diaryDate', 'time']
+      # places count if location is ticked
       left = true if item.type == 'place' && item.note.location
       if item.type == type && left
         entries.push entry if entry.note? || entry.items.length > 0
@@ -84,6 +83,7 @@ class PageTimeline extends Spine.Controller
           items: []
       else
         entry.items.push item
+      
     
     entries.push entry if entry.note? || entry.items.length > 0
     
