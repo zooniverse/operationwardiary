@@ -64,10 +64,16 @@ class PageTimeline extends Spine.Controller
       y: null
       items: []
     
+    # arbitary limit for our left column  
+    x_limit = 3 
+    
     type = entities.shift()
     
+    # dates count wherever they are in x
+    x_limit = 60 if type == 'diaryDate'
+    
     for item in items
-      if item.type == type && item.x < 3
+      if item.type == type && item.x < x_limit
         entries.push entry if entry.note? || entry.items.length > 0
         entry =
           label: item.label
