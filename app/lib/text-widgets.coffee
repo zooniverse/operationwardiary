@@ -220,37 +220,15 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     console?.log $id.val()
     
     selected = false
-    place =
+    nowhere =
       placename: @el.find('input[name=place]').val()
       lat: null
       long: null
       name: ''
       id: ''
-    label = $("<label>#{translate 'span', 'classifier.place.none'}</label>")
-    input = 
-      $("<input/>")
-      .attr( "type", 'radio' )
-      .attr( 'name', group_id)
-      .on( 'change', place, (e)=>
-        place = e.data
-        e.preventDefault()
-        e.stopPropagation()
-        promise.notify place
-        $suggestions.find('label').off 'mouseover focus'
-        $placename.trigger 'change'
-      )
-    label.prepend input
-    label.on 'mouseover focus', place, (e)=>
-      place = e.data
-      @show_place place.lat, place.long
-    $suggestions.append label
-    if place.id == $id.val()
-      input.attr('checked', 'checked').prop 'checked', true 
-      @show_place place.lat, place.long
-      selected = true
     
-    for place in places
-      label = $("<label><span>#{place.name}</span></label>")
+    build_input = (label, place) =>
+      label = $("<label><span>#{label}</span></label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
@@ -275,8 +253,17 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         @show_place place.lat, place.long
         selected = true
       
+      input
+      
+    not_sure = build_input translate('span', 'classifier.place.none'), nowhere    
+    build_input place.name, place for place in places
+      
     $suggestions.addClass 'open'
     $suggestions.find('label').off 'mouseover focus' if selected
+    unless selected
+      not_sure.attr('checked', 'checked').prop 'checked', true 
+      @show_place nowhere.lat, nowhere.long
+      promise.notify nowhere
     
     promise
 
