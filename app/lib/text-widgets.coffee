@@ -186,7 +186,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         zoomControl: true,
         zoomControlOptions:
           style: google.maps.ZoomControlStyle.SMALL
-          position: google.maps.ControlPosition.TOP_LEFT
+          position: google.maps.ControlPosition.LEFT_TOP
           
       @gmap = new google.maps.Map $('.map', @el)[0], map_options
       lat = el.find( 'input[name=lat]' ).val()
