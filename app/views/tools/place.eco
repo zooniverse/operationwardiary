@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 
-<div class="map" style="width: 192px; height: 150px; min-height: 100px;"></div>
+<div class="map" style="width: 192px; height: 100px; min-height: 100px;"></div>
 
 <div class="annotation">
   
