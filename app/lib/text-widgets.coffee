@@ -199,7 +199,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     return unless google? && google.maps?
     try
       latlng = new google.maps.LatLng lat,long
-      @marker?= new google.maps.marker 
+      @marker?= new google.maps.Marker 
         position: latlng
         map: @gmap
         bounds: false
