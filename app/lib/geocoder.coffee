@@ -46,7 +46,7 @@ class Geocoder
       id: null
     
     callback = placename.toLowerCase()
-    callback = callback.replace /\s/g, ''
+    callback = callback.replace /[^\p{ASCII}]+/g, ''
     yql = new YQL query, 'process_' + callback
     yql
       .signed_request()
