@@ -203,7 +203,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
         position: latlng
         map: @gmap
         bounds: false
-      @marker[0].setPosition latlng
+      @marker.setPosition latlng
       google.maps.event.trigger @gmap, 'resize'
       @gmap.setCenter latlng
     catch e
