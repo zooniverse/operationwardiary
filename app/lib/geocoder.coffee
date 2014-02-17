@@ -31,8 +31,8 @@ class Geocoder
   call_webservice: (placename) =>
     
     queries =
-      geoplanet: "select * from geo.placefinder where text='#{escape placename}' and countrycode in ('BE','FR','GB') limit 5"
-      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{escape placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse'"
+      geoplanet: "select * from geo.placefinder where text='#{encodeURIComponent placename}' and countrycode in ('BE','FR','GB') limit 5"
+      geonames: "select * from xml where url='http://api.geonames.org/search?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=S&featureClass=R&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse'"
     
     query = queries[@service]
     
@@ -46,7 +46,7 @@ class Geocoder
       id: null
     
     callback = placename.toLowerCase()
-    callback = callback.replace /\s/g, ''
+    callback = callback.replace /[^\p{ASCII}]+/g, ''
     yql = new YQL query, 'process_' + callback
     yql
       .signed_request()
