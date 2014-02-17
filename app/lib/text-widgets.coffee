@@ -179,15 +179,15 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     super
     return unless google? && google.maps?
     try
-      @gmap = $('.map', @el)
-        .gmap
-          zoom: 9
-          mapTypeId: google.maps.MapTypeId.TERRAIN
-          mapTypeControl: false
-          zoomControl: true,
-          zoomControlOptions:
-            style: google.maps.ZoomControlStyle.SMALL
-    
+      map_options =
+        zoom: 9
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeControl: false
+        zoomControl: true,
+        zoomControlOptions:
+          style: google.maps.ZoomControlStyle.SMALL
+          
+      @gmap = new google.maps.Map $('.map', @el)[0], map_options
       lat = el.find( 'input[name=lat]' ).val()
       long = el.find( 'input[name=long]' ).val()
     
@@ -199,11 +199,13 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     return unless google? && google.maps?
     try
       latlng = new google.maps.LatLng lat,long
-      @marker?= @gmap.gmap 'addMarker', {position: latlng, bounds: false }
+      @marker?= new google.maps.marker 
+        position: latlng
+        map: @gmap
+        bounds: false
       @marker[0].setPosition latlng
-      map = @gmap.gmap 'get', 'map'
-      google.maps.event.trigger map, 'resize'
-      map.setCenter latlng
+      google.maps.event.trigger @gmap, 'resize'
+      @gmap.setCenter latlng
     catch e
       console?.log e.message
   
