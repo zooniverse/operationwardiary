@@ -230,31 +230,37 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       name: ''
       id: ''
     
+    choose_option = (e) ->
+      place = e.data
+      e.preventDefault()
+      e.stopPropagation()
+      promise.notify place
+      $suggestions.find('label').off 'mouseover focus'
+      $placename.trigger 'change'
+    
+    show_option = (e) =>
+      place = e.data
+      @show_place place.lat, place.long
+    
+    select = (input, place) =>
+      input.attr('checked', 'checked').prop 'checked', true 
+      @show_place place.lat, place.long
+      promise.notify place
+      selected = true
+      
     build_input = (label, place) =>
       label = $("<label><span>#{label}</span></label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
         .attr( 'name', group_id)
-        .on( 'change', place, (e)->
-          place = e.data
-          e.preventDefault()
-          e.stopPropagation()
-          promise.notify place
-          $suggestions.find('label').off 'mouseover focus'
-          $placename.trigger 'change'
-          
-        )
+        .on 'change', place, choose_option
+        
       label.prepend input
-      label.on 'mouseover focus', place, (e)=>
-        place = e.data
-        @show_place place.lat, place.long
+      label.on 'mouseover focus', place, show_option
         
       $suggestions.append label
-      if place.id == $id.val()
-        input.attr('checked', 'checked').prop 'checked', true 
-        @show_place place.lat, place.long
-        selected = true
+      select input, place if place.id == $id.val()
       
       input
       
@@ -263,10 +269,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       
     $suggestions.addClass 'open'
     $suggestions.find('label').off 'mouseover focus' if selected
-    unless selected
-      not_sure.attr('checked', 'checked').prop 'checked', true 
-      @show_place nowhere.lat, nowhere.long
-      promise.notify nowhere
+    select not_sure, nowhere unless selected
     
     promise
 
