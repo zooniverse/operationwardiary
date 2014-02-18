@@ -424,15 +424,15 @@
       z-index: -1
   
   .suggestions
-    width: 90%
-    margin: -.5em 5px 2px
     max-height: 0
     display: block
-    transition: max-height 1s
+    transition: max-height .2s
+    margin-bottom: .4em
     
     &.open
-      max-height: 300px
-      box-shadow: 0 3px 3px 1px #666;
+      max-height: 70px
+      overflow: auto
+      border: 1px solid $lightgrey
     
     label
     

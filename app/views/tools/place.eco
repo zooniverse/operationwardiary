@@ -5,7 +5,8 @@
 <div class="annotation">
   
   <label><%- translate 'span', "classifier.place.name" %> <input name="place" type="search" value="" /></label>
-  <span class="suggestions"></span>
+  <label id="suggest">Can you add this to the map?</label>
+  <span class="suggestions" aria-labelledby="suggest"></span>
   <label><%- translate 'span', "classifier.place.location" %> <input name="location" type="checkbox" checked ></label>
   <input name="name" type="hidden" value="" />
   <input name="lat" type="hidden" value="" />
