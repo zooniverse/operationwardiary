@@ -249,7 +249,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       selected = true
       
     build_input = (label, place) =>
-      label = $("<label><span>#{label}</span></label>")
+      label = $("<label>#{label}</label>")
       input = 
         $("<input/>")
         .attr( "type", 'radio' )
@@ -265,7 +265,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       input
       
     not_sure = build_input translate('span', 'classifier.place.none'), nowhere    
-    build_input place.name, place for place in places
+    build_input "<span>#{place.name}</span>", place for place in places
       
     $suggestions.addClass 'open'
     $suggestions.find('label').off 'mouseover focus' if selected
