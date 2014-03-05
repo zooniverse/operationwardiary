@@ -10,10 +10,8 @@ labels =
       'strength'
       'weather'
       'domestic'
-      'reference'
       'mapRef'
       'gridRef'
-      'unit'
     ]
     
     orders: [
