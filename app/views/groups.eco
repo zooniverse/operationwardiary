@@ -2,7 +2,7 @@
 
 <%- translate 'h2', 'groups.title' %>
 <ul class="pages">
-  <% for i in [1..5]: %>
+  <% for i in [1..10]: %>
   <li><a href="#/diaries/<%- i %>"><%- i %></a></li>
   <% end %>
 </ul>
@@ -24,7 +24,7 @@
   </ul>
 <% end %>
 <ul class="pages">
-  <% for i in [1..5]: %>
+  <% for i in [1..10]: %>
   <li><a href="#/diaries/<%- i %>"><%- i %></a></li>
   <% end %>
 </ul>
