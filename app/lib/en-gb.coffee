@@ -121,6 +121,8 @@ module.exports =
     died: 'Died of wounds'
     wounded: 'Wounded'
     prisoner: 'Prisoner of war'
+    non_combat: 'Non-combat death'
+    other: 'Other'
   
   strength:
     officer: 'Officers'
@@ -154,7 +156,7 @@ module.exports =
     returned_hospital: 'Returned: from hospital'
     returned_leave: 'Returned: from leave'
     returned_training: 'Returned: from training'
-    returned_posted: 'Returned: from posting or attachment'
+    returned_posted: 'Returned: from attachment'
     casualty_wounded: 'Casualty: Sick or wounded'
     casualty_died: 'Casualty: Died of Wounds'
     casualty_mia: 'Casualty: Missing in Action'

@@ -63,7 +63,6 @@ labels =
     'quiet'
     'fire'
     'enemy_activity'
-    'strength'
     'resting'
     'construction'
     'resupplying'
@@ -92,6 +91,8 @@ labels =
     'missing'
     'killed'
     'prisoner'
+    'non_combat'
+    'other'
   ]
   
   strength: [
