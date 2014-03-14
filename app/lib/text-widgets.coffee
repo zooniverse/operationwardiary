@@ -407,6 +407,8 @@ WidgetFactory.registry.casualties = class CasualtiesWidget extends TextWidget
       died: 0
       wounded: 0
       prisoner: 0
+      non_combat: 0
+      other: 0
     
     $(target)
       .parents( '.annotation' )
