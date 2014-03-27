@@ -234,7 +234,7 @@ If there was little to record or a major incident had taken place over a few day
                            <h4>First name</h4>
                            <p>It is not unusual for initials to be used instead of a first name. Record initials with a space between them.</p>
                            <h4>Surname</h4>
-                           <p>Double barrelled names either with our without a hyphen were common. They should be recorded as written. If you see the same name written more than once see how it is usually written and record it consistently.</p>
+                           <p>Double barrelled names either with or without a hyphen were common. They should be recorded as written. If you see the same name written more than once see how it is usually written and record it consistently.</p>
                            <h4>Number</h4>
                            <p>Officers did not have Regimental Numbers but Non-Commissioned Officers and Other Ranks did.</p>
                            <h4>Unit (if specified)</h4>
@@ -250,7 +250,7 @@ If there was little to record or a major incident had taken place over a few day
       activity: '''
       <span class="figure"><img alt="sample activity photo" src="images/guide/Q_010737.jpg"><span class="caption">IWM (Q 10737) Men of the 1/7th King's Liverpool Regiment in the line. La Bassee Sector. 15 March 1919. (55th Division).
 </span></span>
-      Despite popular myth not every unit spent four long years in a muddy front line trench with the officers writing poetry! We know that units rotated between being in reserve, the front line and the rear for a period of rest. They moved to different sectors and were engaged in a variety of tasks. Help us find out how long they spent in each area and what they were doing on a daily basis by tagging the different types of activity.
+      Despite popular myth not every unit spent four long years in a muddy front line trench with the officers writing poetry! We know that units rotated between being in reserve, the front line and the rear for a period of rest. They moved to different sectors and were engaged in a variety of tasks. Help us find out how long they spent in each area and what they were doing on a daily basis by tagging the different types of activity. If you cannot find a suitable tag in Unit Activity have a look in Army Life where there are tags for more routine domestic and social occupations.
       '''
       casualties: '''
             <span class="figure"><img alt="sample casualties photo" src="images/guide/Q_002855.jpg"><span class="caption">IWM (Q 2855) Ernest Brooks: A recurring image of faith and compassion; a padre gives a drink to a badly wounded soldier near Potijze.
@@ -263,6 +263,10 @@ If there was little to record or a major incident had taken place over a few day
       reference: "The C2118 entry is usually quite brief. More detail was provided in additional documents included as appendices at the end of the month. We need to know what other documents are mentioned. Tag any mention of other documents and add the reference or Appendix number which you will usually find in the right hand column."
       mapRef: "A series of maps covered the Western Front at different scales. Each map was allocated a sheet number, sometimes with a letter. Each sheet was then divided into 4 (North West, North East, South West and South East). Each of these was subdivided again into 4 numbered sections  (North West 1, North West 2 etc).This identifies a 1:10,000 map sheet - the most common map scale used by units. As the situation changed and trenches moved, maps were re-drawn and a dates was added to the reference. Example: Sheet 28 NW4 Ypres. Fill in as much information as you can."
       gridRef: "Each map sheet was divided into a series of grids. Using a sequence of letters and numbers a square 5 yards by 5 yards could be identified. Each 1:40,000 map sheet was divided into 24 squares lettered A-X. Each of these was subdivided into 36 numbered squares. Each numbered square was subdivided into 4 quarters lettered a-d. Each of the quarters was divided into a 10x10 numbered grid and then finally each 50 yard square subdivided again by 10. Example: M 24 b 35.48. Not all the elements of the grid reference may have been given, so complete the relevant boxes and leave the rest blank."
+      strength: '''
+                      Each unit had an established strength - the number of officers, NCOs and other ranks that they needed to operate effectively. If the unit suffered heavy casualties and it's strength was significantly reduced they may have ceased to exist and the remaining men sent to other units. 
+                      '''
+      
       domestic: '''
             <span class="figure"><img alt="sample army life photo" src="images/guide/Q4025.jpg"><span class="caption">IWM (Q 4025) Soldier washing clothes outside a Mess Kitchen. Carnoy Valley, July 1916.
       </span></span>
@@ -297,7 +301,8 @@ If there was little to record or a major incident had taken place over a few day
       repair: '''
             <span class="figure"><img alt="sample trench repair photo" src="images/guide/Q_006229.jpg"><span class="caption">IWM (Q 6229) Sappers of the Royal Engineers fix scaling ladders in front line trenches during 8 April 1917, the day prior to the opening of the Arras offensive.
       </span></span>
-      Trenches provided protection and a route for bringing up supplies, equipment and reinforcements. They needed to be carefully constructed and maintained. Tag any mention of the unit digging, repairing or improving trenches or 'saps' (shallow trenches that went out from the main trench system into no-mans-land).'''
+      Trenches provided protection and a route for bringing up supplies, equipment and reinforcements. They needed to be carefully constructed and maintained. The artillery also needed to prepare their gun emplacements. Tag any mention of the unit digging, repairing or improving trenches or 'saps' (shallow trenches that went out from the main trench system into no-mans-land), emplacements or positions.
+      '''
       movement: '''
             <span class="figure"><img alt="sample movement photo" src="images/guide/Q_000329.jpg"><span class="caption">IWM (Q 6229) Sappers of the Royal Engineers fix scaling ladders in front line trenches during 8 April 1917, the day prior to the opening of the Arras offensive.
       </span></span>
@@ -305,13 +310,13 @@ If there was little to record or a major incident had taken place over a few day
       reconnoitered: '''
             <span class="figure"><img alt="sample reconnaisance photo" src="images/guide/Q_006948.jpg"><span class="caption">IWM (Q 6948) Artillery observers in Meteren watching the progress of the creeping barrage laid down to support the attack of 27th Brigade, 9th Division, on Outtersteene Ridge, 18 August 1918.
       </span></span>
-      A knowledge of the area, the trench system and enemy positions was critical. During the take over of a section of the line the unit reconnoitre the area, sometimes with a guide from the unit handing over. They established the boundaries of the area they were responsible for, noted where repairs or strengthening of the line was needed and where they might be vulnerable. Prior to a raid or attack a unit gathered evidence on the opposing forces. Artillery units needed to find suitable locations for their guns. Tag any mention of a unit reconnoitring, familiarising themselves with the area or sending out patrols.'''
+      A knowledge of the area, the trench system and enemy positions was critical. During the take over of a section of the line the unit reconnoitred the area, sometimes with a guide from the unit handing over. They established the boundaries of the area they were responsible for, noted where repairs or strengthening of the line was needed and where they might be vulnerable. Prior to a raid or attack a unit gathered evidence on the opposing forces. Artillery units needed to find suitable locations for their guns. Tag any mention of a unit reconnoitring, familiarising themselves with the area or sending out patrols.'''
       training: "Men needed to be trained in tactics and instructed in how to use new equipment as well as staying fit. Tag any references to the unit undergoing instruction or training , including route marches."
       line: "When a unit moved into the line they took over responsibility for that sector of the front, both to defend it against enemy action and to launch a raid or attack from it. Tag any reference to the unit taking over, moving into or being in the (front) line."
       attack: '''
             <span class="figure"><img alt="sample reconnaisance photo" src="images/guide/Q_011086.jpg"><span class="caption">IWM (Q 11086) Men of the 5th Battalion, Devonshire Regiment, take a German prisoner in the Bois de Reims during the Battle of the Tardenois (20 - 31 July 1918).
       </span></span>
-      Headquarters allocated infantry units objectives such as a village or trench line as the focus for their part in an attack. Artillery units supported attacks by laying down a barrage or wall of shells, all in a pre-planned and carefully timed pattern. Other units assisted by bringing up ammunition and other supplies or removing casualties. Tag any mention of the unit participating in or supporting an attack.'''
+      Headquarters allocated infantry units objectives such as a village or trench line as the focus for their part in an attack. Artillery units supported attacks by laying down a barrage or wall of shells, all in a pre-planned and carefully timed pattern. Other units assisted by bringing up ammunition and other supplies or removing casualties. Tag any mention of the unit participating in or supporting an attack, including laying down a barrage or firing.'''
       raid: "Not all attacks were large scale battles. Units carried out small scale raids to test the strength of the German units, to gather intelligence and to maintain their aggressive spirit."
       withdraw: "Although there were long periods when the line was static there were also occasions when units had to withdraw, either because they were forced back by a German attack or because it was decided that there were advantages to the line being moved to a different position. Tag any mention of the unit consolidating the line by withdrawing, or retreating or moving back."
       quiet: "Units had to be on the lookout for enemy attacks all the time. If nothing was happening they would record that the situation was quiet."
@@ -319,6 +324,25 @@ If there was little to record or a major incident had taken place over a few day
       enemy_activity: "Careful observation of enemy troops and artillery could reveal if they were preparing to raid, launch an attack or withdraw. Tag any mention of German activity including troop movements. "
       strength: "Each unit had an established strength, with a pre-set number of officers, NCO's  and Other Ranks. The Adjutant may have recorded this information at intervals, particularly when first arriving in a Theatre of War."
       resting: "Units moved behind the lines for periods of rest. Tag any references to the unit being At Rest or spending a period of time away from the activities of the front and reserve lines."
+      achieved: '''
+                      To avoid groups of men becoming isolated and surrounded during an attack it was important that units moved forward as part of a co-ordinated plan. Reporting that they had achieved their set objective was an important part of this. Tag any mention of the unit achieving its objective either fully or partially.
+                      '''
+      construction: '''
+                          Pioneers, engineers and the Labour Corps built, maintained and repaired tracks, roads, railways, huts, camps, sanitary facilities, etc. Tag any mention of construction, maintenance or repair that does not refer to front line trenches or gun positions.
+                          '''
+      resupplying: '''
+                      The army relied on a constant supply of men, animals, ammunitions, food, water, materials and equipment being obtained and moved to the front line. Tag any mention of supplies being acquired, arranged, managed or delivered.
+                      '''
+      working: '''
+                     Working parties were used for almost any task that required additional temporary manpower. The diary may record a group of men being sent to help another unit as stretcher bearers, tasked to carry equipment or supplies or to clear the battlefield. Working parties may have been away from their parent unit for a few hours or days.
+                     '''
+      clearing: '''
+                      Following major attacks attempts were made to retrieve and bury the dead. Occasionally a temporary truce was agreed to allow this. At the end of hostilities a more systematic approach was adopted to clearing munitions and recovering the dead. Tag any mention of clearing the battlefield, recovering the dead or burials.
+                      '''
+      casualty: '''
+                      A complex system for casualty treatment and evacuation existed including the use of motor ambulances, canal barges and hospital trains. Tag any mention of casualties being treated or evacuated.
+                      '''
+      
       
     casualties:
       sick: "A distinction was made between those who were ill and those who had suffered a physical wound. In the unsanitary conditions of the front, sickness of all kinds was prevalent."
@@ -327,6 +351,7 @@ If there was little to record or a major incident had taken place over a few day
       missing: "Anyone who could not be accounted for was reported at 'Missing'. In the confusion of a raid or battle men may have been wounded and either entered the medical evacuation system or have remained on the battlefield unable to move. They may have become muddled up with men from another unit, been captured or suffered such catastrophic injuries that it was impossible to identify them. Until some evidence could be found to indicate their fate, such men remained 'Missing in Action' (MIA)"
       killed: "This term was usually used when men were killed outright or when they died on the battlefield. (KIA)"
       prisoner: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses."
+      non_combat: "Deaths also occurred due to accidents and natural causes. Use this tag for any death that was not a direct result of wartime active service eg vehicle accident, suicide or appendicitis."
       
     unit:
       relieved: "Use this tag if the unit who wrote this diary took over the line from another unit."
@@ -352,6 +377,10 @@ If there was little to record or a major incident had taken place over a few day
       warning: "An alert from either the front line to HQ or from HQ to the front line warning of an enemy attack."
   
     person:
+      commander: '''
+                       The officer in charge of the unit is often mentioned by name and may have signed the diary.
+                       '''
+      
       author: '''
             <span class="figure"><img alt="sample author photo" src="images/guide/Q2303.jpg"><span class="caption">IWM (Q 2303)  Battle of Messines Ridge. Two Colonels and their Adjutants in a captured German communication trench; OOstaverne Wood, 11th June 1917.
       </span></span>
@@ -362,20 +391,22 @@ If there was little to record or a major incident had taken place over a few day
             <span class="figure"><img alt="sample leave photo" src="images/guide/Q_010329.jpg"><span class="caption">IWM (Q 10329) The 'dazzled' Leave Boat leaving Boulogne for England. 15 June 1918.
       </span></span>
       Leave was granted to allow personnel to travel to a quiet location well behind the lines. Occasionally they were given enough time to travel back to the UK on 'Home Leave'. This may have been granted for personal circumstances eg the death of a child or if an individual was close to exhaustion.'''
-      departed_posted: "Officers were moved between units so they could share their knowledge and experience, which were important factors in how successful a unit could be. They might also be moved on promotion or posted to a quieter unit after prolonged periods of intense fighting."
+      departed_posted: "Officers were moved between units so they could share their knowledge and experience, which were important factors in how successful a unit could be. They might also be moved on promotion or posted to a quieter unit after prolonged periods of intense fighting. The move might have been permanent or a temporary detachment."
       departed_training: "Where specialist training or instruction was required personnel were sent on courses. Their temporary departure was recorded."
       returned_hospital: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
       returned_leave: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
       returned_training: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
-      casualty_wounded: "Distinctions were made between men who were wounded but still at their post, men who had been poisoned by gas or who were suffering shell shock symptoms as a result of an explosion eg Wounded (Gas), Wounded (At Duty), Wounded (Shell Shock). They should all be tagged as Wounded."
+      casualty_wounded: "Distinctions were made between men who were sick or wounded but still at their post, men who had been poisoned by gas or who were suffering shell shock symptoms as a result of an explosion eg Wounded (Gas), Wounded (At Duty), Wounded (Shell Shock), Sick. They should all be tagged as Sick or Wounded."
       casualty_died: "This term was used when men who were known to have survived their wounds initially, later died as a result. This could have been on the battlefield if there was a witness to them being wounded but they were later found dead, and then at any point in the medical evacuation system. (DOW)"
       casualty_mia: "Anyone who could not be accounted for was reported at 'Missing'. In the confusion of a raid or battle men may have been wounded and either entered the medical evacuation system or have remained on the battlefield unable to move. They may have become muddled up with men from another unit, been captured or suffered such catastrophic injuries that it was impossible to identify them. Until some evidence could be found to indicate their fate, such men remained 'Missing in Action' (MIA)"
       casualty_kia: "This term was used when men were killed outright or when they died on the battlefield. (KIA)"
       casualty_pow: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses. (POW)"
+      casualty_non: "Deaths also occurred due to accidents and natural causes. Use this tag for any death that was not a direct result of wartime active service eg vehicle accident, suicide or appendicitis."
       award: "Individuals who had carried out specific acts of bravery or who had behaved courageously over a long period may have been nominated for a commendation or award. Both the nomination and the receipt of the award may be recorded. These are the awards most likely to be mentioned: Conspicuous Gallantry Medal, Conspicuous Service Cross, Distinguished Conduct Medal, Distinguished Service Cross, Distinguished Service Medal, Distinguished Service Order, Indian Distinguished Service Medal, Indian Order of Merit, Medal of the Order of the British Empire, Mentioned in Despatches, Meritorious Service Medal, Military Cross, Military Medal, Order of the British Empire, Royal Red Cross, Victoria Cross. Individuals may have received a Commanders Commendation card for noteable work that did not warrant a medal."
       promotion: "A unit required a set number of officers of each rank. A promotion may have been based on experience and the result of the normal army process, or happened in the field due to the need to replace officer casualties. It was possible for a man to be promoted from the ranks and become an officer. Once promoted an officer may subsequently have moved to another unit. It was important that the correct rank was recorded by the unit as pay was based on rank."
       combat: "The actions of individuals during trench raids, large scale attacks and withdrawals were sometimes recorded."
       discipline: "Behaviour and conduct was controlled by Army Regulations. Anyone who broke the rules was subject to strict discipline. Punishments may have been carried out in front of the unit. More severe offences might have involved the individual being taken into custody and removed from the unit by the military police. These events may have been recorded in the unit diary."
+      awol: "If a man failed to report for duty he may have been listed as Absent without Leave. If he could not be found then he may have been considered to have deserted."
       
     domestic:
       accomodation: '''
