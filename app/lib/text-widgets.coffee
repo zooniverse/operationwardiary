@@ -431,6 +431,7 @@ WidgetFactory.registry.strength = class StrengthWidget extends CasualtiesWidget
   template: require('../views/tools/strength')( choices: labels.strength )
 
   type: 'strength'
+  help: '/diary/strength'
   
   updateNote: (target) ->
     
