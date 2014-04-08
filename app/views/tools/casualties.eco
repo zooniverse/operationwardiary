@@ -4,6 +4,5 @@
 <div class="annotation">
   <% for choice in @choices: %>
     <label><%- translate 'span', "casualties.#{choice}" %>&nbsp;<input name="<%= choice %>" type="number" min="0" size="3" value="0"/></label>
-    <option value=""></option>
   <% end %>
 </div>

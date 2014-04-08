@@ -122,7 +122,7 @@ module.exports =
     wounded: 'Wounded'
     prisoner: 'Prisoner of war'
     non_combat: 'Non-combat death'
-    other: 'Other'
+    other: 'Not specified'
   
   strength:
     officer: 'Officers'
