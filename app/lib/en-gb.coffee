@@ -342,7 +342,8 @@ If there was little to record or a major incident had taken place over a few day
       casualty: '''
                       A complex system for casualty treatment and evacuation existed including the use of motor ambulances, canal barges and hospital trains. Tag any mention of casualties being treated or evacuated.
                       '''
-      
+      reserve: "Units in reserve were positioned in a third line of trenches. They were far enough back to have some respite from the rigours of the front line but were able to provide assistance if required."
+      support: "Units in support were positioned in a second line of trenches to provide immediate assistance to those in the front line."
       
     casualties:
       sick: "A distinction was made between those who were ill and those who had suffered a physical wound. In the unsanitary conditions of the front, sickness of all kinds was prevalent."
@@ -386,6 +387,7 @@ If there was little to record or a major incident had taken place over a few day
       </span></span>
       One officer in each unit was appointed as 'Adjutant', responsible for all the unit administration including writing the unit war diary. They may have signed each page or put their name on the last page of the month.'''
       joined: "The arrival of a new officer was usually recorded in the unit diary. This may have been a permanent move or he may have been 'attached' for a time."
+      resigned: "Both professional soldiers as well as those who had joined up for the duration of the war, eventually left the army. Officers may have done this by resigning their commission. Both officers, NCOs and other ranks may have been discharged for a variety of reasons. At the end of the war men were 'demobilised' in stages and their departure from the unit was recorded."
       departed_sick: "The army made a clear distinction between those who were 'sick' and those who had been 'wounded'. The departure of officers who were too ill to continue with the unit was usually recorded." 
       departed_leave: '''
             <span class="figure"><img alt="sample leave photo" src="images/guide/Q_010329.jpg"><span class="caption">IWM (Q 10329) The 'dazzled' Leave Boat leaving Boulogne for England. 15 June 1918.
@@ -396,6 +398,7 @@ If there was little to record or a major incident had taken place over a few day
       returned_hospital: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
       returned_leave: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
       returned_training: "The return of individuals from training courses, from hospital when they had recovered from wounds or sickness or from leave was recorded." 
+      returned_posted: "Individuals were sent to other units on a temporary basis. Record when they returned to their own unit."
       casualty_wounded: "Distinctions were made between men who were sick or wounded but still at their post, men who had been poisoned by gas or who were suffering shell shock symptoms as a result of an explosion eg Wounded (Gas), Wounded (At Duty), Wounded (Shell Shock), Sick. They should all be tagged as Sick or Wounded."
       casualty_died: "This term was used when men who were known to have survived their wounds initially, later died as a result. This could have been on the battlefield if there was a witness to them being wounded but they were later found dead, and then at any point in the medical evacuation system. (DOW)"
       casualty_mia: "Anyone who could not be accounted for was reported at 'Missing'. In the confusion of a raid or battle men may have been wounded and either entered the medical evacuation system or have remained on the battlefield unable to move. They may have become muddled up with men from another unit, been captured or suffered such catastrophic injuries that it was impossible to identify them. Until some evidence could be found to indicate their fate, such men remained 'Missing in Action' (MIA)"
