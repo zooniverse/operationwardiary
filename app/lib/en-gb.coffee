@@ -353,6 +353,7 @@ If there was little to record or a major incident had taken place over a few day
       killed: "This term was usually used when men were killed outright or when they died on the battlefield. (KIA)"
       prisoner: "It may have taken some time for the names of men captured to be confirmed but sometimes there were witnesses."
       non_combat: "Deaths also occurred due to accidents and natural causes. Use this tag for any death that was not a direct result of wartime active service eg vehicle accident, suicide or appendicitis."
+      other: "Use this field if the casualties are not listed by type and only a total number is recorded."
       
     unit:
       relieved: "Use this tag if the unit who wrote this diary took over the line from another unit."
