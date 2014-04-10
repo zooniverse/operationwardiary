@@ -772,8 +772,9 @@ If there was little to record or a major incident had taken place over a few day
     tag_dates:
       header: "Tagging dates and times"
       details: '''
-        <p>Start tagging by working your way down the Date column.</p>
+        <p>Start by tagging dates. Work your way down the Date column.</p>
               <p>This will group events together and create a timeline of activity without you having to add a date to every other tag.</p>
+              <p>Don’t tag dates in the narrative as these may refer to events that have already happended or are planned.</p>
       '''
       instruction: "Select <b>Date</b> from the Tag menu"
 
@@ -783,6 +784,7 @@ If there was little to record or a major incident had taken place over a few day
         <p>There are a number of entries at different times on 20 May.</p>
         <p>Place the tag above the text of the first entry. A horizontal line appears, to indicate the start of the text for that day.</p>
         <p>If the tag box is covering the area of the page you want to look at, drag it to a new position.</p>
+        <p>If you cannot tell what the full date is, just type what you do know into the date box.</p>
       '''
       instruction: "Select 20 May 1915 from the calendar. Click on the &#x2714; button to confirm."
 
@@ -790,7 +792,6 @@ If there was little to record or a major incident had taken place over a few day
       header: "Adding a second date"
       details: '''
         <p>Now do the same thing for the next date, 21 May, and a second line will appear, dividing the page into sections. Remember to place it just above the date entry.</p>
-        <p>If you cannot tell what the full date is, just type what you do know into the date box.</p>
 
         <p>You can delete unwanted tags by selecting them and using the X.</p>
         <p>You can adjust the position of a tag by dragging the icon.</p>
@@ -800,29 +801,35 @@ If there was little to record or a major incident had taken place over a few day
     tag_places:
       header: "Tagging places"
       details: "<p>Once you have tagged all the dates follow the same approach for the Places column.</p>
-<p>This shows the unit location when the diary entry was written. Other places may be mentioned in the narrative column.</p>
-<p>Work your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>"
+<p>This shows the unit location when the diary entry was written.</p>
+<p>Work your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
+<p>Other places may be mentioned in the narrative column. Tag any specific locations, including named trenches. There is no need to tag things like ‘In the Field’.</p>"
       instruction: "Select the <b>Place</b> tag"
     
     add_places:
       header: "Choosing a place"
       details: "<p>Click on the second entry for 20 May where it says 'Aldershot' to attach the tag.</p>
 
-<p>Add the place name in the pop-up box and hit enter. If there are multiple options, use the map to help you choose the most likely location from the list. If you&#039;re not sure select 'None of these/not sure'.</p>
+<ol>
+  <li>Record the place name in the pop-up box and hit enter.</li> 
+  <li>Help us geo- locate the place. Use the map to help you choose the most likely location from the list. If you're not sure select 'None of these/not sure'.</li>
+  <li>Tell us if this is the current location of the unit or not by checking/unchecking  the 'Is the unit currently here?' box.</li>
+</ol>
 "
       instruction: "Enter 'Aldershot' in the text box and select the 'Is the unit currently here?' box."
       
     tag_people:
       header: "Tagging people"
       details: "<p>Once you have completed all the dates, places and times look at the fourth column for any mention of people and activities.</p> 
-<p>As an example, can you see an individual mentioned by name on this page?</p>
-<p><b>1860, Sergeant Byrne</b> became a casualty on 21 May.</p>"
+<p>Finding and tagging named people is a priority. Can you see an individual mentioned by name on this page? Often names appear in capital letters.</p>
+<p><b>1860, Sergeant BYRNE</b> became a casualty on 21 May.</p>"
       instruction: "Select <b>Person</b> and attach the tag by his name"
       
     add_people:
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
-<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Wounded</p>"
+      <p>Use capital letters when entering names but don’t add any punctuation like full stops.</p>
+<p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Sick or Wounded</p>"
       instruction: "Fill in Sergeant Byrne's details. If you make a mistake you can delete the tag by clicking on the X."
     
     tag_other:
@@ -853,7 +860,7 @@ If there was little to record or a major incident had taken place over a few day
 
           <p>Add hashtags in your comment to link this page with similar pages in Talk.</p>
           
-          <p>You can also go to Talk boards by clicking on <b>Discuss</b> in the top menu. There you can suggest improvements, get help and find fascinating stories.</p>
+          <p>You can also go to Talk boards by clicking on <b>Discuss</b> in the top menu. There you can get help and find fascinating stories.</p>
             '''
       instruction: "Click the <img src='images/icons/talk.png' alt='talk'> button. Then click it again to dismiss."
       
@@ -865,7 +872,7 @@ If there was little to record or a major incident had taken place over a few day
 
         <p>Don&#039;t worry about missing a tag or making a mistake.</p> 
 
-        <p>To get results that are as accurate as possible, each page will be tagged by several people and all the tags compared.</p>
+        <p>To get results that are as accurate as possible, each page will be tagged by several people. All the tags that follow these guidelines can then be compared and a consensus reached.</p>
         
         '''
       instruction: "Click <b>Finished!</b>"
@@ -875,7 +882,7 @@ If there was little to record or a major incident had taken place over a few day
       details: '''
           <p>You can see which diary pages you have classified and a summary of the tags you have submitted on your Profile page.</p>
 
-          <p>If you want to download a full diary you can visit The National Archives site (TNA fees may apply).</p>
+          <p>If you are interested in reading  a full diary you can visit The National Archives site and download it (TNA fees may apply.)</p>
           
                      '''
       
