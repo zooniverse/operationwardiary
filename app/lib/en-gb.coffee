@@ -145,7 +145,7 @@ module.exports =
     warning: 'Warning of enemy activity'
   
   person:
-    commander: "Unit commander"
+    commander: "In command"
     author: 'Author of diary'
     joined: 'Joined or attached'
     departed_sick: 'Departed: sick'
