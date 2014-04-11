@@ -774,7 +774,7 @@ If there was little to record or a major incident had taken place over a few day
       details: '''
         <p>Start by tagging dates. Work your way down the Date column.</p>
               <p>This will group events together and create a timeline of activity without you having to add a date to every other tag.</p>
-              <p>Don’t tag dates in the narrative as these may refer to events that have already happended or are planned.</p>
+              <p>Don&rsquo;t tag dates in the narrative as these may refer to events that have already happened or are planned.</p>
       '''
       instruction: "Select <b>Date</b> from the Tag menu"
 
@@ -803,7 +803,7 @@ If there was little to record or a major incident had taken place over a few day
       details: "<p>Once you have tagged all the dates follow the same approach for the Places column.</p>
 <p>This shows the unit location when the diary entry was written.</p>
 <p>Work your way down the Place column, putting the tag within the horizontal lines for the relevant date.</p>
-<p>Other places may be mentioned in the narrative column. Tag any specific locations, including named trenches. There is no need to tag things like ‘In the Field’.</p>"
+<p>Other places may be mentioned in the narrative column. Tag any specific locations, including named trenches. There is no need to tag things like &lsquo;In the Field&rsquo;.</p>"
       instruction: "Select the <b>Place</b> tag"
     
     add_places:
@@ -812,7 +812,7 @@ If there was little to record or a major incident had taken place over a few day
 
 <ol>
   <li>Record the place name in the pop-up box and hit enter.</li> 
-  <li>Help us geo- locate the place. Use the map to help you choose the most likely location from the list. If you're not sure select 'None of these/not sure'.</li>
+  <li>Help us geo-locate the place. Use the map to help you choose the most likely location from the list. If you're not sure select 'None of these/not sure'.</li>
   <li>Tell us if this is the current location of the unit or not by checking/unchecking  the 'Is the unit currently here?' box.</li>
 </ol>
 "
@@ -828,7 +828,7 @@ If there was little to record or a major incident had taken place over a few day
     add_people:
       header: "Tell us why they were mentioned"
       details: "<p>Then fill in as much detail about the individual as you can see on the page, including their rank and regimental number if given.</p> 
-      <p>Use capital letters when entering names but don’t add any punctuation like full stops.</p>
+      <p>Use capital letters when entering names but don&rsquo;t add any punctuation like full stops.</p>
 <p>Choose a <b>Reason</b> from the drop down list that explains why they are mentioned. The Adjutant has stated that Sgt Byrne was a casualty so choose the closest match &ndash; Casualty:Sick or Wounded</p>"
       instruction: "Fill in Sergeant Byrne's details. If you make a mistake you can delete the tag by clicking on the X."
     
@@ -850,7 +850,7 @@ If there was little to record or a major incident had taken place over a few day
     timeline:
       header: "Editing or deleting tags"
       details: "<p>Before you finish a page, you can review your tags to make sure that you&#039;re happy with them.</p> 
-      <p>Click on the <b>timeline</b> button to see all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
+      <p>Click on the <b>timeline</b> button to see a list of all the tags that you&#039;ve attached to this image &ndash; you can then click on individual tags to edit, move or delete them.</p>"
       instruction: "Click the <img src='images/icons/timeline.png' alt='timeline'> button. Then click it again to dismiss."
     
     talk:
