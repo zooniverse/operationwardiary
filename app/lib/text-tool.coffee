@@ -234,6 +234,8 @@ class TextTool extends Tool
     @shapeSet.attr opacity: 0.4
     
     @label.hide()
+    
+    $('svg > *').css('-webkit-transform', 'rotate(0.0001deg)')
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
