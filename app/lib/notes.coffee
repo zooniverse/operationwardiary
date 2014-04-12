@@ -6,10 +6,10 @@ labels =
       'place'
       'person'
       'activity'
+      'domestic'
       'casualties'
       'strength'
       'weather'
-      'domestic'
       'mapRef'
       'gridRef'
     ]
