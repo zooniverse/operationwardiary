@@ -12,6 +12,7 @@ labels =
       'weather'
       'mapRef'
       'gridRef'
+      'unit'
     ]
     
     orders: [
