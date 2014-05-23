@@ -2,6 +2,11 @@
 <% project = translate 'span', 'navigation.projectName', raw: true %>
 
 <div class="links">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/OperationWarDiary" target="_blank"><i class="fa fa-facebook"></i>Facebook</a>
+    <a href="https://twitter.com/OpWarDiary" target="_blank"><i class="fa fa-twitter"></i>Twitter</a>
+    <a href="http://blog.operationwardiary.org/" target="_blank"><i class="fa fa-rss"></i>Blog</a>
+  </div>
   
   <div class="header">
     <h1><a href="#/"><img width="280" src="images/logos/owd-logo.png" alt="<%- project.innerHTML %>"></a></h1>

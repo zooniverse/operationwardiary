@@ -11,11 +11,5 @@
     <a href="http://nationalarchives.gov.uk/firstworldwar"><img height="40" src="images/logos/tna-gray.png" alt="<%- tna.innerHTML %>"></a>
   </p>
 
-  <div class="social-icons">
-    <a href="https://www.facebook.com/OperationWarDiary" target="_blank"><i class="fa fa-facebook"></i></a>
-    <a href="https://twitter.com/OpWarDiary" target="_blank"><i class="fa fa-twitter"></i></a>
-    <a href="http://blog.operationwardiary.org/" target="_blank"><i class="fa fa-rss"></i></a>
-  </div>
-
   <p class="privacy"><a href="//zooniverse.org/privacy"><%- translate 'span', 'home.privacy' %></a></p>
 </div>
