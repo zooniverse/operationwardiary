@@ -586,6 +586,7 @@ If there was little to record or a major incident had taken place over a few day
         <li><strong><a href="http://www.qub.ac.uk/schools/SchoolofHistoryandAnthropology/Staff/AcademicStaff/ProfessorKeithJeffery/" target="_blank">Prof Keith Jeffery</a></strong> Professor of British History, Queen&#039;s University Belfast <strong></strong></li>
         <li><strong><a href="http://www.iop.kcl.ac.uk/staff/profile/default.aspx?go=10465" target="_blank">Prof Edgar Jones</a></strong> Professor of the History of Medicine and Psychiatry, Institute of Psychiatry, King&#039;s College London <strong></strong></li>
         <li><strong><a href="http://www2.lse.ac.uk/internationalHistory/whosWho/academicStaff/jones.aspx" target="_blank">Dr Heather Jones</a></strong> Senior Lecturer in International History, London School of Economics&nbsp;<strong></strong></li>
+        <li><strong><a href="http://www.sussex.ac.uk/profiles/147717" target="_blank">Dr Chris Kempshall</a></strong> Visiting Research fellow, University of Sussex</li>
         <li><strong><a href="http://www2.physics.ox.ac.uk/contacts/people/lintott" target="_blank">Dr Chris Lintott</a></strong> Citizen Science Project Lead, Department of Physics, University of Oxford, and Director of ‘Zooniverse&#039; crowdsourcing project<strong></strong></li>
         <li><strong><a href="http://www.swan.ac.uk/staff/academic/artshumanities/hc/matthewsg/" target="_blank">Dr&nbsp;Gethin Matthews</a></strong> Lecturer, College of Arts and Humanities, Swansea University <strong></strong></li>
         <li><strong><a href="http://rg.kcl.ac.uk/staffprofiles/staffprofile.php?pid=1847" target="_blank">Dr Helen McCartney</a></strong> Senior Lecturer in Defence Studies, King&#039;s College London&nbsp;<strong></strong></li>
@@ -600,7 +601,6 @@ If there was little to record or a major incident had taken place over a few day
         <li><strong><a href="http://www.all-souls.ox.ac.uk/people.php?personid=67" target="_blank">Prof Hew Strachan</a></strong> Chichele Professor of the History of War, University of Oxford<strong></strong></li>
         <li><strong><a href="http://www.ucl.ac.uk/dis/people/melissaterras" target="_blank">Dr Melissa Terras</a></strong> Co-Director of UCL Centre for Digital Humanities; Reader in Electronic Communication in the Department of Information Studies at UCL<strong></strong></li>
         <li><strong><a href="http://www.history.qmul.ac.uk/staff/todmand.html" target="_blank">Dr Dan Todman</a></strong> Senior Lecturer in History, Queen Mary, University of London</li>
-        <li><strong><a href="http://www.sussex.ac.uk/profiles/147717" target="_blank">Dr Chris Kempshall</a></strong> Visiting Research fellow, University of Sussex</li>
         </ul>
         '''
         
