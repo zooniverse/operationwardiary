@@ -1,4 +1,4 @@
 <% translate = require 't7e' %>
 <span class="tna_id"><%- @group.metadata?.source %></span>
 <span class="page">Page <span id="page_number"></span> of <%- @group.stats?.total %></span>
-&copy; The National Archives
+&copy; Crown copyright
