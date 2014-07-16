@@ -205,7 +205,7 @@ class Classifier extends TabController
   onToolChange: (e, tool)=>
     @update_history()
     mark = tool.mark
-    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date', 'person', 'casualties']
+    store.set mark.type, mark.note if @cacheNotes && mark? && mark.type not in ['diaryDate', 'date', 'person', 'casualties', 'gridRef']
 
     page_type = $( '.documents :checked' ).val()
     if page_type == 'diary'
@@ -221,7 +221,7 @@ class Classifier extends TabController
     type = $('.categories :checked').val()
   
     if @cacheNotes
-      note = store.get type, undefined if type? && type not in ['diaryDate', 'date', 'person', 'casualties']
+      note = store.get type, undefined if type? && type not in ['diaryDate', 'date', 'person', 'casualties', 'gridRef']
       if type?
         @surface.markDefaults.note = note ? undefined
         @surface.markDefaults.type = type
