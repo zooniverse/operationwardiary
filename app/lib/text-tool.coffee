@@ -85,6 +85,9 @@ class TextControls extends ToolControls
         @widget.updateNote e.currentTarget
         @save() unless @widget.type in ['place', 'person', 'gridref', 'mapref']
         return false
+    
+    @el.on 'keypress', '.annotation :input', (e)=>
+      e.stopPropagation() if e.which == 8
   
   unbind: =>
     @el.off 'click', 'button[name="delete"]'
