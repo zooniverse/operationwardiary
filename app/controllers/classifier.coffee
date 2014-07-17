@@ -391,12 +391,12 @@ class Classifier extends TabController
       
     done = (response)=>
     
-      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
-    
       Subject.first().destroy()
       subject = Subject.first()
     
       if subject? then subject.select() else Subject.next()
+      
+      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
     
     fail = (response)=>
     
