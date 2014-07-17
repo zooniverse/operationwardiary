@@ -51,7 +51,7 @@ class Classifier extends TabController
     
   
   cacheNotes: true
-  dontCache: ['diaryDate', 'date', 'person', 'casualties', 'gridRef']
+  dontCache: ['diaryDate', 'date', 'person', 'casualties']
   
   tutorial_done = false
     
