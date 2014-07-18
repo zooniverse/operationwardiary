@@ -396,7 +396,7 @@ class Classifier extends TabController
     
       if subject? then subject.select() else Subject.next()
       
-      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}"
+      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}" if User.current
     
     fail = (response)=>
     
@@ -408,6 +408,8 @@ class Classifier extends TabController
     @classification.send done, fail
   
   onPendingClassification: (e, response) =>
+    
+    return unless User.current
     
     store.deleteKey "sub#{User.current.zooniverse_id}#{subject_id}" for subject_id in response.classification.subject_ids
     
