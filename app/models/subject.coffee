@@ -8,6 +8,9 @@ class CachedSubject extends Subject
   
   is_favourite: false
   
+  @trackSeenSubject: (subject) ->
+    
+  
   constructor: ->
     super
     CachedSubject.cache = CachedSubject.get_cache()
