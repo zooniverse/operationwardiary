@@ -62,7 +62,6 @@ class CachedSubject extends Subject
     
       promise.done (subjects) =>
         console?.log 'from API', subjects
-        @cache[ @group ] = subjects
         @set_cache subjects
     
     promise
