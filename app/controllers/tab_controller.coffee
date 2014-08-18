@@ -14,8 +14,7 @@ class TabController extends Spine.Controller
     @el.attr 'aria-selected': 'true'
     @el.attr 'aria-hidden': 'false'
     
-    labelled_by = @el.attr 'aria-labelledby'
-    $( "##{labelled_by}").attr 'aria-selected': 'true'
+    @labelled_by().attr 'aria-selected': 'true'
   
   deactivate: =>
     super
@@ -23,7 +22,14 @@ class TabController extends Spine.Controller
     @el.attr 'aria-selected': 'false'
     @el.attr 'aria-hidden': 'true'
     
-    labelled_by = @el.attr 'aria-labelledby'
-    $( "##{labelled_by}").attr 'aria-selected': 'false'
+    @labelled_by().attr 'aria-selected': 'false'
+  
+  labelled_by: =>
+    return @tab if @tab? && @tab[0]?
+    
+    tab_id = @el.attr 'aria-labelledby'
+    @tab = $ "##{tab_id}"
+    
+    @tab
 
 module.exports = TabController
