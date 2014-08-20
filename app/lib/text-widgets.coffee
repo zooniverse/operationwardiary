@@ -212,6 +212,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
     $suggestions = @el.find '.suggestions'
     $checked = $suggestions.find('input:checked').focus()
+    $suggestions.scrollTop $checked.position().top
   
   choose_place: (places) =>
     promise = new $.Deferred
