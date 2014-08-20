@@ -209,6 +209,9 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
       @gmap.setCenter latlng
     catch e
       console?.log e.message
+    
+    $suggestions = @el.find '.suggestions'
+    $checked = $suggestions.find('input:checked').focus()
   
   choose_place: (places) =>
     promise = new $.Deferred
