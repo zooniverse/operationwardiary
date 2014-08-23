@@ -112,6 +112,7 @@ class Classifier extends TabController
     
   active: (params) =>
     super
+    @surface.image.attr opacity: 1
     tool.render() for tool in @surface.tools
     
   activate: (params)=>

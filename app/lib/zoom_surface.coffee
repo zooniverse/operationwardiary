@@ -87,16 +87,16 @@ class ZoomableSurface extends MarkingSurface
     
       new_image.removeClass 'offscreen'
       new_image.css left: px
-      @image.animate opacity:0, 800
+      @image.animate opacity:0, 300
     
     new_image.one 'transitionend webkitTransitionEnd', =>
       
-      @image.attr opacity: 1
       @image.attr src: src
       new_image.attr src: ''
       new_image.addClass 'offscreen'
       new_image.removeAttr 'style'
       @pan()
+      @image.attr opacity: 1
       promise.resolve()
     
     new_image.trigger 'transitionend' if !document.body.style.transition? && !document.body.style.WebkitTransition?
