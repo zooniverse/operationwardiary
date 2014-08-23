@@ -234,8 +234,7 @@ class Classifier extends TabController
   
   onUserChange: (e, user) =>
     # user, User.current
-    user_changed = @user?.zooniverse_id != user?.zooniverse_id
-    @user = user
+    user_changed = @user != user?.zooniverse_id
     
     if user_changed
       Subject.destroyAll()
@@ -250,6 +249,7 @@ class Classifier extends TabController
       @run_tutorial() unless @user
   
   onUserLogin: (user) =>
+    @user = User.current.zooniverse_id
     
     @getRecentSubject()
       .fail( =>
