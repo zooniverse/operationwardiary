@@ -54,7 +54,7 @@ class CachedSubject extends Subject
     
     if cached_subjects.length > 0
       # destroy jQueryEventProxy if it was accidentally saved.
-      subject.jQueryEventProxy = null for subject in cached_subjects
+      subject.jQueryEventProxy = null for subject in cached_subjects when subject.jQueryEventProxy?
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
       @trigger 'fetch', [cached_subjects]
       console?.log cached_subjects
