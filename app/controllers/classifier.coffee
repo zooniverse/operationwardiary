@@ -315,7 +315,7 @@ class Classifier extends TabController
       key = "history#{@user.zooniverse_id}"
       surface_history = store.get key, old_history
     
-      store.set "sub#{@user.zooniverse_id}#{subject.id}", surface_history[ subject.id ] if surface_history[subject.id]?
+      store.set "sub#{User.current.zooniverse_id}#{subject.id}", surface_history[ subject.id ] if surface_history[subject.id]?
       store.deleteKey key
       store.deleteKey 'history'
       surface_history = null
