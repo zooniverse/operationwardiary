@@ -27,7 +27,7 @@ class CachedSubject extends Subject
   
   @get_cache: =>
     return { subjects: [] } unless User.current
-    @cache = store.get "subjects#{User.current.zooniverse_id}", {}
+    @cache = store.get "subjects#{User.current.zooniverse_id}", { subjects:[] }
     # console?.log 'getting', @cache[@group]?[0]
     
     @cache
@@ -38,11 +38,14 @@ class CachedSubject extends Subject
     if @group
       @set_cache []
     
-  @first: =>
-    instance = super
-    @set_cache()
+  destroy: =>
+    cached_subjects = CachedSubject.get_cache().subjects
+    for subject, i in cached_subjects when subject.zooniverse_id == @zooniverse_id
+      cached_subjects.splice i, 1
+      break
+    CachedSubject.set_cache cached_subjects
     
-    instance
+    super
     
     
   @fetch: (params, done, fail) =>
