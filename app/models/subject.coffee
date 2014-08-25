@@ -16,7 +16,7 @@ class CachedSubject extends Subject
     CachedSubject.cache = CachedSubject.get_cache()
     
   
-  @set_cache: (subjects = @instances)=>
+  @set_cache: (subjects)=>
     return unless @group && User.current
     @cache = 
       subjects: subjects
@@ -53,6 +53,8 @@ class CachedSubject extends Subject
     cached_subjects = cache.subjects
     
     if cached_subjects.length > 0
+      # destroy jQueryEventProxy if it was accidentally saved.
+      subject.jQueryEventProxy = null for subject in cached_subjects
       cached_subjects = (new CachedSubject subject for subject in cached_subjects)
       @trigger 'fetch', [cached_subjects]
       console?.log cached_subjects

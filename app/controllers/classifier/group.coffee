@@ -87,7 +87,9 @@ class GroupDetails extends Spine.Controller
         
         subject.is_favourite = @favouriteButton.hasClass 'active'
     
-        Subject.set_cache()
+        cached_subjects = Subject.get_cache().subjects
+        cached_subjects[0].is_favourite = subject.is_favourite
+        Subject.set_cache cached_subjects
 
         new_favourite.delete() unless subject.is_favourite
 
