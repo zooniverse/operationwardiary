@@ -27,10 +27,7 @@ class CachedSubject extends Subject
   
   @get_cache: =>
     return { subjects: [] } unless User.current
-    @cache = store.get "subjects#{User.current.zooniverse_id}", { subjects:[] }
-    # console?.log 'getting', @cache[@group]?[0]
-    
-    @cache
+    store.get "subjects#{User.current.zooniverse_id}", { subjects:[] }
     
   @destroyAll: =>
     super
