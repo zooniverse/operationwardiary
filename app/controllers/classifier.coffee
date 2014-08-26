@@ -290,7 +290,7 @@ class Classifier extends TabController
         
   onFavourite: =>
     
-    @group_details.addFavourite @classification.subject
+    @group_details.addFavourite Subject.current if Subject.current && User.current
     
     
   onNoMoreSubjects: =>

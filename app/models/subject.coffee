@@ -43,6 +43,14 @@ class CachedSubject extends Subject
     CachedSubject.set_cache cached_subjects
     
     super
+  
+  favorite: (is_favourite = true)=>
+    @is_favourite = is_favourite
+    cached_subjects = CachedSubject.get_cache().subjects
+    for subject, i in cached_subjects when subject.zooniverse_id == @zooniverse_id
+      cached_subjects[i].is_favourite = @is_favourite
+      break
+    CachedSubject.set_cache cached_subjects
     
     
   @fetch: (params, done, fail) =>
