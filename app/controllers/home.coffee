@@ -16,5 +16,6 @@ class Home extends TabController
 
   render: =>
     @html @template()
+    @el.attr id: 'home'
 
 module.exports = Home

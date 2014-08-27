@@ -13,12 +13,12 @@
     <button>Menu</button>
   </div>
   <ul>
-    <li><a id="homeTab" role="tab" aria-selected="true" class="active" href="#/"><%- translate 'span', 'navigation.home' %></a></li>
-    <li><a id="diariesTab" role="tab" aria-selected="false" href="#/diaries"><%- translate 'span', 'navigation.diaries' %></a></li>
-    <li><a id="classifyTab" role="tab" aria-selected="false" href="#/classify"><%- translate 'span', 'navigation.classify' %></a></li>
-    <li><a id="guideTab" role="tab" aria-selected="false" href="#/guide"><%- translate 'span', 'navigation.guide' %></a></li>
-    <li><a id="profileTab" role="tab" aria-selected="false" href="#/profile"><%- translate 'span', 'navigation.profile' %></a></li>
-    <li><a id="aboutTab" role="tab" aria-selected="false" href="#/about"><%- translate 'span', 'navigation.about' %></a></li>
+    <li><a id="homeTab" role="tab" aria-selected="true" class="active" href="#home"><%- translate 'span', 'navigation.home' %></a></li>
+    <li><a id="diariesTab" role="tab" aria-selected="false" href="#diaries"><%- translate 'span', 'navigation.diaries' %></a></li>
+    <li><a id="classifyTab" role="tab" aria-selected="false" href="#classify"><%- translate 'span', 'navigation.classify' %></a></li>
+    <li><a id="guideTab" role="tab" aria-selected="false" href="#guide"><%- translate 'span', 'navigation.guide' %></a></li>
+    <li><a id="profileTab" role="tab" aria-selected="false" href="#profile"><%- translate 'span', 'navigation.profile' %></a></li>
+    <li><a id="aboutTab" role="tab" aria-selected="false" href="#about"><%- translate 'span', 'navigation.about' %></a></li>
     <li><a target="_blank" href="http://talk.operationwardiary.org"><%- translate 'span', 'navigation.talk' %></a></li>
     <li><a target="_blank" href="http://blog.operationwardiary.org"><%- translate 'span', 'navigation.blog' %></a></li>
   </ul>

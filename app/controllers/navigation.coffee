@@ -1,4 +1,5 @@
 Spine = require 'spine'
+{Route} = Spine
 
 
 class Navigation extends Spine.Controller
@@ -24,6 +25,14 @@ class Navigation extends Spine.Controller
     
     Spine.bind 'nav:open', =>
       @menu.removeClass 'closed'
+    
+    @menu.on 'click', 'a[role=tab]', (e)=>
+      href = e.currentTarget.getAttribute 'href'
+      return unless href[0] == '#'
+      # home is a special case
+      href = '#' if href == '#home'
+      Route.navigate href.replace '#', '#/'
+      e.preventDefault()
       
   render: =>
     @html @template()
