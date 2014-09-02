@@ -194,7 +194,7 @@ WidgetFactory.registry.place = class PlaceWidget extends TextWidget
     
       @show_place( lat, long )
     catch e
-      console?.log 'Google maps not available'
+      console?.log e.message
 
   show_place: (lat, long) =>
     return unless google? && google.maps?
