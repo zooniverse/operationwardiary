@@ -70,7 +70,6 @@ class TextControls extends ToolControls
       setTimeout (=>
         @onClickDelete arguments...
         @tool.surface.trigger 'delete', @tool
-        @el.find('.deleted').hide()
       ), 500
       
     @el.on 'click', 'button[name="toggle"]', =>
@@ -169,6 +168,10 @@ class TextControls extends ToolControls
       console?.log e
       
     @el.addClass 'closed'
+    
+  destroy: =>
+    @close()
+    super
 
 class TextTool extends Tool
   
