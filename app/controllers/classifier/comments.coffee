@@ -1,8 +1,7 @@
 Spine = require 'spine'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/models/user'
-{WidgetFactory} = require '../../lib/text-widgets'
-DateWidget = WidgetFactory.registry.date
+DateWidget = require '../../lib/tools/date'
 
 Subject = require '../../models/subject'
 

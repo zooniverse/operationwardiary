@@ -1,7 +1,6 @@
 Spine = require 'spine'
 Group = require 'zooniverse/models/project-group'
 Favorite = require 'zooniverse/models/favorite'
-{WidgetFactory} = require '../../lib/text-widgets'
 Comments = require './comments'
 PageTimeline = require './page_timeline'
 
@@ -34,7 +33,7 @@ class GroupDetails extends Spine.Controller
   render: (@group)=>
     
     if @group.metadata?
-      DateWidget = WidgetFactory.registry.date
+      DateWidget = require '../../lib/tools/date'
       @group.startdate ?= DateWidget.formatDate 'd M yy', new Date @group.metadata.start_date
       @group.enddate ?= DateWidget.formatDate 'd M yy', new Date @group.metadata.end_date
       DateWidget.date = DateWidget.formatDate 'd M yy', new Date @group.metadata.start_date
