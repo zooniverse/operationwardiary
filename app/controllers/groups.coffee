@@ -2,8 +2,7 @@ TabController = require './tab_controller'
 User = require 'zooniverse/models/user'
 Group = require 'zooniverse/models/project-group'
 Api = require 'zooniverse/lib/api'
-{WidgetFactory} = require '../lib/text-widgets'
-DateWidget = WidgetFactory.registry.date
+DateWidget = require '../lib/tools/date'
 
 class Groups extends TabController
   template: require '../views/groups'
