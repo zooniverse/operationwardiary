@@ -1,5 +1,6 @@
 TextWidget = require './text-widget'
 labels = require '../notes'
+DateWidget = require './date'
 
 class MapRefWidget extends TextWidget
   template: require '../../views/tools/mapref'
@@ -7,9 +8,9 @@ class MapRefWidget extends TextWidget
   type: 'mapref'
   help: '/diary/mapRef'
   
-  render: (el)->
+  render: =>
     super
-    $('.date', el)
+    $('.date', @el)
       .datepicker
         dateFormat: 'd MM yy'
         changeMonth: true

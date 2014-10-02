@@ -1,13 +1,17 @@
-class TextWidget
+Spine = require 'spine
+'
+class TextWidget extends Spine.Controller
   template: require '../../views/tools/person'
   
   colour: 'white'
   
   constructor: (@dotRadius) ->
+    super
+    @render()
     @icon = "images/icons/#{@type}.png"
   
-  render: (el)->
-    @el = el
+  render: =>
+    @html @template
     
   mark: (tool) ->
     circle = tool.addShape 'circle', 0, 0, @dotRadius, fill: 'transparent', stroke: @colour, 'stroke-width': 2

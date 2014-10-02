@@ -19,13 +19,13 @@ class TimeWidget extends TextWidget
   getLabel: (target) ->
     @updateNote(target)
     
-  setNote: (note, el) =>
+  setNote: (note) =>
     return unless note?
     time = 
       hour: note[0..1]
       minute: note[2..3]
       am: note[4..5]
       
-    super time, el
+    super time
 
 module.exports = TimeWidget

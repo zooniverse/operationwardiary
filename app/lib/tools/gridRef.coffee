@@ -7,14 +7,14 @@ class GridRefWidget extends TextWidget
   type: 'gridref'
   help: '/diary/gridRef'
   
-  render: (el)->
+  render: =>
     super
-    id = el
+    id = @el
       .find('label')
       .uniqueId()
       .attr('id')
     
-    el
+    @el
       .find( 'input' )
       .attr('aria-labelledby', id)
     

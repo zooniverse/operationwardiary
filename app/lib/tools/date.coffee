@@ -12,10 +12,10 @@ class DateWidget extends TextWidget
   @formatDate: (format, date) =>
     $.datepicker.formatDate format, date
   
-  render: (el)->
+  render: =>
     super
-    @input = $('.date', el)
-    @calendar = $('.calendar', el)
+    @input = $('.date', @el)
+    @calendar = $('.calendar', @el)
     
     @input.on 'change', =>
       @updateNote @input

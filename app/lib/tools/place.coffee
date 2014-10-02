@@ -84,7 +84,7 @@ class PlaceWidget extends TextWidget
       .find('input[name=place]')
       .val()
   
-  render: (el)->
+  render: =>
     super
     return unless google? && google.maps?
     try
@@ -98,8 +98,8 @@ class PlaceWidget extends TextWidget
           position: google.maps.ControlPosition.LEFT_TOP
           
       @gmap = new google.maps.Map $('.map', @el)[0], map_options
-      lat = el.find( 'input[name=lat]' ).val()
-      long = el.find( 'input[name=long]' ).val()
+      lat = @el.find( 'input[name=lat]' ).val()
+      long = @el.find( 'input[name=long]' ).val()
     
       @show_place( lat, long )
     catch e

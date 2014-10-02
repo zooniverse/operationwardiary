@@ -27,12 +27,11 @@ class TextControls extends ToolControls
     
     @widget = WidgetFactory.makeWidget category
     @help = @el.find 'p.help'
-    @help.after @widget.template
+    @help.after @widget.el
     @help
       .find( 'a' )
       .attr 'href', (i, href)=>
         href + @widget.help
-    @widget.render @el
     @toggleButton = @el.find 'button[name="toggle"]'
     @textInput = @el.find '.annotation :input'
     @setNote()
