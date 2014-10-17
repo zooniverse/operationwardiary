@@ -201,7 +201,7 @@ module.exports =
     profile: 'Profile'
     guide: 'Field Guide'
     about: 'About Us'
-    talk: 'Discuss'
+    talk: 'Talk'
     blog: 'Blog'
 
   home:
