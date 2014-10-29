@@ -15,7 +15,7 @@ try
   TopBar = require 'zooniverse/controllers/top-bar'
 catch e
   BrowserDialog.show()
-  
+  console?.log e
 
 api = new Api project: 'war_diary'
 
@@ -60,12 +60,14 @@ try
   navigation.el.prependTo 'body'
 catch e
   BrowserDialog.show()
+  console?.log e
 
 try
   app.topBar = new TopBar
   app.topBar.el.prependTo 'body'
 catch e
   BrowserDialog.show()
+  console?.log e
 
 app.stack.el.appendTo app.container
 
