@@ -10,12 +10,31 @@ BrowserDialog = require 'zooniverse/controllers/browser-dialog'
 
 try
   Api = require 'zooniverse/lib/api'
+catch e
+  BrowserDialog.show()
+  console?.log 'Failed to load zoo api'
+  console?.log JSON.stringify e
+
+try
   User = require 'zooniverse/models/user'
+catch e
+  BrowserDialog.show()
+  console?.log 'Failed to load zoo user'
+  console?.log JSON.stringify e
+
+try
   Group = require 'zooniverse/models/project-group'
+catch e
+  BrowserDialog.show()
+  console?.log 'Failed to load zoo project group'
+  console?.log JSON.stringify e
+
+try
   TopBar = require 'zooniverse/controllers/top-bar'
 catch e
   BrowserDialog.show()
-  console?.log e
+  console?.log 'Failed to load zoo top bar'
+  console?.log JSON.stringify e
 
 api = new Api project: 'war_diary'
 
@@ -60,14 +79,16 @@ try
   navigation.el.prependTo 'body'
 catch e
   BrowserDialog.show()
-  console?.log e
+  console?.log 'Failed to create navigation'
+  console?.log JSON.stringify e
 
 try
   app.topBar = new TopBar
   app.topBar.el.prependTo 'body'
 catch e
   BrowserDialog.show()
-  console?.log e
+  console?.log 'Failed to create zoo top bar'
+  console?.log JSON.stringify e
 
 app.stack.el.appendTo app.container
 
