@@ -439,7 +439,7 @@ If there was little to record or a major incident had taken place over a few day
   guide:
     title: 'Transcribing the diaries'
     content: '''
-      <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! Help us reveal what information they contain by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples, choose one Classification: Blank Page,Cover Page, Diary Page, Orders, Signal, Report, Other</p>
+      <p>Field Service Regulations Part II were issued in 1909 and re-printed in 1913. They gave clear guidance about the purpose of the war diary and how and when it was to be completed. But every diary is different! Help us reveal what information they contain by classifying each page of every diary. Using the descriptions of the type of content you are likely to find in each page type and the examples, choose one Classification: Blank Page, Cover Page, Diary Page, Orders, Signal, Report, Other</p>
     '''
     classify: "Continue classifying"
     tutorial: "Restart the tutorial"
@@ -861,7 +861,7 @@ If there was little to record or a major incident had taken place over a few day
 
           <p>Add hashtags in your comment to link this page with similar pages in Talk.</p>
           
-          <p>You can also go to Talk boards by clicking on <b>Discuss</b> in the top menu. There you can get help and find fascinating stories.</p>
+          <p>You can also go to Talk boards by clicking on <b>Talk</b> in the top menu. There you can get help and find fascinating stories.</p>
             '''
       instruction: "Click the <img src='images/icons/talk.png' alt='talk'> button. Then click it again to dismiss."
       
@@ -895,7 +895,7 @@ If there was little to record or a major incident had taken place over a few day
 </p>
 
 <p>If you are happy to start classifying and tagging, create a Zooniverse account and log in, then choose a diary from <b>Diaries</b> and get started.</p>
-  <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards &ndash; use the <b>Discuss</b> menu option.</p>
+  <p>And remember, you can get help, share great stories and suggest improvements on our Talk boards &ndash; use the <b>Talk</b> menu option.</p>
   "
       instruction: "Create a Zooniverse account, log in and get started!"
 
