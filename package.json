@@ -8,7 +8,7 @@
     "marking-surface": "~0.0.15",
     "publisssh": "git://github.com/brian-c/publisssh.git",
     "zootorial": "~0.3.4",
-    "zooniverse": "~0.7.1",
+    "zooniverse": "~0.7.2",
     "spine": "~1.1.0",
     "t7e": "~0.1.3"
   },
