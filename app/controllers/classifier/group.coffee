@@ -40,8 +40,11 @@ class GroupDetails extends Spine.Controller
     
     @html @template
       group: @group
+      
+    drag_options = 
+      handle: 'h2'
     
-    @el.append popup.el.draggable().removeClass 'open' for popup in [@comments, @timeline]
+    @el.append popup.el.draggable( drag_options ).removeClass 'open' for popup in [@comments, @timeline]
 
     @talkButton.on 'click', =>
       @comments.el.toggleClass 'open'
