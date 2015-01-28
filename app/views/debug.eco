@@ -1,0 +1,9 @@
+<h2>Local Storage Used</h2>
+<p class="error-message">Storage size: <%= @.storageSize() %></p>
+<p class="error-message">Storage available: <%= @.storageAvailable() %></p>
+<p class="error-message">Number of stored keys: <%= @.index().length %></p>
+<p class="error-message"><%= @.error %></p>
+<h2>Defaults</h2>
+<p class="error-message">Unit activity: <%= @.get('activity') %></p>
+<p class="error-message">Place: <%= @.get('place')?.place %></p>
+<p class="error-message">Other unit: <%= @.get('unit')?.name %></p>

@@ -52,6 +52,7 @@ app.stack = new Spine.Stack
     'profile': require './controllers/profile'
     'groups': require './controllers/groups'
     'recents': require './controllers/recents'
+    'debug': require './controllers/debug'
 
   routes:
     '/': 'home'
@@ -70,6 +71,7 @@ app.stack = new Spine.Stack
     '/diaries/:page' : 'groups'
     '/diaries': 'groups'
     '/recents': 'recents'
+    'debug': 'debug'
 
   default: 'home'
 
