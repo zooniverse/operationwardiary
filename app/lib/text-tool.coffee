@@ -83,7 +83,7 @@ class TextControls extends ToolControls
         @save() unless @widget.type in ['place', 'person', 'gridref', 'mapref']
         return false
     
-    @el.on 'keydown', '.annotation :input', (e)=>
+    @el.on 'keypress', '.annotation :input', (e)=>
       e.stopPropagation() if e.which == 8
   
   unbind: =>
