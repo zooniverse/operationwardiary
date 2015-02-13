@@ -19,7 +19,7 @@
     <li><a id="guideTab" role="tab" aria-selected="false" href="#guide"><%- translate 'span', 'navigation.guide' %></a></li>
     <li><a id="profileTab" role="tab" aria-selected="false" href="#profile"><%- translate 'span', 'navigation.profile' %></a></li>
     <li><a id="aboutTab" role="tab" aria-selected="false" href="#about"><%- translate 'span', 'navigation.about' %></a></li>
-    <li><a target="_blank" href="http://talk.operationwardiary.org"><%- translate 'span', 'navigation.talk' %></a></li>
+    <li><a target="discuss" href="http://talk.operationwardiary.org"><%- translate 'span', 'navigation.talk' %></a></li>
     <li><a target="_blank" href="http://blog.operationwardiary.org"><%- translate 'span', 'navigation.blog' %></a></li>
   </ul>
 </div>
