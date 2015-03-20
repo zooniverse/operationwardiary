@@ -10,15 +10,11 @@ require 'spine/lib/manager'
 require 'spine/lib/route'
 
 BrowserDialog = require 'zooniverse/controllers/browser-dialog'
-# test to see if local storage is full
-# delete cached geocoder results if yes.
-try
-  window.localStorage.setItem 'test-key', 'a test value'
-  window.localStorage.removeItem 'test-key'
-catch e
-  keys = JSON.parse window.localStorage.getItem 'jStorage'
-  for key, value of keys
-    store.deleteKey key if value.lat? or value[0]?.lat
+
+# delete any cached geocoder results in local storage.
+keys = JSON.parse window.localStorage.getItem 'jStorage'
+for key, value of keys
+  store.deleteKey key if value.lat? or value[0]?.lat
 
 try
   Api = require 'zooniverse/lib/api'

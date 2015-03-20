@@ -15,7 +15,7 @@ class Geocoder
     
     return promise unless placename
     
-    cache = store.get placename if @localCache
+    cache = JSON.parse window.sessionStorage.getItem placename if @localCache
     
     if cache?
       # cqche entry should be an array of places
@@ -118,6 +118,7 @@ class Geocoder
   
   save_place: (placename, places) =>
     return unless places[0].id?
-    store.set placename, places if @localCache
+    value = JSON.stringify places
+    window.sessionStorage.setItem placename, value if @localCache
     
 module.exports = Geocoder
