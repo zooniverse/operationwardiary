@@ -13,8 +13,8 @@ BrowserDialog = require 'zooniverse/controllers/browser-dialog'
 
 # delete any cached geocoder results in local storage.
 keys = JSON.parse window.localStorage.getItem 'jStorage'
-for key, value of keys
-  store.deleteKey key if value.lat? or value[0]?.lat
+for key, value of keys 
+  store.deleteKey key if value.lat? or value[0]?.lat unless key is 'place'
 
 try
   Api = require 'zooniverse/lib/api'
