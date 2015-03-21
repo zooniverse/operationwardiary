@@ -397,7 +397,8 @@ class Classifier extends TabController
     
       if subject? then subject.select() else Subject.next()
       
-      store.deleteKey "sub#{User.current.zooniverse_id}#{Subject.current.id}" if User.current
+      if User.current
+        store.deleteKey key for key in store.index() when key[..."sub#{User.current.zooniverse_id}".length] is "sub#{User.current.zooniverse_id}"
     
     fail = (response)=>
     
@@ -412,7 +413,7 @@ class Classifier extends TabController
     
     return unless User.current
     
-    store.deleteKey "sub#{User.current.zooniverse_id}#{subject_id}" for subject_id in response.classification.subject_ids
+    store.deleteKey key for key in store.index() when key[..."sub#{User.current.zooniverse_id}".length] is "sub#{User.current.zooniverse_id}"
     
 
   onZoomIn: (e)=>
