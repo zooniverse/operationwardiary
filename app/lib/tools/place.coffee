@@ -105,7 +105,7 @@ class PlaceWidget extends TextWidget
     catch e
       console?.log e.message
 
-  show_place: (lat, long) =>
+  show_place: (lat=0, long=0) =>
     return unless google? && google.maps?
     try
       latlng = new google.maps.LatLng lat,long
@@ -114,10 +114,13 @@ class PlaceWidget extends TextWidget
         map: @gmap
         bounds: false
       @marker.setPosition latlng
-      google.maps.event.trigger @gmap, 'resize'
       @gmap.setCenter latlng
     catch e
       console?.log e.message
+      @gmap.setCenter
+        lat: 0
+        lng: 0
+    google.maps.event.trigger @gmap, 'resize'
     
     $suggestions = @el.find '.suggestions'
     $checked = $suggestions.find('input:checked').focus()
