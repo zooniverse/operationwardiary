@@ -4,9 +4,9 @@
   "dependencies": {
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.3",
-    "haw": "~0.3.4",
+    "haw": "~0.5.1",
     "marking-surface": "~0.0.15",
-    "publisssh": "git://github.com/brian-c/publisssh.git",
+    "publisssh": "~0.2.6",
     "zootorial": "~0.3.4",
     "zooniverse": "~0.7.3",
     "spine": "~1.1.0",
