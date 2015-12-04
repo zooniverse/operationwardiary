@@ -44,7 +44,10 @@ catch e
   console?.log 'Failed to load zoo top bar'
   console?.log JSON.stringify e
 
-api = new Api project: 'war_diary'
+api = if window.location.hostname is 'www.operationwardiary.org'
+  new Api project: 'war_diary', host: 'http://www.operationwardiary.org', path: '/_ouroboros_api/proxy'
+else
+  new Api project: 'war_diary'
 
 # Build app
 app = {}
