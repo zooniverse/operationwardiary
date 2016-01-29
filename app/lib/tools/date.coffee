@@ -55,6 +55,8 @@ class DateWidget extends TextWidget
       try 
         @setDate 'd MM yy', date
     
+    @input.val()
+    
   getLabel: (target) =>
     @input.val() ? ''
   
