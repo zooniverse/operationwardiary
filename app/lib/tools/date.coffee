@@ -35,6 +35,11 @@ class DateWidget extends TextWidget
           return unless date?
           date.setMonth month - 1
           date.setYear year
+          # reset the day and month if the new month doesn't match the selected month.
+          # this should reset eg. 31st November to 1st November.
+          if date.getMonth() != month - 1
+            date.setDate 1
+            date.setMonth month - 1
           @calendar.datepicker 'setDate', date
           @input.trigger 'change'
   
