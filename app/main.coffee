@@ -45,7 +45,7 @@ catch e
   console?.log JSON.stringify e
 
 api = if window.location.hostname is 'www.operationwardiary.org'
-  new Api project: 'war_diary', host: 'http://www.operationwardiary.org', path: '/_ouroboros_api/proxy'
+  new Api project: 'war_diary', host: 'https://www.operationwardiary.org', path: '/_ouroboros_api/proxy'
 else
   new Api project: 'war_diary'
 
