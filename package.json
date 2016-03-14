@@ -6,7 +6,7 @@
     "json2ify": "~0.0.3",
     "haw": "~0.5.1",
     "marking-surface": "~0.0.15",
-    "publisssh": "~0.2.6",
+    "publisssh": "~1.1.0",
     "zootorial": "~0.3.4",
     "zooniverse": "~0.7.3",
     "spine": "~1.1.0",
@@ -15,7 +15,7 @@
   "scripts": {
     "start": "haw serve",
     "build": "haw build",
-    "deploy": "haw build && publisssh ./build zooniverse-static/www.operationwardiary.org && rm -rf ./build",
-    "deploy-beta": "haw build && publisssh ./build zooniverse-static/www.operationwardiary.org/beta && rm -rf ./build"
+    "deploy": "haw build && publisssh ./build zooniverse-static/www.operationwardiary.org --force && rm -rf ./build",
+    "deploy-beta": "haw build && publisssh ./build zooniverse-static/www.operationwardiary.org/beta --force && rm -rf ./build"
   }
 }
