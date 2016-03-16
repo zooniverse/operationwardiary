@@ -32,7 +32,7 @@ class Comments extends Spine.Controller
   render: =>
     @html @template
       comments: @comments
-      talk_url: "http://talk.operationwardiary.org/#/subjects/#{Subject.current?.zooniverse_id}"
+      talk_url: "https://talk.operationwardiary.org/#/subjects/#{Subject.current?.zooniverse_id}"
       user: User.current
     
     @comment_button.on 'click', @submitComment

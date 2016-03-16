@@ -3,7 +3,7 @@
 <%- translate 'h2', "profile.favourites" %>
   <ul class="recents">
     <% for favourite in @favourites: %>
-    <li><a href="http://talk.operationwardiary.org/#/subjects/<%= favourite.zooniverse_id %>"><img src="<%= favourite.location.standard %>"></a></li>
+    <li><a href="https://talk.operationwardiary.org/#/subjects/<%= favourite.zooniverse_id %>"><img src="<%= favourite.location.standard %>"></a></li>
     <% end %>
   </ul>
 <% end %>

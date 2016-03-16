@@ -1,7 +1,7 @@
 <% translate = require 't7e' %>
 <%- translate 'h2', "common.comments" %>
 <p>Add comments and hashtags here, or <a target="discuss" href="<%= @talk_url %>">discuss this page on Talk</a></p>
-<p><a href="http://talk.operationwardiary.org/#/boards/BWD000000h" target="discuss">Frequently Asked Questions: Tags &amp; tagging</a></p>
+<p><a href="https://talk.operationwardiary.org/#/boards/BWD000000h" target="discuss">Frequently Asked Questions: Tags &amp; tagging</a></p>
 <div>
   <% for comment in @comments: %>
   <div>

@@ -6,8 +6,8 @@ class YQL
   @cache_life = 7200
   
   constructor: (query, @callback = 'process_request')->
-    @signed_url = "http://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=#{ @callback }&_maxage=#{YQL.cache_life}"
-    @unsigned_url = "http://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?&_maxage=#{YQL.cache_life}"
+    @signed_url = "https://query.yahooapis.com/v1/yql?q=#{ escape query }&format=json&callback=#{ @callback }&_maxage=#{YQL.cache_life}"
+    @unsigned_url = "https://query.yahooapis.com/v1/public/yql?q=#{ escape query }&format=json&callback=?&_maxage=#{YQL.cache_life}"
     
   
   unsigned_request: =>
