@@ -22,9 +22,8 @@
                 <%- translate 'p', "help.#{document}.#{tag}" %>
             
                 <% if tag == 'person': %>
-                <% person_fields = translate 'div', "help.diary.person_fields", raw: true %>
                 <div class="accordion">
-                  <%- person_fields.innerHTML %>
+                  <%- translate 'help.diary.person_fields' %>
                   <%- translate 'h4', "help.diary.person_reason.heading" %>
                   <div>
                     <%- translate 'p', "help.diary.person_reason.text" %>
@@ -33,11 +32,11 @@
                 <% if labels[tag]?: %>
                   <ul class='accordion'>
                     <% for item in labels[tag]: %>
-                      <% help = translate 'p', "tools.#{tag}.#{item}", raw: true %>
-                      <% if help.innerHTML != "tools.#{tag}.#{item}": %>
+                      <% help = translate "tools.#{tag}.#{item}" %>
+                      <% if help != "tools.#{tag}.#{item}": %>
                       <li>
                         <%- translate 'h4', "#{tag}.#{item}" %>
-                        <p><%- help.innerHTML %></p>
+                        <p><%- help %></p>
                       </li>
                       <% end %>
                     <% end %>

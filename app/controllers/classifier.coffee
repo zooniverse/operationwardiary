@@ -178,14 +178,14 @@ class Classifier extends TabController
   
   onToolbarReset: =>
     if @surface.tools.length
-      @reset() if window.confirm  translate( 'span', 'common.reset_tags', raw: true ).innerHTML
+      @reset() if window.confirm  translate('common.reset_tags')
       # @update_history()
     else
       @toolbars.reset()
       
   onPageChange: (e, type)=>
     if @surface.tools.length
-      if window.confirm translate( 'span', 'common.reset_tags', raw: true ).innerHTML
+      if window.confirm translate('common.reset_tags')
         @reset()
         @toolbars.selectPageType( type ).focus()
       else

@@ -4,3 +4,4 @@ build
 public/img
 test-data
 deploy*.sh
+/npm-debug.log
