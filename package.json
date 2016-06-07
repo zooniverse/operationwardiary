@@ -1,6 +1,9 @@
 {
   "name": "war-diaries",
   "version": "0.0.1",
+  "engines": {
+      "node": "0.10.x"
+  },
   "dependencies": {
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.3",
@@ -10,7 +13,7 @@
     "zootorial": "~0.3.4",
     "zooniverse": "~0.8.6",
     "spine": "~1.1.0",
-    "t7e": "~0.1.3"
+    "t7e": "~0.4.0"
   },
   "scripts": {
     "start": "haw serve",
