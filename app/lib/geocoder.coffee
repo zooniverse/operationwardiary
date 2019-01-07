@@ -33,7 +33,7 @@ class Geocoder
       geonames: "select * from xml where url='http://api.geonames.org/search?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse'"
     
     query = queries[@service]
-    geonames_url = "http://api.geonames.org/searchJSON?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse"
+    geonames_url = "https://secure.geonames.org/searchJSON?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse"
     
     promise = new $.Deferred
     
