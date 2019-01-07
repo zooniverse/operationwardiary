@@ -1,8 +1,6 @@
 require './jstorage.js'
 store = $.jStorage
 
-YQL = require './yql'
-
 class Geocoder
   
   localCache: true
@@ -29,12 +27,13 @@ class Geocoder
     promise
     
   call_webservice: (placename) =>
-    
+
     queries =
       geoplanet: "select * from geo.placefinder where text='#{encodeURIComponent placename}' and countrycode in ('BE','FR','GB') limit 5"
       geonames: "select * from xml where url='http://api.geonames.org/search?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse'"
     
     query = queries[@service]
+    geonames_url = "https://secure.geonames.org/searchJSON?name=#{encodeURIComponent placename}&featureClass=P&featureClass=L&featureClass=T&featureClass=V&country=BE&country=GB&country=FR&country=DE&maxRows=5&username=zooniverse"
     
     promise = new $.Deferred
     
@@ -47,9 +46,7 @@ class Geocoder
     
     callback = placename.toLowerCase()
     callback = callback.replace /[^\p{ASCII}]+/g, ''
-    yql = new YQL query, 'process_' + callback
-    yql
-      .signed_request()
+    $.getJSON(geonames_url + "&callback=?")
       .done( (response) =>
         promise.resolve @process_request placename, response
       )
@@ -61,7 +58,7 @@ class Geocoder
     promise
   
   process_request: (placename, response)=>
-    results = response.query.results
+    results = response.geonames
     
     defaults =
       placename: null
@@ -74,17 +71,17 @@ class Geocoder
   
     switch @service
       when 'geonames'
-        if results.geonames.geoname? && results.geonames.geoname.length?
-          places = results.geonames.geoname
+        if results.length?
+          places = results
         else
-          places = [results.geonames.geoname]
+          places = [defaults]
         places = places.map (gnplace) ->
           if gnplace?
             place = 
               lat: gnplace.lat
               long: gnplace.lng
               name: gnplace.toponymName
-              id: gnplace.geonameId
+              id: gnplace.geonameId.toString()
           else
             place = defaults
             
@@ -112,7 +109,7 @@ class Geocoder
             
           place
           
-    console?.log places
+    console?.log 'RECEIVED:', places
     @save_place placename, places
     places
   
